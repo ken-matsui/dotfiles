@@ -1,0 +1,46 @@
+- hosts: localhost
+  connection: local
+  vars:
+    homebrew_taps:
+      - caskroom/homebrew-versions
+    homebrew_packages:
+      - name: kubectl
+      - name: kops
+      - name: ghc
+      - name: mosh
+      - name: boost
+      - name: boost-python
+      - name: mas
+      - name: awscli
+      - name: terraform
+    homebrew_cask_packages:
+      - name: google-chrome
+      - name: firefox
+      - name: postman
+      - name: iterm2
+      - name: sublime-text-dev
+      - name: skype
+      - name: docker
+      - name: minikube
+      - name: virtualbox
+      - name: vagrant
+      - name: processing
+  tasks:
+    - name: homebrew update
+      homebrew:
+        update_homebrew: yes
+    - name: homebrew tap
+      homebrew_tap:
+        name: '{{ item }}'
+        state: present
+      with_items: '{{ homebrew_taps }}'
+    - name: homebrew packages install
+      homebrew:
+        name: '{{ item.name }}'
+        state: '{{ item.state | default("present") }}'
+      with_items: '{{ homebrew_packages }}'
+    - name: homebrew cask packages install
+      homebrew_cask: name={{ item.name }} state=installed
+      environment:
+        HOMEBREW_CASK_OPTS: "--appdir=/Applications"
+      with_items: '{{ homebrew_cask_packages }}'

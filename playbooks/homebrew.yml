@@ -4,6 +4,7 @@
     homebrew_taps:
       - caskroom/homebrew-versions
     homebrew_packages:
+      - name: wget
       - name: kubectl
       - name: kops
       - name: ghc

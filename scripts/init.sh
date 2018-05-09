@@ -82,7 +82,7 @@ ansible-playbook ${DOTSPATH}/playbooks/defaults.yml -i ${DOTSPATH}/hosts
 /usr/libexec/PlistBuddy -c 'Set :AppleSymbolicHotKeys:27:value:parameters:2 524288' ~/Library/Preferences/com.apple.symbolichotkeys.plist
 
 # Install software from dmg
-bash ${DOTSPATH}/scripts/dmgs/qfinder.sh
+bash ${DOTSPATH}/scripts/dmgs/main.sh
 # TODO: ERROR:
 # hdiutil: attach canceled
 # hdiutil: detach failed - ファイルまたはディレクトリがありません

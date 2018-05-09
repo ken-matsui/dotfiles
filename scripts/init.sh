@@ -110,6 +110,7 @@ sudo find / \
 -delete 2>/dev/null
 
 # Logging.
+terminal-notifier -message 'All done.' -sound Funk
 printf '\xE2\x9C\x94 \e[1;33m All done !!! \u2728 \u2728 \e[m\n'
 printf '\xE2\x9D\x97 \e[1;31m Reboot your computer...\e[m\n'
 read -n 1 -s -r -p 'Press any key to continue'

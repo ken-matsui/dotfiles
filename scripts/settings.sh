@@ -5,6 +5,10 @@
 sudo chsh -s /bin/zsh "${USER}" 1>/dev/null
 # Install zsh-prezto.
 git clone -q --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+
+# Install tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # Install fonts.
 brew tap sanemat/font 1>/dev/null
 brew reinstall --with-powerline ricty 1>/dev/null

@@ -13,6 +13,7 @@
       - name: awscli
       - name: terraform
       - name: tmux
+      - name: neovim
       - name: terminal-notifier
     homebrew_cask_packages:
       - name: google-chrome

@@ -28,7 +28,8 @@ while [[ $check == $str ]]; do
 	check="$(xcode-select --install 2>&1)"
 	sleep 1
 done
-sudo xcodebuild -license accept
+# Because Xcode has not been installed yet.
+#sudo xcodebuild -license accept
 
 # Install Homebrew
 yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" >/dev/null 2>&1

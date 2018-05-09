@@ -43,7 +43,9 @@ export PATH="$PATH:$HOME/.go_appengine"
 # gcloudのバグ対策
 export CLOUDSDK_PYTHON='/Users/matken/.pyenv/versions/2.7.14/bin/python2'
 
+# for nvim
 alias vim=nvim
+export XDG_CONFIG_HOME=$HOME/.config
 
 # tmux_automatically_attach attachs tmux session
 # automatically when your are in zsh

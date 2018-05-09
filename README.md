@@ -7,8 +7,8 @@ $ curl -fsSL https://raw.githubusercontent.com/matken11235/dotfiles/master/insta
 ```
 
 ## TODO
-* sublimeの起動をしないと，ディレクトリが作成されない．
 * ssh key
+* MATLAB
+* adobe
+* IntelliJ & CLion
 
-https://packagecontrol.io/docs/syncing
-http://www.sublimetext.com/docs/3/portable_license_keys.html

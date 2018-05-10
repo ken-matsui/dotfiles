@@ -19,3 +19,9 @@
         key: "Startup Window Settings"
         type: string
         value: "Solarized Dark xterm-256color"
+    - name: Set font of Ricty for Powerline 12pt, step 1
+      osx_defaults:
+        domain: com.apple.Terminal
+        key: "NSWindow Frame NSFontPanel"
+        type: string
+        value: "929 110 445 107 0 0 1440 878 "

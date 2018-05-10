@@ -49,6 +49,6 @@ export XDG_CONFIG_HOME=$HOME/.config
 
 # tmux_automatically_attach attachs tmux session
 # automatically when your are in zsh
-TMUXX_DIR=$(dirname $(dirname $(readlink ../.zshrc)))/scripts
-[[ -x $TMUXX_DIR/tmuxx.sh ]] && $TMUXX_DIR/tmuxx.sh
+TMUXX='~/dotfiles/scripts/tmuxx.sh'
+[[ -x $TMUXX ]] && $TMUXX
 

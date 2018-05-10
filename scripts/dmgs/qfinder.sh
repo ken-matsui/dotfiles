@@ -1,6 +1,6 @@
 #!/bin/bash
 
-url='https://eu1.qnap.com/Storage/Utility/QNAPQfinderProMac-2.5.0.1228.dmg'
+url='https://eu1.qnap.com/Storage/Utility/QNAPQfinderProMac-2.6.0.0214.dmg'
 filename=${url##*/}
 
 curl -fsLO $url

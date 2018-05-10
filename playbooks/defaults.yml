@@ -122,7 +122,7 @@
         key: JIMPrefPunctuationTypeKey
         type: int
         value: 3
-    - name: '¥' key generates \ (backslash)
+    - name: ¥ key generates \ (backslash)
       osx_defaults:
         domain: com.apple.inputmethod.Kotoeri
         key: JIMPrefCharacterForYenKey

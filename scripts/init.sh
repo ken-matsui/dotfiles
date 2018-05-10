@@ -92,7 +92,10 @@ bash ${DOTSPATH}/scripts/dmgs/main.sh
 bash ${DOTSPATH}/scripts/mas.sh
 
 # Install rust-lang
-echo '1' | curl https://sh.rustup.rs -sSf | sh 1>/dev/null
+trap 'rm -f ./tmp.sh' 0
+curl https://sh.rustup.rs -sSf > ./tmp.sh
+chmod +x ./tmp.sh
+./tmp.sh -y 1>/dev/null
 
 # settings
 SETTINGSDIR="${DOTSPATH}/scripts/settings"

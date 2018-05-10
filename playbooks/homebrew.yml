@@ -13,6 +13,7 @@
       - name: awscli
       - name: terraform
       - name: tmux
+      - name: reattach-to-user-namespace
       - name: neovim
       - name: terminal-notifier
       - name: cmake

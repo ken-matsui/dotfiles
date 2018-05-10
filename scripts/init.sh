@@ -46,41 +46,16 @@ bash "${DOTSPATH}/scripts/anyenv/main.sh"
 brew install ansible 1>/dev/null
 ansible-playbook ${DOTSPATH}/playbooks/homebrew.yml -i ${DOTSPATH}/hosts
 ansible-playbook ${DOTSPATH}/playbooks/defaults.yml -i ${DOTSPATH}/hosts
-# TODO: うまく動作しない
-# ERROR: ERROR! Syntax Error while loading YAML.
-#   found unknown escape character
-
-# The error appears to have been in '/Users/matken/dotfiles/playbooks/defaults.yml': line 131, column 28, but may
-# be elsewhere in the file depending on the exact syntax problem.
-
-# The offending line appears to be:
-
-#         value: 3
-#     - name: "'￥'キーで入力する文字: \(バックスラッシュ)"
-#                            ^ here
-# This one looks easy to fix.  It seems that there is a value started
-# with a quote, and the YAML parser is expecting to see the line ended
-# with the same kind of quote.  For instance:
-
-#     when: "ok" in result.stdout
-
-# Could be written as:
-
-#    when: '"ok" in result.stdout'
-
-# Or equivalently:
-
-#    when: "'ok' in result.stdout"
-
+ansible-playbook ${DOTSPATH}/playbooks/terminal.yml -i ${DOTSPATH}/hosts
 
 ## Increase grid spacing for icons on the desktop and in other icon views
-/usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:gridSpacing 85' ~/Library/Preferences/com.apple.finder.plist
+#/usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:gridSpacing 85' ~/Library/Preferences/com.apple.finder.plist
 ## Show item info near icons on the desktop and in other icon views
-/usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:showItemInfo true' ~/Library/Preferences/com.apple.finder.plist
+#/usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:showItemInfo true' ~/Library/Preferences/com.apple.finder.plist
 ## キーボードショートカット: 次のウィンドウを操作対象にする． => option + tab
-/usr/libexec/PlistBuddy -c 'Set :AppleSymbolicHotKeys:27:value:parameters:0 65535' ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c 'Set :AppleSymbolicHotKeys:27:value:parameters:1 48' ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c 'Set :AppleSymbolicHotKeys:27:value:parameters:2 524288' ~/Library/Preferences/com.apple.symbolichotkeys.plist
+#/usr/libexec/PlistBuddy -c 'Set :AppleSymbolicHotKeys:27:value:parameters:0 65535' ~/Library/Preferences/com.apple.symbolichotkeys.plist
+#/usr/libexec/PlistBuddy -c 'Set :AppleSymbolicHotKeys:27:value:parameters:1 48' ~/Library/Preferences/com.apple.symbolichotkeys.plist
+#/usr/libexec/PlistBuddy -c 'Set :AppleSymbolicHotKeys:27:value:parameters:2 524288' ~/Library/Preferences/com.apple.symbolichotkeys.plist
 
 # Install software from mas
 bash ${DOTSPATH}/scripts/mas.sh

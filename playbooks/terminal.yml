@@ -5,6 +5,10 @@
   tasks:
     - name: Download solarized dark theme
       shell: curl -fsSL https://raw.githubusercontent.com/altercation/solarized/master/osx-terminal.app-colors-solarized/xterm-256color/Solarized%20Dark%20xterm-256color.terminal -o Solarized\ Dark\ xterm-256color.terminal
+      #[WARNING]: Consider using the get_url or uri module rather than running curl.
+#If you need to use command because get_url or uri is insufficient you can add
+#warn=False to this command task or set command_warnings=False in ansible.cfg to
+#get rid of this message.
     - name: Load into the terminal
       shell: open Solarized\ Dark\ xterm-256color.terminal
     - name: Set default theme of Solarized Dark xterm-256color
@@ -28,6 +32,6 @@
     - name: Set font of Ricty for Powerline 12pt, step 2
       shell: /usr/libexec/PlistBuddy -c 'Set :"Window Settings":"Solarized Dark xterm-256color":Font <62706c69 73743030 d4010203 04050618 19582476 65727369 6f6e5824 6f626a65 63747359 24617263 68697665 72542474 6f701200 0186a0a4 07081112 55246e75 6c6cd409 0a0b0c0d 0e0f1056 4e535369 7a65584e 5366466c 61677356 4e534e61 6d655624 636c6173 73234028 00000000 00001010 80028003 5f101952 69637479 466f7250 6f776572 6c696e65 2d526567 756c6172 d2131415 165a2463 6c617373 6e616d65 5824636c 61737365 73564e53 466f6e74 a2151758 4e534f62 6a656374 5f100f4e 534b6579 65644172 63686976 6572d11a 1b54726f 6f748001 08111a23 2d32373c 424b525b 62697274 76789499 a4adb4b7 c0d2d5da 00000000 00000101 00000000 0000001c 00000000 00000000 00000000 000000dc>' ~/Library/Preferences/com.apple.Terminal.plist
     - name: Set Cursor for Vertical Bar
-      shell: /usr/libexec/PlistBuddy -c 'Set :"Window Settings":"Solarized Dark xterm-256color":CursorType 2' ~/Library/Preferences/com.apple.Terminal.plist
+      shell: /usr/libexec/PlistBuddy -c 'Add :"Window Settings":"Solarized Dark xterm-256color":CursorType integer 2' ~/Library/Preferences/com.apple.Terminal.plist
     - name: Set Blink cursor
-      shell: /usr/libexec/PlistBuddy -c 'Set :"Window Settings":"Solarized Dark xterm-256color":CursorBlink 1' ~/Library/Preferences/com.apple.Terminal.plist
+      shell: /usr/libexec/PlistBuddy -c 'Add :"Window Settings":"Solarized Dark xterm-256color":CursorBlink integer 1' ~/Library/Preferences/com.apple.Terminal.plist

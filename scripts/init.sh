@@ -11,7 +11,7 @@ Fqfogf2MqK44GsiwPA/Or+igzFaEjIgGbbqQYW3a8lIjEewI6MwCZFvHN4uBbxUF
 qTDvx0x8XGOryHRFMrZsjgkw3C4yGilHegdq6Zy2jBYfNSBSpVLMOp03TGgONTYg
 lDs9N35AWhVwB9i8GCf7a1Dj8LKD323GM7KCllG+qm9w2uPjOS81YjsuOhZTGkLZ' \
 | openssl enc -d -des -base64 -k 'dotfiles!!!'
-export DOTSPATH="$(cd $(dirname $0); pwd)/.."
+export DOTSPATH="$(dirname $(cd $(dirname $0); pwd))"
 
 # Config Task
 printf '[\e[32m?\e[m] Which Git name would you like to use? ' && read gitname

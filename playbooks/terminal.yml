@@ -3,6 +3,10 @@
 # defaults write domain key -type value
 # defaults write -g key -type value
   tasks:
+    - name: Download solarized dark theme
+      shell: curl -fsSL https://raw.githubusercontent.com/altercation/solarized/master/osx-terminal.app-colors-solarized/xterm-256color/Solarized%20Dark%20xterm-256color.terminal -o Solarized\ Dark\ xterm-256color.terminal
+    - name: Load into the terminal
+      shell: open Solarized\ Dark\ xterm-256color.terminal
     - name: Set default theme of Solarized Dark xterm-256color
       osx_defaults:
         domain: com.apple.Terminal

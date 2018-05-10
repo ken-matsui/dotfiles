@@ -8,23 +8,23 @@
 # defaults write domain key -type value
 # defaults write -g key -type value
   tasks:
-    - name: Darken the menu bar and the dock
+    - name: Use dark menu bar and Dock
       osx_defaults:
         key: AppleInterfaceStyle
         type: string
         value: Dark
-    - name: 書類を閉じるときに変更内容を保持するかどうかを確認
+    - name: Ask to keep changes when closing documents
       osx_defaults:
         key: NSCloseAlwaysConfirmsChanges
         type: bool
         value: true
-    - name: "スリープとスクリーンセーバの解除にパスワードを要求 開始後: すぐに"
+    - name: Require password immediately after sleep or screen saver begins
       osx_defaults:
         domain: com.apple.screensaver
         key: askForPasswordDelay
         type: int
         value: 0
-    - name: "ファイアウォール: 入"
+    - name: Turn on Firewall
       osx_defaults:
         domain: /Library/Preferences/com.apple.alf
         key: globalstate
@@ -36,19 +36,19 @@
         key: tilesize
         type: int
         value: 40
-    - name: Dock 拡大
+    - name: Turn on Dock Magnification
       osx_defaults:
         domain: com.apple.dock
         key: magnification
         type: bool
         value: true
-    - name: Dock 拡大量
+    - name: Dock Magnification
       osx_defaults:
         domain: com.apple.dock
         key: largesize
         type: int
         value: 113
-    - name: ウインドウをアプリケーションアイコンにしまう
+    - name: Minimize windows into application icon
       osx_defaults:
         domain: com.apple.dock
         key: minimize-to-application
@@ -72,63 +72,57 @@
         key: ResetLaunchPad
         type: bool
         value: TRUE
-    - name: ハードディスクをデスクトップに表示
+    - name: Show Hard disks on the desktop
       osx_defaults:
         domain: com.apple.finder
         key: ShowHardDrivesOnDesktop
         type: int
         value: 1
-    - name: 新規Finderウィンドウで次を表示
+    - name: New Finder windows show...
       osx_defaults:
         domain: com.apple.finder
         key: NewWindowTarget
         type: string
         value: PfDo
-    - name: 新規Finderウィンドウで次を表示
+    - name: New Finder windows show...
       osx_defaults:
         domain: com.apple.finder
         key: NewWindowTargetPath
         type: string
         value: "file://~/Documents/"
-    - name: サイドバーの最近使ったタグを非表示
+    - name: Do not show Recents in the sidebar
       osx_defaults:
         domain: com.apple.finder
         key: ShowRecentTags
         type: int
         value: 0
-    - name: クイックルックで文字列を選択できるように
-      osx_defaults:
-        domain: com.apple.finder
-        key: QLEnableTextSelection
-        type: bool
-        value: true
     - name: ダイアログ表示やウィンドウリサイズ速度を高速化
       osx_defaults:
         key: NSWindowResizeTime
         value: 0.1
-    - name: "キーのリピート: 最大"
+    - name: Fastest Key Repeat
       osx_defaults:
         key: KeyRepeat
         type: int
         value: 2
-    - name: "リピート入力認識までの時間: 最大"
+    - name: Shortest Delay Until Repeat
       osx_defaults:
         key: InitialKeyRepeat
         type: int
         value: 15
-    - name: ライブ変換オフ
+    - name: Turn off Live Conversion
       osx_defaults:
         domain: com.apple.inputmethod.Kotoeri
         key: JIMPrefLiveConversionKey
         type: int
         value: 0
-    - name: "句読点の種類: ．と，"
+    - name: Punctuation is '．and ，'
       osx_defaults:
         domain: com.apple.inputmethod.Kotoeri
         key: JIMPrefPunctuationTypeKey
         type: int
         value: 3
-    - name: "'￥'キーで入力する文字 -> \ backslash"
+    - name: '¥' key generates \ (backslash)
       osx_defaults:
         domain: com.apple.inputmethod.Kotoeri
         key: JIMPrefCharacterForYenKey
@@ -156,12 +150,12 @@
         domain: com.apple.screencapture
         key: location
         value: ~/Downloads
-    - name: "軌跡の速さ: 最速"
+    - name: Fastest Tracking speed
       osx_defaults:
         domain: com.apple.trackpad.scaling
         value: 3
     # https://www.defaults-write.com/display-the-file-extensions-in-finder/
-    - name: "Finder: 全てのファイル名拡張子を表示"
+    - name: Show all filename extensions on Finder
       osx_defaults:
         key: AppleShowAllExtensions
         type: bool
@@ -170,7 +164,7 @@
       shell: /usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:gridSpacing 85' ~/Library/Preferences/com.apple.finder.plist
     - name: Show item info near icons on the desktop and in other icon views
       shell: /usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:showItemInfo true' ~/Library/Preferences/com.apple.finder.plist
-    - name: "キーボードショートカット: 次のウィンドウを操作対象にする． => option + tab"
+    - name: Move focus to next window by 'option + tab' on Keyboard Shortcuts
       shell: /usr/libexec/PlistBuddy -c 'Set :AppleSymbolicHotKeys:27:value:parameters:0 65535' ~/Library/Preferences/com.apple.symbolichotkeys.plist
     - name: same process
       shell: /usr/libexec/PlistBuddy -c 'Set :AppleSymbolicHotKeys:27:value:parameters:1 48' ~/Library/Preferences/com.apple.symbolichotkeys.plist

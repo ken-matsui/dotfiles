@@ -11,4 +11,5 @@ $ bash -c "$(curl -fsSL https://raw.githubusercontent.com/matken11235/dotfiles/m
 * MATLAB
 * adobe
 * IntelliJ & CLion
+* Terminal.app theme and font
 

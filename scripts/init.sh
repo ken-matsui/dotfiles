@@ -98,10 +98,7 @@ chmod +x ./tmp.sh
 ./tmp.sh -y 1>/dev/null
 
 # config
-CONFIGDIR="${DOTSPATH}/config"
-for file in $( ls $CONFIGDIR ); do
-	bash ${CONFIGDIR}/${file}
-done
+bash "${DOTSPATH}/scripts/config.sh"
 
 # Japanese to English.
 sudo find / \

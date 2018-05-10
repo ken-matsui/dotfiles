@@ -1,0 +1,17 @@
+- hosts: localhost
+  connection: local
+# defaults write domain key -type value
+# defaults write -g key -type value
+  tasks:
+    - name: Set default theme of Solarized Dark xterm-256color
+      osx_defaults:
+        domain: com.apple.Terminal
+        key: "Default Window Settings"
+        type: string
+        value: "Solarized Dark xterm-256color"
+    - name: Set startup theme of Solarized Dark xterm-256color
+      osx_defaults:
+        domain: com.apple.Terminal
+        key: "Startup Window Settings"
+        type: string
+        value: "Solarized Dark xterm-256color"

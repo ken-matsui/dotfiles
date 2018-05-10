@@ -96,7 +96,7 @@
         key: ShowRecentTags
         type: int
         value: 0
-    - name: ダイアログ表示やウィンドウリサイズ速度を高速化
+    - name: Speed up dialog display and window resize speed
       osx_defaults:
         key: NSWindowResizeTime
         value: 0.1

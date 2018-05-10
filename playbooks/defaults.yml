@@ -128,7 +128,7 @@
         key: JIMPrefPunctuationTypeKey
         type: int
         value: 3
-    - name: "'￥'キーで入力する文字: \(バックスラッシュ)"
+    - name: "'￥'キーで入力する文字 -> \ backslash"
       osx_defaults:
         domain: com.apple.inputmethod.Kotoeri
         key: JIMPrefCharacterForYenKey

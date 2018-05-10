@@ -82,12 +82,6 @@ ansible-playbook ${DOTSPATH}/playbooks/defaults.yml -i ${DOTSPATH}/hosts
 /usr/libexec/PlistBuddy -c 'Set :AppleSymbolicHotKeys:27:value:parameters:1 48' ~/Library/Preferences/com.apple.symbolichotkeys.plist
 /usr/libexec/PlistBuddy -c 'Set :AppleSymbolicHotKeys:27:value:parameters:2 524288' ~/Library/Preferences/com.apple.symbolichotkeys.plist
 
-# Install software from dmg
-bash ${DOTSPATH}/scripts/dmgs/main.sh
-# TODO: ERROR:
-# hdiutil: attach canceled
-# hdiutil: detach failed - ファイルまたはディレクトリがありません
-
 # Install software from mas
 bash ${DOTSPATH}/scripts/mas.sh
 
@@ -109,6 +103,9 @@ sudo find / \
 	-path "/Volumes" -prune \
 \) -type f -name .localized \
 -delete 2>/dev/null
+
+# Install software from dmg
+bash ${DOTSPATH}/scripts/dmgs/main.sh
 
 # Logging.
 terminal-notifier -message 'All done.' -sound Funk

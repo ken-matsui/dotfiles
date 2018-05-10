@@ -16,7 +16,7 @@ font_ver=`ls /usr/local/Cellar/ricty`
 cp -f /usr/local/Cellar/ricty/${font_ver}/share/fonts/Ricty*.ttf ${HOME}/Library/Fonts/
 
 # Link setting files.
-for setting in `find ${DOTSPATH}/settings -type f`; do
-	ln -sf "${DOTSPATH}/settings/${setting##*/}" "${HOME}/${setting##*/}"
+for conf in `find ${DOTSPATH}/config -type f`; do
+	ln -sf "${DOTSPATH}/config/${conf##*/}" "${HOME}/${conf##*/}"
 done
 

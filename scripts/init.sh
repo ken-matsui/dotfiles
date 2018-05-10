@@ -97,10 +97,10 @@ curl https://sh.rustup.rs -sSf > ./tmp.sh
 chmod +x ./tmp.sh
 ./tmp.sh -y 1>/dev/null
 
-# settings
-SETTINGSDIR="${DOTSPATH}/scripts/settings"
-for file in $( ls $SETTINGSDIR ); do
-	bash ${SETTINGSDIR}/${file}
+# config
+CONFIGDIR="${DOTSPATH}/config"
+for file in $( ls $CONFIGDIR ); do
+	bash ${CONFIGDIR}/${file}
 done
 
 # Japanese to English.

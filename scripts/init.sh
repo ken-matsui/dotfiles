@@ -41,6 +41,13 @@ git config --global user.email $gitemail
 
 # Install anyenv and *env
 bash "${DOTSPATH}/scripts/anyenv/main.sh"
+# Install rust-lang
+trap 'rm -f ./tmp.sh' 0
+curl https://sh.rustup.rs -sSf > ./tmp.sh
+chmod +x ./tmp.sh
+./tmp.sh -y 1>/dev/null
+# config
+bash "${DOTSPATH}/scripts/config.sh"
 
 # Install ansible (and accompany some of it)
 brew install ansible 1>/dev/null
@@ -59,15 +66,6 @@ ansible-playbook ${DOTSPATH}/playbooks/terminal.yml -i ${DOTSPATH}/hosts
 
 # Install software from mas
 bash ${DOTSPATH}/scripts/mas.sh
-
-# Install rust-lang
-trap 'rm -f ./tmp.sh' 0
-curl https://sh.rustup.rs -sSf > ./tmp.sh
-chmod +x ./tmp.sh
-./tmp.sh -y 1>/dev/null
-
-# config
-bash "${DOTSPATH}/scripts/config.sh"
 
 # Japanese to English.
 sudo find / \

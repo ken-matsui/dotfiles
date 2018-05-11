@@ -1,0 +1,31 @@
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  become: no
+  vars:
+    mas:
+      - name: Xcode (9.3)
+        id: 497799835
+      - name: Pages (7.0.1)
+        id: 409201541
+      - nane: Numbers (5.0.1)
+        id: 409203825
+      - nane: Keynote (8.0.1)
+        id: 409183694
+      - nane: iMovie (10.1.9)
+        id: 497799835
+      - nane: Slack (3.1.1)
+        id: 803453959
+      - nane: LINE (5.7.0)
+        id: 539883307
+      - nane: Microsoft Remote Desktop (10.1.8)
+        id: 1295203466
+  tasks:
+    # mas で AppStore のアプリをインストールする
+    # 大容量ファイルのダウンロード等、時間がかかるタスクなので、本タスクを実行したい場合は明示的に
+    # -e "thorough=true" を指定する
+    # 例: ansible-playbook localhost.yaml -e 'thorough=true'
+    - name: install appstore applications
+      command: mas install "{{ item.id }}"
+      with_items: mas
+      when: thorough == "true"

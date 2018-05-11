@@ -51,18 +51,9 @@ bash "${DOTSPATH}/scripts/config.sh"
 
 # Install ansible (and accompany some of it)
 brew install ansible 1>/dev/null
-ansible-playbook ${DOTSPATH}/playbooks/homebrew.yml -i ${DOTSPATH}/hosts
-ansible-playbook ${DOTSPATH}/playbooks/defaults.yml -i ${DOTSPATH}/hosts
-ansible-playbook ${DOTSPATH}/playbooks/terminal.yml -i ${DOTSPATH}/hosts
-
-## Increase grid spacing for icons on the desktop and in other icon views
-#/usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:gridSpacing 85' ~/Library/Preferences/com.apple.finder.plist
-## Show item info near icons on the desktop and in other icon views
-#/usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:showItemInfo true' ~/Library/Preferences/com.apple.finder.plist
-## キーボードショートカット: 次のウィンドウを操作対象にする． => option + tab
-#/usr/libexec/PlistBuddy -c 'Set :AppleSymbolicHotKeys:27:value:parameters:0 65535' ~/Library/Preferences/com.apple.symbolichotkeys.plist
-#/usr/libexec/PlistBuddy -c 'Set :AppleSymbolicHotKeys:27:value:parameters:1 48' ~/Library/Preferences/com.apple.symbolichotkeys.plist
-#/usr/libexec/PlistBuddy -c 'Set :AppleSymbolicHotKeys:27:value:parameters:2 524288' ~/Library/Preferences/com.apple.symbolichotkeys.plist
+for book in $(find ${DOTSPATH}/playbooks -type f); do
+	ansible-playbook "$book" -i ${DOTSPATH}/hosts
+done
 
 # Install software from mas
 bash ${DOTSPATH}/scripts/mas.sh

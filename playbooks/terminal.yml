@@ -1,5 +1,8 @@
 - hosts: localhost
   connection: local
+  handlers:
+    - name: Restart Terminal
+      shell: "killall Terminal"
 # defaults write domain key -type value
 # defaults write -g key -type value
   tasks:

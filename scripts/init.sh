@@ -51,12 +51,10 @@ bash "${DOTSPATH}/scripts/config.sh"
 
 # Install ansible (and accompany some of it)
 brew install ansible 1>/dev/null
-for book in $(find ${DOTSPATH}/playbooks -type f); do
+for book in $(find ${DOTSPATH}/playbooks -type f | grep -v mas.yml); do
 	ansible-playbook "$book" -i ${DOTSPATH}/hosts
 done
-
-# Install software from mas
-bash ${DOTSPATH}/scripts/mas.sh
+ansible-playbook ${DOTSPATH}/playbooks/mas.yml -e 'thorough=true'
 
 # Japanese to English.
 sudo find / \

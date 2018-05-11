@@ -4,11 +4,7 @@
 # defaults write -g key -type value
   tasks:
     - name: Download solarized dark theme
-      shell: curl -fsSL https://raw.githubusercontent.com/altercation/solarized/master/osx-terminal.app-colors-solarized/xterm-256color/Solarized%20Dark%20xterm-256color.terminal -o Solarized\ Dark\ xterm-256color.terminal
-      #[WARNING]: Consider using the get_url or uri module rather than running curl.
-#If you need to use command because get_url or uri is insufficient you can add
-#warn=False to this command task or set command_warnings=False in ansible.cfg to
-#get rid of this message.
+      get_url: url=https://raw.githubusercontent.com/altercation/solarized/master/osx-terminal.app-colors-solarized/xterm-256color/Solarized%20Dark%20xterm-256color.terminal dest=~/Solarized\ Dark\ xterm-256color.terminal
     - name: Load into the terminal
       shell: open Solarized\ Dark\ xterm-256color.terminal
     - name: Set default theme of Solarized Dark xterm-256color

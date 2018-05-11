@@ -10,10 +10,8 @@ git clone -q --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:
 git clone -q https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Install fonts.
-brew tap sanemat/font 1>/dev/null
-brew reinstall --with-powerline ricty 1>/dev/null
-font_ver=`ls /usr/local/Cellar/ricty`
-cp -f /usr/local/Cellar/ricty/${font_ver}/share/fonts/Ricty*.ttf ${HOME}/Library/Fonts/
+brew uninstall ricty 1>/dev/null
+cp -f /usr/local/Cellar/ricty/$(ls /usr/local/Cellar/ricty)/share/fonts/Ricty*.ttf ${HOME}/Library/Fonts/
 
 # Link setting files.
 for conf in $(find ${DOTSPATH}/config -type f); do

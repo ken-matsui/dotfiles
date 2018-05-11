@@ -3,6 +3,7 @@
   vars:
     homebrew_taps:
       - caskroom/homebrew-versions
+      - sanemat/font
     homebrew_packages:
       - name: kubectl
       - name: kops

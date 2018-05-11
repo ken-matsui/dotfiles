@@ -39,6 +39,7 @@
       homebrew:
         name: '{{ item.name }}'
         state: '{{ item.state | default("present") }}'
+        install_options: '{{ item.Install | default() | join(',') }}'
       with_items: '{{ homebrew_packages }}'
     - name: homebrew cask packages install
       homebrew_cask: name={{ item.name }} state=installed

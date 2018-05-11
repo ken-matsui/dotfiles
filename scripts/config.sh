@@ -11,7 +11,6 @@ git clone -q https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Install fonts.
 brew uninstall ricty 1>/dev/null
-cp -f /usr/local/Cellar/ricty/$(ls /usr/local/Cellar/ricty)/share/fonts/Ricty*.ttf ${HOME}/Library/Fonts/
 
 # Link setting files.
 for conf in $(find ${DOTSPATH}/config -type f); do

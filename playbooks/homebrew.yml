@@ -3,7 +3,6 @@
   vars:
     homebrew_taps:
       - caskroom/homebrew-versions
-      - sanemat/font
     homebrew_packages:
       - name: kubectl
       - name: kops
@@ -19,7 +18,6 @@
       - name: terminal-notifier
       - name: cmake
       - name: kryptco/tap/kr
-      - { name: ricty, install_options: with-powerline }
     homebrew_cask_packages:
       - name: google-chrome
       - name: firefox

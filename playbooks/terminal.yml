@@ -22,6 +22,16 @@
         key: "Startup Window Settings"
         type: string
         value: "Solarized Dark xterm-256color"
+    - name: Install Ricty for Powerline
+      homebrew_tap:
+        name: sanemat/font
+    - name: Install Ricty for Powerline
+      homebrew:
+        name: ricty
+        state: present
+        install_options: with-powerline
+    - name: Install Ricty for Powerline
+      shell: cp -f /usr/local/Cellar/ricty/$(ls /usr/local/Cellar/ricty)/share/fonts/Ricty*.ttf ~/Library/Fonts/
     - name: Set font of Ricty for Powerline 12pt, step 1
       osx_defaults:
         domain: com.apple.Terminal

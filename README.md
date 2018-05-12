@@ -11,12 +11,13 @@ $ bash -c "$(curl -fsSL https://raw.githubusercontent.com/matken11235/dotfiles/m
 #### Install
 * Adobe
 * VS Code
-* IntelliJ IDEA & CLion
+* IntelliJ IDEA & CLion -> material theme
 * MATLAB (by Ritsumeikan univ.)
 * Microsoft office (by Ritsumeikan univ.)
 * McAfee (by Ritsumeikan univ.)
 
 ## TODO
+* ↑ config file
 * ~/.ssh
 * ~/.aws
 * ~/.kube

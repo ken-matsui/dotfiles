@@ -26,4 +26,5 @@ homebrew_cask_packages:
   - name: minikube
   - name: virtualbox
   - name: vagrant
+  - name: qfinder
 

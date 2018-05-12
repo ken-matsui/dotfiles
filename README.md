@@ -20,4 +20,5 @@ $ bash -c "$(curl -fsSL https://raw.githubusercontent.com/matken11235/dotfiles/m
 
 ## TODO
 * **↑ config file**
+
 google cloud sdk???

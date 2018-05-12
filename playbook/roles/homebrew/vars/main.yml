@@ -1,0 +1,29 @@
+---
+homebrew_taps:
+  - caskroom/homebrew-versions
+homebrew_packages:
+  - name: kubectl
+  - name: kops
+  - name: ghc
+  - name: boost
+  - name: boost-python
+  - name: mas
+  - name: awscli
+  - name: terraform
+  - name: tmux
+  - name: reattach-to-user-namespace
+  - name: neovim
+  - name: terminal-notifier
+  - name: cmake
+  - name: tree
+  - name: kryptco/tap/kr
+homebrew_cask_packages:
+  - name: google-chrome
+  - name: iterm2
+  - name: firefox
+  - name: skype
+  - name: docker
+  - name: minikube
+  - name: virtualbox
+  - name: vagrant
+

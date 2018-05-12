@@ -1,0 +1,33 @@
+---
+- name: Install anyenv
+  git:
+    repo: https://github.com/riywo/anyenv
+    dest: ~/.anyenv
+- name: Set anyenv config
+    lineinfile:
+      path: ~/.zshrc
+      regexp: '^export PATH="$HOME/.anyenv/bin:$PATH"'
+      line: 'export PATH="$HOME/.anyenv/bin:$PATH"'
+- name: Set anyenv config
+    lineinfile:
+      path: ~/.zshrc
+      regexp: '^eval "$(anyenv init - --no-rehash)"'
+      line: 'eval "$(anyenv init - --no-rehash)"'
+- name: Install anyenv-update
+    git:
+      repo: https://github.com/znz/anyenv-update.git
+      dest: ~/.anyenv/plugins/anyenv-update
+- name: Install erlang
+    homebrew:
+      name: erlang
+      state: present
+- name: Install elixir-build
+    homebrew:
+      name: elixir-build
+      state: present
+- name: anyenv \*env install
+    command: anyenv install "{{ item.name }}"
+    with_items: '{{ anyenv }}'
+- name: \*env install
+    shell: /bin/zsh -lc "VER={{ item.version }} {{ item.name }} install $VER && {{ item.name }} global $VER"
+

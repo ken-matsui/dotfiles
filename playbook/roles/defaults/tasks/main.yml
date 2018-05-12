@@ -1,0 +1,166 @@
+---
+# defaults write domain key -type value
+# defaults write -g key -type value
+- name: Use dark menu bar and Dock
+  osx_defaults:
+    key: AppleInterfaceStyle
+    type: string
+    value: Dark
+- name: Ask to keep changes when closing documents
+  osx_defaults:
+    key: NSCloseAlwaysConfirmsChanges
+    type: bool
+    value: true
+- name: Require password immediately after sleep or screen saver begins
+  osx_defaults:
+    domain: com.apple.screensaver
+    key: askForPasswordDelay
+    type: int
+    value: 0
+- name: Turn on Firewall
+  osx_defaults:
+    domain: com.apple.alf
+    key: globalstate
+    type: int
+    value: 1
+- name: Dock size
+  osx_defaults:
+    domain: com.apple.dock
+    key: tilesize
+    type: int
+    value: 40
+- name: Turn on Dock Magnification
+  osx_defaults:
+    domain: com.apple.dock
+    key: magnification
+    type: bool
+    value: true
+- name: Dock Magnification
+  osx_defaults:
+    domain: com.apple.dock
+    key: largesize
+    type: int
+    value: 113
+- name: Minimize windows into application icon
+  osx_defaults:
+    domain: com.apple.dock
+    key: minimize-to-application
+    type: bool
+    value: true
+- name: Launchpad icon size
+  osx_defaults:
+    domain: com.apple.dock
+    key: springboard-columns
+    type: int
+    value: 9
+- name: Launchpad icon size
+  osx_defaults:
+    domain: com.apple.dock
+    key: springboard-rows
+    type: int
+    value: 7
+- name: Launchpad icon size
+  osx_defaults:
+    domain: com.apple.dock
+    key: ResetLaunchPad
+    type: bool
+    value: TRUE
+- name: Show Hard disks on the desktop
+  osx_defaults:
+    domain: com.apple.finder
+    key: ShowHardDrivesOnDesktop
+    type: int
+    value: 1
+- name: New Finder windows show...
+  osx_defaults:
+    domain: com.apple.finder
+    key: NewWindowTarget
+    type: string
+    value: PfDo
+- name: New Finder windows show...
+  osx_defaults:
+    domain: com.apple.finder
+    key: NewWindowTargetPath
+    type: string
+    value: "file://~/Documents/"
+- name: Do not show Recents in the sidebar
+  osx_defaults:
+    domain: com.apple.finder
+    key: ShowRecentTags
+    type: int
+    value: 0
+- name: Speed up dialog display and window resize speed
+  osx_defaults:
+    key: NSWindowResizeTime
+    value: 0.1
+- name: Fastest Key Repeat
+  osx_defaults:
+    key: KeyRepeat
+    type: int
+    value: 2
+- name: Shortest Delay Until Repeat
+  osx_defaults:
+    key: InitialKeyRepeat
+    type: int
+    value: 15
+- name: Turn off Live Conversion
+  osx_defaults:
+    domain: com.apple.inputmethod.Kotoeri
+    key: JIMPrefLiveConversionKey
+    type: int
+    value: 0
+- name: Punctuation is '．and ，'
+  osx_defaults:
+    domain: com.apple.inputmethod.Kotoeri
+    key: JIMPrefPunctuationTypeKey
+    type: int
+    value: 3
+- name: ¥ key generates \ (backslash)
+  osx_defaults:
+    domain: com.apple.inputmethod.Kotoeri
+    key: JIMPrefCharacterForYenKey
+    type: int
+    value: 1
+- name: Show the battery percentage from the menu bar
+  osx_defaults:
+    domain: com.apple.menuextra.battery
+    key: ShowPercent
+    type: string
+    value: YES
+- name: Screen shot
+  osx_defaults:
+    domain: com.apple.screencapture
+    key: name
+    value: ScreenShot
+- name: Screen shot
+  osx_defaults:
+    domain: com.apple.screencapture
+    key: include-date
+    type: bool
+    value: false
+- name: Screen shot
+  osx_defaults:
+    domain: com.apple.screencapture
+    key: location
+    value: ~/Downloads
+- name: Fastest Tracking speed
+  osx_defaults:
+    domain: com.apple.trackpad
+    key: scaling
+    value: 3
+# https://www.defaults-write.com/display-the-file-extensions-in-finder/
+- name: Show all filename extensions on Finder
+  osx_defaults:
+    key: AppleShowAllExtensions
+    type: bool
+    value: true
+- name: Increase grid spacing for icons on the desktop and in other icon views
+  shell: /usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:gridSpacing 85' ~/Library/Preferences/com.apple.finder.plist
+- name: Show item info near icons on the desktop and in other icon views
+  shell: /usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:showItemInfo true' ~/Library/Preferences/com.apple.finder.plist
+- name: Move focus to next window by 'option + tab' on Keyboard Shortcuts
+ shell: /usr/libexec/PlistBuddy -c 'Set :AppleSymbolicHotKeys:27:value:parameters:0 65535' ~/Library/Preferences/com.apple.symbolichotkeys.plist
+- name: same process
+  shell: /usr/libexec/PlistBuddy -c 'Set :AppleSymbolicHotKeys:27:value:parameters:1 48' ~/Library/Preferences/com.apple.symbolichotkeys.plist
+- name: same process
+  shell: /usr/libexec/PlistBuddy -c 'Set :AppleSymbolicHotKeys:27:value:parameters:2 524288' ~/Library/Preferences/com.apple.symbolichotkeys.plist

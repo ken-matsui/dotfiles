@@ -1,0 +1,5 @@
+---
+handlers:
+  - name: Restart Terminal
+    shell: "killall Terminal"
+

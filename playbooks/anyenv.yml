@@ -1,0 +1,49 @@
+- hosts: localhost
+  connection: local
+  vars:
+    anyenv:
+      - name: exenv
+        version: $(exenv install -l | grep -v : | grep -v - | grep -v / | head -1)
+      - name: goenv
+        version: $(goenv install -l | tail -1)
+      - name: ndenv
+        version: $(ndenv install -l | grep -v - | tail -1)
+      - name: pyenc
+        version: $(pyenv install -l | grep -v - | grep -v b | grep 3.6.* | tail -1)
+      - name: rbenv
+        version: $(rbenv install -l | grep -v - | tail -1)
+  tasks:
+    - name: Install anyenv
+      git:
+        repo: https://github.com/riywo/anyenv
+        dest: ~/.anyenv
+    - name: Set anyenv config
+      lineinfile:
+        path: ~/.zshrc
+        regexp: '^export PATH="$HOME/.anyenv/bin:$PATH"'
+        line: 'export PATH="$HOME/.anyenv/bin:$PATH"'
+    - name: Set anyenv config
+      lineinfile:
+        path: ~/.zshrc
+        regexp: '^eval "$(anyenv init - --no-rehash)"'
+        line: 'eval "$(anyenv init - --no-rehash)"'
+    - name: Install anyenv-update
+      git:
+        repo: https://github.com/znz/anyenv-update.git
+        dest: ~/.anyenv/plugins/anyenv-update
+
+    - name: Install erlang
+      homebrew:
+        name: erlang
+        state: present
+    - name: Install elixir-build
+      homebrew:
+        name: elixir-build
+        state: present
+
+    - name: anyenv \*env install
+      command: anyenv install "{{ item.name }}"
+      with_items: anyenv
+    - name: \*env install
+      shell: /bin/zsh -lc "VER={{ item.version }} {{ item.name }} install $VER && {{ item.name }} global $VER"
+

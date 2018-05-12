@@ -39,8 +39,6 @@ brew install git 1>/dev/null
 git config --global user.name $gitname
 git config --global user.email $gitemail
 
-# Install anyenv and *env
-bash "${DOTSPATH}/scripts/anyenv/main.sh"
 # Install rust-lang
 trap 'rm -f ./tmp.sh' 0
 curl https://sh.rustup.rs -sSf > ./tmp.sh

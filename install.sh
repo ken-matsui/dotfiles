@@ -45,6 +45,8 @@ git clone -q https://github.com/matken11235/dotfiles.git
 
 # Install rust-lang
 curl https://sh.rustup.rs -sSf | bash -s -- -y 1>/dev/null
+# Install anyenv
+bash ${DOTSPATH}/scripts/anyenv/main.sh
 # config
 bash "${DOTSPATH}/scripts/config.sh"
 

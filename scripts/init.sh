@@ -48,9 +48,7 @@ bash "${DOTSPATH}/scripts/config.sh"
 
 # Install ansible (and accompany some of it)
 brew install ansible 1>/dev/null
-for book in $(find ${DOTSPATH}/playbook -type f); do
-	ansible-playbook "$book" -i ${DOTSPATH}/hosts
-done
+ansible-playbook ${DOTSPATH}/playbook/main.yml -i ${DOTSPATH}/playbook/hosts
 
 # Japanese to English.
 sudo find / \

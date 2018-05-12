@@ -9,7 +9,12 @@ git clone -q --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:
 # Install tpm
 git clone -q https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+# Install Ricty with Powerline
+brew install sanemat/font/ricty --with-powerline
+cp -f /usr/local/opt/ricty/share/fonts/Ricty*.ttf ~/Library/Fonts/
+fc-cache -vf
+
 # Link setting files.
-for conf in $(find ${DOTSPATH}/config -type f); do
+for conf in $(find ${DOTSPATH}/config -type f | grep -v 'com.googlecode.iterm2.plist'); do
 	ln -sf "$conf" "${HOME}/${conf##*/}"
 done

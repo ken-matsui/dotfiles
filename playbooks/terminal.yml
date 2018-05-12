@@ -7,9 +7,9 @@
 # defaults write -g key -type value
   tasks:
     - name: Download solarized dark theme
-      get_url: >
-        url=https://raw.githubusercontent.com/altercation/solarized/master/osx-terminal.app-colors-solarized/xterm-256color/Solarized%20Dark%20xterm-256color.terminal
-        dest=~/Solarized\ Dark\ xterm-256color.terminal
+      get_url:
+        url: https://raw.githubusercontent.com/altercation/solarized/master/osx-terminal.app-colors-solarized/xterm-256color/Solarized%20Dark%20xterm-256color.terminal
+        dest: ~/Solarized\ Dark\ xterm-256color.terminal
     - name: Load into the terminal
       shell: open Solarized\ Dark\ xterm-256color.terminal
     - name: Set default theme of Solarized Dark xterm-256color

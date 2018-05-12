@@ -28,8 +28,6 @@ while [[ $check == $str ]]; do
 	check="$(xcode-select --install 2>&1)"
 	sleep 1
 done
-# Because Xcode has not been installed yet.
-#sudo xcodebuild -license accept
 
 # Install Homebrew
 yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" >/dev/null 2>&1
@@ -40,10 +38,11 @@ git config --global user.name $gitname
 git config --global user.email $gitemail
 
 # Install rust-lang
-trap 'rm -f ./tmp.sh' 0
-curl https://sh.rustup.rs -sSf > ./tmp.sh
-chmod +x ./tmp.sh
-./tmp.sh -y 1>/dev/null
+RUSTUP='rustup.sh'
+trap 'rm -f ./rustup.sh' 0
+curl https://sh.rustup.rs -sSf > ./$RUSTUP
+chmod +x ./$RUSTUP
+./$RUSTUP -y 1>/dev/null
 # config
 bash "${DOTSPATH}/scripts/config.sh"
 

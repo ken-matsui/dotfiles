@@ -27,5 +27,5 @@
     # 例: ansible-playbook localhost.yaml -e 'thorough=true'
     - name: install appstore applications
       command: mas install "{{ item.id }}"
-      with_items: mas
+      with_items: '{{ mas }}'
       when: thorough == "true"

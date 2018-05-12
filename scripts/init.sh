@@ -51,7 +51,7 @@ brew install ansible 1>/dev/null
 for book in $(find ${DOTSPATH}/playbooks -type f | grep -v mas.yml); do
 	ansible-playbook "$book" -i ${DOTSPATH}/hosts
 done
-ansible-playbook ${DOTSPATH}/playbooks/mas.yml -e 'thorough=true'
+ansible-playbook ${DOTSPATH}/playbooks/mas.yml -e 'thorough=true' -i ${DOTSPATH}/hosts
 
 # Japanese to English.
 sudo find / \

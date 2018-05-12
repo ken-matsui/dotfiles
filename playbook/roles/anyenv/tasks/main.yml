@@ -17,14 +17,6 @@
     git:
       repo: https://github.com/znz/anyenv-update.git
       dest: ~/.anyenv/plugins/anyenv-update
-- name: Install erlang
-    homebrew:
-      name: erlang
-      state: present
-- name: Install elixir-build
-    homebrew:
-      name: elixir-build
-      state: present
 - name: anyenv \*env install
     command: anyenv install "{{ item.name }}"
     with_items: '{{ anyenv }}'

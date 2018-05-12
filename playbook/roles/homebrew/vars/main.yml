@@ -17,6 +17,8 @@ homebrew_packages:
   - name: cmake
   - name: tree
   - name: kryptco/tap/kr
+  - name: erlang
+  - name: elixir-build
 homebrew_cask_packages:
   - name: google-chrome
   - name: iterm2

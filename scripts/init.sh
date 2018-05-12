@@ -38,11 +38,7 @@ git config --global user.name $gitname
 git config --global user.email $gitemail
 
 # Install rust-lang
-RUSTUP='rustup.sh'
-trap 'rm -f ./rustup.sh' 0
-curl https://sh.rustup.rs -sSf > ./$RUSTUP
-chmod +x ./$RUSTUP
-./$RUSTUP -y 1>/dev/null
+curl https://sh.rustup.rs -sSf | bash -s -- -y 1>/dev/null
 # config
 bash "${DOTSPATH}/scripts/config.sh"
 

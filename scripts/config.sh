@@ -9,9 +9,6 @@ git clone -q --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:
 # Install tpm
 git clone -q https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# Install fonts.
-brew uninstall ricty 1>/dev/null
-
 # Link setting files.
 for conf in $(find ${DOTSPATH}/config -type f); do
 	ln -sf "$conf" "${HOME}/${conf##*/}"

@@ -43,7 +43,7 @@
 
     - name: anyenv \*env install
       command: anyenv install "{{ item.name }}"
-      with_items: anyenv
+      with_items: '{{ anyenv }}'
     - name: \*env install
       shell: /bin/zsh -lc "VER={{ item.version }} {{ item.name }} install $VER && {{ item.name }} global $VER"
 

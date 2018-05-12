@@ -286,9 +286,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>650 601 620 392 0 0 1920 1178 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>0 777 928 401 0 0 1920 1178 </string>
+	<string>581 688 796 473 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>78 330 650 402 0 0 1920 1200 </string>
+	<string>78 330 650 402 0 0 1920 1178 </string>
 	<key>NeverWarnAboutShortLivedSessions_D6770AF4-C9FB-4ABF-B9D9-3770BCA61D2E</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_D6770AF4-C9FB-4ABF-B9D9-3770BCA61D2E_selection</key>
@@ -1063,6 +1063,8 @@
 	<string>~/dotfiles/config/iterm2</string>
 	<key>Print In Black And White</key>
 	<true/>
+	<key>PromptOnQuit</key>
+	<false/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>

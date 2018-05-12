@@ -19,7 +19,7 @@ $ bash -c "$(curl -fsSL https://raw.githubusercontent.com/matken11235/dotfiles/m
 * `aws s3 sync s3://dot.secret.* ~/.ssh`
 
 ## TODO
-* ↑ config file
+* **↑ config file**
 * ~/.ssh
 * ~/.aws
 * ~/.kube

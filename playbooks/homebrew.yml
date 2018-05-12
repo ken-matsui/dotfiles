@@ -20,6 +20,7 @@
       - name: kryptco/tap/kr
     homebrew_cask_packages:
       - name: google-chrome
+      - name: iterm2
       - name: firefox
       - name: skype
       - name: docker

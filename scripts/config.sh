@@ -16,5 +16,5 @@ fc-cache -f 1>/dev/null
 
 # Link setting files.
 for conf in $(find ${DOTSPATH}/config -type f | grep -v 'iterm2'); do
-	ln -sf "$conf" "${HOME}/${conf##*/}"
+	ln -sf "$conf" "~/${conf##*/}"
 done

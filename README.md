@@ -15,8 +15,6 @@ $ bash -c "$(curl -fsSL https://raw.githubusercontent.com/matken11235/dotfiles/m
 * MATLAB (by Ritsumeikan univ.)
 * Microsoft office (by Ritsumeikan univ.)
 * McAfee (by Ritsumeikan univ.)
-* `aws configure`
-* `aws s3 sync s3://dot.secret.* ~/.ssh`
 
 ## TODO
 * **↑ config file**

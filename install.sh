@@ -22,6 +22,7 @@ printf "[\e[32m?\e[m] Git email [$(uname -n)]: " && read git_email
 printf '[\e[32m?\e[m] AWS access key id [None]: ' && read aws_access_key
 printf '[\e[32m?\e[m] AWS secret access key [None]: ' && read aws_secret_key
 printf '[\e[32m?\e[m] AWS default region [ap-northeast-1]: ' && read aws_region
+printf '[\e[32m?\e[m] SSH secret s3 bucket name [s3://]: s3://' && read ssh_secret
 ## Ask for the administrator password upfront.
 printf '[\e[32m?\e[m] ' && sudo -v
 ## Keep-alive: update existing `sudo` time stamp until this script has finished.
@@ -61,6 +62,8 @@ ansible-playbook ${DOTSPATH}/playbook/main.yml -i ${DOTSPATH}/playbook/hosts
 aws configure set aws_access_key_id $aws_access_key
 aws configure set aws_secret_access_key $aws_secret_key
 aws configure set default.region ${aws_region:-'ap-northeast-1'}
+# SSH secret
+[[ -n $ssh_secret ]] && aws s3 sync "s3://$ssh_secret" ~/.ssh
 
 # Japanese to English.
 sudo find / \
@@ -71,9 +74,6 @@ sudo find / \
 	-path "/Volumes" -prune \
 \) -type f -name .localized \
 -delete 2>/dev/null
-
-# Install software from dmg
-bash ${DOTSPATH}/scripts/dmgs/main.sh
 
 # Logging.
 terminal-notifier -message 'All done.' -sound Funk

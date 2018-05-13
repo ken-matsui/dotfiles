@@ -17,8 +17,11 @@ lDs9N35AWhVwB9i8GCf7a1Dj8LKD323GM7KCllG+qm9w2uPjOS81YjsuOhZTGkLZ' \
 export DOTSPATH="$(cd $(dirname $0); pwd)/dotfiles"
 
 # Config Task
-printf '[\e[32m?\e[m] Which Git name would you like to use? ' && read gitname
-printf '[\e[32m?\e[m] Which Git email would you like to use? ' && read gitemail
+printf '[\e[32m?\e[m] Which Git name would you like to use? ' && read git_name
+printf '[\e[32m?\e[m] Which Git email would you like to use? ' && read git_email
+printf '[\e[32m?\e[m] Which AWS access key id would you like to use? ' && read aws_access_key
+printf '[\e[32m?\e[m] Which AWS secret access key would you like to use? ' && read aws_secret_key
+printf '[\e[32m?\e[m] Which AWS region would you like to use? ' && read aws_region
 ## Ask for the administrator password upfront.
 printf '[\e[32m?\e[m] ' && sudo -v
 ## Keep-alive: update existing `sudo` time stamp until this script has finished.
@@ -37,8 +40,8 @@ yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/
 
 # Install git
 brew install git 1>/dev/null
-git config --global user.name $gitname
-git config --global user.email $gitemail
+git config --global user.name $git_name
+git config --global user.email $git_email
 
 # Clone
 git clone -q https://github.com/matken11235/dotfiles.git
@@ -53,6 +56,11 @@ bash "${DOTSPATH}/scripts/config.sh"
 # Install ansible (and accompany some of it)
 brew install ansible 1>/dev/null
 ansible-playbook ${DOTSPATH}/playbook/main.yml -i ${DOTSPATH}/playbook/hosts
+
+# AWS configure
+aws configure set aws_access_key_id $aws_access_key
+aws configure set aws_secret_access_key $aws_secret_key
+aws configure set default.region $aws_region
 
 # Japanese to English.
 sudo find / \

@@ -51,12 +51,13 @@ git clone -q https://github.com/matken11235/dotfiles.git
 curl https://sh.rustup.rs -sSf | bash -s -- -y 1>/dev/null
 # Install anyenv
 bash ${DOTSPATH}/scripts/anyenv/main.sh
-# config
-bash "${DOTSPATH}/scripts/config.sh"
 
 # Install ansible (and accompany some of it)
 brew install ansible 1>/dev/null
 ansible-playbook ${DOTSPATH}/playbook/main.yml -i ${DOTSPATH}/playbook/hosts
+
+# config
+bash "${DOTSPATH}/scripts/config.sh"
 
 # AWS configure
 aws configure set aws_access_key_id $aws_access_key

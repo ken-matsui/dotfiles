@@ -14,6 +14,11 @@ cp -f /usr/local/opt/ricty/share/fonts/Ricty*.ttf ~/Library/Fonts/
 fc-cache -f 1>/dev/null
 
 # Link setting files.
-for conf in $(find ${DOTSPATH}/config -type f | grep -v 'iterm2'); do
+for conf in $(find ${DOTSPATH}/config -type f | grep -v 'iterm2' | grep 'nvim'); do
 	ln -sf "$conf" "~/${conf##*/}"
 done
+
+# Create directory
+mkdir ~/.config
+# link
+ln -sf ${DOTSPATH}/config/nvim/ ~/.config/nvim

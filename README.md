@@ -12,7 +12,7 @@ $ bash -c "$(curl -fsSL https://raw.githubusercontent.com/matken11235/dotfiles/m
 ```
 ### Tasks after that
 #### Setting
-* iTerm2 -> preferences -> Load preferences from a custom folder or URL: ~/dotfiles/config/iterm2
+* iTerm2 -> preferences -> Load preferences from a custom folder or URL: ~/dotfiles/config/iterm2 ↩︎Enter
 #### Install
 * Adobe
 * VS Code

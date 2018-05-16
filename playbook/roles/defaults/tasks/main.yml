@@ -148,6 +148,21 @@
     domain: com.apple.trackpad
     key: scaling
     value: 3
+- name: Show volume in menu bar
+  osx_defaults:
+    domain: com.apple.menuextra
+    key: volume
+    value: 1
+- name: Show Bluetooth in menu bar
+  osx_defaults:
+    domain: com.apple.menuextra
+    key: bluetooth
+    value: 1
+- name: Show Time machine in menu bar
+  osx_defaults:
+    domain: com.apple.menuextra
+    key: TimeMachine
+    value: 1
 # https://www.defaults-write.com/display-the-file-extensions-in-finder/
 - name: Show all filename extensions on Finder
   osx_defaults:
@@ -158,6 +173,8 @@
   shell: /usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:gridSpacing 85' ~/Library/Preferences/com.apple.finder.plist
 - name: Show item info near icons on the desktop and in other icon views
   shell: /usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:showItemInfo true' ~/Library/Preferences/com.apple.finder.plist
+- name: text size on the desktop
+  shell: /usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:textSize 10' ~/Library/Preferences/com.apple.finder.plist
 - name: Move focus to next window by 'option + tab' on Keyboard Shortcuts
   shell: /usr/libexec/PlistBuddy -c 'Set :AppleSymbolicHotKeys:27:value:parameters:0 65535' ~/Library/Preferences/com.apple.symbolichotkeys.plist
 - name: same process

@@ -1,6 +1,11 @@
 # dotfiles
 
 ## HOW TO INSTALL
+:warning: This script does not guarantee processing when some files already exist.
+
+e.g. ~/.ssh, ~/.config/nvim, ...
+
+
 Please exec this command on Terminal.
 ```:Terminal.app
 $ bash -c "$(curl -fsSL https://raw.githubusercontent.com/matken11235/dotfiles/master/install.sh)"

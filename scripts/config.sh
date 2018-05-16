@@ -18,7 +18,7 @@ fc-cache -f 1>/dev/null
 
 # Link setting files.
 for conf in $(find ${DOTSPATH}/config -type f | grep -v 'iterm2' | grep -v 'nvim'); do
-	ln -sf "$conf" "~/${conf##*/}"
+	ln -sf $conf ~/${conf##*/}
 done
 
 # Create directory

@@ -1,4 +1,4 @@
 ---
-- name: mas applications install
+- name: install applications
   command: mas install "{{ item.id }}"
   with_items: "{{ mas }}"

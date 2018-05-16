@@ -1,5 +1,4 @@
-# /bin/bash
-
+#!/bin/bash
 
 # Change shell as default for USER(not root).
 sudo chsh -s /bin/zsh "${USER}" 1>/dev/null

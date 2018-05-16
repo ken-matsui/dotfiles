@@ -20,9 +20,9 @@ setopt EXTENDED_GLOB
 function cd {
 	builtin cd "$@"
 	if [[ -e .python-version ]]; then
-		RPROMPT="%F{red}(`cat .python-version`)%f"
+		RPROMPT="%F{red}($(cat .python-version))%f"
 		typeset -g pv_dir=${PWD:1}
-	elif [[ -v pv_dir ]] && [[ `pwd` =~ ${pv_dir} ]]; then
+	elif [[ -v pv_dir ]] && [[ $(pwd) =~ ${pv_dir} ]]; then
 		unset MATCH
 	else
 		RPROMPT=""
@@ -42,6 +42,11 @@ export TF_CPP_MIN_LOG_LEVEL=2
 export PATH="$PATH:$HOME/.go_appengine"
 # gcloudのバグ対策
 export CLOUDSDK_PYTHON='/Users/matken/.pyenv/versions/2.7.14/bin/python2'
+
+# awscli
+export AWS_DEFAULT_REGION=$(cat ~/.aws/config | grep 'region' | awk '{printf $3}')
+export AWS_ACCESS_KEY_ID=$(cat ~/.aws/credentials | grep 'aws_access_key_id' | awk '{printf $3}')
+export AWS_SECRET_ACCESS_KEY=$(cat ~/.aws/credentials | grep 'aws_secret_access_key' | awk '{printf $3}')
 
 # rust lang
 source $HOME/.cargo/env

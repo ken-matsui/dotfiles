@@ -8,13 +8,16 @@ git clone -q --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:
 # Install tpm
 git clone -q https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+# accept
+sudo xcodebuild -license accept
+
 # Install Ricty with Powerline
 brew install sanemat/font/ricty --with-powerline 1>/dev/null
 cp -f /usr/local/opt/ricty/share/fonts/Ricty*.ttf ~/Library/Fonts/
 fc-cache -f 1>/dev/null
 
 # Link setting files.
-for conf in $(find ${DOTSPATH}/config -type f | grep -v 'iterm2' | grep 'nvim'); do
+for conf in $(find ${DOTSPATH}/config -type f | grep -v 'iterm2' | grep -v 'nvim'); do
 	ln -sf "$conf" "~/${conf##*/}"
 done
 

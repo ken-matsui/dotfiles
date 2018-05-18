@@ -11,14 +11,14 @@ Please exec this command on Terminal.
 $ bash -c "$(curl -fsSL https://raw.githubusercontent.com/matken11235/dotfiles/master/install.sh)"
 ```
 ### Tasks after that
-##### Install
+#### Install
 * Adobe
 * VS Code
 * IntelliJ IDEA & CLion -> material theme
 * MATLAB (by Ritsumeikan univ.)
 * Microsoft office (by Ritsumeikan univ.)
 * McAfee (by Ritsumeikan univ.)
-### Setting
+#### Setting
 * iTerm2 -> preferences -> Load preferences from a custom folder or URL: ~/dotfiles/config/iterm2 ↩︎Enter
 * IntelliJ IDEA -> Import Settings: ~/dotfiles/config/IntelliJIdea2018.1/settings.jar
 

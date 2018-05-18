@@ -14,13 +14,14 @@ $ bash -c "$(curl -fsSL https://raw.githubusercontent.com/matken11235/dotfiles/m
 #### Install
 * Adobe
 * VS Code
-* IntelliJ IDEA & CLion -> material theme
+* IntelliJ IDEA & CLion
 * MATLAB (by Ritsumeikan univ.)
 * Microsoft office (by Ritsumeikan univ.)
 * McAfee (by Ritsumeikan univ.)
 #### Setting
 * iTerm2 -> preferences -> Load preferences from a custom folder or URL: ~/dotfiles/config/iterm2 ↩︎Enter
 * IntelliJ IDEA -> Import Settings: ~/dotfiles/config/IntelliJIdea2018.1/settings.jar
+* CLion -> Import Settings: ~/dotfiles/config/CLion2018.1/settings.jar
 
 ## TODO
 * **↑ config file**

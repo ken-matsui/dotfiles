@@ -24,7 +24,7 @@ homebrew_cask_packages:
   - name: skype
   - name: docker
   - name: minikube
-  - name: virtualbox
+#  - name: virtualbox
   - name: vagrant
   - name: qfinder-pro
 

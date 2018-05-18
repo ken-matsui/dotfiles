@@ -52,13 +52,13 @@
     domain: com.apple.dock
     key: springboard-columns
     type: int
-    value: 9
+    value: 10
 - name: Launchpad icon size
   osx_defaults:
     domain: com.apple.dock
     key: springboard-rows
     type: int
-    value: 7
+    value: 8
 - name: Launchpad icon size
   osx_defaults:
     domain: com.apple.dock

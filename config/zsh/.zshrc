@@ -61,3 +61,9 @@ source ~/secret.sh
 # automatically when your are in zsh
 [[ -f ~/dotfiles/scripts/tmuxx.sh ]] && ~/dotfiles/scripts/tmuxx.sh
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/matken/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/matken/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/matken/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/matken/google-cloud-sdk/completion.zsh.inc'; fi

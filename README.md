@@ -21,5 +21,5 @@ $ bash -c "$(curl -fsSL https://raw.githubusercontent.com/matken11235/dotfiles/m
 * CLion -> Import Settings: ~/dotfiles/config/CLion2018.1/settings.jar
 
 ## TODO
-* **↑ config file**
+* **VSCode config file**
 

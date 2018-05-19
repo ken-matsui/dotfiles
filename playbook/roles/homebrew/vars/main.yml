@@ -31,5 +31,6 @@ homebrew_cask_packages:
   - name: intellij-idea
   - name: clion
   - name: visual-studio-code
+  - name: google-cloud-sdk
   - name: qfinder-pro
 

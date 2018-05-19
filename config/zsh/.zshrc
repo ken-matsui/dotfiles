@@ -55,6 +55,8 @@ source $HOME/.cargo/env
 alias vim=nvim
 export XDG_CONFIG_HOME=$HOME/.config
 
+source ~/secret.sh
+
 # tmux_automatically_attach attachs tmux session
 # automatically when your are in zsh
 [[ -f ~/dotfiles/scripts/tmuxx.sh ]] && ~/dotfiles/scripts/tmuxx.sh

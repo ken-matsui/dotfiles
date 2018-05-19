@@ -12,9 +12,6 @@ $ bash -c "$(curl -fsSL https://raw.githubusercontent.com/matken11235/dotfiles/m
 ```
 ### Tasks after that
 #### Install
-* Adobe
-* VS Code
-* IntelliJ IDEA & CLion
 * MATLAB (by Ritsumeikan univ.)
 * Microsoft office (by Ritsumeikan univ.)
 * McAfee (by Ritsumeikan univ.)

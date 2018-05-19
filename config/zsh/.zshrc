@@ -41,7 +41,7 @@ export TF_CPP_MIN_LOG_LEVEL=2
 # golang with app-engine by Google
 export PATH="$PATH:$HOME/.go_appengine"
 # gcloudのバグ対策
-export CLOUDSDK_PYTHON='~/.anyenv/envs/pyenv/versions/2.7.15/bin/python2'
+export CLOUDSDK_PYTHON="$HOME/.anyenv/envs/pyenv/versions/2.7.15/bin/python2"
 
 # awscli
 export AWS_DEFAULT_REGION=$(cat ~/.aws/config | grep 'region' | awk '{printf $3}')

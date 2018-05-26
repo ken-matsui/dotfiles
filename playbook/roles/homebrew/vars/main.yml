@@ -14,7 +14,6 @@ homebrew_packages:
   - name: reattach-to-user-namespace
   - name: neovim
   - name: terminal-notifier
-  - name: etcher
   - name: cmake
   - name: tree
   - name: kryptco/tap/kr
@@ -33,5 +32,6 @@ homebrew_cask_packages:
   - name: clion
   - name: visual-studio-code
   - name: google-cloud-sdk
+  - name: etcher
   - name: qfinder-pro
 

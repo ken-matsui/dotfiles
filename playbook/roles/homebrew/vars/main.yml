@@ -14,6 +14,7 @@ homebrew_packages:
   - name: reattach-to-user-namespace
   - name: neovim
   - name: terminal-notifier
+  - name: etcher
   - name: cmake
   - name: tree
   - name: kryptco/tap/kr

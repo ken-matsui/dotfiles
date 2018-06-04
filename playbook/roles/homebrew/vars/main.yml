@@ -1,6 +1,6 @@
 ---
 homebrew_taps:
-  - caskroom/homebrew-versions
+  - kryptco/tap # for kr
 homebrew_packages:
   - name: kubectl
   - name: kops
@@ -16,7 +16,7 @@ homebrew_packages:
   - name: terminal-notifier
   - name: cmake
   - name: tree
-  - name: kryptco/tap/kr
+  - name: kr
 homebrew_cask_packages:
   - name: google-chrome
   - name: iterm2

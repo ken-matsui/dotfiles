@@ -60,8 +60,8 @@ source $HOME/.cargo/env
 alias vim=nvim
 export XDG_CONFIG_HOME=$HOME/.config
 
-source ~/secret.sh
-aws s3 sync ~/.ssh s3://dot.secret.matken/.ssh
+[[ -f ~/secret.sh ]] && source ~/secret.sh
+[[ -d ~/.ssh ]] && aws s3 sync ~/.ssh s3://dot.secret.matken/.ssh
 
 # tmux_automatically_attach attachs tmux session
 # automatically when your are in zsh

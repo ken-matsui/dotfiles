@@ -44,9 +44,11 @@ export PATH="$PATH:$HOME/.go_appengine"
 export CLOUDSDK_PYTHON="$HOME/.anyenv/envs/pyenv/versions/2.7.15/bin/python2"
 
 # awscli
-export AWS_DEFAULT_REGION=$(cat ~/.aws/config | grep 'region' | awk '{printf $3}')
-export AWS_ACCESS_KEY_ID=$(cat ~/.aws/credentials | grep 'aws_access_key_id' | awk '{printf $3}')
-export AWS_SECRET_ACCESS_KEY=$(cat ~/.aws/credentials | grep 'aws_secret_access_key' | awk '{printf $3}')
+if [[ -d ~/.aws ]]; then
+    export AWS_DEFAULT_REGION=$(cat ~/.aws/config | grep 'region' | awk '{printf $3}')
+    export AWS_ACCESS_KEY_ID=$(cat ~/.aws/credentials | grep 'aws_access_key_id' | awk '{printf $3}')
+    export AWS_SECRET_ACCESS_KEY=$(cat ~/.aws/credentials | grep 'aws_secret_access_key' | awk '{printf $3}')
+fi
 
 # coreutils
 #export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
@@ -61,16 +63,9 @@ alias vim=nvim
 export XDG_CONFIG_HOME=$HOME/.config
 
 [[ -f ~/secret.sh ]] && source ~/secret.sh
-[[ -d ~/.ssh ]] && aws s3 sync ~/.ssh s3://dot.secret.matken/.ssh
 
 # tmux_automatically_attach attachs tmux session
 # automatically when your are in zsh
 [[ -f ~/dotfiles/scripts/tmuxx.sh ]] && ~/dotfiles/scripts/tmuxx.sh
 
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/matken/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/matken/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/matken/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/matken/google-cloud-sdk/completion.zsh.inc'; fi
 export PATH="/usr/local/opt/curl/bin:$PATH"

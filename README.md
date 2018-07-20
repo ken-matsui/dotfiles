@@ -20,6 +20,18 @@ $ bash -c "$(curl -fsSL https://raw.githubusercontent.com/matken11235/dotfiles/m
 * IntelliJ IDEA -> Import Settings: ~/dotfiles/config/IntelliJIdea2018.1/settings.jar
 * CLion -> Import Settings: ~/dotfiles/config/CLion2018.1/settings.jar
 
+#### Dropbox
+* rm -rf ~/.ssh && ln -s ~/Dropbox/ssh ~/.ssh
+* kr pair
+
+#### aws-cli
+```bash
+aws configure set aws_access_key_id $aws_access_key
+aws configure set aws_secret_access_key $aws_secret_key
+aws configure set default.region ${aws_region:-'ap-northeast-1'}
+```
+
+
 ## TODO
 * **VSCode config file**
 

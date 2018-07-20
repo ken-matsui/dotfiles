@@ -2,14 +2,14 @@
 mas:
   - name: Xcode (9.3)
     id: 497799835
-  - name: Pages (7.0.1)
-    id: 409201541
-  - nane: Numbers (5.0.1)
-    id: 409203825
-  - nane: Keynote (8.0.1)
-    id: 409183694
-  - nane: iMovie (10.1.9)
-    id: 408981434
+#  - name: Pages (7.0.1)
+#    id: 409201541
+#  - nane: Numbers (5.0.1)
+#    id: 409203825
+#  - nane: Keynote (8.0.1)
+#    id: 409183694
+#  - nane: iMovie (10.1.9)
+#    id: 408981434
   - nane: Slack (3.1.1)
     id: 803453959
   - nane: LINE (5.7.0)

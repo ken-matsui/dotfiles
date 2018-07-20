@@ -28,7 +28,7 @@ homebrew_cask_packages:
   - name: minikube
 #  - name: virtualbox
   - name: vagrant
-  - name: adobe-creative-cloud
+    #  - name: adobe-creative-cloud
   - name: intellij-idea
   - name: clion
   - name: visual-studio-code

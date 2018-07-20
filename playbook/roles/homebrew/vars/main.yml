@@ -17,6 +17,7 @@ homebrew_packages:
   - name: cmake
   - name: tree
   - name: kr
+  - name: yaml-cpp
 homebrew_cask_packages:
   - name: google-chrome
   - name: iterm2

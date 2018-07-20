@@ -17,6 +17,7 @@ homebrew_packages:
   - name: cmake
   - name: tree
   - name: kr
+  - name: elm
   - name: yaml-cpp
 homebrew_cask_packages:
   - name: google-chrome
@@ -27,7 +28,6 @@ homebrew_cask_packages:
   - name: minikube
 #  - name: virtualbox
   - name: vagrant
-  - name: elm-platform
   - name: adobe-creative-cloud
   - name: intellij-idea
   - name: clion

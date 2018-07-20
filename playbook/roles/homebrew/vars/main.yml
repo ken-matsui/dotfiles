@@ -34,4 +34,5 @@ homebrew_cask_packages:
   - name: google-cloud-sdk
   - name: etcher
   - name: qfinder-pro
+  - name: dropbox
 

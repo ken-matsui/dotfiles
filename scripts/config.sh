@@ -17,7 +17,7 @@ cp -f /usr/local/opt/ricty/share/fonts/Ricty*.ttf ~/Library/Fonts/
 fc-cache -f 1>/dev/null
 
 # Link setting files.
-for conf in $(find config -type f | grep -e 'zsh' -e 'zprezto' -e 'tmux'); do
+for conf in $(find config -type f | grep -e 'zsh' -e 'zprezto' -e 'tmux' -e 'hyper'); do
 	ln -sf $conf ~/${conf##*/}
 done
 

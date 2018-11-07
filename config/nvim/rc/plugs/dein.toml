@@ -9,6 +9,12 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'alexeyignatiev/vim-dimacs'
+
+[[plugins]]
+repo = 'bohlender/vim-smt2'
+
+[[plugins]]
 repo = 'tpope/vim-fugitive'
 hook_add = '''
     nnoremap [figitive] <Nop>
@@ -21,14 +27,6 @@ hook_add = '''
 [[plugins]]
 repo = 'Xuyuanp/nerdtree-git-plugin'
 depends = ['vim-fugitive']
-
-[[plugins]]
-repo = 'frankier/neovim-colors-solarized-truecolor-only'
-hook_add = '''
-    set termguicolors
-    set background=dark
-    colorscheme solarized
-'''
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'

@@ -30,6 +30,10 @@ augroup MyAutoCmd
   autocmd!
 augroup END
 
+" Pythonの設定
+let g:python_host_prog=$PYENV_ROOT.'/shims/python2.7'
+let g:python3_host_prog=$PYENV_ROOT.'/shims/python3.5'
+
 call s:source_rc('dein.rc.vim')
 call s:source_rc('mappings.rc.vim')
 call s:source_rc('options.rc.vim')

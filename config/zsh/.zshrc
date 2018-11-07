@@ -62,7 +62,7 @@ source $HOME/.cargo/env
 alias vim=nvim
 export XDG_CONFIG_HOME=$HOME/.config
 
-[[ -f ~/Dropbox/secret.sh ]] && source ~/Dropbox/secret.sh
+[[ -f ~/Dropbox/secret.sh ]] && source ~/Dropbox/Private/secret.sh
 
 # tmux_automatically_attach attachs tmux session
 # automatically when your are in zsh

@@ -31,6 +31,10 @@ aws configure set aws_secret_access_key $aws_secret_key
 aws configure set default.region ${aws_region:-'ap-northeast-1'}
 ```
 
+```bash
+crontab -e
+0 * * * * bash ~/dotfiles/auto-commit.sh
+```
 
 ## TODO
 * **VSCode config file**

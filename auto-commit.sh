@@ -7,7 +7,7 @@ if [[ $DIFF -ne *"files"* ]]; then
     :
 else
     git add -A .
-    git commit -m ":sparkles: Auto update by cron"
+    git commit -m ":sparkles: Auto update by launchd"
     git push origin master
 fi
 

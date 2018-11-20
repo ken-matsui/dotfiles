@@ -31,6 +31,7 @@ homebrew_cask_packages:
     #  - name: adobe-creative-cloud
   - name: intellij-idea
   - name: clion
+  - name: goland
   - name: visual-studio-code
   - name: google-cloud-sdk
   - name: etcher

@@ -40,8 +40,6 @@ export TF_CPP_MIN_LOG_LEVEL=2
 
 # golang with app-engine by Google
 export PATH="$PATH:$HOME/.go_appengine"
-# gcloudのバグ対策
-export PYTHONPATH="$HOME/.anyenv/envs/pyenv/versions/3.5.5/bin/python3:$PYTHONPATH"
 
 # awscli
 if [[ -d ~/.aws ]]; then

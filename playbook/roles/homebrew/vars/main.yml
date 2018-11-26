@@ -24,9 +24,9 @@ homebrew_cask_packages:
   - name: iterm2
   - name: firefox
   - name: docker
-  - name: minikube
+    #  - name: minikube
 #  - name: virtualbox
-  - name: vagrant
+#  - name: vagrant
     #  - name: adobe-creative-cloud
   - name: intellij-idea
   - name: clion
@@ -35,7 +35,7 @@ homebrew_cask_packages:
   - name: visual-studio-code
   - name: atom
   - name: google-cloud-sdk
-  - name: etcher
+    #  - name: etcher
   - name: qfinder-pro
   - name: dropbox
 

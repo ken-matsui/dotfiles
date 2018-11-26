@@ -23,7 +23,6 @@ homebrew_cask_packages:
   - name: google-chrome
   - name: iterm2
   - name: firefox
-  - name: skype
   - name: docker
   - name: minikube
 #  - name: virtualbox
@@ -32,7 +31,9 @@ homebrew_cask_packages:
   - name: intellij-idea
   - name: clion
   - name: goland
+  - name: pycharm
   - name: visual-studio-code
+  - name: atom
   - name: google-cloud-sdk
   - name: etcher
   - name: qfinder-pro

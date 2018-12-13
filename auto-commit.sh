@@ -11,3 +11,8 @@ else
     git push origin master
 fi
 
+brew update
+brew upgrade
+brew cask upgrade
+brew cleanup -s
+

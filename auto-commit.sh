@@ -2,6 +2,7 @@
 
 cd $(dirname $0)
 
+git pull origin master
 DIFF=$(git status)
 if [[ $DIFF -ne *"files"* ]]; then
     :

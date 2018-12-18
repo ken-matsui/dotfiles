@@ -12,9 +12,7 @@ $ bash -c "$(curl -fsSL https://raw.githubusercontent.com/matken11235/dotfiles/m
 ```
 ### Tasks after that
 #### Install
-* MATLAB
 * Microsoft office
-* McAfee
 #### Setting
 * iTerm2 -> preferences -> Load preferences from a custom folder or URL: ~/dotfiles/config/iterm2 ↩︎Enter
 * IntelliJ IDEA -> Import Settings: ~/dotfiles/config/IntelliJIdea2018.1/settings.jar

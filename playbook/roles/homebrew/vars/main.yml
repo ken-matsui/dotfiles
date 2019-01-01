@@ -19,6 +19,7 @@ homebrew_packages:
   - name: kr
   - name: elm
   - name: yaml-cpp
+  - name: zsh-syntax-highlighting
 homebrew_cask_packages:
   - name: google-chrome
   - name: iterm2

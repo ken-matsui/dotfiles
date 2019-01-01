@@ -69,12 +69,12 @@ export XDG_CONFIG_HOME=$HOME/.config
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="/usr/local/opt/erlang@20/bin:$PATH"
 
-# core dump
-ulimit -c unlimited
-
 export PATH="/Users/matken/.anyenv/envs/ndenv/versions/v10.7.0/lib/node_modules/elm/binwrappers/:$PATH"
 
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.anyenv/envs/ndenv/versions/v10.7.0/bin/:$PATH"
+
+unset zle_bracketed_paste
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

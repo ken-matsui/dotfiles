@@ -1,6 +1,6 @@
 #!/bin/bash
 
-brew install erlang 1>/dev/null
+brew install erlang@20 1>/dev/null
 brew install elixir-build 1>/dev/null
 export PATH="$HOME/.anyenv/bin:$PATH"
 anyenv install exenv 1>/dev/null

@@ -14,11 +14,23 @@ $ bash -c "$(curl -fsSL https://raw.githubusercontent.com/matken11235/dotfiles/m
 #### Install
 * Microsoft office
 * Adobe
-* Sketch
 #### Setting
 * iTerm2 -> preferences -> Load preferences from a custom folder or URL: ~/dotfiles/config/iterm2 ↩︎Enter
 * IntelliJ IDEA -> Import Settings: ~/dotfiles/config/IntelliJIdea2018.1/settings.jar
 * CLion -> Import Settings: ~/dotfiles/config/CLion2018.1/settings.jar
+* Mendeley ->
+
+macOSアプリの開いてすぐの，All Documentsの隣，Edit Settingsをクリック
+Synchronize attatched filesのチェックを外す（MendeleyのCloudと同期しない）
+Save & Syncで変更を保存
+
+macのツールバーから，Mendeley Desktop -> Preferences
+File Organizer -> Organize my files にチェックを入れる．
+Copy files to: /Users/matken/Dropbox/Papers にセットする．
+
+さらに下の，Rename document files にチェックを入れる．
+File name: Year Title に変更する．
+
 
 #### Dropbox
 * rm -rf ~/.ssh && ln -s ~/Dropbox/ssh ~/.ssh

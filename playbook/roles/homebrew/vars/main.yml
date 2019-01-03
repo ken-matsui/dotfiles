@@ -2,6 +2,7 @@
 homebrew_taps:
   - kryptco/tap # for kr
 homebrew_packages:
+  - name: coreutils
   - name: kubectl
   - name: kops
   - name: ghc
@@ -20,12 +21,13 @@ homebrew_packages:
   - name: elm
   - name: yaml-cpp
   - name: zsh-syntax-highlighting
+  - name: clang-format
+  - name: graphviz  # keras.plot_model
 homebrew_cask_packages:
   - name: google-chrome
   - name: iterm2
   - name: firefox
   - name: docker
-    #  - name: minikube
 #  - name: virtualbox
 #  - name: vagrant
     #  - name: adobe-creative-cloud
@@ -39,4 +41,6 @@ homebrew_cask_packages:
     #  - name: etcher
   - name: qfinder-pro
   - name: dropbox
+  - name: sketch
+  - name: mendeley-desktop
 

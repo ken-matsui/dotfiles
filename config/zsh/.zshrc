@@ -79,3 +79,6 @@ unset zle_bracketed_paste
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias rm='gmv -f --backup=numbered --target-directory ~/.Trash/'
 
+
+# added by travis gem
+[ -f /Users/matken/.travis/travis.sh ] && source /Users/matken/.travis/travis.sh

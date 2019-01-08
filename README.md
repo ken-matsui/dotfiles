@@ -33,7 +33,7 @@ File name: Year Title に変更する．
 
 
 #### Dropbox
-* rm -rf ~/.ssh && ln -s ~/Dropbox/ssh ~/.ssh
+* rm -rf ~/.ssh && ln -s ~/Dropbox/Private/ssh ~/.ssh
 * kr pair
 
 #### aws-cli
@@ -44,8 +44,8 @@ aws configure set default.region ${aws_region:-'ap-northeast-1'}
 ```
 
 ```bash
-crontab -e
-0 * * * * bash ~/dotfiles/auto-commit.sh
+ln -s ~/dotfiles/config/LaunchAgents/auto-commit.plist ~/Library/LaunchAgents/auto-commit.plist
+launchctl load ~/Library/LaunchAgents/auto-commit.plist
 ```
 
 ## TODO

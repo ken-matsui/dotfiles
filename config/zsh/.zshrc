@@ -20,7 +20,7 @@ setopt EXTENDED_GLOB
 function cd {
 	builtin cd "$@"
 	if [[ -e .python-version ]]; then
-		RPROMPT="%F{red}($(cat .python-version))%f"
+		RPROMPT="%{%F{red}($(cat .python-version))%f%}"
 		typeset -g pv_dir=${PWD:1}
 	elif [[ -v pv_dir ]] && [[ $(pwd) =~ ${pv_dir} ]]; then
 		unset MATCH

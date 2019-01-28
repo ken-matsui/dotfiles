@@ -3,7 +3,7 @@
 cd $(dirname $0)
 
 git pull origin master
-DIFF=$(git status)
+DIFF=$(git --no-optional-locks status)
 if [[ $DIFF -ne *"files"* ]]; then
     :
 else

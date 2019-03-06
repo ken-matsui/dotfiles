@@ -80,3 +80,6 @@ alias rm='gmv -f --backup=numbered --target-directory ~/.Trash/'
 
 # added by travis gem
 [ -f /Users/matken/.travis/travis.sh ] && source /Users/matken/.travis/travis.sh
+
+# flutter
+export PATH="$HOME/flutter/bin:$PATH"

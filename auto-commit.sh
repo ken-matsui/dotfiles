@@ -13,7 +13,4 @@ else
 fi
 
 \rm -rf /cores
-brew update
-brew upgrade
-brew cask upgrade
 

@@ -52,6 +52,7 @@ fi
 #export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 # gnu-tar
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+alias tar=gtar
 
 # rust lang
 source $HOME/.cargo/env

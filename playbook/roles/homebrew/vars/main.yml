@@ -23,6 +23,7 @@ homebrew_packages:
   - name: yaml-cpp
   - name: zsh-syntax-highlighting
   - name: clang-format
+  - name: llvm # clangd
   - name: graphviz  # keras.plot_model
 homebrew_cask_packages:
   - name: google-chrome

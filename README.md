@@ -37,6 +37,8 @@ File name: Year Title に変更する．
 * rm -rf ~/.ssh && ln -s ~/Dropbox/Private/ssh ~/.ssh
 * kr pair
 
+https://krypt.co/docs/start/code-signing.html
+
 To enable code signing, run the following command on your paired computer
 ```bash
 kr codesign

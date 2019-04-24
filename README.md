@@ -37,6 +37,24 @@ File name: Year Title に変更する．
 * rm -rf ~/.ssh && ln -s ~/Dropbox/Private/ssh ~/.ssh
 * kr pair
 
+To enable code signing, run the following command on your paired computer
+```bash
+kr codesign
+```
+
+Follow the instructions to add your PGP public key to GitHub.
+
+Next, test that everything works:
+```bash
+export GPG_TTY=$(tty); kr codesign test
+```
+
+Finally, disable auto sign-off.
+```bash
+git config --global commit.gpgsign false
+```
+
+
 #### aws-cli
 ```bash
 aws configure set aws_access_key_id $aws_access_key
@@ -51,4 +69,3 @@ launchctl load ~/Library/LaunchAgents/auto-commit.plist
 
 ## TODO
 * **VSCode config file**
-

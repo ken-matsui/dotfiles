@@ -90,3 +90,6 @@ export PATH="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/platfo
 # clangd
 #export PATH="/usr/local/opt/llvm/bin:$PATH"
 
+
+# Added by Krypton
+export GPG_TTY=$(tty)

@@ -15,20 +15,6 @@ fi
 # Set operation.
 setopt EXTENDED_GLOB
 
-# A function that displays the name of the
-#  virtual environment at the right prompt.
-function cd {
-	builtin cd "$@"
-	if [[ -e .python-version ]]; then
-		RPROMPT="%{%F{red}($(cat .python-version))%f%}"
-		typeset -g pv_dir=${PWD:1}
-	elif [[ -v pv_dir ]] && [[ $(pwd) =~ ${pv_dir} ]]; then
-		unset MATCH
-	else
-		RPROMPT=""
-	fi
-}
-
 # anyenv
 if [[ -d $HOME/.anyenv ]] ; then
 	export PATH="$HOME/.anyenv/bin:$PATH"
@@ -61,10 +47,6 @@ source $HOME/.cargo/env
 alias vim=nvim
 export XDG_CONFIG_HOME=$HOME/.config
 
-# tmux_automatically_attach attachs tmux session
-# automatically when your are in zsh
-[[ -f ~/dotfiles/scripts/tmuxx.sh ]] && ~/dotfiles/scripts/tmuxx.sh
-
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="/usr/local/opt/erlang@20/bin:$PATH"
 
@@ -78,7 +60,6 @@ unset zle_bracketed_paste
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias rm='gmv -f --backup=numbered --target-directory ~/.Trash/'
 
-
 # added by travis gem
 [ -f /Users/matken/.travis/travis.sh ] && source /Users/matken/.travis/travis.sh
 
@@ -90,6 +71,6 @@ export PATH="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/platfo
 # clangd
 #export PATH="/usr/local/opt/llvm/bin:$PATH"
 
-
 # Added by Krypton
 export GPG_TTY=$(tty)
+

@@ -150,6 +150,7 @@ module.exports = {
     "verminal",
     "hyper-pane",
     "hyper-search",
+    "hyper-tabs-enhanced",
   ],
 
   // in development, you can create a directory under

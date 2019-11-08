@@ -15,17 +15,15 @@ fi
 # Set operation.
 setopt EXTENDED_GLOB
 
+
 # anyenv
 if [[ -d $HOME/.anyenv ]] ; then
-	export PATH="$HOME/.anyenv/bin:$PATH"
-	eval "$(anyenv init - --no-rehash)"
+    export PATH="$HOME/.anyenv/bin:$PATH"
+    eval "$(anyenv init - --no-rehash)"
 fi
 
-## Warning setting of tensorflow.
+## Warning setting for tensorflow.
 export TF_CPP_MIN_LOG_LEVEL=2
-
-# golang with app-engine by Google
-export PATH="$PATH:$HOME/.go_appengine"
 
 # awscli
 if [[ -d ~/.aws ]]; then
@@ -40,10 +38,10 @@ fi
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 alias tar=gtar
 
-# rust lang
+# rust
 source $HOME/.cargo/env
 
-# for nvim
+# nvim
 alias vim=nvim
 export XDG_CONFIG_HOME=$HOME/.config
 
@@ -52,12 +50,16 @@ export PATH="/usr/local/opt/erlang@20/bin:$PATH"
 
 export PATH="/Users/matken/.anyenv/envs/ndenv/versions/v10.7.0/lib/node_modules/elm/binwrappers/:$PATH"
 
-
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.anyenv/envs/ndenv/versions/v10.7.0/bin/:$PATH"
 
+# Don't highlight when selecting words
 unset zle_bracketed_paste
+
+# Enable zsh-syntax-highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Enable safety dumping
 alias rm='gmv -f --backup=numbered --target-directory ~/.Trash/'
 
 # added by travis gem
@@ -68,12 +70,13 @@ export PATH="$HOME/flutter/bin:$PATH"
 
 # goapp
 export PATH="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/platform/google_appengine:$PATH"
-# clangd
-#export PATH="/usr/local/opt/llvm/bin:$PATH"
-
+# golang with app-engine by Google
+export PATH="$PATH:$HOME/.go_appengine"
 # gcloud command
 export CLOUDSDK_PYTHON=python3
 
+# clangd
+#export PATH="/usr/local/opt/llvm/bin:$PATH"
+
 # Added by Krypton
 export GPG_TTY=$(tty)
-

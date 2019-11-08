@@ -2,6 +2,8 @@
 homebrew_taps:
   - kryptco/tap # for kr
 homebrew_packages:
+  - name: python@2
+  - name: python
   - name: go
   - name: coreutils
   - name: kubectl

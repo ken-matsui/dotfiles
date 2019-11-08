@@ -71,6 +71,9 @@ export PATH="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/platfo
 # clangd
 #export PATH="/usr/local/opt/llvm/bin:$PATH"
 
+# gcloud command
+export CLOUDSDK_PYTHON=python3
+
 # Added by Krypton
 export GPG_TTY=$(tty)
 

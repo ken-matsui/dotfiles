@@ -75,6 +75,9 @@ export PATH="$PATH:$HOME/.go_appengine"
 # gcloud command
 export CLOUDSDK_PYTHON=python3
 
+# npm global
+export PATH="/Users/matken/.anyenv/envs/ndenv/versions/$(node -v)/lib/node_modules/npm:$PATH"
+
 # clangd
 #export PATH="/usr/local/opt/llvm/bin:$PATH"
 

@@ -83,3 +83,4 @@ export PATH="/Users/matken/.anyenv/envs/ndenv/versions/$(node -v)/lib/node_modul
 
 # Added by Krypton
 export GPG_TTY=$(tty)
+function gi() { curl -sLw n https://www.gitignore.io/api/$@ ;}

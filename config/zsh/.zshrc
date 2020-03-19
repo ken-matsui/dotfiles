@@ -85,7 +85,9 @@ export PATH="/Users/matken/.anyenv/envs/ndenv/versions/$(node -v)/lib/node_modul
 export GPG_TTY=$(tty)
 
 # .gitignore generator
-function gi() { curl -fsSL https://www.gitignore.io/api/$@ >> $PWD/.gitignore && echo "overwrote $@ to $PWD/.gitignore" ; }
+function gi() {
+    curl -fsSL https://www.gitignore.io/api/$@ >>! $PWD/.gitignore && echo "overwrote $@ to $PWD/.gitignore"
+}
 
 # After adding .gitignore, ignore files
 function gigafter() {

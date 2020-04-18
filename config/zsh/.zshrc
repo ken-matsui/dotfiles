@@ -94,3 +94,4 @@ function gigafter() {
     git rm --cached $(git ls-files --full-name -i --exclude-standard)
 }
 
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"

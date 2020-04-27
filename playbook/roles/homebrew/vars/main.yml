@@ -25,6 +25,7 @@ homebrew_packages:
   - name: clang-format
   - name: llvm # clangd
   - name: graphviz  # keras.plot_model
+  - name: wget
 homebrew_cask_packages:
   - name: google-chrome
   - name: iterm2

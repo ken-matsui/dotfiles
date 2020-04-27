@@ -28,7 +28,6 @@ homebrew_packages:
   - name: wget
 homebrew_cask_packages:
   - name: google-chrome
-  - name: iterm2
   - name: firefox
   - name: docker
 #  - name: virtualbox

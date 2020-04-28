@@ -48,11 +48,6 @@ export XDG_CONFIG_HOME=$HOME/.config
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="/usr/local/opt/erlang@20/bin:$PATH"
 
-export PATH="/Users/matken/.anyenv/envs/ndenv/versions/v10.7.0/lib/node_modules/elm/binwrappers/:$PATH"
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export PATH="$HOME/.anyenv/envs/ndenv/versions/v10.7.0/bin/:$PATH"
-
 # Don't highlight when selecting words
 unset zle_bracketed_paste
 
@@ -74,9 +69,6 @@ export PATH="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/platfo
 export PATH="$PATH:$HOME/.go_appengine"
 # gcloud command
 export CLOUDSDK_PYTHON=python3
-
-# npm global
-export PATH="/Users/matken/.anyenv/envs/ndenv/versions/$(node -v)/lib/node_modules/npm:$PATH"
 
 # clangd
 #export PATH="/usr/local/opt/llvm/bin:$PATH"

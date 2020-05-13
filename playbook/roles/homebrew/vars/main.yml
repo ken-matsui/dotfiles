@@ -2,30 +2,36 @@
 homebrew_taps:
   - kryptco/tap # for kr
 homebrew_packages:
-  - name: python@2
-  - name: python
-  - name: go
-  - name: coreutils
-  - name: kubectl
-  - name: kops
-  - name: ghc
+  - name: asciinema
+  - name: awscli
   - name: boost
   - name: boost-python
-  - name: mas
-  - name: awscli
-  - name: terraform
-  - name: neovim
-  - name: terminal-notifier
+  - name: circleci
+  - name: clang-format
   - name: cmake
-  - name: tree
-  - name: kr
+  - name: coreutils
+  - name: curl
+  - name: elixir
   - name: elm
+  - name: erlang
+  - name: ghc
+  - name: go
+  - name: graphviz
+  - name: jq
+  - name: kops
+  - name: kr
+  - name: kubectl
+  - name: llvm # clangd
+  - name: mas
+  - name: neovim
+  - name: python@2
+  - name: python
+  - name: tree
+  - name: terminal-notifier
+  - name: terraform
+  - name: wget
   - name: yaml-cpp
   - name: zsh-syntax-highlighting
-  - name: clang-format
-  - name: llvm # clangd
-  - name: graphviz  # keras.plot_model
-  - name: wget
 homebrew_cask_packages:
   - name: atom
   - name: deepl

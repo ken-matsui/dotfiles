@@ -59,9 +59,9 @@ git config --global commit.gpgsign false
 
 #### aws-cli
 ```bash
-aws configure set aws_access_key_id $aws_access_key
-aws configure set aws_secret_access_key $aws_secret_key
-aws configure set default.region ${aws_region:-'ap-northeast-1'}
+aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+aws configure set default.region ${AWS_DEFAULT_REGION:-'ap-northeast-1'}
 ```
 
 ```bash

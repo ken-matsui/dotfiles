@@ -53,17 +53,6 @@ ansible-playbook ${DOTSPATH}/playbook/main.yml -i ${DOTSPATH}/playbook/hosts
 # config
 bash "${DOTSPATH}/scripts/config.sh"
 
-
-# Japanese to English.
-sudo find / \
--type d -not \( \
-	-path "/System" -prune -o \
-	-path "/private" -prune -o \
-	-path "/dev" -prune -o \
-	-path "/Volumes" -prune \
-\) -type f -name .localized \
--delete 2>/dev/null
-
 # Logging.
 terminal-notifier -message 'All done.' -sound Funk
 printf '\xE2\x9C\x94 \e[1;33m All done !!! \u2728 \u2728 \e[m\n'

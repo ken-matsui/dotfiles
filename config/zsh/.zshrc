@@ -56,8 +56,6 @@ alias rm='gmv -f --backup=numbered --target-directory ~/.Trash/'
 # flutter
 export PATH="$HOME/flutter/bin:$PATH"
 
-# goapp
-export PATH="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/platform/google_appengine:$PATH"
 # golang with app-engine by Google
 export PATH="$PATH:$HOME/.go_appengine"
 # gcloud command

@@ -13,7 +13,7 @@
     state: '{{ item.state | default("present") }}'
     install_options: '{{ item.Install | default() | join(",") }}'
   with_items: '{{ homebrew_packages }}'
-- name: cask install packages
+- name: install cask packages
   homebrew_cask: name={{ item.name }} state=installed
   environment:
     HOMEBREW_CASK_OPTS: "--appdir=/Applications"

@@ -1,4 +1,4 @@
 ---
 - name: install applications
-  command: mas install "{{ item.id }}"
+  command: mas lucky "{{ item.name }}"
   with_items: "{{ mas }}"

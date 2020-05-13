@@ -11,6 +11,10 @@ Please exec this command on Terminal.
 $ bash -c "$(curl -fsSL https://raw.githubusercontent.com/matken11235/dotfiles/master/install.sh)"
 ```
 ### Tasks after that
+#### Install
+* Affinity Designer
+* TOEFL Official Guide
+
 #### Setting
 * iTerm2 -> preferences -> Load preferences from a custom folder or URL: ~/dotfiles/config/iterm2 ↩︎Enter
 * IntelliJ IDEA -> Import Settings: ~/dotfiles/config/IntelliJIdea2018.1/settings.jar

@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/bin/zsh
 
 cd ~/
 
@@ -50,8 +49,34 @@ curl https://sh.rustup.rs -sSf | bash -s -- -y 1>/dev/null
 brew install ansible 1>/dev/null
 ansible-playbook ${DOTSPATH}/playbook/main.yml -i ${DOTSPATH}/playbook/hosts
 
+
+################
 # config
-bash "${DOTSPATH}/scripts/config.sh"
+################
+# Install zsh-prezto.
+git clone -q --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+
+# Install tpm
+git clone -q https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# accept
+sudo xcodebuild -license accept
+
+# Install Ricty with Powerline
+brew install sanemat/font/ricty --with-powerline 1>/dev/null
+cp -f /usr/local/opt/ricty/share/fonts/Ricty*.ttf ~/Library/Fonts/
+fc-cache -f 1>/dev/null
+
+# Link setting files.
+for conf in $(find config -type f | grep -e 'zsh' -e 'zprezto' -e 'hyper'); do
+	ln -sf $conf ~/${conf##*/}
+done
+
+# Create directory
+mkdir ~/.config
+# link
+ln -sf ${DOTSPATH}/config/nvim/ ~/.config/nvim
+
 
 # Logging.
 terminal-notifier -message 'All done.' -sound Funk

@@ -15,13 +15,6 @@ fi
 # Set operation.
 setopt EXTENDED_GLOB
 
-
-# anyenv
-if [[ -d $HOME/.anyenv ]] ; then
-    export PATH="$HOME/.anyenv/bin:$PATH"
-    eval "$(anyenv init - --no-rehash)"
-fi
-
 ## Warning setting for tensorflow.
 export TF_CPP_MIN_LOG_LEVEL=2
 

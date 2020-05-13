@@ -5,22 +5,18 @@
 
 e.g. ~/.ssh, ~/.config/nvim, ...
 
-
-Please exec this command on Terminal.
+Please execute this command on Terminal.
 ```:Terminal.app
 $ bash -c "$(curl -fsSL https://raw.githubusercontent.com/matken11235/dotfiles/master/install.sh)"
 ```
-### Tasks after that
-#### Install
+
+## Tasks after that
+### Install
 * Affinity Designer
 * TOEFL Official Guide
 
-#### Setting
-* iTerm2 -> preferences -> Load preferences from a custom folder or URL: ~/dotfiles/config/iterm2 ↩︎Enter
-* IntelliJ IDEA -> Import Settings: ~/dotfiles/config/IntelliJIdea2018.1/settings.jar
-* CLion -> Import Settings: ~/dotfiles/config/CLion2018.1/settings.jar
-* Mendeley ->
-
+### Setting
+#### Mendeley
 macOSアプリの開いてすぐの，All Documentsの隣，Edit Settingsをクリック
 Synchronize attatched filesのチェックを外す（MendeleyのCloudと同期しない）
 Save & Syncで変更を保存

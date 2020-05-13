@@ -27,19 +27,28 @@ homebrew_packages:
   - name: graphviz  # keras.plot_model
   - name: wget
 homebrew_cask_packages:
-  - name: google-chrome
-  - name: firefox
-  - name: docker
-#  - name: virtualbox
-#  - name: vagrant
-    #  - name: adobe-creative-cloud
-  - name: jetbrains-toolbox
-  - name: visual-studio-code
   - name: atom
-  - name: google-cloud-sdk
-    #  - name: etcher
-  - name: qfinder-pro
+  - name: deepl
+  - name: discord
+  - name: docker
   - name: dropbox
-  - name: sketch
+  - name: etcher
+  - name: figma
+  - name: firefox
+  - name: google-chrome
+  - name: google-cloud-sdk
+  - name: google-japanese-ime
+  - name: grammarly
+  - name: hyper
+  - name: jetbrains-toolbox
+  - name: keybase
+  - name: lens
+  - name: macs-fan-control
   - name: mendeley-desktop
-
+  - name: paw
+  - name: processing
+  - name: sketch
+  - name: tor-browser
+  - name: visual-studio-code
+  - name: zoomus
+  #   - name: qfinder-pro  

@@ -28,6 +28,9 @@ Copy files to: /Users/matken/Dropbox/Papers にセットする．
 さらに下の，Rename document files にチェックを入れる．
 File name: Year Title に変更する．
 
+#### RunCat
+General -> Startup: Launch RunCat at login
+Indications -> Turn all of them on
 
 #### Dropbox
 * rm -rf ~/.ssh && ln -s ~/Dropbox/Private/ssh ~/.ssh

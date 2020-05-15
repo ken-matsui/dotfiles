@@ -33,6 +33,7 @@ homebrew_packages:
   - name: terraform
   - name: wget
   - name: yaml-cpp
+  - name: youtube-dl
   - name: zsh-syntax-highlighting
 homebrew_cask_packages:
   - name: atom

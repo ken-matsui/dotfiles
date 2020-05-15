@@ -38,6 +38,7 @@
     key: minimize-to-application
     type: bool
     value: true
+
 - name: Launchpad icon size
   osx_defaults:
     domain: com.apple.dock
@@ -56,12 +57,14 @@
     key: ResetLaunchPad
     type: bool
     value: true
+
 - name: Show Hard disks on the desktop
   osx_defaults:
     domain: com.apple.finder
     key: ShowHardDrivesOnDesktop
     type: int
     value: 1
+
 - name: New Finder windows show...
   osx_defaults:
     domain: com.apple.finder
@@ -80,10 +83,12 @@
     key: ShowRecentTags
     type: int
     value: 0
+
 - name: Speed up dialog display and window resize speed
   osx_defaults:
     key: NSWindowResizeTime
     value: 0.1
+
 - name: Fastest Key Repeat
   osx_defaults:
     key: KeyRepeat
@@ -187,9 +192,3 @@
   shell: /usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:showItemInfo true' ~/Library/Preferences/com.apple.finder.plist
 - name: text size on the desktop
   shell: /usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:textSize 10' ~/Library/Preferences/com.apple.finder.plist
-#- name: Move focus to next window by 'option + tab' on Keyboard Shortcuts
-#  shell: /usr/libexec/PlistBuddy -c 'Set :AppleSymbolicHotKeys:27:value:parameters:0 65535' ~/Library/Preferences/com.apple.symbolichotkeys.plist
-#- name: same process
-#  shell: /usr/libexec/PlistBuddy -c 'Set :AppleSymbolicHotKeys:27:value:parameters:1 48' ~/Library/Preferences/com.apple.symbolichotkeys.plist
-#- name: same process
-#  shell: /usr/libexec/PlistBuddy -c 'Set :AppleSymbolicHotKeys:27:value:parameters:2 524288' ~/Library/Preferences/com.apple.symbolichotkeys.plist

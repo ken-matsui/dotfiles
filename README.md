@@ -17,9 +17,10 @@ $ zsh -c "$(curl -fsSL https://dot.matken.jp)"
 
 ### Setting
 #### Dropbox
-* rm -rf ~/.ssh && ln -s ~/Dropbox/Private/ssh ~/.ssh
-* defaults write com.apple.screencapture location ~/Dropbox/Temporaries/
-* defaults write com.apple.finder NewWindowTargetPath file://~/Dropbox/
+1. Log into Dropbox
+1. `rm -rf ~/.ssh && ln -s ~/Dropbox/Private/ssh ~/.ssh`
+1. `defaults write com.apple.screencapture location ~/Dropbox/Temporaries/`
+1. `defaults write com.apple.finder NewWindowTargetPath file://~/Dropbox/`
 
 #### kr pair
 > https://krypt.co/docs/start/code-signing.html

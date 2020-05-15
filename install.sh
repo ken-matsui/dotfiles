@@ -24,6 +24,7 @@ printf '[\e[32m?\e[m] ' && sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Install Xcode command line tools.
+echo 'Installing Xcode command line tools ...'
 check="$(xcode-select --install 2>&1)"
 str='xcode-select: note: install requested for command line developer tools'
 while [[ $check == $str ]]; do
@@ -32,6 +33,7 @@ while [[ $check == $str ]]; do
 done
 
 # Install Homebrew
+echo 'Installing Homebrew ...'
 yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" >/dev/null 2>&1
 
 # Install git

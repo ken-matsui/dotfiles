@@ -11,5 +11,6 @@ read -n 1 -s -r -p "Press any key to continue"
 defaults read > defaults_aft.txt
 defaults -currentHost read > defaults_currentHost_aft.txt
 
+printf "\n< new, > old\n"
 diff defaults_aft.txt defaults_bef.txt
 diff defaults_currentHost_aft.txt defaults_currentHost_bef.txt

@@ -62,4 +62,4 @@ homebrew_cask_packages:
   - name: tor-browser
   - name: visual-studio-code
   - name: zoomus
-  #   - name: qfinder-pro  
+#   - name: qfinder-pro  

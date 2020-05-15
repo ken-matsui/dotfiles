@@ -43,7 +43,7 @@ git config --global user.email ${git_email:-$(uname -n)}
 git clone -q https://github.com/matken11235/dotfiles.git
 
 # Install rust-lang
-curl https://sh.rustup.rs -sSf | bash -s -- -y 1>/dev/null
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y 1>/dev/null
 
 # Install ansible (and accompany some of it)
 brew install ansible 1>/dev/null

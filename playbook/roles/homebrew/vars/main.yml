@@ -26,7 +26,6 @@ homebrew_packages:
   - name: mas
   - name: neovim
   - name: nushell
-  - name: python@2
   - name: python
   - name: tree
   - name: terminal-notifier

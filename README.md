@@ -7,7 +7,7 @@ e.g. ~/.ssh, ~/.config/nvim, ...
 
 Please execute this command on Terminal.
 ```:Terminal.app
-$ bash -c "$(curl -fsSL https://raw.githubusercontent.com/matken11235/dotfiles/master/install.sh)"
+$ bash -c "$(curl -fsSL https://dot.matken.jp)"
 ```
 
 ## Tasks after that

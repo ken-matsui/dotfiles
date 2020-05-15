@@ -34,6 +34,8 @@ Indications -> Turn all of them on
 
 #### Dropbox
 * rm -rf ~/.ssh && ln -s ~/Dropbox/Private/ssh ~/.ssh
+* defaults write com.apple.screencapture location ~/Dropbox/Temporaries/
+* defaults write com.apple.finder NewWindowTargetPath file://~/DropBox/
 * kr pair
 
 https://krypt.co/docs/start/code-signing.html

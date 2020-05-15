@@ -169,7 +169,7 @@
     key: familySyncedName
     type: string
     value: "matken-mbp2018"
-- name: Change the computer name
+- name: Change the dock size
   osx_defaults:
     domain: com.apple.dock
     key: tilesize

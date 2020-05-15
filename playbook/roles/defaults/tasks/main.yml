@@ -165,10 +165,16 @@
     value: 1
 - name: Change the computer name
   osx_defaults:
-    domain: com.apple.rapport.plist
+    domain: com.apple.rapport
     key: familySyncedName
     type: string
     value: "matken-mbp2018"
+- name: Change the computer name
+  osx_defaults:
+    domain: com.apple.dock
+    key: tilesize
+    type: int
+    value: 40
 # https://www.defaults-write.com/display-the-file-extensions-in-finder/
 - name: Show all filename extensions on Finder
   osx_defaults:

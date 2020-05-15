@@ -6,10 +6,18 @@
     key: NSCloseAlwaysConfirmsChanges
     type: bool
     value: true
+
 - name: Require password immediately after sleep or screen saver begins
   osx_defaults:
     domain: com.apple.screensaver
     key: askForPasswordDelay
+    type: int
+    value: 0
+
+- name: Screen Saver never starts
+  osx_defaults:
+    domain: com.apple.screensaver
+    key: idleTime
     type: int
     value: 0
 

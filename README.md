@@ -43,8 +43,8 @@ git config --global commit.gpgsign false
 ```
 
 #### RunCat
-General -> Startup: Launch RunCat at login
-Indications -> Turn all of them on
+1. General -> Startup: Launch RunCat at login
+1. Indications -> Turn all of them on
 
 #### Mendeley
 macOSアプリの開いてすぐの，All Documentsの隣，Edit Settingsをクリック

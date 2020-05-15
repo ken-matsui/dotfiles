@@ -179,6 +179,7 @@
     key: AppleShowAllExtensions
     type: bool
     value: true
+
 - name: Increase grid spacing for icons on the desktop and in other icon views
   shell: /usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:gridSpacing 85' ~/Library/Preferences/com.apple.finder.plist
 - name: Show item info near icons on the desktop and in other icon views

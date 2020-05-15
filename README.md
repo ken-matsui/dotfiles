@@ -16,29 +16,13 @@ $ zsh -c "$(curl -fsSL https://dot.matken.jp)"
 * TOEFL Official Guide
 
 ### Setting
-#### Mendeley
-macOSアプリの開いてすぐの，All Documentsの隣，Edit Settingsをクリック
-Synchronize attatched filesのチェックを外す（MendeleyのCloudと同期しない）
-Save & Syncで変更を保存
-
-macのツールバーから，Mendeley Desktop -> Preferences
-File Organizer -> Organize my files にチェックを入れる．
-Copy files to: /Users/matken/Dropbox/Papers にセットする．
-
-さらに下の，Rename document files にチェックを入れる．
-File name: Year Title に変更する．
-
-#### RunCat
-General -> Startup: Launch RunCat at login
-Indications -> Turn all of them on
-
 #### Dropbox
 * rm -rf ~/.ssh && ln -s ~/Dropbox/Private/ssh ~/.ssh
 * defaults write com.apple.screencapture location ~/Dropbox/Temporaries/
 * defaults write com.apple.finder NewWindowTargetPath file://~/DropBox/
-* kr pair
 
-https://krypt.co/docs/start/code-signing.html
+#### kr pair
+> https://krypt.co/docs/start/code-signing.html
 
 To enable code signing, run the following command on your paired computer
 ```bash
@@ -57,6 +41,21 @@ Finally, disable auto sign-off.
 git config --global commit.gpgsign false
 ```
 
+#### RunCat
+General -> Startup: Launch RunCat at login
+Indications -> Turn all of them on
+
+#### Mendeley
+macOSアプリの開いてすぐの，All Documentsの隣，Edit Settingsをクリック
+Synchronize attatched filesのチェックを外す（MendeleyのCloudと同期しない）
+Save & Syncで変更を保存
+
+macのツールバーから，Mendeley Desktop -> Preferences
+File Organizer -> Organize my files にチェックを入れる．
+Copy files to: /Users/matken/Dropbox/Papers にセットする．
+
+さらに下の，Rename document files にチェックを入れる．
+File name: Year Title に変更する．
 
 #### aws-cli
 ```bash

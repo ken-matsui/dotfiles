@@ -175,8 +175,8 @@
   shell: /usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:showItemInfo true' ~/Library/Preferences/com.apple.finder.plist
 - name: text size on the desktop
   shell: /usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:textSize 10' ~/Library/Preferences/com.apple.finder.plist
-- name: Move focus to next window by 'option + tab' on Keyboard Shortcuts
-  shell: /usr/libexec/PlistBuddy -c 'Set :AppleSymbolicHotKeys:27:value:parameters:0 65535' ~/Library/Preferences/com.apple.symbolichotkeys.plist
+#- name: Move focus to next window by 'option + tab' on Keyboard Shortcuts
+#  shell: /usr/libexec/PlistBuddy -c 'Set :AppleSymbolicHotKeys:27:value:parameters:0 65535' ~/Library/Preferences/com.apple.symbolichotkeys.plist
 - name: same process
   shell: /usr/libexec/PlistBuddy -c 'Set :AppleSymbolicHotKeys:27:value:parameters:1 48' ~/Library/Preferences/com.apple.symbolichotkeys.plist
 - name: same process

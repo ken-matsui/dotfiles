@@ -8,6 +8,8 @@
 # Set operation.
 setopt EXTENDED_GLOB
 
+eval "$(starship init zsh)"
+
 ## Warning setting for tensorflow.
 export TF_CPP_MIN_LOG_LEVEL=2
 

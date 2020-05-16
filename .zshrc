@@ -2,7 +2,6 @@ export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 zplug "modules/directory", from:prezto
-zplug "modules/spectrum", from:prezto
 zplug "modules/utility", from:prezto
 zplug "modules/completion", from:prezto
 zplug "zsh-users/zsh-syntax-highlighting", defer:2

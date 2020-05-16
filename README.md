@@ -15,7 +15,7 @@ $ zsh -c "$(curl -fsSL https://dot.matken.jp)"
 * Affinity Designer
 * TOEFL Official Guide
 
-### Setting
+### Settings
 #### Dropbox
 1. Log into Dropbox
 1. `rm -rf ~/.ssh && ln -s ~/Dropbox/Private/ssh ~/.ssh`

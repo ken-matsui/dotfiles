@@ -1,16 +1,23 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
 
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+zplug "modules/directory", from:prezto
+zplug "modules/spectrum", from:prezto
+zplug "modules/utility", from:prezto
+zplug "modules/completion", from:prezto
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [Y/n]: "
+    if read -q; then
+        echo; zplug install
+    fi
 fi
 
-# Customize to your needs...
+# Then, source plugins and add commands to $PATH
+zplug load --verbose
+
 
 # Set operation.
 setopt EXTENDED_GLOB

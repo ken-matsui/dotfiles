@@ -37,23 +37,33 @@ echo 'Installing Homebrew ...'
 yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" >/dev/null 2>&1
 
 # Install git
+echo 'Installing git ...'
 brew install git 1>/dev/null
 git config --global user.name ${git_name:-$(whoami)}
 git config --global user.email ${git_email:-$(uname -n)}
 
 # Clone
+echo 'Installing matken11235/dotfiles ...'
 git clone -q https://github.com/matken11235/dotfiles.git
 
 # Install rust-lang
+echo 'Installing Rust ...'
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y 1>/dev/null
 
 # Install ansible (and accompany some of it)
+echo 'Installing ansible ...'
 brew install ansible 1>/dev/null
 ansible-playbook ${DOTSPATH}/playbook/main.yml -i ${DOTSPATH}/playbook/hosts
 
+# Accept license
 sudo xcodebuild -license accept
 
+# Install zsh-prezto.
+echo 'Installing zsh-prezto ...'
+git clone -q --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+
 # config
+echo 'Copying config files ...'
 mkdir ~/.config
 ln -sf ${DOTSPATH}/.config/ ~/.config
 ln -sf ${DOTSPATH}/.z* ~/

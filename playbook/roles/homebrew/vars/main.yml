@@ -35,6 +35,7 @@ homebrew_packages:
   - name: wget
   - name: yaml-cpp
   - name: youtube-dl
+  - name: zplug
   - name: zsh-syntax-highlighting
 homebrew_cask_packages:
   - name: atom

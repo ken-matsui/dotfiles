@@ -28,6 +28,7 @@ homebrew_packages:
   - name: neovim
   - name: nushell
   - name: python
+  - name: starship
   - name: tree
   - name: terminal-notifier
   - name: terraform

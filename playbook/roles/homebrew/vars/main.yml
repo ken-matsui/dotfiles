@@ -1,6 +1,5 @@
 ---
 homebrew_taps:
-  - homebrew/cask-fonts
   - kryptco/tap # for kr
 homebrew_packages:
   - name: asciinema
@@ -46,7 +45,7 @@ homebrew_cask_packages:
   - name: dropbox
   - name: figma
   - name: firefox
-  - name: font-fira-code
+  - name: font-source-code-pro-for-powerline
   - name: framer-x
   - name: fritzing
   - name: google-chrome

@@ -65,6 +65,9 @@ ln -sf ${DOTSPATH}/.config/ ~/.config
 ln -sf ${DOTSPATH}/.z* ~/
 ln -sf ${DOTSPATH}/.hyper.js ~/
 
+# https://stackoverflow.com/a/13785716
+sudo chmod -R 755 /usr/local/share/zsh
+
 # Logging.
 terminal-notifier -message 'All done.' -sound Funk
 printf '\xE2\x9C\x94 \e[1;33m All done !!! \u2728 \u2728 \e[m\n'

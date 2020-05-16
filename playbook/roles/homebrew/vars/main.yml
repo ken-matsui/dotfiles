@@ -36,11 +36,11 @@ homebrew_packages:
   - name: zsh-syntax-highlighting
 homebrew_cask_packages:
   - name: atom
+  - name: balenaetcher
   - name: deepl
   - name: discord
   - name: docker
   - name: dropbox
-  - name: etcher
   - name: figma
   - name: firefox
   - name: framer-x

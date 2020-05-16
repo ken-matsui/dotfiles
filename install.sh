@@ -58,10 +58,6 @@ ansible-playbook ${DOTSPATH}/playbook/main.yml -i ${DOTSPATH}/playbook/hosts
 # Accept license
 sudo xcodebuild -license accept
 
-# Install zsh-prezto.
-echo 'Installing zsh-prezto ...'
-git clone -q --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-
 # config
 echo 'Copying config files ...'
 mkdir ~/.config

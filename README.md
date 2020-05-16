@@ -43,7 +43,7 @@ git config --global commit.gpgsign false
 ```
 
 #### Hyper
-fontFamily: Fira Code
+`fontFamily: "Fira Code"`
 
 #### RunCat
 1. General -> Startup: Launch RunCat at login

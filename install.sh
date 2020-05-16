@@ -53,19 +53,11 @@ ansible-playbook ${DOTSPATH}/playbook/main.yml -i ${DOTSPATH}/playbook/hosts
 
 sudo xcodebuild -license accept
 
-################
 # config
-################
-# Link setting files.
-for conf in $(find config -type f | grep -e 'zsh' -e 'hyper'); do
-	ln -sf $conf ~/${conf##*/}
-done
-
-# Create directory
 mkdir ~/.config
-# link
-ln -sf ${DOTSPATH}/config/nvim/ ~/.config/nvim
-
+ln -sf ${DOTSPATH}/.config/ ~/.config
+ln -sf ${DOTSPATH}/.z* ~/
+ln -sf ${DOTSPATH}/.hyper.js ~/
 
 # Logging.
 terminal-notifier -message 'All done.' -sound Funk

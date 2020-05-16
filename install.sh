@@ -58,9 +58,6 @@ ansible-playbook ${DOTSPATH}/playbook/main.yml -i ${DOTSPATH}/playbook/hosts
 # Install zsh-prezto.
 git clone -q --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
-# Install tpm
-git clone -q https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
 # accept
 sudo xcodebuild -license accept
 

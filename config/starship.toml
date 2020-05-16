@@ -1,0 +1,6 @@
+[hostname]
+ssh_only = false
+prefix = "⟪"
+suffix = "⟫"
+style = "bold green"
+disabled = false

@@ -45,6 +45,9 @@ git config --global commit.gpgsign false
 #### Hyper
 `fontFamily: "Fira Code"`
 
+#### LaunchAgents
+TODO: Execute LaunchAgents
+
 #### RunCat
 1. General -> Startup: Launch RunCat at login
 1. Indications -> Turn all of them on

@@ -7,6 +7,8 @@
 
 # Set operation.
 setopt EXTENDED_GLOB
+# Don't highlight when selecting words
+unset zle_bracketed_paste
 
 eval "$(starship init zsh)"
 
@@ -34,10 +36,6 @@ alias vim=nvim
 export XDG_CONFIG_HOME=$HOME/.config
 
 export PATH="/usr/local/opt/curl/bin:$PATH"
-export PATH="/usr/local/opt/erlang@20/bin:$PATH"
-
-# Don't highlight when selecting words
-unset zle_bracketed_paste
 
 # Enable zsh-syntax-highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

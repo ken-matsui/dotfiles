@@ -51,18 +51,13 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y 1>/dev
 brew install ansible 1>/dev/null
 ansible-playbook ${DOTSPATH}/playbook/main.yml -i ${DOTSPATH}/playbook/hosts
 
+sudo xcodebuild -license accept
 
 ################
 # config
 ################
-# Install zsh-prezto.
-git clone -q --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-
-# accept
-sudo xcodebuild -license accept
-
 # Link setting files.
-for conf in $(find config -type f | grep -e 'zsh' -e 'zprezto' -e 'hyper'); do
+for conf in $(find config -type f | grep -e 'zsh' -e 'hyper'); do
 	ln -sf $conf ~/${conf##*/}
 done
 

@@ -15,12 +15,9 @@ lDs9N35AWhVwB9i8GCf7a1Dj8LKD323GM7KCllG+qm9w2uPjOS81YjsuOhZTGkLZ' \
 | openssl enc -d -des -base64 -k 'dotfiles!!!'
 export DOTSPATH="$(cd $(dirname $0); pwd)/dotfiles"
 
-# Config Task
-printf "[\e[32m?\e[m] Git name [$(whoami)]: " && read git_name
-printf "[\e[32m?\e[m] Git email [$(uname -n)]: " && read git_email
-## Ask for the administrator password upfront.
+# Ask for the administrator password upfront.
 printf '[\e[32m?\e[m] ' && sudo -v
-## Keep-alive: update existing `sudo` time stamp until this script has finished.
+# Keep-alive: update existing `sudo` time stamp until this script has finished.
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Install Xcode command line tools.
@@ -32,6 +29,15 @@ while [[ $check == $str ]]; do
 	sleep 1
 done
 
+# config
+echo 'Copying config files ...'
+ln -sf ${DOTSPATH}/.config/ ~/.config
+ln -sf ${DOTSPATH}/.z* ~/
+ln -sf ${DOTSPATH}/.hyper.js ~/
+
+# https://stackoverflow.com/a/13785716
+sudo chmod -R 755 /usr/local/share/zsh
+
 # Install Homebrew
 echo 'Installing Homebrew ...'
 yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" >/dev/null 2>&1
@@ -39,8 +45,6 @@ yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/
 # Install git
 echo 'Installing git ...'
 brew install git 1>/dev/null
-git config --global user.name ${git_name:-$(whoami)}
-git config --global user.email ${git_email:-$(uname -n)}
 
 # Clone
 echo 'Installing matken11235/dotfiles ...'
@@ -57,16 +61,6 @@ ansible-playbook ${DOTSPATH}/playbook/main.yml -i ${DOTSPATH}/playbook/hosts
 
 # Accept license
 sudo xcodebuild -license accept
-
-# config
-echo 'Copying config files ...'
-mkdir ~/.config
-ln -sf ${DOTSPATH}/.config/ ~/.config
-ln -sf ${DOTSPATH}/.z* ~/
-ln -sf ${DOTSPATH}/.hyper.js ~/
-
-# https://stackoverflow.com/a/13785716
-sudo chmod -R 755 /usr/local/share/zsh
 
 # Logging.
 terminal-notifier -message 'All done.' -sound Funk

@@ -58,11 +58,11 @@ endfunction
 let g:python_host_prog = '/usr/bin/python' " system python2
 let g:python3_host_prog = '/usr/local/bin/python3' " homebrew python3
 
-call s:load('dein.rc.vim')
-call s:load('filetype.rc.vim')
-call s:load('mappings.rc.vim')
-call s:load('options.rc.vim')
-call s:load('view.rc.vim')
+call s:load('dein.vim')
+call s:load('filetype.vim')
+call s:load('mappings.vim')
+call s:load('options.vim')
+call s:load('view.vim')
 
 " Must be written at the last.  see :help 'secure'.
 set secure

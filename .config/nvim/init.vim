@@ -34,7 +34,8 @@ let g:python_host_prog = '/usr/bin/python' " system python2
 let g:python3_host_prog = '/usr/local/bin/python3' " homebrew python3
 
 call s:source_rc('dein.rc.vim')
+call s:source_rc('filetype.rc.vim')
 call s:source_rc('mappings.rc.vim')
 call s:source_rc('options.rc.vim')
-call s:source_rc('filetype.rc.vim')
+call s:source_rc('view.rc.vim')
 

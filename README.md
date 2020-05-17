@@ -1,21 +1,20 @@
 # dotfiles
 
-## HOW TO INSTALL
-:warning: This script does not guarantee processing when some files already exist.
+## Installation
 
-e.g. ~/.ssh, ~/.config/nvim, ...
-
-Please execute this command on Terminal.
 ```:Terminal.app
 $ zsh -c "$(curl -fsSL https://dot.matken.jp)"
 ```
 
 ## Tasks after that
-### Install
+
+### Applications
+
 * Affinity Designer
 * TOEFL Official Guide
 
 ### Settings
+
 #### Dropbox
 1. Log into Dropbox
 1. `rm -rf ~/.ssh && ln -s ~/Dropbox/Private/ssh ~/.ssh`

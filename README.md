@@ -22,7 +22,11 @@ $ zsh -c "$(curl -fsSL https://dot.matken.jp)"
 1. `defaults write com.apple.screencapture location ~/Dropbox/Temporaries/`
 1. `defaults write com.apple.finder NewWindowTargetPath file://~/Dropbox/`
 
-#### kr pair
+#### krypt.co
+```bash
+kr pair
+```
+
 > https://krypt.co/docs/start/code-signing.html
 
 To enable code signing, run the following command on your paired computer
@@ -63,13 +67,3 @@ Copy files to: /Users/matken/Dropbox/Papers にセットする．
 
 さらに下の，Rename document files にチェックを入れる．
 File name: Year Title に変更する．
-
-#### aws-cli
-```bash
-aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
-aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
-aws configure set default.region ${AWS_DEFAULT_REGION:-'ap-northeast-1'}
-```
-
-## TODO
-* **VSCode config file**

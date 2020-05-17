@@ -13,7 +13,6 @@ Fqfogf2MqK44GsiwPA/Or+igzFaEjIgGbbqQYW3a8lIjEewI6MwCZFvHN4uBbxUF
 qTDvx0x8XGOryHRFMrZsjgkw3C4yGilHegdq6Zy2jBYfNSBSpVLMOp03TGgONTYg
 lDs9N35AWhVwB9i8GCf7a1Dj8LKD323GM7KCllG+qm9w2uPjOS81YjsuOhZTGkLZ' \
 | openssl enc -d -des -base64 -k 'dotfiles!!!'
-export DOTSPATH="$(cd $(dirname $0); pwd)/dotfiles"
 
 # Ask for the administrator password upfront.
 printf '[\e[32m?\e[m] ' && sudo -v
@@ -39,25 +38,28 @@ brew install git 1>/dev/null
 
 # Clone
 echo 'Installing matken11235/dotfiles ...'
-git clone -q https://github.com/matken11235/dotfiles.git
-
-# Install rust-lang
-echo 'Installing Rust ...'
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y 1>/dev/null
+git clone -q https://github.com/matken11235/dotfiles.git .dotfiles
+export DOTSPATH="$(cd $(dirname $0); pwd)/.dotfiles"
 
 # Install ansible (and accompany some of it)
 echo 'Installing ansible ...'
 brew install ansible 1>/dev/null
 ansible-playbook ${DOTSPATH}/playbook/main.yml -i ${DOTSPATH}/playbook/hosts
 
+# Install rust-lang
+echo 'Installing Rust ...'
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y 1>/dev/null
+
 # Accept license
 sudo xcodebuild -license accept
 
 # config
 echo 'Copying config files ...'
-ln -sf ${DOTSPATH}/.config/ ~/.config
+ln -s ${DOTSPATH}/.config/ ~/.config
 ln -sf ${DOTSPATH}/.z* ~/
-ln -sf ${DOTSPATH}/.hyper.js ~/
+ln -s ${DOTSPATH}/.hyper.js ~/
+ln -s ${DOTSPATH}/LaunchAgents/auto-commit.plist ~/Library/LaunchAgents/auto-commit.plist
+launchctl load ~/Library/LaunchAgents/auto-commit.plist
 
 # https://stackoverflow.com/a/13785716
 sudo chmod -R 755 /usr/local/share/zsh

@@ -39,3 +39,5 @@ call s:source_rc('mappings.rc.vim')
 call s:source_rc('options.rc.vim')
 call s:source_rc('view.rc.vim')
 
+" Must be written at the last.  see :help 'secure'.
+set secure

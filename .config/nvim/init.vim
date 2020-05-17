@@ -1,43 +1,68 @@
+if 0 | endif
+
+" Use plain vim
+" when vim was invoked by 'sudo' command
+" or, invoked as 'git difftool'
+if exists('$SUDO_USER') || exists('$GIT_DIR')
+  finish
+endif
+
 if &compatible
   set nocompatible
 endif
 
-function! s:source_rc(path, ...) abort
-  let use_global = get(a:000, 0, !has('vim_starting'))
-  let abspath = resolve(expand('~/.config/nvim/rc/' . a:path))
-  if !use_global
-    execute 'source' fnameescape(abspath)
-    return
-  endif
+let g:false = 0
+let g:true = 1
 
-  " substitute all 'set' to 'setglobal'
-  let content = map(readfile(abspath),
-        \ 'substitute(v:val, "^\\W*\\zsset\\ze\\W", "setglobal", "")')
-  " create tempfile and source the tempfile
-  let tempfile = tempname()
-  try
-    call writefile(content, tempfile)
-    execute 'source' fnameescape(tempfile)
-  finally
-    if filereadable(tempfile)
-      call delete(tempfile)
-    endif
-  endtry
-endfunction
-
-" Set augroup.
 augroup MyAutoCmd
   autocmd!
 augroup END
 
+function! s:glob(from, pattern)
+  return split(globpath(a:from, a:pattern), "[\r\n]")
+endfunction
+
+function! s:source(from, ...)
+  let found = g:false
+  for pattern in a:000
+    for script in s:glob(a:from, pattern)
+      execute 'source' escape(script, ' ')
+      let found = g:true
+    endfor
+  endfor
+  return found
+endfunction
+
+function! s:load(...) abort
+  let base = expand($HOME.'/.config/nvim/rc')
+  let found = g:true
+
+  if len(a:000) > 0
+    " Stop to load
+    if index(a:000, g:false) != -1
+      return g:false
+    endif
+    for file in a:000
+      if !s:source(base, file)
+        let found = s:source(base, '*[0-9]*_'.file)
+      endif
+    endfor
+  else
+    " Load all files starting with number
+    let found = s:source(base, '*[0-9]*_*.vim')
+  endif
+
+  return found
+endfunction
+
 let g:python_host_prog = '/usr/bin/python' " system python2
 let g:python3_host_prog = '/usr/local/bin/python3' " homebrew python3
 
-call s:source_rc('dein.rc.vim')
-call s:source_rc('filetype.rc.vim')
-call s:source_rc('mappings.rc.vim')
-call s:source_rc('options.rc.vim')
-call s:source_rc('view.rc.vim')
+call s:load('dein.rc.vim')
+call s:load('filetype.rc.vim')
+call s:load('mappings.rc.vim')
+call s:load('options.rc.vim')
+call s:load('view.rc.vim')
 
 " Must be written at the last.  see :help 'secure'.
 set secure

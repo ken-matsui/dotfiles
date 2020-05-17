@@ -15,7 +15,7 @@ if ! zplug check --verbose; then
 fi
 
 # Then, source plugins and add commands to $PATH
-zplug load --verbose
+zplug load # --verbose
 
 # Set operation.
 setopt EXTENDED_GLOB

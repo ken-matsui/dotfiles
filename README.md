@@ -42,11 +42,11 @@ Finally, disable auto sign-off.
 git config --global commit.gpgsign false
 ```
 
-#### Hyper
-`fontFamily: "Fira Code"`
-
 #### LaunchAgents
-TODO: Execute LaunchAgents
+```bash
+ln -s ~/dotfiles/LaunchAgents/auto-commit.plist ~/Library/LaunchAgents/auto-commit.plist
+launchctl load ~/Library/LaunchAgents/auto-commit.plist
+```
 
 #### RunCat
 1. General -> Startup: Launch RunCat at login
@@ -69,11 +69,6 @@ File name: Year Title に変更する．
 aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
 aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
 aws configure set default.region ${AWS_DEFAULT_REGION:-'ap-northeast-1'}
-```
-
-```bash
-ln -s ~/dotfiles/config/LaunchAgents/auto-commit.plist ~/Library/LaunchAgents/auto-commit.plist
-launchctl load ~/Library/LaunchAgents/auto-commit.plist
 ```
 
 ## TODO

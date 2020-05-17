@@ -46,12 +46,6 @@ Finally, disable auto sign-off.
 git config --global commit.gpgsign false
 ```
 
-#### LaunchAgents
-```bash
-ln -s ~/dotfiles/LaunchAgents/auto-commit.plist ~/Library/LaunchAgents/auto-commit.plist
-launchctl load ~/Library/LaunchAgents/auto-commit.plist
-```
-
 #### RunCat
 1. General -> Startup: Launch RunCat at login
 1. Indications -> Turn all of them on

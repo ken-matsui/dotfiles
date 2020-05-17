@@ -1,0 +1,19 @@
+[user]
+	name = Ken Matsui
+	email = 26405363+matken11235@users.noreply.github.com
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[color "diff-highlight"]
+	newHighlight = green bold 22
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+[color "diff"]
+	new = green bold
+	meta = 11
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	whitespace = red reverse
+[color]
+	ui = true

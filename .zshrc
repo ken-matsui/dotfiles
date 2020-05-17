@@ -52,16 +52,6 @@ export GPG_TTY=$(tty) # Added by Krypton
 alias tar=gtar
 alias vim=nvim
 alias rm='gmv -f --backup=numbered --target-directory ~/.Trash/' # Enable safety dumping
-
-##################################
-# Software evaluations
-##################################
-eval "$(starship init zsh)" # starship
-[ -f /Users/matken/.travis/travis.sh ] && source /Users/matken/.travis/travis.sh # added by travis gem
-
-##################################
-# Functions
-##################################
 # .gitignore generator
 function gi() {
     curl -fsSL https://www.gitignore.io/api/$@ >>! $PWD/.gitignore && echo "overwrote $@ to $PWD/.gitignore"
@@ -70,3 +60,9 @@ function gi() {
 function gigafter() {
     git rm --cached $(git ls-files --full-name -i --exclude-standard)
 }
+
+##################################
+# Software evaluations
+##################################
+eval "$(starship init zsh)" # starship
+[ -f /Users/matken/.travis/travis.sh ] && source /Users/matken/.travis/travis.sh # added by travis gem

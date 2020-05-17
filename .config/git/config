@@ -11,7 +11,7 @@
 [color "diff"]
 	new = green bold
 	meta = 11
-	frag = magenta bold
+	frag = cyan bold
 	commit = yellow bold
 	old = red bold
 	whitespace = red reverse

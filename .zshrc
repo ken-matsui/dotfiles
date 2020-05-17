@@ -26,12 +26,12 @@ unset zle_bracketed_paste
 ##################################
 # Environment Paths
 ##################################
-export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CONFIG_HOME="$HOME/.config"
 #export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH" # coreutils
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH" # gnu-tar
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="$HOME/flutter/bin:$PATH" # flutter
-export PATH="$PATH:$HOME/.go_appengine" # golang with app-engine by Google
+export PATH="$HOME/.go_appengine:$PATH" # golang with app-engine by Google
 export PATH="$HOME/.cargo/bin:$PATH" # rust
 
 ##################################

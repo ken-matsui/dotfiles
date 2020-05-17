@@ -4,6 +4,7 @@ source $ZPLUG_HOME/init.zsh
 zplug "modules/directory", from:prezto
 zplug "modules/utility", from:prezto
 zplug "modules/completion", from:prezto
+zplug "zsh-users/zsh-autosuggestions", defer:2
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 # Install plugins if there are plugins that have not been installed

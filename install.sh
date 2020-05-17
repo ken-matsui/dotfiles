@@ -29,15 +29,6 @@ while [[ $check == $str ]]; do
 	sleep 1
 done
 
-# config
-echo 'Copying config files ...'
-ln -sf ${DOTSPATH}/.config/ ~/.config
-ln -sf ${DOTSPATH}/.z* ~/
-ln -sf ${DOTSPATH}/.hyper.js ~/
-
-# https://stackoverflow.com/a/13785716
-sudo chmod -R 755 /usr/local/share/zsh
-
 # Install Homebrew
 echo 'Installing Homebrew ...'
 yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" >/dev/null 2>&1
@@ -61,6 +52,15 @@ ansible-playbook ${DOTSPATH}/playbook/main.yml -i ${DOTSPATH}/playbook/hosts
 
 # Accept license
 sudo xcodebuild -license accept
+
+# config
+echo 'Copying config files ...'
+ln -sf ${DOTSPATH}/.config/ ~/.config
+ln -sf ${DOTSPATH}/.z* ~/
+ln -sf ${DOTSPATH}/.hyper.js ~/
+
+# https://stackoverflow.com/a/13785716
+sudo chmod -R 755 /usr/local/share/zsh
 
 # Logging.
 terminal-notifier -message 'All done.' -sound Funk

@@ -32,6 +32,7 @@ export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH" # gnu-tar
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="$HOME/flutter/bin:$PATH" # flutter
 export PATH="$PATH:$HOME/.go_appengine" # golang with app-engine by Google
+export PATH="$HOME/.cargo/bin:$PATH" # rust
 
 ##################################
 # Environment Variables
@@ -55,7 +56,6 @@ alias rm='gmv -f --backup=numbered --target-directory ~/.Trash/' # Enable safety
 ##################################
 # Software evaluations
 ##################################
-source $HOME/.cargo/env # rust
 eval "$(starship init zsh)" # starship
 [ -f /Users/matken/.travis/travis.sh ] && source /Users/matken/.travis/travis.sh # added by travis gem
 

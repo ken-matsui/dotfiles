@@ -14,12 +14,12 @@ qTDvx0x8XGOryHRFMrZsjgkw3C4yGilHegdq6Zy2jBYfNSBSpVLMOp03TGgONTYg
 lDs9N35AWhVwB9i8GCf7a1Dj8LKD323GM7KCllG+qm9w2uPjOS81YjsuOhZTGkLZ' \
 | openssl enc -d -des -base64 -k 'dotfiles!!!'
 
-# Ask for the administrator password upfront.
+# Ask for the administrator password upfront
 printf '[\e[32m?\e[m] ' && sudo -v
-# Keep-alive: update existing `sudo` time stamp until this script has finished.
+# Keep-alive: update existing `sudo` time stamp until this script has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-# Install Xcode command line tools.
+# Install Xcode command line tools
 echo 'Installing Xcode command line tools ...'
 check="$(xcode-select --install 2>&1)"
 str='xcode-select: note: install requested for command line developer tools'
@@ -36,7 +36,7 @@ yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/
 echo 'Installing git ...'
 brew install git 1>/dev/null
 
-# Clone
+# Install dotfiles
 echo 'Installing matken11235/dotfiles ...'
 git clone -q https://github.com/matken11235/dotfiles.git .dotfiles
 export DOTSPATH="$(cd $(dirname $0); pwd)/.dotfiles"
@@ -68,7 +68,7 @@ sudo chmod -R 755 /usr/local/share/zsh
 terminal-notifier -message 'All done.' -sound Funk
 printf '\xE2\x9C\x94 \e[1;33m All done !!! \u2728 \u2728 \e[m\n'
 printf '\xE2\x9D\x97 \e[1;31m Reboot your computer...\e[m\n'
-read -n 1 -s -r -p 'Press any key to continue'
+read -n 1 -s -r -p 'Press any key to continue: '
 
 # Restart to make the setting effective.
 sudo reboot

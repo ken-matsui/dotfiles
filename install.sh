@@ -54,7 +54,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y 1>/dev
 sudo xcodebuild -license accept
 
 # config
-echo 'Copying config files ...'
+echo 'Linking config files ...'
 ln -s ${DOTSPATH}/.config/ ~/.config
 ln -sf ${DOTSPATH}/.z* ~/
 ln -s ${DOTSPATH}/.hyper.js ~/

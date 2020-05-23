@@ -49,13 +49,13 @@ git config --global commit.gpgsign false
 1. Indications -> Turn all of them on
 
 #### Mendeley
-macOSアプリの開いてすぐの，All Documentsの隣，Edit Settingsをクリック
+macOSアプリの開いてすぐの、All Documentsの隣、Edit Settingsをクリック
 Synchronize attatched filesのチェックを外す（MendeleyのCloudと同期しない）
 Save & Syncで変更を保存
 
-macのツールバーから，Mendeley Desktop -> Preferences
-File Organizer -> Organize my files にチェックを入れる．
-Copy files to: /Users/matken/Dropbox/Papers にセットする．
-
-さらに下の，Rename document files にチェックを入れる．
-File name: Year Title に変更する．
+1. In menu bar, click `Mendeley Desktop` -> `Preferences` -> `File Organizer`.
+1. Check the box of `Organize my files`.
+1. Type `/Users/matken/Dropbox/Papers` into `Copy files to:` sention.
+1. Check the box of `Rename document files`.
+1. Chenge to `Year Title` in `File name:` section.
+1. Click OK to save the changes.

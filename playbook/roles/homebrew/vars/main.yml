@@ -25,7 +25,6 @@ homebrew_packages:
   - name: llvm # clangd
   - name: mas
   - name: neovim
-  - name: nushell
   - name: python
   - name: starship
   - name: tree
@@ -35,7 +34,6 @@ homebrew_packages:
   - name: yaml-cpp
   - name: youtube-dl
   - name: zplug
-  - name: zsh-syntax-highlighting
 homebrew_cask_packages:
   - name: atom
   - name: balenaetcher

@@ -1,6 +1,8 @@
 prompt_order = [
     "time",
     "line_break",
+    "username",
+    "hostname",
     "kubernetes",
     "directory",
     "git_branch",
@@ -33,20 +35,10 @@ prompt_order = [
     "cmd_duration",
     "custom",
     "line_break",
-    "username",
-    "hostname",
     "jobs",
     "battery",
     "character",
 ]
-
-[time]
-disabled = false
-format = "[ 🕙 %Y/%m/%d %a %T ]"
-
-[directory]
-truncation_length = 8
-truncate_to_repo = false
 
 [username]
 show_always = true
@@ -55,3 +47,11 @@ show_always = true
 ssh_only = false
 style = "bold green"
 disabled = false
+
+[time]
+disabled = false
+format = "[ 🕙 %Y/%m/%d %a %T ]"
+
+[directory]
+truncation_length = 8
+truncate_to_repo = false

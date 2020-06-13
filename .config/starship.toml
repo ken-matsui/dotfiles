@@ -40,14 +40,6 @@ prompt_order = [
     "character",
 ]
 
-[username]
-show_always = true
-
-[hostname]
-ssh_only = false
-style = "bold green"
-disabled = false
-
 [time]
 disabled = false
 format = "[ 🕙 %Y/%m/%d %a %T ]"
@@ -55,3 +47,11 @@ format = "[ 🕙 %Y/%m/%d %a %T ]"
 [directory]
 truncation_length = 8
 truncate_to_repo = false
+
+[username]
+show_always = true
+
+[hostname]
+ssh_only = false
+style = "bold green"
+disabled = false

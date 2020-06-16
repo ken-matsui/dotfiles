@@ -89,3 +89,6 @@ repo='cespare/vim-toml'
 
 [[plugins]]
 repo='darfink/vim-plist'
+
+[[plugins]]
+repo='othree/yajs.vim'

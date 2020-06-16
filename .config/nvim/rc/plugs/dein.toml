@@ -73,6 +73,9 @@ let g:asyncomplete_completion_delay=10
 '''
 
 [[plugins]]
+repo='Shougo/neosnippet.vim'
+
+[[plugins]]
 repo='prabirshrestha/asyncomplete.vim'
 
 [[plugins]]

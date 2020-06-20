@@ -14,3 +14,4 @@ defaults -currentHost read > defaults_currentHost_aft.txt
 printf "\n< new, > old\n"
 diff defaults_aft.txt defaults_bef.txt
 diff defaults_currentHost_aft.txt defaults_currentHost_bef.txt
+echo 'old'

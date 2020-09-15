@@ -17,3 +17,5 @@
 	whitespace = red reverse
 [color]
 	ui = true
+[pull]
+	rebase = false

@@ -18,9 +18,13 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load --verbose
 
-# Set operation.
+# Set operations.
 setopt EXTENDED_GLOB
-# Don't highlight when selecting words
+## Appends every command to the history file once it is executed
+setopt inc_append_history
+## Reloads the history whenever you use it
+setopt share_history
+## Don't highlight when selecting words
 unset zle_bracketed_paste
 
 ##################################

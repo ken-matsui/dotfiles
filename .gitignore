@@ -3,6 +3,8 @@
 # ansible
 *.retry
 
-.config/configstore
-.config/gcloud
+.config/*
+!.config/starship.toml
+!.config/nvim
+!.config/git
 

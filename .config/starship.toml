@@ -1,48 +1,49 @@
-prompt_order = [
-    "time",
-    "line_break",
-    "username",
-    "hostname",
-    "kubernetes",
-    "directory",
-    "git_branch",
-    "git_commit",
-    "git_state",
-    "git_status",
-    "hg_branch",
-    "docker_context",
-    "package",
-    "dotnet",
-    "elixir",
-    "elm",
-    "erlang",
-    "golang",
-    "haskell",
-    "java",
-    "julia",
-    "nodejs",
-    "php",
-    "python",
-    "ruby",
-    "rust",
-    "terraform",
-    "nix_shell",
-    "conda",
-    "memory_usage",
-    "aws",
-    "env_var",
-    "crystal",
-    "cmd_duration",
-    "custom",
-    "line_break",
-    "jobs",
-    "battery",
-    "character",
-]
+format = """\
+  $time\
+  $line_break\
+  $username\
+  $hostname\
+  $kubernetes\
+  $directory\
+  $git_branch\
+  $git_commit\
+  $git_state\
+  $git_status\
+  $hg_branch\
+  $docker_context\
+  $package\
+  $dotnet\
+  $elixir\
+  $elm\
+  $erlang\
+  $golang\
+  $haskell\
+  $java\
+  $julia\
+  $nodejs\
+  $php\
+  $python\
+  $ruby\
+  $rust\
+  $terraform\
+  $nix_shell\
+  $conda\
+  $memory_usage\
+  $aws\
+  $env_var\
+  $crystal\
+  $cmd_duration\
+  $custom\
+  $line_break\
+  $jobs\
+  $battery\
+  $character\
+  """
 
 [time]
 disabled = false
-format = "[ 🕙 %Y/%m/%d %a %T ]"
+time_format = "%Y/%m/%d %a %T"
+format = "[\\[ 🕙 $time \\]]($style)"
 
 [directory]
 truncation_length = 8

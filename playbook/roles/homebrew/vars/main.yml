@@ -31,6 +31,7 @@ homebrew_packages:
   - name: terminal-notifier
   - name: terraform
   - name: wget
+  - name: wrk
   - name: yaml-cpp
   - name: youtube-dl
   - name: zplug

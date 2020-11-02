@@ -46,7 +46,7 @@ if [[ -d ~/.aws ]]; then # awscli
     export AWS_ACCESS_KEY_ID=$(cat ~/.aws/credentials | grep 'aws_access_key_id' | awk '{printf $3}')
     export AWS_SECRET_ACCESS_KEY=$(cat ~/.aws/credentials | grep 'aws_secret_access_key' | awk '{printf $3}')
 fi
-export CLOUDSDK_PYTHON=python3 # gcloud command
+export CLOUDSDK_PYTHON=python2 # gcloud command
 export TF_CPP_MIN_LOG_LEVEL=2 # Warning setting for tensorflow.
 export GPG_TTY=$(tty) # Added by Krypton
 

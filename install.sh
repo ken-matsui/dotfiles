@@ -58,8 +58,6 @@ echo 'Linking config files ...'
 ln -s ${DOTSPATH}/.config/ ~/.config
 ln -sf ${DOTSPATH}/.z* ~/
 ln -s ${DOTSPATH}/.hyper.js ~/
-ln -s ${DOTSPATH}/LaunchAgents/auto-commit.plist ~/Library/LaunchAgents/auto-commit.plist
-launchctl load ~/Library/LaunchAgents/auto-commit.plist
 
 # https://stackoverflow.com/a/13785716
 sudo chmod -R 755 /usr/local/share/zsh

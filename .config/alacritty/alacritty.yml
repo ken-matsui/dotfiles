@@ -1,0 +1,52 @@
+# Font configuration (changes require restart)
+font:
+  # The size to use.
+  size: 12
+
+  # The normal (roman) font face to use.
+  normal:
+    family: 'Source Code Pro for Powerline'
+    # Style can be specified to pick a specific face.
+    style: Regular
+
+  # The bold font face
+  bold:
+    family: 'Source Code Pro for Powerline'
+    # Style can be specified to pick a specific face.
+    # style: Bold
+
+  # The italic font face
+  italic:
+    family: 'Source Code Pro for Powerline'
+    # Style can be specified to pick a specific face.
+    # style: Italic
+
+# Colors
+colors:
+  # Default colors
+  primary:
+    background: '#2E333E'
+    foreground: '#ffffff'
+
+  # Normal colors
+  normal:
+    black: '#000000'
+    red: '#C51E14'
+    green: '#1DC121'
+    yellow: '#C7C329'
+    blue: '#0A2FC4'
+    magenta: '#C839C5'
+    cyan: '#20C5C6'
+    white: '#C7C7C7'
+
+  # Bright colors
+  bright:
+    black: '#686868'
+    red: '#FD6F6B'
+    green: '#67F86F'
+    yellow: '#FFFA72'
+    blue: '#6A76FB'
+    magenta: '#FD7CFC'
+    cyan: '#68FDFE'
+    white: '#FFFFFF'
+

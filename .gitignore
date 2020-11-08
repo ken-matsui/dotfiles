@@ -7,4 +7,5 @@
 !.config/starship.toml
 !.config/nvim
 !.config/git
+!.config/alacritty
 

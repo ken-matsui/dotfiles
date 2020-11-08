@@ -36,7 +36,6 @@ homebrew_packages:
   - name: youtube-dl
   - name: zplug
 homebrew_cask_packages:
-  - name: alacritty
   - name: atom
   - name: balenaetcher
   - name: deepl

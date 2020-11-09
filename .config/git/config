@@ -1,6 +1,6 @@
 [user]
 	name = Ken Matsui
-	email = 26405363+matken11235@users.noreply.github.com
+	email = 26405363+ken-matsui@users.noreply.github.com
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [color "diff-highlight"]

@@ -18,6 +18,7 @@ homebrew_packages:
   - name: go
   - name: graphviz
   - name: gzip
+  - name: httrack
   - name: jq
   - name: kops
   - name: kr

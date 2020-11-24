@@ -18,4 +18,8 @@
 [color]
 	ui = true
 [pull]
-	rebase = false
+    rebase = false
+[alias]
+    me = config --get-regexp user
+    update = !git pull origin master && git fetch --prune && git branch --merged | egrep -v '\\*|develop|master' | xargs git branch -d
+

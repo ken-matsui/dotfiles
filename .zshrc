@@ -61,9 +61,8 @@ function gi() {
     curl -fsSL https://www.gitignore.io/api/$@ >>! $PWD/.gitignore && echo "overwrote $@ to $PWD/.gitignore"
 }
 # After adding .gitignore, ignore files
-function gigafter() {
-    git rm --cached $(git ls-files --full-name -i --exclude-standard)
-}
+alias gigafter='git rm --cached $(git ls-files --full-name -i --exclude-standard)'
+alias update='brew update && brew upgrade && brew upgrade --cask && gcloud components update -q'
 
 ##################################
 # Software evaluations

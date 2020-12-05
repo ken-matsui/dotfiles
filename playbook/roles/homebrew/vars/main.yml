@@ -35,6 +35,7 @@ homebrew_packages:
   - name: wrk
   - name: yaml-cpp
   - name: youtube-dl
+  - name: zoom
   - name: zplug
 homebrew_cask_packages:
   - name: atom
@@ -63,5 +64,4 @@ homebrew_cask_packages:
   - name: sketch
   - name: tor-browser
   - name: visual-studio-code
-  - name: zoomus
 #   - name: qfinder-pro  

@@ -22,6 +22,7 @@
 [alias]
     me = config --get-regexp user
     update = !git pull origin master && git fetch --prune && git branch --merged | egrep -v '\\*|develop|master' | xargs git branch -d
+    parent = "!f(){ git log --pretty=%P -n 1 $1;};f"
 
 [gpg]
 	program = /usr/local/bin/krgpg

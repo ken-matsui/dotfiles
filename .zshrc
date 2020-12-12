@@ -55,7 +55,7 @@ export GPG_TTY=$(tty) # Added by Krypton
 ##################################
 alias tar=gtar
 alias vim=nvim
-alias rm='gmv -f --backup=numbered --target-directory ~/.Trash/' # Enable safety dumping
+alias rm='gmv -f --backup=numbered --target-directory ~/.Trash' # Enable safety dumping
 # .gitignore generator
 function gi() {
     curl -fsSL https://www.gitignore.io/api/$@ >>! $PWD/.gitignore && echo "overwrote $@ to $PWD/.gitignore"

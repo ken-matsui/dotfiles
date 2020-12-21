@@ -56,13 +56,17 @@ export GPG_TTY=$(tty) # Added by Krypton
 alias tar=gtar
 alias vim=nvim
 alias rm='gmv -f --backup=numbered --target-directory ~/.Trash' # Enable safety dumping
+# After adding .gitignore, ignore files
+alias gigafter='git rm --cached $(git ls-files --full-name -i --exclude-standard)'
+alias update='brew update && brew upgrade && brew upgrade --cask && gcloud components update -q'
+
+##################################
+# Functions
+##################################
 # .gitignore generator
 function gi() {
     curl -fsSL https://www.gitignore.io/api/$@ >>! $PWD/.gitignore && echo "overwrote $@ to $PWD/.gitignore"
 }
-# After adding .gitignore, ignore files
-alias gigafter='git rm --cached $(git ls-files --full-name -i --exclude-standard)'
-alias update='brew update && brew upgrade && brew upgrade --cask && gcloud components update -q'
 # Replace strings recursively
 # Example: $ replace ./ hey hello
 function replace() {

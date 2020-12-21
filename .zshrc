@@ -63,6 +63,11 @@ function gi() {
 # After adding .gitignore, ignore files
 alias gigafter='git rm --cached $(git ls-files --full-name -i --exclude-standard)'
 alias update='brew update && brew upgrade && brew upgrade --cask && gcloud components update -q'
+# Replace strings recursively
+# Example: $ replace ./ hey hello
+function replace() {
+    find $1 -type f -print0 | xargs -0 sed -i '' -e "s/$2/$3/g"
+}
 
 ##################################
 # Software evaluations

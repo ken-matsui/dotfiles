@@ -58,7 +58,7 @@ alias vim=nvim
 alias rm='gmv -f --backup=numbered --target-directory ~/.Trash' # Enable safety dumping
 # After adding .gitignore, ignore files
 alias gigafter='git rm --cached $(git ls-files --full-name -i --exclude-standard)'
-alias update='brew update && brew upgrade && brew upgrade --cask && gcloud components update -q'
+alias update='rustup update && brew update && brew upgrade && brew upgrade --cask && gcloud components update -q'
 alias deletedocker='docker ps -aq | xargs docker rm && docker images -aq | xargs docker rmi'
 
 ##################################

@@ -47,8 +47,8 @@ homebrew_cask_packages:
   - name: figma
   - name: firefox
   - name: font-source-code-pro-for-powerline
-  - name: framer-x
-  - name: fritzing
+#  - name: framer-x
+#  - name: fritzing
   - name: google-chrome
   - name: google-cloud-sdk
   - name: google-japanese-ime
@@ -59,7 +59,6 @@ homebrew_cask_packages:
   - name: lens
   - name: macs-fan-control
   - name: mendeley
-  - name: paw
   - name: processing
   - name: sketch
   - name: tor-browser

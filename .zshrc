@@ -53,7 +53,6 @@ export GPG_TTY=$(tty) # Added by Krypton
 ##################################
 # Aliases
 ##################################
-alias tar=gtar
 alias vim=nvim
 alias rm='gmv -f --backup=numbered --target-directory ~/.Trash' # Enable safety dumping
 # After adding .gitignore, ignore files

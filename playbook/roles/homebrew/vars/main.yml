@@ -58,8 +58,8 @@ homebrew_cask_packages:
   - name: keybase
   - name: lens
   - name: macs-fan-control
-  - name: mendeley
-  - name: processing
+#  - name: mendeley
+#  - name: processing
   - name: sketch
   - name: tor-browser
   - name: visual-studio-code

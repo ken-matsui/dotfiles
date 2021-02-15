@@ -28,9 +28,10 @@ homebrew_packages:
   - name: neovim
   - name: python
   - name: starship
-  - name: tree
   - name: terminal-notifier
   - name: terraform
+  - name: topgrade
+  - name: tree
   - name: wget
   - name: wrk
   - name: yaml-cpp

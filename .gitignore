@@ -8,4 +8,6 @@
 !.config/nvim
 !.config/git
 !.config/alacritty
+!.config/topgrade.toml
+!.config/vue
 

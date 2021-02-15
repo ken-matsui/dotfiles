@@ -35,7 +35,6 @@ format = """\
   $cmd_duration\
   $custom\
   $line_break\
-  $jobs\
   $battery\
   $character\
   """

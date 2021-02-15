@@ -30,3 +30,5 @@
 	gpgSign = true
 [tag]
 	forceSignAnnotated = true
+[sequence]
+	editor = interactive-rebase-tool

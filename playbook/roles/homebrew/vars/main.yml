@@ -19,6 +19,7 @@ homebrew_packages:
   - name: graphviz
   - name: gzip
   - name: httrack
+  - name: interactive-rebase-tool
   - name: jq
   - name: kops
   - name: kr

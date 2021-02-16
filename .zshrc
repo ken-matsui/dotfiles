@@ -31,11 +31,8 @@ unset zle_bracketed_paste
 # Environment Paths
 ##################################
 export XDG_CONFIG_HOME="$HOME/.config"
-#export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH" # coreutils
-export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH" # gnu-tar
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="$HOME/flutter/bin:$PATH" # flutter
-export PATH="$HOME/.go_appengine:$PATH" # golang with app-engine by Google
 export PATH="$HOME/.cargo/bin:$PATH" # rust
 
 ##################################
@@ -57,7 +54,6 @@ alias vim=nvim
 alias rm='gmv -f --backup=numbered --target-directory ~/.Trash' # Enable safety dumping
 # After adding .gitignore, ignore files
 alias gigafter='git rm --cached $(git ls-files --full-name -i --exclude-standard)'
-alias update='rustup update && brew update && brew upgrade && brew upgrade --cask && gcloud components update -q'
 alias deletedocker='docker ps -aq | xargs docker rm && docker images -aq | xargs docker rmi'
 
 ##################################

@@ -3,40 +3,40 @@ homebrew_taps:
   - kryptco/tap # for kr
 homebrew_packages:
   - name: asciinema
-  - name: awscli
+#  - name: awscli
   - name: boost
   - name: boost-python
-  - name: circleci
+#  - name: circleci
   - name: clang-format
   - name: cmake
   - name: coreutils
   - name: curl
-  - name: elixir
+#  - name: elixir
   - name: elm
-  - name: erlang
-  - name: ghc
+#  - name: erlang
+#  - name: ghc
   - name: go
   - name: graphviz
   - name: gzip
-  - name: httrack
+#  - name: httrack
   - name: interactive-rebase-tool
   - name: jq
-  - name: kops
+#  - name: kops
   - name: kr
-  - name: kubectl
-  - name: llvm # clangd
+#  - name: kubectl
+#  - name: llvm # clangd
   - name: mas
   - name: neovim
   - name: python
   - name: starship
   - name: terminal-notifier
-  - name: terraform
+#  - name: terraform
   - name: topgrade
   - name: tree
   - name: wget
   - name: wrk
   - name: yaml-cpp
-  - name: youtube-dl
+#  - name: youtube-dl
   - name: zoom
   - name: zplug
 homebrew_cask_packages:

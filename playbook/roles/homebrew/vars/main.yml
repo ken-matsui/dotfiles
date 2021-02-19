@@ -5,7 +5,7 @@ homebrew_packages:
   - name: asciinema
 #  - name: awscli
   - name: boost
-  - name: boost-python
+#  - name: boost-python
 #  - name: circleci
   - name: clang-format
   - name: cmake

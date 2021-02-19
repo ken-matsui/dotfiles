@@ -35,7 +35,7 @@ homebrew_packages:
   - name: tree
   - name: wget
   - name: wrk
-  - name: yaml-cpp
+#  - name: yaml-cpp
 #  - name: youtube-dl
   - name: zoom
   - name: zplug

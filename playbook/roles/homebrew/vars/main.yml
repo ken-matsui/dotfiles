@@ -1,6 +1,7 @@
 ---
 homebrew_taps:
   - kryptco/tap # for kr
+  - homebrew/cask-fonts # for font-hack-nerd-font
 homebrew_packages:
   - name: asciinema
 #  - name: awscli
@@ -14,6 +15,7 @@ homebrew_packages:
 #  - name: elixir
   - name: elm
 #  - name: erlang
+  - name: font-hack-nerd-font
 #  - name: ghc
   - name: go
   - name: graphviz
@@ -25,6 +27,7 @@ homebrew_packages:
   - name: kr
 #  - name: kubectl
 #  - name: llvm # clangd
+  - name: lsd
   - name: mas
   - name: neovim
   - name: python

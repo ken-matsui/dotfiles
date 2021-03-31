@@ -10,7 +10,7 @@ module.exports = {
 
     // Overrides for the verminal theme
     verminal: {
-      fontFamily: '"Source Code Pro for Powerline"'
+      fontFamily: '"Source Code Pro for Powerline", "Hack Nerd Font"'
     },
 
     // default font size in pixels for all tabs

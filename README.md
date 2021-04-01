@@ -6,7 +6,7 @@
 $ zsh -c "$(curl -fsSL https://dot.matken.jp)"
 ```
 
-## Tasks after that
+## Tasks after the above command
 
 ### Applications
 

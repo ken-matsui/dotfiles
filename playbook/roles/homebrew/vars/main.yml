@@ -14,8 +14,9 @@ homebrew_packages:
   - name: curl
 #  - name: elixir
   - name: elm
+  - name: exa
 #  - name: erlang
-  - name: font-hack-nerd-font
+#  - name: font-hack-nerd-font
 #  - name: ghc
   - name: go
   - name: graphviz
@@ -28,7 +29,7 @@ homebrew_packages:
   - name: kr
 #  - name: kubectl
 #  - name: llvm # clangd
-  - name: lsd
+#  - name: lsd
   - name: mas
   - name: neovim
   - name: python

@@ -32,6 +32,7 @@ homebrew_packages:
 #  - name: lsd
   - name: mas
   - name: neovim
+  - name: peco
   - name: python
   - name: starship
   - name: terminal-notifier

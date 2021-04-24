@@ -17,6 +17,7 @@ homebrew_packages:
   - name: exa
 #  - name: erlang
 #  - name: font-hack-nerd-font
+  - name: gh  # github cli
 #  - name: ghc
   - name: go
   - name: graphviz

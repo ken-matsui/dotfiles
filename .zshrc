@@ -56,13 +56,16 @@ alias rm='gmv -f --backup=numbered --target-directory ~/.Trash' # Enable safety 
 alias gigafter='git rm --cached $(git ls-files --full-name -i --exclude-standard)'
 alias deletedocker='docker ps -aq | xargs docker rm && docker images -aq | xargs docker rmi'
 alias ls=exa
+alias node14='/usr/local/opt/node@14/bin/node'
+alias npm14='/usr/local/opt/node@14/bin/npm'
+alias npx14='/usr/local/opt/node@14/bin/npx'
 
 ##################################
 # Functions
 ##################################
 # .gitignore generator
 function gi() {
-    curl -fsSL https://www.gitignore.io/api/$@ >>! $PWD/.gitignore && echo "overwrote $@ to $PWD/.gitignore"
+    curl -fsSL https://www.gitignore.io/api/$@ >>! $PWD/.gitignore && echo "added $@ to $PWD/.gitignore"
 }
 # Replace strings recursively
 # Example: $ replace ./ hey hello

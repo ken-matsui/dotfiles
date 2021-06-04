@@ -15,7 +15,7 @@ lDs9N35AWhVwB9i8GCf7a1Dj8LKD323GM7KCllG+qm9w2uPjOS81YjsuOhZTGkLZ' \
 | openssl enc -d -des -base64 -k 'dotfiles!!!'
 
 # Ask for the administrator password upfront
-printf '[\e[32m?\e[m] ' && sudo -v
+printf 'Password for your PC [\e[32m?\e[m] ' && sudo -v
 # Keep-alive: update existing `sudo` time stamp until this script has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 

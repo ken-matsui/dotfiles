@@ -37,8 +37,8 @@ echo 'Installing git ...'
 brew install git 1>/dev/null
 
 # Install dotfiles
-echo 'Installing matken11235/dotfiles ...'
-git clone -q https://github.com/matken11235/dotfiles.git .dotfiles
+echo 'Installing ken-matsui/dotfiles ...'
+git clone -q https://github.com/ken-matsui/dotfiles.git .dotfiles
 export DOTSPATH="$(cd $(dirname $0); pwd)/.dotfiles"
 
 # Install ansible (and accompany some of it)

@@ -26,6 +26,7 @@ homebrew_packages:
   - name: hyperfine
   - name: interactive-rebase-tool
   - name: jq
+  - name: kitty
 #  - name: kops
   - name: kr
 #  - name: kubectl
@@ -47,7 +48,8 @@ homebrew_packages:
   - name: zoom
   - name: zplug
 homebrew_cask_packages:
-  - name: atom
+  - name: affinity-designer
+#  - name: atom
   - name: balenaetcher
   - name: deepl
   - name: discord
@@ -61,12 +63,13 @@ homebrew_cask_packages:
 #  - name: fritzing
   - name: google-chrome
   - name: google-cloud-sdk
-#  - name: google-japanese-ime
+  - name: google-japanese-ime
   - name: grammarly
-  - name: hyper
+#  - name: hyper
+  - name: imobie-m1-app-checker
   - name: jetbrains-toolbox
 #  - name: keybase
-  - name: keysmith
+#  - name: keysmith
 #  - name: lens
   - name: macs-fan-control
 #  - name: mendeley
@@ -78,8 +81,8 @@ homebrew_cask_packages:
 #  - name: processing
   - name: postman
   - name: protonvpn
-  - name: sketch
+#  - name: sketch
   - name: swish
-  - name: tor-browser
+#  - name: tor-browser
   - name: visual-studio-code
 #   - name: qfinder-pro  

@@ -10,14 +10,13 @@ $ zsh -c "$(curl -fsSL https://dot.matken.jp)"
 
 ### Applications
 
-* Affinity Designer
 * TOEFL Official Guide
 
 ### Settings
 
 #### Dropbox
 1. Log into Dropbox
-1. `rm -rf ~/.ssh && ln -s ~/Dropbox/Private/ssh ~/.ssh`
+1. `rm -rf ~/.ssh && ln -s ~/Dropbox/Documents/ssh ~/.ssh`
 1. `defaults write com.apple.finder NewWindowTargetPath file://~/Dropbox/`
 
 #### krypt.co

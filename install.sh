@@ -24,13 +24,14 @@ echo 'Installing Xcode command line tools ...'
 check="$(xcode-select --install 2>&1)"
 str='xcode-select: note: install requested for command line developer tools'
 while [[ $check == $str ]]; do
-	check="$(xcode-select --install 2>&1)"
-	sleep 1
+    check="$(xcode-select --install 2>&1)"
+    sleep 1
 done
 
 # Install Homebrew
 echo 'Installing Homebrew ...'
-yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" >/dev/null 2>&1
+
+yes | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Install git

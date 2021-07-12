@@ -24,8 +24,8 @@ echo 'Installing Xcode command line tools ...'
 check="$(xcode-select --install 2>&1)"
 str='xcode-select: note: install requested for command line developer tools'
 while [[ $check == $str ]]; do
-	check="$(xcode-select --install 2>&1)"
-	sleep 1
+    check="$(xcode-select --install 2>&1)"
+    sleep 1
 done
 
 # Install Homebrew

@@ -54,7 +54,7 @@ homebrew_cask_packages:
   - name: docker
   - name: dropbox
   - name: figma
-  - name: firefox
+#  - name: firefox
   - name: font-source-code-pro-for-powerline
 #  - name: framer-x
 #  - name: fritzing

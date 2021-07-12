@@ -10,7 +10,7 @@ mas:
   - name: Grammarly for Safari
   - name: RunCat
   - name: Messenger
-  - name: OneDrive
+#  - name: OneDrive
   - name: Microsoft Word
   - name: Microsoft Excel
   - name: Microsoft Powerpoint

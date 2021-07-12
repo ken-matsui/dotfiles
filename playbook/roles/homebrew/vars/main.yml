@@ -65,11 +65,20 @@ homebrew_cask_packages:
   - name: hyper
   - name: jetbrains-toolbox
 #  - name: keybase
+  - name: keysmith
 #  - name: lens
   - name: macs-fan-control
 #  - name: mendeley
+  - name: miro
+  - name: mysqlworkbench
+  - name: notion
+  - name: numi
+  - name: parallels
 #  - name: processing
+  - name: postman
+  - name: protonvpn
   - name: sketch
+  - name: swish
   - name: tor-browser
   - name: visual-studio-code
 #   - name: qfinder-pro  

@@ -14,6 +14,12 @@ $ zsh -c "$(curl -fsSL https://dot.matken.jp)"
 
 ### Settings
 
+#### System Preferences App
+
+* https://github.com/ken-matsui/dotfiles/issues/4#issue-323685405
+* https://github.com/ken-matsui/dotfiles/issues/41
+* https://github.com/ken-matsui/dotfiles/issues/48
+
 #### Dropbox
 1. Log into Dropbox
 1. `rm -rf ~/.ssh && ln -s ~/Dropbox/Documents/ssh ~/.ssh`

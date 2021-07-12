@@ -54,13 +54,13 @@ homebrew_cask_packages:
   - name: docker
   - name: dropbox
   - name: figma
-  - name: firefox
+#  - name: firefox
   - name: font-source-code-pro-for-powerline
 #  - name: framer-x
 #  - name: fritzing
   - name: google-chrome
   - name: google-cloud-sdk
-  - name: google-japanese-ime
+#  - name: google-japanese-ime
   - name: grammarly
   - name: hyper
   - name: jetbrains-toolbox

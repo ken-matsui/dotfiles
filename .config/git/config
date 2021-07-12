@@ -26,7 +26,7 @@
     create-one = !git reset $(git merge-base main $(git branch --show-current)) && git add -A && git commit
 
 [gpg]
-	program = /usr/local/bin/krgpg
+	program = /opt/homebrew/bin/krgpg
 [commit]
 	gpgSign = true
 [tag]

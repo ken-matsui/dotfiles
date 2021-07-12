@@ -10,7 +10,6 @@ $ zsh -c "$(curl -fsSL https://dot.matken.jp)"
 
 ### Applications
 
-* Affinity Designer
 * TOEFL Official Guide
 
 ### Settings

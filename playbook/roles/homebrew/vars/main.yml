@@ -81,8 +81,8 @@ homebrew_cask_packages:
 #  - name: processing
   - name: postman
   - name: protonvpn
-  - name: sketch
+#  - name: sketch
   - name: swish
-  - name: tor-browser
+#  - name: tor-browser
   - name: visual-studio-code
 #   - name: qfinder-pro  

@@ -63,7 +63,7 @@ homebrew_cask_packages:
 #  - name: fritzing
   - name: google-chrome
   - name: google-cloud-sdk
-#  - name: google-japanese-ime
+  - name: google-japanese-ime
   - name: grammarly
 #  - name: hyper
   - name: imobie-m1-app-checker

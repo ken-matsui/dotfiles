@@ -67,7 +67,7 @@ homebrew_cask_packages:
   - name: hyper
   - name: jetbrains-toolbox
 #  - name: keybase
-  - name: keysmith
+#  - name: keysmith
 #  - name: lens
   - name: macs-fan-control
 #  - name: mendeley

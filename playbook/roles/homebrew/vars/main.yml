@@ -65,6 +65,7 @@ homebrew_cask_packages:
 #  - name: google-japanese-ime
   - name: grammarly
   - name: hyper
+  - name: imobie-m1-app-checker
   - name: jetbrains-toolbox
 #  - name: keybase
 #  - name: keysmith

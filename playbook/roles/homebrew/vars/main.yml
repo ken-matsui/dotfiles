@@ -41,6 +41,7 @@ homebrew_packages:
 #  - name: terraform
   - name: topgrade
   - name: tree
+#  - name: valgrind
   - name: wget
   - name: wrk
 #  - name: yaml-cpp

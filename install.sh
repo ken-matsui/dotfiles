@@ -66,7 +66,7 @@ sudo chmod -R 755 /usr/local/share/zsh
 terminal-notifier -message 'All done.' -sound Funk
 printf '\xE2\x9C\x94 \e[1;33m All done !!! \u2728 \u2728 \e[m\n'
 printf '\xE2\x9D\x97 \e[1;31m Reboot your computer...\e[m\n'
-read -n 1 -s -r -p 'Press any key to continue: '
+read '?Press any key to continue: '
 
 # Restart to make the setting effective.
 sudo reboot

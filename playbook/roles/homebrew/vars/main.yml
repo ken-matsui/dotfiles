@@ -49,7 +49,7 @@ homebrew_packages:
   - name: zplug
 homebrew_cask_packages:
   - name: affinity-designer
-  - name: atom
+#  - name: atom
   - name: balenaetcher
   - name: deepl
   - name: discord

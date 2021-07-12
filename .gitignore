@@ -11,4 +11,5 @@
 !.config/topgrade.toml
 !.config/vue
 !.config/lsd
+!.config/kitty
 

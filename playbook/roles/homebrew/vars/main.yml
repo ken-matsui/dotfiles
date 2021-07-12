@@ -26,6 +26,7 @@ homebrew_packages:
   - name: hyperfine
   - name: interactive-rebase-tool
   - name: jq
+  - name: kitty
 #  - name: kops
   - name: kr
 #  - name: kubectl
@@ -64,7 +65,7 @@ homebrew_cask_packages:
   - name: google-cloud-sdk
 #  - name: google-japanese-ime
   - name: grammarly
-  - name: hyper
+#  - name: hyper
   - name: imobie-m1-app-checker
   - name: jetbrains-toolbox
 #  - name: keybase

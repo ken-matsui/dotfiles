@@ -30,7 +30,7 @@ done
 
 # Install Homebrew
 echo 'Installing Homebrew ...'
-yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" >/dev/null 2>&1
+yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Install git

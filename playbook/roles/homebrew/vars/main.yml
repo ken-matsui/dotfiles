@@ -74,8 +74,8 @@ homebrew_cask_packages:
 #  - name: lens
   - name: macs-fan-control
 #  - name: mendeley
-  - name: miro
-  - name: mysqlworkbench
+#  - name: miro
+#  - name: mysqlworkbench
   - name: notion
   - name: numi
   - name: parallels

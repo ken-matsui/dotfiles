@@ -5,14 +5,20 @@ mas:
   - name: numbers
   - name: keynote
   - name: imovie
-  - name: slack
-  - name: line corporation
-  - name: grammarly for safari
-  - name: runcat
-  - name: messenger
-  - name: onedrive
-  - name: microsoft word
-  - name: microsoft excel
-  - name: microsoft powerpoint
-  - name: goodnotes 5
+  - name: Slack
+  - name: Line Corporation
+  - name: Grammarly for Safari
+  - name: RunCat
+  - name: Messenger
+  - name: OneDrive
+  - name: Microsoft Word
+  - name: Microsoft Excel
+  - name: Microsoft Powerpoint
+  - name: Goodnotes 5
   - name: 1password 7
+  - name: Page Screenshot for Safari
+  - name: Highlighter for Safari
+  - name: Dark Mode for Safari
+  - name: MindNode
+  - name: Paste
+  - name: Microsoft Remote Desktop

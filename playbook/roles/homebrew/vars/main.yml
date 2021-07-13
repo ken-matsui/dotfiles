@@ -26,6 +26,7 @@ homebrew_packages:
   - name: hyperfine
   - name: interactive-rebase-tool
   - name: jq
+  - name: ripgrep
   - name: kitty
 #  - name: kops
   - name: kr

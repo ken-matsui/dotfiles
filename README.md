@@ -11,6 +11,7 @@ $ zsh -c "$(curl -fsSL https://dot.matken.jp)"
 ### Applications
 
 * TOEFL Official Guide
+* [Little Fingers](https://shauninman.com/archive/2017/02/04/little_fingers)
 
 ### Settings
 

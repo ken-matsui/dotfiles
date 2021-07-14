@@ -26,6 +26,7 @@ homebrew_packages:
   - name: hyperfine
   - name: interactive-rebase-tool
   - name: jq
+  - name: ripgrep
   - name: kitty
 #  - name: kops
   - name: kr
@@ -74,8 +75,8 @@ homebrew_cask_packages:
 #  - name: lens
   - name: macs-fan-control
 #  - name: mendeley
-  - name: miro
-  - name: mysqlworkbench
+#  - name: miro
+#  - name: mysqlworkbench
   - name: notion
   - name: numi
   - name: parallels

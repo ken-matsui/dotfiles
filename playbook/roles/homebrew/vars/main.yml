@@ -31,6 +31,7 @@ homebrew_packages:
 #  - name: kops
   - name: kr
 #  - name: kubectl
+  - name: libarchive
 #  - name: llvm # clangd
 #  - name: lsd
   - name: mas

@@ -32,6 +32,7 @@ homebrew_packages:
   - name: kr
 #  - name: kubectl
   - name: libarchive
+  - name: libgit2
 #  - name: llvm # clangd
 #  - name: lsd
   - name: mas

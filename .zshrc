@@ -50,6 +50,12 @@ export GPG_TTY=$(tty) # Added by Krypton
 ##################################
 # Aliases
 ##################################
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
 alias vim=nvim
 alias rm='gmv -f --backup=numbered --target-directory ~/.Trash' # Enable safety dumping
 # After adding .gitignore, ignore files

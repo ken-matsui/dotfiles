@@ -40,7 +40,7 @@ brew install git 1>/dev/null
 
 # Install dotfiles
 echo 'Installing ken-matsui/dotfiles ...'
-git clone -q https://github.com/ken-matsui/dotfiles.git dotfiles
+git clone https://github.com/ken-matsui/dotfiles.git
 export DOTSPATH="$(cd $(dirname $0); pwd)/dotfiles"
 
 # Install ansible (and accompany some of it)

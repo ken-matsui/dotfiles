@@ -90,4 +90,5 @@ homebrew_cask_packages:
   - name: swish
 #  - name: tor-browser
   - name: visual-studio-code
-#   - name: qfinder-pro  
+#   - name: qfinder-pro
+  - name: xcodes

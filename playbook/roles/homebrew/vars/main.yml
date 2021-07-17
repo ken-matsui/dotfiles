@@ -16,6 +16,7 @@ homebrew_packages:
   - name: elm
   - name: exa
 #  - name: erlang
+  - name: ffmpeg  # for youtube-dl
 #  - name: font-hack-nerd-font
   - name: gh  # github cli
 #  - name: ghc
@@ -48,7 +49,7 @@ homebrew_packages:
   - name: wget
   - name: wrk
 #  - name: yaml-cpp
-#  - name: youtube-dl
+  - name: youtube-dl
   - name: zoom
   - name: zplug
 homebrew_cask_packages:

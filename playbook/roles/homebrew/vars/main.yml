@@ -37,6 +37,7 @@ homebrew_packages:
 #  - name: llvm # clangd
 #  - name: lsd
   - name: mas
+  - name: mysql  # for mysqlclient of Python
   - name: neovim
   - name: peco
   - name: python

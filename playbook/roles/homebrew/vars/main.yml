@@ -51,6 +51,7 @@ homebrew_packages:
   - name: wrk
 #  - name: yaml-cpp
   - name: youtube-dl
+  - name: zellij
   - name: zoom
   - name: zplug
 homebrew_cask_packages:

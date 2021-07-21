@@ -1,8 +1,34 @@
-# Font configuration (changes require restart)
-font:
-  # The size to use.
-  size: 12
+window:
+  # Window dimensions (changes require restart)
+  #
+  # Number of lines/columns (not pixels) in the terminal. The number of columns
+  # must be at least `2`, while using a value of `0` for columns and lines will
+  # fall back to the window manager's recommended size.
 
+  # Window padding (changes require restart)
+  #
+  # Blank space added around the window in pixels. This padding is scaled
+  # by DPI and the specified value is always added at both opposing sides.
+  padding:
+    x: 12
+    y: 12
+
+  # Spread additional padding evenly around the terminal content.
+  dynamic_padding: true
+
+  # Startup Mode (changes require restart)
+  #
+  # Values for `startup_mode`:
+  #   - Windowed
+  #   - Maximized
+  #   - Fullscreen
+  #
+  # Values for `startup_mode` (macOS only):
+  #   - SimpleFullscreen
+  startup_mode: Fullscreen
+
+# Font configuration
+font:
   # The normal (roman) font face to use.
   normal:
     family: 'Source Code Pro for Powerline'
@@ -21,32 +47,127 @@ font:
     # Style can be specified to pick a specific face.
     # style: Italic
 
-# Colors
+  # Point size
+  size: 13.0
+
+  # Offset is the extra space around each character. `offset.y` can be thought
+  # of as modifying the line spacing, and `offset.x` as modifying the letter
+  # spacing.
+  offset:
+ #  x: 0
+    y: 1
+
+  # Thin stroke font rendering (macOS only)
+  #
+  # Thin strokes are suitable for retina displays, but for non-retina screens
+  # it is recommended to set `use_thin_strokes` to `false`.
+  use_thin_strokes: true
+
+# Colors (Simple)
+#colors:
+  # Default colors
+  #primary:
+  #  background: '#111111'
+  #  foreground: '#ffffff'
+
+  # Normal colors
+  #normal:
+  #  black: '#000000'
+  #  red: '#C51E14'
+  #  green: '#1DC121'
+  #  yellow: '#CECB00'
+  #  blue: '#0D73CC'
+  #  magenta: '#C839C5'
+  #  cyan: '#20C5C6'
+  #  white: '#C7C7C7'
+
+  # Bright colors
+  #bright:
+  #  black: '#686868'
+  #  red: '#FD6F6B'
+  #  green: '#67F86F'
+  #  yellow: '#FFFD00'
+  #  blue: '#1A8FFF'
+  #  magenta: '#FD7CFC'
+  #  cyan: '#68FDFE'
+  #  white: '#FFFFFF'
+
+# Colors (Tomorrow Night)
 colors:
   # Default colors
   primary:
-    background: '#2E333E'
-    foreground: '#ffffff'
+    background: '0x1d1f21'
+    foreground: '0xc5c8c6'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1d1f21'
+    cursor: '0xffffff'
 
   # Normal colors
   normal:
-    black: '#000000'
-    red: '#C51E14'
-    green: '#1DC121'
-    yellow: '#C7C329'
-    blue: '#0A2FC4'
-    magenta: '#C839C5'
-    cyan: '#20C5C6'
-    white: '#C7C7C7'
+    black:   '0x1d1f21'
+    red:     '0xcc6666'
+    green:   '0xb5bd68'
+    yellow:  '0xe6c547'
+    blue:    '0x81a2be'
+    magenta: '0xb294bb'
+    cyan:    '0x70c0ba'
+    white:   '0x373b41'
 
   # Bright colors
   bright:
-    black: '#686868'
-    red: '#FD6F6B'
-    green: '#67F86F'
-    yellow: '#FFFA72'
-    blue: '#6A76FB'
-    magenta: '#FD7CFC'
-    cyan: '#68FDFE'
-    white: '#FFFFFF'
+    black:   '0x666666'
+    red:     '0xff3334'
+    green:   '0x9ec400'
+    yellow:  '0xf0c674'
+    blue:    '0x81a2be'
+    magenta: '0xb77ee0'
+    cyan:    '0x54ced6'
+    white:   '0x282a2e'
 
+selection:
+  # This string contains all characters that are used as separators for
+  # "semantic words" in Alacritty.
+  #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+
+  # When set to `true`, selected text will be copied to the primary clipboard.
+  save_to_clipboard: false
+
+cursor:
+  # Cursor style
+  style:
+    # Cursor shape
+    #
+    # Values for `shape`:
+    #   - ▇ Block
+    #   - _ Underline
+    #   - | Beam
+    shape: Beam
+
+    # Cursor blinking state
+    #
+    # Values for `blinking`:
+    #   - Never: Prevent the cursor from ever blinking
+    #   - Off: Disable blinking by default
+    #   - On: Enable blinking by default
+    #   - Always: Force the cursor to always blink
+    blinking: On
+
+# Shell
+#
+# You can set `shell.program` to the path of your favorite shell, e.g.
+# `/bin/fish`. Entries in `shell.args` are passed unmodified as arguments to the
+# shell.
+#
+# Default:
+#   - (macOS) /bin/bash --login
+#   - (Linux/BSD) user login shell
+#   - (Windows) powershell
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    # Attach a first session when it exists.
+    - "ZELLIJ_SESSION=$(zellij list-sessions | head -n 1); [[ $ZELLIJ_SESSION =~ 'No active' ]] && zellij || zellij attach $ZELLIJ_SESSION"

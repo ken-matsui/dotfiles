@@ -24,8 +24,28 @@ setopt EXTENDED_GLOB
 setopt inc_append_history
 ## Reloads the history whenever you use it
 setopt share_history
+# {a-d} expands to a b c d
+setopt braceccl
 ## Don't highlight when selecting words
 unset zle_bracketed_paste
+
+##################################
+# Zsh Key Binds
+##################################
+# Reset key binds
+bindkey -d
+# Remove default key binds
+for KEY in {A-Z}; do bindkey -r "^$KEY"; done
+# Restore ^M for enter key
+bindkey '^M' accept-line
+# Restore ^I for tab key
+bindkey '^I' expand-or-complete
+# Enable bash like key binds
+bindkey '^R' history-incremental-search-backward
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
+bindkey '^P' up-line-or-search
+bindkey '^N' down-line-or-search
 
 ##################################
 # Environment Paths

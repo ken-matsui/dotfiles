@@ -44,6 +44,9 @@ disabled = false
 time_format = "%Y/%m/%d %a %T"
 format = "[\\[ 🕙 $time \\]]($style)"
 
+[character]
+vicmd_symbol = "NORMAL [❮](bold green)"
+
 [directory]
 truncation_length = 8
 truncate_to_repo = false

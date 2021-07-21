@@ -36,10 +36,10 @@ unset zle_bracketed_paste
 bindkey -d
 # Remove default key binds
 for KEY in {A-Z}; do bindkey -r "^$KEY"; done
-# Restore ^M for enter key
-bindkey '^M' accept-line
-# Restore ^I for tab key
-bindkey '^I' expand-or-complete
+# Restore some default key binds
+bindkey '^M' accept-line # for enter key
+bindkey '^I' expand-or-complete # for tab key
+bindkey '^U' vi-kill-line
 # Enable bash like key binds
 bindkey '^R' history-incremental-search-backward
 bindkey '^A' beginning-of-line
@@ -51,9 +51,12 @@ bindkey '^N' down-line-or-search
 # Environment Paths
 ##################################
 export XDG_CONFIG_HOME="$HOME/.config"
-export PATH="/usr/local/opt/curl/bin:$PATH"
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
+
 export PATH="$HOME/flutter/bin:$PATH" # flutter
-export PATH="$HOME/.cargo/bin:$PATH" # rust
+export PATH="$HOME/.cargo/bin:$PATH"  # rust
+export PATH="$HOME/.poetry/bin:$PATH" # poetry
 # openssl
 HOMEBREW_PREFIX=$(brew --prefix)
 export PATH="${HOMEBREW_PREFIX}/opt/openssl@1.1/bin:$PATH"
@@ -68,7 +71,6 @@ if [[ -d ~/.aws ]]; then # awscli
     export AWS_ACCESS_KEY_ID=$(cat ~/.aws/credentials | grep 'aws_access_key_id' | awk '{printf $3}')
     export AWS_SECRET_ACCESS_KEY=$(cat ~/.aws/credentials | grep 'aws_secret_access_key' | awk '{printf $3}')
 fi
-export CLOUDSDK_PYTHON=python2 # gcloud command
 export TF_CPP_MIN_LOG_LEVEL=2 # Warning setting for tensorflow.
 export GPG_TTY=$(tty) # Added by Krypton
 
@@ -76,13 +78,13 @@ export GPG_TTY=$(tty) # Added by Krypton
 # Aliases
 ##################################
 if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+    FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
-  autoload -Uz compinit
-  compinit
+    autoload -Uz compinit
+    compinit
 fi
-alias vim=nvim
-alias rm='gmv -f --backup=numbered --target-directory ~/.Trash' # Enable safety dumping
+# Enable safety dumping
+alias rm='gmv -f --backup=numbered --target-directory ~/.Trash'
 # After adding .gitignore, ignore files
 alias gigafter='git rm --cached $(git ls-files --full-name -i --exclude-standard)'
 alias deletedocker='docker ps -aq | xargs docker rm && docker images -aq | xargs docker rmi'
@@ -95,26 +97,19 @@ alias npx14='/usr/local/opt/node@14/bin/npx'
 # Functions
 ##################################
 # .gitignore generator
-function gi() {
-    curl -fsSL https://www.gitignore.io/api/$@ >>! $PWD/.gitignore && echo "added $@ to $PWD/.gitignore"
-}
-# Replace strings recursively
-# Example: $ replace ./ hey hello
-function replace() {
-    find $1 -type f -print0 | xargs -0 sed -i '' -e "s/$2/$3/g"
-}
-function sizeof() {
-    du -sh "$@"
-}
+function gi() { curl -fsSL https://www.gitignore.io/api/$@ >>! $PWD/.gitignore && echo "added $@ to $PWD/.gitignore" }
+# Replace strings recursively (example: $ replace ./ hey hello)
+function replace() { find $1 -type f -print0 | xargs -0 sed -i '' -e "s/$2/$3/g" }
+function sizeof() { du -sh "$@" }
 
 ##################################
 # Software evaluations
 ##################################
 eval "$(starship init zsh)" # starship
-[ -f /Users/matken/.travis/travis.sh ] && source /Users/matken/.travis/travis.sh # added by travis gem
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# Google Cloud SDK (gcloud)
+source $HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+source $HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 
-
-export PATH="$HOME/.poetry/bin:$PATH"

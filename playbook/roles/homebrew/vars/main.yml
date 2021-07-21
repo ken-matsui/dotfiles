@@ -44,6 +44,7 @@ homebrew_packages:
   - name: starship
   - name: terminal-notifier
 #  - name: terraform
+  - name: tldr
   - name: topgrade
   - name: tree
 #  - name: valgrind

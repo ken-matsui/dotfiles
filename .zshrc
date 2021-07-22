@@ -26,6 +26,8 @@ setopt inc_append_history
 setopt share_history
 # {a-d} expands to a b c d
 setopt braceccl
+# Remove all duplicates from history
+setopt histignorealldups
 ## Don't highlight when selecting words
 unset zle_bracketed_paste
 

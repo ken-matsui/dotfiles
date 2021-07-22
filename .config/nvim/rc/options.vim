@@ -17,6 +17,7 @@ hi clear CursorLine
 " Visualize invisible string
 set list
 set listchars=tab:▸\ ,trail:-,extends:»,precedes:«,nbsp:%
+set listchars=tab:>\ ,trail:-,eol:⏎
 
 "
 set tabstop=4

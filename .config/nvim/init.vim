@@ -56,7 +56,7 @@ function! s:load(...) abort
 endfunction
 
 let g:python_host_prog = '/usr/bin/python' " system python2
-let g:python3_host_prog = '/usr/local/bin/python3' " homebrew python3
+let g:python3_host_prog = '/opt/homebrew/bin/python3' " homebrew python3
 
 call s:load('dein.vim')
 "call s:load('filetype.vim')

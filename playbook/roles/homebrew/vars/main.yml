@@ -14,7 +14,7 @@ homebrew_packages:
   - name: curl
 #  - name: elixir
   - name: elm
-  - name: exa
+#  - name: exa
 #  - name: erlang
   - name: ffmpeg  # for youtube-dl
   - name: font-jetbrains-mono-nerd-font  # for alacritty
@@ -35,7 +35,7 @@ homebrew_packages:
   - name: libarchive
   - name: libgit2
 #  - name: llvm # clangd
-#  - name: lsd
+  - name: lsd
   - name: mas
   - name: mysql  # for mysqlclient of Python
   - name: neovim

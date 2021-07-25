@@ -17,7 +17,7 @@ homebrew_packages:
   - name: exa
 #  - name: erlang
   - name: ffmpeg  # for youtube-dl
-  - name: font-jetbrains-mono-nerd-font
+  - name: font-jetbrains-mono-nerd-font  # for alacritty
   - name: gh  # github cli
 #  - name: ghc
   - name: go

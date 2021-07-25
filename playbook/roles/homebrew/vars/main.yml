@@ -1,7 +1,7 @@
 ---
 homebrew_taps:
   - kryptco/tap # for kr
-  - homebrew/cask-fonts # for font-hack-nerd-font
+  - homebrew/cask-fonts # for font-jetbrains-mono-nerd-font
 homebrew_packages:
   - name: asciinema
 #  - name: awscli
@@ -17,7 +17,7 @@ homebrew_packages:
   - name: exa
 #  - name: erlang
   - name: ffmpeg  # for youtube-dl
-#  - name: font-hack-nerd-font
+  - name: font-jetbrains-mono-nerd-font
   - name: gh  # github cli
 #  - name: ghc
   - name: go

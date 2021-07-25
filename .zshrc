@@ -94,9 +94,11 @@ alias tree='lsd --tree'
 alias rm='gmv -f --backup=numbered --target-directory ~/.Trash' # Enable safety dumping
 alias gigafter='git rm --cached $(git ls-files --full-name -i --exclude-standard)' # After adding .gitignore, ignore files
 alias deletedocker='docker ps -aq | xargs docker rm && docker images -aq | xargs docker rmi'
-alias node14='/usr/local/opt/node@14/bin/node'
-alias npm14='/usr/local/opt/node@14/bin/npm'
-alias npx14='/usr/local/opt/node@14/bin/npx'
+if (( $+commands[brew] )); then
+  alias node14="${HOMEBREW_PREFIX}/opt/node@14/bin/node"
+  alias npm14="${HOMEBREW_PREFIX}/opt/node@14/bin/npm"
+  alias npx14="${HOMEBREW_PREFIX}/opt/node@14/bin/npx"
+fi
 
 ##################################
 # Functions
@@ -120,4 +122,3 @@ eval "$(starship init zsh)" # starship
 # Google Cloud SDK (gcloud)
 source $HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 source $HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
-

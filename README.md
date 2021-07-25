@@ -6,7 +6,7 @@
 $ zsh -c "$(curl -fsSL https://dot.matken.jp)"
 ```
 
-## Tasks after the above command
+## Tasks after the installation
 
 ### Applications
 
@@ -15,7 +15,7 @@ $ zsh -c "$(curl -fsSL https://dot.matken.jp)"
 
 ### Settings
 
-#### System Preferences App
+#### System Preferences
 
 * https://github.com/ken-matsui/dotfiles/issues
 

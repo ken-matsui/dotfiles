@@ -9,10 +9,10 @@ zplug "so-fancy/diff-so-fancy", as:command
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
-    printf "Install? [Y/n]: "
-    if read -q; then
-        echo; zplug install
-    fi
+  printf "Install? [Y/n]: "
+  if read -q; then
+    echo; zplug install
+  fi
 fi
 
 # Then, source plugins and add commands to $PATH
@@ -52,6 +52,13 @@ bindkey '^P' up-line-or-search
 bindkey '^N' down-line-or-search
 
 ##################################
+# Local Variables
+##################################
+if (( $+commands[brew] )); then
+  HOMEBREW_PREFIX=$(brew --prefix)
+fi
+
+##################################
 # Environment Paths
 ##################################
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -62,18 +69,19 @@ export PATH="$HOME/flutter/bin:$PATH" # flutter
 export PATH="$HOME/.cargo/bin:$PATH"  # rust
 export PATH="$HOME/.poetry/bin:$PATH" # poetry
 # openssl
-HOMEBREW_PREFIX=$(brew --prefix)
-export PATH="${HOMEBREW_PREFIX}/opt/openssl@1.1/bin:$PATH"
-export LDFLAGS="-L${HOMEBREW_PREFIX}/opt/openssl@1.1/lib"
-export CPPFLAGS="-I${HOMEBREW_PREFIX}/opt/openssl@1.1/include"
+if (( $+commands[brew] )); then
+  export PATH="${HOMEBREW_PREFIX}/opt/openssl@1.1/bin:$PATH"
+  export LDFLAGS="-L${HOMEBREW_PREFIX}/opt/openssl@1.1/lib"
+  export CPPFLAGS="-I${HOMEBREW_PREFIX}/opt/openssl@1.1/include"
+fi
 
 ##################################
 # Environment Variables
 ##################################
 if [[ -d ~/.aws ]]; then # awscli
-    export AWS_DEFAULT_REGION=$(cat ~/.aws/config | grep 'region' | awk '{printf $3}')
-    export AWS_ACCESS_KEY_ID=$(cat ~/.aws/credentials | grep 'aws_access_key_id' | awk '{printf $3}')
-    export AWS_SECRET_ACCESS_KEY=$(cat ~/.aws/credentials | grep 'aws_secret_access_key' | awk '{printf $3}')
+  export AWS_DEFAULT_REGION=$(cat ~/.aws/config | grep 'region' | awk '{printf $3}')
+  export AWS_ACCESS_KEY_ID=$(cat ~/.aws/credentials | grep 'aws_access_key_id' | awk '{printf $3}')
+  export AWS_SECRET_ACCESS_KEY=$(cat ~/.aws/credentials | grep 'aws_secret_access_key' | awk '{printf $3}')
 fi
 export TF_CPP_MIN_LOG_LEVEL=2 # Warning setting for tensorflow.
 export GPG_TTY=$(tty) # Added by Krypton
@@ -81,19 +89,11 @@ export GPG_TTY=$(tty) # Added by Krypton
 ##################################
 # Aliases
 ##################################
-if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-
-    autoload -Uz compinit
-    compinit
-fi
-# Enable safety dumping
-alias rm='gmv -f --backup=numbered --target-directory ~/.Trash'
-# After adding .gitignore, ignore files
-alias gigafter='git rm --cached $(git ls-files --full-name -i --exclude-standard)'
-alias deletedocker='docker ps -aq | xargs docker rm && docker images -aq | xargs docker rmi'
 alias ls=lsd
 alias tree='lsd --tree'
+alias rm='gmv -f --backup=numbered --target-directory ~/.Trash' # Enable safety dumping
+alias gigafter='git rm --cached $(git ls-files --full-name -i --exclude-standard)' # After adding .gitignore, ignore files
+alias deletedocker='docker ps -aq | xargs docker rm && docker images -aq | xargs docker rmi'
 alias node14='/usr/local/opt/node@14/bin/node'
 alias npm14='/usr/local/opt/node@14/bin/npm'
 alias npx14='/usr/local/opt/node@14/bin/npx'
@@ -110,10 +110,13 @@ function sizeof() { du -sh "$@" }
 ##################################
 # Software evaluations
 ##################################
+if (( $+commands[brew] )); then
+  FPATH=$HOMEBREW_PREFIX/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
 eval "$(starship init zsh)" # starship
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 # Google Cloud SDK (gcloud)
 source $HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 source $HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc

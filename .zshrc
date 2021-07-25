@@ -89,9 +89,8 @@ export GPG_TTY=$(tty) # Added by Krypton
 ##################################
 # Aliases
 ##################################
-alias ls=lsd
+alias ls='lsd'
 alias tree='lsd --tree'
-alias rm='gmv -f --backup=numbered --target-directory ~/.Trash' # Enable safety dumping
 alias gigafter='git rm --cached $(git ls-files --full-name -i --exclude-standard)' # After adding .gitignore, ignore files
 alias deletedocker='docker ps -aq | xargs docker rm && docker images -aq | xargs docker rmi'
 if (( $+commands[brew] )); then
@@ -103,6 +102,10 @@ fi
 ##################################
 # Functions
 ##################################
+# Enable safety dumping
+function rm() {
+  gmv --backup=simple --suffix=".~$(date '+%s')~" --target-directory ~/.Trash "$@"
+}
 # .gitignore generator
 function gi() { curl -fsSL https://www.gitignore.io/api/$@ >>! $PWD/.gitignore && echo "added $@ to $PWD/.gitignore" }
 # Replace strings recursively (example: $ replace ./ hey hello)

@@ -17,10 +17,7 @@ $ zsh -c "$(curl -fsSL https://dot.matken.jp)"
 
 #### System Preferences App
 
-* https://github.com/ken-matsui/dotfiles/issues/4#issue-323685405
-* https://github.com/ken-matsui/dotfiles/issues/41
-* https://github.com/ken-matsui/dotfiles/issues/48
-* https://github.com/ken-matsui/dotfiles/issues/51
+* https://github.com/ken-matsui/dotfiles/issues
 
 #### Dropbox
 1. Log into Dropbox

@@ -42,7 +42,7 @@ format = """\
 [time]
 disabled = false
 time_format = "%Y/%m/%d %a %T"
-format = "[\\[ 🕙 $time \\]]($style)"
+format = "[\\[  $time \\]]($style)"
 
 [character]
 vicmd_symbol = "NORMAL [❮](bold green)"

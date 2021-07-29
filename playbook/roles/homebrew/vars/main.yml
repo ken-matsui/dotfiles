@@ -38,6 +38,7 @@ homebrew_packages:
   - name: lsd
   - name: mas
   - name: mysql  # for mysqlclient of Python
+  - name: neofetch
   - name: neovim
   - name: peco
   - name: python

@@ -1,8 +1,10 @@
 [user]
     name = Ken Matsui
     email = 26405363+ken-matsui@users.noreply.github.com
+
 [core]
     pager = diff-so-fancy | less --tabs=4 -RFX
+
 [color "diff-highlight"]
     newHighlight = green bold 22
     oldNormal = red bold
@@ -17,22 +19,28 @@
     whitespace = red reverse
 [color]
     ui = true
+
 [pull]
     rebase = false
+
+[gpg]
+    program = /opt/homebrew/bin/krgpg
+
+[commit]
+    gpgSign = true
+
+[tag]
+    forceSignAnnotated = true
+
+[sequence]
+    editor = interactive-rebase-tool
+
+[init]
+    defaultBranch = main
+
 [alias]
     ch = checkout
     me = config --get-regexp user
     update = !git pull origin main && git fetch --prune && git branch --merged | egrep -v '\\*|master|main' | xargs git branch -d
     parent = "!f(){ git log --pretty=%P -n 1 $1;};f"
     create-one = !git reset $(git merge-base main $(git branch --show-current)) && git add -A && git commit
-
-[gpg]
-    program = /opt/homebrew/bin/krgpg
-[commit]
-    gpgSign = true
-[tag]
-    forceSignAnnotated = true
-[sequence]
-    editor = interactive-rebase-tool
-[init]
-    defaultBranch = main

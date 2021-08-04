@@ -95,11 +95,6 @@ alias ls='lsd'
 alias tree='lsd --tree'
 alias gigafter='git rm --cached $(git ls-files --full-name -i --exclude-standard)' # After adding .gitignore, ignore files
 alias deletedocker='docker ps -aq | xargs docker rm && docker images -aq | xargs docker rmi'
-if (( $+commands[brew] )); then
-  alias node14="${HOMEBREW_PREFIX}/opt/node@14/bin/node"
-  alias npm14="${HOMEBREW_PREFIX}/opt/node@14/bin/npm"
-  alias npx14="${HOMEBREW_PREFIX}/opt/node@14/bin/npx"
-fi
 
 ##################################
 # Functions

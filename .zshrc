@@ -2,9 +2,6 @@
 # .zshrc
 ##################################
 
-if (( $+commands[brew] )); then
-  source "$ZHOMEDIR/homebrew.zsh"
-fi
 source "$ZHOMEDIR/zplug.zsh"
 source "$ZHOMEDIR/option.zsh"
 source "$ZHOMEDIR/bindkey.zsh"

@@ -1,25 +1,25 @@
 ---
 mas:
-  - name: xcode
-  - name: pages
-  - name: numbers
-  - name: keynote
-  - name: imovie
-  - name: Slack
-  - name: Line Corporation
+  - name: 1Password 7
+  - name: Affinity Designer
+  - name: Dark Mode for Safari
+  - name: Goodnotes 5
   - name: Grammarly for Safari
-  - name: RunCat
+  - name: Highlighter for Safari
+  - name: Line Corporation
   - name: Messenger
-#  - name: OneDrive
-  - name: Microsoft Word
   - name: Microsoft Excel
   - name: Microsoft Powerpoint
-  - name: Goodnotes 5
-  - name: 1password 7
-  - name: Page Screenshot for Safari
-  - name: Highlighter for Safari
-  - name: Dark Mode for Safari
-  - name: MindNode
-  - name: Paste
   - name: Microsoft Remote Desktop
-  - name: Affinity Designer
+  - name: Microsoft Word
+  - name: MindNode
+#  - name: OneDrive
+  - name: Page Screenshot for Safari
+  - name: Paste
+  - name: RunCat
+  - name: Slack
+  - name: iMovie
+  - name: Keynote
+  - name: Numbers
+  - name: Pages
+  - name: Xcode

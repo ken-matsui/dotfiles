@@ -13,7 +13,6 @@ $ zsh -c "$(curl -fsSL https://dot.matken.jp)"
 * TOEFL Official Guide
 * [Little Fingers](https://shauninman.com/archive/2017/02/04/little_fingers)
 * [Alacritty (manual build for m1)](https://github.com/ken-matsui/dotfiles/issues/53)
-* [krypt.co (manual build for m1)](https://github.com/ken-matsui/dotfiles/issues/52)
 
 ### Settings
 
@@ -24,16 +23,15 @@ $ zsh -c "$(curl -fsSL https://dot.matken.jp)"
 #### Dropbox
 
 1. Log into Dropbox
-1. `rm -rf ~/.ssh && ln -s ~/Dropbox/Documents/ssh ~/.ssh`
 1. `defaults write com.apple.finder NewWindowTargetPath file://~/Dropbox/`
 
-#### krypt.co
+#### GnuPG
+
+Download private.gpg from 1Password, then execute the following command.
 
 ```sh
-kr pair
+gpg --import private.gpg
 ```
-
-> https://krypt.co/docs/start/code-signing.html
 
 #### RunCat
 

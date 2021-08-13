@@ -12,3 +12,8 @@
 !.config/vue
 !.config/zellij
 !.config/zsh
+
+.gnupg/*
+!.gnupg/gpg.conf
+!.gnupg/gpg-agent.conf
+

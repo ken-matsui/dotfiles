@@ -1,0 +1,18 @@
+---
+- name: Check cargo dir
+  stat:
+    path: ~/.cargo
+  register: cargo
+
+- block:
+  - name: Fetch rustup
+    ansible.builtin.uri:
+      url: https://sh.rustup.rs
+      return_content: yes
+    register: rustup_installer
+
+  - name: Run rustup installer
+    ansible.builtin.shell:
+      cmd: sh -s -- -y
+      stdin: "{{ rustup_installer.content }}"
+  when: not cargo.stat.exists

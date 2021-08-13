@@ -46,10 +46,6 @@ install_macos() {
   brew install ansible
   ansible-playbook ${DOTSPATH}/playbook/main.yml -i ${DOTSPATH}/playbook/hosts
 
-  # Install rust-lang
-  echo 'Installing Rust ...'
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
-
   # Accept license
   sudo xcodebuild -license accept
 

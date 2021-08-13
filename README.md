@@ -30,7 +30,7 @@ $ zsh -c "$(curl -fsSL https://dot.matken.jp)"
 Download private.gpg from 1Password, then execute the following command.
 
 ```sh
-gpg --import private.gpg
+$ gpg --import private.gpg
 ```
 
 #### RunCat

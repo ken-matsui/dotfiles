@@ -19,6 +19,15 @@ inoremap <expr><tab> pumvisible() ? "\<C-n>" :
 on_i = 1
 
 [[plugins]]
+repo = 'vim-airline/vim-airline'
+hook_add = '''
+let g:airline#extensions#tabline#enabled = 1
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
 repo = 'scrooloose/nerdtree'
 hook_add = '''
 noremap <silent> <C-n> :NERDTreeToggle<CR>

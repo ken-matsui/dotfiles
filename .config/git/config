@@ -1,7 +1,7 @@
 [user]
     name = Ken Matsui
     email = 26405363+ken-matsui@users.noreply.github.com
-    signingkey = 8817829FA9C00763
+	signingkey = 103360B3298EE433
 
 [core]
     pager = diff-so-fancy | less --tabs=4 -RFX

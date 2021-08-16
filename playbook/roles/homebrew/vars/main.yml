@@ -71,7 +71,7 @@ homebrew_cask_packages:
 #  - name: hyper
   - name: imobie-m1-app-checker
   - name: jetbrains-toolbox
-#  - name: keybase
+  - name: keybase
 #  - name: lens
   - name: macs-fan-control
 #  - name: mendeley

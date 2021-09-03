@@ -1,6 +1,7 @@
 ---
 homebrew_taps:
   - homebrew/cask-fonts # for font-jetbrains-mono-nerd-font
+  - hashicorp/tap
 homebrew_packages:
   - name: asciinema
 #  - name: awscli
@@ -20,6 +21,7 @@ homebrew_packages:
   - name: graphviz
   - name: gnupg
   - name: gzip
+  - name: hashicorp/tap/vault
 #  - name: httrack
   - name: hyperfine
   - name: interactive-rebase-tool

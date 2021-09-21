@@ -3,7 +3,7 @@
 ## Installation
 
 ```sh
-$ zsh -c "$(curl -fsSL https://dot.matken.jp)"
+$ zsh -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/master/install.sh)"
 ```
 
 ## Tasks after the installation

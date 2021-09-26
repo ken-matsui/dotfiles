@@ -1,6 +1,10 @@
 {
-    "workbench.colorTheme": "Default Dark+",
+    "workbench.colorTheme": "Material Theme Ocean",
     "redhat.telemetry.enabled": false,
     "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
-    "files.trimTrailingWhitespace": true
+    "files.trimTrailingWhitespace": true,
+    "editor.bracketPairColorization.enabled": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "files.autoSave": "onFocusChange",
+    "explorer.compactFolders": false
 }

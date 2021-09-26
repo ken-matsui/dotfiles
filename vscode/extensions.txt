@@ -1,4 +1,5 @@
 42Crunch.vscode-openapi
+Atif.vs-redoc-viewer
 auchenberg.vscode-browser-preview
 christian-kohler.path-intellisense
 codezombiech.gitignore

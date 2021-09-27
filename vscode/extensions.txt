@@ -3,6 +3,8 @@ Atif.vs-redoc-viewer
 auchenberg.vscode-browser-preview
 christian-kohler.path-intellisense
 codezombiech.gitignore
+dseight.disasexpl
+eamodio.gitlens
 Equinusocio.vsc-community-material-theme
 Equinusocio.vsc-material-theme
 equinusocio.vsc-material-theme-icons

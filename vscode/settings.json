@@ -6,5 +6,6 @@
     "editor.bracketPairColorization.enabled": true,
     "workbench.iconTheme": "material-icon-theme",
     "files.autoSave": "onFocusChange",
-    "explorer.compactFolders": false
+    "explorer.compactFolders": false,
+    "gitlens.hovers.currentLine.over": "line"
 }

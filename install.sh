@@ -54,14 +54,6 @@ install_macos() {
   ln -s ${DOTSPATH}/.config/ ~/.config
   ln -s ${DOTSPATH}/.gnupg/ ~/.gnupg
   ln -sf ${DOTSPATH}/.z* ~/
-  
-  # VSCode
-  VSCODE_SETTING_DIR='~/Library/Application\ Support/Code/User'
-  ln -sf ${DOTSPATH}/vscode/settings.json $VSCODE_SETTING_DIR
-  cat ${DOTSPATH}/vscode/extensions.txt | while read line
-  do
-    code --install-extension $line
-  done
 
   # https://stackoverflow.com/a/13785716
   sudo chmod -R 755 /usr/local/share/zsh

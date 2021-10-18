@@ -7,5 +7,7 @@
     "workbench.iconTheme": "material-icon-theme",
     "files.autoSave": "onFocusChange",
     "explorer.compactFolders": false,
-    "gitlens.hovers.currentLine.over": "line"
+    "gitlens.hovers.currentLine.over": "line",
+    "python.defaultInterpreterPath": "/usr/local/bin/python",
+    "git.autofetch": true
 }

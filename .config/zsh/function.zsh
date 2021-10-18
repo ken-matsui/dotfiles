@@ -4,7 +4,8 @@
 
 # Enable safety dumping
 function rm() {
-  gmv --backup=simple --suffix=".~$(date '+%s')~" --target-directory ~/.Trash "$@"
+  args=("${(@)@:#-r}")  # Remove -r option
+  gmv --backup=simple --suffix=".~$(date '+%s')~" --target-directory ~/.Trash "$args"
 }
 
 # .gitignore generator
@@ -19,4 +20,8 @@ function replace() {
 
 function sizeof() {
   du -sh "$@"
+}
+
+function getip() {
+  curl ifconfig.me
 }

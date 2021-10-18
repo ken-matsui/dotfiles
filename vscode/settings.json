@@ -9,5 +9,6 @@
     "explorer.compactFolders": false,
     "gitlens.hovers.currentLine.over": "line",
     "python.defaultInterpreterPath": "/usr/local/bin/python",
-    "git.autofetch": true
+    "git.autofetch": true,
+    "git.enableCommitSigning": true
 }

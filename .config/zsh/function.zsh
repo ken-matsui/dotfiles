@@ -5,7 +5,7 @@
 # Enable safety dumping
 function rm() {
   args=("${(@)@:#-r}")  # Remove -r option
-  gmv --backup=simple --suffix=".~$(date '+%s')~" --target-directory ~/.Trash "$args"
+  gmv --backup=simple -S=".~$(date '+%s')~" $args ~/.Trash
 }
 
 # .gitignore generator

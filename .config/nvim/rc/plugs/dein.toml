@@ -137,3 +137,9 @@ repo = 'tpope/vim-commentary'
 [[plugins]]
 repo = 'machakann/vim-highlightedyank'
 
+[[plugins]]
+repo = 'cappyzawa/trim.nvim'
+
+[[plugins]]
+repo = 'github/copilot.vim'
+

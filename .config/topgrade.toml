@@ -2,7 +2,7 @@
 #assume_yes = true
 
 # Disable specific steps - same options as the command line flag
-disable = ["gem", "mas"]
+disable = ["gem", "mas", "gnome_shell_extensions"]
 
 # Ignore failures for these steps
 #ignore_failures = ["powershell"]

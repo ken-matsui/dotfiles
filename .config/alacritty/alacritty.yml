@@ -164,5 +164,5 @@ shell:
   args:
     - -l
     - -c
-    # Attach a first session when it exists.
+    # Attach the first session when it exists.
     - "ZELLIJ_SESSION=$(zellij list-sessions | head -n 1); [[ $ZELLIJ_SESSION =~ 'No active' ]] && zellij || zellij attach $ZELLIJ_SESSION"

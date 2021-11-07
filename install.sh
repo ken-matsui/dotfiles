@@ -85,6 +85,10 @@ install_linux() {
   sh -c "$(curl -fsSL https://starship.rs/install.sh)"
   
   cargo install topgrade
+  
+  # install alacritty
+  sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev python3
+  cargo install alacritty
 
   echo 'support for Linux is work in progress'
 }

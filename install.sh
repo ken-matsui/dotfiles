@@ -83,6 +83,8 @@ install_linux() {
 
   # starship
   sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+  
+  cargo install topgrade
 
   echo 'support for Linux is work in progress'
 }

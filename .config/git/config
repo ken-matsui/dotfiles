@@ -39,7 +39,7 @@
 [alias]
 	ch = checkout
 	me = config --get-regexp user
-	update = !git pull origin main && git fetch --prune && git branch --merged | egrep -v '\\*|master|main' | xargs git branch -d
+	update = !git pull origin $(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@') && gh poi
 	parent = "!f(){ git log --pretty=%P -n 1 $1;};f"
 	create-one = !git reset $(git merge-base main $(git branch --show-current)) && git add -A && git commit
 

@@ -2,6 +2,7 @@
 homebrew_taps:
   - homebrew/cask-fonts # for font-jetbrains-mono-nerd-font
   - hashicorp/tap
+  - messense/macos-cross-toolchains
 homebrew_packages:
   - name: asciinema
 #  - name: awscli
@@ -51,6 +52,7 @@ homebrew_packages:
 #  - name: valgrind
   - name: wget
   - name: wrk
+  - name: x86_64-unknown-linux-musl  # This works on also m1 mac
   - name: youtube-dl
   - name: zellij
   - name: zoom

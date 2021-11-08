@@ -16,6 +16,7 @@ homebrew_packages:
 #  - name: erlang
   - name: ffmpeg  # for youtube-dl
   - name: font-jetbrains-mono-nerd-font  # for alacritty
+  - name: gh
 #  - name: ghc
   - name: go
   - name: graphviz

@@ -40,7 +40,7 @@
 	ch = checkout
 	me = config --get-regexp user
 	default-branch = !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
-	update = !git pull origin $(git default-branch) && gh poi
+	update = !git pull origin main && gh poi
 	parent = "!f(){ git log --pretty=%P -n 1 $1;};f"
 	create-one = !git reset $(git merge-base main $(git branch --show-current)) && git add -A && git commit
 

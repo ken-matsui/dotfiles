@@ -86,7 +86,7 @@
     type: string
     value: "file://~/Documents/"
 
-- name: Do not show Recents in the sidebar
+- name: Do not show Recents on the sidebar
   osx_defaults:
     domain: com.apple.finder
     key: ShowRecentTags
@@ -108,13 +108,6 @@
     key: InitialKeyRepeat
     type: int
     value: 15
-
-- name: Turn off Live Conversion
-  osx_defaults:
-    domain: com.apple.inputmethod.Kotoeri
-    key: JIMPrefLiveConversionKey
-    type: int
-    value: 0
 
 - name: ¥ key generates \ (backslash)
   osx_defaults:
@@ -154,7 +147,7 @@
     type: float
     value: 3
 
-- name: Show volume in menu bar (1)
+- name: Show volume on the menu bar (1)
   osx_defaults:
     domain: com.apple.menuextra
     key: volume
@@ -163,30 +156,14 @@
 - name: Show volume in menu bar (2)
   shell: defaults write com.apple.systemuiserver.plist menuExtras -array-add "/System/Library/CoreServices/Menu Extras/Volume.menu"
 
-- name: Show bluetooth in menu bar (1)
+- name: Show bluetooth on the menu bar (1)
   osx_defaults:
     domain: com.apple.menuextra
     key: bluetooth
     type: bool
     value: true
-- name: Show bluetooth in menu bar (2)
+- name: Show bluetooth on the menu bar (2)
   shell: defaults write com.apple.systemuiserver.plist menuExtras -array-add "/System/Library/CoreServices/Menu Extras/Bluetooth.menu"
-
-- name: Show time machine in menu bar (1)
-  osx_defaults:
-    domain: com.apple.menuextra
-    key: TimeMachine
-    type: bool
-    value: true
-- name: Show time machine in menu bar (2)
-  shell: defaults write com.apple.systemuiserver.plist menuExtras -array-add "/System/Library/CoreServices/Menu Extras/TimeMachine.menu"
-
-- name: Change the computer name
-  osx_defaults:
-    domain: com.apple.rapport
-    key: familySyncedName
-    type: string
-    value: "matken-mbp2018"
 
 # https://www.defaults-write.com/display-the-file-extensions-in-finder/
 - name: Show all filename extensions on Finder

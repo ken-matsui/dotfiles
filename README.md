@@ -27,7 +27,7 @@ $ zsh -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/mas
 
 #### GnuPG
 
-Download private.gpg from 1Password, then execute the following command.
+Download private.gpg from 1Password, and then execute the following command.
 
 ```sh
 $ gpg --import private.gpg

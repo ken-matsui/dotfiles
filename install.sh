@@ -41,10 +41,15 @@ install_macos() {
   git clone https://github.com/ken-matsui/dotfiles.git
   export DOTSPATH="$(cd $(dirname $0); pwd)/dotfiles"
 
-  # Install ansible (and accompany some of it)
+  # Install ansible
   echo 'Installing ansible ...'
   brew install ansible
+  
+  # Install software I need
   ansible-playbook ${DOTSPATH}/playbook/main.yml -i ${DOTSPATH}/playbook/hosts
+
+  # Install gh extensions
+  gh extension install seachicken/gh-poi
 
   # Accept license
   sudo xcodebuild -license accept

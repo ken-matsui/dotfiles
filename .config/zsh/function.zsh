@@ -2,12 +2,6 @@
 # Functions
 ##################################
 
-# Enable safety dumping
-function rm() {
-  args=("${(@)@:#-r}")  # Remove -r option
-  gmv --backup=simple -S=".~$(date '+%s')~" $args ~/.Trash
-}
-
 # .gitignore generator
 function gi() {
   curl -fsSL https://www.gitignore.io/api/$@ >>! $PWD/.gitignore && echo "added $@ to $PWD/.gitignore"

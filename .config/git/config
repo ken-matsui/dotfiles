@@ -4,20 +4,11 @@
 	signingkey = 103360B3298EE433
 
 [core]
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = delta
 
-[color "diff-highlight"]
-	newHighlight = green bold 22
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-[color "diff"]
-	new = green bold
-	meta = 11
-	frag = cyan bold
-	commit = yellow bold
-	old = red bold
-	whitespace = red reverse
+[interactive]
+	diffFilter = delta --color-only
+
 [color]
 	ui = true
 

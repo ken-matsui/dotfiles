@@ -1,0 +1,1 @@
+alias dig='dog'

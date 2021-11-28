@@ -20,6 +20,7 @@ homebrew_packages:
   - name: font-jetbrains-mono-nerd-font  # for alacritty
   - name: gh
 #  - name: ghc
+  - name: gibo  # fast access to .gitignore boilerplates
   - name: git-delta
   - name: go
   - name: graphviz

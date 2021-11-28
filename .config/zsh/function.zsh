@@ -15,7 +15,3 @@ function replace() {
 function sizeof() {
   du -sh "$@"
 }
-
-function getip() {
-  curl ifconfig.me
-}

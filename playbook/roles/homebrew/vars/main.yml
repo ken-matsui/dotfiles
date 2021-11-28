@@ -12,7 +12,7 @@ homebrew_packages:
   - name: cmake
   - name: coreutils  # TODO: for what?
   - name: curl
-  - name: git-delta
+  - name: dog
 #  - name: elixir
   - name: elm
 #  - name: erlang
@@ -20,6 +20,7 @@ homebrew_packages:
   - name: font-jetbrains-mono-nerd-font  # for alacritty
   - name: gh
 #  - name: ghc
+  - name: git-delta
   - name: go
   - name: graphviz
   - name: gnupg

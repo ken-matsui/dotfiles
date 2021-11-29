@@ -10,7 +10,6 @@ $ zsh -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/mas
 
 ### Applications
 
-* TOEFL Official Guide
 * [Little Fingers](https://shauninman.com/archive/2017/02/04/little_fingers)
 * [Alacritty (manual build for m1)](https://github.com/ken-matsui/dotfiles/issues/53)
 

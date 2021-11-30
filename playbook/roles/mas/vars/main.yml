@@ -10,9 +10,9 @@ mas:
   - name: Messenger
   - name: Microsoft Excel
   - name: Microsoft Powerpoint
-  - name: Microsoft Remote Desktop
+#   - name: Microsoft Remote Desktop
   - name: Microsoft Word
-  - name: MindNode
+#   - name: MindNode
 #  - name: OneDrive
   - name: Page Screenshot for Safari
   - name: Paste

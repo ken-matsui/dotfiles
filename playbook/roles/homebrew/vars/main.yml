@@ -63,6 +63,7 @@ homebrew_packages:
   - name: zplug
 homebrew_cask_packages:
   - name: balenaetcher
+  - name: bartender
   - name: deepl
   - name: discord
   - name: docker

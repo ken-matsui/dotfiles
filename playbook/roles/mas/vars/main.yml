@@ -2,7 +2,6 @@
 mas:
   - name: 1Password 7
   - name: Affinity Designer
-  - name: Dark Mode for Safari
   - name: Goodnotes 5
   - name: Grammarly for Safari
   - name: Highlighter for Safari
@@ -13,6 +12,7 @@ mas:
 #   - name: Microsoft Remote Desktop
   - name: Microsoft Word
 #   - name: MindNode
+  - name: Noir
 #  - name: OneDrive
   - name: Page Screenshot for Safari
   - name: Paste

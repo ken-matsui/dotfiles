@@ -92,6 +92,7 @@ homebrew_cask_packages:
 #  - name: processing
   - name: postman
   - name: protonvpn
+  - name: sf-symbols
 #  - name: sketch
   - name: swish
 #  - name: tor-browser

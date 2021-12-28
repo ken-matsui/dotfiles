@@ -4,9 +4,9 @@
 
 # Set operations.
 setopt extended_glob
-## Appends every command to the history file once it is executed
+# Appends every command to the history file once it is executed
 setopt inc_append_history
-## Reloads the history whenever you use it
+# Reloads the history whenever you use it
 setopt share_history
 # {a-d} expands to a b c d
 setopt braceccl
@@ -14,5 +14,5 @@ setopt braceccl
 setopt histignorealldups
 # Ignore patterns such as URL
 setopt nonomatch
-## Don't highlight when selecting words
+# Don't highlight when selecting words
 unset zle_bracketed_paste

@@ -1,14 +1,16 @@
 ---
 keybinds:
-    normal:
-        - action: [NewPane: ]
-          key: [Ctrl: 'n',]
-        - action: [MoveFocusOrTab: Left,]
-          key: [Ctrl: 'h',]
-        - action: [MoveFocusOrTab: Right,]
-          key: [Ctrl: 'l',]
-        - action: [MoveFocus: Down,]
-          key: [Ctrl: 'j',]
-        - action: [MoveFocus: Up,]
-          key: [Ctrl: 'k',]
-
+  normal:
+    - unbind: [Ctrl: 'n']
+    - action: [SwitchToMode: Resize,]
+      key: [Ctrl: 'r',]
+    - action: [NewPane: ,]
+      key: [Ctrl: 'n',]
+    - action: [MoveFocusOrTab: Left,]
+      key: [Ctrl: 'h',]
+    - action: [MoveFocusOrTab: Right,]
+      key: [Ctrl: 'l',]
+    - action: [MoveFocus: Down,]
+      key: [Ctrl: 'j',]
+    - action: [MoveFocus: Up,]
+      key: [Ctrl: 'k',]

@@ -6,6 +6,7 @@ mas:
   - name: Grammarly for Safari
   - name: Highlighter for Safari
   - name: Line Corporation
+  - name: MeetingBar
   - name: Messenger
   - name: Microsoft Excel
   - name: Microsoft Powerpoint
@@ -18,6 +19,7 @@ mas:
   - name: Paste
   - name: RunCat
   - name: Slack
+  - name: Things 3
   - name: iMovie
   - name: Keynote
   - name: Numbers

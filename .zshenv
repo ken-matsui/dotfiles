@@ -10,17 +10,23 @@ export ZDOTDIR=$HOME
 export ZHOMEDIR=$ZDOTDIR/.config/zsh
 export ZDATADIR=$XDG_DATA_HOME/zsh
 
+#
 # Browser
+#
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
 fi
 
+#
 # Editors
+#
 export EDITOR='nvim'
 export VISUAL=$EDITOR
 export PAGER='less'
 
+#
 # Language
+#
 export LANG="${LANG:-en_US.UTF-8}"
 
 #
@@ -56,7 +62,9 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
 
-# Homebrew configuration
+#
+# Homebrew
+#
 if [ -f /opt/homebrew/bin/brew ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 else

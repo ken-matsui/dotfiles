@@ -2,14 +2,7 @@
 # .zshrc
 ##################################
 
-source "$ZHOMEDIR/zplug.zsh"
-source "$ZHOMEDIR/option.zsh"
-source "$ZHOMEDIR/bindkey.zsh"
-source "$ZHOMEDIR/alias.zsh"
-source "$ZHOMEDIR/function.zsh"
-
-# Software Config
-for config in $ZHOMEDIR/software_config/**/*(.); do source $config; done
-
-source "$ZHOMEDIR/adage.zsh"
+for config in $ZHOMEDIR/config/**/*.zsh; do source $config; done
+for config in $ZHOMEDIR/software_config/**/*.zsh; do source $config; done
+for config in $ZHOMEDIR/config_lazy/**/*.zsh; do source $config; done
 

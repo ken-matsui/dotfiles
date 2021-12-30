@@ -91,6 +91,7 @@ homebrew_cask_packages:
 #  - name: numi
   - name: parallels
 #  - name: processing
+  - name: pock
   - name: postman
   - name: protonvpn
   - name: sf-symbols

@@ -3,7 +3,7 @@
 ## Installation
 
 ```sh
-$ zsh -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main/install.sh)"
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main/install.sh)"
 ```
 
 ## Tasks after the installation
@@ -28,7 +28,7 @@ $ zsh -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/mai
 Download private.gpg from 1Password, and then execute the following command.
 
 ```sh
-$ gpg --import private.gpg
+gpg --import private.gpg
 ```
 
 #### RunCat

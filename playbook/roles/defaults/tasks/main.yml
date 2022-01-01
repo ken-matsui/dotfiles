@@ -172,6 +172,33 @@
     type: bool
     value: true
 
+#
+# Siri
+#
+- name: Disable Ask Siri
+  osx_defaults:
+    domain: com.apple.assistant.support.plist
+    key: "Assistant Enabled"
+    type: bool
+    value: false
+- name: Hide Siri in menu bar
+  osx_defaults:
+    domain: com.apple.Siri
+    key: StatusMenuVisible
+    type: bool
+    value: false
+
+#
+# Security Privacy
+#
+- name: Ask for password
+  shell: defaults write com.apple.screensaver askForPassword -bool true
+- name: Ask for password immediately
+  shell: defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+#
+# Desktop
+#
 - name: Increase grid spacing for icons on the desktop and in other icon views
   shell: /usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:gridSpacing 85' ~/Library/Preferences/com.apple.finder.plist
 - name: Show item info near icons on the desktop and in other icon views

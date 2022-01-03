@@ -67,7 +67,7 @@ homebrew_cask_packages:
   - name: deepl
   - name: discord
   - name: docker
-  - name: drawio
+#   - name: drawio
   - name: dropbox
   - name: figma
 #  - name: firefox

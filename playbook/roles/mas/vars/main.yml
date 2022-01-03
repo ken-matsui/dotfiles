@@ -3,8 +3,8 @@ mas:
   - name: 1Password 7
   - name: Affinity Designer
   - name: Goodnotes 5
-  - name: Grammarly for Safari
-  - name: Highlighter for Safari
+#   - name: Grammarly for Safari
+#   - name: Highlighter for Safari
   - name: Line Corporation
   - name: MeetingBar
   - name: Messenger
@@ -14,8 +14,8 @@ mas:
   - name: Microsoft Word
 #   - name: MindNode
   - name: Noir
-#  - name: OneDrive
-  - name: Page Screenshot for Safari
+#   - name: OneDrive
+#   - name: Page Screenshot for Safari
   - name: Paste
   - name: RunCat
   - name: Slack

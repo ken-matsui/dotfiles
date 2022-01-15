@@ -7,7 +7,7 @@ mas:
 #   - name: Highlighter for Safari
   - name: Line Corporation
   - name: MeetingBar
-  - name: Messenger
+#   - name: Messenger
   - name: Microsoft Excel
   - name: Microsoft Powerpoint
 #   - name: Microsoft Remote Desktop

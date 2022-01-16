@@ -77,7 +77,7 @@ homebrew_cask_packages:
   - name: google-chrome
   - name: google-cloud-sdk
   - name: google-japanese-ime
-  - name: grammarly
+  - name: grammarly-desktop
   - name: imobie-m1-app-checker
   - name: jetbrains-toolbox
   - name: keybase

@@ -1,5 +1,9 @@
 # dotfiles
 
+Dotfiles for macOS using Zsh, Zellij, and Alacritty
+
+<img width="975" alt="ScreenShot" src="https://user-images.githubusercontent.com/26405363/150774356-1bb319e4-4b7f-4a1f-9b59-a165111b111c.png">
+
 ## Installation
 
 ```sh

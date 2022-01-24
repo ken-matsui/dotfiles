@@ -6,24 +6,18 @@
 zsh -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main/install.sh)"
 ```
 
-## Tasks after the installation
+## Additional Settings
 
-### Applications
-
-* [Alacritty (manual build for m1)](https://github.com/ken-matsui/dotfiles/issues/53)
-
-### Settings
-
-#### System Preferences
+### System Preferences
 
 * https://github.com/ken-matsui/dotfiles/issues
 
-#### Dropbox
+### Dropbox
 
 1. Log into Dropbox
 1. `defaults write com.apple.finder NewWindowTargetPath file://~/Dropbox/`
 
-#### GnuPG
+### GnuPG
 
 Download private.gpg from 1Password, and then execute the following command.
 
@@ -31,7 +25,7 @@ Download private.gpg from 1Password, and then execute the following command.
 gpg --import private.gpg
 ```
 
-#### RunCat
+### RunCat
 
 1. General -> Startup: Launch RunCat at login
 1. Indications -> Turn all of them on

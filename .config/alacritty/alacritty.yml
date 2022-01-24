@@ -63,35 +63,6 @@ font:
   # it is recommended to set `use_thin_strokes` to `false`.
   use_thin_strokes: true
 
-# Colors (Simple)
-#colors:
-  # Default colors
-  #primary:
-  #  background: '#111111'
-  #  foreground: '#ffffff'
-
-  # Normal colors
-  #normal:
-  #  black: '#000000'
-  #  red: '#C51E14'
-  #  green: '#1DC121'
-  #  yellow: '#CECB00'
-  #  blue: '#0D73CC'
-  #  magenta: '#C839C5'
-  #  cyan: '#20C5C6'
-  #  white: '#C7C7C7'
-
-  # Bright colors
-  #bright:
-  #  black: '#686868'
-  #  red: '#FD6F6B'
-  #  green: '#67F86F'
-  #  yellow: '#FFFD00'
-  #  blue: '#1A8FFF'
-  #  magenta: '#FD7CFC'
-  #  cyan: '#68FDFE'
-  #  white: '#FFFFFF'
-
 # Colors (Blood Moon)
 colors:
   # Default colors

@@ -5,8 +5,6 @@
 export ZPLUG_HOME=$HOMEBREW_PREFIX/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-
 zplug "modules/directory", from:prezto
 zplug "modules/completion", from:prezto
 zplug "zsh-users/zsh-autosuggestions", defer:2

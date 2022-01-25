@@ -51,6 +51,10 @@ brew install ansible
 # Install software I need
 ansible-playbook ${DOTSPATH}/playbook/main.yml -i ${DOTSPATH}/playbook/hosts
 
+# Install rust-lang
+echo 'Installing Rust ...'
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
+
 # Install gh extensions
 gh extension install seachicken/gh-poi
 

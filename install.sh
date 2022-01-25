@@ -41,10 +41,14 @@ install_macos() {
   git clone https://github.com/ken-matsui/dotfiles.git
   export DOTSPATH="$(cd $(dirname $0); pwd)/dotfiles"
 
+  # Install zplug
+  echo 'Installing zplug ...'
+  brew install zplug
+
   # Install ansible
   echo 'Installing ansible ...'
   brew install ansible
-  
+
   # Install software I need
   ansible-playbook ${DOTSPATH}/playbook/main.yml -i ${DOTSPATH}/playbook/hosts
 
@@ -88,9 +92,9 @@ install_linux() {
 
   # starship
   sh -c "$(curl -fsSL https://starship.rs/install.sh)"
-  
+
   cargo install topgrade
-  
+
   # install alacritty
   sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev python3
   cargo install alacritty

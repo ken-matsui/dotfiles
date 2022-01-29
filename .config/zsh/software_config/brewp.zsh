@@ -74,7 +74,7 @@ brewp alacritty --cask
 # brewp balenaetcher --cask  # Flash OS images to SD cards & USB drives, safely and easily.
 brewp bartender --cask
 # brewp deepl --cask
-brewp discord --cask
+# brewp discord --cask
 # brewp docker --cask
 # # brewp drawio --cask
 # # brewp dropbox --cask  # Using beta version

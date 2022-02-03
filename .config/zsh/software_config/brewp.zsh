@@ -105,6 +105,7 @@ brewp keybase --cask
 brewp postman --cask
 # brewp protonvpn --cask
 # brewp sf-symbols --cask
+brewp signal --cask
 # #brewp sketch --cask
 # brewp swish --cask
 # #brewp tor-browser --cask

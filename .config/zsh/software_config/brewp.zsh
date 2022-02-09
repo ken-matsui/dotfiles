@@ -41,6 +41,7 @@ brewp ripgrep
 brewp libarchive
 brewp libgit2
 #brewp llvm # clangd
+brewp lolcat
 brewp lsd
 brewp mas
 brewp mysql  # for mysqlclient of Python

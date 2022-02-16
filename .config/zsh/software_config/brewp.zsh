@@ -105,6 +105,7 @@ brewp keybase --cask
 # brewp pock --cask
 brewp postman --cask
 # brewp protonvpn --cask
+brewp raycast --cask
 # brewp sf-symbols --cask
 brewp signal --cask
 # #brewp sketch --cask

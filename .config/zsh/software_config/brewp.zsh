@@ -59,6 +59,8 @@ brewp trash
 brewp tree
 brewp vault
 #brewp valgrind
+brewp wapm
+brewp wasmer
 brewp wget
 brewp wrk
 brewp x86_64-unknown-linux-musl  # This works on also m1 mac

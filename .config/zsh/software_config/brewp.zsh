@@ -40,7 +40,7 @@ brewp ripgrep
 #brewp kubectl
 brewp libarchive
 brewp libgit2
-#brewp llvm # clangd
+brewp llvm  # clangd, clang-format, clang-tidy
 brewp lolcat
 brewp lsd
 brewp mas

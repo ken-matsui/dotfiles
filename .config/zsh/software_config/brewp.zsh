@@ -76,7 +76,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 brewp alacritty --cask
 # brewp balenaetcher --cask  # Flash OS images to SD cards & USB drives, safely and easily.
 brewp bartender --cask
-brewp clickup --cask
+# brewp clickup --cask
 # brewp deepl --cask
 # brewp discord --cask
 # brewp docker --cask

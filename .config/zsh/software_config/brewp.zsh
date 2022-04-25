@@ -66,7 +66,6 @@ brewp wrk
 brewp x86_64-unknown-linux-musl  # This works on also m1 mac
 brewp youtube-dl
 brewp zellij
-brewp zplug
 
 ##################################
 # Cask packages

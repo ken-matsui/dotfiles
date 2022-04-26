@@ -2,7 +2,7 @@
 # Taps
 ##################################
 brewp homebrew/cask-fonts --tap  # for font-jetbrains-mono-nerd-font
-brewp hashicorp/tap --tap  # for vault
+# brewp hashicorp/tap --tap  # for vault
 brewp messense/macos-cross-toolchains --tap  # for x86_64-unknown-linux-musl
 
 ##################################
@@ -57,7 +57,7 @@ brewp terminal-notifier
 brewp topgrade
 brewp trash
 brewp tree
-brewp vault
+# brewp vault
 #brewp valgrind
 brewp wapm
 brewp wasmer

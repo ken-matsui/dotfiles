@@ -40,10 +40,6 @@ echo 'Installing ken-matsui/dotfiles ...'
 git clone https://github.com/ken-matsui/dotfiles.git
 export DOTSPATH="$(cd $(dirname $0); pwd)/dotfiles"
 
-# Install zplug
-echo 'Installing zplug ...'
-brew install zplug
-
 # Install ansible
 echo 'Installing ansible ...'
 brew install ansible
@@ -70,7 +66,7 @@ ln -sf ${DOTSPATH}/.z* ~/
 # https://stackoverflow.com/a/13785716
 sudo chmod -R 755 /usr/local/share/zsh
 
-# Do logging
+# Print logs
 terminal-notifier -message 'All done.' -sound Funk
 printf '\xE2\x9C\x94 \e[1;33m All done !!! \u2728 \u2728 \e[m\n'
 printf '\xE2\x9D\x97 \e[1;31m Reboot your computer...\e[m\n'

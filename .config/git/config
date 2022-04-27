@@ -5,7 +5,7 @@
 
 [core]
 	pager = delta
-	autocrlf = false
+	autocrlf = input
 
 [interactive]
 	diffFilter = delta --color-only

@@ -79,14 +79,13 @@ brewp bartender --cask
 # brewp deepl --cask
 # brewp discord --cask
 # brewp docker --cask
-# # brewp drawio --cask
-# # brewp dropbox --cask  # Using beta version
+# brewp drawio --cask
+# brewp dropbox --cask
 # brewp figma --cask
-# #brewp firefox --cask
+# brewp firefox --cask
 brewp font-jetbrains-mono-nerd-font --cask  # for alacritty
 # brewp font-source-code-pro-for-powerline --cask
-# #brewp framer-x --cask
-# #brewp fritzing --cask
+# brewp fritzing --cask
 # brewp google-chrome --cask
 brewp google-cloud-sdk --cask
 brewp google-japanese-ime --cask
@@ -94,25 +93,25 @@ brewp google-japanese-ime --cask
 # brewp imobie-m1-app-checker --cask
 # brewp jetbrains-toolbox --cask
 brewp keybase --cask
-# #brewp lens --cask
-# #brewp macs-fan-control --cask
-# #brewp mendeley --cask
+# brewp lens --cask
+# brewp macs-fan-control --cask
+# brewp mendeley --cask
 # brewp mimestream --cask
-# #brewp miro --cask
-# #brewp mysqlworkbench --cask
+# brewp mysqlworkbench --cask
+# brewp multipass --cask
 # brewp notion --cask
-# #brewp numi --cask
+# brewp numi --cask
 # brewp parallels --cask
-# #brewp processing --cask
+# brewp processing --cask
 # brewp pock --cask
 brewp postman --cask
 # brewp protonvpn --cask
 brewp raycast --cask
 # brewp sf-symbols --cask
 brewp signal --cask
-# #brewp sketch --cask
+# brewp sketch --cask
 # brewp swish --cask
-# #brewp tor-browser --cask
+# brewp tor-browser --cask
 # brewp visual-studio-code --cask
 brewp xcodes --cask
 brewp zoom --cask

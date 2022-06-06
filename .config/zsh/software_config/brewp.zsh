@@ -91,7 +91,7 @@ brewp google-chrome --cask
 brewp google-cloud-sdk --cask
 # brewp google-japanese-ime --cask
 brewp grammarly-desktop --cask
-brewp imobie-m1-app-checker --cask
+# brewp imobie-m1-app-checker --cask
 brewp jetbrains-toolbox --cask
 brewp keybase --cask
 # brewp lens --cask

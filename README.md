@@ -26,7 +26,7 @@ zsh -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main/
 Download private.gpg from 1Password, and then execute the following command.
 
 ```sh
-gpg --import private.gpg
+gpg --import private.pgp
 ```
 
 ### RayCast

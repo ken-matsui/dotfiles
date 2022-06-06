@@ -9,21 +9,21 @@ brewp messense/macos-cross-toolchains --tap  # for x86_64-unknown-linux-musl
 # Normal packages
 ##################################
 brewp asciinema
-#brewp awscli
+# brewp awscli
 brewp boost
-#brewp boost-python
+# brewp boost-python
 brewp clang-format
 brewp cmake
 brewp cowsay
 brewp curl
 brewp dog
-#brewp elixir
-brewp elm
-#brewp erlang
+# brewp elixir
+# brewp elm
+# brewp erlang
 brewp ffmpeg  # for youtube-dl
 brewp fortune
 brewp gh
-#brewp ghc
+# brewp ghc
 brewp gibo  # fast access to .gitignore boilerplates
 brewp git-delta
 brewp git-interactive-rebase-tool
@@ -31,21 +31,20 @@ brewp go
 brewp graphviz
 brewp gnupg
 brewp gzip
-#brewp httrack
-#brewp hyperfine
+# brewp httrack
+# brewp hyperfine
 brewp jq
 brewp ripgrep
-#brewp kops
-#brewp kr
-#brewp kubectl
-#brewp libarchive
-#brewp libgit2
+# brewp kops
+# brewp kr
+# brewp kubectl
+# brewp libarchive
+# brewp libgit2
 brewp llvm  # clangd, clang-format, clang-tidy
 brewp lolcat
 brewp lsd
-brewp mas
-#brewp mysql  # for mysqlclient of Python
-#brewp neofetch
+# brewp mysql  # for mysqlclient of Python
+# brewp neofetch
 brewp neovim
 brewp peco
 brewp pinentry-mac  # for gnupg
@@ -53,14 +52,14 @@ brewp python
 brewp starship
 brewp subversion  # for font-source-code-pro-for-powerline
 brewp terminal-notifier
-#brewp terraform
+# brewp terraform
 brewp topgrade
 brewp trash
 brewp tree
-#brewp vault
-#brewp valgrind
-#brewp wapm
-#brewp wasmer
+# brewp vault
+# brewp valgrind
+# brewp wapm
+# brewp wasmer
 brewp wget
 brewp wrk
 brewp x86_64-unknown-linux-musl  # This also works on m1 mac
@@ -89,7 +88,6 @@ brewp font-source-code-pro-for-powerline --cask
 # brewp fritzing --cask
 brewp google-chrome --cask
 brewp google-cloud-sdk --cask
-# brewp google-japanese-ime --cask
 brewp grammarly-desktop --cask
 # brewp imobie-m1-app-checker --cask
 brewp jetbrains-toolbox --cask

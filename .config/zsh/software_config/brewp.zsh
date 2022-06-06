@@ -31,20 +31,20 @@ brewp graphviz
 brewp gnupg
 brewp gzip
 #brewp httrack
-brewp hyperfine
+#brewp hyperfine
 brewp interactive-rebase-tool
 brewp jq
 brewp ripgrep
 #brewp kops
 #brewp kr
 #brewp kubectl
-brewp libarchive
-brewp libgit2
+#brewp libarchive
+#brewp libgit2
 brewp llvm  # clangd, clang-format, clang-tidy
 brewp lolcat
 brewp lsd
 brewp mas
-brewp mysql  # for mysqlclient of Python
+#brewp mysql  # for mysqlclient of Python
 #brewp neofetch
 brewp neovim
 brewp peco
@@ -57,13 +57,13 @@ brewp terminal-notifier
 brewp topgrade
 brewp trash
 brewp tree
-# brewp vault
+#brewp vault
 #brewp valgrind
-brewp wapm
-brewp wasmer
+#brewp wapm
+#brewp wasmer
 brewp wget
 brewp wrk
-brewp x86_64-unknown-linux-musl  # This works on also m1 mac
+brewp x86_64-unknown-linux-musl  # This also works on m1 mac
 brewp youtube-dl
 brewp zellij
 
@@ -76,46 +76,45 @@ brewp alacritty --cask
 # brewp balenaetcher --cask  # Flash OS images to SD cards & USB drives, safely and easily.
 brewp bartender --cask
 # brewp clickup --cask
-# brewp deepl --cask
-# brewp discord --cask
-# brewp docker --cask
+brewp deepl --cask
+brewp devtoys --cask
+brewp discord --cask
+brewp docker --cask
 # brewp drawio --cask
-# brewp dropbox --cask
+brewp dropbox --cask
 # brewp figma --cask
 # brewp firefox --cask
 brewp font-jetbrains-mono-nerd-font --cask  # for alacritty
-# brewp font-source-code-pro-for-powerline --cask
+brewp font-source-code-pro-for-powerline --cask
 # brewp fritzing --cask
-# brewp google-chrome --cask
+brewp google-chrome --cask
 brewp google-cloud-sdk --cask
 brewp google-japanese-ime --cask
-# brewp grammarly-desktop --cask
-# brewp imobie-m1-app-checker --cask
-# brewp jetbrains-toolbox --cask
+brewp grammarly-desktop --cask
+brewp imobie-m1-app-checker --cask
+brewp jetbrains-toolbox --cask
 brewp keybase --cask
 # brewp lens --cask
-# brewp macs-fan-control --cask
 # brewp mendeley --cask
-# brewp mimestream --cask
+brewp mimestream --cask
 # brewp mysqlworkbench --cask
 # brewp multipass --cask
 # brewp notion --cask
 # brewp numi --cask
 # brewp parallels --cask
 # brewp processing --cask
-# brewp pock --cask
 brewp postman --cask
-# brewp protonvpn --cask
+brewp protonvpn --cask
 brewp raycast --cask
-# brewp sf-symbols --cask
+brewp sf-symbols --cask
 brewp signal --cask
 # brewp sketch --cask
-# brewp swish --cask
+brewp swish --cask
 # brewp tor-browser --cask
-# brewp visual-studio-code --cask
+brewp visual-studio-code --cask
 brewp xcodes --cask
 brewp zoom --cask
-# brewp zulip --cask
+brewp zulip --cask
 
 ##################################
 # Install pacakges

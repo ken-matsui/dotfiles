@@ -26,13 +26,13 @@ brewp gh
 #brewp ghc
 brewp gibo  # fast access to .gitignore boilerplates
 brewp git-delta
+brewp git-interactive-rebase-tool
 brewp go
 brewp graphviz
 brewp gnupg
 brewp gzip
 #brewp httrack
 #brewp hyperfine
-brewp interactive-rebase-tool
 brewp jq
 brewp ripgrep
 #brewp kops

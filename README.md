@@ -29,6 +29,10 @@ Download private.gpg from 1Password, and then execute the following command.
 gpg --import private.gpg
 ```
 
+### RayCast
+
+Install RayCast plugins
+
 ### RunCat
 
 1. General -> Startup: Launch RunCat at login

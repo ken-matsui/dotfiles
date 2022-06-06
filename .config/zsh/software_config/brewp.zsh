@@ -89,7 +89,7 @@ brewp font-source-code-pro-for-powerline --cask
 # brewp fritzing --cask
 brewp google-chrome --cask
 brewp google-cloud-sdk --cask
-brewp google-japanese-ime --cask
+# brewp google-japanese-ime --cask
 brewp grammarly-desktop --cask
 brewp imobie-m1-app-checker --cask
 brewp jetbrains-toolbox --cask

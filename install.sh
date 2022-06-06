@@ -44,7 +44,8 @@ export DOTSPATH="$(cd $(dirname $0); pwd)/dotfiles"
 echo 'Installing ansible ...'
 brew install ansible
 
-# Install software I need
+# Install software that I need
+brew install mas
 ansible-playbook ${DOTSPATH}/playbook/main.yml -i ${DOTSPATH}/playbook/hosts
 
 # Install rust-lang

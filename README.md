@@ -31,7 +31,7 @@ gpg --import private.gpg
 
 ### RayCast
 
-Install RayCast plugins
+Install RayCast extensions.
 
 ### RunCat
 

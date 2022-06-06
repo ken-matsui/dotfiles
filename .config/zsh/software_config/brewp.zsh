@@ -103,7 +103,7 @@ brewp mimestream --cask
 # brewp numi --cask
 # brewp parallels --cask
 # brewp processing --cask
-brewp postman --cask
+# brewp postman --cask
 brewp protonvpn --cask
 brewp raycast --cask
 brewp sf-symbols --cask

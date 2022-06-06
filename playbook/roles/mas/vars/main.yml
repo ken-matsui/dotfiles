@@ -2,10 +2,11 @@
 mas:
   - name: 1Password 7
   - name: Affinity Designer
+  - name: Dictionaries
   - name: Goodnotes 5
 #   - name: Grammarly for Safari
 #   - name: Highlighter for Safari
-#   - name: Line Corporation
+  - name: Line Corporation
 #   - name: MeetingBar
 #   - name: Messenger
   - name: Microsoft Excel

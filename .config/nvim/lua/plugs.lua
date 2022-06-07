@@ -36,3 +36,15 @@ Plug 'cappyzawa/trim.nvim'
 Plug 'github/copilot.vim'
 
 vim.call('plug#end')
+
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "all",
+
+  highlight = {
+    enable = true,
+  },
+
+  indent = {
+    enable = true,
+  },
+}

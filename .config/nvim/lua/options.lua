@@ -16,7 +16,7 @@ vim.cmd('hi clear CursorLine')
 
 -- Visualize invisible string
 vim.opt.list = true
-vim.opt.listchars = 'tab:▸ ,trail:-,extends:»,precedes:«,nbsp:%,eol:⏎'
+vim.opt.listchars = 'eol:$,tab:>-,trail:~,extends:>,precedes:<'
 
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2

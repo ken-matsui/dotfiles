@@ -30,8 +30,3 @@ zsh -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main/
 4. Enter your Keybase.io password
 5. Create a `private.pgp` file that contains the exported content
 6. Execute `gpg --import private.pgp`
-
-### RunCat
-
-1. General -> Startup: Launch RunCat at login
-1. Indications -> Turn all of them on

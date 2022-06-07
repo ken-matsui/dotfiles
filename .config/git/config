@@ -31,7 +31,7 @@
 [alias]
 	ch = checkout
 	me = config --get-regexp user
-	mylog = shortlog -sne --author='Ken Matsui'
+	mine = shortlog -sne --author='Ken Matsui'
 	default-branch = !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
 	update = !git pull origin main && gh poi
 	parent = "!f(){ git log --pretty=%P -n 1 $1;};f"

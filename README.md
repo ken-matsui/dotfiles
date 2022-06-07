@@ -19,7 +19,8 @@ zsh -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main/
 ### Dropbox
 
 1. Log into Dropbox
-1. `defaults write com.apple.finder NewWindowTargetPath file://~/Dropbox/`
+2. `defaults write com.apple.finder NewWindowTargetPath file://~/Dropbox/`
+3. `Preferences` -> `General` -> `Dropbox badge` -> `Never show`
 
 ### GnuPG
 

@@ -27,7 +27,7 @@ zsh -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main/
 1. Log in to Keybase.io
 2. Click the `edit` button on right of GPG Key
 3. Click `Export my private key from Keybase`
-4. Enter Keybase.io password
+4. Enter your Keybase.io password
 5. Create a `private.pgp` file that contains the exported content
 6. Execute `gpg --import private.pgp`
 

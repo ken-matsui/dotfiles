@@ -10,6 +10,7 @@ brewp messense/macos-cross-toolchains --tap  # for x86_64-unknown-linux-musl
 ##################################
 brewp asciinema
 # brewp awscli
+brewp bat
 brewp boost
 # brewp boost-python
 brewp clang-format

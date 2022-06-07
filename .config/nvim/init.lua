@@ -7,7 +7,6 @@ end
 
 require('mappings')
 require('options')
-require('view')
 
 require('plugins')
 vim.cmd([[

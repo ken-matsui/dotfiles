@@ -45,6 +45,7 @@ brewp llvm  # clangd, clang-format, clang-tidy
 brewp lolcat
 brewp lsd
 # brewp mysql  # for mysqlclient of Python
+brewp ninja
 # brewp neofetch
 brewp neovim
 brewp peco

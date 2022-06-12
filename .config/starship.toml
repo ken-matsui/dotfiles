@@ -1,9 +1,8 @@
 format = """\
   $time\
   $line_break\
-  $username\
-  $hostname\
   $kubernetes\
+  $status\
   $directory\
   $git_branch\
   $git_commit\
@@ -50,9 +49,11 @@ symbol = " "
 symbol = " "
 
 [directory]
-read_only = " "
-truncation_length = 8
+read_only = " "
+truncation_length = 6
 truncate_to_repo = false
+truncation_symbol = ".../"
+format = "[$read_only]($read_only_style)[ ]($style)[$path]($style) "
 
 [docker_context]
 symbol = " "
@@ -110,6 +111,17 @@ symbol = " "
 
 [shlvl]
 symbol = " "
+
+[status]
+disabled = false
+style = "red"
+symbol = " "
+not_executable_symbol = "🚫"
+not_found_symbol = " "
+sigint_symbol = " "
+signal_symbol = " "
+format = '[\[ $symbol$common_meaning$signal_name$maybe_int \]]($style) '
+map_symbol = true
 
 [swift]
 symbol = "ﯣ "

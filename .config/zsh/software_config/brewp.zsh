@@ -83,6 +83,7 @@ brewp discord --cask
 brewp docker --cask
 # brewp drawio --cask
 brewp dropbox --cask
+brewp fig --cask
 # brewp figma --cask
 # brewp firefox --cask
 brewp font-jetbrains-mono-nerd-font --cask  # for alacritty

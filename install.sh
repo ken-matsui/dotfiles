@@ -31,21 +31,17 @@ echo 'Installing Homebrew ...'
 yes | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Install git
-echo 'Installing git ...'
-brew install git
-
 # Install dotfiles
 echo 'Installing ken-matsui/dotfiles ...'
 git clone https://github.com/ken-matsui/dotfiles.git
 export DOTSPATH="$(cd $(dirname $0); pwd)/dotfiles"
 
-# Install ansible
-echo 'Installing ansible ...'
-brew install ansible
+# Install ansible & mas
+echo 'Installing ansible & mas ...'
+brew install ansible mas
 
 # Install software that I need
-brew install mas
+echo 'Running ansible ...'
 ansible-playbook ${DOTSPATH}/playbook/main.yml -i ${DOTSPATH}/playbook/hosts
 
 # Install rust-lang
@@ -68,10 +64,9 @@ ln -sf ${DOTSPATH}/.z* ~/
 sudo chmod -R 755 /usr/local/share/zsh
 
 # Print logs
-terminal-notifier -message 'All done.' -sound Funk
-printf '\xE2\x9C\x94 \e[1;33m All done !!! \u2728 \u2728 \e[m\n'
-printf '\xE2\x9D\x97 \e[1;31m Reboot your computer...\e[m\n'
-read '?Press any key to continue: '
+terminal-notifier -message 'Dotfiles Installation Done' -sound Funk
+printf '\u2728\e[1;33m Dotfiles Installation Done \u2728 \e[m\n'
+read '?Press any key to reboot your computer...: '
 
 # Restart to make the setting effective
 sudo reboot

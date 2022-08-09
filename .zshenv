@@ -65,8 +65,6 @@ fi
 #
 # Homebrew
 #
-if [ -f /opt/homebrew/bin/brew ]; then
+if (( $+commands[brew] )); then
   eval "$(/opt/homebrew/bin/brew shellenv)"
-else
-  echo 'Homebrew not found. Some software configurations may not be loaded correctly.'
 fi

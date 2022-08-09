@@ -117,6 +117,6 @@ brewp zoom --cask
 brewp zulip --cask
 
 ##################################
-# Install pacakges
+# Install packages
 ##################################
 brewp install

@@ -65,6 +65,8 @@ fi
 #
 # Homebrew
 #
+# At this time, the `brew` command is unavailable; we need to find the
+# excutable instead of `$+commands[brew]`.
 if [ -f /opt/homebrew/bin/brew ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 else

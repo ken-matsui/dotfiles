@@ -1,2 +1,4 @@
-export PATH="$PATH:/opt/local/bin/"
-export PATH="$PATH:/opt/local/sbin/"
+if [ "$(uname -s)" = Darwin ]; then
+  export PATH="$PATH:/opt/local/bin/"
+  export PATH="$PATH:/opt/local/sbin/"
+fi

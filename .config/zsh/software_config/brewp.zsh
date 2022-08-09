@@ -1,4 +1,5 @@
 if (( $+commands[brew] == 0 )); then
+  # https://stackoverflow.com/a/3666941
   return
 fi
 

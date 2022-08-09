@@ -58,7 +58,6 @@ brewp pinentry-mac  # for gnupg
 brewp python
 brewp starship
 brewp subversion  # for font-source-code-pro-for-powerline
-brewp terminal-notifier
 # brewp terraform
 brewp topgrade
 brewp trash

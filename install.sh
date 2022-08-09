@@ -20,6 +20,15 @@ echo ''
 local _ostype="$(uname -s)"
 if [ "$_ostype" = Darwin ]; then
   zsh -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main/install-macos.sh)"
+elif [ "$_ostype" = Linux ]; then
+  # https://askubuntu.com/a/459425
+  local _distrotype="$(awk -F= '/^NAME/{print $2}' /etc/os-release)"
+  if [ "$_distrotype" = '"Ubuntu"' ]; then
+    zsh -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main/install-ubuntu.sh)"
+  else
+    echo "$_distrotype is not supported."
+    exit 1
+  fi
 else
   echo "'$_ostype' is not supported."
   exit 1

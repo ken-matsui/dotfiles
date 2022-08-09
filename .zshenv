@@ -69,6 +69,8 @@ fi
 # excutable instead of `$+commands[brew]`.
 if [ -f /opt/homebrew/bin/brew ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 else
   echo 'Homebrew not found. Some software configurations may not be loaded correctly.'
 fi

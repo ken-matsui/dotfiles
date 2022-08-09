@@ -7,7 +7,7 @@ Dotfiles for macOS using Zsh, Zellij, and Alacritty
 ## Installation
 
 ```sh
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main/install.sh)"
 ```
 
 ## Additional Settings

@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 # Install ansible & mas
 echo 'Installing ansible & mas ...'

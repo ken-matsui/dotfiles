@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Install ansible & mas
 echo 'Installing ansible & mas ...'
 brew install ansible mas
 

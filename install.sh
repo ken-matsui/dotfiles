@@ -17,42 +17,20 @@ printf 'Password for your PC [\e[32m?\e[m] ' && sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 echo ''
 
-# Install Xcode command line tools
-echo 'Installing Xcode command line tools ...'
-check="$(xcode-select --install 2>&1)"
-str='xcode-select: note: install requested for command line developer tools'
-while [[ $check == $str ]]; do
-  check="$(xcode-select --install 2>&1)"
-  sleep 1
-done
+local _ostype="$(uname -s)"
+if [ "$_ostype" = Darwin ]; then
+  zsh -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main/install-macos.sh)"
+else
+  echo "'$_ostype' is not supported."
+  exit 1
+fi
 
-# Install Homebrew
-echo 'Installing Homebrew ...'
-yes | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# Install dotfiles
-echo 'Installing ken-matsui/dotfiles ...'
-git clone https://github.com/ken-matsui/dotfiles.git
-export DOTSPATH="$(cd $(dirname $0); pwd)/dotfiles"
-
-# Install ansible & mas
-echo 'Installing ansible & mas ...'
-brew install ansible mas
-
-# Install software that I need
-echo 'Running ansible ...'
-ansible-playbook ${DOTSPATH}/playbook/main.yml -i ${DOTSPATH}/playbook/hosts
-
-# Install rust-lang
+# Install Rust
 echo 'Installing Rust ...'
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
 
 # Install gh extensions
 gh extension install seachicken/gh-poi
-
-# Accept license
-sudo xcodebuild -license accept
 
 # Link config files
 echo 'Linking config files ...'
@@ -64,7 +42,6 @@ ln -sf ${DOTSPATH}/.z* ~/
 sudo chmod -R 755 /usr/local/share/zsh
 
 # Print logs
-terminal-notifier -message 'Dotfiles Installation Done' -sound Funk
 printf '\u2728\e[1;33m Dotfiles Installation Done \u2728 \e[m\n'
 read '?Press any key to reboot your computer...: '
 

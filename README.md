@@ -24,7 +24,7 @@ zsh -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main/
 
 ### GnuPG
 
-1. Log in to Keybase.io
+1. Log in to [Keybase.io](https://keybase.io)
 2. Click the `edit` button on right of GPG Key
 3. Click `Export my private key from Keybase`
 4. Enter your Keybase.io password

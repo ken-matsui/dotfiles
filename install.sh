@@ -19,12 +19,23 @@ echo ''
 
 local _ostype="$(uname -s)"
 if [ "$_ostype" = Darwin ]; then
-  zsh -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main/install-macos.sh)"
+  # Install Xcode command line tools
+  echo 'Installing Xcode command line tools ...'
+  check="$(xcode-select --install 2>&1)"
+  str='xcode-select: note: install requested for command line developer tools'
+  while [[ $check == $str ]]; do
+    check="$(xcode-select --install 2>&1)"
+    sleep 1
+  done
 elif [ "$_ostype" = Linux ]; then
   # https://askubuntu.com/a/459425
   local _distrotype="$(awk -F= '/^NAME/{print $2}' /etc/os-release)"
   if [ "$_distrotype" = '"Ubuntu"' ]; then
-    zsh -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main/install-ubuntu.sh)"
+    echo 'Installing git & zsh ...'
+    sudo apt update
+    sudo apt upgrade -y
+    sudo apt install -y git zsh
+    chsh -s $(which zsh)
   else
     echo "$_distrotype is not supported."
     exit 1
@@ -32,6 +43,28 @@ elif [ "$_ostype" = Linux ]; then
 else
   echo "'$_ostype' is not supported."
   exit 1
+fi
+
+# Install Homebrew
+echo 'Installing Homebrew ...'
+yes | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+if [ -f /opt/homebrew/bin/brew ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+else
+  echo 'Homebrew installation seems broken.'
+  exit 1
+fi
+
+# Install dotfiles
+echo 'Installing ken-matsui/dotfiles ...'
+git clone https://github.com/ken-matsui/dotfiles.git
+export DOTSPATH="$(cd $(dirname $0); pwd)/dotfiles"
+
+# Additional installation for macOS
+if [ "$_ostype" = Darwin ]; then
+  zsh -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main/install-macos.sh)"
 fi
 
 # Install Rust

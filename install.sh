@@ -61,7 +61,15 @@ export DOTSPATH="$(cd $(dirname $0); pwd)/dotfiles"
 
 # Additional installation for macOS
 if [ "$_ostype" = Darwin ]; then
-  zsh -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main/install-macos.sh)"
+  echo 'Installing ansible & mas ...'
+  brew install ansible mas
+
+  # Install software that I need
+  echo 'Running ansible ...'
+  ansible-playbook ${DOTSPATH}/playbook/main.yml -i ${DOTSPATH}/playbook/hosts
+
+  # Accept license
+  sudo xcodebuild -license accept
 fi
 
 echo 'Installing Rust ...'

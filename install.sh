@@ -75,7 +75,8 @@ fi
 echo 'Installing Rust ...'
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
 
-gh extension install seachicken/gh-poi
+gh auth login
+gh ext install seachicken/gh-poi
 
 echo 'Linking config files ...'
 ln -s ${DOTSPATH}/.config/ ~/.config

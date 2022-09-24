@@ -21,12 +21,3 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main
 1. Log in to Dropbox
 2. `defaults write com.apple.finder NewWindowTargetPath file://~/Dropbox/`
 3. `Preferences` -> `General` -> `Dropbox badge` -> `Never show`
-
-### GnuPG
-
-1. Log in to [Keybase.io](https://keybase.io)
-2. Click the `edit` button on right of GPG Key
-3. Click `Export my private key from Keybase`
-4. Enter your Keybase.io password
-5. Create a `private.pgp` file that contains the exported content
-6. Execute `gpg --import private.pgp`

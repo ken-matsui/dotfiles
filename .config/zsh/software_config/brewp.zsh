@@ -101,7 +101,6 @@ brewp mimestream --cask
 # brewp mysqlworkbench --cask
 # brewp multipass --cask
 # brewp notion --cask
-# brewp numi --cask
 # brewp parallels --cask
 # brewp processing --cask
 # brewp postman --cask

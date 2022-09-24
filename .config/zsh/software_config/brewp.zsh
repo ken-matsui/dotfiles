@@ -95,7 +95,6 @@ brewp google-cloud-sdk --cask
 brewp grammarly-desktop --cask
 # brewp imobie-m1-app-checker --cask
 brewp jetbrains-toolbox --cask
-brewp keybase --cask
 # brewp lens --cask
 # brewp mendeley --cask
 brewp mimestream --cask

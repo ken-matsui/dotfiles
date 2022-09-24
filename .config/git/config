@@ -1,43 +1,49 @@
 [user]
-	name = Ken Matsui
-	email = 26405363+ken-matsui@users.noreply.github.com
-	signingkey = 103360B3298EE433
+  name = Ken Matsui
+  email = 26405363+ken-matsui@users.noreply.github.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJLtNOwH8UCkUcpMNG4aSMNtzUtYaYzdc3awbXbzvAwY
 
-[core]
-	pager = delta
-	autocrlf = input
+[gpg]
+  format = ssh
 
-[interactive]
-	diffFilter = delta --color-only
-
-[color]
-	ui = true
-
-[pull]
-	rebase = false
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 
 [commit]
-	gpgSign = true
+  gpgsign = true
+
+[core]
+  pager = delta
+  autocrlf = input
+
+[interactive]
+  diffFilter = delta --color-only
+
+[color]
+  ui = true
+
+[pull]
+  rebase = false
 
 [tag]
-	forceSignAnnotated = true
+  forceSignAnnotated = true
 
 [sequence]
-	editor = interactive-rebase-tool
+  editor = interactive-rebase-tool
 
 [init]
-	defaultBranch = main
+  defaultBranch = main
 
 [alias]
-	ch = checkout
-	me = config --get-regexp user
-	mine = shortlog -sne --author='Ken Matsui'
-	default-branch = !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
-	update = !git pull origin main && gh poi
-	parent = "!f(){ git log --pretty=%P -n 1 $1;};f"
-	create-one = !git reset $(git merge-base main $(git branch --show-current)) && git add -A && git commit
-	squash-all = "!f(){ git reset $(git commit-tree HEAD^{tree} -m \"${1:-A new start}\");};f"
-	rm-ignored = !git rm --cached $(git ls-files --full-name -i --exclude-standard)
+  ch = checkout
+  me = config --get-regexp user
+  mine = shortlog -sne --author='Ken Matsui'
+  default-branch = !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
+  update = !git pull origin main && gh poi
+  parent = "!f(){ git log --pretty=%P -n 1 $1;};f"
+  create-one = !git reset $(git merge-base main $(git branch --show-current)) && git add -A && git commit
+  squash-all = "!f(){ git reset $(git commit-tree HEAD^{tree} -m \"${1:-A new start}\");};f"
+  rm-ignored = !git rm --cached $(git ls-files --full-name -i --exclude-standard)
 
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain

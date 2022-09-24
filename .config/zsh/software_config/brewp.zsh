@@ -35,7 +35,6 @@ brewp git-delta
 brewp git-interactive-rebase-tool
 brewp go
 brewp graphviz
-brewp gnupg
 brewp gzip
 # brewp httrack
 # brewp hyperfine
@@ -54,7 +53,6 @@ brewp ninja
 # brewp neofetch
 brewp neovim
 brewp peco
-brewp pinentry-mac  # for gnupg
 brewp python
 brewp starship
 brewp subversion  # for font-source-code-pro-for-powerline

@@ -80,7 +80,6 @@ gh ext install seachicken/gh-poi
 
 echo 'Linking config files ...'
 ln -s ${DOTSPATH}/.config/ ~/.config
-ln -s ${DOTSPATH}/.gnupg/ ~/.gnupg
 ln -sf ${DOTSPATH}/.z* ~/
 
 # https://stackoverflow.com/a/13785716

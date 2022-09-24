@@ -12,8 +12,4 @@
 !.config/zellij
 !.config/zsh
 
-.gnupg/*
-!.gnupg/gpg.conf
-!.gnupg/gpg-agent.conf
-
 packer_compiled.lua

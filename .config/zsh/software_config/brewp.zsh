@@ -97,7 +97,7 @@ brewp grammarly-desktop --cask
 brewp jetbrains-toolbox --cask
 # brewp lens --cask
 # brewp mendeley --cask
-brewp mimestream --cask
+# brewp mimestream --cask
 # brewp mysqlworkbench --cask
 # brewp multipass --cask
 # brewp notion --cask

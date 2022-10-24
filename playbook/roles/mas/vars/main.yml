@@ -1,8 +1,8 @@
 ---
 mas:
   - name: 1Password 7
-  - name: Affinity Designer
-  - name: Dictionaries
+#  - name: Affinity Designer
+#  - name: Dictionaries
   - name: Goodnotes 5
 #   - name: Grammarly for Safari
 #   - name: Highlighter for Safari
@@ -25,4 +25,6 @@ mas:
   - name: Keynote
   - name: Numbers
   - name: Pages
+#  - name: WeChat
+#  - name: WhatsApp
   - name: Xcode

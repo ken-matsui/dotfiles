@@ -1,6 +1,5 @@
 keybinds {
     normal {
-        unbind "Ctrl n"
         bind "Ctrl r" { SwitchToMode "resize"; }
         bind "Ctrl n" { NewPane; }
         bind "Ctrl h" { MoveFocusOrTab "Left"; }

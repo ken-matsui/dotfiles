@@ -113,7 +113,7 @@ brewp swish --cask
 # brewp tor-browser --cask
 brewp visual-studio-code --cask
 # brewp xcodes --cask
-brewp zoom --cask
+# brewp zoom --cask
 brewp zulip --cask
 
 ##################################

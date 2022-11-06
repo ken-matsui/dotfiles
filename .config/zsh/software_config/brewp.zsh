@@ -20,14 +20,12 @@ brewp boost
 # brewp boost-python
 brewp clang-format
 brewp cmake
-brewp cowsay
 brewp curl
 brewp dog
 # brewp elixir
 # brewp elm
 # brewp erlang
 brewp ffmpeg  # for youtube-dl
-brewp fortune
 brewp gh
 # brewp ghc
 brewp gibo  # fast access to .gitignore boilerplates

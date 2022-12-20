@@ -14,7 +14,14 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main
 
 ### System Preferences
 
-* https://github.com/ken-matsui/dotfiles/issues
+* System Preference -> trackpad -> Trackpad speed: Fast
+* System Preferences -> Keyboard -> Keyboard -> Modifier Keys -> Caps Lock Key -> Control
+* System Preference -> Dock & Menu Bar -> Automatically hide and show the Dock
+* System Preference -> Dock & Menu Bar -> Spotlight -> Show in Menu Bar -> disable
+* System Preference -> Dock & Menu Bar -> Wi-Fi -> Show in Menu Bar -> disable
+* System Preference -> Dock & Menu Bar -> Bluetooth -> Show in Menu Bar -> disable
+* System Preference -> Dock & Menu Bar -> Battery -> Show Percentage
+* System Preference -> Dock & Menu Bar -> Clock -> Show date -> `always`
 
 ### Dropbox
 

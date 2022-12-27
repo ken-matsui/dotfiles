@@ -104,7 +104,7 @@ brewp jetbrains-toolbox --cask
 # brewp postman --cask
 brewp protonvpn --cask
 brewp raycast --cask
-brewp sf-symbols --cask
+# brewp sf-symbols --cask
 brewp signal --cask
 # brewp sketch --cask
 brewp swish --cask
@@ -112,7 +112,7 @@ brewp swish --cask
 brewp visual-studio-code --cask
 # brewp xcodes --cask
 # brewp zoom --cask
-brewp zulip --cask
+# brewp zulip --cask
 
 ##################################
 # Install packages

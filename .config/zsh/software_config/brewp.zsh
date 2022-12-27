@@ -17,7 +17,6 @@ brewp asciinema
 # brewp awscli
 brewp bat
 brewp boost
-# brewp boost-python
 brewp clang-format
 brewp cmake
 brewp curl
@@ -27,7 +26,6 @@ brewp dog
 # brewp erlang
 brewp ffmpeg  # for youtube-dl
 brewp gh
-# brewp ghc
 brewp gibo  # fast access to .gitignore boilerplates
 brewp git-delta
 brewp git-interactive-rebase-tool
@@ -41,8 +39,8 @@ brewp ripgrep
 # brewp kops
 # brewp kr
 # brewp kubectl
-# brewp libarchive
-# brewp libgit2
+brewp libarchive
+brewp libgit2
 brewp llvm  # clangd, clang-format, clang-tidy
 brewp lolcat
 brewp lsd
@@ -76,9 +74,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 brewp alacritty --cask
 # brewp balenaetcher --cask  # Flash OS images to SD cards & USB drives, safely and easily.
 brewp bartender --cask
-# brewp clickup --cask
 brewp deepl --cask
-brewp devtoys --cask
 brewp discord --cask
 brewp docker --cask
 # brewp drawio --cask
@@ -87,7 +83,6 @@ brewp docker --cask
 # brewp firefox --cask
 brewp font-jetbrains-mono-nerd-font --cask  # for alacritty
 brewp font-source-code-pro-for-powerline --cask
-# brewp fritzing --cask
 brewp google-chrome --cask
 brewp google-cloud-sdk --cask
 brewp grammarly-desktop --cask
@@ -97,10 +92,8 @@ brewp jetbrains-toolbox --cask
 # brewp mendeley --cask
 # brewp mimestream --cask
 # brewp mysqlworkbench --cask
-# brewp multipass --cask
 # brewp notion --cask
 # brewp parallels --cask
-# brewp processing --cask
 # brewp postman --cask
 brewp protonvpn --cask
 brewp raycast --cask

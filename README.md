@@ -22,9 +22,3 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main
 * System Preference -> Dock & Menu Bar -> Bluetooth -> Show in Menu Bar -> disable
 * System Preference -> Dock & Menu Bar -> Battery -> Show Percentage
 * System Preference -> Dock & Menu Bar -> Clock -> Show date -> `always`
-
-### Dropbox
-
-1. Log in to Dropbox
-2. `defaults write com.apple.finder NewWindowTargetPath file://~/Dropbox/`
-3. `Preferences` -> `General` -> `Dropbox badge` -> `Never show`

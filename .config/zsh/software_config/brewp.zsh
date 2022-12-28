@@ -41,7 +41,6 @@ brewp ripgrep
 brewp libarchive
 brewp libgit2
 brewp llvm  # clangd, clang-format, clang-tidy
-brewp lolcat
 brewp lsd
 # brewp mysql  # for mysqlclient of Python
 brewp ninja

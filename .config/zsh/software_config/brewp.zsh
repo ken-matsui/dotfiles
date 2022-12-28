@@ -55,7 +55,6 @@ brewp subversion  # for font-source-code-pro-for-powerline
 # brewp terraform
 brewp topgrade
 brewp trash
-brewp tree
 # brewp vault
 # brewp valgrind
 # brewp wapm

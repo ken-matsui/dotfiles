@@ -20,7 +20,6 @@ brewp boost
 brewp clang-format
 brewp cmake
 brewp curl
-brewp dog
 # brewp elixir
 # brewp elm
 # brewp erlang

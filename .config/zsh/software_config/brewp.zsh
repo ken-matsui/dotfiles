@@ -44,7 +44,6 @@ brewp llvm  # clangd, clang-format, clang-tidy
 brewp lsd
 # brewp mysql  # for mysqlclient of Python
 brewp ninja
-# brewp neofetch
 brewp neovim
 brewp peco
 brewp python
@@ -68,6 +67,7 @@ brewp zellij
 ##################################
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
+# brewp 1password --cask
 brewp alacritty --cask
 # brewp balenaetcher --cask  # Flash OS images to SD cards & USB drives, safely and easily.
 brewp bartender --cask
@@ -76,7 +76,6 @@ brewp discord --cask
 brewp docker --cask
 # brewp drawio --cask
 # brewp figma --cask
-# brewp firefox --cask
 brewp font-jetbrains-mono-nerd-font --cask  # for alacritty
 brewp font-source-code-pro-for-powerline --cask
 brewp google-chrome --cask
@@ -88,7 +87,7 @@ brewp jetbrains-toolbox --cask
 # brewp mendeley --cask
 # brewp mimestream --cask
 # brewp mysqlworkbench --cask
-# brewp notion --cask
+brewp notion --cask
 # brewp parallels --cask
 # brewp postman --cask
 brewp protonvpn --cask
@@ -97,10 +96,9 @@ brewp raycast --cask
 brewp signal --cask
 # brewp sketch --cask
 brewp swish --cask
-# brewp tor-browser --cask
 brewp visual-studio-code --cask
 # brewp xcodes --cask
-# brewp zoom --cask
+brewp zoom --cask
 # brewp zulip --cask
 
 ##################################

@@ -44,7 +44,7 @@
   parent = "!f(){ git log --pretty=%P -n 1 $1;};f"
   create-one = !git reset $(git merge-base main $(git branch --show-current)) && git add -A && git commit
   squash-all = "!f(){ git reset $(git commit-tree HEAD^{tree} -m \"${1:-A new start}\");};f"
-  rm-ignored = !git rm --cached $(git ls-files --full-name -i --exclude-standard)
+  rm-ignored = !git rm -r --cached .
 
 [credential]
   helper = osxkeychain

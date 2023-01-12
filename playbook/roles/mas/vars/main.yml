@@ -10,7 +10,7 @@ mas:
 #   - name: Microsoft Remote Desktop
   - name: Microsoft Word
   - name: Noir
-  - name: Paste
+#   - name: Paste
   - name: RunCat
 #   - name: Slack
   - name: Things 3

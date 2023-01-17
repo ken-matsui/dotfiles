@@ -71,6 +71,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 brewp alacritty --cask
 # brewp balenaetcher --cask  # Flash OS images to SD cards & USB drives, safely and easily.
 brewp bartender --cask
+brewp brave-browser --cask
 brewp deepl --cask
 brewp discord --cask
 brewp docker --cask
@@ -88,7 +89,6 @@ brewp jetbrains-toolbox --cask
 # brewp mimestream --cask
 # brewp mysqlworkbench --cask
 brewp notion --cask
-brewp orion --cask
 # brewp parallels --cask
 # brewp postman --cask
 brewp protonvpn --cask

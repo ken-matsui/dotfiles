@@ -78,7 +78,7 @@ brewp docker --cask
 # brewp figma --cask
 brewp font-jetbrains-mono-nerd-font --cask  # for alacritty
 brewp font-source-code-pro-for-powerline --cask
-brewp google-chrome --cask
+# brewp google-chrome --cask
 brewp google-cloud-sdk --cask
 brewp grammarly-desktop --cask
 # brewp imobie-m1-app-checker --cask
@@ -88,6 +88,7 @@ brewp jetbrains-toolbox --cask
 # brewp mimestream --cask
 # brewp mysqlworkbench --cask
 brewp notion --cask
+brewp orion --cask
 # brewp parallels --cask
 # brewp postman --cask
 brewp protonvpn --cask

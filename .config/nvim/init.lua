@@ -7,14 +7,7 @@ end
 
 require('mappings')
 require('options')
-
--- require('plugins')
--- vim.cmd([[
-  -- augroup packer_user_config
-    -- autocmd!
-    -- autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  -- augroup end
--- ]])
+require('plugins')
 
 -- Must be written at the last.  see :help 'secure'.
 vim.opt.secure = true

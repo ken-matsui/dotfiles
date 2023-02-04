@@ -94,7 +94,7 @@ brewp notion --cask
 brewp protonvpn --cask
 brewp raycast --cask
 # brewp sf-symbols --cask
-brewp signal --cask
+brewp session --cask
 # brewp sketch --cask
 brewp swish --cask
 brewp visual-studio-code --cask

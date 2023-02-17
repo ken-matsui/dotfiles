@@ -12,7 +12,9 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main
 
 ## Additional Settings
 
-### System Preferences
+### macOS
+
+#### System Preferences
 
 * System Preference -> trackpad -> Trackpad speed: Fast
 * System Preferences -> Keyboard -> Keyboard -> Modifier Keys -> Caps Lock Key -> Control
@@ -22,3 +24,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main
 * System Preference -> Dock & Menu Bar -> Bluetooth -> Show in Menu Bar -> disable
 * System Preference -> Dock & Menu Bar -> Battery -> Show Percentage
 * System Preference -> Dock & Menu Bar -> Clock -> Show date -> `always`
+
+### Ubuntu
+
+* `fprintd-enroll`

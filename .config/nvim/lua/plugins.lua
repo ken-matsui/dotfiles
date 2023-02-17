@@ -22,6 +22,8 @@ vim.cmd([[
 
 -- Specify plugins
 return require('packer').startup(function(use)
+  use { "wbthomason/packer.nvim" }
+
   -- Themes
   use 'kyazdani42/nvim-web-devicons'
   use {
@@ -110,17 +112,17 @@ return require('packer').startup(function(use)
   }
 
   -- Completion
-  use 'haorenW1025/completion-nvim'
-  use {
-    'nvim-treesitter/completion-treesitter',
-    requires = {
-      'nvim-treesitter/nvim-treesitter',
-      'haorenW1025/completion-nvim'
-    },
-    config = function()
-      vim.cmd("autocmd BufEnter * lua require'completion'.on_attach()")
-    end
-  }
+  -- use 'haorenW1025/completion-nvim'
+  -- use {
+    -- 'nvim-treesitter/completion-treesitter',
+    -- requires = {
+      -- 'nvim-treesitter/nvim-treesitter',
+      -- 'haorenW1025/completion-nvim'
+    -- },
+    -- config = function()
+      -- vim.cmd("autocmd BufEnter * lua require'completion'.on_attach()")
+    -- end
+  -- }
 
   -- Utils
   use 'tpope/vim-commentary'
@@ -128,16 +130,16 @@ return require('packer').startup(function(use)
   use 'jiangmiao/auto-pairs'
   use 'cappyzawa/trim.nvim'
   use 'github/copilot.vim'
-  use {
-    'bronson/vim-trailing-whitespace',
-    config = function()
-      vim.cmd('autocmd BufWritePre * :%s/\\s\\+$//e')
-    end
-  }
-  use {
-    'akinsho/toggleterm.nvim', tag = 'v1.*',
-    config = function() require('toggleterm').setup() end
-  }
+  -- use {
+    -- 'bronson/vim-trailing-whitespace',
+    -- config = function()
+      -- vim.cmd('autocmd BufWritePre * :%s/\\s\\+$//e')
+    -- end
+  -- }
+  -- use {
+    -- 'akinsho/toggleterm.nvim', tag = 'v1.*',
+    -- config = function() require('toggleterm').setup() end
+  -- }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

@@ -17,8 +17,7 @@ printf 'Password for your PC [\e[32m?\e[m] ' && sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 echo ''
 
-local _ostype="$(uname -s)"
-if [ "$_ostype" = Darwin ]; then
+if [[ "$OSTYPE" == darwin* ]]; then
   echo 'Installing Xcode command line tools ...'
   check="$(xcode-select --install 2>&1)"
   str='xcode-select: note: install requested for command line developer tools'
@@ -26,7 +25,7 @@ if [ "$_ostype" = Darwin ]; then
     check="$(xcode-select --install 2>&1)"
     sleep 1
   done
-elif [ "$_ostype" = Linux ]; then
+elif [[ "$OSTYPE" == linux* ]]; then
   # https://askubuntu.com/a/459425
   local _distrotype="$(awk -F= '/^NAME/{print $2}' /etc/os-release)"
   if [ "$_distrotype" = '"Ubuntu"' ]; then
@@ -40,7 +39,7 @@ elif [ "$_ostype" = Linux ]; then
     exit 1
   fi
 else
-  echo "'$_ostype' is not supported."
+  echo "'$OSTYPE' is not supported."
   exit 1
 fi
 
@@ -60,7 +59,7 @@ git clone https://github.com/ken-matsui/dotfiles.git
 export DOTSPATH="$(cd $(dirname $0); pwd)/dotfiles"
 
 # Additional installation for macOS
-if [ "$_ostype" = Darwin ]; then
+if [[ "$OSTYPE" == darwin* ]]; then
   echo 'Installing ansible & mas ...'
   brew install ansible mas
 

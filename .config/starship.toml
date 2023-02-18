@@ -1,6 +1,11 @@
 format = """\
   $time\
   $line_break\
+  $username\
+  $hostname\
+  $localip\
+  $shlvl\
+  $singularity\
   $kubernetes\
   $status\
   $directory\
@@ -110,6 +115,7 @@ symbol = " "
 symbol = " "
 
 [shlvl]
+disabled = false
 symbol = " "
 
 [status]
@@ -133,11 +139,3 @@ format = "[\\[  $time \\]]($style)"
 
 [character]
 vicmd_symbol = "NORMAL [❮](bold green)"
-
-[username]
-show_always = true
-
-[hostname]
-ssh_only = false
-style = "bold green"
-disabled = false

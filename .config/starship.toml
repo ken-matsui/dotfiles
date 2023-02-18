@@ -1,64 +1,37 @@
-format = """\
-  $time\
-  $line_break\
-  $username\
-  $hostname\
-  $localip\
-  $shlvl\
-  $singularity\
-  $kubernetes\
-  $status\
-  $directory\
-  $git_branch\
-  $git_commit\
-  $git_state\
-  $git_status\
-  $hg_branch\
-  $docker_context\
-  $package\
-  $dotnet\
-  $elixir\
-  $elm\
-  $erlang\
-  $golang\
-  $haskell\
-  $java\
-  $julia\
-  $nodejs\
-  $php\
-  $python\
-  $ruby\
-  $rust\
-  $terraform\
-  $nix_shell\
-  $conda\
-  $memory_usage\
-  $aws\
-  $env_var\
-  $crystal\
-  $cmd_duration\
-  $custom\
-  $line_break\
-  $jobs\
-  $battery\
-  $character\
-  """
+#
+# Base Format
+#
+format = """
+$time\
+$line_break\
+$status\
+$all\
+$line_break\
+$jobs\
+$battery\
+$os\
+$container\
+$shell\
+$character"""
 
+#
+# Nerd Font Symbols
+# From: https://starship.rs/presets/nerd-font.html
+#
 [aws]
 symbol = "  "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
 
 [conda]
 symbol = " "
 
 [dart]
 symbol = " "
-
-[directory]
-read_only = " "
-truncation_length = 6
-truncate_to_repo = false
-truncation_symbol = ".../"
-format = "[$read_only]($read_only_style)[ ]($style)[$path]($style) "
 
 [docker_context]
 symbol = " "
@@ -75,6 +48,15 @@ symbol = " "
 [golang]
 symbol = " "
 
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = "⌘ "
+
 [hg_branch]
 symbol = " "
 
@@ -84,35 +66,95 @@ symbol = " "
 [julia]
 symbol = " "
 
+[lua]
+symbol = " "
+
 [memory_usage]
 symbol = " "
+
+[meson]
+symbol = "喝 "
 
 [nim]
 symbol = " "
 
 [nix_shell]
-symbol = " "
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[os.symbols]
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "﯑ "
+Gentoo = " "
+HardenedBSD = "ﲊ "
+Illumos = " "
+Linux = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = " "
+openSUSE = " "
+OracleLinux = " "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = " "
+Solus = "ﴱ "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = " "
 
 [package]
 symbol = " "
 
-[perl]
-symbol = " "
-
-[php]
-symbol = " "
-
 [python]
-symbol = " "
+symbol = " "
+
+[rlang]
+symbol = "ﳒ "
 
 [ruby]
-symbol = " "
+symbol = " "
 
 [rust]
 symbol = " "
 
 [scala]
 symbol = " "
+
+[spack]
+symbol = "🅢 "
+
+#
+# Custom Settings
+#
+[gcloud]
+disabled = true
+
+[directory]
+read_only = " "
+truncation_length = 6
+truncate_to_repo = false
+truncation_symbol = ".../"
+format = "[$read_only]($read_only_style)[ ]($style)[$path]($style) "
 
 [shlvl]
 disabled = false
@@ -128,9 +170,6 @@ sigint_symbol = " "
 signal_symbol = " "
 format = '[\[ $symbol$common_meaning$signal_name$maybe_int \]]($style) '
 map_symbol = true
-
-[swift]
-symbol = "ﯣ "
 
 [time]
 disabled = false

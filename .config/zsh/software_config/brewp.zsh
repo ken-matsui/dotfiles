@@ -51,7 +51,7 @@ brewp starship
 brewp subversion  # for font-source-code-pro-for-powerline
 # brewp terraform
 brewp topgrade
-if [[ "$(uname -s)" = Darwin ]]; then
+if [[ "$OSTYPE" == darwin* ]]; then
   brewp trash
 fi
 # brewp vault

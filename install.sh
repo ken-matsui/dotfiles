@@ -11,13 +11,13 @@ echo '
  \__,_|\___/ \__|_| |_|_|\___||___/
 '
 
-# Ask for the administrator password upfront
-printf 'Password for your PC [\e[32m?\e[m] ' && sudo -v
-# Keep-alive: update existing `sudo` time stamp until this script has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-echo ''
-
 if [[ "$OSTYPE" == darwin* ]]; then
+  # Ask for the administrator password upfront
+  printf 'Password for your PC [\e[32m?\e[m] ' && sudo -v
+  # Keep-alive: update existing `sudo` time stamp until this script has finished
+  while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+  echo ''
+
   echo 'Installing Xcode command line tools ...'
   check="$(xcode-select --install 2>&1)"
   str='xcode-select: note: install requested for command line developer tools'
@@ -74,11 +74,14 @@ fi
 echo 'Installing Rust ...'
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
 
+# TODO: gh is installed only on macOS, not on Ubuntu.
 gh auth login
 gh ext install seachicken/gh-poi
 
 echo 'Linking config files ...'
+# TODO: On Ubuntu, there should already be the ~/.config directory. Needs some tweaks here.
 ln -s ${DOTSPATH}/.config/ ~/.config
+# TODO: On Ubuntu, .z* file was created. Needs investigation.
 ln -sf ${DOTSPATH}/.z* ~/
 
 # https://stackoverflow.com/a/13785716

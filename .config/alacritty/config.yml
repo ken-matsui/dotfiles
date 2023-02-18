@@ -1,0 +1,132 @@
+window:
+  # Window dimensions (changes require restart)
+  #
+  # Number of lines/columns (not pixels) in the terminal. The number of columns
+  # must be at least `2`, while using a value of `0` for columns and lines will
+  # fall back to the window manager's recommended size.
+
+  # Window padding (changes require restart)
+  #
+  # Blank space added around the window in pixels. This padding is scaled
+  # by DPI and the specified value is always added at both opposing sides.
+  padding:
+    x: 12
+    y: 12
+
+  # Spread additional padding evenly around the terminal content.
+  dynamic_padding: true
+
+  # Startup Mode (changes require restart)
+  #
+  # Values for `startup_mode`:
+  #   - Windowed
+  #   - Maximized
+  #   - Fullscreen
+  #
+  # Values for `startup_mode` (macOS only):
+  #   - SimpleFullscreen
+  startup_mode: Fullscreen
+
+# Font configuration
+font:
+  # The normal (roman) font face to use.
+  normal:
+    family: 'JetBrainsMono Nerd Font'
+    # Style can be specified to pick a specific face.
+    style: Regular
+
+  # The bold font face
+  bold:
+    family: 'JetBrainsMono Nerd Font'
+    # Style can be specified to pick a specific face.
+    # style: Bold
+
+  # The italic font face
+  italic:
+    family: 'JetBrainsMono Nerd Font'
+    # Style can be specified to pick a specific face.
+    # style: Italic
+
+  # Point size
+  size: 13.0
+
+  # Offset is the extra space around each character. `offset.y` can be thought
+  # of as modifying the line spacing, and `offset.x` as modifying the letter
+  # spacing.
+  offset:
+ #  x: 0
+    y: 1
+
+# Colors (Blood Moon)
+colors:
+  # Default colors
+  primary:
+    background: '0x10100E'
+    foreground: '0xC6C6C4'
+
+  # Normal colors
+  normal:
+    black:   '0x10100E'
+    red:     '0xC40233'
+    green:   '0x009F6B'
+    yellow:  '0xFFD700'
+    blue:    '0x0087BD'
+    magenta: '0x9A4EAE'
+    cyan:    '0x20B2AA'
+    white:   '0xC6C6C4'
+
+  # Bright colors
+  bright:
+    black:   '0x696969'
+    red:     '0xFF2400'
+    green:   '0x03C03C'
+    yellow:  '0xFDFF00'
+    blue:    '0x007FFF'
+    magenta: '0xFF1493'
+    cyan:    '0x00CCCC'
+    white:   '0xFFFAFA'
+
+selection:
+  # This string contains all characters that are used as separators for
+  # "semantic words" in Alacritty.
+  #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+
+  # When set to `true`, selected text will be copied to the primary clipboard.
+  save_to_clipboard: false
+
+cursor:
+  # Cursor style
+  style:
+    # Cursor shape
+    #
+    # Values for `shape`:
+    #   - ▇ Block
+    #   - _ Underline
+    #   - | Beam
+    shape: Beam
+
+    # Cursor blinking state
+    #
+    # Values for `blinking`:
+    #   - Never: Prevent the cursor from ever blinking
+    #   - Off: Disable blinking by default
+    #   - On: Enable blinking by default
+    #   - Always: Force the cursor to always blink
+    blinking: On
+
+# Shell
+#
+# You can set `shell.program` to the path of your favorite shell, e.g.
+# `/bin/fish`. Entries in `shell.args` are passed unmodified as arguments to the
+# shell.
+#
+# Default:
+#   - (macOS) /bin/bash --login
+#   - (Linux/BSD) user login shell
+#   - (Windows) powershell
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - "zellij attach --index 0 --create"

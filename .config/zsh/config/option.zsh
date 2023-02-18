@@ -14,8 +14,10 @@ unset zle_bracketed_paste
 #
 # History
 #
+export HISTFILE=~/.zsh_history
 export HISTSIZE=10000000
 export SAVEHIST=10000000
+setopt appendhistory
 setopt bang_hist                 # Treat the '!' character specially during expansion.
 setopt extended_history          # Write the history file in the ":start:elapsed;command" format.
 setopt inc_append_history        # Write to the history file immediately, not when the shell exits.

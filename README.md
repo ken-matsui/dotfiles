@@ -49,3 +49,4 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main
   sudo apt install gnome-shell-extension-manager
   ```
 * Install [RunCat](https://extensions.gnome.org/extension/2986/runcat/)
+* TODO: Find clipboard manager

@@ -12,6 +12,12 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main
 
 ## Additional Settings
 
+### Both OS
+
+#### 1Password
+
+* Settings -> Developer -> Check `Use the SSH agent`
+
 ### macOS
 
 #### System Settings

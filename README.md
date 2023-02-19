@@ -27,4 +27,15 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main
 
 ### Ubuntu
 
-* `fprintd-enroll`
+* Run `fprintd-enroll` on the terminal app to enable fingerprint authentication.
+* Install the following software:
+  ```shell
+  sudo snap install 1password
+  sudo snap install discord
+  sudo snap install docker
+  sudo snap install brave
+  sudo snap install code --classic
+  sudo snap install intellij-idea-ultimate --classic
+  sudo snap install clion --classic
+  sudo snap install webstorm --classic
+  ```

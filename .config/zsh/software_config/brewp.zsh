@@ -13,7 +13,7 @@ brewp messense/macos-cross-toolchains --tap  # for x86_64-unknown-linux-musl
 ##################################
 # Normal packages
 ##################################
-brewp asciinema
+# brewp asciinema
 # brewp awscli
 brewp bat
 brewp boost

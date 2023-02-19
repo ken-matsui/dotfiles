@@ -39,4 +39,5 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main
   sudo snap install intellij-idea-ultimate --classic
   sudo snap install clion --classic
   sudo snap install webstorm --classic
+  sudo snap install pycharm-professional --classic
   ```

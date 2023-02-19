@@ -30,7 +30,6 @@ brewp gh
 brewp gibo  # fast access to .gitignore boilerplates
 brewp git-delta
 brewp git-interactive-rebase-tool
-brewp go
 brewp graphviz
 brewp gzip
 # brewp httrack
@@ -47,7 +46,7 @@ brewp lsd
 # brewp mysql  # for mysqlclient of Python
 brewp ninja
 brewp neovim
-brewp peco
+# brewp peco
 brewp python
 brewp starship
 brewp subversion  # for font-source-code-pro-for-powerline

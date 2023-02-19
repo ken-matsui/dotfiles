@@ -46,5 +46,6 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main
   
   sudo apt install gnome-tweaks
   sudo apt install gnome-shell-extensions
+  sudo apt install gnome-shell-extension-manager
   ```
 * Install [RunCat](https://extensions.gnome.org/extension/2986/runcat/)

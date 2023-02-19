@@ -42,6 +42,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main
 * Install Google Chrome
 * Install the following software:
   ```shell
+  sudo snap install alacritty --classic
   sudo snap install discord
   sudo snap install docker
   sudo snap install brave

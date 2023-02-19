@@ -6,9 +6,11 @@ fi
 ##################################
 # Taps
 ##################################
-brewp homebrew/cask-fonts --tap  # for font-jetbrains-mono-nerd-font
-# brewp hashicorp/tap --tap  # for vault
-brewp messense/macos-cross-toolchains --tap  # for x86_64-unknown-linux-musl
+if [[ "$OSTYPE" == darwin* ]]; then
+  brewp homebrew/cask-fonts --tap  # for font-jetbrains-mono-nerd-font
+  # brewp hashicorp/tap --tap  # for vault
+  brewp messense/macos-cross-toolchains --tap  # for x86_64-unknown-linux-musl
+fi
 
 ##################################
 # Normal packages
@@ -60,7 +62,9 @@ fi
 # brewp wasmer
 brewp wget
 brewp wrk
-brewp x86_64-unknown-linux-musl  # This also works on m1 mac
+if [[ "$OSTYPE" == darwin* ]]; then
+  brewp x86_64-unknown-linux-musl  # This also works on m1 mac
+fi
 brewp youtube-dl
 brewp zellij
 

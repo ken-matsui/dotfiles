@@ -42,4 +42,8 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main
   sudo snap install clion --classic
   sudo snap install webstorm --classic
   sudo snap install pycharm-professional --classic
+  
+  sudo apt install gnome-tweaks
+  sudo apt install gnome-shell-extensions
   ```
+* Install [RunCat](https://extensions.gnome.org/extension/2986/runcat/)

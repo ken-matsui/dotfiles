@@ -57,3 +57,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main
 * Install [RunCat](https://extensions.gnome.org/extension/2986/runcat/)
 * TODO: Find clipboard manager
 * TODO: Swipe back on browsers (https://kaigo.medium.com/mac-like-gestures-on-ubuntu-20-04-dell-xps-15-7ea6e3be7f76)
+* TODO: Find trash command
+  * https://unix.stackexchange.com/q/42757
+  * https://github.com/andreafrancia/trash-cli/
+  * https://github.com/nateshmbhat/rm-trash

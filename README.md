@@ -29,6 +29,8 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main
 
 * Run `fprintd-enroll` on the terminal app to enable fingerprint authentication.
 * Install [Ulauncher](https://ulauncher.io/).
+* Install Dropbox
+* Install Zoom
 * Install the following software:
   ```shell
   sudo snap install 1password

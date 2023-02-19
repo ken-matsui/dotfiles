@@ -14,16 +14,16 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main
 
 ### macOS
 
-#### System Preferences
+#### System Settings
 
-* System Preference -> trackpad -> Trackpad speed: Fast
-* System Preferences -> Keyboard -> Keyboard -> Modifier Keys -> Caps Lock Key -> Control
-* System Preference -> Dock & Menu Bar -> Automatically hide and show the Dock
-* System Preference -> Dock & Menu Bar -> Spotlight -> Show in Menu Bar -> disable
-* System Preference -> Dock & Menu Bar -> Wi-Fi -> Show in Menu Bar -> disable
-* System Preference -> Dock & Menu Bar -> Bluetooth -> Show in Menu Bar -> disable
-* System Preference -> Dock & Menu Bar -> Battery -> Show Percentage
-* System Preference -> Dock & Menu Bar -> Clock -> Show date -> `always`
+* System Settings -> trackpad -> Trackpad speed: Fast
+* System Settings -> Keyboard -> Keyboard -> Modifier Keys -> Caps Lock Key -> Control
+* System Settings -> Dock & Menu Bar -> Automatically hide and show the Dock
+* System Settings -> Dock & Menu Bar -> Spotlight -> Show in Menu Bar -> disable
+* System Settings -> Dock & Menu Bar -> Wi-Fi -> Show in Menu Bar -> disable
+* System Settings -> Dock & Menu Bar -> Bluetooth -> Show in Menu Bar -> disable
+* System Settings -> Dock & Menu Bar -> Battery -> Show Percentage
+* System Settings -> Dock & Menu Bar -> Clock -> Show date -> `always`
 
 ### Ubuntu
 

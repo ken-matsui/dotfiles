@@ -31,6 +31,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main
 * Install [Ulauncher](https://ulauncher.io/).
 * Install Dropbox
 * Install Zoom
+* Install Google Chrome
 * Install the following software:
   ```shell
   sudo snap install 1password

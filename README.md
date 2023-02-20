@@ -82,3 +82,9 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main
   * https://unix.stackexchange.com/q/42757
   * https://github.com/andreafrancia/trash-cli/
   * https://github.com/nateshmbhat/rm-trash
+
+#### Gnome Tweaks
+
+* Keyboard & Mouse -> Additional Layout Options -> Caps Lock behavior -> Enable `Make Caps Lock an additional Ctrl`
+* Top Bar -> Clock -> Enable `Weekday and Date`
+* Window Titlebars -> Titlebar Buttons -> Placement -> Click `Left`

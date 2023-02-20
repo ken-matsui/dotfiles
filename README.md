@@ -62,6 +62,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main
   sudo apt install gnome-shell-extension-manager
   ```
 * Install [RunCat](https://extensions.gnome.org/extension/2986/runcat/)
+  * TODO: with https://github.com/brunelli/gnome-shell-extension-installer
 * Install 1Password
   ```shell
   curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg

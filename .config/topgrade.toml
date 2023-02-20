@@ -3,6 +3,7 @@
 
 # Disable specific steps - same options as the command line flag
 disable = [
+  "brew_cask",
   "ruby_gems",
   "gem",
   "mas",

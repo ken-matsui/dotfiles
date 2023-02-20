@@ -40,6 +40,10 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main
 * Install Dropbox
 * Install Zoom
 * Install Google Chrome
+  ```shell
+  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  sudo dpkg -i google-chrome-stable_current_amd64.deb
+  ```
 * Install the following software:
   ```shell
   sudo snap install alacritty --classic

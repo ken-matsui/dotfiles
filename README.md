@@ -46,6 +46,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main
   sudo snap install discord
   sudo snap install docker
   sudo snap install brave
+  sudo snap install standard-notes
   sudo snap install code --classic
   sudo snap install intellij-idea-ultimate --classic
   sudo snap install clion --classic

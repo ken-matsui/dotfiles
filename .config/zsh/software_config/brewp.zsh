@@ -101,6 +101,7 @@ brewp raycast --cask
 # brewp sf-symbols --cask
 brewp session --cask
 # brewp sketch --cask
+brewp standard-notes --cask
 brewp swish --cask
 brewp visual-studio-code --cask
 # brewp xcodes --cask

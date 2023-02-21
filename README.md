@@ -93,3 +93,4 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main
 * Keyboard & Mouse -> Additional Layout Options -> Caps Lock behavior -> Enable `Make Caps Lock an additional Ctrl`
 * Top Bar -> Clock -> Enable `Weekday and Date`
 * Window Titlebars -> Titlebar Buttons -> Placement -> Click `Left`
+* Keyboard & Mouse -> Mouse -> Disable `Middle Click Paste`

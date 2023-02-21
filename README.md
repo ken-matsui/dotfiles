@@ -73,6 +73,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main
   curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg
   sudo apt update && sudo apt install 1password
   ```
+* Install Ukuu
 
 * Uninstall the following software:
   ```shell

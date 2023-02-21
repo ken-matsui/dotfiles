@@ -93,6 +93,10 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main
 
 * Keyboard -> Keyboard Shortcuts -> View and Customize Shortcuts -> Typing -> Switch to next input source -> <kbd>Ctrl</kbd> + <kbd>Space</kbd> (automatically applies to `Switch to previous input source`: <kbd>Shift</kbd> + <kbd>Ctrl</kbd> + <kbd>Space</kbd>)
 
+#### Ulauncher Preferences
+
+* Hot Key -> <kbd>Super</kbd> (Windows mark) + <kbd>Space</kbd>
+
 #### Gnome Tweaks
 
 * Keyboard & Mouse -> Additional Layout Options -> Caps Lock behavior -> Enable `Make Caps Lock an additional Ctrl`

@@ -1,3 +1,8 @@
+[includeIf "gitdir:/Users"]
+    path = ~/.config/git/config-macos
+[includeIf "gitdir:/home"]
+    path = ~/.config/git/config-linux
+
 [user]
   name = Ken Matsui
   email = 26405363+ken-matsui@users.noreply.github.com
@@ -7,7 +12,6 @@
   format = ssh
 
 [gpg "ssh"]
-  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
   allowedSignersFile = "~/.config/git/allowed_signers"
 
 [commit]
@@ -45,9 +49,6 @@
   create-one = !git reset $(git merge-base main $(git branch --show-current)) && git add -A && git commit
   squash-all = "!f(){ git reset $(git commit-tree HEAD^{tree} -m \"${1:-A new start}\");};f"
   rm-ignored = !git rm -r --cached .
-
-[credential]
-  helper = osxkeychain
 
 [filter "lfs"]
   clean = git-lfs clean -- %f

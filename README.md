@@ -95,7 +95,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main
 
 #### Ulauncher Preferences
 
-* Hot Key -> <kbd>Super</kbd> (Windows mark) + <kbd>Space</kbd>
+* Hotkey -> <kbd>Super</kbd> (Windows mark) + <kbd>Space</kbd>
 
 #### Gnome Tweaks
 

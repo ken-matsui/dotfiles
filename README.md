@@ -94,6 +94,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main
 * Top Bar -> Clock -> Enable `Weekday and Date`
 * Window Titlebars -> Titlebar Buttons -> Placement -> Click `Left`
 * Keyboard & Mouse -> Mouse -> Disable `Middle Click Paste`
+* Keyboard & Mouse -> Mouse Click Emulation -> Enable `Fingers`
 
 #### Remap Keys
 

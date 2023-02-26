@@ -40,15 +40,30 @@
   defaultBranch = main
 
 [alias]
+  # Shorthand for checkout
   ch = checkout
+  # Get all user.* config
   me = config --get-regexp user
-  mine = shortlog -sne --author='Ken Matsui'
-  default-branch = !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
-  update = !git pull origin main && gh poi
+  # Get my commits
+  mine = !git shortlog -sne --author=\"$(git config user.name)\"
+  # Get default branch name
+  defbr = !basename $(git symbolic-ref refs/remotes/origin/HEAD)
+  # Get current branch name
+  curbr = rev-parse --abbrev-ref HEAD
+  # Check if current branch is the default branch
+  on-defbr = "![ $(git defbr) = $(git curbr) ] || { echo 'not on the default branch' && exit 1; }"
+  # Check if the origin URL is on GitHub
+  on-gh = "!git remote get-url origin | grep -q 'github.com' || { echo 'not on GitHub' && exit 1; }"
+  # Update the default branch and remove merged branches
+  update = !git on-defbr && git pull origin "$(git defbr)" && git on-gh && gh poi
+  # Get a parent commit from the argument
   parent = "!f(){ git log --pretty=%P -n 1 $1;};f"
+  # Create only one commit from the history
   create-one = !git reset $(git merge-base main $(git branch --show-current)) && git add -A && git commit
+  # Squash all commits into one
   squash-all = "!f(){ git reset $(git commit-tree HEAD^{tree} -m \"${1:-A new start}\");};f"
-  rm-ignored = !git rm -r --cached .
+  # Remove gitignored files
+  rm-ignored = rm -r --cached .
 
 [filter "lfs"]
   clean = git-lfs clean -- %f

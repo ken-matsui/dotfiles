@@ -47,6 +47,7 @@ brewp lsd
 brewp ninja
 brewp neovim
 # brewp peco
+brewp poetry
 brewp python
 brewp starship
 brewp subversion  # for font-source-code-pro-for-powerline

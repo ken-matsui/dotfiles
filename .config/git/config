@@ -47,7 +47,7 @@
   # Get my commits
   mine = !git shortlog -sne --author=\"$(git config user.name)\"
   # Get default branch name
-  defbr = !basename $(git symbolic-ref refs/remotes/origin/HEAD)
+  defbr = !git remote show origin | sed -n '/HEAD branch/s/.*: //p'
   # Get current branch name
   curbr = rev-parse --abbrev-ref HEAD
   # Check if current branch is the default branch

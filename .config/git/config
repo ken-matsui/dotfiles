@@ -40,7 +40,7 @@
 # Send email
 #
 [sendemail]
-  smtpServer = smtp.uw.edu
+  smtpServer = smtp.uw.edu # works for both @uw.edu & @cs.washington.edu
   smtpServerPort = 587
   smtpEncryption = tls
 [credential]

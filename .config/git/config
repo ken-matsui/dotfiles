@@ -40,7 +40,7 @@
 # Send email
 #
 [sendemail]
-  smtpServer = smtp.gmail.com
+  smtpServer = smtp.uw.edu
   smtpServerPort = 587
   smtpEncryption = tls
 [credential]

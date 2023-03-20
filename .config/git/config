@@ -1,44 +1,69 @@
+#
+# OS depending config
+#
 [includeIf "gitdir:/Users"]
-    path = ~/.config/git/config-macos
+  path = ~/.config/git/config-macos
 [includeIf "gitdir:/home"]
-    path = ~/.config/git/config-linux
+  path = ~/.config/git/config-linux
 
+#
+# Basic
+#
+[init]
+  defaultBranch = main
+[color]
+  ui = true
+[pull]
+  rebase = false
+
+#
+# User
+#
 [user]
   name = Ken Matsui
   email = 26405363+ken-matsui@users.noreply.github.com
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJLtNOwH8UCkUcpMNG4aSMNtzUtYaYzdc3awbXbzvAwY
 
+#
+# GPG
+#
 [gpg]
   format = ssh
-
 [gpg "ssh"]
   allowedSignersFile = "~/.config/git/allowed_signers"
-
 [commit]
   gpgsign = true
-
-[core]
-  pager = delta
-  autocrlf = input
-
-[interactive]
-  diffFilter = delta --color-only
-
-[color]
-  ui = true
-
-[pull]
-  rebase = false
-
 [tag]
   forceSignAnnotated = true
 
+#
+# Send email
+#
+[sendemail]
+  smtpServer = smtp.gmail.com
+  smtpServerPort = 587
+  smtpEncryption = tls
+[credential]
+  helper = store
+
+#
+# Diff
+#
+[core]
+  pager = delta
+  autocrlf = input
+[interactive]
+  diffFilter = delta --color-only
+
+#
+# Rebase
+#
 [sequence]
   editor = interactive-rebase-tool
 
-[init]
-  defaultBranch = main
-
+#
+# Aliases
+#
 [alias]
   # Shorthand for checkout
   ch = checkout
@@ -65,6 +90,9 @@
   # Remove gitignored files
   rm-ignored = rm -r --cached .
 
+#
+# Git LFS
+#
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f

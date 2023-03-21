@@ -72,9 +72,9 @@
   # Show all git aliases
   alias = !git config --get-regexp ^alias | sed -e 's/^alias.//g' -e 's/ / = /1'
   # Shorthand for status
-  su = status
+  st = status
   # Shorthand for switch
-  si = switch
+  sw = switch
   # Unstage files
   unstage = restore --staged
   # Stash with untracked files (-m 'name')

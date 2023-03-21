@@ -7,16 +7,6 @@
   path = ~/.config/git/config-linux
 
 #
-# Basic
-#
-[init]
-  defaultBranch = main
-[color]
-  ui = true
-[pull]
-  rebase = false
-
-#
 # User
 #
 [user]
@@ -47,6 +37,18 @@
   helper = store
 
 #
+# Branch
+#
+[init]
+  defaultBranch = main
+[fetch]
+  prune = true
+[pull]
+  ff = only
+[push]
+  default = current
+
+#
 # Diff
 #
 [core]
@@ -60,13 +62,25 @@
 #
 [sequence]
   editor = interactive-rebase-tool
+[rebase]
+  autostash = true
 
 #
 # Aliases
 #
 [alias]
-  # Shorthand for checkout
-  ch = checkout
+  # Show all git aliases
+  alias = !git config --get-regexp ^alias | sed -e 's/^alias.//g' -e 's/ / = /1'
+  # Shorthand for status
+  su = status
+  # Shorthand for switch
+  si = switch
+  # Unstage files
+  unstage = restore --staged
+  # Stash with untracked files (-m 'name')
+  save = stash push --include-untracked
+  # Uncommit the most recent commit
+  uncommit = reset --soft HEAD~1
   # Get all user.* config
   me = config --get-regexp user
   # Get my commits

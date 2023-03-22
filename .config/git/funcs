@@ -1,0 +1,32 @@
+# Print info
+info() {
+    echo "\033[0;34m[INFO]: $@\033[0m"
+};
+# Print error
+err() {
+    echo "\033[0;31m[ERROR]: $@\033[0m"
+};
+# Print warning
+warn() {
+    echo "\033[0;33m[WARNING]: $@\033[0m"
+};
+
+# Check if current branch is the default branch
+on_defbr() {
+    [ $(git defbr) = $(git curbr) ] ||
+    { git err 'not on the default branch' && exit 1; }
+}
+
+# Check if the origin URL is on GitHub
+on_gh() {
+    git remote get-url origin |
+    grep -q 'github.com' ||
+    { git warn 'not on GitHub' && exit 1; }
+}
+
+# Update the default branch and remove merged branches
+update() {
+    git on-defbr &&
+    git pull origin "$(git defbr)" &&
+    { git on-gh && gh poi || git info 'gh poi was ignored'; }
+}

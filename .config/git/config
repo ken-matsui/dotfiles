@@ -69,8 +69,25 @@
 # Aliases
 #
 [alias]
+  #
+  # Helper aliases
+  #
   # Show all git aliases
   alias = !git config --get-regexp ^alias | sed -e 's/^alias.//g' -e 's/ / = /1'
+  # Print git config path
+  path = "!echo $XDG_CONFIG_HOME/git"
+  # Print functions path
+  fn = "!echo $(git path)/funcs"
+  # Print info
+  info = "!f(){ source $(git fn); info $@; };f"
+  # Print warning
+  warn = "!f(){ source $(git fn); warn $@; };f"
+  # Print error
+  err = "!f(){ source $(git fn); err $@; };f"
+
+  #
+  # Git aliases
+  #
   # Shorthand for status
   st = status
   # Shorthand for switch
@@ -90,17 +107,17 @@
   # Get current branch name
   curbr = rev-parse --abbrev-ref HEAD
   # Check if current branch is the default branch
-  on-defbr = "![ $(git defbr) = $(git curbr) ] || { echo 'not on the default branch' && exit 1; }"
+  on-defbr = "!source $(git fn); on_defbr"
   # Check if the origin URL is on GitHub
-  on-gh = "!git remote get-url origin | grep -q 'github.com' || { echo 'not on GitHub' && exit 1; }"
+  on-gh = "!source $(git fn); on_gh"
   # Update the default branch and remove merged branches
-  update = !git on-defbr && git pull origin "$(git defbr)" && git on-gh && gh poi
+  update = "!source $(git fn); update"
   # Get a parent commit from the argument
-  parent = "!f(){ git log --pretty=%P -n 1 $1;};f"
+  parent = "!f(){ git log --pretty=%P -n 1 $1; };f"
   # Create only one commit from the history
   create-one = !git reset $(git merge-base main $(git branch --show-current)) && git add -A && git commit
   # Squash all commits into one
-  squash-all = "!f(){ git reset $(git commit-tree HEAD^{tree} -m \"${1:-A new start}\");};f"
+  squash-all = "!f(){ git reset $(git commit-tree HEAD^{tree} -m \"${1:-A new start}\"); };f"
   # Remove gitignored files
   rm-ignored = rm -r --cached .
 

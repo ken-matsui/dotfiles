@@ -1,13 +1,15 @@
 keybinds {
+    unbind "Ctrl k" // for zsh keybind: clear-screen
     normal {
         bind "Ctrl l" { SwitchToMode "locked"; }
         bind "Ctrl r" { SwitchToMode "resize"; }
+        unbind "Ctrl o" // Session mode
+
         bind "Ctrl n" { NewPane; }
         bind "Ctrl h" { MoveFocusOrTab "Left"; }
         // bind "Ctrl l" { MoveFocusOrTab "Right"; }
         bind "Ctrl j" { MoveFocus "Down"; }
         bind "Ctrl k" { MoveFocus "Up"; }
-        unbind "Ctrl o" // not using Session
     }
     locked clear-defaults=true {
         bind "Ctrl l" { SwitchToMode "Normal"; }

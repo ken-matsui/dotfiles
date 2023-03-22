@@ -3,7 +3,7 @@
 Dotfiles for macOS using Zsh, Zellij, and Alacritty
 
 <div align="center">
-  <img width="700" alt="ScreenShot" src="https://user-images.githubusercontent.com/26405363/226788430-00ec3785-dc81-4aad-bb62-62ff0daffea6.png">
+  <img width="700" alt="ScreenShot" src="https://user-images.githubusercontent.com/26405363/226789477-b305d1a6-22c5-437d-b1ce-90fe7f00ba4c.png">
 </div>
 
 ## Installation

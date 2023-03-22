@@ -11,7 +11,7 @@
 | Terminal multiplexer | [Zellij]            |
 | Shell                | Zsh                 |
 | Prompt               | [Starship]          |
-| Editor               | Neovim              |
+| Editor               | [Neovim]            |
 | Theme                | Material Deep Ocean |
 
 </div>
@@ -19,6 +19,7 @@
 [Alacritty]: https://github.com/alacritty/alacritty
 [Zellij]: https://github.com/zellij-org/zellij
 [Starship]: https://github.com/starship/starship
+[Neovim]: https://github.com/neovim/neovim
 
 ## Installation
 

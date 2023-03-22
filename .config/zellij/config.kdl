@@ -6,10 +6,6 @@ keybinds {
         unbind "Ctrl o" // Session mode
 
         bind "Ctrl n" { NewPane; }
-        bind "Ctrl h" { MoveFocusOrTab "Left"; }
-        // bind "Ctrl l" { MoveFocusOrTab "Right"; }
-        bind "Ctrl j" { MoveFocus "Down"; }
-        bind "Ctrl k" { MoveFocus "Up"; }
     }
     locked clear-defaults=true {
         bind "Ctrl l" { SwitchToMode "Normal"; }

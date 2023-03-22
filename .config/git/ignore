@@ -1,8 +1,26 @@
+#
+# macOS
+#
 .DS_Store
+
+#
+# VSCode
+#
 .vscode
+
+#
+# Intellij
+#
 .idea
 cmake-build-debug
-tmp
-# gcc
-objdir
 build
+
+#
+# GCC
+#
+objdir
+
+#
+# Misc
+#
+tmp

@@ -69,6 +69,7 @@ return require('packer').startup(function(use)
     config = function()
       require('sidebar-nvim').setup({
         open = true,
+        initial_width = 25,
       })
     end
   }
@@ -130,12 +131,6 @@ return require('packer').startup(function(use)
   use 'jiangmiao/auto-pairs'
   use 'cappyzawa/trim.nvim'
   use 'github/copilot.vim'
-  -- use {
-    -- 'bronson/vim-trailing-whitespace',
-    -- config = function()
-      -- vim.cmd('autocmd BufWritePre * :%s/\\s\\+$//e')
-    -- end
-  -- }
   -- use {
     -- 'akinsho/toggleterm.nvim', tag = 'v1.*',
     -- config = function() require('toggleterm').setup() end

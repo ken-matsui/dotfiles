@@ -1,10 +1,23 @@
-# dotfiles
-
-Dotfiles for macOS using Zsh, Zellij, and Alacritty
-
 <div align="center">
+  <h1>Dotfiles</h1>
   <img width="800" alt="ScreenShot" src="https://user-images.githubusercontent.com/26405363/226789477-b305d1a6-22c5-437d-b1ce-90fe7f00ba4c.png">
 </div>
+
+## Specs
+
+|                      |                     |
+| -------------------- | :-----------------: |
+| OS                   | macOS & Ubuntu      |
+| Terminal             | [Alacritty]         |
+| Terminal multiplexer | [Zellij]            |
+| Shell                | Zsh                 |
+| Prompt               | [Starship]          |
+| Editor               | Neovim              |
+| Theme                | Material Deep Ocean |
+
+[Alacritty]: https://github.com/alacritty/alacritty
+[Zellij]: https://github.com/zellij-org/zellij
+[Starship]: https://github.com/starship/starship
 
 ## Installation
 

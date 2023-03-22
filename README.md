@@ -1,11 +1,8 @@
 <div align="center">
 
-  # Dotfiles
+# Dotfiles
 
-  <img width="800" alt="ScreenShot" src="https://user-images.githubusercontent.com/26405363/226789477-b305d1a6-22c5-437d-b1ce-90fe7f00ba4c.png">
-</div>
-
-## Specs
+<img width="800" alt="ScreenShot" src="https://user-images.githubusercontent.com/26405363/226789477-b305d1a6-22c5-437d-b1ce-90fe7f00ba4c.png">
 
 |                      |                     |
 | -------------------- | :-----------------: |
@@ -16,6 +13,8 @@
 | Prompt               | [Starship]          |
 | Editor               | Neovim              |
 | Theme                | Material Deep Ocean |
+
+</div>
 
 [Alacritty]: https://github.com/alacritty/alacritty
 [Zellij]: https://github.com/zellij-org/zellij

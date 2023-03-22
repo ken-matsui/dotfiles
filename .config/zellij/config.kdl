@@ -1,11 +1,19 @@
 keybinds {
     unbind "Ctrl k" // for zsh keybind: clear-screen
-    normal {
-        bind "Ctrl l" { SwitchToMode "locked"; }
-        bind "Ctrl r" { SwitchToMode "resize"; }
-        unbind "Ctrl o" // Session mode
 
+    shared {
+        unbind "Ctrl o" // remove session mode
+    }
+    shared_except "locked" {
+        bind "Ctrl l" { SwitchToMode "Locked"; }
         bind "Ctrl n" { NewPane; }
+    }
+    shared_except "resize" "locked" {
+        bind "Ctrl r" { SwitchToMode "Resize"; }
+    }
+
+    resize {
+        bind "Ctrl r" { SwitchToMode "Normal"; }
     }
     locked clear-defaults=true {
         bind "Ctrl l" { SwitchToMode "Normal"; }

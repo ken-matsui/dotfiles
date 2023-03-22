@@ -9,7 +9,7 @@ keybinds {
         bind "Ctrl k" { MoveFocus "Up"; }
         unbind "Ctrl o" // not using Session
     }
-    locked {
+    locked clear-defaults=true {
         bind "Ctrl l" { SwitchToMode "Normal"; }
     }
 }

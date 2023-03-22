@@ -1,11 +1,15 @@
 keybinds {
     normal {
-        bind "Ctrl r" { SwitchToMode "resize"; }
+        bind "Ctrl l" { SwitchToMode "locked"; }
+        // bind "Ctrl r" { SwitchToMode "resize"; }
         bind "Ctrl n" { NewPane; }
         bind "Ctrl h" { MoveFocusOrTab "Left"; }
-        bind "Ctrl l" { MoveFocusOrTab "Right"; }
+        // bind "Ctrl l" { MoveFocusOrTab "Right"; }
         bind "Ctrl j" { MoveFocus "Down"; }
         bind "Ctrl k" { MoveFocus "Up"; }
+    }
+    locked {
+        bind "Ctrl l" { SwitchToMode "Normal"; }
     }
 }
 
@@ -36,10 +40,37 @@ keybinds {
 //
 // pane_frames true
 
+// Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
+// Options:
+//   - true (default)
+//   - false
+//
+// auto_layout true
+
+// Define color themes for Zellij
+// For more examples, see: https://github.com/zellij-org/zellij/tree/main/example/themes
+// Once these themes are defined, one of them should to be selected in the "theme" section of this file
+
+themes {
+    material-deep-ocean {
+        fg "#8DA3CA" // Foreground Darker
+        bg "#1F2233" // Selection
+        black "#0F111A" // Background
+        red "#DC6068"
+        green "#ABCF76"
+        yellow "#E6B455"
+        blue "#6E98EB"
+        magenta "#B480D6"
+        cyan "#71C6E7"
+        white "#A6ACCD" // Foreground
+        orange "#E2795B"
+    }
+}
+
 // Choose the theme that is specified in the themes section.
 // Default: default
-//
-// theme "default"
+
+theme "material-deep-ocean"
 
 // The name of the default layout to load on startup
 // Default: "default"
@@ -111,3 +142,13 @@ keybinds {
 // The folder in which Zellij will look for themes
 //
 // theme_dir "/path/to/my/theme_dir"
+
+// Set whether the pane frames (if visible) should have rounded corners.
+//
+// This config variable is set differently than others:
+
+ui {
+    pane_frames {
+        rounded_corners true
+    }
+}

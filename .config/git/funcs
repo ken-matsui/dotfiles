@@ -28,5 +28,5 @@ on_gh() {
 update() {
     git on-defbr &&
     git pull origin "$(git defbr)" &&
-    { git on-gh && gh poi || git info 'gh poi was ignored'; }
+    { git on-gh && gh poi || git info 'gh poi was skipped'; }
 }

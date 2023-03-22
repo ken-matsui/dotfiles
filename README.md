@@ -1,5 +1,7 @@
 <div align="center">
-  <h1>Dotfiles</h1>
+
+  # Dotfiles
+
   <img width="800" alt="ScreenShot" src="https://user-images.githubusercontent.com/26405363/226789477-b305d1a6-22c5-437d-b1ce-90fe7f00ba4c.png">
 </div>
 

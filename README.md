@@ -2,7 +2,9 @@
 
 Dotfiles for macOS using Zsh, Zellij, and Alacritty
 
-<img width="975" alt="ScreenShot" src="https://user-images.githubusercontent.com/26405363/150774356-1bb319e4-4b7f-4a1f-9b59-a165111b111c.png">
+<div align="center">
+  <img width="700" alt="ScreenShot" src="https://user-images.githubusercontent.com/26405363/226788430-00ec3785-dc81-4aad-bb62-62ff0daffea6.png">
+</div>
 
 ## Installation
 

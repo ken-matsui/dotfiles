@@ -2,9 +2,9 @@
 vim.opt.encoding = 'utf-8'
 
 -- Don't create backup
-vim.cmd('set nowritebackup')
-vim.cmd('set nobackup')
-vim.cmd('set noswapfile')
+vim.o.nowritebackup = true
+vim.o.nobackup = true
+vim.o.noswapfile = true
 vim.opt.backupdir = vim.opt.backupdir - '.'
 
 -- Show column number
@@ -12,7 +12,6 @@ vim.opt.number = true
 
 -- Highlight column number
 vim.opt.cursorline = true
-vim.cmd('hi clear CursorLine')
 
 -- Visualize invisible string
 vim.opt.list = true
@@ -34,9 +33,9 @@ end
 
 -- Yank texts to system clipboard
 if vim.fn.has('unnamedplus') then
-  vim.cmd('set clipboard=unnamedplus')
+  vim.opt.clipboard = 'unnamedplus'
 else
-  vim.cmd('set clipboard=unnamed')
+  vim.opt.clipboard = 'unnamed'
 end
 
 -- Return to last edit position when opening files

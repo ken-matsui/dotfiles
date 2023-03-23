@@ -27,7 +27,7 @@ return require('packer').startup(function(use)
   -- Themes
   use 'nvim-tree/nvim-web-devicons'
   use {
-    'akinsho/bufferline.nvim', tag = "v2.*",
+    'akinsho/bufferline.nvim', tag = "v3.*",
     requires = 'kyazdani42/nvim-web-devicons',
     config = function() require("bufferline").setup() end
   }
@@ -111,6 +111,9 @@ return require('packer').startup(function(use)
           end
         end
       })
+
+      -- Keymaps
+      vim.keymap.set('n', '<C-f>', '<Cmd>NvimTreeFocus<Cr>')
     end
   }
 
@@ -153,7 +156,7 @@ return require('packer').startup(function(use)
   }
 
   -- Completion
-  -- use 'haorenW1025/completion-nvim'
+  -- use 'nvim-lua/completion-nvim'
   -- use {
     -- 'nvim-treesitter/completion-treesitter',
     -- requires = {
@@ -170,10 +173,15 @@ return require('packer').startup(function(use)
   use 'machakann/vim-highlightedyank'
   use 'jiangmiao/auto-pairs'
   use 'cappyzawa/trim.nvim'
-  -- use {
-    -- 'akinsho/toggleterm.nvim', tag = 'v1.*',
-    -- config = function() require('toggleterm').setup() end
-  -- }
+  use {
+    'akinsho/toggleterm.nvim', tag = '*',
+    config = function()
+      require('toggleterm').setup({
+        -- Keymaps
+        vim.keymap.set('n', '<Leader>t', '<Cmd>ToggleTerm<Cr>')
+      })
+    end
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

@@ -25,7 +25,7 @@ return require('packer').startup(function(use)
   use { "wbthomason/packer.nvim" }
 
   -- Themes
-  use 'kyazdani42/nvim-web-devicons'
+  use 'nvim-tree/nvim-web-devicons'
   use {
     'akinsho/bufferline.nvim', tag = "v2.*",
     requires = 'kyazdani42/nvim-web-devicons',
@@ -39,7 +39,7 @@ return require('packer').startup(function(use)
   use {
     'nvim-lualine/lualine.nvim',
     requires = {
-      'kyazdani42/nvim-web-devicons',
+      'nvim-tree/nvim-web-devicons',
       'SmiteshP/nvim-gps',
     },
     config = function()
@@ -65,11 +65,51 @@ return require('packer').startup(function(use)
     end
   }
   use {
-    'sidebar-nvim/sidebar.nvim',
+    'nvim-tree/nvim-tree.lua',
+    requires = 'nvim-tree/nvim-web-devicons',
     config = function()
-      require('sidebar-nvim').setup({
-        open = true,
-        initial_width = 25,
+      require("nvim-tree").setup({
+        sort_by = "case_sensitive",
+        view = {
+          width = 25,
+        },
+      })
+
+      -- Auto open (Open For Files And [No Name] Buffers)
+      local function open_nvim_tree(data)
+        -- don't open nvim-tree when creating git commit message
+        local IGNORED_FT = {
+          "gitcommit",
+        }
+        -- buffer is a real file on the disk
+        local real_file = vim.fn.filereadable(data.file) == 1
+        -- buffer is a [No Name]
+        local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
+        -- &ft
+        local filetype = vim.bo[data.buf].ft
+        -- only files please
+        if not real_file and not no_name then
+          return
+        end
+        -- skip ignored filetypes
+        if vim.tbl_contains(IGNORED_FT, filetype) then
+          return
+        end
+        -- open the tree, find the file but don't focus it
+        require("nvim-tree.api").tree.toggle({ focus = false, find_file = true, })
+      end
+      vim.api.nvim_create_autocmd({"VimEnter"}, {
+        callback = open_nvim_tree
+      })
+
+      -- Auto close
+      vim.api.nvim_create_autocmd("BufEnter", {
+        nested = true,
+        callback = function()
+          if #vim.api.nvim_list_wins() == 1 and require("nvim-tree.utils").is_nvim_tree_buf() then
+            vim.cmd "quit"
+          end
+        end
       })
     end
   }
@@ -130,7 +170,6 @@ return require('packer').startup(function(use)
   use 'machakann/vim-highlightedyank'
   use 'jiangmiao/auto-pairs'
   use 'cappyzawa/trim.nvim'
-  use 'github/copilot.vim'
   -- use {
     -- 'akinsho/toggleterm.nvim', tag = 'v1.*',
     -- config = function() require('toggleterm').setup() end

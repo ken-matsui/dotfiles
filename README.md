@@ -13,6 +13,7 @@
 | Prompt      | [Starship]          |
 | Editor      | [Neovim]            |
 | Theme       | Material Deep Ocean |
+| Font        | JetBrains Mono Nerd |
 
 </div>
 

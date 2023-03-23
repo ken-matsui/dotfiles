@@ -2,7 +2,7 @@
 
 # Dotfiles
 
-<img width="800" alt="ScreenShot" src="https://user-images.githubusercontent.com/26405363/226789477-b305d1a6-22c5-437d-b1ce-90fe7f00ba4c.png">
+<img width="800" alt="ScreenShot" src="https://user-images.githubusercontent.com/26405363/227085253-1e7cf104-58e0-4c49-989b-42d5e01d095e.png">
 
 |                      |                     |
 | -------------------- | :-----------------: |

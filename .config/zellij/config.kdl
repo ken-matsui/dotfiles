@@ -2,8 +2,9 @@ keybinds {
     unbind "Ctrl k" // for zsh keybind: clear-screen
 
     shared {
-        unbind "Ctrl g" // release locked mode keybind
-        unbind "Ctrl o" // release session mode keybind
+        unbind "Ctrl g" // release Locked mode keybind
+        unbind "Ctrl o" // release Session mode keybind
+        unbind "Alt n" // release NewPage action keybind
     }
     shared_except "locked" {
         bind "Ctrl l" { SwitchToMode "Locked"; }

@@ -32,6 +32,13 @@ if vim.fn.exists('+termguicolors') == 1 then
   vim.opt.termguicolors = true
 end
 
+-- Yank texts to system clipboard
+if vim.fn.has('unnamedplus') then
+  vim.cmd('set clipboard=unnamedplus')
+else
+  vim.cmd('set clipboard=unnamed')
+end
+
 -- Return to last edit position when opening files
 vim.cmd([[
   autocmd BufReadPost *

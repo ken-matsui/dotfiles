@@ -5,6 +5,14 @@ keybinds {
         unbind "Ctrl g" // release Locked mode keybind
         unbind "Ctrl o" // release Session mode keybind
         unbind "Alt n" // release NewPage action keybind
+        unbind "Alt h" "Alt Left" // release MoveFocusOrTab action keybind
+        unbind "Alt l" "Alt Right" // release MoveFocusOrTab action keybind
+        unbind "Alt j" "Alt Down" // release MoveFocus action keybind
+        unbind "Alt k" "Alt Up" // release MoveFocus "Up" action keybind
+        unbind "Alt =" "Alt +" // release Resize action keybind
+        unbind "Alt -" // release Resize action keybind
+        unbind "Alt [" // release PreviousSwapLayout action keybind
+        unbind "Alt ]" // release NextSwapLayout action keybind
     }
     shared_except "locked" {
         bind "Ctrl l" { SwitchToMode "Locked"; }

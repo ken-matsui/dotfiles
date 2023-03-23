@@ -2,7 +2,8 @@ keybinds {
     unbind "Ctrl k" // for zsh keybind: clear-screen
 
     shared {
-        unbind "Ctrl o" // remove session mode
+        unbind "Ctrl g" // release locked mode keybind
+        unbind "Ctrl o" // release session mode keybind
     }
     shared_except "locked" {
         bind "Ctrl l" { SwitchToMode "Locked"; }

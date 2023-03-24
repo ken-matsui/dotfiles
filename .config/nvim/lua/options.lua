@@ -15,7 +15,12 @@ vim.opt.cursorline = true
 
 -- Visualize invisible string
 vim.opt.list = true
-vim.opt.listchars = 'eol:$,tab:>-,trail:~,extends:>,precedes:<'
+-- vim.opt.listchars:append 'space:⋅'
+vim.opt.listchars:append 'eol:$'
+vim.opt.listchars:append 'tab:>-'
+vim.opt.listchars:append 'trail:~'
+vim.opt.listchars:append 'extends:>'
+vim.opt.listchars:append 'precedes:<'
 
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2

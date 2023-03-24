@@ -145,6 +145,12 @@
     domain: com.apple.screencapture
     key: location
     value: ~/Downloads
+- name: Do not display thumbnail
+  osx_defaults:
+    domain: com.apple.screencapture
+    key: show-thumbnail
+    type: bool
+    value: false
 
 - name: Fastest Trackpad speed
   osx_defaults:

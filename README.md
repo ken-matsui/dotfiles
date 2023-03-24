@@ -28,6 +28,11 @@
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main/install.sh)"
 ```
 
+## Keybinds
+
+* <kbd>Ctrl</kbd> is reserved for [Zellij]
+* <kbd>Shift</kbd> is reserved for [Neovim]
+
 ## Additional Settings
 
 ### Both OS

@@ -37,7 +37,7 @@ if vim.fn.exists('+termguicolors') == 1 then
 end
 
 -- Yank texts to system clipboard
-if vim.fn.has('unnamedplus') then
+if vim.fn.has('unnamedplus') == 1 then
   vim.opt.clipboard = 'unnamedplus'
 else
   vim.opt.clipboard = 'unnamed'

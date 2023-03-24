@@ -29,7 +29,20 @@ return require('packer').startup(function(use)
   use {
     'akinsho/bufferline.nvim', tag = "v3.*",
     requires = 'kyazdani42/nvim-web-devicons',
-    config = function() require("bufferline").setup() end
+    config = function()
+      require("bufferline").setup({
+        options = {
+          offsets = {
+            {
+              filetype = "NvimTree",
+              text = "File Explorer",
+              highlight = "Directory",
+              separator = true,
+            },
+          },
+        },
+      })
+    end
   }
   use {
     'SmiteshP/nvim-gps',

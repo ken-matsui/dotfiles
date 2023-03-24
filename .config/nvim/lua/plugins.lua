@@ -166,7 +166,12 @@ return require('packer').startup(function(use)
   -- }
 
   -- Utils
-  use 'tpope/vim-commentary'
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
   use 'machakann/vim-highlightedyank'
   use 'jiangmiao/auto-pairs'
   use 'cappyzawa/trim.nvim'

@@ -75,28 +75,20 @@ return require('packer').startup(function(use)
         },
       })
 
-      -- Auto open (Open For Files And [No Name] Buffers)
+      -- Auto open
       local function open_nvim_tree(data)
         -- don't open nvim-tree when creating git commit message
         local IGNORED_FT = {
           "gitcommit",
         }
-        -- buffer is a real file on the disk
-        local real_file = vim.fn.filereadable(data.file) == 1
-        -- buffer is a [No Name]
-        local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
         -- &ft
         local filetype = vim.bo[data.buf].ft
-        -- only files please
-        if not real_file and not no_name then
-          return
-        end
         -- skip ignored filetypes
         if vim.tbl_contains(IGNORED_FT, filetype) then
           return
         end
         -- open the tree, find the file but don't focus it
-        require("nvim-tree.api").tree.toggle({ focus = false, find_file = true, })
+        require("nvim-tree.api").tree.toggle({ focus = false, find_file = true })
       end
       vim.api.nvim_create_autocmd({"VimEnter"}, {
         callback = open_nvim_tree

@@ -44,7 +44,7 @@ else
 end
 
 -- Highlight yanked region
-vim.cmd[[au TextYankPost * silent! lua vim.highlight.on_yank()]]
+vim.cmd[[au TextYankPost * silent! lua vim.highlight.on_yank {timeout = 500}]]
 
 -- Return to last edit position when opening files
 vim.cmd([[

@@ -172,6 +172,15 @@ return require('packer').startup(function(use)
       require('Comment').setup()
     end
   }
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup({
+        -- GitLens like blame line
+        current_line_blame = true,
+      })
+    end
+  }
   use 'machakann/vim-highlightedyank'
   use 'jiangmiao/auto-pairs'
   use 'cappyzawa/trim.nvim'

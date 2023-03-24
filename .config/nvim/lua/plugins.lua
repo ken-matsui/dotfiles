@@ -165,7 +165,7 @@ return require('packer').startup(function(use)
     'lewis6991/gitsigns.nvim',
     config = function()
       require('gitsigns').setup({
-        -- GitLens like blame line
+        -- GitLens-like blame line
         current_line_blame = true,
       })
     end

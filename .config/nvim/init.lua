@@ -5,7 +5,7 @@ if vim.fn.exists('$SUDO_USER') == 1 or vim.fn.exists('$GIT_DIR') == 1 then
   return
 end
 
-require('mappings')
+require('keymaps')
 require('options')
 require('plugins')
 

@@ -1,4 +1,4 @@
--- File encoding
+-- Set file encoding as UTF-8
 vim.opt.encoding = 'utf-8'
 
 -- Don't create backup

@@ -63,7 +63,10 @@ return require('packer').startup(function(use)
         },
         sections = {
           lualine_c = {
-            { gps.get_location, cond = gps.is_available },
+            {
+              gps.get_location,
+              cond = gps.is_available,
+            },
           },
         },
       }
@@ -74,7 +77,7 @@ return require('packer').startup(function(use)
     requires = 'nvim-lualine/lualine.nvim',
     config = function()
       vim.g.material_style = 'deep ocean'
-      vim.cmd('colorscheme material')
+      vim.cmd.colorscheme('material')
     end
   }
   use {
@@ -103,7 +106,7 @@ return require('packer').startup(function(use)
         -- open the tree, find the file but don't focus it
         require("nvim-tree.api").tree.toggle({ focus = false, find_file = true })
       end
-      vim.api.nvim_create_autocmd({"VimEnter"}, {
+      vim.api.nvim_create_autocmd("VimEnter", {
         callback = open_nvim_tree
       })
 

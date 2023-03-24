@@ -50,7 +50,11 @@ else
 end
 
 -- Highlight yanked region
-vim.cmd[[au TextYankPost * silent! lua vim.highlight.on_yank {timeout = 500}]]
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank {timeout = 500}
+  end
+})
 
 -- Return to last edit position when opening files
 vim.cmd([[

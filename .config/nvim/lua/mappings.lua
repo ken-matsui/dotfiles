@@ -35,7 +35,7 @@ vim.keymap.set('n', 'P', ']P')
 -- Save changes
 vim.keymap.set('n', '<C-w>', '<Cmd>write<Cr>')
 -- Quit the current window
-vim.keymap.set('n', '<S-q>', '<Cmd>quit<Cr>') -- not <C-q>, conflict with zellij
+vim.keymap.set('n', '<C-q>', '<Cmd>quit<Cr>')
 -- Exit (same as :x, :wq)
 vim.keymap.set('n', '<C-x>', '<Cmd>exit<Cr>')
 

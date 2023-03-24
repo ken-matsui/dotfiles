@@ -65,7 +65,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
 
   # Install software that I need
   echo 'Running ansible ...'
-  ansible-playbook ${DOTSPATH}/playbook/main.yml -i ${DOTSPATH}/playbook/hosts
+  ansible-playbook ${DOTSPATH}/bootstrap/main.yml -i ${DOTSPATH}/bootstrap/hosts
 
   # Accept license
   sudo xcodebuild -license accept

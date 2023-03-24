@@ -48,7 +48,7 @@ vim.keymap.set('n', '<C-x>', '<Cmd>exit<Cr>')
 vim.keymap.set('n', '<C-f>', '<Cmd>NvimTreeFocus<Cr>')
 
 -- Toggle Term
-vim.keymap.set('n', '<S-t>', '<Cmd>ToggleTerm<Cr>')
+vim.keymap.set('n', '<C-t>', '<Cmd>ToggleTerm<Cr>')
 
 -- Comment.nvim - Ctrl + / => comment
 vim.keymap.set('n', '<C-_>', 'gcc', {remap = true})

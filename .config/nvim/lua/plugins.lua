@@ -184,7 +184,6 @@ return require('packer').startup(function(use)
       vim.g.indent_guides_enable_on_vim_startup = true
     end
   }
-  use 'machakann/vim-highlightedyank'
   use 'jiangmiao/auto-pairs'
   use 'cappyzawa/trim.nvim'
   use {

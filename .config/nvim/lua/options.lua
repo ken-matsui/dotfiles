@@ -43,6 +43,9 @@ else
   vim.opt.clipboard = 'unnamed'
 end
 
+-- Highlight yanked region
+vim.cmd[[au TextYankPost * silent! lua vim.highlight.on_yank()]]
+
 -- Return to last edit position when opening files
 vim.cmd([[
   autocmd BufReadPost *

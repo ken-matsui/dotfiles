@@ -22,7 +22,7 @@ vim.cmd([[
 
 -- Specify plugins
 return require('packer').startup(function(use)
-  use { "wbthomason/packer.nvim" }
+  use { 'wbthomason/packer.nvim' }
 
   -- Themes
   use 'nvim-tree/nvim-web-devicons'

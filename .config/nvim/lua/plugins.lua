@@ -111,9 +111,6 @@ return require('packer').startup(function(use)
           end
         end
       })
-
-      -- Keymaps
-      vim.keymap.set('n', '<C-f>', '<Cmd>NvimTreeFocus<Cr>')
     end
   }
 
@@ -176,10 +173,7 @@ return require('packer').startup(function(use)
   use {
     'akinsho/toggleterm.nvim', tag = '*',
     config = function()
-      require('toggleterm').setup({
-        -- Keymaps
-        vim.keymap.set('n', '<Leader>t', '<Cmd>ToggleTerm<Cr>')
-      })
+      require('toggleterm').setup()
     end
   }
 

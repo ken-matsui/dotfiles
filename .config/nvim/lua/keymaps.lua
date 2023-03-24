@@ -39,6 +39,12 @@ vim.keymap.set('n', '<C-q>', '<Cmd>quit<Cr>')
 -- Exit (same as :x, :wq)
 vim.keymap.set('n', '<C-x>', '<Cmd>exit<Cr>')
 
+-- Nvim Tree
+vim.keymap.set('n', '<C-f>', '<Cmd>NvimTreeFocus<Cr>')
+
+-- Toggle Term
+vim.keymap.set('n', '<Leader>t', '<Cmd>ToggleTerm<Cr>')
+
 --
 -- Visual Mode
 --

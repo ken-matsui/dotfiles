@@ -5,7 +5,6 @@ keybinds {
         unbind "Ctrl g" // release Locked mode keybind
         unbind "Ctrl o" // release Session mode keybind
         unbind "Ctrl b" // release Tmux mode keybind
-        unbind "Ctrl q" // release Quit keybind
         unbind "Alt n" // release NewPage action keybind
         unbind "Alt h" "Alt Left" // release MoveFocusOrTab action keybind
         unbind "Alt l" "Alt Right" // release MoveFocusOrTab action keybind

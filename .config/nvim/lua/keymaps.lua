@@ -2,10 +2,8 @@
 -- Global
 --
 vim.g.mapleader = ' ' -- Set <Leader> as the space key
-local all_modes = {'n', 'i', 'v', 'c', 'o'}
-
--- Ctrl-e to Esc
-vim.keymap.set(all_modes, '<C-e>', '<Esc>')
+-- local all_modes = {'n', 'i', 'v', 'c', 'o'}
+-- vim.keymap.set(all_modes, '', '')
 
 --
 -- Normal Mode
@@ -44,6 +42,14 @@ vim.keymap.set('n', '<C-f>', '<Cmd>NvimTreeFocus<Cr>')
 
 -- Toggle Term
 vim.keymap.set('n', '<Leader>t', '<Cmd>ToggleTerm<Cr>')
+
+--
+-- Insert Mode
+--
+
+-- Escape by jj & kk
+vim.keymap.set('i', 'jj', '<Esc>')
+vim.keymap.set('i', 'kk', '<Esc>')
 
 --
 -- Visual Mode

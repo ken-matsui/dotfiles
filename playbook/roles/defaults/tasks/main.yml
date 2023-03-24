@@ -39,6 +39,12 @@
     key: largesize
     type: float
     value: 113
+- name: Automatically hide and show the Dock
+  osx_defaults:
+    domain: com.apple.dock
+    key: autohide
+    type: bool
+    value: true
 
 - name: Minimize windows into application icon
   osx_defaults:

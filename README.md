@@ -42,7 +42,6 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main
 
 * System Settings -> trackpad -> Trackpad speed: Fast
 * System Settings -> Keyboard -> Keyboard -> Modifier Keys -> Caps Lock Key -> Control
-* System Settings -> Dock & Menu Bar -> Automatically hide and show the Dock
 * System Settings -> Dock & Menu Bar -> Spotlight -> Show in Menu Bar -> disable
 * System Settings -> Dock & Menu Bar -> Wi-Fi -> Show in Menu Bar -> disable
 * System Settings -> Dock & Menu Bar -> Bluetooth -> Show in Menu Bar -> disable

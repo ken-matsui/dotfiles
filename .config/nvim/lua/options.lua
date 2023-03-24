@@ -2,10 +2,8 @@
 vim.opt.encoding = 'utf-8'
 
 -- Don't create backup
-vim.o.nowritebackup = true
-vim.o.nobackup = true
-vim.o.noswapfile = true
-vim.opt.backupdir = vim.opt.backupdir - '.'
+vim.opt.backup = false
+vim.opt.writebackup = false
 
 -- Show column number
 vim.opt.number = true

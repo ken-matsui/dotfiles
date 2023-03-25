@@ -92,6 +92,8 @@
   st = status
   # Shorthand for switch
   sw = switch
+  # Show current commit hash
+  now = show --oneline -s
   # Unstage files
   unstage = restore --staged
   # Stash with untracked files (-m 'name')

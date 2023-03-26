@@ -33,8 +33,6 @@
   smtpServer = smtp.uw.edu # works for both @uw.edu & @cs.washington.edu
   smtpServerPort = 587
   smtpEncryption = tls
-[credential]
-  helper = store
 
 #
 # Branch

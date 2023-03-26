@@ -54,9 +54,6 @@ end
 -- Set <Leader> as the space key
 vim.g.mapleader = ' '
 
-vim.cmd [[highlight IndentBlanklineIndent1 guibg=#1f1f1f gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent2 guibg=#1a1a1a gui=nocombine]]
-
 -- Highlight yanked region
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()

@@ -44,17 +44,16 @@ vim.keymap.set('n', '<C-q>', '<Cmd>quit<Cr>')
 -- Exit (same as :x, :wq)
 vim.keymap.set('n', '<C-x>', '<Cmd>exit<Cr>')
 
--- Nvim Tree
-vim.keymap.set('n', '<C-f>', '<Cmd>NvimTreeFocus<Cr>')
-
 -- Toggle Term
 vim.keymap.set('n', '<C-t>', '<Cmd>ToggleTerm<Cr>')
 
 -- Comment.nvim - Ctrl + / => comment
 vim.keymap.set('n', '<C-_>', 'gcc', {remap = true})
 
--- Telescope (Ctrl + o like Cmd + Shift + o in IntelliJ)
+-- Telescope (like Cmd + Shift + o on IntelliJ)
 vim.keymap.set('n', '<C-o>', require('telescope.builtin').find_files)
+-- like Cmd + Shift + f on IntelliJ
+vim.keymap.set('n', '<C-f>', require('telescope.builtin').live_grep)
 
 --
 -- Insert Mode

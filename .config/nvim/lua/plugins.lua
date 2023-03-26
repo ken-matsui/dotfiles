@@ -20,10 +20,10 @@ return {
 
   {
     'nvim-tree/nvim-tree.lua',
-    event = { "BufReadPost", "BufNewFile" },
     dependencies = {
       'nvim-tree/nvim-web-devicons',
     },
+    event = { "BufReadPost", "BufNewFile" },
     config = function()
       require("nvim-tree").setup({
         sort_by = "case_sensitive",
@@ -65,10 +65,10 @@ return {
 
   {
     'akinsho/bufferline.nvim', version = "v3.*",
-    event = "VeryLazy",
     dependencies = {
       'nvim-tree/nvim-web-devicons',
     },
+    event = "VeryLazy",
     config = {
       options = {
         offsets = {
@@ -85,20 +85,20 @@ return {
 
   {
     'SmiteshP/nvim-gps',
-    lazy = true,
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
     },
+    lazy = true,
     config = true,
   },
 
   {
     'nvim-lualine/lualine.nvim',
-    event = "VeryLazy",
     dependencies = {
       'nvim-tree/nvim-web-devicons',
       'SmiteshP/nvim-gps',
     },
+    event = "VeryLazy",
     config = function()
       local gps = require('nvim-gps')
       require('lualine').setup {
@@ -123,8 +123,13 @@ return {
 
   {
     'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter-context',
+      'windwp/nvim-ts-autotag',
+      'p00f/nvim-ts-rainbow'
+    },
     event = { "BufReadPost", "BufNewFile" },
+    build = ':TSUpdate',
     opts = {
       ensure_installed = "all",
       highlight = {
@@ -143,27 +148,6 @@ return {
     config = function(_, opts)
       require('nvim-treesitter.configs').setup(opts)
     end,
-  },
-  {
-    'nvim-treesitter/nvim-treesitter-context',
-    lazy = true,
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter',
-    },
-  },
-  {
-    'windwp/nvim-ts-autotag',
-    lazy = true,
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter',
-    },
-  },
-  {
-    'p00f/nvim-ts-rainbow',
-    event = { "BufReadPost", "BufNewFile" },
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter',
-    },
   },
 
   --
@@ -242,15 +226,15 @@ return {
   },
   {
     'nvim-telescope/telescope.nvim', version = '0.1.1',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
     lazy = true,
     keys = {
       -- like Cmd + Shift + o on IntelliJ
       { '<C-o>', '<Cmd>Telescope find_files<Cr>', 'n' },
       -- like Cmd + Shift + f on IntelliJ
       { '<C-f>', '<Cmd>Telescope live_grep<Cr>', 'n' },
-    },
-    dependencies = {
-      'nvim-lua/plenary.nvim',
     },
   },
 }

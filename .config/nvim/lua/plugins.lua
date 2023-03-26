@@ -1,88 +1,28 @@
--- Bootstrap Packer
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd [[packadd packer.nvim]]
-    return true
-  end
-  return false
-end
-
-local packer_bootstrap = ensure_packer()
-
--- Automatically run :PackerCompile
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  augroup end
-]])
-
--- Specify plugins
-return require('packer').startup(function(use)
-  use { 'wbthomason/packer.nvim' }
-
+return {
+  --
   -- Themes
-  use 'nvim-tree/nvim-web-devicons'
-  use {
-    'akinsho/bufferline.nvim', tag = "v3.*",
-    requires = 'nvim-tree/nvim-web-devicons',
-    config = function()
-      require("bufferline").setup({
-        options = {
-          offsets = {
-            {
-              filetype = "NvimTree",
-              text = "File Explorer",
-              highlight = "Directory",
-              separator = true,
-            },
-          },
-        },
-      })
-    end
-  }
-  use {
-    'SmiteshP/nvim-gps',
-    requires = 'nvim-treesitter/nvim-treesitter',
-    config = function() require('nvim-gps').setup() end
-  }
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = {
-      'nvim-tree/nvim-web-devicons',
-      'SmiteshP/nvim-gps',
-    },
-    config = function()
-      local gps = require('nvim-gps')
-      require('lualine').setup {
-        options = {
-          theme = 'material',
-        },
-        sections = {
-          lualine_c = {
-            {
-              gps.get_location,
-              cond = gps.is_available,
-            },
-          },
-        },
-      }
-    end
-  }
-  use {
+  --
+
+  -- the colorscheme should be available when starting Neovim
+  {
     'marko-cerovac/material.nvim',
-    requires = 'nvim-lualine/lualine.nvim',
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
       vim.g.material_style = 'deep ocean'
       vim.cmd.colorscheme('material')
-    end
-  }
-  use {
+    end,
+  },
+
+  -- if some code requires a module from an unloaded plugin, it will be automatically loaded.
+  -- So for api plugins like devicons, we can always set lazy=true
+  { 'nvim-tree/nvim-web-devicons', lazy = true },
+
+  {
     'nvim-tree/nvim-tree.lua',
-    requires = 'nvim-tree/nvim-web-devicons',
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+    },
     config = function()
       require("nvim-tree").setup({
         sort_by = "case_sensitive",
@@ -119,12 +59,71 @@ return require('packer').startup(function(use)
           end
         end
       })
-    end
-  }
+    end,
+  },
 
+  {
+    'akinsho/bufferline.nvim', version = "v3.*",
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+    },
+    config = function()
+      require("bufferline").setup({
+        options = {
+          offsets = {
+            {
+              filetype = "NvimTree",
+              text = "File Explorer",
+              highlight = "Directory",
+              separator = true,
+            },
+          },
+        },
+      })
+    end,
+  },
+
+  {
+    'SmiteshP/nvim-gps',
+    lazy = true,
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+    },
+    config = true,
+  },
+
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+      'SmiteshP/nvim-gps',
+    },
+    config = function()
+      local gps = require('nvim-gps')
+      require('lualine').setup {
+        options = {
+          theme = 'material',
+        },
+        sections = {
+          lualine_c = {
+            {
+              gps.get_location,
+              cond = gps.is_available,
+            },
+          },
+        },
+      }
+    end,
+  },
+
+  --
   -- Syntax
-  use {
-    'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',
+  --
+
+  {
+    'nvim-treesitter/nvim-treesitter',
+    lazy = true,
+    build = ':TSUpdate',
     config = function()
       require('nvim-treesitter.configs').setup {
         ensure_installed = "all",
@@ -141,22 +140,33 @@ return require('packer').startup(function(use)
           enable = true,
         },
       }
-    end
-  }
-  use {
+    end,
+  },
+  {
     'nvim-treesitter/nvim-treesitter-context',
-    requires = 'nvim-treesitter/nvim-treesitter'
-  }
-  use {
+    lazy = true,
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+    },
+  },
+  {
     'windwp/nvim-ts-autotag',
-    requires = 'nvim-treesitter/nvim-treesitter'
-  }
-  use {
+    lazy = true,
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+    },
+  },
+  {
     'p00f/nvim-ts-rainbow',
-    requires = 'nvim-treesitter/nvim-treesitter'
-  }
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+    },
+  },
 
+  --
   -- Completion
+  --
+
   -- use 'nvim-lua/completion-nvim'
   -- use {
     -- 'nvim-treesitter/completion-treesitter',
@@ -168,46 +178,58 @@ return require('packer').startup(function(use)
       -- vim.cmd("autocmd BufEnter * lua require'completion'.on_attach()")
     -- end
   -- }
-
+  
+  --
   -- Utils
-  use 'github/copilot.vim' -- :Copilot setup
-  use {
+  --
+
+  'github/copilot.vim', -- :Copilot setup
+  {
     'numToStr/Comment.nvim',
-    config = function()
-      require('Comment').setup()
-    end
-  }
-  use {
+    lazy = true,
+    keys = {
+      -- Ctrl + / => comment
+      { '<C-_>', 'gcc', 'n', remap = true },
+      { '<C-/>', 'gcc', 'v', remap = true },
+    },
+    config = true,
+  },
+  {
     'lewis6991/gitsigns.nvim',
     config = function()
       require('gitsigns').setup({
         -- GitLens-like blame line
         current_line_blame = true,
       })
-    end
-  }
-  use {
+    end,
+  },
+  {
     'nathanaelkane/vim-indent-guides',
     config = function()
       vim.g.indent_guides_enable_on_vim_startup = true
-    end
-  }
-  use 'jiangmiao/auto-pairs'
-  use 'cappyzawa/trim.nvim'
-  use {
-    'akinsho/toggleterm.nvim', tag = '*',
-    config = function()
-      require('toggleterm').setup()
-    end
-  }
-  use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.1',
-    requires = 'nvim-lua/plenary.nvim',
-  }
-
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if packer_bootstrap then
-    require('packer').sync()
-  end
-end)
+    end,
+  },
+  'jiangmiao/auto-pairs',
+  'cappyzawa/trim.nvim',
+  {
+    'akinsho/toggleterm.nvim', version = '*',
+    lazy = true,
+    keys = {
+      { '<C-t>', '<Cmd>ToggleTerm<Cr>', 'n' },
+    },
+    config = true,
+  },
+  {
+    'nvim-telescope/telescope.nvim', version = '0.1.1',
+    lazy = true,
+    keys = {
+      -- like Cmd + Shift + o on IntelliJ
+      { '<C-o>', '<Cmd>Telescope find_files<Cr>', 'n' },
+      -- like Cmd + Shift + f on IntelliJ
+      { '<C-f>', '<Cmd>Telescope live_grep<Cr>', 'n' },
+    },
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+  },
+}

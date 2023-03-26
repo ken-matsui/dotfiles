@@ -3,9 +3,6 @@
 --
 local all_modes = {'n', 'i', 'v', 'c', 'o'}
 
--- Set <Leader> as the space key
-vim.g.mapleader = ' '
-
 -- Escape by Ctrl e
 vim.keymap.set(all_modes, '<C-e>', '<Esc>')
 
@@ -44,17 +41,6 @@ vim.keymap.set('n', '<C-q>', '<Cmd>quit<Cr>')
 -- Exit (same as :x, :wq)
 vim.keymap.set('n', '<C-x>', '<Cmd>exit<Cr>')
 
--- Toggle Term
-vim.keymap.set('n', '<C-t>', '<Cmd>ToggleTerm<Cr>')
-
--- Comment.nvim - Ctrl + / => comment
-vim.keymap.set('n', '<C-_>', 'gcc', {remap = true})
-
--- Telescope (like Cmd + Shift + o on IntelliJ)
-vim.keymap.set('n', '<C-o>', require('telescope.builtin').find_files)
--- like Cmd + Shift + f on IntelliJ
-vim.keymap.set('n', '<C-f>', require('telescope.builtin').live_grep)
-
 --
 -- Insert Mode
 --
@@ -69,6 +55,3 @@ vim.keymap.set('i', 'kk', '<Esc>')
 
 vim.keymap.set('v', '<C-]>', '>gv') -- indent
 vim.keymap.set('v', '<C-[>', '<gv') -- unindent
-
--- Comment.nvim - Ctrl + / => comment
-vim.keymap.set('v', '<C-/>', 'gcc', {remap = true})

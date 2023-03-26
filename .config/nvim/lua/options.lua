@@ -51,6 +51,9 @@ else
   vim.opt.clipboard = 'unnamed'
 end
 
+-- Set <Leader> as the space key
+vim.g.mapleader = ' '
+
 -- Highlight yanked region
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()

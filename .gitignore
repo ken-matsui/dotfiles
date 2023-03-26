@@ -11,5 +11,3 @@
 !.config/topgrade.toml
 !.config/zellij
 !.config/zsh
-
-packer_compiled.lua

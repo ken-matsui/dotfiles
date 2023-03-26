@@ -24,13 +24,15 @@ return {
       'nvim-tree/nvim-web-devicons',
     },
     event = { "BufReadPost", "BufNewFile" },
-    config = function()
-      require("nvim-tree").setup({
-        sort_by = "case_sensitive",
-        view = {
-          width = 25,
-        },
-      })
+    opts = {
+      sort_by = "case_sensitive",
+      remove_keymaps = true,
+      view = {
+        width = 25,
+      },
+    },
+    config = function(_, opts)
+      require("nvim-tree").setup(opts)
 
       -- Auto open
       local function open_nvim_tree(data)

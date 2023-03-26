@@ -200,6 +200,10 @@ return require('packer').startup(function(use)
       require('toggleterm').setup()
     end
   }
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.1',
+    requires = 'nvim-lua/plenary.nvim',
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

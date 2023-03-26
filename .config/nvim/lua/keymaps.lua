@@ -53,6 +53,9 @@ vim.keymap.set('n', '<C-t>', '<Cmd>ToggleTerm<Cr>')
 -- Comment.nvim - Ctrl + / => comment
 vim.keymap.set('n', '<C-_>', 'gcc', {remap = true})
 
+-- Telescope (Ctrl + o like Cmd + Shift + o in IntelliJ)
+vim.keymap.set('n', '<C-o>', require('telescope.builtin').find_files)
+
 --
 -- Insert Mode
 --

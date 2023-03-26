@@ -202,11 +202,22 @@ return {
     },
   },
   {
-    'nathanaelkane/vim-indent-guides',
+    "lukas-reineke/indent-blankline.nvim",
     event = { "BufReadPost", "BufNewFile" },
-    config = function()
-      vim.g.indent_guides_enable_on_vim_startup = true
-    end,
+    opts = {
+      filetype_exclude = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy" },
+      char = "",
+      char_highlight_list = {
+        "IndentBlanklineIndent1",
+        "IndentBlanklineIndent2",
+      },
+      space_char_highlight_list = {
+        "IndentBlanklineIndent1",
+        "IndentBlanklineIndent2",
+      },
+      show_trailing_blankline_indent = false,
+      show_current_context = true,
+    },
   },
   {
     'jiangmiao/auto-pairs',

@@ -20,6 +20,7 @@ return {
 
   {
     'nvim-tree/nvim-tree.lua',
+    event = { "BufReadPost", "BufNewFile" },
     dependencies = {
       'nvim-tree/nvim-web-devicons',
     },
@@ -64,23 +65,22 @@ return {
 
   {
     'akinsho/bufferline.nvim', version = "v3.*",
+    event = "VeryLazy",
     dependencies = {
       'nvim-tree/nvim-web-devicons',
     },
-    config = function()
-      require("bufferline").setup({
-        options = {
-          offsets = {
-            {
-              filetype = "NvimTree",
-              text = "File Explorer",
-              highlight = "Directory",
-              separator = true,
-            },
+    config = {
+      options = {
+        offsets = {
+          {
+            filetype = "NvimTree",
+            text = "File Explorer",
+            highlight = "Directory",
+            separator = true,
           },
         },
-      })
-    end,
+      },
+    },
   },
 
   {
@@ -94,6 +94,7 @@ return {
 
   {
     'nvim-lualine/lualine.nvim',
+    event = "VeryLazy",
     dependencies = {
       'nvim-tree/nvim-web-devicons',
       'SmiteshP/nvim-gps',
@@ -122,24 +123,25 @@ return {
 
   {
     'nvim-treesitter/nvim-treesitter',
-    lazy = true,
     build = ':TSUpdate',
-    config = function()
-      require('nvim-treesitter.configs').setup {
-        ensure_installed = "all",
-        highlight = {
-          enable = true,
-        },
-        indent = {
-          enable = true,
-        },
-        autotag = {
-          enable = true,
-        },
-        rainbow = {
-          enable = true,
-        },
-      }
+    event = { "BufReadPost", "BufNewFile" },
+    opts = {
+      ensure_installed = "all",
+      highlight = {
+        enable = true,
+      },
+      indent = {
+        enable = true,
+      },
+      autotag = {
+        enable = true,
+      },
+      rainbow = {
+        enable = true,
+      },
+    },
+    config = function(_, opts)
+      require('nvim-treesitter.configs').setup(opts)
     end,
   },
   {
@@ -158,6 +160,7 @@ return {
   },
   {
     'p00f/nvim-ts-rainbow',
+    event = { "BufReadPost", "BufNewFile" },
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
     },
@@ -183,11 +186,15 @@ return {
   -- Utils
   --
 
-  'github/copilot.vim', -- :Copilot setup
+  {
+    'github/copilot.vim', -- :Copilot setup
+    event = "VeryLazy",
+  },
   {
     'numToStr/Comment.nvim',
     lazy = true,
     keys = {
+      { '<leader>c', 'gcc', 'n', remap = true },
       -- Ctrl + / => comment
       { '<C-_>', 'gcc', 'n', remap = true },
       { '<C-/>', 'gcc', 'v', remap = true },
@@ -196,21 +203,35 @@ return {
   },
   {
     'lewis6991/gitsigns.nvim',
-    config = function()
-      require('gitsigns').setup({
-        -- GitLens-like blame line
-        current_line_blame = true,
-      })
-    end,
+    event = { "BufReadPre", "BufNewFile" },
+    opts = {
+      -- GitLens-like blame line
+      current_line_blame = true,
+      -- See `:help gitsigns.txt`
+      signs = {
+        add = { text = '+' },
+        change = { text = '~' },
+        delete = { text = '_' },
+        topdelete = { text = '‾' },
+        changedelete = { text = '~' },
+      },
+    },
   },
   {
     'nathanaelkane/vim-indent-guides',
+    event = { "BufReadPost", "BufNewFile" },
     config = function()
       vim.g.indent_guides_enable_on_vim_startup = true
     end,
   },
-  'jiangmiao/auto-pairs',
-  'cappyzawa/trim.nvim',
+  {
+    'jiangmiao/auto-pairs',
+    event = { "BufReadPost", "BufNewFile" },
+  },
+  {
+    'cappyzawa/trim.nvim',
+    event = "VeryLazy",
+  },
   {
     'akinsho/toggleterm.nvim', version = '*',
     lazy = true,

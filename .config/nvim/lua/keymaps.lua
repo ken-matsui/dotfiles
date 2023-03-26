@@ -5,6 +5,8 @@ local all_modes = {'n', 'i', 'v', 'c', 'o'}
 
 -- Escape by Ctrl e
 vim.keymap.set(all_modes, '<C-e>', '<Esc>')
+-- Esc is somehow used as unindent
+vim.keymap.set(all_modes, '<Esc>', '<C-e>', {remap = true})
 
 --
 -- Normal Mode

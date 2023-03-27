@@ -1,5 +1,5 @@
 return {
-  -- Treesitter (Syntax Highlight)
+  -- Syntax Highlight
   {
     'nvim-treesitter/nvim-treesitter',
     event = { "BufReadPost", "BufNewFile" },
@@ -89,11 +89,17 @@ return {
     },
     config = function(_, opts)
       -- Automatically install servers listed in opts.ensure_installed
-      local mlsp = require("mason-lspconfig")
-      mlsp.setup({ ensure_installed = opts.ensure_installed })
-      mlsp.setup_handlers({
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+      require("mason").setup()
+      require("mason-lspconfig").setup({
+        ensure_installed = opts.ensure_installed,
+      })
+      require("mason-lspconfig").setup_handlers({
         function(server_name)
-          require("lspconfig")[server_name].setup({})
+          require("lspconfig")[server_name].setup({
+            capabilities = capabilities,
+          })
         end,
       })
     end,
@@ -109,6 +115,12 @@ return {
       "hrsh7th/cmp-path",
       "saadparwaiz1/cmp_luasnip",
       "nvim-tree/nvim-web-devicons",
+      {
+        "L3MON4D3/LuaSnip", version = "1.*",
+        config = function()
+          require("luasnip.loaders.from_vscode").load()
+        end,
+      },
       "onsails/lspkind-nvim",
     },
     opts = function()
@@ -130,17 +142,7 @@ return {
           { name = "path" },
         }),
         formatting = {
-          format = function(entry, vim_item)
-            if vim.tbl_contains({ 'path' }, entry.source.name) then
-              local icon, hl_group = require('nvim-web-devicons').get_icon(entry:get_completion_item().label)
-              if icon then
-                vim_item.kind = icon
-                vim_item.kind_hl_group = hl_group
-                return vim_item
-              end
-            end
-            return require('lspkind').cmp_format({ with_text = false })(entry, vim_item)
-          end,
+          format = require('lspkind').cmp_format({}),
         },
       }
     end,

@@ -3,6 +3,7 @@ return {
     'github/copilot.vim', -- :Copilot setup
     event = "VeryLazy",
   },
+
   {
     'numToStr/Comment.nvim',
     lazy = true,
@@ -14,6 +15,7 @@ return {
     },
     config = true,
   },
+
   {
     'lewis6991/gitsigns.nvim',
     event = { "BufReadPre", "BufNewFile" },
@@ -30,6 +32,7 @@ return {
       },
     },
   },
+
   {
     "lukas-reineke/indent-blankline.nvim",
     event = { "BufReadPost", "BufNewFile" },
@@ -54,10 +57,12 @@ return {
       require("indent_blankline").setup(opts)
     end
   },
+
   {
     'jiangmiao/auto-pairs',
     event = { "BufReadPost", "BufNewFile" },
   },
+
   {
     'cappyzawa/trim.nvim',
     event = "VeryLazy",

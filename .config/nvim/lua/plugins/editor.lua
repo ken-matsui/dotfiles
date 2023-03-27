@@ -29,7 +29,7 @@ return {
     end,
   },
 
-  -- LSP (Language Server Protocol)
+  -- LSP
   {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },

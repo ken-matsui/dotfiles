@@ -35,7 +35,6 @@ return {
     dependencies = {
       {
         "williamboman/mason.nvim",
-        event = { "BufReadPre", "BufNewFile" },
         build = ":MasonUpdate", -- :MasonUpdate updates registry contents
         config = true,
       },

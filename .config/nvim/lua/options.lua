@@ -1,17 +1,13 @@
 -- Set file encoding as UTF-8
 vim.opt.encoding = 'utf-8'
 
--- disable netrw at the very start of your init.lua (strongly advised)
+-- disable netrw at the very start of init.lua (nvim-tree)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- Don't create backup
 vim.opt.backup = false
 vim.opt.writebackup = false
-
--- Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
--- delays and poor user experience
-vim.opt.updatetime = 300
 
 -- Always show the signcolumn, otherwise it would shift the text each time
 -- diagnostics appeared/became resolved

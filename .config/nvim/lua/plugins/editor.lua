@@ -4,7 +4,6 @@ return {
     'nvim-treesitter/nvim-treesitter',
     event = { "BufReadPost", "BufNewFile" },
     dependencies = {
-      'nvim-treesitter/nvim-treesitter-context',
       'windwp/nvim-ts-autotag',
       'p00f/nvim-ts-rainbow'
     },
@@ -34,9 +33,14 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
-      "folke/neodev.nvim",
-      "williamboman/mason.nvim",
+      {
+        "williamboman/mason.nvim",
+        event = { "BufReadPre", "BufNewFile" },
+        build = ":MasonUpdate", -- :MasonUpdate updates registry contents
+        config = true,
+      },
       "williamboman/mason-lspconfig.nvim",
+      "folke/neodev.nvim",
       "hrsh7th/cmp-nvim-lsp",
     },
     opts = {
@@ -94,14 +98,6 @@ return {
         end,
       })
     end,
-  },
-
-  -- Mason
-  {
-    "williamboman/mason.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    build = ":MasonUpdate", -- :MasonUpdate updates registry contents
-    config = true,
   },
 
   -- Completion

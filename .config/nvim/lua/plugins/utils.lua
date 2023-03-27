@@ -72,10 +72,10 @@ return {
   },
   {
     'nvim-telescope/telescope.nvim', version = '0.1.1',
+    lazy = true,
     dependencies = {
       'nvim-lua/plenary.nvim',
     },
-    lazy = true,
     keys = {
       -- like Cmd + Shift + o on IntelliJ
       { '<C-o>', '<Cmd>Telescope find_files<Cr>', 'n' },

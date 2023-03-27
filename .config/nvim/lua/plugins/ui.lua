@@ -5,10 +5,10 @@ return {
 
   {
     'nvim-tree/nvim-tree.lua',
+    event = { "BufReadPost", "BufNewFile" },
     dependencies = {
       'nvim-tree/nvim-web-devicons',
     },
-    event = { "BufReadPost", "BufNewFile" },
     opts = {
       sort_by = "case_sensitive",
       view = {
@@ -51,10 +51,10 @@ return {
 
   {
     'akinsho/bufferline.nvim', version = "v3.*",
+    event = "VeryLazy",
     dependencies = {
       'nvim-tree/nvim-web-devicons',
     },
-    event = "VeryLazy",
     config = {
       options = {
         offsets = {
@@ -70,36 +70,25 @@ return {
   },
 
   {
-    'SmiteshP/nvim-gps',
+    "utilyre/barbecue.nvim", version = "*",
+    event = { "BufReadPost", "BufNewFile" },
     dependencies = {
-      'nvim-treesitter/nvim-treesitter',
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons",
     },
-    lazy = true,
     config = true,
   },
 
   {
     'nvim-lualine/lualine.nvim',
+    event = "VeryLazy",
     dependencies = {
       'nvim-tree/nvim-web-devicons',
-      'SmiteshP/nvim-gps',
     },
-    event = "VeryLazy",
-    config = function()
-      local gps = require('nvim-gps')
-      require('lualine').setup {
-        options = {
-          theme = 'material',
-        },
-        sections = {
-          lualine_c = {
-            {
-              gps.get_location,
-              cond = gps.is_available,
-            },
-          },
-        },
-      }
-    end,
+    opts = {
+      options = {
+        theme = 'material',
+      },
+    },
   },
 }

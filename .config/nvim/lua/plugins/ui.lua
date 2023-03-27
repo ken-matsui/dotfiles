@@ -14,6 +14,9 @@ return {
       view = {
         width = 25,
       },
+      diagnostics = {
+        enable = true,
+      },
     },
     config = function(_, opts)
       require("nvim-tree").setup(opts)

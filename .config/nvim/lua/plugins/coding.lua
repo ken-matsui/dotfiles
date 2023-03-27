@@ -1,123 +1,65 @@
 return {
-  -- lspconfig
   {
-    "neovim/nvim-lspconfig",
-    event = { "BufReadPre", "BufNewFile" },
-    dependencies = {
-      "folke/neodev.nvim",
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
-      "hrsh7th/cmp-nvim-lsp",
-    },
-    opts = {
-      ensure_installed = {
-        "asm_lsp",
-        "bashls",
-        "clangd",
-        "cmake",
-        "neocmake",
-        "cssls",
-        "cssmodules_ls",
-        "unocss",
-        "denols",
-        "diagnosticls",
-        "dockerls",
-        "docker_compose_language_service",
-        "dotls",
-        "efm",
-        "grammarly",
-        "html",
-        "jsonls",
-        "jdtls",
-        "quick_lint_js",
-        "tsserver",
-        "vtsls",
-        "ltex",
-        "texlab",
-        "lua_ls",
-        "marksman",
-        "prosemd_lsp",
-        "remark_ls",
-        "zk",
-        "jedi_language_server",
-        "pyre",
-        "pyright",
-        "sourcery",
-        "pylsp",
-        "ruff_lsp",
-        "rome",
-        "sqlls",
-        "sqls",
-        "taplo",
-        "tsserver",
-        "vtsls",
-        "yamlls",
-      },
-    },
-    config = function(_, opts)
-      -- Automatically install servers listed in opts.ensure_installed
-      local mlsp = require("mason-lspconfig")
-      mlsp.setup({ ensure_installed = opts.ensure_installed })
-      mlsp.setup_handlers({
-        function(server_name)
-          require("lspconfig")[server_name].setup({})
-        end,
-      })
-    end,
+    'github/copilot.vim', -- :Copilot setup
+    event = "VeryLazy",
   },
-
-  -- Mason
   {
-    "williamboman/mason.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    build = ":MasonUpdate", -- :MasonUpdate updates registry contents
+    'numToStr/Comment.nvim',
+    lazy = true,
+    keys = {
+      { '<leader>c', 'gcc', 'n', remap = true },
+      -- Ctrl + / => comment
+      { '<C-_>', 'gcc', 'n', remap = true },
+      { '<C-/>', 'gcc', 'v', remap = true },
+    },
     config = true,
   },
-
-  -- Completion
   {
-    "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
-    dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "saadparwaiz1/cmp_luasnip",
-      "nvim-tree/nvim-web-devicons",
-      "onsails/lspkind-nvim",
+    'lewis6991/gitsigns.nvim',
+    event = { "BufReadPre", "BufNewFile" },
+    opts = {
+      -- GitLens-like blame line
+      current_line_blame = true,
+      -- See `:help gitsigns.txt`
+      signs = {
+        add = { text = '+' },
+        change = { text = '~' },
+        delete = { text = '_' },
+        topdelete = { text = '‾' },
+        changedelete = { text = '~' },
+      },
     },
-    opts = function()
-      local cmp = require("cmp")
-      return {
-        snippet = {
-          expand = function(args)
-            require("luasnip").lsp_expand(args.body)
-          end,
-        },
-        mapping = cmp.mapping.preset.insert({
-          ["<C-e>"] = cmp.mapping.abort(),
-          ["<CR>"] = cmp.mapping.confirm({ select = true }),
-        }),
-        sources = cmp.config.sources({
-          { name = "nvim_lsp" },
-          { name = "luasnip" },
-          { name = "buffer" },
-          { name = "path" },
-        }),
-        formatting = {
-          format = function(entry, vim_item)
-            if vim.tbl_contains({ 'path' }, entry.source.name) then
-              local icon, hl_group = require('nvim-web-devicons').get_icon(entry:get_completion_item().label)
-              if icon then
-                vim_item.kind = icon
-                vim_item.kind_hl_group = hl_group
-                return vim_item
-              end
-            end
-            return require('lspkind').cmp_format({ with_text = false })(entry, vim_item)
-          end,
-        },
-      }
-    end,
+  },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    event = { "BufReadPost", "BufNewFile" },
+    opts = {
+      filetype_exclude = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy" },
+      char = "",
+      char_highlight_list = {
+        "IndentBlanklineIndent1",
+        "IndentBlanklineIndent2",
+      },
+      space_char_highlight_list = {
+        "IndentBlanklineIndent1",
+        "IndentBlanklineIndent2",
+      },
+      show_trailing_blankline_indent = false,
+      show_current_context = true,
+    },
+    config = function(_, opts)
+      vim.cmd [[highlight IndentBlanklineIndent1 guibg=#1f1f1f gui=nocombine]]
+      vim.cmd [[highlight IndentBlanklineIndent2 guibg=#1a1a1a gui=nocombine]]
+
+      require("indent_blankline").setup(opts)
+    end
+  },
+  {
+    'jiangmiao/auto-pairs',
+    event = { "BufReadPost", "BufNewFile" },
+  },
+  {
+    'cappyzawa/trim.nvim',
+    event = "VeryLazy",
   },
 }

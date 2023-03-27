@@ -94,4 +94,27 @@ return {
       },
     },
   },
+
+  {
+    'akinsho/toggleterm.nvim', version = '*',
+    lazy = true,
+    keys = {
+      { '<C-t>', '<Cmd>ToggleTerm<Cr>', 'n' },
+    },
+    config = true,
+  },
+
+  {
+    'nvim-telescope/telescope.nvim', version = '0.1.1',
+    lazy = true,
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+    keys = {
+      -- like Cmd + Shift + o on IntelliJ
+      { '<C-o>', '<Cmd>Telescope find_files<Cr>', 'n' },
+      -- like Cmd + Shift + f on IntelliJ
+      { '<C-f>', '<Cmd>Telescope live_grep<Cr>', 'n' },
+    },
+  },
 }

@@ -58,7 +58,7 @@ return {
     dependencies = {
       'nvim-tree/nvim-web-devicons',
     },
-    config = {
+    opts = {
       options = {
         offsets = {
           {

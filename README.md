@@ -28,6 +28,15 @@
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main/install.sh)"
 ```
 
+### Individual (non-intrusive) Installation
+
+```sh
+cd ~
+git clone https://github.com/ken-matsui/dotfiles.git
+ln -s ~/dotfiles/.config/zsh ~/.config/zsh # directory
+ln -s ~/dotfiles/.config/starship.toml ~/.config/starship.toml # file
+```
+
 ## Additional Settings
 
 ### Both OS

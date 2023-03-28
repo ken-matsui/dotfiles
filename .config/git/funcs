@@ -1,14 +1,14 @@
 # Print info
 info() {
-    echo "\033[0;34m[INFO]: $@\033[0m"
+    printf '\033[0;34m[INFO]: %s\033[0m\n' "$*"
 };
 # Print error
 err() {
-    echo "\033[0;31m[ERROR]: $@\033[0m"
+    printf '\033[0;31m[ERROR]: %s\033[0m\n' "$*"
 };
 # Print warning
 warn() {
-    echo "\033[0;33m[WARNING]: $@\033[0m"
+    printf '\033[0;33m[WARNING]: %s\033[0m\n' "$*"
 };
 
 # Check if current branch is the default branch

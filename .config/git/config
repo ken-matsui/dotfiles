@@ -73,7 +73,7 @@
   # Show all git aliases
   alias = !git config --get-regexp ^alias | sed -e 's/^alias.//g' -e 's/ / = /1'
   # Print git config path
-  path = "!echo $XDG_CONFIG_HOME/git"
+  path = "!echo ${XDG_CONFIG_HOME:-~/.config}/git"
   # Print functions path
   fn = "!echo $(git path)/funcs"
   # Print info

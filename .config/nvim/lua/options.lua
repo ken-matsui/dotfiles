@@ -1,7 +1,10 @@
+-- Enable fast cache loading
+if vim.loader then vim.loader.enable() end
+
 -- Set file encoding as UTF-8
 vim.opt.encoding = 'utf-8'
 
--- disable netrw at the very start of init.lua (nvim-tree)
+-- Disable netrw at the very start of init.lua (nvim-tree)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 

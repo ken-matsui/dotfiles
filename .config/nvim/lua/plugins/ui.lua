@@ -5,7 +5,6 @@ return {
 
   {
     'nvim-tree/nvim-tree.lua',
-    event = { "BufReadPost", "BufNewFile" },
     dependencies = {
       'nvim-tree/nvim-web-devicons',
     },
@@ -23,6 +22,18 @@ return {
 
       -- Auto open
       local function open_nvim_tree(data)
+        -- buffer is a directory
+        local directory = vim.fn.isdirectory(data.file) == 1
+
+        if directory then
+          -- change to the directory
+          vim.cmd.cd(data.file)
+
+          -- open the tree
+          require("nvim-tree.api").tree.open()
+          return
+        end
+
         -- don't open nvim-tree when creating git commit message
         local IGNORED_FT = {
           "gitcommit",

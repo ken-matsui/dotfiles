@@ -38,6 +38,12 @@ ln -s ~/dotfiles/.config/starship.toml ~/.config/starship.toml # file
 ln -s ~/dotfiles/.ssh/config ~/.ssh/config # ssh
 ```
 
+#### On Ubuntu
+
+```sh
+ln -s ~/dotfiles/.local/share/alacritty/config.yml ~/.local/share/alacritty/config.yml
+```
+
 ## Additional Settings
 
 ### Both OS

@@ -75,13 +75,13 @@
   # Print git config path
   path = "!echo ${XDG_CONFIG_HOME:-~/.config}/git"
   # Print functions path
-  fn = "!echo $(git path)/funcs"
+  fn = "!echo $(git path)/fn"
   # Print info
-  info = "!f(){ source $(git fn) && info $@; };f"
+  info = "!$(git fn)/info"
   # Print warning
-  warn = "!f(){ source $(git fn) && warn $@; };f"
+  warn = "!$(git fn)/warn"
   # Print error
-  err = "!f(){ source $(git fn) && err $@; };f"
+  err = "!$(git fn)/err"
 
   #
   # Git aliases
@@ -107,13 +107,13 @@
   # Get current branch name
   curbr = rev-parse --abbrev-ref HEAD
   # Check if current branch is the default branch
-  on-defbr = "!source $(git fn) && on_defbr"
+  on-defbr = "!$(git fn)/on_defbr"
   # Check if the origin URL is on GitHub
-  on-gh = "!source $(git fn) && on_gh"
+  on-gh = "!$(git fn)/on_gh"
   # Update the default branch and remove merged branches
-  update = "!source $(git fn) && update"
+  update = "!$(git fn)/update"
   # Get a parent commit from the argument
-  parent = "!f(){ git log --pretty=%P -n 1 $1; };f"
+  parent = log --pretty=%P -n 1
   # Create only one commit from the history
   create-one = !git reset $(git merge-base main $(git branch --show-current)) && git add -A && git commit
   # Squash all commits into one

@@ -1,0 +1,3 @@
+# Check if current branch is the default branch
+[ $(git defbr) = $(git curbr) ] ||
+{ git err 'not on the default branch' && exit 1; }

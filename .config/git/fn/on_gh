@@ -1,0 +1,4 @@
+# Check if the origin URL is on GitHub
+git remote get-url origin |
+grep -q 'github.com' ||
+{ git warn 'not on GitHub' && exit 1; }

@@ -1,0 +1,2 @@
+# Print warning
+printf '\033[0;33m[WARNING]: %s\033[0m\n' "$*"

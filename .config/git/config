@@ -77,11 +77,11 @@
   # Print functions path
   fn = "!echo $(git path)/funcs"
   # Print info
-  info = "!f(){ source $(git fn); info $@; };f"
+  info = "!f(){ source $(git fn) && info $@; };f"
   # Print warning
-  warn = "!f(){ source $(git fn); warn $@; };f"
+  warn = "!f(){ source $(git fn) && warn $@; };f"
   # Print error
-  err = "!f(){ source $(git fn); err $@; };f"
+  err = "!f(){ source $(git fn) && err $@; };f"
 
   #
   # Git aliases
@@ -107,11 +107,11 @@
   # Get current branch name
   curbr = rev-parse --abbrev-ref HEAD
   # Check if current branch is the default branch
-  on-defbr = "!source $(git fn); on_defbr"
+  on-defbr = "!source $(git fn) && on_defbr"
   # Check if the origin URL is on GitHub
-  on-gh = "!source $(git fn); on_gh"
+  on-gh = "!source $(git fn) && on_gh"
   # Update the default branch and remove merged branches
-  update = "!source $(git fn); update"
+  update = "!source $(git fn) && update"
   # Get a parent commit from the argument
   parent = "!f(){ git log --pretty=%P -n 1 $1; };f"
   # Create only one commit from the history

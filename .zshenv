@@ -68,9 +68,14 @@ fi
 # At this time, the `brew` command is unavailable; we need to find the
 # excutable instead of `$+commands[brew]`.
 if [ -f /opt/homebrew/bin/brew ]; then
+  # M1
   eval "$(/opt/homebrew/bin/brew shellenv)"
 elif [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
+  # Linux
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+elif [ -f ~/homebrew/bin/brew ]; then
+  # Home directory installation
+  eval "$(~/homebrew/bin/brew shellenv)"
 else
   echo 'Homebrew not found. Some software configurations may not be loaded correctly.'
 fi

@@ -64,6 +64,10 @@ ln -s ~/dotfiles/.local/share/alacritty/config.yml ~/.local/share/alacritty/conf
 * System Settings -> Dock & Menu Bar -> Battery -> Show Percentage
 * System Settings -> Dock & Menu Bar -> Clock -> Show date -> `always`
 
+#### Things 3
+
+* Settings -> Quick Entry -> Enable shortcut for Quick Entry -> <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>T</kbd>
+
 ### Ubuntu
 
 * Run `fprintd-enroll` on the terminal app to enable fingerprint authentication.

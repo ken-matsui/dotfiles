@@ -108,8 +108,3 @@ brewp visual-studio-code --cask
 # brewp xcodes --cask
 brewp zoom --cask
 # brewp zulip --cask
-
-##################################
-# Install packages
-##################################
-brewp install

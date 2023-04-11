@@ -5,7 +5,7 @@ fi
 
 read -p 'Do you want to log in with Zsh? [Y/n] ' yn
 case $yn in
-  y|Y|'') # Enter key
+  y|Y|'') # accept an enter key
     exec zsh
     ;;
 esac

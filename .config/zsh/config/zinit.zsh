@@ -27,7 +27,6 @@ zinit snippet PZTM::completion
 
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
-zinit light asdf-vm/asdf
 zinit light jimeh/zsh-peco-history
 
 zinit ice as"command"

@@ -46,6 +46,7 @@ brewp lsd
 # brewp mysql  # for mysqlclient of Python
 brewp ninja
 brewp neovim
+brewp node
 # brewp peco
 brewp poetry
 brewp python

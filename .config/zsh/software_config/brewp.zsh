@@ -92,6 +92,7 @@ brewp grammarly-desktop --cask
 # brewp imobie-m1-app-checker --cask
 brewp jetbrains-toolbox --cask
 # brewp lens --cask
+brewp logseq --cask
 # brewp mendeley --cask
 # brewp mimestream --cask
 # brewp mysqlworkbench --cask

@@ -1,5 +1,5 @@
 -- Enable fast cache loading
-if vim.loader then vim.loader.enable() end
+vim.loader.enable()
 
 -- Set file encoding as UTF-8
 vim.opt.encoding = 'utf-8'

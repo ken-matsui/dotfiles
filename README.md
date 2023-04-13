@@ -22,6 +22,15 @@
 [Starship]: https://github.com/starship/starship
 [Neovim]: https://github.com/neovim/neovim
 
+## Current Zsh load time
+
+```
+$ hyperfine 'zsh -i -c exit' --warmup 5
+Benchmark 1: zsh -i -c exit
+  Time (mean ± σ):     715.4 ms ±  11.1 ms    [User: 343.7 ms, System: 303.8 ms]
+  Range (min … max):   704.3 ms … 741.1 ms    10 runs
+```
+
 ## Installation
 
 ```sh

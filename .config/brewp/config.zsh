@@ -7,106 +7,106 @@ fi
 # Taps
 ##################################
 if [[ "$OSTYPE" == darwin* ]]; then
-  brewp homebrew/cask-fonts --tap  # for font-jetbrains-mono-nerd-font
+  brewp add homebrew/cask-fonts --tap  # for font-jetbrains-mono-nerd-font
   # brewp hashicorp/tap --tap  # for vault
-  brewp messense/macos-cross-toolchains --tap  # for x86_64-unknown-linux-musl
+  brewp add messense/macos-cross-toolchains --tap  # for x86_64-unknown-linux-musl
 fi
 
 ##################################
 # Normal packages
 ##################################
-# brewp asciinema
-# brewp awscli
-brewp bat
-brewp boost
-brewp clang-format
-brewp cmake
-brewp curl
-# brewp elixir
-# brewp elm
-# brewp erlang
-brewp ffmpeg  # for youtube-dl
-brewp gh
-brewp gibo  # fast access to .gitignore boilerplates
-brewp git-delta
-brewp git-interactive-rebase-tool
-brewp graphviz
-brewp gzip
-# brewp httrack
-# brewp hyperfine
-brewp jq
-brewp ripgrep
-# brewp kops
-# brewp kr
-# brewp kubectl
-brewp libarchive
-brewp libgit2
-brewp llvm  # clangd, clang-format, clang-tidy
-brewp lsd
-# brewp mysql  # for mysqlclient of Python
-brewp ninja
-brewp neovim
-brewp node
-# brewp peco
-brewp poetry
-brewp python
-brewp starship
-brewp subversion  # for font-source-code-pro-for-powerline
-# brewp terraform
-brewp topgrade
+# brewp add asciinema
+# brewp add awscli
+brewp add bat
+brewp add boost
+brewp add clang-format
+brewp add cmake
+brewp add curl
+# brewp add elixir
+# brewp add elm
+# brewp add erlang
+brewp add ffmpeg  # for youtube-dl
+brewp add gh
+brewp add gibo  # fast access to .gitignore boilerplates
+brewp add git-delta
+brewp add git-interactive-rebase-tool
+brewp add graphviz
+brewp add gzip
+# brewp add httrack
+# brewp add hyperfine
+brewp add jq
+brewp add ripgrep
+# brewp add kops
+# brewp add kr
+# brewp add kubectl
+brewp add libarchive
+brewp add libgit2
+brewp add llvm  # clangd, clang-format, clang-tidy
+brewp add lsd
+# brewp add mysql  # for mysqlclient of Python
+brewp add ninja
+brewp add neovim
+brewp add node
+# brewp add peco
+brewp add poetry
+brewp add python
+brewp add starship
+brewp add subversion  # for font-source-code-pro-for-powerline
+# brewp add terraform
+brewp add topgrade
 if [[ "$OSTYPE" == darwin* ]]; then
-  brewp trash
+  brewp add trash
 fi
-# brewp vault
-# brewp valgrind
-# brewp wapm
-# brewp wasmer
-brewp wget
-brewp wrk
+# brewp add vault
+# brewp add valgrind
+# brewp add wapm
+# brewp add wasmer
+brewp add wget
+brewp add wrk
 if [[ "$OSTYPE" == darwin* ]]; then
-  brewp x86_64-unknown-linux-musl  # This also works on m1 mac
+  brewp add x86_64-unknown-linux-musl  # This also works on m1 mac
 fi
-brewp youtube-dl
-brewp zellij
+brewp add youtube-dl
+brewp add zellij
 
 ##################################
 # Cask packages
 ##################################
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-# brewp 1password --cask
-brewp alacritty --cask
-# brewp balenaetcher --cask  # Flash OS images to SD cards & USB drives, safely and easily.
-brewp bartender --cask
-brewp brave-browser --cask
-brewp deepl --cask
-brewp discord --cask
-brewp docker --cask
-# brewp drawio --cask
-# brewp figma --cask
-brewp font-jetbrains-mono-nerd-font --cask  # for alacritty
-brewp font-source-code-pro-for-powerline --cask
-brewp google-chrome --cask
-brewp google-cloud-sdk --cask
-brewp grammarly-desktop --cask
-# brewp imobie-m1-app-checker --cask
-brewp jetbrains-toolbox --cask
-# brewp lens --cask
-brewp logseq --cask
-# brewp mendeley --cask
-# brewp mimestream --cask
-# brewp mysqlworkbench --cask
-brewp notion --cask
-# brewp parallels --cask
-# brewp postman --cask
-brewp protonvpn --cask
-brewp raycast --cask
-# brewp sf-symbols --cask
-brewp session --cask
-# brewp sketch --cask
-brewp standard-notes --cask
-brewp swish --cask
-brewp visual-studio-code --cask
-# brewp xcodes --cask
-brewp zoom --cask
-# brewp zulip --cask
+# brewp add 1password --cask
+brewp add alacritty --cask
+# brewp add balenaetcher --cask  # Flash OS images to SD cards & USB drives, safely and easily.
+brewp add bartender --cask
+brewp add brave-browser --cask
+brewp add deepl --cask
+brewp add discord --cask
+brewp add docker --cask
+# brewp add drawio --cask
+# brewp add figma --cask
+brewp add font-jetbrains-mono-nerd-font --cask  # for alacritty
+brewp add font-source-code-pro-for-powerline --cask
+brewp add google-chrome --cask
+brewp add google-cloud-sdk --cask
+brewp add grammarly-desktop --cask
+# brewp add imobie-m1-app-checker --cask
+brewp add jetbrains-toolbox --cask
+# brewp add lens --cask
+brewp add logseq --cask
+# brewp add mendeley --cask
+# brewp add mimestream --cask
+# brewp add mysqlworkbench --cask
+brewp add notion --cask
+# brewp add parallels --cask
+# brewp add postman --cask
+brewp add protonvpn --cask
+brewp add raycast --cask
+# brewp add sf-symbols --cask
+brewp add session --cask
+# brewp add sketch --cask
+brewp add standard-notes --cask
+brewp add swish --cask
+brewp add visual-studio-code --cask
+# brewp add xcodes --cask
+brewp add zoom --cask
+# brewp add zulip --cask

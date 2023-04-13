@@ -106,6 +106,10 @@ return {
       options = {
         theme = 'material',
       },
+      extensions = {
+        'nvim-tree',
+        'toggleterm',
+      },
     },
   },
 

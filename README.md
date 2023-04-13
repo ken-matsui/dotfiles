@@ -24,7 +24,7 @@
 
 ## Current Zsh load time
 
-```
+```console
 $ hyperfine 'zsh -i -c exit' --warmup 5
 Benchmark 1: zsh -i -c exit
   Time (mean ± σ):     715.4 ms ±  11.1 ms    [User: 343.7 ms, System: 303.8 ms]

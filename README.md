@@ -31,6 +31,11 @@ Benchmark 1: zsh -i -c exit
   Range (min … max):   704.3 ms … 741.1 ms    10 runs
 ```
 
+```console
+$ zmodload zsh/zprof
+$ zprof
+```
+
 ## Installation
 
 ```sh

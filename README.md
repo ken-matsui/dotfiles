@@ -22,7 +22,9 @@
 [Starship]: https://github.com/starship/starship
 [Neovim]: https://github.com/neovim/neovim
 
-## Current Zsh load time
+## Performance
+
+### Zsh load time
 
 ```console
 $ hyperfine 'zsh -i -c exit' --warmup 5
@@ -34,6 +36,26 @@ Benchmark 1: zsh -i -c exit
 ```console
 $ zmodload zsh/zprof
 $ zprof
+```
+
+### Neovim load time
+
+#### Include lazy loaded plugins
+
+```console
+$ hyperfine 'nvim --headless "+Lazy! sync" +qa' --warmup 5
+Benchmark 1: nvim --headless "+Lazy! sync" +qa
+  Time (mean ± σ):     762.3 ms ±  51.8 ms    [User: 563.0 ms, System: 559.6 ms]
+  Range (min … max):   672.5 ms … 838.5 ms    10 runs
+```
+
+#### Without lazy loaded plugins
+
+```console
+$ hyperfine 'nvim +qa' --warmup 5
+Benchmark 1: nvim +qa
+  Time (mean ± σ):      29.5 ms ±   0.9 ms    [User: 17.2 ms, System: 10.4 ms]
+  Range (min … max):    28.1 ms …  33.9 ms    92 runs
 ```
 
 ## Installation

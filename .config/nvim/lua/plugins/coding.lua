@@ -37,7 +37,11 @@ return {
     "lukas-reineke/indent-blankline.nvim",
     event = { "BufReadPost", "BufNewFile" },
     opts = {
-      filetype_exclude = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy" },
+      filetype_exclude = {
+        "help",
+        "nvim-tree",
+        "lazy",
+      },
       char = "",
       char_highlight_list = {
         "IndentBlanklineIndent1",

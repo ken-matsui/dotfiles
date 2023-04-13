@@ -29,12 +29,12 @@
 ```console
 $ hyperfine 'zsh -i -c exit' --warmup 5
 Benchmark 1: zsh -i -c exit
-  Time (mean ± σ):     715.4 ms ±  11.1 ms    [User: 343.7 ms, System: 303.8 ms]
-  Range (min … max):   704.3 ms … 741.1 ms    10 runs
+  Time (mean ± σ):     300.0 ms ±   1.1 ms    [User: 105.5 ms, System: 129.6 ms]
+  Range (min … max):   298.0 ms … 301.5 ms    10 runs
 ```
 
 ```console
-$ zmodload zsh/zprof
+$ # comment out `zmodload zsh/zprof` on .zshrc
 $ zprof
 ```
 
@@ -129,7 +129,7 @@ ln -s ~/dotfiles/.local/share/alacritty/config.yml ~/.local/share/alacritty/conf
   sudo snap install clion --classic
   sudo snap install webstorm --classic
   sudo snap install pycharm-professional --classic
-  
+
   sudo apt install gnome-tweaks
   sudo apt install gnome-shell-extensions
   sudo apt install gnome-shell-extension-manager

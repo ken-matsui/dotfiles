@@ -90,6 +90,8 @@ ln -s ~/dotfiles/.local/share/alacritty/config.yml ~/.local/share/alacritty/conf
 
 ### macOS
 
+`defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false`
+
 #### System Settings
 
 * System Settings -> trackpad -> Trackpad speed: Fast

@@ -70,7 +70,6 @@ return {
         "lua_ls",
         "marksman",
         "prosemd_lsp",
-        "remark_ls",
         "zk",
         "jedi_language_server",
         "pyre",

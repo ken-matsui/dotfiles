@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install Zsh & Neovim
-        run: apt-get install zsh neovim
+        run: sudo apt-get install zsh neovim
 
       - uses: blacha/hyperfine-action@v1
         with:

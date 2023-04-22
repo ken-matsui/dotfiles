@@ -22,3 +22,5 @@ jobs:
           brew install neovim
 
       - uses: blacha/hyperfine-action@v1
+        with:
+          master-branch: main

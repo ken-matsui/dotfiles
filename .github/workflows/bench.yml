@@ -16,10 +16,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install neovim
+      - name: Install Zsh & Neovim
         run: |
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-          brew install neovim
+          brew install zsh neovim
 
       - uses: blacha/hyperfine-action@v1
         with:

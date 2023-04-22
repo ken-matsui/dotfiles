@@ -1,0 +1,24 @@
+name: Benchmark
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  hyperfine:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install neovim
+        run: |
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          brew install neovim
+
+      - uses: blacha/hyperfine-action@v1

@@ -71,4 +71,9 @@ return {
     'cappyzawa/trim.nvim',
     event = "VeryLazy",
   },
+
+  {
+    'RRethy/vim-illuminate',
+    event = { "BufReadPost", "BufNewFile" },
+  },
 }

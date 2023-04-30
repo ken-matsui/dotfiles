@@ -4,7 +4,8 @@ return {
     'nvim-treesitter/nvim-treesitter',
     event = { "BufReadPost", "BufNewFile" },
     dependencies = {
-      'windwp/nvim-ts-autotag',
+      "windwp/nvim-ts-autotag",
+      "JoosepAlviste/nvim-ts-context-commentstring",
       {
         "HiPhish/nvim-ts-rainbow2",
         config = function()
@@ -30,12 +31,19 @@ return {
       autotag = {
         enable = true,
       },
+      context_commentstring = {
+        enable = true,
+        enable_autocmd = false,
+      },
       rainbow = {
         enable = true,
       },
     },
     config = function(_, opts)
       require('nvim-treesitter.configs').setup(opts)
+      require('Comment').setup {
+        pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+      }
     end,
   },
 

@@ -102,7 +102,6 @@ brewp add notion --cask
 brewp add protonvpn --cask
 brewp add raycast --cask
 # brewp add sf-symbols --cask
-brewp add session --cask
 # brewp add sketch --cask
 brewp add standard-notes --cask
 brewp add swish --cask

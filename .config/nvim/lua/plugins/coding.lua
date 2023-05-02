@@ -75,5 +75,17 @@ return {
   {
     'RRethy/vim-illuminate',
     event = { "BufReadPost", "BufNewFile" },
+    config = function ()
+      local highlight = '#354A51' -- material oceanic highlight
+      vim.api.nvim_set_hl(0, 'IlluminatedWordText', {
+        bg = highlight,
+      })
+      vim.api.nvim_set_hl(0, 'IlluminatedWordRead', {
+        bg = highlight,
+      })
+      vim.api.nvim_set_hl(0, 'IlluminatedWordWrite', {
+        bg = highlight,
+      })
+    end
   },
 }

@@ -114,6 +114,16 @@ return {
   },
 
   {
+    "petertriho/nvim-scrollbar",
+    event = "BufReadPost",
+    opts = {
+      handlers = {
+        gitsigns = true,
+      },
+    },
+  },
+
+  {
     'akinsho/toggleterm.nvim', version = '*',
     lazy = true,
     keys = {

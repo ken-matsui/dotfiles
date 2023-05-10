@@ -131,6 +131,7 @@ ln -s ~/dotfiles/.local/share/alacritty/config.yml ~/.local/share/alacritty/conf
   sudo snap install clion --classic
   sudo snap install webstorm --classic
   sudo snap install pycharm-professional --classic
+  sudo snap install slack
 
   sudo apt install gnome-tweaks
   sudo apt install gnome-shell-extensions

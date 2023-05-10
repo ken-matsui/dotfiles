@@ -24,3 +24,4 @@ objdir
 # Misc
 #
 tmp
+*.patch

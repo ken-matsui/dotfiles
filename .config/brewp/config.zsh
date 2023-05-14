@@ -15,6 +15,7 @@ fi
 ##################################
 # Normal packages
 ##################################
+brewp add atuin
 # brewp add asciinema
 # brewp add awscli
 brewp add bat
@@ -47,7 +48,6 @@ brewp add lsd
 brewp add ninja
 brewp add neovim
 brewp add node
-# brewp add peco
 brewp add poetry
 brewp add python
 brewp add starship

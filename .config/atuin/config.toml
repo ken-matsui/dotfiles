@@ -32,12 +32,12 @@
 
 ## which filter mode to use
 ## possible values: global, host, session, directory
-# filter_mode = "global"
+filter_mode = "global"
 
 ## which filter mode to use when atuin is invoked from a shell up-key binding
 ## the accepted values are identical to those of "filter_mode"
 ## leave unspecified to use same mode set in "filter_mode"
-# filter_mode_shell_up_keybinding = "global"
+filter_mode_shell_up_keybinding = "session"
 
 ## which style to use
 ## possible values: auto, full, compact

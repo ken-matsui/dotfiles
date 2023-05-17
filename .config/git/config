@@ -42,7 +42,7 @@
 [fetch]
   prune = true
 [pull]
-  rebase = true
+  rebase = false
 [push]
   default = current
 

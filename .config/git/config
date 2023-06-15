@@ -2,9 +2,9 @@
 # OS depending config
 #
 [includeIf "gitdir:/Users"]
-  path = ~/.config/git/config-macos
+  path = ~/.config/git/configs/macos
 [includeIf "gitdir:/home"]
-  path = ~/.config/git/config-linux
+  path = ~/.config/git/configs/linux
 
 #
 # User
@@ -13,6 +13,9 @@
   name = Ken Matsui
   email = 26405363+ken-matsui@users.noreply.github.com
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJLtNOwH8UCkUcpMNG4aSMNtzUtYaYzdc3awbXbzvAwY
+
+[includeIf "hasconfig:remote.*.url:git@gitlab.cs.washington.edu:*/**"]
+  path = ~/.config/git/configs/uw
 
 #
 # GPG

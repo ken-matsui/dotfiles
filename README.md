@@ -92,6 +92,12 @@ ln -s ~/dotfiles/.local/share/alacritty/config.yml ~/.local/share/alacritty/conf
 
 `defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false`
 
+#### 1Password
+
+```
+mkdir -p ~/.1password && ln -s ~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock ~/.1password/agent.sock
+```
+
 #### System Settings
 
 * System Settings -> trackpad -> Trackpad speed: Fast

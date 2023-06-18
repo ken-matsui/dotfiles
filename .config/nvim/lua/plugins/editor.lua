@@ -63,40 +63,36 @@ return {
     },
     opts = {
       ensure_installed = {
-        "asm_lsp",
-        "bashls",
-        "clangd",
-        "cmake",
-        "neocmake",
-        "cssls",
-        "cssmodules_ls",
-        "unocss",
-        "denols",
-        "diagnosticls",
-        "dockerls",
-        "docker_compose_language_service",
-        "dotls",
-        "efm",
-        "grammarly",
-        "html",
-        "jsonls",
-        "jdtls",
-        "quick_lint_js",
-        "tsserver",
-        "vtsls",
-        "ltex",
-        "texlab",
-        "lua_ls",
-        "marksman",
-        "prosemd_lsp",
-        "zk",
-        "pyright",
-        "rome",
-        "sqlls",
-        "taplo",
-        "tsserver",
-        "vtsls",
-        "yamlls",
+        "asm_lsp", -- Assembly (GAS/NASM, GO)
+        "bashls", -- Bash
+        "clangd", -- C, C++
+        "cmake", -- CMake
+        "cssls", -- CSS
+        "cssmodules_ls", -- CSS Modules
+        "denols", -- Deno
+        "diagnosticls", -- Diagnostic (general purpose server)
+        "dockerls", -- Dockerfile
+        "docker_compose_language_service", -- Docker Compose
+        "dotls", -- Graphviz
+        "efm", -- EFM (general purpose server)
+        "gopls", -- Go
+        "grammarly", -- Grammarly
+        "graphql", -- GraphQL
+        "html", -- HTML
+        "jsonls", -- JSON
+        "jdtls", -- Java
+        "texlab", -- LaTeX
+        "lua_ls", -- Lua
+        "marksman", -- Markdown
+        -- "nil_ls", -- Nix
+        "pyright", -- Python
+        "rome", -- Rome
+        "rust_analyzer", -- Rust
+        "sqlls", -- SQL
+        "taplo", -- TOML
+        "tsserver", -- JavaScript, TypeScript
+        "typst_lsp", -- Typst
+        "yamlls", -- YAML
       },
     },
     config = function(_, opts)

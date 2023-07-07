@@ -24,9 +24,11 @@ export VISUAL=$EDITOR
 export PAGER='less'
 
 #
-# Language
+# Locale
 #
 export LANG="${LANG:-en_US.UTF-8}"
+export LANGUAGE="${LANGUAGE:-en_US}"
+export LC_ALL="${LC_ALL:-$LANG}"
 
 #
 # Paths

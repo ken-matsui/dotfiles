@@ -47,78 +47,11 @@ return {
     end,
   },
 
-  -- LSP
-  {
-    "neovim/nvim-lspconfig",
-    event = { "BufReadPre", "BufNewFile" },
-    dependencies = {
-      {
-        "williamboman/mason.nvim",
-        build = ":MasonUpdate", -- :MasonUpdate updates registry contents
-        config = true,
-      },
-      "williamboman/mason-lspconfig.nvim",
-      "folke/neodev.nvim",
-      "hrsh7th/cmp-nvim-lsp",
-    },
-    opts = {
-      ensure_installed = {
-        "asm_lsp", -- Assembly (GAS/NASM, GO)
-        "bashls", -- Bash
-        "clangd", -- C, C++
-        "cmake", -- CMake
-        "cssls", -- CSS
-        "cssmodules_ls", -- CSS Modules
-        "denols", -- Deno
-        "diagnosticls", -- Diagnostic (general purpose server)
-        "dockerls", -- Dockerfile
-        "docker_compose_language_service", -- Docker Compose
-        "dotls", -- Graphviz
-        "efm", -- EFM (general purpose server)
-        "gopls", -- Go
-        "grammarly", -- Grammarly
-        "graphql", -- GraphQL
-        "html", -- HTML
-        "jsonls", -- JSON
-        "jdtls", -- Java
-        "texlab", -- LaTeX
-        "lua_ls", -- Lua
-        "marksman", -- Markdown
-        -- "nil_ls", -- Nix
-        "pyright", -- Python
-        "rome", -- Rome
-        "rust_analyzer", -- Rust
-        "sqlls", -- SQL
-        "taplo", -- TOML
-        "tsserver", -- JavaScript, TypeScript
-        "typst_lsp", -- Typst
-        "yamlls", -- YAML
-      },
-    },
-    config = function(_, opts)
-      -- Automatically install servers listed in opts.ensure_installed
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-      require("mason").setup()
-      require("mason-lspconfig").setup({
-        ensure_installed = opts.ensure_installed,
-      })
-      require("mason-lspconfig").setup_handlers({
-        function(server_name)
-          require("lspconfig")[server_name].setup({
-            capabilities = capabilities,
-          })
-        end,
-      })
-    end,
-  },
-
   -- Completion
   {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "saadparwaiz1/cmp_luasnip",
@@ -147,7 +80,6 @@ return {
           }),
         }),
         sources = cmp.config.sources({
-          { name = "nvim_lsp" },
           { name = "luasnip" },
           { name = "buffer" },
           { name = "path" },

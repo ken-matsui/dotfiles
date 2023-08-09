@@ -93,6 +93,7 @@ brewp add grammarly-desktop --cask
 brewp add jetbrains-toolbox --cask
 # brewp add lens --cask
 brewp add logseq --cask
+brewp add mactex-no-gui --cask
 # brewp add mendeley --cask
 # brewp add mimestream --cask
 # brewp add mysqlworkbench --cask

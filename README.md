@@ -92,6 +92,18 @@ ln -s ~/dotfiles/.local/share/alacritty/config.yml ~/.local/share/alacritty/conf
 
 `defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false`
 
+#### LaTeX
+
+https://github.com/James-Yu/LaTeX-Workshop/issues/376#issuecomment-398591211
+
+```
+sudo cpan Log::Log4perl
+sudo cpan Log::Dispatch
+sudo cpan YAML::Tiny
+sudo cpan File::HomeDir
+sudo cpan Unicode::GCString
+```
+
 #### 1Password
 
 ```

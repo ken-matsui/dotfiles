@@ -70,7 +70,7 @@ brewp add youtube-dl
 brewp add zellij
 
 ##################################
-# Cask packages
+# Cask packages (only for macOS)
 ##################################
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 

@@ -33,10 +33,12 @@ vim.opt.listchars = {
   precedes = '<',
 }
 
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
--- Exchange tab to spaces.
-vim.opt.expandtab = true
+-- Keep tabs.
+vim.opt.expandtab = false
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.smarttab = true
+vim.opt.autoindent = true
 vim.opt.softtabstop = 0
 
 -- Always display statusline.

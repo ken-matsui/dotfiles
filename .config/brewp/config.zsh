@@ -73,7 +73,7 @@ brewp add zellij
 ##################################
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-# brewp add 1password --cask
+brewp add 1password --cask
 brewp add alacritty --cask
 # brewp add balenaetcher --cask  # Flash OS images to SD cards & USB drives, safely and easily.
 brewp add bartender --cask

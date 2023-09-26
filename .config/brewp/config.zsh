@@ -88,7 +88,6 @@ brewp add font-source-code-pro-for-powerline --cask
 brewp add google-chrome --cask
 brewp add google-cloud-sdk --cask
 brewp add grammarly-desktop --cask
-# brewp add imobie-m1-app-checker --cask
 brewp add jetbrains-toolbox --cask
 # brewp add lens --cask
 brewp add logseq --cask

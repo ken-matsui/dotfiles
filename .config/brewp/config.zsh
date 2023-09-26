@@ -28,7 +28,6 @@ brewp add curl
 # brewp add erlang
 brewp add ffmpeg  # for youtube-dl
 brewp add gh
-brewp add gibo  # fast access to .gitignore boilerplates
 brewp add git-delta
 brewp add git-interactive-rebase-tool
 brewp add graphviz

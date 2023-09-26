@@ -1,20 +1,18 @@
 ---
 mas:
 #   - name: Affinity Designer
-  - name: Goodnotes 5
+  - name: Goodnotes 6
   - name: Kindle
   - name: Line Corporation
-#   - name: Messenger
 #   - name: Microsoft Powerpoint
 #   - name: Microsoft Remote Desktop
   - name: Microsoft Word
 #   - name: Noir
-#   - name: Paste
   - name: RunCat
 #   - name: Slack
   - name: Things 3
 #   - name: Pages
 #   - name: Numbers
 #   - name: Keynote
-  - name: iMovie
+#  - name: iMovie
 #  - name: Xcode

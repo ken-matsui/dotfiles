@@ -96,7 +96,6 @@ brewp add mactex-no-gui --cask
 # brewp add mimestream --cask
 # brewp add mysqlworkbench --cask
 # brewp add notion --cask
-# brewp add parallels --cask
 # brewp add postman --cask
 brewp add protonvpn --cask
 brewp add raycast --cask

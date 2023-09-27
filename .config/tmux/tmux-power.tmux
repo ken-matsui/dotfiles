@@ -72,7 +72,7 @@ G11=#6c6c6c #242
 G12=#767676 #243
 
 FG="$G10"
-BG="$G04"
+BG="#0F111A"  # $G04
 
 # Status options
 tmux_set status-interval 1
@@ -90,7 +90,7 @@ tmux_set @prefix_highlight_bg "$FG"
 # tmux_set @prefix_highlight_copy_mode_attr "fg=$TC,bg=$BG,bold"
 prefix_key='^B'
 prefix_highlight_color="#{?client_prefix,#[fg=$G05]#[bg=$TC],#[fg=$TC]#[bg=$G05]}"
-prefix_highlight_prefix_color="#[bg=$BG]#{?client_prefix,#[fg=$TC],#[fg=$G05]}" # #[fg=$G05,bg=$BG]
+prefix_highlight_prefix_color="#[bg=$BG]#{?client_prefix,#[fg=$TC],#[fg=$G05]}"
 prefix_highlight_prefix="$prefix_highlight_prefix_color$left_arrow_icon"
 prefix_highlight="$prefix_highlight_prefix$prefix_highlight_color $prefix_key"
 

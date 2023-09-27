@@ -24,7 +24,6 @@ left_arrow_icon=$(tmux_get '@tmux_power_left_arrow_icon' '')
 session_icon="$(tmux_get '@tmux_power_session_icon' '')"
 time_icon="$(tmux_get '@tmux_power_time_icon' '')"
 date_icon="$(tmux_get '@tmux_power_date_icon' '')"
-show_web_reachable="$(tmux_get @tmux_power_show_web_reachable false)"
 prefix_highlight_pos=$(tmux_get @tmux_power_prefix_highlight_pos)
 time_format=$(tmux_get @tmux_power_time_format '%T')
 date_format=$(tmux_get @tmux_power_date_format '%F')
@@ -97,7 +96,7 @@ tmux_set @prefix_highlight_output_suffix "#[fg=$TC]#[bg=$BG]$right_arrow_icon"
 # Left side of status bar
 tmux_set status-left-bg "$G04"
 tmux_set status-left-fg "G12"
-tmux_set status-left-length 150
+tmux_set status-left-length 20
 LS="#[fg=$G04,bg=$TC,bold] $session_icon #S #[fg=$TC,bg=$BG,nobold]$right_arrow_icon"
 if [[ $prefix_highlight_pos == 'L' || $prefix_highlight_pos == 'LR' ]]; then
     LS="$LS#{prefix_highlight}"
@@ -109,6 +108,9 @@ tmux_set status-right-bg "$BG"
 tmux_set status-right-fg "G12"
 tmux_set status-right-length 150
 RS="#[fg=$G06]$left_arrow_icon#[fg=$TC,bg=$G06] $time_icon $time_format #[fg=$TC,bg=$G06]$left_arrow_icon#[fg=$G04,bg=$TC] $date_icon $date_format "
+if [[ $prefix_highlight_pos == 'R' || $prefix_highlight_pos == 'LR' ]]; then
+    RS="#{prefix_highlight}$RS"
+fi
 tmux_set status-right "$RS"
 
 # Window status
@@ -119,7 +121,7 @@ tmux_set window-status-current-format "#[fg=$BG,bg=$G06]$right_arrow_icon#[fg=$T
 tmux_set window-status-separator ""
 
 # Window status alignment
-tmux_set status-justify centre
+tmux_set status-justify left
 
 # Current window status
 tmux_set window-status-current-statys "fg=$TC,bg=$BG"

@@ -24,7 +24,6 @@ left_arrow_icon=$(tmux_get '@tmux_power_left_arrow_icon' '')
 session_icon="$(tmux_get '@tmux_power_session_icon' '')"
 time_icon="$(tmux_get '@tmux_power_time_icon' '')"
 date_icon="$(tmux_get '@tmux_power_date_icon' '')"
-prefix_highlight_pos=$(tmux_get @tmux_power_prefix_highlight_pos)
 time_format=$(tmux_get @tmux_power_time_format '%T')
 date_format=$(tmux_get @tmux_power_date_format '%F')
 # short for Theme-Colour
@@ -84,13 +83,16 @@ tmux_set status-fg "$FG"
 tmux_set status-bg "$BG"
 tmux_set status-attr none
 
-# tmux-prefix-highlight
+# Tmux Prefix Highlight
 tmux_set @prefix_highlight_fg "$BG"
 tmux_set @prefix_highlight_bg "$FG"
-tmux_set @prefix_highlight_show_copy_mode 'on'
-tmux_set @prefix_highlight_copy_mode_attr "fg=$TC,bg=$BG,bold"
-tmux_set @prefix_highlight_output_prefix "#[fg=$TC]#[bg=$BG]$left_arrow_icon#[bg=$TC]#[fg=$BG]"
-tmux_set @prefix_highlight_output_suffix "#[fg=$TC]#[bg=$BG]$right_arrow_icon"
+# tmux_set @prefix_highlight_show_copy_mode 'on'
+# tmux_set @prefix_highlight_copy_mode_attr "fg=$TC,bg=$BG,bold"
+prefix_key='^B'
+prefix_highlight_color="#{?client_prefix,#[fg=$G05]#[bg=$TC],#[fg=$TC]#[bg=$G05]}"
+prefix_highlight_prefix_color="#[bg=$BG]#{?client_prefix,#[fg=$TC],#[fg=$G05]}" # #[fg=$G05,bg=$BG]
+prefix_highlight_prefix="$prefix_highlight_prefix_color$left_arrow_icon"
+prefix_highlight="$prefix_highlight_prefix$prefix_highlight_color $prefix_key"
 
 #     
 # Left side of status bar
@@ -98,19 +100,13 @@ tmux_set status-left-bg "$G04"
 tmux_set status-left-fg "G12"
 tmux_set status-left-length 20
 LS="#[fg=$G04,bg=$TC,bold] $session_icon #S #[fg=$TC,bg=$BG,nobold]$right_arrow_icon"
-if [[ $prefix_highlight_pos == 'L' || $prefix_highlight_pos == 'LR' ]]; then
-    LS="$LS#{prefix_highlight}"
-fi
 tmux_set status-left "$LS"
 
 # Right side of status bar
 tmux_set status-right-bg "$BG"
 tmux_set status-right-fg "G12"
 tmux_set status-right-length 150
-RS="#[fg=$G06]$left_arrow_icon#[fg=$TC,bg=$G06] $time_icon $time_format #[fg=$TC,bg=$G06]$left_arrow_icon#[fg=$G04,bg=$TC] $date_icon $date_format "
-if [[ $prefix_highlight_pos == 'R' || $prefix_highlight_pos == 'LR' ]]; then
-    RS="#{prefix_highlight}$RS"
-fi
+RS="$prefix_highlight #[fg=$G06]$left_arrow_icon#[fg=$TC,bg=$G06] $time_icon $time_format #[fg=$TC,bg=$G06]$left_arrow_icon#[fg=$G04,bg=$TC] $date_icon $date_format "
 tmux_set status-right "$RS"
 
 # Window status

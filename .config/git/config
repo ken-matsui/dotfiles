@@ -97,12 +97,8 @@
   ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi"
   # Show current commit hash
   now = show --oneline -s
-  # Unstage files
-  unstage = restore --staged
   # Stash with untracked files (-m 'name')
   save = stash push --include-untracked
-  # Uncommit the most recent commit
-  uncommit = reset --soft HEAD~1
   # Get all user.* config
   me = config --get-regexp user
   # Get my commits
@@ -119,10 +115,6 @@
   update = "!$(git fn)/update"
   # Get a parent commit from the argument
   parent = log --pretty=%P -n 1
-  # Create only one commit from the history
-  create-one = !git reset $(git merge-base main $(git branch --show-current)) && git add -A && git commit
-  # Squash all commits into one
-  squash-all = "!f(){ git reset $(git commit-tree HEAD^{tree} -m \"${1:-A new start}\"); };f"
   # Remove gitignored files
   rm-ignored = rm -r --cached .
 

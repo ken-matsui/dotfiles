@@ -83,14 +83,20 @@ tmux_set status-fg "$FG"
 tmux_set status-bg "$BG"
 tmux_set status-attr none
 
-# Tmux Prefix Highlight
-# tmux_set @prefix_highlight_show_copy_mode 'on'
-# tmux_set @prefix_highlight_copy_mode_attr "fg=$TC,bg=$BG,bold"
-prefix_key='^B'
-prefix_highlight_color="#{?client_prefix,#[fg=$G05]#[bg=$TC],#[fg=$TC]#[bg=$G05]}"
-prefix_highlight_prefix_color="#[bg=$BG]#{?client_prefix,#[fg=$TC],#[fg=$G05]}"
-prefix_highlight_prefix="$prefix_highlight_prefix_color$left_arrow_icon"
-prefix_highlight="$prefix_highlight_prefix$prefix_highlight_color $prefix_key"
+# Show prefix status
+prefix_prefix_color="#{?client_prefix,#[fg=$TC],#[fg=$G04]}#[bg=$BG]"
+prefix_prefix="$prefix_prefix_color$left_arrow_icon"
+prefix_text_bg="#{?client_prefix,#[bg=$TC],#[bg=$G04]}"
+prefix_text_color="#{?client_prefix,#[fg=$G04],#[fg=$TC]}$prefix_text_bg"
+prefix_text="$prefix_text_color ^B"
+prefix_status="$prefix_prefix$prefix_text"
+
+# Show mode status
+mode_prefix_color="#[fg=$G05]$prefix_text_bg"
+mode_prefix="$mode_prefix_color$left_arrow_icon"
+mode_text_color="#[fg=$TC,bg=$G05]"
+mode_text="$mode_text_color #{?pane_in_mode,COPY,NORMAL}"
+mode_status="$mode_prefix$mode_text"
 
 #     
 # Left side of status bar
@@ -104,7 +110,7 @@ tmux_set status-left "$LS"
 tmux_set status-right-bg "$BG"
 tmux_set status-right-fg "G12"
 tmux_set status-right-length 150
-RS="$prefix_highlight #[fg=$G06]$left_arrow_icon#[fg=$TC,bg=$G06] $time_icon $time_format #[fg=$TC,bg=$G06]$left_arrow_icon#[fg=$G04,bg=$TC] $date_icon $date_format "
+RS="$prefix_status $mode_status #[fg=$G06]$left_arrow_icon#[fg=$TC,bg=$G06] $time_icon $time_format #[fg=$TC,bg=$G06]$left_arrow_icon#[fg=$G04,bg=$TC] $date_icon $date_format "
 tmux_set status-right "$RS"
 
 # Window status

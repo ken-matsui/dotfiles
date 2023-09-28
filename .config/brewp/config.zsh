@@ -52,6 +52,7 @@ brewp add python
 brewp add starship
 brewp add subversion  # for font-source-code-pro-for-powerline
 # brewp add terraform
+brewp add tmux
 brewp add topgrade
 if [[ "$OSTYPE" == darwin* ]]; then
   brewp add trash

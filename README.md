@@ -69,9 +69,9 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main
 ```sh
 cd ~
 git clone https://github.com/ken-matsui/dotfiles.git
-ln -s ~/dotfiles/.config/nvim ~/.config/nvim # directory
-ln -s ~/dotfiles/.config/starship.toml ~/.config/starship.toml # file
-ln -s ~/dotfiles/.ssh/config ~/.ssh/config # ssh
+ln -s ~/dotfiles/.config/nvim ~/.config/nvim  # directory
+ln -s ~/dotfiles/.config/starship.toml ~/.config/starship.toml  # file
+ln -s ~/dotfiles/.ssh/config ~/.ssh/config  # ssh
 ```
 
 #### On Ubuntu

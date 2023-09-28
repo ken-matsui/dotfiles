@@ -70,19 +70,6 @@
 # Aliases
 #
 [alias]
-  #
-  # Helper aliases
-  #
-  # Show all git aliases
-  alias = !git config --get-regexp ^alias | sed -e 's/^alias.//g' -e 's/ / = /1'
-  # Print git config path
-  path = "!echo ${XDG_CONFIG_HOME:-~/.config}/git"
-  # Print a path to functions
-  fn = "!echo $(git path)/fn"
-
-  #
-  # Git aliases
-  #
   # Shorthand for status
   st = status
   # Shorthand for switch
@@ -97,22 +84,19 @@
   me = config --get-regexp user
   # Get my commits
   mine = !git shortlog -sne --author=\"$(git config user.name)\"
-  # Get current branch name
-  curbr = rev-parse --abbrev-ref HEAD
-  # Check if the origin URL is on GitHub
-  on-gh = "!$(git fn)/on_gh"
-  # Update the default branch and remove merged branches
+  # Update the current branch
   update = "!f() { \
     git fetch origin; \
-    if [ $(git merge-base HEAD origin/$(git branch --show-current)) = $(git rev-parse HEAD) ]; then \
-      git pull origin; \
+    BRANCH=$(git branch --show-current); \
+    if [ $(git merge-base HEAD origin/$BRANCH) = $(git rev-parse HEAD) ]; then \
+      git merge origin/$branch; \
     else \
       warn 'Fast-forward is NOT possible.'; \
       read -p 'Do you want to (m)erge, (r)ebase, or (a)bort? ' choice; \
       case \"$choice\" in \
-        m|M ) git merge origin/$(git branch --show-current);; \
-        r|R ) git rebase origin/$(git branch --show-current);; \
-        * ) echo 'Abort.';; \
+        m|M ) git merge origin/$BRANCH;; \
+        r|R ) git rebase origin/$BRANCH;; \
+        * ) info 'Abort.';; \
       esac; \
     fi; \
   }; f"

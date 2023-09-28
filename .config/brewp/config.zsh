@@ -67,7 +67,6 @@ if [[ "$OSTYPE" == darwin* ]]; then
   brewp add x86_64-unknown-linux-musl  # This also works on m1 mac
 fi
 brewp add youtube-dl
-brewp add zellij
 
 ##################################
 # Cask packages (only for macOS)

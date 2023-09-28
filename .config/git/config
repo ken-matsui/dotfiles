@@ -89,7 +89,7 @@
     git fetch origin; \
     BRANCH=$(git branch --show-current); \
     if [ $(git merge-base HEAD origin/$BRANCH) = $(git rev-parse HEAD) ]; then \
-      git merge origin/$branch; \
+      git merge origin/$BRANCH; \
     else \
       warn 'Fast-forward is NOT possible.'; \
       read -p 'Do you want to (m)erge, (r)ebase, or (a)bort? ' choice; \

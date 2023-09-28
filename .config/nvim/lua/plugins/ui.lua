@@ -129,7 +129,7 @@ return {
     keys = {
       { '<C-t>', '<Cmd>ToggleTerm<Cr>', 'n' },
     },
-    opts = true,
+    config = true,
   },
 
   {

@@ -8,7 +8,7 @@
 | ----------- | :-----------------: |
 | OS          | macOS & Ubuntu      |
 | Terminal    | [Alacritty]         |
-| Multiplexer | [Zellij]            |
+| Multiplexer | [Tmux]              |
 | Shell       | Zsh                 |
 | Prompt      | [Starship]          |
 | Editor      | [Neovim]            |
@@ -18,7 +18,7 @@
 </div>
 
 [Alacritty]: https://github.com/alacritty/alacritty
-[Zellij]: https://github.com/zellij-org/zellij
+[Tmux]: https://github.com/tmux/tmux
 [Starship]: https://github.com/starship/starship
 [Neovim]: https://github.com/neovim/neovim
 

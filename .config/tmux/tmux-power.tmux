@@ -84,8 +84,6 @@ tmux_set status-bg "$BG"
 tmux_set status-attr none
 
 # Tmux Prefix Highlight
-tmux_set @prefix_highlight_fg "$BG"
-tmux_set @prefix_highlight_bg "$FG"
 # tmux_set @prefix_highlight_show_copy_mode 'on'
 # tmux_set @prefix_highlight_copy_mode_attr "fg=$TC,bg=$BG,bold"
 prefix_key='^B'

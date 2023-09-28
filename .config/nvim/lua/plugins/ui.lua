@@ -129,10 +129,7 @@ return {
     keys = {
       { '<C-t>', '<Cmd>ToggleTerm<Cr>', 'n' },
     },
-    opts = {
-      direction = 'vertical',
-      size = 45,
-    },
+    opts = true,
   },
 
   {

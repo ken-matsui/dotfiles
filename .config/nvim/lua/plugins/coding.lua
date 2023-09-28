@@ -73,6 +73,9 @@ return {
     event = "VeryLazy",
   },
 
+  -- Detect tabstop and shiftwidth automatically
+  'tpope/vim-sleuth',
+
   {
     'RRethy/vim-illuminate',
     event = { "BufReadPost", "BufNewFile" },

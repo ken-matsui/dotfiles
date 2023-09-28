@@ -24,7 +24,6 @@ vim.opt.cursorline = true
 
 -- Visualize invisible string
 vim.opt.list = true
--- vim.opt.listchars:append 'space:⋅'
 vim.opt.listchars = {
   eol = '$',
   tab = '>-',
@@ -33,10 +32,7 @@ vim.opt.listchars = {
   precedes = '<',
 }
 
--- Keep tabs.
-vim.opt.expandtab = false
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
+-- Indentation
 vim.opt.smarttab = true
 vim.opt.autoindent = true
 vim.opt.softtabstop = 0
@@ -45,9 +41,7 @@ vim.opt.softtabstop = 0
 vim.opt.laststatus = 2
 
 -- Enable true color
-if vim.fn.exists('+termguicolors') == 1 then
-  vim.opt.termguicolors = true
-end
+vim.opt.termguicolors = true
 
 -- Yank texts to system clipboard
 if vim.fn.has('unnamedplus') == 1 then

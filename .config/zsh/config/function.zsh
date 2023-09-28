@@ -2,11 +2,16 @@
 # Functions
 ##################################
 
-# Replace strings recursively (example: $ replace ./ hey hello)
-function replace() {
-  find $1 -type f -print0 | xargs -0 sed -i '' -e "s/$2/$3/g"
-}
-
 function sizeof() {
   du -sh "$@"
+}
+
+function info() {
+  printf '\033[0;34m[INFO]: %s\033[0m\n' "$*"
+}
+function warn() {
+  printf '\033[0;33m[WARNING]: %s\033[0m\n' "$*"
+}
+function err() {
+  printf '\033[0;31m[ERROR]: %s\033[0m\n' "$*"
 }

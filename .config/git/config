@@ -77,14 +77,8 @@
   alias = !git config --get-regexp ^alias | sed -e 's/^alias.//g' -e 's/ / = /1'
   # Print git config path
   path = "!echo ${XDG_CONFIG_HOME:-~/.config}/git"
-  # Print functions path
+  # Print a path to functions
   fn = "!echo $(git path)/fn"
-  # Print info
-  info = "!$(git fn)/info"
-  # Print warning
-  warn = "!$(git fn)/warn"
-  # Print error
-  err = "!$(git fn)/err"
 
   #
   # Git aliases
@@ -103,16 +97,25 @@
   me = config --get-regexp user
   # Get my commits
   mine = !git shortlog -sne --author=\"$(git config user.name)\"
-  # Get default branch name
-  defbr = !git remote show origin | sed -n '/HEAD branch/s/.*: //p'
   # Get current branch name
   curbr = rev-parse --abbrev-ref HEAD
-  # Check if current branch is the default branch
-  on-defbr = "!$(git fn)/on_defbr"
   # Check if the origin URL is on GitHub
   on-gh = "!$(git fn)/on_gh"
   # Update the default branch and remove merged branches
-  update = "!$(git fn)/update"
+  update = "!f() { \
+    git fetch origin; \
+    if [ $(git merge-base HEAD origin/$(git branch --show-current)) = $(git rev-parse HEAD) ]; then \
+      git pull origin; \
+    else \
+      warn 'Fast-forward is NOT possible.'; \
+      read -p 'Do you want to (m)erge, (r)ebase, or (a)bort? ' choice; \
+      case \"$choice\" in \
+        m|M ) git merge origin/$(git branch --show-current);; \
+        r|R ) git rebase origin/$(git branch --show-current);; \
+        * ) echo 'Abort.';; \
+      esac; \
+    fi; \
+  }; f"
   # Get a parent commit from the argument
   parent = log --pretty=%P -n 1
   # Remove gitignored files

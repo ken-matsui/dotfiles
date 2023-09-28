@@ -1,4 +1,4 @@
 # Update the default branch and remove merged branches
 git on-defbr &&
 git pull origin "$(git defbr)" &&
-{ git on-gh && gh poi || git info 'gh poi was skipped'; }
+{ git on-gh && gh poi || info 'gh poi was skipped'; }

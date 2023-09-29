@@ -11,7 +11,7 @@ bindkey '^M' accept-line # for enter key
 bindkey '^I' expand-or-complete # for tab key
 bindkey '^U' kill-whole-line
 # Restore some key binds with other keys
-bindkey "^K" clear-screen # default is ^L
+bindkey "^O" clear-screen # default is ^L
 # Enable bash like key binds
 bindkey '^R' history-incremental-search-backward
 bindkey '^A' beginning-of-line

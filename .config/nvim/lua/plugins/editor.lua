@@ -79,6 +79,7 @@ return {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
+      "ray-x/cmp-treesitter",
       "saadparwaiz1/cmp_luasnip",
       {
         "L3MON4D3/LuaSnip", version = "1.*",
@@ -132,7 +133,7 @@ return {
           { name = "luasnip" },
           { name = "buffer" },
           { name = "path" },
-          { name = "cmdline" },
+          { name = "treesitter" },
         }),
         formatting = {
           format = require('lspkind').cmp_format({}),

@@ -105,7 +105,7 @@ return {
   },
 
   {
-    'nvim-telescope/telescope.nvim', version = '0.1.1',
+    'nvim-telescope/telescope.nvim', version = '0.1.3',
     lazy = true,
     dependencies = {
       'nvim-lua/plenary.nvim',

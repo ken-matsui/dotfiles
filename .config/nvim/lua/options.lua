@@ -63,6 +63,15 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end
 })
 
+-- Return to last edit position when opening files
+vim.cmd([[
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+]])
+
+-- Workaround for NvimTree with auto-session
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'NvimTree' },
   callback = function(args)

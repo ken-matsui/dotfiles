@@ -109,6 +109,19 @@ return {
         log_level = "error",
         auto_session_suppress_dirs = {"~/", "~/Downloads", "/"},
       }
+
+      -- Workaround for NvimTree with auto-session
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = { 'NvimTree' },
+        callback = function(args)
+          vim.api.nvim_create_autocmd('VimLeavePre', {
+            callback = function()
+              vim.api.nvim_buf_delete(args.buf, { force = true })
+              return true
+            end
+          })
+        end,
+      })
     end
   },
 
@@ -117,6 +130,21 @@ return {
     config = function ()
       vim.g.gutentags_cache_dir = vim.fn.stdpath("data") .. '/ctags'
     end
+  },
+
+  {
+    'mrjones2014/legendary.nvim',
+    version = 'v2.1.0',
+    -- since legendary.nvim handles all your keymaps/commands,
+    -- its recommended to load legendary.nvim before other plugins
+    priority = 10000,
+    lazy = false,
+    dependencies = { 'kkharji/sqlite.lua' }
+  },
+
+  {
+    'stevearc/dressing.nvim',
+    opts = {},
   },
 
   {

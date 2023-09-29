@@ -70,16 +70,3 @@ vim.cmd([[
     \   exe "normal! g`\"" |
     \ endif
 ]])
-
--- Workaround for NvimTree with auto-session
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'NvimTree' },
-  callback = function(args)
-    vim.api.nvim_create_autocmd('VimLeavePre', {
-      callback = function()
-        vim.api.nvim_buf_delete(args.buf, { force = true })
-        return true
-      end
-    })
-  end,
-})

@@ -10,7 +10,6 @@ return {
     keys = {
       { '<leader>c', 'gcc', 'n', remap = true },
       -- Ctrl + / => comment
-      { '<C-_>', 'gcc', 'n', remap = true },
       { '<C-/>', 'gcc', 'v', remap = true },
     },
     config = true,

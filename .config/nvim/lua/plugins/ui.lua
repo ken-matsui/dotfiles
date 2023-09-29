@@ -108,10 +108,7 @@ return {
       { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     },
     keys = {
-      -- like Cmd + Shift + o on IntelliJ
-      -- { '<C-o>', '<Cmd>Telescope find_files<Cr>', 'n' },
-      -- like Cmd + Shift + f on IntelliJ
-      { '<C-f>', '<Cmd>Telescope live_grep<Cr>', 'n' },
+      { '<Leader>f', '<Cmd>Telescope live_grep<Cr>', 'n' },
     },
     opts = {
       extensions = {
@@ -133,8 +130,7 @@ return {
     end,
     dependencies = { "kkharji/sqlite.lua" },
     keys = {
-      -- like Cmd + Shift + o on IntelliJ
-      { '<C-o>', '<Cmd>Telescope frecency<Cr>', 'n' },
+      { '<Leader>o', '<Cmd>Telescope frecency<Cr>', 'n' },
     },
   }
 }

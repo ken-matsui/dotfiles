@@ -106,15 +106,27 @@ return {
 
   {
     'nvim-telescope/telescope.nvim', version = '0.1.3',
-    lazy = true,
     dependencies = {
       'nvim-lua/plenary.nvim',
+      'BurntSushi/ripgrep',
+      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     },
     keys = {
       -- like Cmd + Shift + o on IntelliJ
       { '<C-o>', '<Cmd>Telescope find_files<Cr>', 'n' },
       -- like Cmd + Shift + f on IntelliJ
       { '<C-f>', '<Cmd>Telescope live_grep<Cr>', 'n' },
+    },
+    opts = {
+      extensions = {
+        fzf = {
+          fuzzy = true,                    -- false will only do exact matching
+          override_generic_sorter = true,  -- override the generic sorter
+          override_file_sorter = true,     -- override the file sorter
+          case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+                                           -- the default case_mode is "smart_case"
+        }
+      }
     },
   },
 }

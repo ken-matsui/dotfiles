@@ -97,6 +97,76 @@ return {
     },
   },
 
+  -- Completion
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
+      "ray-x/cmp-treesitter",
+      "saadparwaiz1/cmp_luasnip",
+      {
+        "L3MON4D3/LuaSnip", version = "1.*",
+        config = function()
+          require("luasnip.loaders.from_vscode").load()
+        end,
+      },
+      "onsails/lspkind-nvim",
+    },
+    opts = function()
+      local cmp = require("cmp")
+
+      -- `/` cmdline setup.
+      cmp.setup.cmdline('/', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = 'buffer' }
+        }
+      })
+
+      -- `:` cmdline setup.
+      cmp.setup.cmdline(':', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = 'path' }
+        }, {
+          {
+            name = 'cmdline',
+            option = {
+              ignore_cmds = { 'Man', '!' }
+            }
+          }
+        })
+      })
+
+      return {
+        preselect = cmp.PreselectMode.None,
+        snippet = {
+          expand = function(args)
+            require("luasnip").lsp_expand(args.body)
+          end,
+        },
+        mapping = cmp.mapping.preset.insert({
+          ["<Esc>"] = cmp.mapping.abort(),
+          ["<CR>"] = cmp.mapping.confirm({
+            behavior = cmp.ConfirmBehavior.Insert,
+            select = false,
+          }),
+        }),
+        sources = cmp.config.sources({
+          { name = "luasnip" },
+          { name = "buffer" },
+          { name = "path" },
+          { name = "treesitter" },
+        }),
+        formatting = {
+          format = require('lspkind').cmp_format({}),
+        },
+      }
+    end,
+  },
+
   {
     'nvim-telescope/telescope.nvim', version = '0.1.3',
     lazy = true,

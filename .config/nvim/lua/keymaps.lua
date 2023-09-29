@@ -42,5 +42,5 @@ vim.keymap.set('i', 'kk', '<Esc>')
 -- Visual Mode
 --
 
-vim.keymap.set('v', '<Leader>]', '>gv', {silent = true}) -- indent
-vim.keymap.set('v', '<Leader>[', '<gv', {silent = true}) -- unindent
+vim.keymap.set('v', '<Tab>', '>gv', {silent = true}) -- indent
+vim.keymap.set('v', '<S-Tab>', '<gv', {silent = true}) -- unindent

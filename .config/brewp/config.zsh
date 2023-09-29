@@ -26,6 +26,7 @@ brewp add curl
 # brewp add elixir
 # brewp add elm
 # brewp add erlang
+brewp add fd  # for telescope.nvim
 brewp add ffmpeg  # for youtube-dl
 brewp add gh
 brewp add git-delta

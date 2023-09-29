@@ -28,6 +28,10 @@ vim.keymap.set('n', '<S-l>', '$')
 -- Move to the end of file
 vim.keymap.set('n', '<S-j>', '<S-g>')
 
+-- Ctags
+vim.keymap.set('n', '<C-g>', '<C-]>', {noremap = true}) -- goto
+vim.keymap.set('n', '<C-b>', '<C-t>', {noremap = true}) -- back
+
 -- Indent
 vim.keymap.set('n', '<C-]>', '>>_') -- indent
 vim.keymap.set('n', '<C-[>', '<<_') -- unindent

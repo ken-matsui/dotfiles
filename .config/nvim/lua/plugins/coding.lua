@@ -81,19 +81,9 @@ return {
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
-  "MattesGroeger/vim-bookmarks",
   {
-    "tom-anders/telescope-vim-bookmarks.nvim",
-    dependencies = {
-      "nvim-telescope/telescope.nvim",
-      "MattesGroeger/vim-bookmarks",
-    },
-    keys = {
-      { '<Leader>b', '<Cmd>Telescope vim_bookmarks all<Cr>', 'n' },
-    },
-    opts = function ()
-      require('telescope').load_extension('vim_bookmarks')
-    end
+    "MattesGroeger/vim-bookmarks",
+    event = 'BufRead',
   },
 
   {
@@ -149,7 +139,10 @@ return {
     end,
   },
 
-  'mg979/vim-visual-multi',
+  {
+    'mg979/vim-visual-multi',
+    lazy = true,
+  },
 
   {
     'RRethy/vim-illuminate',

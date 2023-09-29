@@ -61,7 +61,7 @@ return {
   },
 
   {
-    "utilyre/barbecue.nvim", version = "*",
+    "utilyre/barbecue.nvim",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       "SmiteshP/nvim-navic",
@@ -102,6 +102,7 @@ return {
 
   {
     'nvim-telescope/telescope.nvim', version = '0.1.3',
+    lazy = true,
     dependencies = {
       'nvim-lua/plenary.nvim',
       'BurntSushi/ripgrep',
@@ -119,12 +120,12 @@ return {
           case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
                                            -- the default case_mode is "smart_case"
         },
-
       }
     },
   },
   {
     'prochri/telescope-all-recent.nvim',
+    lazy = true,
     dependencies = {
       'nvim-telescope/telescope.nvim',
       "kkharji/sqlite.lua"
@@ -133,5 +134,19 @@ return {
       { '<Leader>o', function() require('telescope.builtin').find_files() end, 'n' },
     },
     config = true,
-  }
+  },
+  {
+    "tom-anders/telescope-vim-bookmarks.nvim",
+    lazy = true,
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "MattesGroeger/vim-bookmarks",
+    },
+    keys = {
+      { '<Leader>b', '<Cmd>Telescope vim_bookmarks all<Cr>', 'n' },
+    },
+    opts = function ()
+      require('telescope').load_extension('vim_bookmarks')
+    end
+  },
 }

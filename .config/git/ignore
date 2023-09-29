@@ -9,6 +9,11 @@
 .vscode
 
 #
+# Vim
+#
+.vim-bookmarks
+
+#
 # Intellij
 #
 .idea

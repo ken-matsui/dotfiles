@@ -147,6 +147,8 @@ return {
     opts = {},
   },
 
+  'mg979/vim-visual-multi',
+
   {
     'RRethy/vim-illuminate',
     event = { "BufReadPost", "BufNewFile" },

@@ -96,15 +96,6 @@ return {
   },
 
   {
-    'akinsho/toggleterm.nvim', version = '*',
-    lazy = true,
-    keys = {
-      { '<C-t>', '<Cmd>ToggleTerm<Cr>', 'n' },
-    },
-    config = true,
-  },
-
-  {
     'nvim-telescope/telescope.nvim', version = '0.1.3',
     dependencies = {
       'nvim-lua/plenary.nvim',

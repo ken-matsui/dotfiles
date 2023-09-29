@@ -89,7 +89,7 @@ return {
           end,
         },
         mapping = cmp.mapping.preset.insert({
-          ["<C-e>"] = cmp.mapping.abort(),
+          ["<Esc>"] = cmp.mapping.abort(),
           ["<CR>"] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Insert,
             select = false,

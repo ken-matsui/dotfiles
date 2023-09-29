@@ -53,6 +53,9 @@ end
 -- Set <Leader> as the space key
 vim.g.mapleader = ' '
 
+-- Load ctags if exists
+vim.o.tags = "./tags;"
+
 -- Highlight yanked region
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()

@@ -108,6 +108,7 @@ return {
       require("auto-session").setup {
         log_level = "error",
         auto_session_suppress_dirs = {"~/", "~/Downloads", "/"},
+        auto_save_enabled = true,
       }
 
       -- Workaround for NvimTree with auto-session

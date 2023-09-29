@@ -41,6 +41,9 @@ return {
     dependencies = {
       'nvim-tree/nvim-web-devicons',
     },
+    keys = {
+      { '<C-w>', ':bd<Cr>', 'n' },
+    },
     opts = {
       options = {
         offsets = {
@@ -104,7 +107,7 @@ return {
     },
     keys = {
       -- like Cmd + Shift + o on IntelliJ
-      { '<C-o>', '<Cmd>Telescope find_files<Cr>', 'n' },
+      -- { '<C-o>', '<Cmd>Telescope find_files<Cr>', 'n' },
       -- like Cmd + Shift + f on IntelliJ
       { '<C-f>', '<Cmd>Telescope live_grep<Cr>', 'n' },
     },
@@ -120,4 +123,16 @@ return {
       }
     },
   },
+
+  {
+  "nvim-telescope/telescope-frecency.nvim",
+    config = function()
+      require("telescope").load_extension "frecency"
+    end,
+    dependencies = { "kkharji/sqlite.lua" },
+    keys = {
+      -- like Cmd + Shift + o on IntelliJ
+      { '<C-o>', '<Cmd>Telescope frecency<Cr>', 'n' },
+    },
+  }
 }

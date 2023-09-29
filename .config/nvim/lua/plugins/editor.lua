@@ -61,7 +61,16 @@ return {
   },
 
   -- C/C++ Syntax Highlight
-  'bfrg/vim-cpp-modern',
+  {
+    'bfrg/vim-cpp-modern',
+    config = function ()
+      -- Enable highlighting of C++11 attributes
+      vim.g.cpp_attributes_highlight = 1
+
+      -- Highlight struct/class member variables (affects both C and C++ files)
+      vim.g.cpp_member_highlight = 1
+    end
+  },
 
   -- Completion
   {

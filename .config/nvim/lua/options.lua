@@ -70,3 +70,6 @@ vim.cmd([[
     \   exe "normal! g`\"" |
     \ endif
 ]])
+
+-- Recognize .def files as C++
+vim.cmd [[ autocmd BufNewFile,BufRead *.def set syntax=cpp ]]

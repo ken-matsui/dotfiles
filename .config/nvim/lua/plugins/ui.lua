@@ -42,9 +42,9 @@ return {
       'nvim-tree/nvim-web-devicons',
     },
     keys = {
-      { '<Leader>w', ':bd<Cr>', 'n' },
-      { '<Leader><Right>', ':bnext<Cr>', 'n' },
-      { '<Leader><Left>', ':bprev<Cr>', 'n' },
+      { '<Leader>w', '<Cmd>bd<Cr>', 'n' },
+      { '<Leader><Right>', '<Cmd>bnext<Cr>', 'n' },
+      { '<Leader><Left>', '<Cmd>bprev<Cr>', 'n' },
     },
     opts = {
       options = {

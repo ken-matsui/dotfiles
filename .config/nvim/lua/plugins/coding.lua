@@ -128,18 +128,25 @@ return {
   },
 
   {
+    'stevearc/dressing.nvim',
+    opts = {},
+  },
+  {
     'mrjones2014/legendary.nvim',
     version = 'v2.1.0',
     -- since legendary.nvim handles all your keymaps/commands,
     -- its recommended to load legendary.nvim before other plugins
     priority = 10000,
     lazy = false,
-    dependencies = { 'kkharji/sqlite.lua' }
-  },
-
-  {
-    'stevearc/dressing.nvim',
-    opts = {},
+    dependencies = { 'kkharji/sqlite.lua' },
+    keys = {
+      { '<leader>p', '<Cmd>Legendary<Cr>', 'n', remap = true },
+    },
+    config = function()
+      require("legendary").setup({
+        lazy_nvim = { auto_register = true },
+      })
+    end,
   },
 
   'mg979/vim-visual-multi',

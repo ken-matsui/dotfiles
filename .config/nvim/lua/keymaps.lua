@@ -23,8 +23,8 @@ vim.keymap.set('n', '<C-g>', '<C-]>') -- goto
 vim.keymap.set('n', '<C-b>', '<C-t>') -- back
 
 -- Indent
-vim.keymap.set('n', '<Leader>]', '>>', {silent = true}) -- indent
-vim.keymap.set('n', '<Leader>[', '<<', {silent = true}) -- unindent
+vim.keymap.set('n', '<Leader>]', '>>') -- indent
+vim.keymap.set('n', '<Leader>[', '<<') -- unindent
 
 -- Paste as matched with current indent
 vim.keymap.set('n', 'p', ']p')
@@ -42,5 +42,5 @@ vim.keymap.set('i', 'kk', '<Esc>')
 -- Visual Mode
 --
 
-vim.keymap.set('v', '<Tab>', '>gv', {silent = true}) -- indent
-vim.keymap.set('v', '<S-Tab>', '<gv', {silent = true}) -- unindent
+vim.keymap.set('v', '<Tab>', '>gv') -- indent
+vim.keymap.set('v', '<S-Tab>', '<gv') -- unindent

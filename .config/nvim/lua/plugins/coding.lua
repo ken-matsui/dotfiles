@@ -94,7 +94,7 @@ return {
       "MattesGroeger/vim-bookmarks",
     },
     keys = {
-      { '<Leader>vb', '<Cmd>Telescope vim_bookmarks all<Cr>', 'n' },
+      { '<Leader>b', '<Cmd>Telescope vim_bookmarks all<Cr>', 'n' },
     },
     opts = function ()
       require('telescope').load_extension('vim_bookmarks')

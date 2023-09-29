@@ -19,8 +19,6 @@ return {
     opts = {
       ensure_installed = {
         "bash",
-        "c",
-        "cpp",
         "dockerfile",
         "html",
         "javascript",
@@ -61,6 +59,9 @@ return {
       }
     end,
   },
+
+  -- C/C++ Syntax Highlight
+  'bfrg/vim-cpp-modern',
 
   -- Completion
   {

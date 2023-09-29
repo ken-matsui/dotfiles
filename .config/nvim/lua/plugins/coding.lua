@@ -73,6 +73,12 @@ return {
     event = "VeryLazy",
   },
 
+  -- Highlight arguments
+  {
+    'm-demare/hlargs.nvim',
+    config = true,
+  },
+
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 

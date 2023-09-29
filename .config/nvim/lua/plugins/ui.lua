@@ -8,6 +8,9 @@ return {
     dependencies = {
       'nvim-tree/nvim-web-devicons',
     },
+    keys = {
+      { '<Leader>s', '<Cmd>NvimTreeToggle<Cr>', 'n' },
+    },
     opts = {
       sort_by = "case_sensitive",
       view = {
@@ -19,37 +22,6 @@ return {
     },
     config = function(_, opts)
       require("nvim-tree").setup(opts)
-
-      -- Auto open
-      local function open_nvim_tree(data)
-        -- buffer is a directory
-        local directory = vim.fn.isdirectory(data.file) == 1
-
-        if directory then
-          -- change to the directory
-          vim.cmd.cd(data.file)
-
-          -- open the tree
-          require("nvim-tree.api").tree.open()
-          return
-        end
-
-        -- don't open nvim-tree when creating git commit message
-        local IGNORED_FT = {
-          "gitcommit",
-        }
-        -- &ft
-        local filetype = vim.bo[data.buf].ft
-        -- skip ignored filetypes
-        if vim.tbl_contains(IGNORED_FT, filetype) then
-          return
-        end
-        -- open the tree, find the file but don't focus it
-        require("nvim-tree.api").tree.toggle({ focus = false, find_file = true })
-      end
-      vim.api.nvim_create_autocmd("VimEnter", {
-        callback = open_nvim_tree
-      })
 
       -- Auto close
       vim.api.nvim_create_autocmd("BufEnter", {

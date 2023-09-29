@@ -60,10 +60,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end
 })
 
--- Return to last edit position when opening files
-vim.cmd([[
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
-]])
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'NvimTree' },
+  callback = function(args)
+    vim.api.nvim_create_autocmd('VimLeavePre', {
+      callback = function()
+        vim.api.nvim_buf_delete(args.buf, { force = true })
+        return true
+      end
+    })
+  end,
+})

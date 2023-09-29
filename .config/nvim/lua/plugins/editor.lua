@@ -17,7 +17,26 @@ return {
     },
     build = ':TSUpdate',
     opts = {
-      ensure_installed = "all",
+      ensure_installed = {
+        "bash",
+        "c",
+        "cpp",
+        "dockerfile",
+        "html",
+        "javascript",
+        "json",
+        "lua",
+        "make",
+        "markdown",
+        "python",
+        "rust",
+        "toml",
+        "tsx",
+        "typescript",
+        "vim",
+        "yaml",
+      },
+
       highlight = {
         enable = true,
       },

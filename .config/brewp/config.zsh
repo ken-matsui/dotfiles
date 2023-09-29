@@ -57,6 +57,7 @@ brewp add topgrade
 if [[ "$OSTYPE" == darwin* ]]; then
   brewp add trash
 fi
+brewp add universal-ctags
 # brewp add vault
 # brewp add valgrind
 # brewp add wapm

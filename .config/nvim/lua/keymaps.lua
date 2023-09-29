@@ -1,9 +1,4 @@
 --
--- Global
---
-local all_modes = {'n', 'i', 'v', 'c', 'o'}
-
---
 -- Normal Mode
 --
 
@@ -34,13 +29,6 @@ vim.keymap.set('n', '<Leader>[', '<<', {noremap = true, silent = true}) -- unind
 -- Paste as matched with current indent
 vim.keymap.set('n', 'p', ']p')
 vim.keymap.set('n', 'P', ']P')
-
--- Save changes
-vim.keymap.set('n', '<C-w>', '<Cmd>write<Cr>')
--- Quit the current window
-vim.keymap.set('n', '<C-q>', '<Cmd>quit<Cr>')
--- Exit (same as :x, :wq)
-vim.keymap.set('n', '<C-x>', '<Cmd>exit<Cr>')
 
 --
 -- Insert Mode

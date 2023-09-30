@@ -72,12 +72,6 @@ return {
     event = "VeryLazy",
   },
 
-  -- Highlight arguments
-  {
-    'm-demare/hlargs.nvim',
-    config = true,
-  },
-
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
@@ -119,6 +113,7 @@ return {
 
   {
     'stevearc/dressing.nvim',
+    event = "VeryLazy",
     opts = {},
   },
   {
@@ -141,7 +136,7 @@ return {
 
   {
     'mg979/vim-visual-multi',
-    lazy = true,
+    event = { "BufReadPost", "BufNewFile" },
   },
 
   {

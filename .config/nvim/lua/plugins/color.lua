@@ -17,14 +17,6 @@ return {
     dependencies = {
       "windwp/nvim-ts-autotag",
       "JoosepAlviste/nvim-ts-context-commentstring",
-      {
-        "HiPhish/nvim-ts-rainbow2",
-        config = function()
-          -- HACK: https://github.com/p00f/nvim-ts-rainbow/issues/112#issuecomment-1310835936
-          vim.cmd "autocmd BufNewFile,BufReadPost * TSDisable rainbow | TSEnable rainbow | TSDisable rainbow | TSEnable rainbow | TSDisable rainbow | TSEnable rainbow"
-          vim.cmd "autocmd BufWritePost * TSDisable rainbow | TSEnable rainbow"
-        end,
-      },
     },
     build = ':TSUpdate',
     opts = {
@@ -59,9 +51,6 @@ return {
         enable = true,
         enable_autocmd = false,
       },
-      rainbow = {
-        enable = true,
-      },
     },
     config = function(_, opts)
       require('nvim-treesitter.configs').setup(opts)
@@ -74,6 +63,7 @@ return {
   -- C/C++ Syntax Highlight
   {
     'bfrg/vim-cpp-modern',
+    event = { "BufReadPost", "BufNewFile" },
     config = function ()
       -- Enable highlighting of C++11 attributes
       vim.g.cpp_attributes_highlight = 1
@@ -81,5 +71,12 @@ return {
       -- Highlight struct/class member variables (affects both C and C++ files)
       vim.g.cpp_member_highlight = 1
     end
+  },
+
+  -- Highlight arguments
+  {
+    'm-demare/hlargs.nvim',
+    event = { "BufReadPost", "BufNewFile" },
+    config = true,
   },
 }

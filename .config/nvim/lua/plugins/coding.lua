@@ -2,6 +2,11 @@ return {
   {
     'github/copilot.vim', -- :Copilot setup
     event = "VeryLazy",
+    config = function ()
+      vim.g.copilot_filetypes = {
+        NvimTree = false,
+      }
+    end
   },
 
   {
@@ -85,6 +90,22 @@ return {
       auto_session_suppress_dirs = {"~/", "~/Downloads", "/"},
       auto_save_enabled = true,
     },
+    config = function (_, opts)
+      require('auto-session').setup(opts)
+
+      -- Workaround for NvimTree with auto-session
+      vim.api.nvim_create_autocmd({ 'BufEnter' }, {
+        pattern = 'NvimTree*',
+        callback = function()
+          local api = require('nvim-tree.api')
+          local view = require('nvim-tree.view')
+
+          if not view.is_visible() then
+            api.tree.open()
+          end
+        end,
+      })
+    end
   },
 
   {
@@ -125,7 +146,14 @@ return {
   {
     'RRethy/vim-illuminate',
     event = { "BufReadPost", "BufNewFile" },
-    config = function ()
+    opts = {
+      filetypes_denylist = {
+        'NvimTree',
+      },
+    },
+    config = function (_, opts)
+      require('illuminate').configure(opts)
+
       local highlight = '#354A51' -- material oceanic highlight
       vim.api.nvim_set_hl(0, 'IlluminatedWordText', {
         bg = highlight,

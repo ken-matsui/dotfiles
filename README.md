@@ -185,7 +185,7 @@ mkdir -p ~/.1password && ln -s ~/Library/Group\ Containers/2BUA8C4S2C.com.1passw
 
 #### Settings
 
-* Keyboard -> Keyboard Shortcuts -> View and Customize Shortcuts -> Typing -> Switch to next input source -> <kbd>Ctrl</kbd> + <kbd>Space</kbd> (automatically applies to `Switch to previous input source`: <kbd>Shift</kbd> + <kbd>Ctrl</kbd> + <kbd>Space</kbd>)
+* Keyboard -> Keyboard Shortcuts -> View and Customize Shortcuts -> Typing -> Switch to next input source -> <kbd>Ctrl</kbd> + <kbd>Space</kbd> (automatically applies to `Switch to previous input source`: <kbd>Alt</kbd> + <kbd>Ctrl</kbd> + <kbd>Space</kbd>)
 
 #### Ulauncher Preferences
 

@@ -26,6 +26,11 @@ vim.keymap.set('n', '<Leader>[', '<<') -- unindent
 vim.keymap.set('n', 'p', ']p')
 vim.keymap.set('n', 'P', ']P')
 
+-- Buffer navigation
+vim.keymap.set('n', '<Leader>h', '<Cmd>bprev<Cr>')
+vim.keymap.set('n', '<Leader>l', '<Cmd>bnext<Cr>')
+vim.keymap.set('n', '<Leader>w', '<Cmd>bdelete<Cr>')
+
 --
 -- Insert Mode
 --

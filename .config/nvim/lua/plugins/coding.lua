@@ -127,11 +127,11 @@ return {
     keys = {
       { '<leader>p', '<Cmd>Legendary<Cr>', 'n', remap = true },
     },
-    config = function()
-      require("legendary").setup({
-        lazy_nvim = { auto_register = true },
-      })
-    end,
+    opts = {
+      lazy_nvim = {
+        auto_register = true,
+      },
+    },
   },
 
   {

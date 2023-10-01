@@ -71,6 +71,9 @@ vim.cmd([[
     \ endif
 ]])
 
+-- Save files and move to normal mode when focus lost
+vim.cmd [[ autocmd FocusLost * silent! wa | stopinsert ]]
+
 -- Recognize .def files as C++
 vim.cmd [[ autocmd BufNewFile,BufRead *.def set syntax=cpp ]]
 

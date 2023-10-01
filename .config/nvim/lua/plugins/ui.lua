@@ -34,6 +34,8 @@ return {
       'nvim-tree/nvim-web-devicons',
     },
     keys = {
+      { '<Leader>h', '<Cmd>BufferLineCyclePrev<Cr>', 'n' },
+      { '<Leader>l', '<Cmd>BufferLineCycleNext<Cr>', 'n' },
       { '<Leader><Left>', '<Cmd>BufferLineMovePrev<Cr>', 'n' },
       { '<Leader><Right>', '<Cmd>BufferLineMoveNext<Cr>', 'n' },
     },

@@ -73,3 +73,7 @@ vim.cmd([[
 
 -- Recognize .def files as C++
 vim.cmd [[ autocmd BufNewFile,BufRead *.def set syntax=cpp ]]
+
+-- Change background color when focus lost
+vim.cmd [[ autocmd FocusLost * hi Normal guibg=#1A1C29 ]] -- material deep ocean bg + brightness
+vim.cmd [[ autocmd FocusGained * hi Normal guibg=#0F111A ]] -- material deep ocean bg

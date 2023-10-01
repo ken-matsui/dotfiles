@@ -161,9 +161,11 @@ return {
       'nvim-lua/plenary.nvim',
       'BurntSushi/ripgrep',
       { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+      "tom-anders/telescope-vim-bookmarks.nvim",
     },
     keys = {
       { '<Leader>f', '<Cmd>Telescope live_grep<Cr>', 'n' },
+      { '<Leader>b', '<Cmd>Telescope vim_bookmarks all<Cr>', 'n' },
     },
     opts = {
       extensions = {
@@ -176,6 +178,11 @@ return {
         },
       }
     },
+    config = function(_, opts)
+      require('telescope').setup(opts)
+      require('telescope').load_extension('fzf')
+      require('telescope').load_extension('vim_bookmarks')
+    end,
   },
   {
     'prochri/telescope-all-recent.nvim',
@@ -188,19 +195,5 @@ return {
       { '<Leader>o', function() require('telescope.builtin').find_files() end, 'n' },
     },
     config = true,
-  },
-  {
-    "tom-anders/telescope-vim-bookmarks.nvim",
-    lazy = true,
-    dependencies = {
-      "nvim-telescope/telescope.nvim",
-      "MattesGroeger/vim-bookmarks",
-    },
-    keys = {
-      { '<Leader>b', '<Cmd>Telescope vim_bookmarks all<Cr>', 'n' },
-    },
-    opts = function ()
-      require('telescope').load_extension('vim_bookmarks')
-    end
   },
 }

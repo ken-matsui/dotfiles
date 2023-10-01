@@ -80,26 +80,11 @@ return {
 
   {
     'rmagatti/auto-session',
-    config = function()
-      require("auto-session").setup {
-        log_level = "error",
-        auto_session_suppress_dirs = {"~/", "~/Downloads", "/"},
-        auto_save_enabled = true,
-      }
-
-      -- Workaround for NvimTree with auto-session
-      vim.api.nvim_create_autocmd('FileType', {
-        pattern = { 'NvimTree' },
-        callback = function(args)
-          vim.api.nvim_create_autocmd('VimLeavePre', {
-            callback = function()
-              vim.api.nvim_buf_delete(args.buf, { force = true })
-              return true
-            end
-          })
-        end,
-      })
-    end
+    opts = {
+      log_level = "error",
+      auto_session_suppress_dirs = {"~/", "~/Downloads", "/"},
+      auto_save_enabled = true,
+    },
   },
 
   {

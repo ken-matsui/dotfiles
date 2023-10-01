@@ -28,7 +28,7 @@ return {
   },
 
   {
-    'akinsho/bufferline.nvim', version = "v3.*",
+    'akinsho/bufferline.nvim', version = "v4.*",
     event = "VeryLazy",
     dependencies = {
       'nvim-tree/nvim-web-devicons',
@@ -54,7 +54,7 @@ return {
   },
 
   {
-    "utilyre/barbecue.nvim",
+    "utilyre/barbecue.nvim", version = "v1.2.0",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       "SmiteshP/nvim-navic",

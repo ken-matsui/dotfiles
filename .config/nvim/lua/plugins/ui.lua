@@ -162,10 +162,12 @@ return {
       'BurntSushi/ripgrep',
       { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
       "tom-anders/telescope-vim-bookmarks.nvim",
+      "debugloop/telescope-undo.nvim",
     },
     keys = {
       { '<Leader>f', '<Cmd>Telescope live_grep<Cr>', 'n' },
       { '<Leader>b', '<Cmd>Telescope vim_bookmarks all<Cr>', 'n' },
+      { '<Leader>u', '<Cmd>Telescope undo<Cr>', 'n' },
     },
     opts = {
       extensions = {
@@ -182,6 +184,7 @@ return {
       require('telescope').setup(opts)
       require('telescope').load_extension('fzf')
       require('telescope').load_extension('vim_bookmarks')
+      require('telescope').load_extension('undo')
     end,
   },
   {

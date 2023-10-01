@@ -13,9 +13,6 @@ return {
     },
     opts = {
       sort_by = "case_sensitive",
-      view = {
-        width = 25,
-      },
       diagnostics = {
         enable = true,
       },

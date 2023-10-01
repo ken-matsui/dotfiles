@@ -33,6 +33,10 @@ return {
     dependencies = {
       'nvim-tree/nvim-web-devicons',
     },
+    keys = {
+      { '<Leader><Left>', '<Cmd>BufferLineMovePrev<Cr>', 'n' },
+      { '<Leader><Right>', '<Cmd>BufferLineMoveNext<Cr>', 'n' },
+    },
     opts = {
       options = {
         offsets = {

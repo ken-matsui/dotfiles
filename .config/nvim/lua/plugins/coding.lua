@@ -90,22 +90,6 @@ return {
       auto_session_suppress_dirs = {"~/", "~/Downloads", "/"},
       auto_save_enabled = true,
     },
-    config = function (_, opts)
-      require('auto-session').setup(opts)
-
-      -- Workaround for NvimTree with auto-session
-      vim.api.nvim_create_autocmd({ 'BufEnter' }, {
-        pattern = 'NvimTree*',
-        callback = function()
-          local api = require('nvim-tree.api')
-          local view = require('nvim-tree.view')
-
-          if not view.is_visible() then
-            api.tree.open()
-          end
-        end,
-      })
-    end
   },
 
   {

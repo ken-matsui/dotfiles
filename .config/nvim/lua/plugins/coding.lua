@@ -9,8 +9,6 @@ return {
     lazy = true,
     keys = {
       { '<leader>c', 'gcc', 'n', remap = true },
-      -- Ctrl + / => comment
-      { '<C-/>', 'gcc', 'v', remap = true },
     },
     config = true,
   },

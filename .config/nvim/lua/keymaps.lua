@@ -33,9 +33,11 @@ vim.keymap.set('n', '<Leader>w', '<Cmd>bdelete<Cr>')
 -- Insert Mode
 --
 
--- Escape by jj & kk
+-- Escape by jj, kk, hh, ll
 vim.keymap.set('i', 'jj', '<Esc>')
 vim.keymap.set('i', 'kk', '<Esc>')
+vim.keymap.set('i', 'hh', '<Esc>')
+vim.keymap.set('i', 'll', '<Esc>')
 
 --
 -- Visual Mode

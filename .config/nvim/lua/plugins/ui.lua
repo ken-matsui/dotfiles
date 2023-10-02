@@ -173,6 +173,16 @@ return {
       { '<Leader>u', '<Cmd>Telescope undo<Cr>', 'n' },
     },
     opts = {
+      defaults = {
+        file_ignore_patterns = {".git"},
+      },
+      pickers = {
+        live_grep = {
+          additional_args = function (opts)
+            return {"--hidden"}
+          end
+        },
+      },
       extensions = {
         fzf = {
           fuzzy = true,                    -- false will only do exact matching

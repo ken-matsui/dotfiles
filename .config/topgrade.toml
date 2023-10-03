@@ -6,7 +6,7 @@
 
 [misc]
 # Don't ask for confirmations
-#assume_yes = true
+assume_yes = true
 
 # Disable specific steps - same options as the command line flag
 disable = [
@@ -55,7 +55,7 @@ disable = [
 # display_time = true
 
 # Cleanup temporary or old files
-#cleanup = true
+cleanup = true
 
 # Skip sending a notification at the end of a run
 skip_notify = true
@@ -95,7 +95,7 @@ skip_notify = true
 
 [brew]
 #greedy_cask = true
-#autoremove = true
+autoremove = true
 
 [linux]
 # Arch Package Manager to use. Allowed values: autodetect, aura, garuda_update, pacman, pamac, paru, pikaur, trizen, yay.
@@ -160,7 +160,7 @@ skip_notify = true
 
 [firmware]
 # Offer to update firmware; if false just check for and display available updates
-#upgrade = true
+upgrade = true
 
 [vagrant]
 # Vagrant directories

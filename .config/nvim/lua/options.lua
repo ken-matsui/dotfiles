@@ -16,8 +16,9 @@ vim.opt.writebackup = false
 -- diagnostics appeared/became resolved
 vim.opt.signcolumn = 'yes'
 
--- Show column number
+-- Show column relative number
 vim.opt.number = true
+vim.opt.relativenumber = true
 
 -- Highlight column number
 vim.opt.cursorline = true

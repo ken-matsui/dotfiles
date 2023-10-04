@@ -14,3 +14,4 @@
 !.config/brewp
 !.config/atuin
 !.config/tmux
+.config/tmux/plugins

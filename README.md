@@ -2,8 +2,6 @@
 
 # Dotfiles
 
-<img width="800" alt="ScreenShot" src="https://user-images.githubusercontent.com/26405363/227087179-b097439f-d0a4-4b3a-9598-c9ee0f069c2c.png">
-
 |             |                     |
 | ----------- | :-----------------: |
 | OS          | macOS & Ubuntu      |

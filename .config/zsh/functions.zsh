@@ -2,9 +2,7 @@
 # Functions
 ##################################
 
-function sizeof() {
-  du -sh "$@"
-}
+alias sizeof='du -sh'
 
 function info() {
   printf '\033[0;34m[INFO]: %s\033[0m\n' "$*"

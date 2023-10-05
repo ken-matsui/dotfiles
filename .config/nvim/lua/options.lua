@@ -3,6 +3,8 @@ vim.loader.enable()
 
 -- Set file encoding as UTF-8
 vim.opt.encoding = 'utf-8'
+-- Enable true color
+vim.opt.termguicolors = true
 
 -- Disable netrw at the very start of init.lua (nvim-tree)
 vim.g.loaded_netrw = 1
@@ -40,9 +42,6 @@ vim.opt.softtabstop = 0
 
 -- Always display statusline.
 vim.opt.laststatus = 2
-
--- Enable true color
-vim.opt.termguicolors = true
 
 -- Yank texts to system clipboard
 if vim.fn.has('unnamedplus') == 1 then

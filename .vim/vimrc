@@ -1,6 +1,7 @@
 " =====================
 " Options
 " =====================
+
 " Set file encoding as UTF-8
 set encoding=utf-8
 " Enable true color
@@ -68,6 +69,7 @@ augroup END
 " =====================
 " Syntax
 " =====================
+
 " Recognize .def files as C++
 augroup CppFiletype
   autocmd!

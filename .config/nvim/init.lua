@@ -5,7 +5,24 @@ if vim.fn.exists('$SUDO_USER') == 1 or vim.fn.exists('$GIT_DIR') == 1 then
   return
 end
 
-require('options')
+-- Enable fast cache loading
+vim.loader.enable()
+
+-- Disable netrw at the very start of init.lua (nvim-tree)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- Highlight yanked region
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank {timeout = 500}
+  end
+})
+
+-- Load Vim configuration
+vim.cmd('set runtimepath^=~/.vim runtimepath+=~/.vim/after')
+vim.o.packpath = vim.o.runtimepath
+vim.cmd('source ~/.vim/vimrc')
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then

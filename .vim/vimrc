@@ -1,0 +1,81 @@
+"
+" Options
+"
+" Set file encoding as UTF-8
+set encoding=utf-8
+" Enable true color
+set termguicolors
+
+" Don't create backup
+set nobackup
+set nowritebackup
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appeared/became resolved
+set signcolumn=yes
+
+" Show relative column number
+set number
+set relativenumber
+
+" Highlight column number
+set cursorline
+
+" Visualize invisible string
+set list
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+
+" Indentation
+set smarttab
+set autoindent
+set softtabstop=0
+
+" Always display statusline.
+set laststatus=2
+
+" Yank texts to system clipboard
+if has('unnamedplus')
+  set clipboard=unnamedplus
+else
+  set clipboard=unnamed
+endif
+
+" Set <Leader> as the space key
+let mapleader = " "
+
+" Load ctags if exists
+set tags=./tags;
+
+" Return to last edit position when opening files
+augroup ReturnToLastPosition
+  autocmd!
+  autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+augroup END
+
+" Save files when focus lost
+augroup AutoSaveOnFocusLost
+  autocmd!
+  autocmd FocusLost * silent! wa
+augroup END
+
+" Change background color when focus lost
+augroup FocusBackground
+  autocmd!
+  autocmd FocusLost * hi Normal guibg=#1A1C29
+  autocmd FocusGained * hi Normal guibg=#0F111A
+augroup END
+
+"
+" Syntax
+"
+" Recognize .def files as C++
+augroup CppFiletype
+  autocmd!
+  autocmd BufNewFile,BufRead *.def set filetype=cpp
+augroup END
+
+" Set JFlex syntax
+augroup filetype
+  au BufRead,BufNewFile *.flex,*.jflex set filetype=jflex
+augroup END
+au Syntax jflex so ~/.vim/syntax/jflex.vim

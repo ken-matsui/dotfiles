@@ -83,6 +83,7 @@ echo 'Linking config files ...'
 ln -s ${DOTSPATH}/.config/ ~/.config
 # TODO: On Ubuntu, .z* file was created. Needs investigation.
 ln -sf ${DOTSPATH}/.z* ~/
+ln -s ${DOTSPATH}/.vim ~/.vim
 
 # https://stackoverflow.com/a/13785716
 sudo chmod -R 755 /usr/local/share/zsh

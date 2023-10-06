@@ -1,3 +1,10 @@
+" Use plain vim
+" when vim was invoked by 'sudo' command
+" or, invoked as 'git difftool'
+if exists('$SUDO_USER') || exists('$GIT_DIR')
+  finish
+endif
+
 " =====================
 " Options
 " =====================

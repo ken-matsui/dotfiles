@@ -1,6 +1,6 @@
-"
+" =====================
 " Options
-"
+" =====================
 " Set file encoding as UTF-8
 set encoding=utf-8
 " Enable true color
@@ -65,9 +65,9 @@ augroup FocusBackground
   autocmd FocusGained * hi Normal guibg=#0F111A
 augroup END
 
-"
+" =====================
 " Syntax
-"
+" =====================
 " Recognize .def files as C++
 augroup CppFiletype
   autocmd!
@@ -79,3 +79,57 @@ augroup filetype
   au BufRead,BufNewFile *.flex,*.jflex set filetype=jflex
 augroup END
 au Syntax jflex so ~/.vim/syntax/jflex.vim
+
+" =====================
+" Key Mappings
+" =====================
+
+"
+" Normal Mode
+"
+
+" Treat ; as :
+nnoremap ; :
+
+" Visually move cursor
+nnoremap j gj
+nnoremap k gk
+
+" Move to the beginning of line
+nnoremap <S-h> ^
+
+" Move to the beginning of file
+nnoremap <S-k> gg
+
+" Move to the end of line
+nnoremap <S-l> $
+
+" Move to the end of file
+nnoremap <S-j> G
+
+" Indent
+nnoremap <Leader>] >>
+nnoremap <Leader>[ <<
+
+" Paste with adjusting the indent
+nnoremap p ]p
+nnoremap P ]P
+
+" Buffer navigation
+nnoremap <silent> <Leader>w :bdelete<Cr>
+
+"
+" Insert Mode
+"
+
+" Escape with jj & kk
+inoremap jj <Esc>
+inoremap kk <Esc>
+
+"
+" Visual Mode
+"
+
+" Indent
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv

@@ -38,7 +38,5 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 
-require('keymaps')
-
 -- Must be written at the last.  see :help 'secure'.
 vim.opt.secure = true

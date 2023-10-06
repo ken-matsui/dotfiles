@@ -6,6 +6,8 @@
 set encoding=utf-8
 " Enable true color
 set termguicolors
+" Enable syntax highlighting (automatically disabled when tree-sitter is enabled)
+syntax enable
 
 " Don't create backup
 set nobackup

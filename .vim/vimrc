@@ -108,13 +108,10 @@ nnoremap k gk
 
 " Move to the beginning of line
 nnoremap <S-h> ^
-
 " Move to the beginning of file
 nnoremap <S-k> gg
-
 " Move to the end of line
 nnoremap <S-l> $
-
 " Move to the end of file
 nnoremap <S-j> G
 

@@ -153,6 +153,7 @@ mkdir -p ~/.1password && ln -s ~/Library/Group\ Containers/2BUA8C4S2C.com.1passw
   sudo apt install gnome-shell-extensions
   sudo apt install gnome-shell-extension-manager
   sudo apt install universal-ctags
+  sudo apt install ubuntu-restricted-extras  # to play .mov files
   ```
 * Install [RunCat](https://extensions.gnome.org/extension/2986/runcat/)
   * TODO: with https://github.com/brunelli/gnome-shell-extension-installer

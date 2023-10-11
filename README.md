@@ -4,21 +4,16 @@
 
 |             |                     |
 | ----------- | :-----------------: |
-| OS          | macOS & Ubuntu      |
-| Terminal    | [Alacritty]         |
-| Multiplexer | [Tmux]              |
+| OS          | macOS / Ubuntu      |
+| Terminal    | Alacritty           |
+| Multiplexer | Tmux                |
 | Shell       | Zsh                 |
-| Prompt      | [Starship]          |
-| Editor      | [Neovim]            |
+| Prompt      | Starship            |
+| Editor      | Vim / Neovim        |
 | Theme       | Material Deep Ocean |
 | Font        | JetBrains Mono Nerd |
 
 </div>
-
-[Alacritty]: https://github.com/alacritty/alacritty
-[Tmux]: https://github.com/tmux/tmux
-[Starship]: https://github.com/starship/starship
-[Neovim]: https://github.com/neovim/neovim
 
 ## Performance
 

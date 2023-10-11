@@ -143,10 +143,6 @@ mkdir -p ~/.1password && ln -s ~/Library/Group\ Containers/2BUA8C4S2C.com.1passw
   sudo snap install brave
   sudo snap install standard-notes
   sudo snap install code --classic
-  sudo snap install intellij-idea-ultimate --classic
-  sudo snap install clion --classic
-  sudo snap install webstorm --classic
-  sudo snap install pycharm-professional --classic
   sudo snap install slack
 
   sudo apt install gnome-tweaks

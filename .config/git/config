@@ -7,17 +7,6 @@
   path = ~/.config/git/configs/linux
 
 #
-# User
-#
-[user]
-  name = Ken Matsui
-  email = 26405363+ken-matsui@users.noreply.github.com
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJLtNOwH8UCkUcpMNG4aSMNtzUtYaYzdc3awbXbzvAwY
-
-[includeIf "hasconfig:remote.*.url:git@gitlab.cs.washington.edu:*/**"]
-  path = ~/.config/git/configs/uw
-
-#
 # GPG
 #
 [gpg]
@@ -28,6 +17,20 @@
   gpgsign = true
 [tag]
   forceSignAnnotated = true
+
+#
+# User
+#
+[user]
+  name = Ken Matsui
+  email = 26405363+ken-matsui@users.noreply.github.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJLtNOwH8UCkUcpMNG4aSMNtzUtYaYzdc3awbXbzvAwY
+
+#
+# Overwrite configs for UW
+#
+[includeIf "hasconfig:remote.*.url:git@gitlab.cs.washington.edu:*/**"]
+  path = ~/.config/git/configs/uw
 
 #
 # Send email

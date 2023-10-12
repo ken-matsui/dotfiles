@@ -1,2 +1,4 @@
 [user]
   email = 12863-kmatsui@gitlab.cs.washington.edu
+[commit]
+  gpgSign = false

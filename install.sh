@@ -58,17 +58,21 @@ echo 'Installing ken-matsui/dotfiles ...'
 git clone https://github.com/ken-matsui/dotfiles.git
 export DOTSPATH="$(cd $(dirname $0); pwd)/dotfiles"
 
-# Additional installation for macOS
+# Additional installation
 if [[ "$OSTYPE" == darwin* ]]; then
-  echo 'Installing ansible & mas ...'
-  brew install ansible mas
+  echo 'Installing mas ...'
+  brew install mas
 
   # Install software that I need
-  echo 'Running ansible ...'
-  ansible-playbook ${DOTSPATH}/bootstrap/main.yml -i ${DOTSPATH}/bootstrap/hosts
+  echo 'Bootstrapping ...'
+  for file in ${DOTSPATH}/bootstrap/macos/*.sh; do bash $file; done
 
   # Accept license
   sudo xcodebuild -license accept
+elif [[ "$OSTYPE" == linux* ]]; then
+  # Install software that I need
+  echo 'Bootstrapping ...'
+  for file in ${DOTSPATH}/bootstrap/ubuntu/*.sh; do bash $file; done
 fi
 
 echo 'Installing Rust ...'

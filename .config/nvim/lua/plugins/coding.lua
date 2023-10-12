@@ -98,7 +98,7 @@ return {
   {
     'ludovicchabant/vim-gutentags',
     config = function ()
-      vim.g.gutentags_cache_dir = vim.fn.stdpath("data") .. '/ctags'
+      vim.g.gutentags_cache_dir = vim.fn.stdpath("data")
     end
   },
 

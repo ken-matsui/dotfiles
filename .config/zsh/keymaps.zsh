@@ -10,8 +10,8 @@ for KEY in {A-Z}; do bindkey -r "^$KEY"; done
 bindkey '^M' accept-line # for enter key
 bindkey '^I' expand-or-complete # for tab key
 bindkey '^U' kill-whole-line
+bindkey '^L' clear-screen
 # Restore some key binds with other keys
-bindkey '^O' clear-screen # default is ^L
 bindkey -r '^['
 bindkey '^V' vi-cmd-mode # default is ^[
 # Enable bash like key binds

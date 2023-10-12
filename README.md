@@ -83,26 +83,6 @@ ln -s ~/dotfiles/.local/share/alacritty/config.yml ~/.local/share/alacritty/conf
 
 ### macOS
 
-`defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false`
-
-#### LaTeX
-
-https://github.com/James-Yu/LaTeX-Workshop/issues/376#issuecomment-398591211
-
-```
-sudo cpan Log::Log4perl
-sudo cpan Log::Dispatch
-sudo cpan YAML::Tiny
-sudo cpan File::HomeDir
-sudo cpan Unicode::GCString
-```
-
-#### 1Password
-
-```
-mkdir -p ~/.1password && ln -s ~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock ~/.1password/agent.sock
-```
-
 #### System Settings
 
 * System Settings -> trackpad -> Trackpad speed: Fast
@@ -130,22 +110,6 @@ mkdir -p ~/.1password && ln -s ~/Library/Group\ Containers/2BUA8C4S2C.com.1passw
   wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
   sudo dpkg -i google-chrome-stable_current_amd64.deb
   ```
-* Install the following software:
-  ```shell
-  sudo snap install alacritty --classic
-  sudo snap install discord
-  sudo snap install docker
-  sudo snap install brave
-  sudo snap install standard-notes
-  sudo snap install code --classic
-  sudo snap install slack
-
-  sudo apt install gnome-tweaks
-  sudo apt install gnome-shell-extensions
-  sudo apt install gnome-shell-extension-manager
-  sudo apt install universal-ctags
-  sudo apt install ubuntu-restricted-extras  # to play .mov files
-  ```
 * Install [RunCat](https://extensions.gnome.org/extension/2986/runcat/)
   * TODO: with https://github.com/brunelli/gnome-shell-extension-installer
 * Install 1Password
@@ -159,13 +123,6 @@ mkdir -p ~/.1password && ln -s ~/Library/Group\ Containers/2BUA8C4S2C.com.1passw
   sudo apt update && sudo apt install 1password
   ```
 * Install Ukuu
-
-* Uninstall the following software:
-  ```shell
-  sudo snap remove firefox
-  sudo apt purge thunderbird
-  sudo apt purge aisleriot gnome-mahjongg gnome-mines gnome-sudoku
-  ```
 
 * TODO: Find clipboard manager
 * TODO: Swipe back on browsers (https://kaigo.medium.com/mac-like-gestures-on-ubuntu-20-04-dell-xps-15-7ea6e3be7f76)

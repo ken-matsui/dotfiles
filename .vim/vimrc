@@ -19,6 +19,8 @@ syntax enable
 " Don't create backup
 set nobackup
 set nowritebackup
+" Disable swap file
+set noswapfile
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appeared/became resolved

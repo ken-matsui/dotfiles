@@ -103,24 +103,12 @@ return {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "ray-x/cmp-treesitter",
-      "saadparwaiz1/cmp_luasnip",
-      {
-        "L3MON4D3/LuaSnip", version = "1.*",
-        config = function()
-          require("luasnip.loaders.from_vscode").load()
-        end,
-      },
       "onsails/lspkind-nvim",
     },
     opts = function()
       local cmp = require("cmp")
       return {
         preselect = cmp.PreselectMode.None,
-        snippet = {
-          expand = function(args)
-            require("luasnip").lsp_expand(args.body)
-          end,
-        },
         mapping = cmp.mapping.preset.insert({
           ["<Esc>"] = cmp.mapping.abort(),
           ["<CR>"] = cmp.mapping.confirm({
@@ -129,7 +117,6 @@ return {
           }),
         }),
         sources = cmp.config.sources({
-          { name = "luasnip" },
           { name = "buffer" },
           { name = "path" },
           { name = "treesitter" },

@@ -16,6 +16,9 @@ set termguicolors
 " Enable syntax highlighting (automatically disabled when tree-sitter is enabled)
 syntax enable
 
+" Confirm on quit
+set confirm
+
 " Don't create backup
 set nobackup
 set nowritebackup

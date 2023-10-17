@@ -63,11 +63,6 @@ return {
   },
 
   {
-    'jiangmiao/auto-pairs',
-    event = { "BufReadPost", "BufNewFile" },
-  },
-
-  {
     'cappyzawa/trim.nvim',
     tag = "v0.8.1",
     event = "VeryLazy",

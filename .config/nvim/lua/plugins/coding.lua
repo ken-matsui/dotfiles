@@ -17,7 +17,6 @@ return {
 
   {
     'lewis6991/gitsigns.nvim',
-    event = { "BufReadPre", "BufNewFile" },
     opts = {
       -- GitLens-like blame line
       current_line_blame = true,

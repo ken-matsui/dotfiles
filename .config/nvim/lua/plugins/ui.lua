@@ -122,7 +122,11 @@ return {
           { name = "treesitter" },
         }),
         formatting = {
-          format = require('lspkind').cmp_format({}),
+          format = require('lspkind').cmp_format({
+            mode = 'symbol_text',
+            maxwidth = 50,
+            ellipsis_char = '...',
+          }),
         },
       }
     end,

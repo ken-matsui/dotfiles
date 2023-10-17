@@ -35,7 +35,7 @@ set cursorline
 
 " Visualize invisible string
 set list
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set listchars=eol:$,tab:>-,trail:·,extends:>,precedes:<
 
 " Indentation
 set smarttab

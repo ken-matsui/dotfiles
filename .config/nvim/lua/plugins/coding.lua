@@ -12,9 +12,6 @@ return {
   {
     'numToStr/Comment.nvim',
     lazy = true,
-    keys = {
-      { '<leader>c', 'gcc', 'n', remap = true },
-    },
     config = true,
   },
 

@@ -69,6 +69,7 @@ return {
 
   {
     'cappyzawa/trim.nvim',
+    tag = "v0.8.1",
     event = "VeryLazy",
   },
 

@@ -30,6 +30,7 @@ return {
       },
     },
   },
+  'rhysd/conflict-marker.vim',
 
   {
     "lukas-reineke/indent-blankline.nvim",

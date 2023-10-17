@@ -187,12 +187,4 @@ return {
     },
     config = true,
   },
-
-  {
-    'preservim/tagbar',
-    lazy = true,
-    keys = {
-      { '<Leader>t', '<Cmd>TagbarToggle<Cr>', 'n' },
-    },
-  },
 }

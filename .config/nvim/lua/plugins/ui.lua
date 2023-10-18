@@ -1,10 +1,14 @@
 return {
   -- if some code requires a module from an unloaded plugin, it will be automatically loaded.
   -- So for api plugins like devicons, we can always set lazy=true
-  { 'nvim-tree/nvim-web-devicons', lazy = true },
+  {
+    'nvim-tree/nvim-web-devicons',
+    lazy = true,
+  },
 
   {
     'nvim-tree/nvim-tree.lua',
+    lazy = true,
     dependencies = {
       'nvim-tree/nvim-web-devicons',
     },
@@ -88,13 +92,14 @@ return {
 
   {
     "petertriho/nvim-scrollbar",
-    event = "BufReadPost",
+    event = "VeryLazy",
     config = true,
   },
 
   -- Completion
   {
     "hrsh7th/nvim-cmp",
+    event = 'InsertEnter',
     dependencies = {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",

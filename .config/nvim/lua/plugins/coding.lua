@@ -18,10 +18,17 @@ return {
   --
   -- Git
   --
-  'airblade/vim-gitgutter',
-  'rhysd/conflict-marker.vim',
+  {
+    'airblade/vim-gitgutter',
+    event = "BufReadPre",
+  },
+  {
+    'rhysd/conflict-marker.vim',
+    event = "VeryLazy",
+  },
   {
     'APZelos/blamer.nvim',
+    event = "BufReadPost",
     init = function ()
       vim.g.blamer_enabled = 1
     end,
@@ -33,14 +40,26 @@ return {
     event = "VeryLazy",
   },
 
-  'rstacruz/vim-closer',
-  'tpope/vim-endwise',
-  'tpope/vim-surround',
+  {
+    'rstacruz/vim-closer',
+    event = "InsertEnter",
+  },
+  {
+    'tpope/vim-endwise',
+    event = "InsertEnter",
+  },
+  {
+    'tpope/vim-surround',
+    event = "VeryLazy",
+  },
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
-  'vim-scripts/ReplaceWithRegister',
+  {
+    'vim-scripts/ReplaceWithRegister',
+    event = "VeryLazy",
+  },
 
   {
     "MattesGroeger/vim-bookmarks",
@@ -68,7 +87,7 @@ return {
 
   {
     'mg979/vim-visual-multi',
-    event = { "BufReadPost", "BufNewFile" },
+    event = "VeryLazy",
   },
 
   {

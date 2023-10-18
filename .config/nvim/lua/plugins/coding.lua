@@ -19,19 +19,46 @@ return {
   -- Git
   --
   {
-    'airblade/vim-gitgutter',
+    'lewis6991/gitsigns.nvim',
     event = "BufReadPre",
+    opts = {
+      -- GitLens-like blame line
+      current_line_blame = true,
+      -- See `:help gitsigns.txt`
+      signs = {
+        add = { text = '+' },
+        change = { text = '~' },
+        delete = { text = '_' },
+        topdelete = { text = '‾' },
+        changedelete = { text = '~' },
+      },
+      on_attach = function(bufnr)
+        local gs = package.loaded.gitsigns
+
+        local function map(mode, l, r, opts)
+          opts = opts or {}
+          opts.buffer = bufnr
+          vim.keymap.set(mode, l, r, opts)
+        end
+
+        -- Navigation
+        map('n', ']c', function()
+          if vim.wo.diff then return ']c' end
+          vim.schedule(function() gs.next_hunk() end)
+          return '<Ignore>'
+        end, {expr=true})
+
+        map('n', '[c', function()
+          if vim.wo.diff then return '[c' end
+          vim.schedule(function() gs.prev_hunk() end)
+          return '<Ignore>'
+        end, {expr=true})
+      end,
+    },
   },
   {
     'rhysd/conflict-marker.vim',
     event = "VeryLazy",
-  },
-  {
-    'APZelos/blamer.nvim',
-    event = "BufReadPost",
-    init = function ()
-      vim.g.blamer_enabled = 1
-    end,
   },
 
   {

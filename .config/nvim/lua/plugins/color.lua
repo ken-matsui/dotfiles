@@ -64,7 +64,7 @@ return {
   -- C/C++ Syntax Highlight
   {
     'bfrg/vim-cpp-modern',
-    event = { "BufReadPost", "BufNewFile" },
+    event = "BufReadPre",
     config = function ()
       -- Enable highlighting of C++11 attributes
       vim.g.cpp_attributes_highlight = 1
@@ -77,7 +77,7 @@ return {
   -- Highlight arguments
   {
     'm-demare/hlargs.nvim',
-    event = { "BufReadPost", "BufNewFile" },
+    event = "BufReadPre",
     config = true,
   },
 

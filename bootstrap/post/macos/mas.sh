@@ -1,6 +1,8 @@
 #!/bin/bash
 set -eu
 
+brew install mas
+
 # mas lucky 'Affinity Designer'
 mas lucky 'Goodnotes 6'
 mas lucky 'Kindle'

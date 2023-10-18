@@ -58,25 +58,22 @@ echo 'Installing ken-matsui/dotfiles ...'
 git clone https://github.com/ken-matsui/dotfiles.git
 export DOTSPATH="$(cd $(dirname $0); pwd)/dotfiles"
 
-# Additional installation
 if [[ "$OSTYPE" == darwin* ]]; then
-  echo 'Installing mas ...'
-  brew install mas
-
-  # Install software that I need
-  echo 'Bootstrapping ...'
-  for file in ${DOTSPATH}/bootstrap/macos/*.sh; do bash $file; done
+  for file in ${DOTSPATH}/bootstrap/post/macos/*.sh;
+  do
+    echo "Running $file ..."
+    bash $file
+  done
 
   # Accept license
   sudo xcodebuild -license accept
 elif [[ "$OSTYPE" == linux* ]]; then
-  # Install software that I need
-  echo 'Bootstrapping ...'
-  for file in ${DOTSPATH}/bootstrap/ubuntu/*.sh; do bash $file; done
+  for file in ${DOTSPATH}/bootstrap/post/ubuntu/*.sh;
+  do
+    echo "Running $file ..."
+    bash $file
+  done
 fi
-
-echo 'Installing Rust ...'
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
 
 # TODO: gh is installed only on macOS, not on Ubuntu.
 gh auth login

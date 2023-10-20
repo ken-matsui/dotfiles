@@ -96,6 +96,11 @@ augroup filetype
 augroup END
 au Syntax jflex so ~/.vim/syntax/jflex.vim
 
+" Mojo
+" Mojo files use either .mojo or .🔥 as extension
+au BufNewFile,BufRead *.mojo,*.🔥		setf mojo
+au Syntax mojo so ~/.vim/syntax/mojo.vim
+
 " =====================
 " Key Mappings
 " =====================

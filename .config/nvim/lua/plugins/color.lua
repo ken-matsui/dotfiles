@@ -92,11 +92,6 @@ return {
         vim.api.nvim_set_hl(0, "IBLYellow", { fg = "#E5C07B" })
       end)
 
-      local highlight = {
-        "CursorColumn",
-        "Whitespace",
-      }
-
       require("ibl").setup({
         exclude = {
           filetypes = {
@@ -105,12 +100,7 @@ return {
           },
         },
         indent = {
-          highlight = highlight,
           char = "▏",
-        },
-        whitespace = {
-          highlight = highlight,
-          remove_blankline_trail = false,
         },
         scope = {
           enabled = true,

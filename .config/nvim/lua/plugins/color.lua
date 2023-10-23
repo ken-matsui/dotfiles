@@ -22,6 +22,7 @@ return {
     opts = {
       ensure_installed = {
         "bash",
+        "comment",
         "dockerfile",
         "html",
         "java",

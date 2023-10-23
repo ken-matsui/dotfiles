@@ -1,7 +1,7 @@
 return {
   {
     'github/copilot.vim', -- :Copilot setup
-    event = "VeryLazy",
+    event = "InsertEnter",
     config = function ()
       vim.g.copilot_filetypes = {
         NvimTree = false,

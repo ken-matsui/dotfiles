@@ -117,6 +117,8 @@ return {
     event = "VeryLazy",
   },
 
+  'dkarter/bullets.vim',
+
   {
     'rust-lang/rust.vim',
     ft = "rust",

@@ -80,6 +80,7 @@ ln -s ~/dotfiles/.local/share/alacritty/config.yml ~/.local/share/alacritty/conf
 #### 1Password
 
 * Settings -> Developer -> Enable `Use the SSH agent`
+* Settings -> Developer -> Enable `Integrate with 1Password CLI`
 
 ### macOS
 

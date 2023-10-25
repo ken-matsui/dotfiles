@@ -662,8 +662,8 @@ color index_number	green		default
 color index_date	cyan		default
 color index_size	cyan		default
 
-color header		brightcyan	default		'^From:'
-color header		brightcyan	default		'^Subject:'
+color header		yellow		default		'^From:'
+color header		green		default		'^Subject:'
 color header		black		brightgreen	'^User-Agent:.*Mutt'
 
 color body		cyan		default		"^(Signed-off-by).*"
@@ -713,9 +713,6 @@ bind index			\Cy	previous-line
 
 bind pager,index		d	noop
 bind pager,index		dd	delete-message
-
-# Mail & Reply
-bind index			\Cm	list-reply # Doesn't work currently
 
 # Threads
 bind browser,pager,index	N	search-opposite

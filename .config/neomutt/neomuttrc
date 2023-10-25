@@ -202,6 +202,10 @@ set trash = "+[Gmail]/Trash"
 # mailboxes +Drafts +Sent +Spam
 mailboxes $spoolfile "+[Gmail]/Starred" $record $postponed "+[Gmail]/Spam" $trash
 
+# To increase the performance
+set header_cache = "$XDG_CACHE_HOME/neomutt/headers"  # mkdir -p $XDG_CACHE_HOME/neomutt
+set message_cachedir = "$XDG_CACHE_HOME/neomutt/bodies"  # mkdir -p $message_cachedir
+
 # Disable saving outgoing mail since Gmail saves them by default.
 set record = ""
 ##########################################################################

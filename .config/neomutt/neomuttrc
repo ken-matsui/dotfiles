@@ -688,7 +688,7 @@ color quoted9		blue		default
 
 set quote_regex = "^([ \t]*>)+"
 # -------------------------------------------------------------------------
-# Name: Vi Key Bindings
+# Name: Key Bindings
 # -------------------------------------------------------------------------
 # https://github.com/neomutt/neomutt/blob/fa83255d2e5cee1a34dcaf108a06107942b59865/contrib/vim-keys/vim-keys.rc
 # Moving around
@@ -722,6 +722,15 @@ bind pager,index		gt	next-thread
 bind pager,index		gT	previous-thread
 bind index			za	collapse-thread
 bind index			zA	collapse-all # Missing :folddisable/foldenable
+
+## sidebar {{{1
+bind index,pager b sidebar-toggle-visible
+bind index \CP sidebar-prev
+bind index \CN sidebar-next
+bind index \CO sidebar-open
+bind pager \CP sidebar-prev
+bind pager \CN sidebar-next
+bind pager \CO sidebar-open
 # -------------------------------------------------------------------------
 
 # -------------------------------------------------------------------------
@@ -1093,8 +1102,9 @@ set alias_format = "%4n %t %-20a  %r"
 ## autocheck {{{1
 set check_new = yes
 set imap_check_subscribed = yes
-set mail_check = 60
-set timeout = 15
+set mail_check = 30                  # check for new mail every 30 seconds
+set imap_keepalive = 900             # 15 minutes
+set sleep_time = 0                   # don't sleep when idle
 
 ## sort {{{1
 set sort = 'threads'
@@ -1102,16 +1112,6 @@ set sort_aux = 'reverse-last-date-received'
 set auto_tag = yes
 
 ## auto recognize attaches {{{1
-set mailcap_path = ~/.mutt/mailcap
 auto_view text/html application/x-tar-gz
 set attach_charset="utf-8"
 set attach_format="%u%D%I %t%4n %T%.40d%> [%.7m/%.10M, %.6e%?C?, %C?, %s]"
-
-## sidebar {{{1
-bind index,pager b sidebar-toggle-visible
-bind index \CP sidebar-prev
-bind index \CN sidebar-next
-bind index \CO sidebar-open
-bind pager \CP sidebar-prev
-bind pager \CN sidebar-next
-bind pager \CO sidebar-open

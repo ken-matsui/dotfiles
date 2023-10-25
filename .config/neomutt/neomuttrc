@@ -662,23 +662,13 @@ color header		brightcyan	default		'^From:'
 color header		brightcyan	default		'^Subject:'
 color header		black		brightgreen	'^User-Agent:.*Mutt'
 
-color body		brightwhite	default		"^[[:space:]].*"
-color body		yellow		default		"^(diff).*"
-color body		yellow		default		"^[\-\-\-].*"
-color body		yellow		default		"^[\+\+\+].*"
-color body		green		default		"^[\+].*"
-color body		red		default		"^[\-].*"
-color body		brightblue	default		"[@@].*"
-color body		brightwhite	default		"^(\s).*"
 color body		cyan		default		"^(Signed-off-by).*"
-color body		brightwhite	default		"^(Cc)"
-color body		yellow		default		"^diff \-.*"
-color body		brightwhite	default		"^index [a-f0-9].*"
-color body		brightblue	default		"^---$"
-color body		yellow		default		"^\-\-\- .*"
+color body		blue		default		"^diff \-.*"
+color body		blue		default		"^index [a-f0-9].*"
+color body		green		default		"^[\+].*"
+color body		red		default		"^\-[^-].*"
+color body		yellow		default		"^[\-]{3} .*"
 color body		yellow		default		"^[\+]{3} .*"
-color body		green		default		"^[\+][^\+]+.*"
-color body		red		default		"^\-[^\-]+.*"
 color body		brightblue	default		"^@@ .*"
 
 color quoted		magenta		default
@@ -691,6 +681,8 @@ color quoted6		green		default
 color quoted7		red		default
 color quoted8		magenta		default
 color quoted9		blue		default
+
+set quote_regex = "^([ \t]*>)+"
 # -------------------------------------------------------------------------
 
 # -------------------------------------------------------------------------

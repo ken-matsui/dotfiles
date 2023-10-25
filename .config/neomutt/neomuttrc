@@ -1069,7 +1069,6 @@ set ssl_force_tls = yes
 ## common {{{1
 set fast_reply              # No ask for recipients and subject when replying
 set include                 # Include message in reply
-set editor = "nvim"
 set move = no               # Stop asking to "move read messages to mbox"!
 set mime_fwd                # Forward mail with attachements
 

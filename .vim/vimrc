@@ -62,6 +62,7 @@ let mapleader = " "
 set tags=./tags;
 
 " Automatic word wrapping
+set colorcolumn=80
 set textwidth=72
 filetype indent plugin on
 

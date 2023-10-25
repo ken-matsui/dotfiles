@@ -61,6 +61,10 @@ let mapleader = " "
 " Load ctags if exists
 set tags=./tags;
 
+" Automatic word wrapping
+set textwidth=72
+filetype indent plugin on
+
 " Return to last edit position when opening files
 augroup ReturnToLastPosition
   autocmd!

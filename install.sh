@@ -44,6 +44,10 @@ else
   exit 1
 fi
 
+echo 'Installing ken-matsui/dotfiles ...'
+git clone https://github.com/ken-matsui/dotfiles.git
+export DOTSPATH="$(cd $(dirname $0); pwd)/dotfiles"
+
 echo 'Installing Homebrew ...'
 yes | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 if [ -f /opt/homebrew/bin/brew ]; then
@@ -54,10 +58,6 @@ else
   echo 'Homebrew installation seems broken.'
   exit 1
 fi
-
-echo 'Installing ken-matsui/dotfiles ...'
-git clone https://github.com/ken-matsui/dotfiles.git
-export DOTSPATH="$(cd $(dirname $0); pwd)/dotfiles"
 
 if [[ "$OSTYPE" == darwin* ]]; then
   for file in ${DOTSPATH}/bootstrap/post/macos/*.sh;

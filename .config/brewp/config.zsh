@@ -28,6 +28,7 @@ brewp add git-delta
 brewp add git-interactive-rebase-tool
 brewp add graphviz
 brewp add gzip
+brewp add htop
 # brewp add httrack
 brewp add hyperfine
 brewp add jq

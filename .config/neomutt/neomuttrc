@@ -1064,3 +1064,55 @@ set ssl_force_tls = yes
 # You may use multiple crypt-hooks with the same regex; multiple matching
 # crypt-hooks result in the use of multiple keyids for a recipient.
 # -------------------------------------------------------------------------
+# Name: options
+# -------------------------------------------------------------------------
+## common {{{1
+set fast_reply              # No ask for recipients and subject when replying
+set include                 # Include message in reply
+set editor = "nvim"
+set move = no               # Stop asking to "move read messages to mbox"!
+set mime_fwd                # Forward mail with attachements
+
+## pager options {{{1
+set pager_index_lines = 7   # number of index lines to show 
+set pager_context = 10      # number of context lines to show
+set pager_stop              # don't go to next message automatically
+set menu_scroll             # scroll in menus 
+set smart_wrap              # don't split words
+set tilde                   # show tildes like in vim
+unset markers               # no ugly plus signs
+set quit = ask-yes
+set delete                  # Realy deleting letters
+
+## format {{{1
+set date_format = "%m-%d (%H:%M)"
+set index_format = "%D • %-20.20L %s %> %c"
+set folder_format = "%2C %t %N %2s %d %f"
+set status_format = "%f %?n?%n New ?%?u?%u Unread. ?%>  %V  (%P)"
+set alias_format = "%4n %t %-20a  %r"
+
+## autocheck {{{1
+set check_new = yes
+set imap_check_subscribed = yes
+set mail_check = 60
+set timeout = 15
+
+## sort {{{1
+set sort = 'threads'
+set sort_aux = 'reverse-last-date-received'
+set auto_tag = yes
+
+## auto recognize attaches {{{1
+set mailcap_path = ~/.mutt/mailcap
+auto_view text/html application/x-tar-gz
+set attach_charset="utf-8"
+set attach_format="%u%D%I %t%4n %T%.40d%> [%.7m/%.10M, %.6e%?C?, %C?, %s]"
+
+## sidebar {{{1
+bind index,pager b sidebar-toggle-visible
+bind index \CP sidebar-prev
+bind index \CN sidebar-next
+bind index \CO sidebar-open
+bind pager \CP sidebar-prev
+bind pager \CN sidebar-next
+bind pager \CO sidebar-open

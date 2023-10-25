@@ -15,3 +15,4 @@
 !.config/atuin
 !.config/tmux
 .config/tmux/plugins
+!.config/neomutt

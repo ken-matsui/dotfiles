@@ -13,7 +13,6 @@ fi
 # Normal packages
 ##################################
 brewp add 1password-cli
-brewp add alpine
 brewp add atuin
 # brewp add asciinema
 # brewp add awscli
@@ -39,6 +38,7 @@ brewp add llvm  # clangd, clang-format, clang-tidy
 brewp add lsd
 # brewp add mysql  # for mysqlclient of Python
 brewp add ninja
+brewp add neomutt
 brewp add neovim
 brewp add node
 brewp add poetry

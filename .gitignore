@@ -5,7 +5,7 @@
 !.config/nvim
 !.config/git
 !.config/alacritty
-!.config/topgrade.toml
+!.config/topgrade
 !.config/zellij
 !.config/zsh
 !.config/brewp

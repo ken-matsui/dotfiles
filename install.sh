@@ -60,7 +60,7 @@ else
 fi
 
 if [[ "$OSTYPE" == darwin* ]]; then
-  for file in ${DOTSPATH}/bootstrap/post/macos/*.sh;
+  for file in ${DOTSPATH}/setup/post/macos/*.sh;
   do
     echo "Running $file ..."
     bash $file
@@ -69,7 +69,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
   # Accept license
   sudo xcodebuild -license accept
 elif [[ "$OSTYPE" == linux* ]]; then
-  for file in ${DOTSPATH}/bootstrap/post/ubuntu/*.sh;
+  for file in ${DOTSPATH}/setup/post/ubuntu/*.sh;
   do
     echo "Running $file ..."
     bash $file

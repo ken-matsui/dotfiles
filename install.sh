@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu
 
-cd ~/
+cd $HOME
 
 # Created by figlet command
 echo '

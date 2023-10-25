@@ -1,8 +1,5 @@
 .DS_Store
 
-# ansible
-*.retry
-
 .config/*
 !.config/starship.toml
 !.config/nvim

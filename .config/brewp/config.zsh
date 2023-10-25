@@ -12,6 +12,7 @@ fi
 ##################################
 # Normal packages
 ##################################
+brewp add alpine
 brewp add atuin
 # brewp add asciinema
 # brewp add awscli

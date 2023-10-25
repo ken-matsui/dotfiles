@@ -99,9 +99,6 @@ ln -s ~/dotfiles/.local/share/alacritty/config.yml ~/.local/share/alacritty/conf
 
 ### Ubuntu
 
-* Run `fprintd-enroll` on the terminal app to enable fingerprint authentication.
-* Run `sudo pam-auth-update` (https://askubuntu.com/a/1040609)
-
 * Install [Ulauncher](https://ulauncher.io/).
 * Install Dropbox
 * Install Zoom

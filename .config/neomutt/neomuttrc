@@ -755,7 +755,7 @@ set quote_regex = "^([ \t]*>)+"
 # thus set, a suggested value for this option is "%B%?F? [%F]?%*
 # %?N?%N/?%S".
 
-set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set sidebar_format = "%B %* [%?N?%N / ?%S]"
 # -------------------------------------------------------------------------
 # Name: sidebar_indent_string
 # -------------------------------------------------------------------------

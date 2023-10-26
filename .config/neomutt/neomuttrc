@@ -1077,12 +1077,13 @@ set ssl_force_tls = yes
 # -------------------------------------------------------------------------
 ## common {{{1
 set fast_reply              # No ask for recipients and subject when replying
+set edit_headers                     # show headers when composing
+set askcc                            # ask for CC:
 set include                 # Include message in reply
 set move = no               # Stop asking to "move read messages to mbox"!
-set mime_fwd                # Forward mail with attachements
 
 ## pager options {{{1
-set pager_index_lines = 7   # number of index lines to show 
+set pager_index_lines = 10  # number of index lines to show 
 set pager_context = 10      # number of context lines to show
 set pager_stop              # don't go to next message automatically
 set menu_scroll             # scroll in menus 
@@ -1098,6 +1099,12 @@ set index_format = "%D • %-20.20L %s %> %c"
 set folder_format = "%2C %t %N %2s %d %f"
 set status_format = "%f %?n?%n New ?%?u?%u Unread. ?%>  %V  (%P)"
 set alias_format = "%4n %t %-20a  %r"
+
+set forward_format = "Fwd: %s"       # format of subject when forwarding
+set forward_decode                   # decode when forwarding
+set forward_quote                    # include message in forwards
+set mime_forward                     # forward attachments as part of body
+set attribution = "On %d, %n wrote:" # format of quoting header
 
 ## autocheck {{{1
 set check_new = yes

@@ -117,6 +117,10 @@ au Syntax jflex so ~/.vim/syntax/jflex.vim
 au BufNewFile,BufRead *.mojo,*.🔥		setf mojo
 au Syntax mojo so ~/.vim/syntax/mojo.vim
 
+" Cup
+au BufNewFile,BufRead *.cup			setf cup
+au Syntax cup so ~/.vim/syntax/cup.vim
+
 " =====================
 " Key Mappings
 " =====================

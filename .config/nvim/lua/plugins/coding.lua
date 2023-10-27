@@ -1,7 +1,7 @@
 return {
   {
     'github/copilot.vim', -- :Copilot setup
-    event = "InsertEnter",
+    event = "VeryLazy",
     config = function ()
       vim.g.copilot_filetypes = {
         NvimTree = false,
@@ -10,73 +10,38 @@ return {
   },
 
   {
+    "jackMort/ChatGPT.nvim",
+    lazy = true,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    },
+    keys = {
+      { '<Leader>cc', '<Cmd>ChatGPT<Cr>', 'n' },
+      { '<Leader>ce', '<Cmd>ChatGPTEditWithInstruction<Cr>', mode = { 'n', 'v' } },
+      { '<Leader>cg', '<Cmd>ChatGPTRun grammar_correction<Cr>', mode = { 'n', 'v' } },
+      { '<Leader>ct', '<Cmd>ChatGPTRun translate<Cr>', mode = { 'n', 'v' } },
+      { '<Leader>ck', '<Cmd>ChatGPTRun keywords<Cr>', mode = { 'n', 'v' } },
+      { '<Leader>cd', '<Cmd>ChatGPTRun docstring<Cr>', mode = { 'n', 'v' } },
+      { '<Leader>ca', '<Cmd>ChatGPTRun add_tests<Cr>', mode = { 'n', 'v' } },
+      { '<Leader>co', '<Cmd>ChatGPTRun optimize_code<Cr>', mode = { 'n', 'v' } },
+      { '<Leader>cs', '<Cmd>ChatGPTRun summarize<Cr>', mode = { 'n', 'v' } },
+      { '<Leader>cf', '<Cmd>ChatGPTRun fix_bugs<Cr>', mode = { 'n', 'v' } },
+      { '<Leader>cx', '<Cmd>ChatGPTRun explain_code<Cr>', mode = { 'n', 'v' } },
+      { '<Leader>cr', '<Cmd>ChatGPTRun code_readability_analysis<Cr>', mode = { 'n', 'v' } },
+    },
+    config = function()
+      require("chatgpt").setup({
+        api_key_cmd = "op read -n op://Personal/OpenAI/credential"
+      })
+    end,
+  },
+
+  {
     'numToStr/Comment.nvim',
     lazy = true,
     config = true,
-  },
-
-  --
-  -- Git
-  --
-  {
-    'lewis6991/gitsigns.nvim',
-    event = "BufReadPre",
-    opts = {
-      -- GitLens-like blame line
-      current_line_blame = true,
-      -- See `:help gitsigns.txt`
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
-      },
-      on_attach = function(bufnr)
-        local gs = package.loaded.gitsigns
-
-        local function map(mode, l, r, opts)
-          opts = opts or {}
-          opts.buffer = bufnr
-          vim.keymap.set(mode, l, r, opts)
-        end
-
-        -- Navigation
-        map('n', ']c', function()
-          if vim.wo.diff then return ']c' end
-          vim.schedule(function() gs.next_hunk() end)
-          return '<Ignore>'
-        end, {expr=true})
-
-        map('n', '[c', function()
-          if vim.wo.diff then return '[c' end
-          vim.schedule(function() gs.prev_hunk() end)
-          return '<Ignore>'
-        end, {expr=true})
-
-        -- Actions
-        map('n', '<leader>gs', gs.stage_hunk)
-        map('n', '<leader>gr', gs.reset_hunk)
-        map('v', '<leader>gs', function() gs.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
-        map('v', '<leader>gr', function() gs.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
-        map('n', '<leader>gS', gs.stage_buffer)
-        map('n', '<leader>gu', gs.undo_stage_hunk)
-        map('n', '<leader>gR', gs.reset_buffer)
-        map('n', '<leader>gp', gs.preview_hunk)
-        map('n', '<leader>gb', function() gs.blame_line{full=true} end)
-        map('n', '<leader>tb', gs.toggle_current_line_blame)
-        map('n', '<leader>gd', gs.diffthis)
-        map('n', '<leader>gD', function() gs.diffthis('~') end)
-        map('n', '<leader>td', gs.toggle_deleted)
-
-        -- Text object
-        map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
-      end,
-    },
-  },
-  {
-    'rhysd/conflict-marker.vim',
-    event = "VeryLazy",
   },
 
   {
@@ -84,22 +49,6 @@ return {
     tag = "v0.8.1",
     event = "VeryLazy",
   },
-
-  {
-    'rstacruz/vim-closer',
-    event = "InsertEnter",
-  },
-  {
-    'tpope/vim-endwise',
-    event = "InsertEnter",
-  },
-  {
-    'tpope/vim-surround',
-    event = "VeryLazy",
-  },
-
-  -- Detect tabstop and shiftwidth automatically
-  'tpope/vim-sleuth',
 
   {
     'vim-scripts/ReplaceWithRegister',
@@ -129,13 +78,6 @@ return {
       vim.g.gutentags_cache_dir = vim.fn.stdpath("data")
     end
   },
-
-  {
-    'mg979/vim-visual-multi',
-    event = "VeryLazy",
-  },
-
-  'dkarter/bullets.vim',
 
   {
     'rust-lang/rust.vim',

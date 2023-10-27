@@ -13,7 +13,7 @@ return {
       'nvim-tree/nvim-web-devicons',
     },
     keys = {
-      { '<Leader>s', '<Cmd>NvimTreeFindFileToggle<Cr>', 'n' },
+      { '<Leader>s', '<Cmd>NvimTreeFindFileToggle<Cr>', mode = 'n', desc = "NvimTree Toggle" },
     },
     opts = {
       sort_by = "case_sensitive",
@@ -37,15 +37,7 @@ return {
     keys = {
       { '<Leader>h', '<Cmd>BufferLineCyclePrev<Cr>', 'n' },
       { '<Leader>l', '<Cmd>BufferLineCycleNext<Cr>', 'n' },
-      { '<Leader>1', '<Cmd>BufferLineGoToBuffer 1<Cr>', 'n' },
-      { '<Leader>2', '<Cmd>BufferLineGoToBuffer 2<Cr>', 'n' },
-      { '<Leader>3', '<Cmd>BufferLineGoToBuffer 3<Cr>', 'n' },
-      { '<Leader>4', '<Cmd>BufferLineGoToBuffer 4<Cr>', 'n' },
-      { '<Leader>5', '<Cmd>BufferLineGoToBuffer 5<Cr>', 'n' },
-      { '<Leader>6', '<Cmd>BufferLineGoToBuffer 6<Cr>', 'n' },
-      { '<Leader>7', '<Cmd>BufferLineGoToBuffer 7<Cr>', 'n' },
-      { '<Leader>8', '<Cmd>BufferLineGoToBuffer 8<Cr>', 'n' },
-      { '<Leader>9', '<Cmd>BufferLineGoToBuffer 9<Cr>', 'n' },
+      { '<Leader>t', '<Cmd>BufferLinePick<Cr>', 'n' },
       { '<Leader><Left>', '<Cmd>BufferLineMovePrev<Cr>', 'n' },
       { '<Leader><Right>', '<Cmd>BufferLineMoveNext<Cr>', 'n' },
     },
@@ -141,12 +133,10 @@ return {
       'BurntSushi/ripgrep',
       { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
       "tom-anders/telescope-vim-bookmarks.nvim",
-      "debugloop/telescope-undo.nvim",
     },
     keys = {
       { '<Leader>f', '<Cmd>Telescope live_grep<Cr>', 'n' },
       { '<Leader>b', '<Cmd>Telescope vim_bookmarks all<Cr>', 'n' },
-      { '<Leader>u', '<Cmd>Telescope undo<Cr>', 'n' },
     },
     opts = {
       defaults = {
@@ -173,7 +163,6 @@ return {
       require('telescope').setup(opts)
       require('telescope').load_extension('fzf')
       require('telescope').load_extension('vim_bookmarks')
-      require('telescope').load_extension('undo')
     end,
   },
   {
@@ -184,8 +173,18 @@ return {
       "kkharji/sqlite.lua"
     },
     keys = {
-      { '<Leader>o', function() require('telescope.builtin').find_files() end, 'n' },
+      { '<Leader>o', function() require('telescope.builtin').find_files() end, 'n', desc = "Find file" },
     },
     config = true,
+  },
+
+  {
+    'smoka7/hop.nvim',
+    lazy = true,
+    version = "v2.3.2",
+    keys = {
+      { '<Leader>j', '<Cmd>HopWord<Cr>', 'n' },
+    },
+    opts = {},
   },
 }

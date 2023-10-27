@@ -13,7 +13,7 @@ return {
   -- Syntax Highlight
   {
     'nvim-treesitter/nvim-treesitter',
-    event = { "BufReadPost", "BufNewFile" },
+    event = "BufReadPre",
     dependencies = {
       "windwp/nvim-ts-autotag",
       "JoosepAlviste/nvim-ts-context-commentstring",
@@ -65,7 +65,7 @@ return {
   -- C/C++ Syntax Highlight
   {
     'bfrg/vim-cpp-modern',
-    event = "BufReadPre",
+    ft = { "c", "cpp" },
     config = function ()
       -- Enable highlighting of C++11 attributes
       vim.g.cpp_attributes_highlight = 1

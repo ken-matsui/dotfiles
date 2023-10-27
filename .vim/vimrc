@@ -141,10 +141,6 @@ nnoremap <S-l> $
 " Move to the end of file
 nnoremap <S-j> G
 
-" Indent
-nnoremap <Leader>] >>
-nnoremap <Leader>[ <<
-
 " Paste with adjusting the indent
 nnoremap p ]p
 nnoremap P ]P

@@ -119,7 +119,7 @@ set imap_user = "kmatsui@cs.washington.edu"
 # machine, because the superuser can read your neomuttrc even if you are
 # the only one who can read the file.
 
-set imap_pass = "`op item get 'UW CS' --fields label=apppass-neomutt | tr -d '\n'`"
+set imap_pass = "`op read -n 'op://Education/UW CS/apppass-neomutt'`"
 ##########################################################################
 #   02 - Mailbox and folders
 ##########################################################################
@@ -152,7 +152,7 @@ set folder="imaps://imap.gmail.com:993"
 # then the environment variables $MAIL and $MAILDIR will be checked.  
 # -------------------------------------------------------------------------
 
-set spoolfile = "+INBOX"
+set spool_file = "+INBOX"
 # -------------------------------------------------------------------------
 # Name: postponed
 # -------------------------------------------------------------------------
@@ -200,7 +200,7 @@ set trash = "+[Gmail]/Trash"
 
 # unmailboxes *
 # mailboxes +Drafts +Sent +Spam
-mailboxes $spoolfile "+[Gmail]/Starred" $record $postponed "+[Gmail]/Spam" $trash
+mailboxes $spool_file "+[Gmail]/Starred" $record $postponed "+[Gmail]/Spam" $trash
 
 # To increase the performance
 set header_cache = "$XDG_CACHE_HOME/neomutt/headers"  # mkdir -p $XDG_CACHE_HOME/neomutt
@@ -692,10 +692,12 @@ set quote_regex = "^([ \t]*>)+"
 # -------------------------------------------------------------------------
 # https://github.com/neomutt/neomutt/blob/fa83255d2e5cee1a34dcaf108a06107942b59865/contrib/vim-keys/vim-keys.rc
 # Moving around
-bind attach,browser,index	g	noop
+bind attach,browser,pager,index	gT	noop
+bind attach,browser,pager,index	gt	noop
+bind attach,browser,pager,index	gg	noop
+bind attach,browser,pager,index	g	noop
 bind attach,browser,index	gg	first-entry
 bind attach,browser,index	G	last-entry
-bind pager			g	noop
 bind pager			gg	top
 bind pager			G	bottom
 bind pager			k	previous-line
@@ -711,6 +713,9 @@ bind browser,pager		\Cy	previous-line
 bind index			\Ce	next-line
 bind index			\Cy	previous-line
 
+bind pager,index		dT	noop
+bind pager,index		dt	noop
+bind pager,index		dd	noop
 bind pager,index		d	noop
 bind pager,index		dd	delete-message
 
@@ -721,16 +726,17 @@ bind pager,index		dt	delete-subthread
 bind pager,index		gt	next-thread
 bind pager,index		gT	previous-thread
 bind index			za	collapse-thread
-bind index			zA	collapse-all # Missing :folddisable/foldenable
+bind index			zA	collapse-all  # Missing :folddisable/foldenable
+bind index			G	imap-fetch-mail
 
 ## sidebar {{{1
-bind index,pager b sidebar-toggle-visible
-bind index \CP sidebar-prev
-bind index \CN sidebar-next
-bind index \CO sidebar-open
-bind pager \CP sidebar-prev
-bind pager \CN sidebar-next
-bind pager \CO sidebar-open
+bind index,pager		b	sidebar-toggle-visible
+bind index			\CP	sidebar-prev
+bind index			\CN	sidebar-next
+bind index			\CO	sidebar-open
+bind pager			\CP	sidebar-prev
+bind pager			\CN	sidebar-next
+bind pager			\CO	sidebar-open
 # -------------------------------------------------------------------------
 
 # -------------------------------------------------------------------------
@@ -906,7 +912,7 @@ set smtp_url = "smtps://$imap_user@smtp.uw.edu:587"
 # machine, because the superuser can read your neomuttrc even if you are
 # the only one who can read the file.
 
-set smtp_pass = "`op item get 'UW CS' --fields label=password | tr -d '\n'`"
+set smtp_pass = "`op read -n 'op://Education/UW CS/password'`"
 # -------------------------------------------------------------------------
 # Name: smtp_authenticators
 # -------------------------------------------------------------------------
@@ -1076,22 +1082,35 @@ set ssl_force_tls = yes
 # Name: options
 # -------------------------------------------------------------------------
 ## common {{{1
-set fast_reply              # No ask for recipients and subject when replying
-set edit_headers                     # show headers when composing
-set askcc                            # ask for CC:
-set include                 # Include message in reply
-set move = no               # Stop asking to "move read messages to mbox"!
+# No ask for recipients and subject when replying
+set fast_reply
+# show headers when composing
+set edit_headers
+# ask for CC:
+set ask_cc
+# Include message in reply
+set include
+# Stop asking to "move read messages to mbox"!
+set move = no
 
 ## pager options {{{1
-set pager_index_lines = 10  # number of index lines to show 
-set pager_context = 10      # number of context lines to show
-set pager_stop              # don't go to next message automatically
-set menu_scroll             # scroll in menus 
-set smart_wrap              # don't split words
-set tilde                   # show tildes like in vim
-unset markers               # no ugly plus signs
+# number of index lines to show
+set pager_index_lines = 7
+# number of context lines to show
+set pager_context = 10
+# don't go to next message automatically
+set pager_stop
+# scroll in menus
+set menu_scroll
+# don't split words
+set smart_wrap
+# show tildes like in vim
+set tilde
+# no ugly plus signs
+unset markers
 set quit = ask-yes
-set delete                  # Realy deleting letters
+# Really deleting letters
+set delete
 
 ## format {{{1
 set date_format = "%m-%d (%H:%M)"

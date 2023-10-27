@@ -84,9 +84,8 @@ return {
 
   -- Indentation
   {
-    "lukas-reineke/indent-blankline.nvim",
-    tag = "v3.3.2",
-    event = { "BufReadPost", "BufNewFile" },
+    "lukas-reineke/indent-blankline.nvim", version = "v3.*",
+    event = "BufReadPost",
     config = function()
       local hooks = require("ibl.hooks")
       hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
@@ -118,7 +117,7 @@ return {
   -- Highlight the same word
   {
     'RRethy/vim-illuminate',
-    event = { "BufReadPost", "BufNewFile" },
+    event = "BufReadPost",
     opts = {
       filetypes_denylist = {
         'NvimTree',

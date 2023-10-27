@@ -56,8 +56,8 @@ return {
   },
 
   {
-    "utilyre/barbecue.nvim", version = "v1.2.0",
-    event = { "BufReadPre", "BufNewFile" },
+    "utilyre/barbecue.nvim", version = "v1.*",
+    event = "BufReadPre",
     dependencies = {
       "SmiteshP/nvim-navic",
       "nvim-tree/nvim-web-devicons",
@@ -179,9 +179,8 @@ return {
   },
 
   {
-    'smoka7/hop.nvim',
+    'smoka7/hop.nvim', version = "v2.*",
     lazy = true,
-    version = "v2.3.2",
     keys = {
       { '<Leader>j', '<Cmd>HopWord<Cr>', 'n' },
     },

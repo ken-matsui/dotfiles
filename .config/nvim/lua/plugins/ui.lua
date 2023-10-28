@@ -88,8 +88,14 @@ return {
   {
     "petertriho/nvim-scrollbar",
     lazy = true,
-    event = "VeryLazy",
-    config = true,
+    event = "BufReadPre",
+    dependencies = {
+      'lewis6991/gitsigns.nvim',
+    },
+    config = function ()
+      require("scrollbar").setup()
+      require("scrollbar.handlers.gitsigns").setup()
+    end,
   },
 
   -- Completion

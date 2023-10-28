@@ -145,10 +145,6 @@ nnoremap <S-l> $
 " Move to the end of file
 nnoremap <S-j> G
 
-" Paste with adjusting the indent
-nnoremap p ]p
-nnoremap P ]P
-
 " Buffer navigation
 nnoremap <silent> <Leader>w :bdelete<Cr>
 

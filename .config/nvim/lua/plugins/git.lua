@@ -1,6 +1,7 @@
 return {
   {
     'lewis6991/gitsigns.nvim',
+    lazy = true,
     event = "BufReadPre",
     opts = {
       -- GitLens-like blame line
@@ -57,6 +58,7 @@ return {
 
   {
     'rhysd/conflict-marker.vim',
+    lazy = true,
     event = "VeryLazy",
   },
 }

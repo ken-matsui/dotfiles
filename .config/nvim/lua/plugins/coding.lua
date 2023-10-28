@@ -1,6 +1,7 @@
 return {
   {
     'github/copilot.vim', -- :Copilot setup
+    lazy = true,
     event = "VeryLazy",
     config = function ()
       vim.g.copilot_filetypes = {
@@ -45,18 +46,20 @@ return {
   },
 
   {
-    'cappyzawa/trim.nvim',
-    tag = "v0.8.1",
+    'cappyzawa/trim.nvim', version = "v0.8.*",
+    lazy = true,
     event = "VeryLazy",
   },
 
   {
     'vim-scripts/ReplaceWithRegister',
+    lazy = true,
     event = "VeryLazy",
   },
 
   {
     "MattesGroeger/vim-bookmarks",
+    lazy = true,
     event = 'BufRead',
     init = function ()
       vim.g.bookmark_save_per_working_dir = 1
@@ -81,6 +84,7 @@ return {
 
   {
     'rust-lang/rust.vim',
+    lazy = true,
     ft = "rust",
     init = function()
       vim.g.rustfmt_autosave = 1

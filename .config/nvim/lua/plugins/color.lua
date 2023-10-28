@@ -13,6 +13,7 @@ return {
   -- Syntax Highlight
   {
     'nvim-treesitter/nvim-treesitter',
+    lazy = true,
     event = "BufReadPre",
     dependencies = {
       "windwp/nvim-ts-autotag",
@@ -65,6 +66,7 @@ return {
   -- C/C++ Syntax Highlight
   {
     'bfrg/vim-cpp-modern',
+    lazy = true,
     ft = { "c", "cpp" },
     config = function ()
       -- Enable highlighting of C++11 attributes
@@ -78,6 +80,7 @@ return {
   -- Highlight arguments
   {
     'm-demare/hlargs.nvim',
+    lazy = true,
     event = "BufReadPre",
     config = true,
   },
@@ -85,6 +88,7 @@ return {
   -- Indentation
   {
     "lukas-reineke/indent-blankline.nvim", version = "v3.*",
+    lazy = true,
     event = "BufReadPost",
     config = function()
       local hooks = require("ibl.hooks")
@@ -117,6 +121,7 @@ return {
   -- Highlight the same word
   {
     'RRethy/vim-illuminate',
+    lazy = true,
     event = "BufReadPost",
     opts = {
       filetypes_denylist = {

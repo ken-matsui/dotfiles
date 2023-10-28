@@ -30,6 +30,7 @@ return {
 
   {
     'akinsho/bufferline.nvim', version = "v4.*",
+    lazy = true,
     event = "VeryLazy",
     dependencies = {
       'nvim-tree/nvim-web-devicons',
@@ -57,6 +58,7 @@ return {
 
   {
     "utilyre/barbecue.nvim", version = "v1.*",
+    lazy = true,
     event = "BufReadPre",
     dependencies = {
       "SmiteshP/nvim-navic",
@@ -67,6 +69,7 @@ return {
 
   {
     'nvim-lualine/lualine.nvim',
+    lazy = true,
     event = "VeryLazy",
     dependencies = {
       'nvim-tree/nvim-web-devicons',
@@ -84,6 +87,7 @@ return {
 
   {
     "petertriho/nvim-scrollbar",
+    lazy = true,
     event = "VeryLazy",
     config = true,
   },
@@ -91,6 +95,7 @@ return {
   -- Completion
   {
     "hrsh7th/nvim-cmp",
+    lazy = true,
     event = 'InsertEnter',
     dependencies = {
       "hrsh7th/cmp-buffer",
@@ -126,7 +131,7 @@ return {
   },
 
   {
-    'nvim-telescope/telescope.nvim', version = '0.1.3',
+    'nvim-telescope/telescope.nvim', version = '0.1.*',
     lazy = true,
     dependencies = {
       'nvim-lua/plenary.nvim',

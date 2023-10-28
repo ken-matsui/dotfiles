@@ -13,3 +13,4 @@
 !.config/tmux
 .config/tmux/plugins
 !.config/neomutt
+!.config/weechat

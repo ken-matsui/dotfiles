@@ -54,6 +54,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
 fi
 brewp add universal-ctags
 # brewp add valgrind
+brewp add weechat
 brewp add wget
 brewp add wrk
 brewp add youtube-dl

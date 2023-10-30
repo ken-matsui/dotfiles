@@ -78,7 +78,7 @@ brewp add font-source-code-pro-for-powerline --cask
 brewp add google-chrome --cask
 brewp add google-cloud-sdk --cask
 brewp add grammarly-desktop --cask
-brewp add jetbrains-toolbox --cask
+# brewp add jetbrains-toolbox --cask
 brewp add logseq --cask
 brewp add mactex-no-gui --cask
 # brewp add mendeley --cask

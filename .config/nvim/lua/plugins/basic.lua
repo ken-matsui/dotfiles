@@ -4,6 +4,8 @@ return {
 
   'dkarter/bullets.vim',
 
+  'farmergreg/vim-lastplace',
+
   {
     'rstacruz/vim-closer',
     lazy = true,

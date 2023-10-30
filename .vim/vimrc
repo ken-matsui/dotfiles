@@ -77,12 +77,6 @@ autocmd FileType text setlocal complete+=kspell
 autocmd FileType markdown setlocal complete+=kspell
 autocmd FileType gitcommit setlocal complete+=kspell
 
-" Return to last edit position when opening files
-augroup ReturnToLastPosition
-  autocmd!
-  autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-augroup END
-
 " Save files when focus lost
 augroup AutoSaveOnFocusLost
   autocmd!

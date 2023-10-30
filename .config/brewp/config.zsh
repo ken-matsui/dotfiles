@@ -68,11 +68,11 @@ brewp add 1password --cask
 brewp add alacritty --cask
 # brewp add balenaetcher --cask  # Flash OS images to SD cards & USB drives, safely and easily.
 brewp add bartender --cask
-brewp add brave-browser --cask
 brewp add deepl --cask
 brewp add discord --cask
 brewp add docker --cask
 # brewp add figma --cask
+brewp add firefox --cask
 brewp add font-jetbrains-mono-nerd-font --cask  # for alacritty
 brewp add font-source-code-pro-for-powerline --cask
 brewp add google-chrome --cask

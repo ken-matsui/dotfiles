@@ -22,7 +22,6 @@ brewp add clang-format
 brewp add cmake
 brewp add curl
 brewp add fd  # for telescope.nvim
-brewp add felinks
 brewp add ffmpeg  # for youtube-dl
 brewp add gh
 brewp add git-delta

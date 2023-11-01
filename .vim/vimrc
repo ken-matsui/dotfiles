@@ -117,6 +117,12 @@ au BufNewFile,BufRead *.cup			setf cup
 au Syntax cup so ~/.vim/syntax/cup.vim
 
 " =====================
+" Commands
+" =====================
+
+command! Black :!black %
+
+" =====================
 " Key Mappings
 " =====================
 

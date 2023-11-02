@@ -149,7 +149,6 @@ ln -s ~/dotfiles/.local/share/alacritty/config.yml ~/.local/share/alacritty/conf
 
 #### Remap Keys
 
-* `sudo apt install input-remapper`
 * Open `input-remapper`
 * `Prior` (`PageUp`) -> `KEY_LEFT`
 * `Next` (`PageDown`) -> `KEY_RIGHT`

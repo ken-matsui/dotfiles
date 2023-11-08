@@ -82,12 +82,12 @@ brewp add logseq --cask
 brewp add mactex-no-gui --cask
 # brewp add mendeley --cask
 # brewp add notion --cask
+brewp add notesnook --cask
 # brewp add postman --cask
 brewp add protonvpn --cask
 brewp add raycast --cask
 # brewp add sf-symbols --cask
 # brewp add sketch --cask
-brewp add standard-notes --cask
 brewp add swish --cask
 brewp add visual-studio-code --cask
 brewp add zoom --cask

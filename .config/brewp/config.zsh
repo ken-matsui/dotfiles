@@ -12,7 +12,6 @@ fi
 ##################################
 # Normal packages
 ##################################
-brewp add 1password-cli
 brewp add atuin
 # brewp add asciinema
 # brewp add awscli
@@ -66,6 +65,7 @@ brewp add youtube-dl
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 brewp add 1password --cask
+brewp add 1password-cli --cask
 brewp add alacritty --cask
 # brewp add balenaetcher --cask  # Flash OS images to SD cards & USB drives, safely and easily.
 brewp add bartender --cask

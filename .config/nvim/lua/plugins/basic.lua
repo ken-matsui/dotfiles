@@ -1,5 +1,5 @@
 return {
-  -- Detect tabstop and shiftwidth automatically
+  -- Detect shiftwidth and expandtab automatically
   'tpope/vim-sleuth',
 
   'dkarter/bullets.vim',

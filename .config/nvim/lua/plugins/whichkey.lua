@@ -2,9 +2,9 @@
 
 return {
   {
-    "folke/which-key.nvim",
+    'folke/which-key.nvim',
     lazy = true,
-    event = "VeryLazy",
+    event = 'VeryLazy',
     init = function()
       vim.o.timeout = true
       vim.o.timeoutlen = 500

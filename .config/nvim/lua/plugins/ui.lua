@@ -13,10 +13,10 @@ return {
       'nvim-tree/nvim-web-devicons',
     },
     keys = {
-      { '<Leader>s', '<Cmd>NvimTreeFindFileToggle<Cr>', mode = 'n', desc = "NvimTree Toggle" },
+      { '<Leader>s', '<Cmd>NvimTreeFindFileToggle<Cr>', mode = 'n', desc = 'NvimTree Toggle' },
     },
     opts = {
-      sort_by = "case_sensitive",
+      sort_by = 'case_sensitive',
       diagnostics = {
         enable = true,
       },
@@ -29,9 +29,9 @@ return {
   },
 
   {
-    'akinsho/bufferline.nvim', version = "v4.*",
+    'akinsho/bufferline.nvim', version = 'v4.*',
     lazy = true,
-    event = "VeryLazy",
+    event = 'VeryLazy',
     dependencies = {
       'nvim-tree/nvim-web-devicons',
     },
@@ -46,9 +46,9 @@ return {
       options = {
         offsets = {
           {
-            filetype = "NvimTree",
-            text = "File Explorer",
-            highlight = "Directory",
+            filetype = 'NvimTree',
+            text = 'File Explorer',
+            highlight = 'Directory',
             separator = true,
           },
         },
@@ -57,12 +57,12 @@ return {
   },
 
   {
-    "utilyre/barbecue.nvim", version = "v1.*",
+    'utilyre/barbecue.nvim', version = 'v1.*',
     lazy = true,
-    event = "BufReadPre",
+    event = 'BufReadPre',
     dependencies = {
-      "SmiteshP/nvim-navic",
-      "nvim-tree/nvim-web-devicons",
+      'SmiteshP/nvim-navic',
+      'nvim-tree/nvim-web-devicons',
     },
     config = true,
   },
@@ -70,7 +70,7 @@ return {
   {
     'nvim-lualine/lualine.nvim',
     lazy = true,
-    event = "VeryLazy",
+    event = 'VeryLazy',
     dependencies = {
       'nvim-tree/nvim-web-devicons',
     },
@@ -86,44 +86,44 @@ return {
   },
 
   {
-    "petertriho/nvim-scrollbar",
+    'petertriho/nvim-scrollbar',
     lazy = true,
-    event = "BufReadPre",
+    event = 'BufReadPre',
     dependencies = {
       'lewis6991/gitsigns.nvim',
     },
     config = function ()
-      require("scrollbar").setup()
-      require("scrollbar.handlers.gitsigns").setup()
+      require('scrollbar').setup()
+      require('scrollbar.handlers.gitsigns').setup()
     end,
   },
 
   -- Completion
   {
-    "hrsh7th/nvim-cmp",
+    'hrsh7th/nvim-cmp',
     lazy = true,
     event = 'InsertEnter',
     dependencies = {
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "ray-x/cmp-treesitter",
-      "onsails/lspkind-nvim",
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+      'ray-x/cmp-treesitter',
+      'onsails/lspkind-nvim',
     },
     opts = function()
-      local cmp = require("cmp")
+      local cmp = require('cmp')
       return {
         preselect = cmp.PreselectMode.None,
         mapping = cmp.mapping.preset.insert({
-          ["<Esc>"] = cmp.mapping.abort(),
-          ["<CR>"] = cmp.mapping.confirm({
+          ['<Esc>'] = cmp.mapping.abort(),
+          ['<CR>'] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Insert,
             select = false,
           }),
         }),
         sources = cmp.config.sources({
-          { name = "buffer" },
-          { name = "path" },
-          { name = "treesitter" },
+          { name = 'buffer' },
+          { name = 'path' },
+          { name = 'treesitter' },
         }),
         formatting = {
           format = require('lspkind').cmp_format({
@@ -143,20 +143,25 @@ return {
       'nvim-lua/plenary.nvim',
       'BurntSushi/ripgrep',
       { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-      "tom-anders/telescope-vim-bookmarks.nvim",
+      'tom-anders/telescope-vim-bookmarks.nvim',
     },
     keys = {
-      { '<Leader>f', '<Cmd>Telescope live_grep<Cr>', 'n' },
       { '<Leader>b', '<Cmd>Telescope vim_bookmarks all<Cr>', 'n' },
     },
     opts = {
       defaults = {
-        file_ignore_patterns = {".git"},
+        file_ignore_patterns = {'.git'},
+        mappings = {
+          i = {
+            ['<C-p>'] = require('telescope.actions').cycle_history_prev,
+            ['<C-n>'] = require('telescope.actions').cycle_history_next,
+          },
+        },
       },
       pickers = {
         live_grep = {
           additional_args = function (opts)
-            return {"--hidden"}
+            return {'--hidden'}
           end
         },
       },
@@ -165,7 +170,7 @@ return {
           fuzzy = true,                    -- false will only do exact matching
           override_generic_sorter = true,  -- override the generic sorter
           override_file_sorter = true,     -- override the file sorter
-          case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+          case_mode = 'smart_case',        -- or "ignore_case" or "respect_case"
                                            -- the default case_mode is "smart_case"
         },
       }
@@ -174,6 +179,18 @@ return {
       require('telescope').setup(opts)
       require('telescope').load_extension('fzf')
       require('telescope').load_extension('vim_bookmarks')
+
+      local telescope = require('telescope.builtin')
+      local telescope_last = 0
+      function telescope_resume()
+        if telescope_last == 0 then
+          telescope_last = 1
+          telescope.live_grep()
+        else
+          telescope.resume()
+        end
+      end
+      vim.keymap.set('n', '<Leader>f', telescope_resume, { desc = 'Telescope live_grep' })
     end,
   },
   {
@@ -181,19 +198,19 @@ return {
     lazy = true,
     dependencies = {
       'nvim-telescope/telescope.nvim',
-      "kkharji/sqlite.lua"
+      'kkharji/sqlite.lua'
     },
     keys = {
-      { '<Leader>o', function() require('telescope.builtin').find_files() end, 'n', desc = "Find file" },
+      { '<Leader>o', function() require('telescope.builtin').find_files() end, 'n', desc = 'Find file' },
     },
     config = true,
   },
 
   {
-    'smoka7/hop.nvim', version = "v2.*",
+    'smoka7/hop.nvim', version = 'v2.*',
     lazy = true,
     keys = {
-      { '<Leader>j', '<Cmd>HopWord<Cr>', 'n' },
+      { '<Leader>j', '<Cmd>HopWord<Cr>', 'n', desc = 'Hop Word' },
     },
     opts = {},
   },

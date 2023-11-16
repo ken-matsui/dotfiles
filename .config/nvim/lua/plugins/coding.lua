@@ -2,7 +2,7 @@ return {
   {
     'github/copilot.vim', -- :Copilot setup
     lazy = true,
-    event = "VeryLazy",
+    event = 'VeryLazy',
     config = function ()
       vim.g.copilot_filetypes = {
         NvimTree = false,
@@ -11,12 +11,12 @@ return {
   },
 
   {
-    "jackMort/ChatGPT.nvim",
+    'jackMort/ChatGPT.nvim',
     lazy = true,
     dependencies = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim"
+      'MunifTanjim/nui.nvim',
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim'
     },
     keys = {
       { '<Leader>cc', '<Cmd>ChatGPT<Cr>', 'n' },
@@ -33,8 +33,8 @@ return {
       { '<Leader>cr', '<Cmd>ChatGPTRun code_readability_analysis<Cr>', mode = { 'n', 'v' } },
     },
     config = function()
-      require("chatgpt").setup({
-        api_key_cmd = "op read -n op://Personal/OpenAI/credential"
+      require('chatgpt').setup({
+        api_key_cmd = 'op read -n op://Personal/OpenAI/credential'
       })
     end,
   },
@@ -46,19 +46,19 @@ return {
   },
 
   {
-    'cappyzawa/trim.nvim', version = "v0.8.*",
+    'cappyzawa/trim.nvim', version = 'v0.8.*',
     lazy = true,
-    event = "VeryLazy",
+    event = 'VeryLazy',
   },
 
   {
     'vim-scripts/ReplaceWithRegister',
     lazy = true,
-    event = "VeryLazy",
+    event = 'VeryLazy',
   },
 
   {
-    "MattesGroeger/vim-bookmarks",
+    'MattesGroeger/vim-bookmarks',
     lazy = true,
     event = 'BufRead',
     init = function ()
@@ -69,8 +69,8 @@ return {
   {
     'rmagatti/auto-session',
     opts = {
-      log_level = "error",
-      auto_session_suppress_dirs = {"~/", "~/Downloads", "/"},
+      log_level = 'error',
+      auto_session_suppress_dirs = {'~/', '~/Downloads', '/'},
       auto_save_enabled = true,
     },
   },
@@ -78,14 +78,14 @@ return {
   {
     'ludovicchabant/vim-gutentags',
     config = function ()
-      vim.g.gutentags_cache_dir = vim.fn.stdpath("data")
+      vim.g.gutentags_cache_dir = vim.fn.stdpath('data')
     end
   },
 
   {
     'rust-lang/rust.vim',
     lazy = true,
-    ft = "rust",
+    ft = 'rust',
     init = function()
       vim.g.rustfmt_autosave = 1
     end,

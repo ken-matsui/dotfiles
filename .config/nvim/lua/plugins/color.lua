@@ -14,32 +14,32 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     lazy = true,
-    event = "BufReadPre",
+    event = 'BufReadPre',
     dependencies = {
-      "windwp/nvim-ts-autotag",
-      "JoosepAlviste/nvim-ts-context-commentstring",
+      'windwp/nvim-ts-autotag',
+      'JoosepAlviste/nvim-ts-context-commentstring',
     },
     build = ':TSUpdate',
     opts = {
       ensure_installed = {
-        "bash",
-        "comment",
-        "dockerfile",
-        "html",
-        "java",
-        "javascript",
-        "json",
-        "lua",
-        "make",
-        "markdown",
-        "markdown_inline",
-        "python",
-        "rust",
-        "toml",
-        "tsx",
-        "typescript",
-        "vim",
-        "yaml",
+        'bash',
+        'comment',
+        'dockerfile',
+        'html',
+        'java',
+        'javascript',
+        'json',
+        'lua',
+        'make',
+        'markdown',
+        'markdown_inline',
+        'python',
+        'rust',
+        'toml',
+        'tsx',
+        'typescript',
+        'vim',
+        'yaml',
       },
 
       highlight = {
@@ -68,7 +68,7 @@ return {
   {
     'bfrg/vim-cpp-modern',
     lazy = true,
-    ft = { "c", "cpp" },
+    ft = { 'c', 'cpp' },
     config = function ()
       -- Enable highlighting of C++11 attributes
       vim.g.cpp_attributes_highlight = 1
@@ -82,37 +82,37 @@ return {
   {
     'm-demare/hlargs.nvim',
     lazy = true,
-    event = "BufReadPre",
+    event = 'BufReadPre',
     config = true,
   },
 
   -- Indentation
   {
-    "lukas-reineke/indent-blankline.nvim", version = "v3.*",
+    'lukas-reineke/indent-blankline.nvim', version = 'v3.*',
     lazy = true,
-    event = "BufReadPost",
+    event = 'BufReadPost',
     config = function()
-      local hooks = require("ibl.hooks")
+      local hooks = require('ibl.hooks')
       hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
-        vim.api.nvim_set_hl(0, "IBLYellow", { fg = "#E5C07B" })
+        vim.api.nvim_set_hl(0, 'IBLYellow', { fg = '#E5C07B' })
       end)
 
-      require("ibl").setup({
+      require('ibl').setup({
         exclude = {
           filetypes = {
-            "nvim-tree",
-            "lazy",
+            'nvim-tree',
+            'lazy',
           },
         },
         indent = {
-          char = "▏",
+          char = '▏',
         },
         scope = {
           enabled = true,
           show_start = false,
           show_end = false,
           highlight = {
-            "IBLYellow",
+            'IBLYellow',
           },
         },
       })
@@ -123,7 +123,7 @@ return {
   {
     'RRethy/vim-illuminate',
     lazy = true,
-    event = "BufReadPost",
+    event = 'BufReadPost',
     opts = {
       filetypes_denylist = {
         'NvimTree',
@@ -149,7 +149,7 @@ return {
   {
     'sunjon/Shade.nvim',
     lazy = true,
-    event = "VeryLazy",
+    event = 'VeryLazy',
     opts = {
       overlay_opacity = 50,
       opacity_step = 1,

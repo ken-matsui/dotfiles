@@ -2,7 +2,7 @@ return {
   {
     'lewis6991/gitsigns.nvim',
     lazy = true,
-    event = "BufReadPre",
+    event = 'BufReadPre',
     opts = {
       -- GitLens-like blame line
       current_line_blame = true,
@@ -24,14 +24,14 @@ return {
         end
 
         -- Navigation
-        map('n', ']c', function()
-          if vim.wo.diff then return ']c' end
+        map('n', '<leader>gn', function()
+          if vim.wo.diff then return '<leader>gn' end
           vim.schedule(function() gs.next_hunk() end)
           return '<Ignore>'
         end, { expr=true, desc='GitNextHunk' })
 
-        map('n', '[c', function()
-          if vim.wo.diff then return '[c' end
+        map('n', '<leader>gp', function()
+          if vim.wo.diff then return '<leader>gp' end
           vim.schedule(function() gs.prev_hunk() end)
           return '<Ignore>'
         end, { expr=true, desc='GitPrevHunk' })
@@ -44,7 +44,7 @@ return {
         map('n', '<leader>gS', gs.stage_buffer, { desc = 'GitStageBuffer' })
         map('n', '<leader>gu', gs.undo_stage_hunk, { desc = 'GitUndoStageHunk' })
         map('n', '<leader>gR', gs.reset_buffer, { desc = 'GitResetBuffer' })
-        map('n', '<leader>gp', gs.preview_hunk, { desc = 'GitPreviewHunk' })
+        map('n', '<leader>gP', gs.preview_hunk, { desc = 'GitPreviewHunk' })
         map('n', '<leader>gb', function() gs.blame_line{full=true} end, { desc = 'GitBlameLine' })
         map('n', '<leader>gd', gs.diffthis, { desc = 'GitDiffThis' })
         map('n', '<leader>gD', function() gs.diffthis('~') end, { desc = 'GitDiffThis' })
@@ -59,6 +59,6 @@ return {
   {
     'rhysd/conflict-marker.vim',
     lazy = true,
-    event = "VeryLazy",
+    event = 'VeryLazy',
   },
 }

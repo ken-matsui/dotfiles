@@ -83,11 +83,26 @@ return {
   },
 
   {
-    'rust-lang/rust.vim',
+    'google/vim-glaive',
+    dependencies = {
+      'google/vim-maktaba',
+      'google/vim-codefmt',
+    },
     lazy = true,
-    ft = 'rust',
-    init = function()
-      vim.g.rustfmt_autosave = 1
+    ft = {
+      'python',
+      'rust',
+      'java',
+    },
+    config = function()
+      vim.cmd('call glaive#Install()')
+      vim.cmd([[
+        augroup autoformat_settings
+          autocmd FileType python AutoFormatBuffer black
+          autocmd FileType rust AutoFormatBuffer rustfmt
+          autocmd FileType java AutoFormatBuffer google-java-format
+        augroup END
+      ]])
     end,
   },
 }

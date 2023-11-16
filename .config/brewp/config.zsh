@@ -17,6 +17,7 @@ brewp add atuin
 # brewp add asciinema
 # brewp add awscli
 brewp add bat
+brewp add black
 brewp add boost
 brewp add clang-format
 brewp add cmake
@@ -26,6 +27,7 @@ brewp add ffmpeg  # for youtube-dl
 brewp add gh
 brewp add git-delta
 brewp add git-interactive-rebase-tool
+brewp add google-java-format
 brewp add graphviz
 brewp add gzip
 brewp add htop

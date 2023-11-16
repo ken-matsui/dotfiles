@@ -145,6 +145,9 @@ nnoremap <S-l> $
 " Buffer navigation
 nnoremap <silent> <Leader>w :bdelete<Cr>
 
+" Expand :s to :%s///g
+cnoreabbrev <expr> s getcmdtype() .. getcmdline() ==# ':s' ? [getchar(), ''][1] .. "%s///g<Left><Left>" : 's'
+
 "
 " Insert Mode
 "

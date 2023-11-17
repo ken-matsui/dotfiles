@@ -139,6 +139,13 @@ nnoremap <S-l> $
 " Buffer navigation
 nnoremap <silent> <Leader>w :bdelete<Cr>
 
+" Yank file path
+nnoremap yp :let @+=expand("%")<Cr>
+" Yank absolute file path
+nnoremap yap :let @+=expand("%:p")<Cr>
+" Yank filename
+nnoremap yn :let @+=expand("%:t")<Cr>
+
 " Expand :s to :%s///g
 cnoreabbrev <expr> s getcmdtype() .. getcmdline() ==# ':s' ? [getchar(), ''][1] .. "%s///g<Left><Left>" : 's'
 

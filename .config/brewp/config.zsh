@@ -77,7 +77,7 @@ brewp add firefox --cask
 brewp add font-jetbrains-mono-nerd-font --cask  # for alacritty
 brewp add font-source-code-pro-for-powerline --cask
 brewp add google-chrome --cask
-brewp add google-cloud-sdk --cask
+# brewp add google-cloud-sdk --cask
 brewp add grammarly-desktop --cask
 # brewp add jetbrains-toolbox --cask
 brewp add logseq --cask

@@ -140,11 +140,11 @@ nnoremap <S-l> $
 nnoremap <silent> <Leader>w :bdelete<Cr>
 
 " Yank file path
-nnoremap yp :let @+=expand("%")<Cr>
+nnoremap yp :let @+=expand("%") \| :echo "Copied file path to clipboard"<Cr>
 " Yank absolute file path
-nnoremap yap :let @+=expand("%:p")<Cr>
+nnoremap yap :let @+=expand("%:p") \| :echo "Copied absolute file path to clipboard"<Cr>
 " Yank filename
-nnoremap yn :let @+=expand("%:t")<Cr>
+nnoremap yn :let @+=expand("%:t") \| :echo "Copied filename to clipboard"<Cr>
 
 " Expand :s to :%s///g
 cnoreabbrev <expr> s getcmdtype() .. getcmdline() ==# ':s' ? [getchar(), ''][1] .. "%s///g<Left><Left>" : 's'

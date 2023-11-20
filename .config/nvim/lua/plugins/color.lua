@@ -29,6 +29,7 @@ return {
         'java',
         'javascript',
         'json',
+        'llvm',
         'lua',
         'make',
         'markdown',

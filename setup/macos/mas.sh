@@ -7,6 +7,7 @@ brew install mas
 mas lucky 'Goodnotes 6'
 mas lucky 'Kindle'
 mas lucky 'Line Corporation'
+mas lucky 'Maccy'
 # mas lucky 'Microsoft Powerpoint'
 # mas lucky 'Microsoft Remote Desktop'
 mas lucky 'Microsoft Word'

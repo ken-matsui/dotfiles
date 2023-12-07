@@ -1,0 +1,16 @@
+[[ssh-keys]]
+item = "Git Signing"
+
+[[ssh-keys]]
+item = "GitHub"
+
+[[ssh-keys]]
+item = "UW GitLab"
+vault = "Education"
+
+[[ssh-keys]]
+item = "UW Attu"
+vault = "Education"
+
+[[ssh-keys]]
+item = "GCC"

@@ -14,3 +14,4 @@
 .config/tmux/plugins
 !.config/neomutt
 !.config/weechat
+!.config/1Password

@@ -14,4 +14,4 @@
 .config/tmux/plugins
 !.config/neomutt
 !.config/weechat
-!.config/1Password
+!.config/1Password/ssh/agent.toml

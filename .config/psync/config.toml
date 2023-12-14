@@ -1,0 +1,98 @@
+[homebrew]
+taps = [
+    { name = "homebrew/cask-fonts", on = "macos" },  # for font-jetbrains-mono-nerd-font
+]
+formulae = [
+    "atuin",
+    # "asciinema",
+    # "awscli",
+    "bat",
+    "black",
+    "boost",
+    "clang-format",
+    "cmake",
+    "curl",
+    "fd",  # for telescope.nvim
+    "ffmpeg",  # for youtube-dl
+    "gh",
+    "git-delta",
+    "git-interactive-rebase-tool",
+    "google-java-format",
+    "graphviz",
+    "gzip",
+    "htop",
+    # "httrack",
+    "hyperfine",
+    "jq",
+    "ripgrep",
+    "libarchive",
+    "libgit2",
+    "llvm",  # clangd, clang-format, clang-tidy
+    "lsd",
+    # "mysql",  # for mysqlclient of Python
+    "ninja",
+    "neomutt",
+    "neovim",
+    "node",
+    "poetry",
+    "python",
+    "starship",
+    "subversion",  # for font-source-code-pro-for-powerline
+    "tmux",
+    "topgrade",
+    { name = "trash", on = "macos" },
+    "universal-ctags",
+    # "valgrind",
+    "weechat",
+    "wget",
+    "wrk",
+    "youtube-dl",
+]
+casks = [
+    "1password",
+    "1password-cli",
+    "alacritty",
+    # "balenaetcher",  # Flash OS images to SD cards & USB drives, safely and easily.
+    "bartender",
+    "deepl",
+    "discord",
+    "docker",
+    # "figma",
+    "firefox",
+    "font-jetbrains-mono-nerd-font",  # for alacritty
+    "font-source-code-pro-for-powerline",
+    "google-chrome",
+    # "google-cloud-sdk",
+    "grammarly-desktop",
+    # "jetbrains-toolbox",
+    "logseq",
+    "mactex-no-gui",
+    # "mendeley",
+    # "notion",
+    "notesnook",
+    # "postman",
+    "protonvpn",
+    "raycast",
+    # "sf-symbols",
+    # "sketch",
+    "swish",
+    "visual-studio-code",
+    "zoom",
+    # "zulip",
+]
+
+[cargo]
+crates = [
+    "cargo-update",
+    "suggest-command-not-found",
+]
+
+[snap]
+snaps = [
+    { name = "alacritty", classic = true },
+    "discord",
+    "docker",
+    "notesnook",
+    { name = "code", classic = true },
+    "slack",
+]

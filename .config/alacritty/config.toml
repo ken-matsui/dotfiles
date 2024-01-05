@@ -1,0 +1,76 @@
+live_config_reload = true
+
+[colors.bright]
+black = "0x464B5D"
+blue = "0x82AAFF"
+cyan = "0x89DDFF"
+green = "0xC3E88D"
+magenta = "0xC792EA"
+red = "0xF07178"
+white = "0xEEFFFF"
+yellow = "0xFFCB6B"
+
+[colors.normal]
+black = "0x000000"
+blue = "0x6E98EB"
+cyan = "0x71C6E7"
+green = "0xABCF76"
+magenta = "0xB480D6"
+red = "0xDC6068"
+white = "0xEEFFFF"
+yellow = "0xE6B455"
+
+[colors.primary]
+background = "0x0F111A"
+foreground = "0xA6ACCD"
+
+[cursor.style]
+blinking = "On"
+shape = "Beam"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 12.5
+
+[font.bold]
+family = "JetBrainsMono NF"
+
+[font.italic]
+family = "JetBrainsMono NF"
+
+[font.normal]
+family = "JetBrainsMono NF"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Command"
+
+[selection]
+save_to_clipboard = false
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+[shell]
+args = ["-l", "-c", "tmux a -t 0 || tmux"]
+program = "/bin/zsh"
+
+[window]
+dynamic_padding = true
+startup_mode = "Fullscreen"
+
+[window.padding]
+x = 5
+y = 5

@@ -1,15 +1,12 @@
 [[ssh-keys]]
-item = "Git Signing"
-
-[[ssh-keys]]
 item = "GitHub"
 
 [[ssh-keys]]
-item = "UW GitLab"
+item = "UW Attu"
 vault = "Education"
 
 [[ssh-keys]]
-item = "UW Attu"
+item = "UW GitLab"
 vault = "Education"
 
 [[ssh-keys]]
@@ -17,3 +14,6 @@ item = "ThinkPad"
 
 [[ssh-keys]]
 item = "GCC"
+
+[[ssh-keys]]
+item = "Git Signing"

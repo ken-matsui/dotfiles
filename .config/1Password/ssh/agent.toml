@@ -13,4 +13,7 @@ item = "UW Attu"
 vault = "Education"
 
 [[ssh-keys]]
+item = "ThinkPad"
+
+[[ssh-keys]]
 item = "GCC"

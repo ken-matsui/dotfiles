@@ -1,32 +1,10 @@
-#
-# macOS
-#
 .DS_Store
-
-#
-# VSCode
-#
 .vscode
-
-#
-# Vim
-#
+.cursorignore
 .vim-bookmarks
-
-#
-# Intellij
-#
 .idea
 cmake-build-debug
 clion-build
 build
-
-#
-# GCC
-#
 objdir
-
-#
-# Misc
-#
 tmp

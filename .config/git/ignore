@@ -8,3 +8,4 @@ clion-build
 build
 objdir
 tmp
+.tags

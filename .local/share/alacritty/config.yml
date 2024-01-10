@@ -1,0 +1,9 @@
+#
+# This alacritty config file is for Ubuntu
+#
+
+window:
+  startup_mode: Windowed
+
+font:
+  size: 10

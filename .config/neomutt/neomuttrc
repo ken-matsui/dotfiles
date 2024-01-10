@@ -80,7 +80,7 @@ set real_name = "Ken Matsui"
 # specified, then it may be read from the environment variable $EMAIL.
 # -------------------------------------------------------------------------
 
-# set from="mailbox@domain.tld"
+set from="`op read -n 'op://Personal/GCC/email'`"
 # -------------------------------------------------------------------------
 # Name: alias / unalias
 # -------------------------------------------------------------------------
@@ -107,7 +107,7 @@ set real_name = "Ken Matsui"
 # The name of the user whose mail you intend to access on the IMAP server.
 # This variable defaults to your user name on the local machine.
 
-set imap_user = "kmatsui@cs.washington.edu"
+set imap_user = "`op read -n 'op://Education/UW CS/username'`"
 # -------------------------------------------------------------------------
 # Name: imap_pass 
 # -------------------------------------------------------------------------
@@ -200,14 +200,12 @@ set trash = "+[Gmail]/Trash"
 
 # unmailboxes *
 # mailboxes +Drafts +Sent +Spam
+set record = "+[Gmail]/Sent Mail"
 mailboxes $spool_file "+[Gmail]/Starred" $record $postponed "+[Gmail]/Spam" $trash
 
 # To increase the performance
 set header_cache = "$XDG_CACHE_HOME/neomutt/headers"  # mkdir -p $XDG_CACHE_HOME/neomutt
 set message_cachedir = "$XDG_CACHE_HOME/neomutt/bodies"  # mkdir -p $message_cachedir
-
-# Disable saving outgoing mail since Gmail saves them by default.
-set record = ""
 ##########################################################################
 #   03 - Compose email 
 ##########################################################################
@@ -900,7 +898,7 @@ set sidebar_width = 20
 # where “[...]” denotes an optional part.  Setting this variable overrides
 # the value of the $sendmail variable.
 
-set smtp_url = "smtps://$imap_user@smtp.uw.edu:587"
+set smtp_url = "smtp://$imap_user@smtp.uw.edu:587"
 # -------------------------------------------------------------------------
 # Name: smtp_pass
 # -------------------------------------------------------------------------
@@ -926,7 +924,7 @@ set smtp_pass = "`op read -n 'op://Education/UW CS/password'`"
 # external SASL library (look for +USE_SASL in the output of neomutt -v). 
 #
 # Example:
-set smtp_authenticators="gssapi"
+set smtp_authenticators="login"
 
 # Ensure TLS is enforced
 set ssl_starttls = yes

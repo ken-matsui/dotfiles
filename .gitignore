@@ -16,3 +16,4 @@
 !.config/weechat
 !.config/1Password/ssh/agent.toml
 !.config/psync
+!.config/elinks

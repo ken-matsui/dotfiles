@@ -736,6 +736,9 @@ bind index			\CO	sidebar-open
 bind pager			\CP	sidebar-prev
 bind pager			\CN	sidebar-next
 bind pager			\CO	sidebar-open
+
+bind attach,browser,pager,index	R	noop
+bind pager			R	group-reply  # reply all
 # -------------------------------------------------------------------------
 
 # -------------------------------------------------------------------------

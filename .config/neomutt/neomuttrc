@@ -204,10 +204,11 @@ set record = "+[Gmail]/Sent Mail"
 mailboxes $spool_file "+[Gmail]/Starred" $record $postponed "+[Gmail]/Spam" $trash
 
 # To increase the performance
-set header_cache = "$XDG_CACHE_HOME/neomutt/headers"  # mkdir -p $XDG_CACHE_HOME/neomutt
+set header_cache = "$XDG_CACHE_HOME/neomutt/headers"  # mkdir -p $header_cache
 set message_cachedir = "$XDG_CACHE_HOME/neomutt/bodies"  # mkdir -p $message_cachedir
+set certificate_file = "$XDG_CACHE_HOME/neomutt/certificates"  # mkdir -p $certificate_file
 ##########################################################################
-#   03 - Compose email 
+#   03 - Compose email
 ##########################################################################
 # -------------------------------------------------------------------------
 # Name: my_hdr / unmy_hdr

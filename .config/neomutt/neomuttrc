@@ -687,7 +687,6 @@ set quote_regex = "^([ \t]*>)+"
 # -------------------------------------------------------------------------
 # Name: Key Bindings
 # -------------------------------------------------------------------------
-# https://github.com/neomutt/neomutt/blob/fa83255d2e5cee1a34dcaf108a06107942b59865/contrib/vim-keys/vim-keys.rc
 # Moving around
 bind attach,browser,pager,index	gT	noop
 bind attach,browser,pager,index	gt	noop

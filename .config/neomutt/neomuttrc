@@ -737,6 +737,7 @@ bind pager			\CO	sidebar-open
 
 bind attach,browser,pager,index	R	noop
 bind pager			R	group-reply  # reply all
+bind index			R	imap-fetch-mail  # refresh
 # -------------------------------------------------------------------------
 
 # -------------------------------------------------------------------------

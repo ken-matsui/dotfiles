@@ -26,7 +26,7 @@
 # -------------------------------------------------------------------------
 # Note: NeoMutt will not automatically source this file; you must
 # explicitly use the “source” command for it to be executed in case this
-# option points to a dedicated alias file.  
+# option points to a dedicated alias file.
 # -------------------------------------------------------------------------
 
 # source "~/.neomutt/alias"
@@ -47,7 +47,7 @@
 #   01 - Basic personal setup
 ##########################################################################
 # -------------------------------------------------------------------------
-# Name: alternates 
+# Name: alternates
 # -------------------------------------------------------------------------
 # alternates  is used to inform NeoMutt about alternate addresses where you
 # receive mail; you can use regular expressions (regex) to specify
@@ -62,7 +62,7 @@
 # alternates mymailbox@domain.tld
 # alternates mymailbox@work.tld
 # -------------------------------------------------------------------------
-# Name: realname 
+# Name: realname
 # -------------------------------------------------------------------------
 # This variable specifies what “real” or “personal” name should be used
 # when sending mes‐ sages.  If not specified, then the user's “real name”
@@ -102,19 +102,19 @@ set from = "`op read -n 'op://Education/UW CS/username'`"
 #   07 - IMAP
 ##########################################################################
 # -------------------------------------------------------------------------
-# Name: imap_user 
+# Name: imap_user
 # -------------------------------------------------------------------------
 # The name of the user whose mail you intend to access on the IMAP server.
 # This variable defaults to your user name on the local machine.
 
-set imap_user = "`op read -n 'op://Education/UW CS/username'`"
+set imap_user = "$from"
 # -------------------------------------------------------------------------
-# Name: imap_pass 
+# Name: imap_pass
 # -------------------------------------------------------------------------
 # Specifies the password for your IMAP account.  If unset, NeoMutt will
 # prompt you for your password when you invoke the <imap-fetch-mail>
-# function or try to open an IMAP folder. 
-# 
+# function or try to open an IMAP folder.
+#
 # Warning: you should only use this option when you are on a fairly secure
 # machine, because the superuser can read your neomuttrc even if you are
 # the only one who can read the file.
@@ -149,7 +149,7 @@ set folder="imaps://imap.gmail.com:993"
 # -------------------------------------------------------------------------
 # If your spool mailbox is in a non-default place where NeoMutt cannot find
 # it,  you  can specify its location with this variable.  If not specified,
-# then the environment variables $MAIL and $MAILDIR will be checked.  
+# then the environment variables $MAIL and $MAILDIR will be checked.
 # -------------------------------------------------------------------------
 
 set spool_file = "+INBOX"
@@ -171,7 +171,7 @@ set postponed = "+[Gmail]/Drafts"
 # messages, but another way  to  do this  is using the “my_hdr” command to
 # create a “Bcc:” field with your email address in it.) The value of
 # $record is overridden by the $force_name and $save_name variables, and
-# the “fcc-hook” command.  Also see $copy.  
+# the “fcc-hook” command.  Also see $copy.
 # -------------------------------------------------------------------------
 
 set record = "+[Gmail]/Sent Mail"
@@ -200,7 +200,6 @@ set trash = "+[Gmail]/Trash"
 
 # unmailboxes *
 # mailboxes +Drafts +Sent +Spam
-set record = "+[Gmail]/Sent Mail"
 mailboxes $spool_file "+[Gmail]/Starred" $record $postponed "+[Gmail]/Spam" $trash
 
 # To increase the performance
@@ -273,8 +272,7 @@ set editor = "nvim"
 # a reply.  For a full listing of defined printf(3)-like sequences see the
 # section on $index_format.
 
-# set attribution = "On %d, %n wrote:"
-# set attribution = "Am %{%A}, den %{%x} um %{%X} %{%Z} schrieb %F:"
+set attribution_intro = "On %d, %n <%a> wrote:"
 # -------------------------------------------------------------------------
 # Name: forward_format
 # -------------------------------------------------------------------------
@@ -282,7 +280,10 @@ set editor = "nvim"
 # uses the same format sequences as the $index_format variable.
 # -------------------------------------------------------------------------
 
-# set forward_format = "[%a: %s]"
+set forward_format = "Fwd: %s"       # format of subject when forwarding
+set forward_decode                   # decode when forwarding
+set forward_quote                    # include message in forwards
+set mime_forward                     # forward attachments as part of body
 # -------------------------------------------------------------------------
 # Name: signature
 # -------------------------------------------------------------------------
@@ -292,9 +293,9 @@ set editor = "nvim"
 # its standard output.
 # -------------------------------------------------------------------------
 
-# set signature ="~/.neomutt/signatur" 
+set signature = "$XDG_CONFIG_HOME/neomutt/signature"
 # -------------------------------------------------------------------------
-# Name: empty_subject 
+# Name: empty_subject
 # -------------------------------------------------------------------------
 # This variable specifies the subject to be used when replying to an email
 # with an empty subject.  It defaults to "Re: your mail".
@@ -318,7 +319,7 @@ set editor = "nvim"
 # Also see $fast_reply.
 # -------------------------------------------------------------------------
 
-# set autoedit = no 
+# set autoedit = no
 
 ##########################################################################
 #   04 - Crypto
@@ -358,7 +359,7 @@ set editor = "nvim"
 
 # set pgp_default_key = "0x12345678"
 # -------------------------------------------------------------------------
-# Name: pgp_self_encrypt 
+# Name: pgp_self_encrypt
 # -------------------------------------------------------------------------
 # When set, PGP encrypted messages will also be encrypted using the key in
 # $pgp_default_key.  (PGP only)
@@ -366,7 +367,7 @@ set editor = "nvim"
 
 # set pgp_self_encrypt = yes
 # -------------------------------------------------------------------------
-# Name: crypt_autoencrypt 
+# Name: crypt_autoencrypt
 # -------------------------------------------------------------------------
 # Setting this variable will cause NeoMutt to always attempt to PGP encrypt
 # outgoing messages.  This is probably only useful in connection to the
@@ -379,7 +380,7 @@ set editor = "nvim"
 
 # set crypt_autoencrypt = no
 # -------------------------------------------------------------------------
-# Name: crypt_autopgp 
+# Name: crypt_autopgp
 # -------------------------------------------------------------------------
 # This variable controls  whether  or  not  NeoMutt  may  automatically
 # enable  PGP  encryption/signing  for  messages.   See  also
@@ -389,7 +390,7 @@ set editor = "nvim"
 
 # set crypt_autopgp = yes
 # -------------------------------------------------------------------------
-# Name: crypt_autosign 
+# Name: crypt_autosign
 # -------------------------------------------------------------------------
 # Setting this variable will cause NeoMutt to always attempt to
 # cryptographically sign outgoing messages.  This can be overridden by use
@@ -399,12 +400,12 @@ set editor = "nvim"
 # of the smime menu instead of the pgp menu.  (Crypto only)
 # -------------------------------------------------------------------------
 
-# set crypt_autosign = no 
+# set crypt_autosign = no
 ##########################################################################
 #   05 - View / Look
 ##########################################################################
 # -------------------------------------------------------------------------
-# Name: index_format 
+# Name: index_format
 # -------------------------------------------------------------------------
 #
 # This variable allows you to customize the message index display to your
@@ -477,15 +478,14 @@ set editor = "nvim"
 # Note that these expandos are supported in “save-hook”, “fcc-hook” and “fcc-save-hook”, too.
 # -------------------------------------------------------------------------
 
-# set index_format="%4C %Z %{%b %d} %-15.15L (%?l?%4l&%4c?) %s"
-
+set index_format = "%D • %-20.20L %s %> %c"
 # -------------------------------------------------------------------------
-# Name: status_format 
+# Name: status_format
 # -------------------------------------------------------------------------
 # Controls the format of the status line displayed in the “index” menu.
 # This string is similar to $index_format, but has its own set of
 # printf(3)-like sequences:
-# 
+#
 # %b     Number of mailboxes with new mail *
 # %d     Number of deleted messages *
 # %f     The full pathname of the current mailbox
@@ -510,11 +510,11 @@ set editor = "nvim"
 # %>X    Right justify the rest of the string and pad with “X”
 # %|X    Pad to the end of the line with “X”
 # %*X    Soft-fill with character “X” as pad
-# 
+#
 # For an explanation of “soft-fill”, see the $index_format documentation.
-# 
+#
 # * = can be optionally printed if nonzero
-# 
+#
 # Some  of  the above sequences can be used to optionally print a string if
 # their value is nonzero.  For example, you may only want to see the number
 # of flagged messages if such messages exist, # since zero is not
@@ -529,29 +529,27 @@ set editor = "nvim"
 #nonzero.  optional_string may contain other sequences  as well as normal
 # text, but you may not nest optional strings.
 #
-# 
+#
 # Here is an example illustrating how to optionally print the number of new messages in a mailbox:
-# 
+#
 # %?n?%n new messages.?
-# 
+#
 # You can also switch between two strings using the following construct:
-# 
+#
 # %?<sequence_char>?<if_string>&<else_string>?
-# 
+#
 # If the value of sequence_char is non-zero, if_string will be expanded, otherwise else_string will be expanded.
-# 
+#
 # You can force the result of any printf(3)-like sequence to be lowercase
 # by prefixing the sequence character with an underscore (“_”) sign.  For
 # example, if you want to display the local host‐ # name in lowercase, you
 # would use: “%_h”. If you prefix the sequence character with a colon
 # (“:”) character, NeoMutt will replace any dots in the expansion by
 # underscores. This might # be helpful with IMAP folders that don't like
-# dots in folder names.  
+# dots in folder names.
 # -------------------------------------------------------------------------
 
-# set status_format = "-%r-NeoMutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)---"
- 
-
+set status_format = "%f %?n?%n New ?%?u?%u Unread. ?%>  %V  (%P)"
 # -------------------------------------------------------------------------
 # Name alias_format
 # -------------------------------------------------------------------------
@@ -564,7 +562,7 @@ set editor = "nvim"
 # %t      Character which indicates if the alias is tagged for inclusion
 # -------------------------------------------------------------------------
 
-# set alias_format="%4n %2f %t %-10a   %r"
+set alias_format = "%4n %t %-20a  %r"
 # -------------------------------------------------------------------------
 # Name: reverse_alias
 # -------------------------------------------------------------------------
@@ -573,10 +571,10 @@ set editor = "nvim"
 # matches the message's sender.  For example, if you have the following
 # alias:
 # alias juser abd30425@somewhere.net (Joe User)
-# 
+#
 # and then you receive mail which contains the following header:
 # From: abd30425@somewhere.net
-# 
+#
 # It would be displayed in the index menu as ``Joe User'' instead of
 # ``abd30425@somewhere.net.''  This is useful when the person's e-mail
 # address is not human friendly.
@@ -613,11 +611,11 @@ set editor = "nvim"
 #
 # If the sidebar is enabled the following objects are also valid:
 # sidebar_divider, sidebar_flagged, sidebar_highlight, sidebar_indicator,
-# sidebar_new, sidebar_ordinary, sidebar_spoolfile. 
+# sidebar_new, sidebar_ordinary, sidebar_spoolfile.
 #
 # The body and header objects allow you to restrict the colorization to a
 # regular expression.  The index-object permits you to select colored
-# messages by pattern.  
+# messages by pattern.
 #
 # The header and body match regex in the header/body of a message,
 # index-object can match pattern in the message index.  Note that IMAP
@@ -742,7 +740,7 @@ bind pager			R	group-reply  # reply all
 # -------------------------------------------------------------------------
 
 # -------------------------------------------------------------------------
-# Name: sidebar_whitelist / unsidebar_whitelist 
+# Name: sidebar_whitelist / unsidebar_whitelist
 # -------------------------------------------------------------------------
 # The sidebar_whitelist command specifies mailboxes that will always be
 # displayed in the sidebar, even if $sidebar_new_mail_only is set and the
@@ -766,9 +764,9 @@ bind pager			R	group-reply  # reply all
 # -------------------------------------------------------------------------
 # This contains the list of characters which you would like to treat as
 # folder separators for displaying paths in the sidebar.  Local mail is
-# often arranged in directories: `dir1/dir2/mailbox'.  
-#	set sidebar_delim_chars='/' 
-# IMAP mailboxes are often named: `folder1.folder2.mailbox'.  
+# often arranged in directories: `dir1/dir2/mailbox'.
+#	set sidebar_delim_chars='/'
+# IMAP mailboxes are often named: `folder1.folder2.mailbox'.
 # -------------------------------------------------------------------------
 #	set sidebar_delim_chars='.'
 # -------------------------------------------------------------------------
@@ -812,7 +810,7 @@ set sidebar_format = "%B %* [%?N?%N / ?%S]"
 # Name: sidebar_indent_string
 # -------------------------------------------------------------------------
 # This specifies the string that is used to indent mailboxes in the
-# sidebar.  It defaults to two spaces. 
+# sidebar.  It defaults to two spaces.
 # -------------------------------------------------------------------------
 # -------------------------------------------------------------------------
 # Name: sidebar_new_mail_only
@@ -857,7 +855,7 @@ set sidebar_short_path = yes
 # Name: sidebar_sort_method
 # -------------------------------------------------------------------------
 # Specifies how to sort entries in the file browser.  By default, the
-# entries are sorted alphabetically.  
+# entries are sorted alphabetically.
 #
 # Valid values:
 #              ‐ alpha (alphabetically)
@@ -894,7 +892,7 @@ set sidebar_width = 20
 #   06 - SMTP
 ##########################################################################
 # -------------------------------------------------------------------------
-# Name: smtp_url 
+# Name: smtp_url
 # -------------------------------------------------------------------------
 # Defines the SMTP smarthost where sent messages should relayed for
 # delivery. This should take the form of an SMTP URL, e.g.:
@@ -925,7 +923,7 @@ set smtp_pass = "`op read -n 'op://Education/UW CS/password'`"
 # If it is “unset” (the default)  NeoMutt  will  try  all  available
 # methods,  in  order  from most-secure to least-secure. Support for the
 # “plain” mechanism is bundled; other mechanisms are provided by an
-# external SASL library (look for +USE_SASL in the output of neomutt -v). 
+# external SASL library (look for +USE_SASL in the output of neomutt -v).
 #
 # Example:
 set smtp_authenticators="login"
@@ -940,10 +938,10 @@ set ssl_force_tls = yes
 #   09 - Notmuch
 ##########################################################################
 # -------------------------------------------------------------------------
-# Name: nm_default_uri 
+# Name: nm_default_uri
 # -------------------------------------------------------------------------
 # This variable specifies the default Notmuch database in format
-# notmuch://<absolute path>. 
+# notmuch://<absolute path>.
 
 # set nm_default_uri = "notmuch:///home/user/.mail"
 
@@ -959,14 +957,14 @@ set ssl_force_tls = yes
 # virtual-mailboxes "E-Mails von diesem Monat" "notmuch://?query=date:month.."
 
 # -------------------------------------------------------------------------
-# Name: nm_record 
+# Name: nm_record
 # -------------------------------------------------------------------------
-# This variable specifies if the NeoMutt record should indexed by notmuch. 
-# 
+# This variable specifies if the NeoMutt record should indexed by notmuch.
+#
 
-# set nm_record = no 
+# set nm_record = no
 # -------------------------------------------------------------------------
-# Name: nm_record_tags 
+# Name: nm_record_tags
 # -------------------------------------------------------------------------
 # This variable specifies the default tags applied to messages stored to
 # the NeoMutt record.  When set to 0 this variable disable the window
@@ -974,7 +972,7 @@ set ssl_force_tls = yes
 
 # set nm_record_tags = "-inbox,sent,local"
 # -------------------------------------------------------------------------
-# Name: virtual_spoolfile 
+# Name: virtual_spoolfile
 # -------------------------------------------------------------------------
 # When set, NeoMutt will use the first defined virtual mailbox (see
 # virtual-mailboxes) as a spool file.
@@ -987,7 +985,7 @@ set ssl_force_tls = yes
 #   10 - Hooks
 ##########################################################################
 # -------------------------------------------------------------------------
-# Name: folder-hook 
+# Name: folder-hook
 # -------------------------------------------------------------------------
 # When NeoMutt enters a folder which matches regex (or, when regex is
 # preceded by an exclamation mark, does not match regex), the given command
@@ -1016,7 +1014,7 @@ set ssl_force_tls = yes
 
 
 # -------------------------------------------------------------------------
-# Name: reply-hook 
+# Name: reply-hook
 # -------------------------------------------------------------------------
 #  These  commands  can be used to execute arbitrary configuration commands
 #  based upon recipients of the message. pattern is used to match the
@@ -1030,7 +1028,7 @@ set ssl_force_tls = yes
 # file.
 
 # -------------------------------------------------------------------------
-# Name: send-hook 
+# Name: send-hook
 # -------------------------------------------------------------------------
 # These  commands  can be used to execute arbitrary configuration commands
 # based upon recipients of the message. pattern is used to match the
@@ -1051,7 +1049,7 @@ set ssl_force_tls = yes
 
 
 # -------------------------------------------------------------------------
-# Name: send-hook 
+# Name: send-hook
 # -------------------------------------------------------------------------
 # These  commands  can be used to execute arbitrary configuration commands
 # based upon recipients of the message. pattern is used to match the
@@ -1083,7 +1081,7 @@ set ssl_force_tls = yes
 # -------------------------------------------------------------------------
 # Name: options
 # -------------------------------------------------------------------------
-## common {{{1
+## common
 # No ask for recipients and subject when replying
 set fast_reply
 # show headers when composing
@@ -1095,7 +1093,7 @@ set include
 # Stop asking to "move read messages to mbox"!
 set move = no
 
-## pager options {{{1
+## pager options
 # number of index lines to show
 set pager_index_lines = 7
 # number of context lines to show
@@ -1114,32 +1112,23 @@ set quit = ask-yes
 # Really deleting letters
 set delete
 
-## format {{{1
-set date_format = "%m-%d (%H:%M)"
-set index_format = "%D • %-20.20L %s %> %c"
+## format
+set date_format = "%a, %d %b %Y at %H:%M"
 set folder_format = "%2C %t %N %2s %d %f"
-set status_format = "%f %?n?%n New ?%?u?%u Unread. ?%>  %V  (%P)"
-set alias_format = "%4n %t %-20a  %r"
 
-set forward_format = "Fwd: %s"       # format of subject when forwarding
-set forward_decode                   # decode when forwarding
-set forward_quote                    # include message in forwards
-set mime_forward                     # forward attachments as part of body
-set attribution = "On %d, %n wrote:" # format of quoting header
-
-## autocheck {{{1
+## autocheck
 set check_new = yes
 set imap_check_subscribed = yes
 set mail_check = 30                  # check for new mail every 30 seconds
 set imap_keepalive = 900             # 15 minutes
 set sleep_time = 0                   # don't sleep when idle
 
-## sort {{{1
+## sort
 set sort = 'threads'
 set sort_aux = 'reverse-last-date-received'
 set auto_tag = yes
 
-## auto recognize attaches {{{1
+## auto recognize attaches
 set mailcap_path = "$XDG_CONFIG_HOME/neomutt/mailcap"
 
 auto_view text/html application/x-tar-gz

@@ -695,6 +695,8 @@ bind attach,browser,pager,index	gg	noop
 bind attach,browser,pager,index	g	noop
 bind attach,browser,index	gg	first-entry
 bind attach,browser,index	G	last-entry
+bind attach,browser,index	k	previous-entry
+bind attach,browser,index	j	next-entry
 bind pager			gg	top
 bind pager			G	bottom
 bind pager			k	previous-line
@@ -724,10 +726,8 @@ bind pager,index		gt	next-thread
 bind pager,index		gT	previous-thread
 bind index			za	collapse-thread
 bind index			zA	collapse-all  # Missing :folddisable/foldenable
-bind index			G	imap-fetch-mail
 
-## sidebar {{{1
-bind index,pager		b	sidebar-toggle-visible
+## Sidebar
 bind index			\CP	sidebar-prev
 bind index			\CN	sidebar-next
 bind index			\CO	sidebar-open

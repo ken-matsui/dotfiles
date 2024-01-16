@@ -153,8 +153,8 @@ return {
         file_ignore_patterns = {'.git'},
         mappings = {
           i = {
-            ['<C-p>'] = require('telescope.actions').cycle_history_prev,
-            ['<C-n>'] = require('telescope.actions').cycle_history_next,
+            -- ['<C-p>'] = require('telescope.actions').cycle_history_prev,
+            -- ['<C-n>'] = require('telescope.actions').cycle_history_next,
           },
         },
       },
@@ -207,11 +207,7 @@ return {
   },
 
   {
-    'smoka7/hop.nvim', version = 'v2.*',
-    lazy = true,
-    keys = {
-      { '<Leader>j', '<Cmd>HopWord<Cr>', 'n', desc = 'Hop Word' },
-    },
-    opts = {},
+    "easymotion/vim-easymotion",
+    event = "VeryLazy",
   },
 }

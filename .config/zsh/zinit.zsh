@@ -27,3 +27,4 @@ zinit snippet PZTM::completion
 
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
+zinit light MichaelAquilina/zsh-auto-notify

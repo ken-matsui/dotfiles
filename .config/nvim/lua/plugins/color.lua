@@ -24,6 +24,8 @@ return {
       ensure_installed = {
         'bash',
         'comment',
+        'c',
+        'cpp',
         'dockerfile',
         'html',
         'java',
@@ -62,20 +64,6 @@ return {
         pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
       }
     end,
-  },
-
-  -- C/C++ Syntax Highlight
-  {
-    'bfrg/vim-cpp-modern',
-    lazy = true,
-    ft = { 'c', 'cpp' },
-    config = function ()
-      -- Enable highlighting of C++11 attributes
-      vim.g.cpp_attributes_highlight = 1
-
-      -- Highlight struct/class member variables (affects both C and C++ files)
-      vim.g.cpp_member_highlight = 1
-    end
   },
 
   -- Highlight arguments

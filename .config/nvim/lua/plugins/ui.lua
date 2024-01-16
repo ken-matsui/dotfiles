@@ -151,12 +151,6 @@ return {
     opts = {
       defaults = {
         file_ignore_patterns = {'.git'},
-        mappings = {
-          i = {
-            -- ['<C-p>'] = require('telescope.actions').cycle_history_prev,
-            -- ['<C-n>'] = require('telescope.actions').cycle_history_next,
-          },
-        },
       },
       pickers = {
         live_grep = {

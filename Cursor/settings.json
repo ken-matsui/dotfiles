@@ -125,6 +125,15 @@
                 "workbench.action.previousEditor"
             ]
         },
+        {
+            "before": [
+                "<leader>",
+                "w"
+            ],
+            "commands": [
+                "workbench.action.closeActiveEditor"
+            ]
+        }
     ],
     "window.commandCenter": false,
     "workbench.colorTheme": "Material Theme Ocean",

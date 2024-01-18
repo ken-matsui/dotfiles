@@ -248,4 +248,21 @@
         "command": "-workbench.action.tasks.build",
         "when": "taskCommandsRegistered"
     },
+    // Navigation around windows
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.navigateDown",
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.navigateUp",
+    },
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.navigateLeft",
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.navigateRight",
+    }
 ]

@@ -11,7 +11,6 @@
     ],
     "editor.stickyScroll.enabled": true,
     "editor.renderWhitespace": "all",
-    "editor.tabSize": 4,
     "files.autoSave": "onFocusChange",
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
@@ -133,7 +132,16 @@
             "commands": [
                 "workbench.action.closeActiveEditor"
             ]
-        }
+        },
+        {
+            "before": [
+                "<leader>",
+                "s"
+            ],
+            "commands": [
+                "workbench.action.toggleSidebarVisibility"
+            ]
+        },
     ],
     "window.commandCenter": false,
     "workbench.colorTheme": "Material Theme Ocean",
@@ -144,7 +152,7 @@
     "workbench.tree.indent": 16,
     "workbench.tree.renderIndentGuides": "always",
     "[cpp]": {
-        "editor.tabSize": 4,
+        "editor.tabSize": 8,
         "editor.indentSize": 2,
         "editor.detectIndentation": false
     },

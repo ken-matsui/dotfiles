@@ -162,7 +162,11 @@
         "editor.wordWrap": "bounded"
     },
     "cSpell.userWords": [
-        "Poac"
+        "Poac",
+        "Subcmd"
     ],
     "remote.autoForwardPortsSource": "hybrid",
+    "explorer.confirmDelete": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.blame.highlight.enabled": false,
 }

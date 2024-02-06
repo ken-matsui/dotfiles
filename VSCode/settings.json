@@ -90,7 +90,7 @@
     "vim.normalModeKeyBindings": [
         {
             "before": [
-                "<leader>",
+                "m",
                 "m"
             ],
             "commands": [
@@ -99,11 +99,49 @@
         },
         {
             "before": [
-                "<leader>",
-                "b"
+                "m",
+                "n"
+            ],
+            "commands": [
+                "bookmarks.jumpToNext"
+            ]
+        },
+        {
+            "before": [
+                "m",
+                "p"
+            ],
+            "commands": [
+                "bookmarks.jumpToPrevious"
+            ]
+        },
+        {
+            "before": [
+                "m",
+                "a"
             ],
             "commands": [
                 "bookmarks.list"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "g",
+                "n"
+            ],
+            "commands": [
+                "workbench.action.editor.nextChange"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "g",
+                "p"
+            ],
+            "commands": [
+                "workbench.action.editor.previousChange"
             ]
         },
         {

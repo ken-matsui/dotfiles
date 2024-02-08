@@ -272,7 +272,7 @@ set editor = "nvim"
 # a reply.  For a full listing of defined printf(3)-like sequences see the
 # section on $index_format.
 
-set attribution_intro = "On %d, %n <%a> wrote:"
+set attribution_intro = "On %D, %n <%a> wrote:"
 # -------------------------------------------------------------------------
 # Name: forward_format
 # -------------------------------------------------------------------------

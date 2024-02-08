@@ -13,7 +13,6 @@ formulae = [
     "clang-format",
     "cmake",
     "curl",
-    "felinks",
     "fd",  # for telescope.nvim
     "ffmpeg",  # for youtube-dl
     "gh",
@@ -45,6 +44,7 @@ formulae = [
     { name = "trash", on = "macos" },
     "universal-ctags",
     # "valgrind",
+    "w3m",
     "weechat",
     "wget",
     "wrk",

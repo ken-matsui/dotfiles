@@ -62,18 +62,20 @@ let mapleader = " "
 set tags=./tags;
 
 " Automatic word wrapping
-" set colorcolumn=75
-" set textwidth=75
-" filetype indent plugin on
+set textwidth=79
+autocmd FileType gitcommit setlocal textwidth=72
+set formatoptions-=ro formatoptions+=cqlt
 
 " Enable spell check
 set spelllang=en_us
 
 autocmd FileType text setlocal spell
+autocmd FileType mail setlocal spell
 autocmd FileType markdown setlocal spell
 autocmd FileType gitcommit setlocal spell
 
 autocmd FileType text setlocal complete+=kspell
+autocmd FileType mail setlocal complete+=kspell
 autocmd FileType markdown setlocal complete+=kspell
 autocmd FileType gitcommit setlocal complete+=kspell
 

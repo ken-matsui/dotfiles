@@ -70,15 +70,10 @@ set formatoptions-=ro formatoptions+=cqlt
 " Enable spell check
 set spelllang=en_us
 
-autocmd FileType text setlocal spell
-autocmd FileType gitcommit setlocal spell
-autocmd FileType mail setlocal spell
-autocmd FileType markdown setlocal spell
-
-autocmd FileType text setlocal complete+=kspell
-autocmd FileType gitcommit setlocal complete+=kspell
-autocmd FileType mail setlocal complete+=kspell
-autocmd FileType markdown setlocal complete+=kspell
+autocmd FileType text setlocal spell complete+=kspell
+autocmd FileType gitcommit setlocal spell complete+=kspell
+autocmd FileType mail setlocal spell complete+=kspell
+autocmd FileType markdown setlocal spell complete+=kspell
 
 " Save files when focus lost
 augroup AutoSaveOnFocusLost

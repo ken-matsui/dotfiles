@@ -180,6 +180,15 @@
                 "workbench.action.toggleSidebarVisibility"
             ]
         },
+        {
+            "before": [
+                "<leader>",
+                "o"
+            ],
+            "commands": [
+                "workbench.action.quickOpen"
+            ]
+        }
     ],
     "window.commandCenter": false,
     "workbench.colorTheme": "Material Theme Ocean",

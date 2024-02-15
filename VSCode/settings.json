@@ -207,4 +207,8 @@
     "explorer.confirmDelete": false,
     "gitlens.codeLens.enabled": false,
     "gitlens.blame.highlight.enabled": false,
+    "files.exclude": {
+        "**/.tags": true,
+        "**/*ChangeLog*": true
+    },
 }

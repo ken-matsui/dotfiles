@@ -68,6 +68,8 @@
   editor = interactive-rebase-tool
 [rebase]
   autostash = true
+[rerere]
+  enabled = true
 
 #
 # Aliases

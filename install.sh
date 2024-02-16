@@ -35,17 +35,10 @@ else
   exit 1
 fi
 
-echo 'Installing ken-matsui/dotfiles ...'
+echo 'Downloading ken-matsui/dotfiles ...'
 git clone https://github.com/ken-matsui/dotfiles.git
 export DOTSPATH="$(cd $(dirname $0); pwd)/dotfiles"
-bash ${DOTSPATH}/setup/main.sh  # TODO: complete setup
-
-# TODO: gh is installed only on macOS, not on Ubuntu.
-gh auth login
-gh ext install seachicken/gh-poi
-
-# https://stackoverflow.com/a/13785716
-sudo chmod -R 755 /usr/local/share/zsh
+bash ${DOTSPATH}/setup/main.sh
 
 printf '\u2728\e[1;33m Dotfiles Installation Done \u2728 \e[m\n'
 read '?Press any key to reboot your computer...: '

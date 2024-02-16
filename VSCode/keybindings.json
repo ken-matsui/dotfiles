@@ -92,17 +92,6 @@
         "command": "-workbench.action.previousEditor"
     },
     {
-        "key": "cmd+/",
-        "command": "runCommands",
-        "args": {
-            "commands": [
-                "editor.action.commentLine",
-                "cursorDown"
-            ]
-        },
-        "when": "editorTextFocus"
-    },
-    {
         "key": "cmd+backspace",
         "command": "editor.action.deleteLines",
         "when": "textInputFocus && !editorReadonly"

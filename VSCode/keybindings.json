@@ -92,32 +92,6 @@
         "command": "-workbench.action.previousEditor"
     },
     {
-        "key": "cmd+backspace",
-        "command": "editor.action.deleteLines",
-        "when": "textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "shift+cmd+k",
-        "command": "-editor.action.deleteLines",
-        "when": "textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "shift+cmd+backspace",
-        "command": "runCommands",
-        "args": {
-            "commands": [
-                "deleteAllLeft",
-                "tab"
-            ]
-        },
-        "when": "textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "cmd+backspace",
-        "command": "-deleteAllLeft",
-        "when": "textInputFocus && !editorReadonly"
-    },
-    {
         "key": "cmd+d",
         "command": "workbench.action.terminal.split",
         "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"

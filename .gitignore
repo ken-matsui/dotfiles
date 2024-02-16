@@ -1,2 +1,4 @@
 .config/*
 !.config/.gitignore
+.w3m/*
+!.w3m/.gitignore

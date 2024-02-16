@@ -11,36 +11,6 @@
         "when": "editorFocus"
     },
     {
-        "key": "f7",
-        "command": "-cmake.build",
-        "when": "cmake:enableFullFeatureSet && !cmake:hideBuildCommand"
-    },
-    {
-        "key": "shift+f7",
-        "command": "-cmake.buildWithTarget",
-        "when": "cmake:enableFullFeatureSet && !cmake:hideBuildCommand"
-    },
-    {
-        "key": "ctrl+f5",
-        "command": "-cmake.debugTarget",
-        "when": "cmake:enableFullFeatureSet && inCMakeProject && !cmake:hideDebugCommand && !inDebugMode"
-    },
-    {
-        "key": "shift+f5",
-        "command": "-cmake.launchTarget",
-        "when": "cmake:enableFullFeatureSet && !cmake:hideDebugCommand && !inDebugMode"
-    },
-    {
-        "key": "f10",
-        "command": "-extension.node-debug.startWithStopOnEntry",
-        "when": "!inDebugMode && debugConfigurationType == 'node' || !inDebugMode && debugConfigurationType == 'pwa-extensionHost' || !inDebugMode && debugConfigurationType == 'pwa-node'"
-    },
-    {
-        "key": "f11",
-        "command": "-extension.node-debug.startWithStopOnEntry",
-        "when": "!inDebugMode && activeViewlet == 'workbench.view.debug' && debugConfigurationType == 'node' || !inDebugMode && activeViewlet == 'workbench.view.debug' && debugConfigurationType == 'pwa-extensionHost' || !inDebugMode && activeViewlet == 'workbench.view.debug' && debugConfigurationType == 'pwa-node'"
-    },
-    {
         "key": "s",
         "command": "-workbench.action.files.save",
         "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"

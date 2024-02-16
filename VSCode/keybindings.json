@@ -42,14 +42,6 @@
         "command": "editor.action.addSelectionToPreviousFindMatch"
     },
     {
-        "key": "cmd+1",
-        "command": "-workbench.action.focusFirstEditorGroup"
-    },
-    {
-        "key": "cmd+1",
-        "command": "workbench.action.firstEditorInGroup"
-    },
-    {
         "key": "ctrl+cmd+right",
         "command": "-workbench.action.moveEditorToNextGroup"
     },

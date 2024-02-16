@@ -67,6 +67,7 @@ git clone https://github.com/ken-matsui/dotfiles.git
 ln -s ~/dotfiles/.config/nvim ~/.config/nvim  # directory
 ln -s ~/dotfiles/.config/starship.toml ~/.config/starship.toml  # file
 ln -s ~/dotfiles/.ssh/config ~/.ssh/config  # ssh
+ln -s ~/dotfiles/.config/Code/User/settings.json ~/Library/Application\ Support/Cursor/User/settings.json  # VSCode
 ```
 
 #### On Ubuntu

@@ -99,20 +99,10 @@ augroup CppFiletype
   autocmd BufNewFile,BufRead *.def		set filetype=cpp
 augroup END
 
-" Set JFlex syntax
-augroup filetype
-  au BufRead,BufNewFile *.flex,*.jflex		set filetype=jflex
-augroup END
-au Syntax jflex so ~/.vim/syntax/jflex.vim
-
 " Mojo
 " Mojo files use either .mojo or .🔥 as extension
 au BufNewFile,BufRead *.mojo,*.🔥		setf mojo
 au Syntax mojo so ~/.vim/syntax/mojo.vim
-
-" Cup
-au BufNewFile,BufRead *.cup			setf cup
-au Syntax cup so ~/.vim/syntax/cup.vim
 
 " =====================
 " Key Mappings

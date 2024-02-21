@@ -220,4 +220,8 @@
         "**/.tags": true,
         "**/*ChangeLog*": true
     },
+    "cursor.cpp.disabledLanguages": [
+        "scminput",
+        "latex"
+    ],
 }

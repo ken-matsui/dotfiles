@@ -224,4 +224,28 @@
         "scminput",
         "latex"
     ],
+    "terminal.integrated.profiles.osx": {
+        "tmux": {
+            "path": "tmux",
+            "args": [
+                "new-session",
+                "-A",
+                "-s",
+                "${workspaceFolder}|vscode"
+            ]
+        }
+    },
+    "terminal.integrated.profiles.linux": {
+        "tmux": {
+            "path": "tmux",
+            "args": [
+                "new-session",
+                "-A",
+                "-s",
+                "${workspaceFolder}|vscode"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.osx": "tmux",
+    "terminal.integrated.defaultProfile.linux": "tmux",
 }

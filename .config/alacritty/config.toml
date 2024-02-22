@@ -195,19 +195,19 @@ live_config_reload = true
 #   - AppKeypad
 #
 [[keyboard.bindings]]
-action = "ResetFontSize"
-key = "Key0"
-mods = "Command"
+  action = "ResetFontSize"
+  key = "Key0"
+  mods = "Command"
 
 [[keyboard.bindings]]
-action = "IncreaseFontSize"
-key = "Equals"
-mods = "Command"
+  action = "IncreaseFontSize"
+  key = "Equals"
+  mods = "Command"
 
 [[keyboard.bindings]]
-action = "DecreaseFontSize"
-key = "Minus"
-mods = "Command"
+  action = "DecreaseFontSize"
+  key = "Minus"
+  mods = "Command"
 
 [cursor.style]
   # Cursor shape
@@ -237,5 +237,5 @@ mods = "Command"
 #   - (Linux/BSD/macOS) `$SHELL` or the user's login shell, if `$SHELL` is unset
 #   - (Windows) powershell
 [shell]
-program = "/bin/zsh"
-args = ["-l", "-c", "tmux a -t 0 || tmux"]
+  program = "/bin/zsh"
+  args = ["-l", "-c", "tmux new-session -A -s alacritty"]

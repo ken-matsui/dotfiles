@@ -231,7 +231,7 @@
                 "new-session",
                 "-A",
                 "-s",
-                "${workspaceFolder}|vscode"
+                "${workspaceFolder}"
             ]
         }
     },
@@ -242,7 +242,7 @@
                 "new-session",
                 "-A",
                 "-s",
-                "${workspaceFolder}|vscode"
+                "${workspaceFolder}"
             ]
         }
     },

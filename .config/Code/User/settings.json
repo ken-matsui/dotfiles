@@ -248,4 +248,5 @@
     },
     "terminal.integrated.defaultProfile.osx": "tmux",
     "terminal.integrated.defaultProfile.linux": "tmux",
+    "terminal.integrated.macOptionClickForcesSelection": true,
 }

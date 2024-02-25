@@ -1,7 +1,6 @@
 [homebrew]
 taps = [
     { name = "homebrew/cask-fonts", on = "macos" },  # for font-jetbrains-mono-nerd-font
-    { name = "afutured/openai-translator", on = "macos" },  # for openai-translator
 ]
 formulae = [
     "atuin",
@@ -72,7 +71,6 @@ casks = [
     # "mendeley",
     # "notion",
     "notesnook",
-    "openai-translator",
     # "postman",
     "protonvpn",
     "raycast",

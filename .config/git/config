@@ -53,13 +53,15 @@
   default = current
 
 #
-# Diff
+# UI
 #
 [core]
   pager = delta
   autocrlf = input
 [interactive]
   diffFilter = delta --color-only
+[log]
+  date = local
 
 #
 # Rebase

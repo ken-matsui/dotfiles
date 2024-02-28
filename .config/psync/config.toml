@@ -44,7 +44,6 @@ formulae = [
     "universal-ctags",
     # "valgrind",
     "w3m",
-    "weechat",
     "wget",
     "wrk",
     "youtube-dl",

@@ -75,6 +75,7 @@ casks = [
     "protonvpn",
     "raycast",
     # "sf-symbols",
+    "signal",
     # "sketch",
     "swish",
     "zoom",

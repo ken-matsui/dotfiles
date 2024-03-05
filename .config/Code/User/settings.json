@@ -188,6 +188,15 @@
             "commands": [
                 "workbench.action.quickOpen"
             ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "t"
+            ],
+            "commands": [
+                "workbench.action.togglePanel"
+            ]
         }
     ],
     "window.commandCenter": false,

@@ -66,7 +66,6 @@ casks = [
     # "google-cloud-sdk",
     "grammarly-desktop",
     # "jetbrains-toolbox",
-    "logseq",
     "mactex-no-gui",
     # "mendeley",
     # "notion",

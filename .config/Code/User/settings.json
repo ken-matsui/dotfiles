@@ -197,6 +197,15 @@
             "commands": [
                 "workbench.action.togglePanel"
             ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "f"
+            ],
+            "commands": [
+                "workbench.action.findInFiles"
+            ]
         }
     ],
     "window.commandCenter": false,

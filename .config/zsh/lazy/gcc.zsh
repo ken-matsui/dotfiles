@@ -8,10 +8,13 @@ alias gcc_test_frontend='make check-gcc-c++'
 alias gcc_test_frontend_ext='make check-gcc-c++ RUNTESTFLAGS="dg.exp=ext*"'
 alias gcc_test_libstdcxx='make -j8 check-target-libstdc++-v3'
 
-local headers='-I../../../gcc/objdir/x86_64-pc-linux-gnu/libstdc++-v3/include/x86_64-pc-linux-gnu -I../../../gcc/objdir/x86_64-pc-linux-gnu/libstdc++-v3/include -I../../../gcc/libstdc++-v3/libsupc++ -I../x86_64-pc-linux-gnu/libstdc++-v3/include/x86_64-pc-linux-gnu -I../../../gcc/libstdc++-v3/include/backward -I../../../gcc/libstdc++-v3/testsuite/util -I../../gcc/ginclude'
-local cc1plus_cmd="./cc1plus $headers"
+export GCC_SRC_DIR='~/Desktop/gcc'
+export GCC_OBJ_DIR="$GCC_SRC_DIR/objdir"
+export GCC_OUT_DIR="$GCC_OBJ_DIR/gcc"
 
-alias gcc_cc1plus="$cc1plus_cmd"
-alias gcc_xgcc="./xgcc $headers"
-alias gcc_xg++="./xg++ $headers"
-alias gcc_gdb="gdb --args $cc1plus_cmd"
+local headers="-I$GCC_OBJ_DIR/x86_64-pc-linux-gnu/libstdc++-v3/include/x86_64-pc-linux-gnu -I$GCC_OBJ_DIR/x86_64-pc-linux-gnu/libstdc++-v3/include -I$GCC_SRC_DIR/libstdc++-v3/libsupc++ -I$GCC_OBJ_DIR/x86_64-pc-linux-gnu/libstdc++-v3/include/x86_64-pc-linux-gnu -I$GCC_SRC_DIR/libstdc++-v3/include/backward -I$GCC_SRC_DIR/libstdc++-v3/testsuite/util -I$GCC_SRC_DIR/gcc/ginclude"
+
+alias gcc_cc1plus="cc1plus $headers"
+alias gcc_xgcc="xgcc $headers"
+alias gcc_xg++="xg++ $headers"
+alias gcc_gdb="gdb --args $gcc_cc1plus"

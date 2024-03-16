@@ -10,6 +10,8 @@ alias gcc_test_libstdcxx='make -j8 check-target-libstdc++-v3'
 
 local headers='-I../../../gcc/objdir/x86_64-pc-linux-gnu/libstdc++-v3/include/x86_64-pc-linux-gnu -I../../../gcc/objdir/x86_64-pc-linux-gnu/libstdc++-v3/include -I../../../gcc/libstdc++-v3/libsupc++ -I../x86_64-pc-linux-gnu/libstdc++-v3/include/x86_64-pc-linux-gnu -I../../../gcc/libstdc++-v3/include/backward -I../../../gcc/libstdc++-v3/testsuite/util -I../../gcc/ginclude'
 local cc1plus_cmd="./cc1plus $headers"
+
 alias gcc_cc1plus="$cc1plus_cmd"
-alias gcc_xg++="PATH=$PATH:$PWD ./xg++ $headers"
+alias gcc_xgcc="./xgcc $headers"
+alias gcc_xg++="./xg++ $headers"
 alias gcc_gdb="gdb --args $cc1plus_cmd"

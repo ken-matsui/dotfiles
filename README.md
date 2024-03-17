@@ -104,6 +104,8 @@ ln -s ~/dotfiles/.local/share/alacritty/config.yml ~/.local/share/alacritty/conf
 
 ### Manjaro
 
+* TODO: Setup fingerprint
+  * https://forum.manjaro.org/t/fingerprint-authentication/109764/2
 * TODO: Find clipboard manager
 * TODO: Find trash command
   * https://unix.stackexchange.com/q/42757

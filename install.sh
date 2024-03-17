@@ -21,12 +21,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
 elif [[ "$OSTYPE" == linux* ]]; then
   # https://askubuntu.com/a/459425
   local _distrotype="$(awk -F= '/^NAME/{print $2}' /etc/os-release)"
-  if [ "$_distrotype" = '"Ubuntu"' ]; then
-    echo 'Installing git ...'
-    sudo apt update
-    sudo apt upgrade -y
-    sudo apt install -y git
-  else
+  if [ "$_distrotype" != '"Manjaro Linux"' ]; then
     echo "$_distrotype is not supported."
     exit 1
   fi

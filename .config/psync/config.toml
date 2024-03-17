@@ -83,15 +83,6 @@ casks = [
 [cargo]
 crates = [
     "cargo-update",
+    "cargo-cache",
     "suggest-command-not-found",
-]
-
-[snap]
-snaps = [
-    { name = "alacritty", classic = true },
-    "discord",
-    "docker",
-    "notesnook",
-    { name = "code", classic = true },
-    "slack",
 ]

@@ -4,16 +4,16 @@
 
 ![ScreenShot 4](https://github.com/ken-matsui/dotfiles/assets/26405363/9a973a6c-9e46-4e4d-9f8d-a4dbf43d6bde)
 
-|             |                     |
-| ----------- | :-----------------: |
-| OS          | macOS / Ubuntu      |
-| Terminal    | Alacritty           |
-| Multiplexer | Tmux                |
-| Shell       | Zsh                 |
-| Prompt      | Starship            |
-| Editor      | Vim / Neovim        |
-| Theme       | Material Deep Ocean |
-| Font        | JetBrains Mono Nerd |
+|             |                      |
+| ----------- | :------------------: |
+| OS          | macOS / Manjaro Sway |
+| Terminal    | Alacritty            |
+| Multiplexer | Tmux                 |
+| Shell       | Zsh                  |
+| Prompt      | Starship             |
+| Editor      | Vim / Neovim         |
+| Theme       | Material Deep Ocean  |
+| Font        | JetBrains Mono Nerd  |
 
 </div>
 
@@ -102,13 +102,15 @@ ln -s ~/dotfiles/.local/share/alacritty/config.yml ~/.local/share/alacritty/conf
 
 * Settings -> Quick Entry -> Enable shortcut for Quick Entry -> <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>T</kbd>
 
-### Ubuntu
+### Manjaro
 
 * TODO: Find clipboard manager
 * TODO: Find trash command
   * https://unix.stackexchange.com/q/42757
   * https://github.com/andreafrancia/trash-cli/
   * https://github.com/nateshmbhat/rm-trash
+
+### Ubuntu (TODO: migrate to Manjaro)
 
 #### Settings
 

@@ -1,11 +1,6 @@
 #!/bin/bash
 set -eu
 
-for file in ${DOTSPATH}/setup/common/*.sh; do
-  echo "Running $file ..."
-  bash $file
-done
-
 if [[ "$OSTYPE" == darwin* ]]; then
   for file in ${DOTSPATH}/setup/macos/*.sh; do
     echo "Running $file ..."
@@ -17,3 +12,8 @@ elif [[ "$OSTYPE" == linux* ]]; then
     bash $file
   done
 fi
+
+for file in ${DOTSPATH}/setup/common/*.sh; do
+  echo "Running $file ..."
+  bash $file
+done

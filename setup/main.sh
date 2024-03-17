@@ -12,7 +12,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
     bash $file
   done
 elif [[ "$OSTYPE" == linux* ]]; then
-  for file in ${DOTSPATH}/setup/ubuntu/*.sh; do
+  for file in ${DOTSPATH}/setup/manjaro/*.sh; do
     echo "Running $file ..."
     bash $file
   done

@@ -1,3 +1,6 @@
+#!/bin/bash
+set -eu
+
 sudo pacman -Syu
 sudo pacman -S \
   python dbus-python fakeroot python-gpgme patch \

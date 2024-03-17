@@ -33,4 +33,4 @@ sudo pacman -S \
   w3m \
   yt-dlp
 pamac build 1password 1password-cli dropbox slack-desktop google-chrome notesnook topgrade google-java-format zoom
-cargo install cargo-update suggest-command-not-found
+cargo install cargo-update cargo-cache suggest-command-not-found

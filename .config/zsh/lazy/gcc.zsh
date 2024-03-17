@@ -8,7 +8,7 @@ alias gcc_test_frontend='make check-gcc-c++'
 alias gcc_test_frontend_ext='make check-gcc-c++ RUNTESTFLAGS="dg.exp=ext*"'
 alias gcc_test_libstdcxx='make -j8 check-target-libstdc++-v3'
 
-export GCC_SRC_DIR="$HOME/Desktop/gcc"
+export GCC_SRC_DIR="$HOME/gcc"
 export GCC_OBJ_DIR="$GCC_SRC_DIR/objdir"
 export GCC_OUT_DIR="$GCC_OBJ_DIR/gcc"
 export PATH="$PATH:$GCC_OUT_DIR"

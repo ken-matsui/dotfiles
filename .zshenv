@@ -78,6 +78,4 @@ elif [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
 elif [ -f ~/homebrew/bin/brew ]; then
   # Home directory installation
   eval "$(~/homebrew/bin/brew shellenv)"
-else
-  echo 'Homebrew not found. Some software configurations may not be loaded correctly.'
 fi

@@ -16,4 +16,3 @@ backup_and_link .w3m
 backup_and_link .bashrc
 backup_and_link .zshenv
 backup_and_link .zshrc
-backup_and_link .local/share/alacritty/config.toml

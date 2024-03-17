@@ -34,3 +34,5 @@ sudo pacman -S \
   yt-dlp
 pamac build 1password 1password-cli dropbox slack-desktop google-chrome notesnook topgrade google-java-format zoom
 cargo install cargo-update cargo-cache suggest-command-not-found
+
+chsh -s $(which zsh)

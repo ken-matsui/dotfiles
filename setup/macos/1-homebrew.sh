@@ -10,3 +10,5 @@ else
   echo 'Homebrew installation seems broken.'
   exit 1
 fi
+
+brew install gh

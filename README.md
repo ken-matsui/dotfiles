@@ -71,12 +71,6 @@ ln -s ~/dotfiles/.config/Code/User/settings.json ~/Library/Application\ Support/
 ln -s ~/dotfiles/.config/Code/User/keybindings.json ~/.config/Code/User/keybindings.json  # VSCode on Linux
 ```
 
-#### On Ubuntu
-
-```sh
-ln -s ~/dotfiles/.local/share/alacritty/config.yml ~/.local/share/alacritty/config.yml
-```
-
 ## Additional Settings
 
 ### Both OS

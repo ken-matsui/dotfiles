@@ -96,12 +96,16 @@ ln -s ~/dotfiles/.config/Code/User/keybindings.json ~/.config/Code/User/keybindi
 
 * Settings -> Quick Entry -> Enable shortcut for Quick Entry -> <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>T</kbd>
 
-### Manjaro
+### Manjaro (TODOs)
 
-* TODO: Setup fingerprint
+* Disable tap click
+* Waybar
+  * Use C, not F
+  * Show percentage for CPU usage
+* Setup fingerprint
   * https://forum.manjaro.org/t/fingerprint-authentication/109764/2
-* TODO: Find clipboard manager
-* TODO: Find trash command
+* Find clipboard manager
+* Find trash command
   * https://unix.stackexchange.com/q/42757
   * https://github.com/andreafrancia/trash-cli/
   * https://github.com/nateshmbhat/rm-trash

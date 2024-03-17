@@ -105,7 +105,6 @@ ln -s ~/dotfiles/.local/share/alacritty/config.yml ~/.local/share/alacritty/conf
 ### Ubuntu
 
 * TODO: Find clipboard manager
-* TODO: Swipe back on browsers (https://kaigo.medium.com/mac-like-gestures-on-ubuntu-20-04-dell-xps-15-7ea6e3be7f76)
 * TODO: Find trash command
   * https://unix.stackexchange.com/q/42757
   * https://github.com/andreafrancia/trash-cli/

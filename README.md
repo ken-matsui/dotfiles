@@ -116,9 +116,6 @@ ln -s ~/dotfiles/.config/Code/User/keybindings.json ~/.config/Code/User/keybindi
 #### Gnome Tweaks
 
 * Keyboard & Mouse -> Additional Layout Options -> Caps Lock behavior -> Enable `Make Caps Lock an additional Ctrl`
-* Top Bar -> Clock -> Enable `Weekday and Date`
-* Window Titlebars -> Titlebar Buttons -> Placement -> Click `Left`
-* Keyboard & Mouse -> Mouse -> Disable `Middle Click Paste`
 * Keyboard & Mouse -> Mouse Click Emulation -> Enable `Fingers`
 
 #### Remap Keys

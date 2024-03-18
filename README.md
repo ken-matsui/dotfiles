@@ -104,7 +104,6 @@ ln -s ~/dotfiles/.config/Code/User/keybindings.json ~/.config/Code/User/keybindi
   * Show percentage for CPU usage
 * Setup fingerprint
   * https://forum.manjaro.org/t/fingerprint-authentication/109764/2
-* Find clipboard manager
 * Find trash command
   * https://unix.stackexchange.com/q/42757
   * https://github.com/andreafrancia/trash-cli/

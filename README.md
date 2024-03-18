@@ -99,9 +99,6 @@ ln -s ~/dotfiles/.config/Code/User/keybindings.json ~/.config/Code/User/keybindi
 ### Manjaro (TODOs)
 
 * Disable tap click
-* Waybar
-  * Use C, not F
-  * Show percentage for CPU usage
 * Setup fingerprint
   * https://forum.manjaro.org/t/fingerprint-authentication/109764/2
 * Find trash command

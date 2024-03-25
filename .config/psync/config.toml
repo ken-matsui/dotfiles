@@ -12,6 +12,7 @@ formulae = [
     "clang-format",
     "cmake",
     "curl",
+    "difftastic",
     "fd",  # for telescope.nvim
     "ffmpeg",  # for youtube-dl
     "gh",

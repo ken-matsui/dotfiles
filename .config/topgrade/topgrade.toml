@@ -15,6 +15,7 @@ disable = [
   "mas",
   "gnome_shell_extensions",
   "containers",
+  "helix",
 ]
 
 # Ignore failures for these steps

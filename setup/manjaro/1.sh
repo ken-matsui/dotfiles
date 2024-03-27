@@ -27,7 +27,7 @@ sudo pacman -S \
   ninja \
   neomutt \
   neovim \
-  nodejs \
+  nodejs yarn \
   python-poetry \
   rust \
   starship \

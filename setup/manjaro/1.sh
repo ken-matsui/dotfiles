@@ -3,7 +3,7 @@ set -eu
 
 sudo pacman -Syu
 sudo pacman -S \
-  python dbus-python fakeroot python-gpgme patch \
+  python dbus-python fakeroot python-gpgme patch openssh \
   alacritty discord docker \
   ttf-jetbrains-mono-nerd powerline-fonts \
   atuin \

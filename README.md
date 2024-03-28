@@ -98,6 +98,11 @@ ln -s ~/dotfiles/.config/Code/User/keybindings.json ~/.config/Code/User/keybindi
 
 ### Manjaro (TODOs)
 
+* SSH
+  * Copy `public key` in 1Password to `~/.ssh/authorized_keys`
+  * Link `sshd_config.d/*` to `/etc/ssh/sshd_config.d/`
+  * sudo systemctl start sshd.service
+
 * Setup fingerprint
   * https://forum.manjaro.org/t/fingerprint-authentication/109764/2
 * Find trash command

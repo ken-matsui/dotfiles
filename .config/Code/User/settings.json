@@ -266,4 +266,7 @@
     },
     "terminal.integrated.macOptionClickForcesSelection": true,
     "terminal.integrated.persistentSessionReviveProcess": "onExitAndWindowClose",
+    "[toml]": {
+        "editor.formatOnSave": false,
+    },
 }

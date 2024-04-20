@@ -82,7 +82,7 @@
     "vim.leader": "<space>",
     "vim.useSystemClipboard": true,
     "vim.vimrc.enable": true,
-    "vim.vimrc.path": "$HOME/.vim/vimrc",
+    "vim.vimrc.path": "$HOME/.config/vim/vimrc",
     // To improve performance of vscode vim
     "extensions.experimental.affinity": {
         "vscodevim.vim": 1

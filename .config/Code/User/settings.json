@@ -269,4 +269,5 @@
     "[toml]": {
         "editor.formatOnSave": false,
     },
+    "window.zoomLevel": -0.5,
 }

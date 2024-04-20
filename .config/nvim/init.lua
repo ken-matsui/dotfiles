@@ -1,7 +1,7 @@
 -- Load Vim configuration
-vim.cmd('set runtimepath^=~/.vim runtimepath+=~/.vim/after')
+vim.cmd('set runtimepath^=~/.config/vim runtimepath+=~/.config/vim/after')
 vim.o.packpath = vim.o.runtimepath
-vim.cmd('source ~/.vim/vimrc')
+vim.cmd('source ~/.config/vim/vimrc')
 
 -- Enable fast cache loading
 vim.loader.enable()

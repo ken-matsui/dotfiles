@@ -11,6 +11,7 @@ sudo pacman -S \
   python-black \
   boost \
   cmake \
+  dejagnu \  # for GCC dev
   fd \
   ffmpeg \
   github-cli \

@@ -6,7 +6,7 @@ sudo pacman -S \
   python dbus-python fakeroot python-gpgme patch openssh \
   alacritty discord docker \
   ttf-jetbrains-mono-nerd powerline-fonts \
-  perl-authen-sasl perl-mime-tools \  # for git send-email
+  perl-io-socket-ssl perl-authen-sasl perl-mime-tools \  # for git send-email
   atuin \
   bat \
   python-black \

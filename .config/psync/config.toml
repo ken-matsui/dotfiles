@@ -17,7 +17,6 @@ formulae = [
     "ffmpeg",  # for youtube-dl
     "gh",
     "git-delta",
-    "git-interactive-rebase-tool",
     "google-java-format",
     "graphviz",
     "gzip",
@@ -85,4 +84,5 @@ crates = [
     "cargo-update",
     "cargo-cache",
     "suggest-command-not-found",
+    "git-interactive-rebase-tool",
 ]

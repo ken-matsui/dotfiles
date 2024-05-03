@@ -65,7 +65,7 @@
 
     "clock": {
         "interval": 60,
-        "format": "{:%e %b %Y %H:%M}",
+        "format": "{:%a %b %e %I:%M %p}",
         "tooltip": true,
         "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
         "on-click": "swaymsg exec \\$calendar"
@@ -84,7 +84,7 @@
 
     "memory": {
         "interval": 10,
-        "format": "󰍛 {used}/{total}GB",
+        "format": "󰍛 {percentage}%",
         "states": {
             "warning": 70,
             "critical": 90

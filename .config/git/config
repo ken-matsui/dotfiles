@@ -2,122 +2,122 @@
 # OS depending config
 #
 [includeIf "gitdir:/Users"]
-  path = ~/.config/git/configs/macos
+	path = ~/.config/git/configs/macos
 [includeIf "gitdir:/home"]
-  path = ~/.config/git/configs/linux
+	path = ~/.config/git/configs/linux
 
 #
 # GPG
 #
 [gpg]
-  format = ssh
+	format = ssh
 [gpg "ssh"]
-  allowedSignersFile = "~/.config/git/allowed_signers"
+	allowedSignersFile = "~/.config/git/allowed_signers"
 [commit]
-  gpgsign = true
+	gpgsign = true
 [tag]
-  forceSignAnnotated = true
+	forceSignAnnotated = true
 
 #
 # User
 #
 [user]
-  name = Ken Matsui
-  email = 26405363+ken-matsui@users.noreply.github.com
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJLtNOwH8UCkUcpMNG4aSMNtzUtYaYzdc3awbXbzvAwY
+	name = Ken Matsui
+	email = 26405363+ken-matsui@users.noreply.github.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJLtNOwH8UCkUcpMNG4aSMNtzUtYaYzdc3awbXbzvAwY
 
 #
 # Overwrite configs for UW
 #
 [includeIf "hasconfig:remote.*.url:git@gitlab.cs.washington.edu:*/**"]
-  path = ~/.config/git/configs/uw
+	path = ~/.config/git/configs/uw
 
 #
 # Send email
 #
 [sendemail]
-  smtpServer = smtp.uw.edu  # works for both @uw.edu & @cs.washington.edu
-  smtpServerPort = 587
-  smtpEncryption = tls
+	smtpServer = smtp.uw.edu  # works for both @uw.edu & @cs.washington.edu
+	smtpServerPort = 587
+	smtpEncryption = tls
 
 #
 # Branch
 #
 [init]
-  defaultBranch = main
+	defaultBranch = main
 [fetch]
-  prune = true
+	prune = true
 [pull]
-  rebase = false
+	rebase = false
 [push]
-  default = current
+	default = current
 
 #
 # UI
 #
 [core]
-  pager = delta
-  autocrlf = input
+	pager = delta
+	autocrlf = input
 [interactive]
-  diffFilter = delta --color-only
+	diffFilter = delta --color-only
 [log]
-  date = local
+	date = local
 
 #
 # Diff (delta by default, difftastic for difftool)
 #
 [diff]
-  tool = difftastic
+	tool = difftastic
 [difftool]
-  prompt = false
+	prompt = false
 [difftool "difftastic"]
-  cmd = difft "$LOCAL" "$REMOTE"
+	cmd = difft "$LOCAL" "$REMOTE"
 [pager]
-  difftool = true
+	difftool = true
 
 #
 # Rebase
 #
 [sequence]
-  editor = interactive-rebase-tool
+	editor = interactive-rebase-tool
 [rebase]
-  autostash = true
+	autostash = true
 [rerere]
-  enabled = true
+	enabled = true
 
 #
 # Aliases
 #
 [alias]
-  # Shorthand for status
-  st = status
-  # Shorthand for switch
-  sw = switch
-  # Shorthand for difftool
-  dft = difftool
-  # Generate gitignore
-  ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi"
-  # Show current commit hash
-  now = show --oneline -s
-  # Stash with untracked files (-m 'comment')
-  save = stash push --include-untracked
-  # Get all user.* config
-  me = config --get-regexp user
-  # Get my commits
-  mine = !git shortlog -sne --author=\"$(git config user.name)\"
-  # Get a parent commit from the argument
-  parent = log --pretty=%P -n 1
-  # Remove newly gitignored files
-  rm-ignored = rm -r --cached .
+	# Shorthand for status
+	st = status
+	# Shorthand for switch
+	sw = switch
+	# Shorthand for difftool
+	dft = difftool
+	# Generate gitignore
+	ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi"
+	# Show current commit hash
+	now = show --oneline -s
+	# Stash with untracked files (-m 'comment')
+	save = stash push --include-untracked
+	# Get all user.* config
+	me = config --get-regexp user
+	# Get my commits
+	mine = !git shortlog -sne --author=\"$(git config user.name)\"
+	# Get a parent commit from the argument
+	parent = log --pretty=%P -n 1
+	# Remove newly gitignored files
+	rm-ignored = rm -r --cached .
 
 #
 # Git LFS
 #
 [filter "lfs"]
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
-  process = git-lfs filter-process
-  required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 
 [advice]
 	skippedCherryPicks = false

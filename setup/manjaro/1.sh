@@ -15,6 +15,7 @@ sudo pacman -S \
   dejagnu \  # for GCC dev
   fd \
   ffmpeg \
+  fprintd \
   github-cli \
   git-delta \
   graphviz \

@@ -11,11 +11,13 @@ sudo pacman -S \
   bat \
   python-black \
   boost \
+  clang \
   cmake \
   dejagnu \  # for GCC dev
   fd \
   ffmpeg \
   fprintd \
+  gcc \
   github-cli \
   git-delta \
   graphviz \

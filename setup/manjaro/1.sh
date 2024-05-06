@@ -30,6 +30,7 @@ sudo pacman -S \
   neomutt \
   neovim \
   nodejs yarn \
+  perf \
   python-poetry \
   rust \
   starship \

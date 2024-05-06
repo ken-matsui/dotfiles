@@ -42,3 +42,4 @@ sudo pacman -S \
 pamac build 1password 1password-cli dropbox slack-desktop google-chrome notesnook topgrade google-java-format zoom
 
 chsh -s $(which zsh)
+fprintd-enroll

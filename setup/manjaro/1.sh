@@ -13,6 +13,7 @@ sudo pacman -S \
   boost \
   clang \
   cmake \
+  ctags \
   dejagnu \  # for GCC dev
   fd \
   ffmpeg \
@@ -38,7 +39,7 @@ sudo pacman -S \
   rust \
   starship \
   tmux \
-  ctags \
+  valgrind \
   w3m \
   yt-dlp
 pamac build 1password 1password-cli dropbox slack-desktop google-chrome notesnook topgrade google-java-format zoom

@@ -35,6 +35,7 @@ sudo pacman -S \
   neovim \
   nodejs yarn \
   perf \
+  power-profiles-daemon \
   python-poetry \
   rust \
   starship \

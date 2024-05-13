@@ -60,20 +60,30 @@
         "when": "taskCommandsRegistered"
     },
     // Navigation around windows
+    // FIXME: No longer working
+    // {
+    //     "key": "ctrl+j",
+    //     "command": "workbench.action.navigateDown",
+    // },
+    // {
+    //     "key": "ctrl+k",
+    //     "command": "workbench.action.navigateUp",
+    // },
+    // {
+    //     "key": "ctrl+h",
+    //     "command": "workbench.action.navigateLeft",
+    // },
+    // {
+    //     "key": "ctrl+l",
+    //     "command": "workbench.action.navigateRight",
+    // },
     {
         "key": "ctrl+j",
-        "command": "workbench.action.navigateDown",
+        "command": "workbench.action.terminal.focus"
     },
     {
         "key": "ctrl+k",
-        "command": "workbench.action.navigateUp",
-    },
-    {
-        "key": "ctrl+h",
-        "command": "workbench.action.navigateLeft",
-    },
-    {
-        "key": "ctrl+l",
-        "command": "workbench.action.navigateRight",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus"
     }
 ]

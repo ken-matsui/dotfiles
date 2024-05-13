@@ -34,6 +34,7 @@
         "cpu",
         "memory",
         "battery",
+        "custom/power-profiles-daemon",
 
         // connecting
         "network",
@@ -61,6 +62,18 @@
         "format": "{icon} {capacity}%",
         "format-icons": ["󱃍", "󰁺", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         "tooltip": true
+    },
+
+    "custom/power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
     },
 
     "clock": {

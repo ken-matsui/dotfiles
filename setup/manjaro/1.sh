@@ -14,7 +14,7 @@ sudo pacman -S \
   clang \
   cmake \
   ctags \
-  dejagnu python-unidiff \  # for GCC dev
+  dejagnu python-unidiff python-gitpython \  # for GCC dev
   fd \
   ffmpeg \
   fprintd \

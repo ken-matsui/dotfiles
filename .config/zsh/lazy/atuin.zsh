@@ -12,9 +12,11 @@ if (( $+commands[atuin] )); then
     then
         add-zsh-hook precmd _atuin_precmd
         add-zsh-hook preexec _atuin_preexec
+        unset ATUIN_INCOGNITO
     else
         add-zsh-hook -d precmd _atuin_precmd
         add-zsh-hook -d preexec _atuin_preexec
+        export ATUIN_INCOGNITO=1
     fi
   }
 fi

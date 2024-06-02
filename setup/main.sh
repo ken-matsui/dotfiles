@@ -1,19 +1,19 @@
 #!/bin/bash
 set -eu
 
+run() {
+  echo "Running $1 ..."
+  bash $1
+}
+
 if [[ "$OSTYPE" == darwin* ]]; then
   for file in ${DOTSPATH}/setup/macos/*.sh; do
-    echo "Running $file ..."
-    bash $file
+    run $file
   done
 elif [[ "$OSTYPE" == linux* ]]; then
-  for file in ${DOTSPATH}/setup/manjaro/*.sh; do
-    echo "Running $file ..."
-    bash $file
-  done
+  run ${DOTSPATH}/setup/manjaro.sh
 fi
 
 for file in ${DOTSPATH}/setup/common/*.sh; do
-  echo "Running $file ..."
-  bash $file
+  run $file
 done

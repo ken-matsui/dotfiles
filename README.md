@@ -103,8 +103,6 @@ ln -s ~/dotfiles/.config/Code/User/keybindings.json ~/.config/Code/User/keybindi
   * Link `sshd_config.d/*` to `/etc/ssh/sshd_config.d/`
   * sudo systemctl start sshd.service
 
-* Setup fingerprint
-  * https://forum.manjaro.org/t/fingerprint-authentication/109764/2
 * Find trash command
   * https://unix.stackexchange.com/q/42757
   * https://github.com/andreafrancia/trash-cli/

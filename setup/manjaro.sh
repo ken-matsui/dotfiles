@@ -43,7 +43,16 @@ sudo pacman -S \
   valgrind \
   w3m \
   yt-dlp
-pamac build 1password 1password-cli dropbox slack-desktop google-chrome notesnook topgrade google-java-format zoom
+
+pamac build \
+  1password 1password-cli \
+  dropbox \
+  slack-desktop \
+  google-chrome \
+  standardnotes-desktop \
+  topgrade \
+  google-java-format \
+  zoom
 
 chsh -s $(which zsh)
 fprintd-enroll

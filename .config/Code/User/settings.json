@@ -137,6 +137,11 @@
   "workbench.list.horizontalScrolling": true,
   "workbench.tree.indent": 16,
   "workbench.tree.renderIndentGuides": "always",
+  "[c]": {
+    "editor.tabSize": 8,
+    "editor.indentSize": 2,
+    "editor.detectIndentation": false
+  },
   "[cpp]": {
     "editor.tabSize": 8,
     "editor.indentSize": 2,

@@ -2,8 +2,6 @@
 
 # Dotfiles
 
-![ScreenShot 4](https://github.com/ken-matsui/dotfiles/assets/26405363/9a973a6c-9e46-4e4d-9f8d-a4dbf43d6bde)
-
 |             |                      |
 | ----------- | :------------------: |
 | OS          | macOS / Manjaro Sway |

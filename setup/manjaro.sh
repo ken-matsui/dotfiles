@@ -46,7 +46,6 @@ sudo pacman -S \
 
 pamac build \
   1password 1password-cli \
-  dropbox \
   slack-desktop \
   google-chrome \
   standardnotes-desktop \

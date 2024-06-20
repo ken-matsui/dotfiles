@@ -36,6 +36,7 @@ formulae = [
     "node",
     "poetry",
     "python",
+    "python-lsp-server",
     "starship",
     "subversion",  # for font-source-code-pro-for-powerline
     "tmux",

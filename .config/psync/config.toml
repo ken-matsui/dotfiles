@@ -60,7 +60,6 @@ casks = [
     "discord",
     "docker",
     # "figma",
-    "firefox",
     "font-jetbrains-mono-nerd-font",  # for alacritty
     "font-source-code-pro-for-powerline",
     "google-chrome",

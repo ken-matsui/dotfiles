@@ -70,11 +70,11 @@ casks = [
     # "mendeley",
     "postman",
     "raycast",
+    "rectangle",
     # "sf-symbols",
     "signal",
     # "sketch",
     "standard-notes",
-    "swish",
     "zoom",
     # "zulip",
 ]

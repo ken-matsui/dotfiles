@@ -4,7 +4,6 @@ taps = [
 ]
 formulae = [
     "atuin",
-    # "asciinema",
     # "awscli",
     "bat",
     "black",
@@ -44,6 +43,7 @@ formulae = [
     { name = "trash", on = "macos" },
     "universal-ctags",
     # "valgrind",
+    "vhs",
     "w3m",
     "wget",
     "wrk",

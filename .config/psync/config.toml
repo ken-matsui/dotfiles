@@ -55,7 +55,6 @@ casks = [
     "alacritty",
     # "balenaetcher",  # Flash OS images to SD cards & USB drives, safely and easily.
     "bartender",
-    "cursor",
     "deepl",
     "discord",
     "docker",
@@ -75,6 +74,7 @@ casks = [
     "signal",
     # "sketch",
     "standard-notes",
+    "visual-studio-code",
     "zoom",
     # "zulip",
 ]

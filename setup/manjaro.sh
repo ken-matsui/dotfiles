@@ -13,6 +13,7 @@ sudo pacman -S \
   boost \
   clang \
   cmake \
+  code \
   ctags \
   dejagnu python-unidiff python-gitpython \  # for GCC dev
   fd \

@@ -2,10 +2,6 @@
 item = "GitHub"
 
 [[ssh-keys]]
-item = "UW Attu"
-vault = "Education"
-
-[[ssh-keys]]
 item = "UW GitLab"
 vault = "Education"
 

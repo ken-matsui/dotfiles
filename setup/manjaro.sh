@@ -47,7 +47,6 @@ sudo pacman -S \
 
 pamac build \
   1password 1password-cli \
-  slack-desktop \
   google-chrome \
   standardnotes-desktop \
   topgrade \

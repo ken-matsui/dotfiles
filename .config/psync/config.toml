@@ -54,7 +54,6 @@ casks = [
     "1password-cli",
     "alacritty",
     # "balenaetcher",  # Flash OS images to SD cards & USB drives, safely and easily.
-    "bartender",
     "deepl",
     "discord",
     "docker",
@@ -64,6 +63,7 @@ casks = [
     "google-chrome",
     # "google-cloud-sdk",
     # "jetbrains-toolbox",
+    "jordanbaird-ice",
     "languagetool",
     # "mactex-no-gui",
     # "mendeley",

@@ -48,6 +48,7 @@ sudo pacman -S \
 pamac build \
   1password 1password-cli \
   google-chrome \
+  signal-desktop \
   standardnotes-desktop \
   topgrade \
   google-java-format

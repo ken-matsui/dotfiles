@@ -50,8 +50,7 @@ pamac build \
   google-chrome \
   standardnotes-desktop \
   topgrade \
-  google-java-format \
-  zoom
+  google-java-format
 
 chsh -s $(which zsh)
 fprintd-enroll

@@ -62,20 +62,15 @@ casks = [
     "font-source-code-pro-for-powerline",
     "google-chrome",
     # "google-cloud-sdk",
-    # "jetbrains-toolbox",
     "jordanbaird-ice",
     "languagetool",
     # "mactex-no-gui",
-    # "mendeley",
     "postman",
     "raycast",
     "rectangle",
-    # "sf-symbols",
     "signal",
-    # "sketch",
     "standard-notes",
     "visual-studio-code",
-    # "zulip",
 ]
 
 [cargo]

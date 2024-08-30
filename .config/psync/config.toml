@@ -75,7 +75,6 @@ casks = [
     # "sketch",
     "standard-notes",
     "visual-studio-code",
-    "zoom",
     # "zulip",
 ]
 

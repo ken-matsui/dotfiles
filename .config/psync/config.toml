@@ -56,7 +56,6 @@ casks = [
     # "balenaetcher",  # Flash OS images to SD cards & USB drives, safely and easily.
     "deepl",
     "discord",
-    "docker",
     # "figma",
     "font-jetbrains-mono-nerd-font",  # for alacritty
     "font-source-code-pro-for-powerline",

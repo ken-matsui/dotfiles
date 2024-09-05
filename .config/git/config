@@ -27,12 +27,6 @@
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJLtNOwH8UCkUcpMNG4aSMNtzUtYaYzdc3awbXbzvAwY
 
 #
-# Overwrite configs for UW
-#
-[includeIf "hasconfig:remote.*.url:git@gitlab.cs.washington.edu:*/**"]
-	path = ~/.config/git/configs/uw
-
-#
 # Send email
 #
 [sendemail]

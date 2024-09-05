@@ -33,8 +33,9 @@ set signcolumn=yes
 set number
 set relativenumber
 
-" Highlight column number
-set cursorline
+" Highlight column number on insert
+autocmd InsertEnter * set cursorline
+autocmd InsertLeave * set nocursorline
 
 " Visualize invisible string
 set list

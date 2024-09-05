@@ -81,14 +81,6 @@ augroup AutoSaveOnFocusLost
   autocmd FocusLost * silent! wa
 augroup END
 
-" Change background color when focus lost
-" TODO: need workaround with sunjon/Shade.nvim
-augroup FocusBackground
-  autocmd!
-  autocmd FocusLost * hi Normal guibg=#1A1C29
-  autocmd FocusGained * hi Normal guibg=#0F111A
-augroup END
-
 " =====================
 " Syntax
 " =====================

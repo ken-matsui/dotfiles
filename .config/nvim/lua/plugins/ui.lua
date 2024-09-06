@@ -146,6 +146,8 @@ return {
       'tom-anders/telescope-vim-bookmarks.nvim',
     },
     keys = {
+      { '<Leader>f', '<Cmd>Telescope live_grep<Cr>', 'n' },
+      { '<Leader>r', '<Cmd>Telescope resume<Cr>', 'n' },
       { '<Leader>b', '<Cmd>Telescope vim_bookmarks all<Cr>', 'n' },
     },
     opts = {
@@ -173,18 +175,6 @@ return {
       require('telescope').setup(opts)
       require('telescope').load_extension('fzf')
       require('telescope').load_extension('vim_bookmarks')
-
-      local telescope = require('telescope.builtin')
-      local telescope_last = 0
-      function telescope_resume()
-        if telescope_last == 0 then
-          telescope_last = 1
-          telescope.live_grep()
-        else
-          telescope.resume()
-        end
-      end
-      vim.keymap.set('n', '<Leader>f', telescope_resume, { desc = 'Telescope live_grep' })
     end,
   },
   {

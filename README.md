@@ -2,16 +2,16 @@
 
 # Dotfiles
 
-|             |                      |
-| ----------- | :------------------: |
-| OS          | macOS / Manjaro Sway |
-| Terminal    | Alacritty            |
-| Multiplexer | Tmux                 |
-| Shell       | Zsh                  |
-| Prompt      | Starship             |
-| Editor      | Vim / Neovim         |
-| Theme       | Material Deep Ocean  |
-| Font        | JetBrains Mono Nerd  |
+|             |                                                                                       |
+| ----------- | :-----------------------------------------------------------------------------------: |
+| OS          | macOS / Manjaro Sway                                                                  |
+| Terminal    | Alacritty                                                                             |
+| Multiplexer | Tmux                                                                                  |
+| Shell       | Zsh                                                                                   |
+| Prompt      | Starship                                                                              |
+| Editor      | Vim / Neovim                                                                          |
+| Theme       | Material Deep Ocean                                                                   |
+| Fonts       | Source Code Pro for Powerline (for tmux) & JetBrains Mono Nerd (for everything else)  |
 
 </div>
 

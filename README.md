@@ -123,3 +123,33 @@ ln -s ~/dotfiles/.config/Code/User/keybindings.json ~/.config/Code/User/keybindi
 * Open `input-remapper`
 * `Prior` (`PageUp`) -> `KEY_LEFT`
 * `Next` (`PageDown`) -> `KEY_RIGHT`
+
+#### Manual Font Installation
+
+##### JetBrains Mono Nerd
+
+```sh
+cd /tmp
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
+unzip JetBrainsMono.zip
+
+mkdir -p ~/.local/share/fonts
+mv *.ttf ~/.local/share/fonts
+
+fc-cache -f -v
+fc-list | grep JetBrains
+```
+
+##### Source Code Pro for Powerline
+
+```sh
+cd /tmp
+git clone https://github.com/powerline/fonts.git
+cd fonts/SourceCodePro
+
+mkdir -p ~/.local/share/fonts
+mv *.otf ~/.local/share/fonts
+
+fc-cache -f -v
+fc-list | grep 'Source Code Pro'
+```

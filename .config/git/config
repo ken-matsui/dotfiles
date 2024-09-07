@@ -104,6 +104,8 @@
 	parent = log --pretty=%P -n 1
 	# Remove newly gitignored files
 	rm-ignored = rm -r --cached .
+	# Rebase pull
+	repull = pull --rebase
 
 #
 # Git LFS

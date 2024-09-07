@@ -29,7 +29,7 @@ export PAGER='less'
 export LANG="${LANG:-en_US.UTF-8}"
 export LANGUAGE="${LANGUAGE:-en_US}"
 export LC_ALL="${LC_ALL:-$LANG}"
-export TZ='America/Los_Angeles'
+export TZ='America/New_York'
 
 #
 # Paths

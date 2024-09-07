@@ -3,3 +3,9 @@ name = "rust"
 
 [[language]]
 name = "python"
+
+[[language]]
+name = "c"
+
+[[language]]
+name = "cpp"

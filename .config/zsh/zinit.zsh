@@ -23,7 +23,6 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-rust
 
 zinit snippet PZTM::directory
-zinit snippet PZTM::completion
 
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting

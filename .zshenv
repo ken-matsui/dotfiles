@@ -72,13 +72,13 @@ fi
 if [ -f /opt/homebrew/bin/brew ]; then
   # M1
   eval "$(/opt/homebrew/bin/brew shellenv)"
-  HOMEBREW_PREFIX=$(brew --prefix)
+  export HOMEBREW_PREFIX=$(brew --prefix)
 elif [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
   # Linux
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  HOMEBREW_PREFIX=$(brew --prefix)
+  export HOMEBREW_PREFIX=$(brew --prefix)
 elif [ -f ~/homebrew/bin/brew ]; then
   # Home directory installation
   eval "$(~/homebrew/bin/brew shellenv)"
-  HOMEBREW_PREFIX=$(brew --prefix)
+  export HOMEBREW_PREFIX=$(brew --prefix)
 fi

@@ -67,18 +67,16 @@ fi
 #
 # Homebrew
 #
-# At this time, the `brew` command is unavailable; we need to find the
-# excutable instead of `$+commands[brew]`.
 if [ -f /opt/homebrew/bin/brew ]; then
   # M1
   eval "$(/opt/homebrew/bin/brew shellenv)"
-  export HOMEBREW_PREFIX=$(brew --prefix)
 elif [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
   # Linux
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  export HOMEBREW_PREFIX=$(brew --prefix)
 elif [ -f ~/homebrew/bin/brew ]; then
   # Home directory installation
   eval "$(~/homebrew/bin/brew shellenv)"
+fi
+if (( $+commands[brew] )); then
   export HOMEBREW_PREFIX=$(brew --prefix)
 fi

@@ -13,8 +13,6 @@ return {
   -- Syntax Highlight
   {
     'nvim-treesitter/nvim-treesitter',
-    lazy = true,
-    event = 'BufReadPre',
     dependencies = {
       'windwp/nvim-ts-autotag',
       'JoosepAlviste/nvim-ts-context-commentstring',

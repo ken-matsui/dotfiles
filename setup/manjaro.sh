@@ -51,7 +51,6 @@ pamac build \
   signal-desktop \
   standardnotes-desktop \
   topgrade \
-  google-java-format
 
 chsh -s $(which zsh)
 fprintd-enroll

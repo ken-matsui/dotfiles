@@ -63,7 +63,6 @@ return {
     ft = {
       'python',
       'rust',
-      'java',
     },
     config = function()
       vim.cmd('call glaive#Install()')
@@ -71,7 +70,6 @@ return {
         augroup autoformat_settings
           autocmd FileType python AutoFormatBuffer black
           autocmd FileType rust AutoFormatBuffer rustfmt
-          autocmd FileType java AutoFormatBuffer google-java-format
         augroup END
       ]])
     end,

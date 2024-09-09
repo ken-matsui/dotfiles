@@ -16,7 +16,6 @@ formulae = [
     "ffmpeg",  # for youtube-dl
     "gh",
     "git-delta",
-    "google-java-format",
     "graphviz",
     "gzip",
     "htop",

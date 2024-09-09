@@ -124,6 +124,7 @@ return {
           { name = 'buffer' },
           { name = 'path' },
           { name = 'treesitter' },
+          { name = 'nvim_lsp' },
         }),
         formatting = {
           format = require('lspkind').cmp_format({

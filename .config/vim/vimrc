@@ -29,6 +29,14 @@ set noswapfile
 set number
 set relativenumber
 
+" Ignore case in pattern
+" /caseinsensitive
+" /Casesensitive
+" /casesensitive\C
+" /Caseinsensitive\c
+set ignorecase
+set smartcase
+
 " Highlight column number on insert
 autocmd InsertEnter * set cursorline
 autocmd InsertLeave * set nocursorline

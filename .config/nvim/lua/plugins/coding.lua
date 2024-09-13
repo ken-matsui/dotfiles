@@ -1,16 +1,5 @@
 return {
   {
-    'github/copilot.vim', -- :Copilot setup
-    lazy = true,
-    event = 'VeryLazy',
-    config = function ()
-      vim.g.copilot_filetypes = {
-        NvimTree = false,
-      }
-    end
-  },
-
-  {
     'numToStr/Comment.nvim',
     lazy = true,
     config = true,

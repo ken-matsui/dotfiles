@@ -100,6 +100,16 @@ augroup END
 " Key Mappings
 " =====================
 
+" Cut
+nnoremap x "_d
+nnoremap X "_D
+xnoremap x "_x
+onoremap x d
+
+" Select word
+onoremap i<space> iW
+xnoremap i<space> iW
+
 "
 " Normal Mode
 "
@@ -124,7 +134,17 @@ nnoremap yp :let @+=expand("%") \| :echo "Copied file path to clipboard"<Cr>
 " Yank absolute file path
 nnoremap yap :let @+=expand("%:p") \| :echo "Copied absolute file path to clipboard"<Cr>
 " Yank filename
-nnoremap yn :let @+=expand("%:t") \| :echo "Copied filename to clipboard"<Cr>
+nnoremap yf :let @+=expand("%:t") \| :echo "Copied filename to clipboard"<Cr>
+
+" Yank until the line end
+nnoremap Y y$
+
+" Redo
+nnoremap U <c-r>
+
+" Automatic indentation when the line is empty
+nnoremap <expr> i empty(getline('.')) ? '"_cc' : 'i'
+nnoremap <expr> A empty(getline('.')) ? '"_cc' : 'A'
 
 " Expand :s to :%s///g
 cnoreabbrev <expr> s getcmdtype() .. getcmdline() ==# ':s' ? [getchar(), ''][1] .. "%s///g<Left><Left>" : 's'
@@ -139,6 +159,19 @@ inoremap kk <Esc>
 
 "
 " Visual Mode
+"
+" Keep the current position after yank
+xnoremap y mzy`z
+
+" Allow continuous pastes
+xnoremap p P
+
+" Allow continuous indents
+xnoremap < <gv
+xnoremap > >gv
+
+"
+" Visual Mode & Select Mode
 "
 
 " Indent

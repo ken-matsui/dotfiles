@@ -50,6 +50,8 @@ set smarttab
 set autoindent
 set softtabstop=0
 
+autocmd FileType lua setlocal tabstop=4
+
 " Always display statusline.
 set laststatus=2
 

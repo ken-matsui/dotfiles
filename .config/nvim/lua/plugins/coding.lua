@@ -23,12 +23,6 @@ return {
   },
 
   {
-    'vim-scripts/ReplaceWithRegister',
-    lazy = true,
-    event = 'VeryLazy',
-  },
-
-  {
     'MattesGroeger/vim-bookmarks',
     lazy = true,
     event = 'BufRead',

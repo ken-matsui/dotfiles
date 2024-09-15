@@ -93,6 +93,7 @@ return {
 				},
 				indent = {
 					char = "▏",
+					smart_indent_cap = false,
 				},
 				scope = {
 					enabled = true,

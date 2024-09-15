@@ -43,7 +43,7 @@ autocmd InsertLeave * set nocursorline
 
 " Visualize invisible string
 set list
-set listchars=eol:$,tab:>-,trail:·,extends:>,precedes:<
+set listchars=eol:$,tab:>\ ,trail:·,extends:>,precedes:<,nbsp:␣
 
 " Indentation
 set smarttab

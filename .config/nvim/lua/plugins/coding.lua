@@ -58,15 +58,17 @@ return {
 		ft = {
 			"python",
 			"rust",
+			"lua",
 		},
 		config = function()
 			vim.cmd("call glaive#Install()")
 			vim.cmd([[
-        augroup autoformat_settings
-          autocmd FileType python AutoFormatBuffer black
-          autocmd FileType rust AutoFormatBuffer rustfmt
-        augroup END
-      ]])
+				augroup autoformat_settings
+					autocmd FileType python AutoFormatBuffer black
+					autocmd FileType rust AutoFormatBuffer rustfmt
+					autocmd FileType lua AutoFormatBuffer stylua
+				augroup END
+			]])
 		end,
 	},
 

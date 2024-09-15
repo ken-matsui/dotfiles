@@ -100,5 +100,8 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
+# Disable UI sounds, such as the trash sound
+defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
+
 killall Dock
 killall Finder

@@ -1,7 +1,7 @@
 -- Load Vim configuration
-vim.cmd('set runtimepath^=~/.config/vim runtimepath+=~/.config/vim/after')
+vim.cmd("set runtimepath^=~/.config/vim runtimepath+=~/.config/vim/after")
 vim.o.packpath = vim.o.runtimepath
-vim.cmd('source ~/.config/vim/vimrc')
+vim.cmd("source ~/.config/vim/vimrc")
 
 -- Enable fast cache loading
 vim.loader.enable()
@@ -11,26 +11,26 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- Highlight yanked region
-vim.api.nvim_create_autocmd('TextYankPost', {
-  callback = function()
-    vim.highlight.on_yank {timeout = 500}
-  end
+vim.api.nvim_create_autocmd("TextYankPost", {
+	callback = function()
+		vim.highlight.on_yank({ timeout = 500 })
+	end,
 })
 
 -- Always show the signcolumn, otherwise it would shift the text each time
 -- diagnostics appeared/became resolved
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")

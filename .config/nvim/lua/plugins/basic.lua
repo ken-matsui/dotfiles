@@ -1,44 +1,44 @@
 return {
-  -- Detect shiftwidth and expandtab automatically
-  'tpope/vim-sleuth',
+	-- Detect shiftwidth and expandtab automatically
+	"tpope/vim-sleuth",
 
-  'dkarter/bullets.vim',
+	"dkarter/bullets.vim",
 
-  'farmergreg/vim-lastplace',
+	"farmergreg/vim-lastplace",
 
-  {
-    'rstacruz/vim-closer',
-    lazy = true,
-    event = 'InsertEnter',
-  },
+	{
+		"rstacruz/vim-closer",
+		lazy = true,
+		event = "InsertEnter",
+	},
 
-  {
-    'tpope/vim-endwise',
-    lazy = true,
-    event = 'InsertEnter',
-  },
+	{
+		"tpope/vim-endwise",
+		lazy = true,
+		event = "InsertEnter",
+	},
 
-  {
-    'tpope/vim-abolish',
-    lazy = true,
-    event = 'VeryLazy',
-  },
+	{
+		"tpope/vim-abolish",
+		lazy = true,
+		event = "VeryLazy",
+	},
 
-  {
-    'tpope/vim-repeat',
-    lazy = true,
-    event = 'VeryLazy',
-  },
+	{
+		"tpope/vim-repeat",
+		lazy = true,
+		event = "VeryLazy",
+	},
 
-  {
-    'machakann/vim-sandwich',
-    lazy = true,
-    event = 'VeryLazy',
-  },
+	{
+		"machakann/vim-sandwich",
+		lazy = true,
+		event = "VeryLazy",
+	},
 
-  {
-    'mg979/vim-visual-multi',
-    lazy = true,
-    event = 'VeryLazy',
-  },
+	{
+		"mg979/vim-visual-multi",
+		lazy = true,
+		event = "VeryLazy",
+	},
 }

@@ -16,11 +16,7 @@ autoload -Uz _zinit
 
 zinit snippet PZTM::directory
 
-zinit ice wait lucid
 zinit light momo-lab/zsh-replace-multiple-dots
-zinit ice wait lucid
 zinit light zsh-users/zsh-autosuggestions
-zinit ice wait lucid
 zinit light zsh-users/zsh-syntax-highlighting
-zinit ice wait lucid
 zinit light MichaelAquilina/zsh-auto-notify

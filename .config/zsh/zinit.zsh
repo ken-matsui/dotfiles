@@ -23,3 +23,6 @@ zinit light MichaelAquilina/zsh-auto-notify
 
 zi ice from"gh-r" as"program"
 zi light junegunn/fzf
+
+zinit ice as"program" pick"bin/git-fuzzy"
+zinit light bigH/git-fuzzy

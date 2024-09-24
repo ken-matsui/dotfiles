@@ -4,8 +4,6 @@
 
 # Set operations.
 setopt extended_glob
-# {a-d} expands to a b c d
-setopt braceccl
 # Ignore patterns such as URL
 setopt nonomatch
 # Don't highlight when selecting words

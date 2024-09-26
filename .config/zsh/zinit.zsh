@@ -16,13 +16,15 @@ autoload -Uz _zinit
 
 zinit snippet PZTM::directory
 
-zinit light momo-lab/zsh-replace-multiple-dots
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light MichaelAquilina/zsh-auto-notify
+zinit light momo-lab/zsh-replace-multiple-dots
+
+zinit ice depth=1
+zinit light jeffreytse/zsh-vi-mode
 
 zinit ice from"gh-r" as"program"
 zinit light junegunn/fzf
-
 zinit ice as"program" pick"bin/git-fuzzy"
 zinit light bigH/git-fuzzy

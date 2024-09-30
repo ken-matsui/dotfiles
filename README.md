@@ -67,6 +67,8 @@ ln -s ~/dotfiles/.config/starship.toml ~/.config/starship.toml  # file
 ln -s ~/dotfiles/.ssh/config ~/.ssh/config  # ssh
 ln -s ~/dotfiles/.config/Code/User/settings.json ~/Library/Application\ Support/Code/User/settings.json  # VSCode on macOS
 ln -s ~/dotfiles/.config/Code/User/keybindings.json ~/.config/Code/User/keybindings.json  # VSCode on Linux
+ln -s ~/dotfiles/.Brewfile ~/.Brewfile  # Homebrew on macOS
+brew bundle --global
 ```
 
 ## Additional Settings

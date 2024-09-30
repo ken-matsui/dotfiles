@@ -98,6 +98,10 @@ augroup CppFiletype
   autocmd BufNewFile,BufRead *.def	set filetype=cpp
 augroup END
 
+" Brewfile syntax
+au BufNewFile,BufRead .Brewfile		setf brewfile
+au Syntax brewfile so ~/.config/vim/syntax/brewfile.vim
+
 " =====================
 " Key Mappings
 " =====================

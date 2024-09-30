@@ -21,7 +21,7 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light MichaelAquilina/zsh-auto-notify
 zinit light momo-lab/zsh-replace-multiple-dots
 
-# FIXME; zsh-vi-mode messes up ^R history search
+# FIXME: zsh-vi-mode messes up ^R history search
 # zinit ice depth=1
 # zinit light jeffreytse/zsh-vi-mode
 

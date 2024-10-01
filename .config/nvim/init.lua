@@ -4,7 +4,9 @@ vim.o.packpath = vim.o.runtimepath
 vim.cmd("source ~/.config/vim/vimrc")
 
 -- Enable fast cache loading
-vim.loader.enable()
+if vim.loader then
+	vim.loader.enable()
+end
 
 -- Disable netrw at the very start of init.lua (nvim-tree)
 vim.g.loaded_netrw = 1

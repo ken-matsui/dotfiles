@@ -157,6 +157,12 @@ return {
 		opts = {
 			defaults = {
 				file_ignore_patterns = { ".git" },
+				mappings = {
+					i = {
+						["<C-p>"] = "cycle_history_prev",
+						["<C-n>"] = "cycle_history_next",
+					},
+				},
 			},
 			pickers = {
 				live_grep = {

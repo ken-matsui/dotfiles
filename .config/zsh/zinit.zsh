@@ -24,6 +24,10 @@ zinit light momo-lab/zsh-replace-multiple-dots
 zinit snippet OMZP::gitignore/gitignore.plugin.zsh
 zinit snippet OMZP::git/git.plugin.zsh
 
+zinit ice wait lucid depth=1
+zinit light MichaelAquilina/zsh-you-should-use
+export YSU_MESSAGE_POSITION='after'
+
 # FIXME: zsh-vi-mode messes up ^R history search
 # zinit ice depth=1
 # zinit light jeffreytse/zsh-vi-mode

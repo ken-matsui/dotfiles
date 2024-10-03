@@ -29,6 +29,9 @@ set noswapfile
 set number
 set relativenumber
 
+" Avoid wrap when searching
+set nowrapscan
+
 " Ignore case in pattern
 " /caseinsensitive
 " /Casesensitive

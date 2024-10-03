@@ -11,3 +11,5 @@ bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 bindkey '^P' up-line-or-search
 bindkey '^N' down-line-or-search
+bindkey '^F' forward-word
+bindkey '^B' backward-word

@@ -24,3 +24,6 @@ tmp
 .idea
 cmake-build-debug
 clion-build
+
+.cache
+compile_commands.json

@@ -100,6 +100,12 @@ return {
 		end,
 	},
 
+	{
+		"j-hui/fidget.nvim",
+		version = "v1.*",
+		opts = {},
+	},
+
 	-- Completion
 	{
 		"hrsh7th/nvim-cmp",

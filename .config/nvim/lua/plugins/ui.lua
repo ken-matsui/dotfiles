@@ -58,6 +58,19 @@ return {
 	},
 
 	{
+		"famiu/bufdelete.nvim",
+		keys = {
+			{
+				"<Leader>w",
+				function()
+					require("bufdelete").bufdelete(0, true)
+				end,
+				"n",
+			},
+		},
+	},
+
+	{
 		"utilyre/barbecue.nvim",
 		version = "v1.*",
 		lazy = true,

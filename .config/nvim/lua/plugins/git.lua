@@ -73,8 +73,8 @@ return {
 	},
 
 	{
-		"rhysd/conflict-marker.vim",
-		lazy = true,
-		event = "VeryLazy",
+		"akinsho/git-conflict.nvim",
+		version = "v2.*",
+		config = true,
 	},
 }

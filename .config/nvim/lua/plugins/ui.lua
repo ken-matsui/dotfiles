@@ -157,8 +157,15 @@ return {
 			vim.opt.splitkeep = "screen"
 		end,
 		opts = {
+			animate = {
+				enabled = false,
+			},
 			bottom = {
-				"Trouble",
+				{
+					title = "Trouble",
+					ft = "trouble",
+					size = { height = 0.1 },
+				},
 				{ ft = "qf", title = "QuickFix" },
 				{
 					ft = "help",

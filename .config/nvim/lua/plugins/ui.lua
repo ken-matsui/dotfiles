@@ -39,7 +39,7 @@ return {
 		keys = {
 			{ "<Leader>h", "<Cmd>BufferLineCyclePrev<Cr>", "n" },
 			{ "<Leader>l", "<Cmd>BufferLineCycleNext<Cr>", "n" },
-			{ "<Leader>t", "<Cmd>BufferLinePick<Cr>", "n" },
+			{ "<Leader>bp", "<Cmd>BufferLinePick<Cr>", "n" },
 			{ "<Leader><Left>", "<Cmd>BufferLineMovePrev<Cr>", "n" },
 			{ "<Leader><Right>", "<Cmd>BufferLineMoveNext<Cr>", "n" },
 		},
@@ -169,9 +169,9 @@ return {
 			"tom-anders/telescope-vim-bookmarks.nvim",
 		},
 		keys = {
-			{ "<Leader>f", "<Cmd>Telescope live_grep<Cr>", "n" },
-			{ "<Leader>r", "<Cmd>Telescope resume<Cr>", "n" },
-			{ "<Leader>b", "<Cmd>Telescope vim_bookmarks all<Cr>", "n" },
+			{ "<Leader>tg", "<Cmd>Telescope live_grep<Cr>", "n" },
+			{ "<Leader>tr", "<Cmd>Telescope resume<Cr>", "n" },
+			{ "<Leader>tb", "<Cmd>Telescope vim_bookmarks all<Cr>", "n" },
 		},
 		opts = {
 			defaults = {
@@ -215,7 +215,7 @@ return {
 		},
 		keys = {
 			{
-				"<Leader>o",
+				"<Leader>tf",
 				function()
 					require("telescope.builtin").find_files()
 				end,

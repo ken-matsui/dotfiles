@@ -25,6 +25,7 @@ brew "libarchive"
 brew "libgit2"
 brew "llvm"  # clangd clang-format clang-tidy
 brew "lsd"
+brew "lua-language-server"
 # brew "mysql"  # for mysqlclient of Python
 brew "ninja"
 brew "neomutt"

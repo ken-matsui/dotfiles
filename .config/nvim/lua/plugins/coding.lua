@@ -33,6 +33,12 @@ return {
 	},
 
 	{
+		"vim-scripts/ReplaceWithRegister",
+		lazy = true,
+		event = "VeryLazy",
+	},
+
+	{
 		"rmagatti/auto-session",
 		opts = {
 			log_level = "error",

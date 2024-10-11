@@ -13,7 +13,7 @@ return {
 			"nvim-tree/nvim-web-devicons",
 		},
 		keys = {
-			{ "<Leader>s", "<Cmd>NvimTreeFindFileToggle<Cr>", mode = "n", desc = "NvimTree Toggle" },
+			{ "<Leader>s", "<Cmd>NvimTreeFindFileToggle<Cr>", mode = "n", desc = "Toggle NvimTree" },
 		},
 		opts = {
 			sort_by = "case_sensitive",
@@ -33,7 +33,7 @@ return {
 		lazy = true,
 		cmd = { "Outline", "OutlineOpen" },
 		keys = {
-			{ "<leader>o", "<Cmd>Outline<Cr>", desc = "Toggle outline" },
+			{ "<Leader>o", "<Cmd>Outline<Cr>", desc = "Toggle outline" },
 		},
 		opts = {},
 	},
@@ -117,34 +117,34 @@ return {
 		cmd = "Trouble",
 		keys = {
 			{
-				"<leader>xx",
-				"<cmd>Trouble diagnostics toggle<cr>",
-				desc = "Diagnostics (Trouble)",
+				"<Leader>td",
+				"<Cmd>Trouble diagnostics toggle<Cr>",
+				desc = "Trouble Diagnostics",
 			},
 			{
-				"<leader>xX",
-				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-				desc = "Buffer Diagnostics (Trouble)",
+				"<Leader>tD",
+				"<Cmd>Trouble diagnostics toggle filter.buf=0<Cr>",
+				desc = "Trouble Buffer Diagnostics",
 			},
 			{
-				"<leader>cs",
-				"<cmd>Trouble symbols toggle focus=false<cr>",
-				desc = "Symbols (Trouble)",
+				"<Leader>ts",
+				"<Cmd>Trouble symbols toggle focus=false<Cr>",
+				desc = "Trouble Symbols",
 			},
 			{
-				"<leader>cl",
-				"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-				desc = "LSP Definitions / references / ... (Trouble)",
+				"<Leader>tr",
+				"<Cmd>Trouble lsp toggle focus=false win.position=right<Cr>",
+				desc = "Trouble LSP Definitions / References",
 			},
 			{
-				"<leader>xL",
-				"<cmd>Trouble loclist toggle<cr>",
-				desc = "Location List (Trouble)",
+				"<Leader>tl",
+				"<Cmd>Trouble loclist toggle<Cr>",
+				desc = "Trouble Location List",
 			},
 			{
-				"<leader>xQ",
-				"<cmd>Trouble qflist toggle<cr>",
-				desc = "Quickfix List (Trouble)",
+				"<Leader>tq",
+				"<Cmd>Trouble qflist toggle<Cr>",
+				desc = "Trouble Quickfix List",
 			},
 		},
 	},
@@ -261,9 +261,9 @@ return {
 			"tom-anders/telescope-vim-bookmarks.nvim",
 		},
 		keys = {
-			{ "<Leader>tg", "<Cmd>Telescope live_grep<Cr>", "n" },
-			{ "<Leader>tr", "<Cmd>Telescope resume<Cr>", "n" },
-			{ "<Leader>tb", "<Cmd>Telescope vim_bookmarks all<Cr>", "n" },
+			{ "<Leader>g", "<Cmd>Telescope live_grep<Cr>", "n", desc = "Telescope grep" },
+			{ "<Leader>r", "<Cmd>Telescope resume<Cr>", "n" },
+			{ "<Leader>b", "<Cmd>Telescope vim_bookmarks all<Cr>", "n", desc = "Telescope bookmarks" },
 		},
 		opts = {
 			defaults = {
@@ -307,12 +307,12 @@ return {
 		},
 		keys = {
 			{
-				"<Leader>tf",
+				"<Leader>f",
 				function()
 					require("telescope.builtin").find_files()
 				end,
 				"n",
-				desc = "Find file",
+				desc = "Telescope files",
 			},
 		},
 		config = true,

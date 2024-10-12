@@ -23,7 +23,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
-vim.api.nvim_create_user_command('TroubleCloseAll', function()
+vim.api.nvim_create_user_command("TroubleCloseAll", function()
 	local trouble = require("trouble")
 	while trouble.is_open() do
 		trouble.close()

@@ -40,6 +40,8 @@ return {
 
 	{
 		"rmagatti/auto-session",
+		---@module "auto-session"
+		---@type AutoSession.Config
 		opts = {
 			log_level = "error",
 			auto_session_suppress_dirs = { "~/", "~/Downloads", "/" },
@@ -54,6 +56,9 @@ return {
 						vim.cmd("OutlineClose")
 					end
 				end,
+			},
+			session_lens = {
+				load_on_setup = false,
 			},
 		},
 	},

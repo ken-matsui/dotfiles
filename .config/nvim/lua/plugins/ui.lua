@@ -105,8 +105,11 @@ return {
 				theme = "material",
 			},
 			extensions = {
+				"lazy",
 				"nvim-tree",
+				"quickfix",
 				"toggleterm",
+				"trouble",
 			},
 		},
 	},

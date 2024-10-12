@@ -158,9 +158,7 @@ return {
 						trouble.close()
 					end
 
-					-- Close quickfix window
-					vim.cmd("cclose")
-
+					vim.cmd("cclose") -- Close quickfix window
 					vim.cmd("NvimTreeClose")
 					vim.cmd("OutlineClose")
 				end,

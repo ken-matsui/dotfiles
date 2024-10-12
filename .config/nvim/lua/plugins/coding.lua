@@ -2,7 +2,14 @@ return {
 	-- Detect shiftwidth and expandtab automatically
 	"tpope/vim-sleuth",
 
-	"dkarter/bullets.vim",
+	{
+		"dkarter/bullets.vim",
+		ft = {
+			"markdown",
+			"text",
+			"gitcommit",
+		},
+	},
 
 	"farmergreg/vim-lastplace",
 

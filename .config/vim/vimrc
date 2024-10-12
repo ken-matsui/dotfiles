@@ -93,6 +93,13 @@ augroup AutoSaveOnFocusLost
   autocmd FocusLost * silent! wa
 augroup END
 
+" Change background color when focus lost
+augroup FocusBackground
+  autocmd!
+  autocmd FocusLost * hi Normal guibg=#1A1C29  " bg + brightness
+  autocmd FocusGained * hi Normal guibg=#0F111A  " bg
+augroup END
+
 " =====================
 " Syntax
 " =====================

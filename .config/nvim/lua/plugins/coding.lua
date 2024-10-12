@@ -46,6 +46,7 @@ return {
 			auto_save_enabled = true,
 			pre_save_cmds = {
 				"cclose",
+				"lclose",
 				"NvimTreeClose",
 				"OutlineClose",
 				function()

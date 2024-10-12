@@ -17,6 +17,12 @@ return {
 	},
 
 	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		config = true,
+	},
+
+	{
 		"cappyzawa/trim.nvim",
 		version = "v0.8.*",
 		lazy = true,

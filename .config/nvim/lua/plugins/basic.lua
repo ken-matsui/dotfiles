@@ -7,12 +7,6 @@ return {
 	"farmergreg/vim-lastplace",
 
 	{
-		"rstacruz/vim-closer",
-		lazy = true,
-		event = "InsertEnter",
-	},
-
-	{
 		"tpope/vim-repeat",
 		lazy = true,
 		event = "VeryLazy",

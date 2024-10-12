@@ -42,13 +42,6 @@ return {
 	},
 
 	{
-		"cappyzawa/trim.nvim",
-		version = "v0.8.*",
-		lazy = true,
-		event = "VeryLazy",
-	},
-
-	{
 		"MattesGroeger/vim-bookmarks",
 		lazy = true,
 		event = "BufRead",

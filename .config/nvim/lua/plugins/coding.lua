@@ -44,6 +44,18 @@ return {
 			log_level = "error",
 			auto_session_suppress_dirs = { "~/", "~/Downloads", "/" },
 			auto_save_enabled = true,
+			pre_save_cmds = {
+				"cclose",
+				"NvimTreeClose",
+				"OutlineClose",
+				function()
+					-- Close all trouble windows
+					local trouble = require("trouble")
+					while trouble.is_open() do
+						trouble.close()
+					end
+				end,
+			},
 		},
 	},
 
@@ -80,7 +92,7 @@ return {
 
 	{
 		"kevinhwang91/nvim-bqf",
-		ft = "qf"
+		ft = "qf",
 	},
 
 	--

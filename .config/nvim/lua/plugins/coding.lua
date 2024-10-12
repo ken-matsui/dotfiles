@@ -180,6 +180,8 @@ return {
 				lspconfig.util.default_config.capabilities,
 				require("cmp_nvim_lsp").default_capabilities()
 			)
+			-- Disable snippets
+			lspconfig.util.default_config.capabilities.textDocument.completion.completionItem.snippetSupport = false
 
 			-- Executes the callback function every time a
 			-- language server is attached to a buffer.

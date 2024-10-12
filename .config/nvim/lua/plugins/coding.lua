@@ -49,13 +49,7 @@ return {
 				"lclose",
 				"NvimTreeClose",
 				"OutlineClose",
-				function()
-					-- Close all trouble windows
-					local trouble = require("trouble")
-					while trouble.is_open() do
-						trouble.close()
-					end
-				end,
+				"TroubleCloseAll",
 			},
 		},
 	},

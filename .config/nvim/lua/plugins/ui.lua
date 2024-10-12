@@ -149,6 +149,16 @@ return {
 				"<Cmd>Trouble qflist toggle<Cr>",
 				desc = "Trouble Quickfix List",
 			},
+			{
+				"<Leader>c",
+				function()
+					local trouble = require("trouble")
+					while trouble.is_open() do
+						trouble.close()
+					end
+				end,
+				desc = "Close All Troubles",
+			},
 		},
 	},
 

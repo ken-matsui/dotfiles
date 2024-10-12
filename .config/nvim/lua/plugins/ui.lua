@@ -33,7 +33,7 @@ return {
 		lazy = true,
 		cmd = { "Outline", "OutlineOpen" },
 		keys = {
-			{ "<Leader>o", "<Cmd>Outline<Cr>", desc = "Toggle outline" },
+			{ "<Leader>o", "<Cmd>Outline<Cr>", desc = "Toggle Outline" },
 		},
 		opts = {},
 	},
@@ -47,11 +47,11 @@ return {
 			"nvim-tree/nvim-web-devicons",
 		},
 		keys = {
-			{ "<Leader>h", "<Cmd>BufferLineCyclePrev<Cr>", "n", desc = "Go to left buffer" },
-			{ "<Leader>l", "<Cmd>BufferLineCycleNext<Cr>", "n", desc = "Go to right buffer" },
-			{ "<Leader>p", "<Cmd>BufferLinePick<Cr>", "n", desc = "Pick buffer" },
-			{ "<Leader><Left>", "<Cmd>BufferLineMovePrev<Cr>", "n", desc = "Move buffer to left" },
-			{ "<Leader><Right>", "<Cmd>BufferLineMoveNext<Cr>", "n", desc = "Move buffer to right" },
+			{ "<Leader>h", "<Cmd>BufferLineCyclePrev<Cr>", "n", desc = "Go to Left Buffer" },
+			{ "<Leader>l", "<Cmd>BufferLineCycleNext<Cr>", "n", desc = "Go to Right Buffer" },
+			{ "<Leader>p", "<Cmd>BufferLinePick<Cr>", "n", desc = "Pick Buffer" },
+			{ "<Leader><Left>", "<Cmd>BufferLineMovePrev<Cr>", "n", desc = "Move Buffer to Left" },
+			{ "<Leader><Right>", "<Cmd>BufferLineMoveNext<Cr>", "n", desc = "Move Buffer to Right" },
 		},
 		opts = {
 			options = {
@@ -76,7 +76,7 @@ return {
 					require("bufdelete").bufdelete(0, true)
 				end,
 				"n",
-				desc = "Close buffer",
+				desc = "Close Buffer",
 			},
 		},
 	},
@@ -231,9 +231,9 @@ return {
 			"tom-anders/telescope-vim-bookmarks.nvim",
 		},
 		keys = {
-			{ "<Leader>g", "<Cmd>Telescope live_grep<Cr>", "n", desc = "Telescope grep" },
-			{ "<Leader>R", "<Cmd>Telescope resume<Cr>", "n" },
-			{ "<Leader>b", "<Cmd>Telescope vim_bookmarks all<Cr>", "n", desc = "Telescope bookmarks" },
+			{ "<Leader>g", "<Cmd>Telescope live_grep<Cr>", "n", desc = "Telescope Grep" },
+			{ "<Leader>R", "<Cmd>Telescope resume<Cr>", "n", desc = "Telescope Resume" },
+			{ "<Leader>b", "<Cmd>Telescope vim_bookmarks all<Cr>", "n", desc = "Telescope Bookmarks" },
 		},
 		opts = {
 			defaults = {
@@ -282,7 +282,7 @@ return {
 					require("telescope.builtin").find_files()
 				end,
 				"n",
-				desc = "Telescope files",
+				desc = "Telescope Files",
 			},
 		},
 		config = true,

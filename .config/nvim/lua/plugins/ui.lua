@@ -173,6 +173,13 @@ return {
 	},
 
 	{
+		"kevinhwang91/nvim-hlslens",
+		config = true,
+		event = "CmdlineEnter",
+		keys = { "n", "N", "/" },
+	},
+
+	{
 		"petertriho/nvim-scrollbar",
 		lazy = true,
 		event = "BufReadPre",

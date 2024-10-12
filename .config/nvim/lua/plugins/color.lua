@@ -71,6 +71,7 @@ return {
 	-- Highlight arguments
 	{
 		"m-demare/hlargs.nvim",
+		enabled = false,
 		lazy = true,
 		event = "BufReadPre",
 		config = true,

@@ -76,15 +76,6 @@ return {
 		config = true,
 	},
 
-	-- Highlight arguments
-	{
-		"m-demare/hlargs.nvim",
-		enabled = false,
-		lazy = true,
-		event = "BufReadPre",
-		config = true,
-	},
-
 	-- Indentation
 	{
 		"lukas-reineke/indent-blankline.nvim",

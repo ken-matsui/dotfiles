@@ -62,32 +62,35 @@ return {
 	},
 
 	{
-		"google/vim-glaive",
-		dependencies = {
-			"google/vim-maktaba",
-			"google/vim-codefmt",
+		"stevearc/conform.nvim",
+		event = { "BufWritePre" },
+		cmd = { "ConformInfo" },
+		keys = {
+			{
+				"<leader>F",
+				function()
+					require("conform").format({ async = true })
+				end,
+				mode = "",
+				desc = "Format buffer",
+			},
 		},
-		lazy = true,
-		ft = {
-			"python",
-			"rust",
-			"lua",
+		-- This will provide type hinting with LuaLS
+		---@module "conform"
+		---@type conform.setupOpts
+		opts = {
+			-- Define your formatters
+			formatters_by_ft = {
+				lua = { "stylua" },
+				python = { "black" },
+				rust = { "rustfmt" },
+				java = { "google-java-format" },
+			},
+			-- Set default options
+			default_format_opts = {
+				lsp_format = "fallback",
+			},
 		},
-		config = function()
-			vim.cmd("call glaive#Install()")
-			vim.cmd([[
-				augroup autoformat_settings
-					autocmd FileType python AutoFormatBuffer black
-					autocmd FileType rust AutoFormatBuffer rustfmt
-					autocmd FileType lua AutoFormatBuffer stylua
-				augroup END
-			]])
-		end,
-	},
-
-	{
-		"kevinhwang91/nvim-bqf",
-		ft = "qf",
 	},
 
 	--

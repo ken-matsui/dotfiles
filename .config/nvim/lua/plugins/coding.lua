@@ -111,6 +111,7 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "black" },
+				cpp = { "clang-format" },
 				rust = { "rustfmt" },
 				java = { "google-java-format" },
 			},

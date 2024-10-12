@@ -157,15 +157,11 @@ return {
 			{
 				"<Leader>c",
 				function()
-					-- Close all trouble windows
-					local trouble = require("trouble")
-					while trouble.is_open() do
-						trouble.close()
-					end
-
 					vim.cmd("cclose") -- Close quickfix window
+					vim.cmd("lclose") -- Close location list window
 					vim.cmd("NvimTreeClose")
 					vim.cmd("OutlineClose")
+					vim.cmd("TroubleCloseAll")
 				end,
 				desc = "Close All Sub-Windows",
 			},

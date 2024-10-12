@@ -12,6 +12,10 @@ end
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- Always show the signcolumn, otherwise it would shift the text each time
+-- diagnostics appeared/became resolved
+vim.opt.signcolumn = "yes"
+
 -- Highlight yanked region
 vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()
@@ -19,9 +23,12 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
--- Always show the signcolumn, otherwise it would shift the text each time
--- diagnostics appeared/became resolved
-vim.opt.signcolumn = "yes"
+vim.api.nvim_create_user_command('TroubleCloseAll', function()
+	local trouble = require("trouble")
+	while trouble.is_open() do
+		trouble.close()
+	end
+end, {})
 
 -- Tmux integration (tmux-window-name)
 local uv = vim.loop

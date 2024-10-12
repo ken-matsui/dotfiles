@@ -177,26 +177,20 @@ return {
 				end, { expr = true, desc = "Go to previous Git hunk" })
 
 				-- Actions
+				-- stylua: ignore start
 				map("n", "<Leader>Gs", gs.stage_hunk, { desc = "Stage Git hunk" })
 				map("n", "<Leader>Gr", gs.reset_hunk, { desc = "Reset Git hunk" })
-				map("v", "<Leader>Gs", function()
-					gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
-				end, { desc = "Stage Git hunk" })
-				map("v", "<Leader>Gr", function()
-					gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
-				end, { desc = "Reset Git hunk" })
+				map("v", "<Leader>Gs", function() gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") }) end, { desc = "Stage Git hunk" })
+				map("v", "<Leader>Gr", function() gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") }) end, { desc = "Reset Git hunk" })
 				map("n", "<Leader>GS", gs.stage_buffer, { desc = "Stage Git buffer" })
 				map("n", "<Leader>Gu", gs.undo_stage_hunk, { desc = "Undo stage Git hunk" })
 				map("n", "<Leader>GR", gs.reset_buffer, { desc = "Reset Git buffer" })
 				map("n", "<Leader>GP", gs.preview_hunk, { desc = "Preview Git hunk" })
-				map("n", "<Leader>Gb", function()
-					gs.blame_line({ full = true })
-				end, { desc = "Blame Git line" })
+				map("n", "<Leader>Gb", function() gs.blame_line({ full = true }) end, { desc = "Blame Git line" })
 				map("n", "<Leader>Gd", gs.diffthis, { desc = "Diff Git" })
-				map("n", "<Leader>GD", function()
-					gs.diffthis("~")
-				end, { desc = "Diff Git" })
+				map("n", "<Leader>GD", function() gs.diffthis("~") end, { desc = "Diff Git" })
 				map("n", "<Leader>Gt", gs.toggle_deleted, { desc = "Toggle Git deleted" })
+				-- stylua: ignore end
 
 				-- Text object
 				map({ "o", "x" }, "<Leader>Gh", ":<C-U>Gitsigns select_hunk<CR>", { desc = "Select Git hunk" })

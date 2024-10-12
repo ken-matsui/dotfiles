@@ -14,7 +14,6 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		dependencies = {
-			"windwp/nvim-ts-autotag",
 			"JoosepAlviste/nvim-ts-context-commentstring",
 			"RRethy/nvim-treesitter-endwise",
 		},
@@ -54,9 +53,6 @@ return {
 			indent = {
 				enable = true,
 			},
-			autotag = {
-				enable = true,
-			},
 			endwise = {
 				enable = true,
 			},
@@ -70,6 +66,14 @@ return {
 				pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
 			})
 		end,
+	},
+
+	{
+		"windwp/nvim-ts-autotag",
+		cond = function()
+			return vim.fn.has("nvim-0.9.5") == 1
+		end,
+		config = true,
 	},
 
 	-- Highlight arguments

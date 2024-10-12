@@ -13,12 +13,6 @@ return {
 	},
 
 	{
-		"tpope/vim-endwise",
-		lazy = true,
-		event = "InsertEnter",
-	},
-
-	{
 		"tpope/vim-repeat",
 		lazy = true,
 		event = "VeryLazy",

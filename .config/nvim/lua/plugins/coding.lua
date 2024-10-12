@@ -63,6 +63,9 @@ return {
 
 	{
 		"stevearc/conform.nvim",
+		cond = function()
+			return vim.fn.has("nvim-0.10") == 1
+		end,
 		event = { "BufWritePre" },
 		cmd = { "ConformInfo" },
 		keys = {

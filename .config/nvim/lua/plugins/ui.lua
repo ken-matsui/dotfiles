@@ -13,7 +13,7 @@ return {
 			"nvim-tree/nvim-web-devicons",
 		},
 		keys = {
-			{ "<Leader>s", "<Cmd>NvimTreeFindFileToggle<Cr>", mode = "n", desc = "Toggle NvimTree" },
+			{ "<Leader>e", "<Cmd>NvimTreeFindFileToggle<Cr>", mode = "n", desc = "Toggle NvimTree" },
 		},
 		opts = {
 			sort_by = "case_sensitive",
@@ -120,77 +120,34 @@ return {
 		cmd = "Trouble",
 		keys = {
 			{
-				"<Leader>td",
+				"<Leader>d",
 				"<Cmd>Trouble diagnostics toggle<Cr>",
 				desc = "Trouble Diagnostics",
 			},
 			{
-				"<Leader>tD",
+				"<Leader>D",
 				"<Cmd>Trouble diagnostics toggle filter.buf=0<Cr>",
 				desc = "Trouble Buffer Diagnostics",
 			},
 			{
-				"<Leader>ts",
+				"<Leader>s",
 				"<Cmd>Trouble symbols toggle focus=false<Cr>",
 				desc = "Trouble Symbols",
 			},
 			{
-				"<Leader>tr",
-				"<Cmd>Trouble lsp toggle focus=false win.position=right<Cr>",
-				desc = "Trouble LSP Definitions / References",
+				"<Leader>r",
+				"<Cmd>Trouble lsp toggle focus=false<Cr>",
+				desc = "Trouble LSP References",
 			},
 			{
-				"<Leader>tl",
+				"<Leader>L",
 				"<Cmd>Trouble loclist toggle<Cr>",
 				desc = "Trouble Location List",
 			},
 			{
-				"<Leader>tq",
+				"<Leader>q",
 				"<Cmd>Trouble qflist toggle<Cr>",
 				desc = "Trouble Quickfix List",
-			},
-		},
-	},
-
-	{
-		"folke/edgy.nvim",
-		event = "VeryLazy",
-		init = function()
-			vim.opt.laststatus = 3
-			vim.opt.splitkeep = "screen"
-		end,
-		opts = {
-			animate = {
-				enabled = false,
-			},
-			bottom = {
-				{
-					title = "Trouble",
-					ft = "trouble",
-					size = { height = 0.1 },
-				},
-				{ ft = "qf", title = "QuickFix" },
-				{
-					ft = "help",
-					size = { height = 20 },
-					-- only show help buffers
-					filter = function(buf)
-						return vim.bo[buf].buftype == "help"
-					end,
-				},
-			},
-			left = {
-				{
-					title = "NvimTree",
-					ft = "NvimTree",
-					size = { height = 0.5 },
-				},
-				{
-					title = "Outline",
-					ft = "Outline",
-					pinned = true,
-					open = "SymbolsOutlineOpen",
-				},
 			},
 		},
 	},
@@ -265,7 +222,7 @@ return {
 		},
 		keys = {
 			{ "<Leader>g", "<Cmd>Telescope live_grep<Cr>", "n", desc = "Telescope grep" },
-			{ "<Leader>r", "<Cmd>Telescope resume<Cr>", "n" },
+			{ "<Leader>R", "<Cmd>Telescope resume<Cr>", "n" },
 			{ "<Leader>b", "<Cmd>Telescope vim_bookmarks all<Cr>", "n", desc = "Telescope bookmarks" },
 		},
 		opts = {

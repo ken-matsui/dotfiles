@@ -195,7 +195,18 @@ return {
 	{
 		"j-hui/fidget.nvim",
 		version = "v1.*",
-		opts = {},
+		opts = {
+			integration = {
+				-- Dynamically offset Fidget's notifications window when the nvim-tree
+				-- window is open on the right side + the Fidget window is
+				-- "editor"-relative.
+				["nvim-tree"] = {
+					-- nvim-tree window is open on the left side; this
+					-- integration is not needed.
+					enable = false,
+				},
+			},
+		},
 	},
 
 	-- Completion

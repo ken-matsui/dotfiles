@@ -48,8 +48,12 @@ return {
 				"cclose",
 				"lclose",
 				"NvimTreeClose",
-				"OutlineClose",
 				"TroubleCloseAll",
+				function() -- Close outline
+					if vim.fn.exists(":OutlineClose") == 2 then
+						vim.cmd("OutlineClose")
+					end
+				end,
 			},
 		},
 	},

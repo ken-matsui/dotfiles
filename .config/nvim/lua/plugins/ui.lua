@@ -160,8 +160,12 @@ return {
 					vim.cmd("cclose") -- Close quickfix window
 					vim.cmd("lclose") -- Close location list window
 					vim.cmd("NvimTreeClose")
-					vim.cmd("OutlineClose")
 					vim.cmd("TroubleCloseAll")
+
+					-- Close Outline
+					if vim.fn.exists(":OutlineClose") == 2 then
+						vim.cmd("OutlineClose")
+					end
 				end,
 				desc = "Close All Sub-Windows",
 			},

@@ -115,6 +115,11 @@ return {
 	},
 
 	{
+		"kevinhwang91/nvim-bqf",
+		ft = "qf",
+	},
+
+	{
 		"folke/trouble.nvim",
 		opts = {}, -- for default options, refer to the configuration section for custom setup.
 		cmd = "Trouble",

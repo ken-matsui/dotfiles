@@ -49,6 +49,14 @@ return {
 	},
 
 	{
+		"windwp/nvim-ts-autotag",
+		cond = function()
+			return vim.fn.has("nvim-0.9.5") == 1
+		end,
+		config = true,
+	},
+
+	{
 		"MattesGroeger/vim-bookmarks",
 		lazy = true,
 		event = "BufRead",

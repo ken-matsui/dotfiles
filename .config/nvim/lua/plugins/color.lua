@@ -68,14 +68,6 @@ return {
 		end,
 	},
 
-	{
-		"windwp/nvim-ts-autotag",
-		cond = function()
-			return vim.fn.has("nvim-0.9.5") == 1
-		end,
-		config = true,
-	},
-
 	-- Indentation
 	{
 		"lukas-reineke/indent-blankline.nvim",

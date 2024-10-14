@@ -7,7 +7,9 @@
 	path = ~/.config/git/profiles/personal
 [includeIf "gitdir:/home/"]
 	path = ~/.config/git/profiles/personal
-[includeIf "hasconfig:remote.*.url:git@github.com*/**"]
+[includeIf "hasconfig:remote.*.url:git@github.com:*/**"]
+	path = ~/.config/git/emails/github
+[includeIf "hasconfig:remote.*.url:https://github.com/**"]
 	path = ~/.config/git/emails/github
 [includeIf "hasconfig:remote.*.url:git+ssh://*@gcc.gnu.org/git/**"]
 	path = ~/.config/git/emails/gcc

@@ -9,6 +9,8 @@
 	path = ~/.config/git/profiles/personal
 [includeIf "hasconfig:remote.*.url:git@github.com*/**"]
 	path = ~/.config/git/emails/github
+[includeIf "hasconfig:remote.*.url:git+ssh://*@gcc.gnu.org/git/**"]
+	path = ~/.config/git/emails/gcc
 
 #
 # 1Password (GPG)

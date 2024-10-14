@@ -1,9 +1,9 @@
 #
 # OS depending config
 #
-[includeIf "gitdir:/Users"]
+[includeIf "gitdir:/Users/"]
 	path = ~/.config/git/configs/macos
-[includeIf "gitdir:/home"]
+[includeIf "gitdir:/home/"]
 	path = ~/.config/git/configs/linux
 
 #

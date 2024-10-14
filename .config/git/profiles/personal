@@ -16,7 +16,6 @@
 # User
 #
 [user]
-	email = 26405363+ken-matsui@users.noreply.github.com
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJLtNOwH8UCkUcpMNG4aSMNtzUtYaYzdc3awbXbzvAwY
 
 #

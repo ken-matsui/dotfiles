@@ -1,2 +1,3 @@
+# vim: filetype=gitconfig
 [gpg "ssh"]
 	program = "/opt/1Password/op-ssh-sign"

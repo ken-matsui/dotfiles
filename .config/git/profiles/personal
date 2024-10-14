@@ -1,0 +1,28 @@
+# vim: filetype=gitconfig
+
+#
+# GPG
+#
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = "~/.config/git/allowed_signers"
+[commit]
+	gpgsign = true
+[tag]
+	forceSignAnnotated = true
+
+#
+# User
+#
+[user]
+	email = 26405363+ken-matsui@users.noreply.github.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJLtNOwH8UCkUcpMNG4aSMNtzUtYaYzdc3awbXbzvAwY
+
+#
+# Send email
+#
+[sendemail]
+	smtpServer = mail.smtp2go.com
+	smtpServerPort = 587
+	smtpEncryption = tls

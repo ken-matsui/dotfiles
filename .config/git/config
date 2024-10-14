@@ -15,6 +15,12 @@
 	path = ~/.config/git/1password/linux
 
 #
+# User
+#
+[user]
+	name = Ken Matsui
+
+#
 # Branch
 #
 [init]

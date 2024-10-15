@@ -137,6 +137,8 @@ nnoremap ; :
 " Visually move cursor
 nnoremap j gj
 nnoremap k gk
+vnoremap j gj
+vnoremap k gk
 
 " Move to the beginning of line
 nnoremap <S-h> ^

@@ -81,13 +81,10 @@ set formatoptions-=ro formatoptions+=cqlt
 
 " Enable spell check
 set spelllang=en_us
+autocmd FileType text,gitcommit,mail,markdown setlocal spell complete+=kspell
 
-augroup SpellCheck
-  autocmd FileType text setlocal spell complete+=kspell
-  autocmd FileType gitcommit setlocal spell complete+=kspell
-  autocmd FileType mail setlocal spell complete+=kspell
-  autocmd FileType markdown setlocal spell complete+=kspell
-augroup END
+" Set color column
+autocmd FileType c,cpp setlocal colorcolumn=80
 
 " Save files when focus lost
 augroup AutoSaveOnFocusLost

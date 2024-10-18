@@ -79,9 +79,18 @@ return {
 			log_level = "error",
 			auto_session_suppress_dirs = { "~/", "~/Downloads", "/" },
 			auto_save_enabled = true,
-			pre_save_cmds = { "CloseAll" },
 			session_lens = {
 				load_on_setup = false,
+			},
+			pre_save_cmds = { "CloseAll" },
+			post_restore_cmds = {
+				function()
+					-- Restore bufferline positions
+					local lazy = require("bufferline.lazy")
+					local utils = lazy.require("bufferline.utils") ---@module "bufferline.utils"
+					local state = lazy.require("bufferline.state") ---@module "bufferline.state"
+					state.custom_sort = utils.restore_positions()
+				end,
 			},
 		},
 	},

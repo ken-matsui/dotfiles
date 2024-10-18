@@ -32,7 +32,7 @@ vim.api.nvim_create_user_command("CloseAll", function()
 
 	-- Close NvimTree
 	if package.loaded["nvim-tree"] then
-		vim.cmd("NvimTreeClose")
+		require("nvim-tree.api").tree.close()
 	end
 
 	-- Close Outline

@@ -42,7 +42,6 @@ vim.api.nvim_create_user_command("CloseAll", function()
 
 	-- Close all Trouble windows
 	if package.loaded["trouble"] then
-		print("trouble is loaded")
 		local trouble = require("trouble")
 		while trouble.is_open() do
 			trouble.close()

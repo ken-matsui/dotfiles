@@ -246,6 +246,7 @@ return {
 		keys = {
 			{ "<Leader>g", "<Cmd>Telescope live_grep<Cr>", "n", desc = "Telescope Grep" },
 			{ "<Leader>R", "<Cmd>Telescope resume<Cr>", "n", desc = "Telescope Resume" },
+			{ "<Leader>b", "<Cmd>Telescope buffers<Cr>", "n", desc = "Telescope Buffers" },
 			{ "<Leader>B", "<Cmd>Telescope vim_bookmarks all<Cr>", "n", desc = "Telescope Bookmarks" },
 		},
 		opts = {

@@ -79,17 +79,7 @@ return {
 			log_level = "error",
 			auto_session_suppress_dirs = { "~/", "~/Downloads", "/" },
 			auto_save_enabled = true,
-			pre_save_cmds = {
-				"cclose",
-				"lclose",
-				"NvimTreeClose",
-				"TroubleCloseAll",
-				function() -- Close outline
-					if vim.fn.exists(":OutlineClose") == 2 then
-						vim.cmd("OutlineClose")
-					end
-				end,
-			},
+			pre_save_cmds = { "CloseAll" },
 			session_lens = {
 				load_on_setup = false,
 			},

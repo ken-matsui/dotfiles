@@ -23,12 +23,35 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
-vim.api.nvim_create_user_command("TroubleCloseAll", function()
-	local trouble = require("trouble")
-	while trouble.is_open() do
-		trouble.close()
+vim.api.nvim_create_user_command("CloseAll", function()
+	vim.cmd("cclose") -- Close quickfix window
+	vim.cmd("lclose") -- Close location list window
+
+	-- Close NvimTree
+	if package.loaded["nvim-tree"] then
+		vim.cmd("NvimTreeClose")
 	end
-end, {})
+
+	-- Close Outline
+	if package.loaded["outline"] then
+		vim.cmd("OutlineClose")
+	end
+
+	-- Close all Trouble windows
+	if package.loaded["trouble"] then
+		print("trouble is loaded")
+		local trouble = require("trouble")
+		while trouble.is_open() do
+			trouble.close()
+		end
+	end
+end, { desc = "Close All Sub-windows" })
+vim.api.nvim_set_keymap(
+	"n",
+	"<Leader>c",
+	"<Cmd>CloseAll<CR>",
+	{ silent = true, noremap = true, desc = "Close All Sub-windows" }
+)
 
 -- Tmux integration (tmux-window-name)
 local uv = vim.loop

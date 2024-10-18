@@ -154,21 +154,6 @@ return {
 				"<Cmd>Trouble qflist toggle<Cr>",
 				desc = "Trouble Quickfix List",
 			},
-			{
-				"<Leader>c",
-				function()
-					vim.cmd("cclose") -- Close quickfix window
-					vim.cmd("lclose") -- Close location list window
-					vim.cmd("NvimTreeClose")
-					vim.cmd("TroubleCloseAll")
-
-					-- Close Outline
-					if vim.fn.exists(":OutlineClose") == 2 then
-						vim.cmd("OutlineClose")
-					end
-				end,
-				desc = "Close All Sub-Windows",
-			},
 		},
 	},
 

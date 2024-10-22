@@ -13,7 +13,7 @@ return {
 			"nvim-tree/nvim-web-devicons",
 		},
 		keys = {
-			{ "<Leader>e", "<Cmd>NvimTreeFindFileToggle<Cr>", mode = "n", desc = "Toggle NvimTree" },
+			{ "<Leader>e", "<Cmd>NvimTreeFindFileToggle<Cr>", desc = "Toggle NvimTree" },
 		},
 		opts = {
 			sort_by = "case_sensitive",
@@ -47,11 +47,11 @@ return {
 			"nvim-tree/nvim-web-devicons",
 		},
 		keys = {
-			{ "<Leader>h", "<Cmd>BufferLineCyclePrev<Cr>", "n", desc = "Go to Left Buffer" },
-			{ "<Leader>l", "<Cmd>BufferLineCycleNext<Cr>", "n", desc = "Go to Right Buffer" },
-			{ "<Leader>p", "<Cmd>BufferLinePick<Cr>", "n", desc = "Pick Buffer" },
-			{ "<Leader><Left>", "<Cmd>BufferLineMovePrev<Cr>", "n", desc = "Move Buffer to Left" },
-			{ "<Leader><Right>", "<Cmd>BufferLineMoveNext<Cr>", "n", desc = "Move Buffer to Right" },
+			{ "<Leader>h", "<Cmd>BufferLineCyclePrev<Cr>", desc = "Go to Left Buffer" },
+			{ "<Leader>l", "<Cmd>BufferLineCycleNext<Cr>", desc = "Go to Right Buffer" },
+			{ "<Leader>p", "<Cmd>BufferLinePick<Cr>", desc = "Pick Buffer" },
+			{ "<Leader><Left>", "<Cmd>BufferLineMovePrev<Cr>", desc = "Move Buffer to Left" },
+			{ "<Leader><Right>", "<Cmd>BufferLineMoveNext<Cr>", desc = "Move Buffer to Right" },
 		},
 		opts = {
 			options = {
@@ -75,7 +75,6 @@ return {
 				function()
 					require("bufdelete").bufdelete(0, true)
 				end,
-				"n",
 				desc = "Close Buffer",
 			},
 		},
@@ -244,10 +243,10 @@ return {
 			"tom-anders/telescope-vim-bookmarks.nvim",
 		},
 		keys = {
-			{ "<Leader>g", "<Cmd>Telescope live_grep<Cr>", "n", desc = "Telescope Grep" },
-			{ "<Leader>R", "<Cmd>Telescope resume<Cr>", "n", desc = "Telescope Resume" },
-			{ "<Leader>b", "<Cmd>Telescope buffers<Cr>", "n", desc = "Telescope Buffers" },
-			{ "<Leader>B", "<Cmd>Telescope vim_bookmarks all<Cr>", "n", desc = "Telescope Bookmarks" },
+			{ "<Leader>g", "<Cmd>Telescope live_grep<Cr>", desc = "Telescope Grep" },
+			{ "<Leader>R", "<Cmd>Telescope resume<Cr>", desc = "Telescope Resume" },
+			{ "<Leader>b", "<Cmd>Telescope buffers<Cr>", desc = "Telescope Buffers" },
+			{ "<Leader>B", "<Cmd>Telescope vim_bookmarks all<Cr>", desc = "Telescope Bookmarks" },
 		},
 		opts = {
 			defaults = {
@@ -295,7 +294,6 @@ return {
 				function()
 					require("telescope.builtin").find_files()
 				end,
-				"n",
 				desc = "Telescope Files",
 			},
 		},

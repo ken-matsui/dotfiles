@@ -243,10 +243,10 @@ return {
 			"tom-anders/telescope-vim-bookmarks.nvim",
 		},
 		keys = {
-			{ "<Leader>g", "<Cmd>Telescope live_grep<Cr>", desc = "Telescope Grep" },
-			{ "<Leader>R", "<Cmd>Telescope resume<Cr>", desc = "Telescope Resume" },
-			{ "<Leader>b", "<Cmd>Telescope buffers<Cr>", desc = "Telescope Buffers" },
-			{ "<Leader>B", "<Cmd>Telescope vim_bookmarks all<Cr>", desc = "Telescope Bookmarks" },
+			{ "<Leader>fg", "<Cmd>Telescope live_grep<Cr>", desc = "Telescope Grep" },
+			{ "<Leader>fR", "<Cmd>Telescope resume<Cr>", desc = "Telescope Resume" },
+			{ "<Leader>fb", "<Cmd>Telescope buffers<Cr>", desc = "Telescope Buffers" },
+			{ "<Leader>fB", "<Cmd>Telescope vim_bookmarks all<Cr>", desc = "Telescope Bookmarks" },
 		},
 		opts = {
 			defaults = {
@@ -290,7 +290,7 @@ return {
 		},
 		keys = {
 			{
-				"<Leader>F",
+				"<Leader>ff",
 				function()
 					require("telescope.builtin").find_files()
 				end,

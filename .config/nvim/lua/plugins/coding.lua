@@ -256,6 +256,12 @@ return {
 			if vim.fn.executable("lua-language-server") == 1 then
 				lspconfig.lua_ls.setup({})
 			end
+			if vim.fn.executable("rust-analyzer") == 1 then
+				lspconfig.rust_analyzer.setup({})
+			end
+			if vim.fn.executable("pyright") == 1 then
+				lspconfig.pyright.setup({})
+			end
 		end,
 	},
 

@@ -18,7 +18,6 @@ zinit snippet PZTM::directory
 
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
-zinit light MichaelAquilina/zsh-auto-notify
 zinit light momo-lab/zsh-replace-multiple-dots
 
 zinit snippet OMZP::gitignore/gitignore.plugin.zsh
@@ -28,11 +27,19 @@ zinit ice wait lucid depth=1
 zinit light MichaelAquilina/zsh-you-should-use
 export YSU_MESSAGE_POSITION='after'
 
-# FIXME: zsh-vi-mode messes up ^R history search
-# zinit ice depth=1
-# zinit light jeffreytse/zsh-vi-mode
+autoload -Uz is-at-least
+if is-at-least 5.1; then
+    zinit light MichaelAquilina/zsh-auto-notify
 
-zinit ice from"gh-r" as"program"
-zinit light junegunn/fzf
+    # FIXME: zsh-vi-mode messes up ^R history search
+    # zinit ice depth=1
+    # zinit light jeffreytse/zsh-vi-mode
+
+    zinit ice from"gh-r" as"program"
+    zinit light junegunn/fzf
+else
+    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+fi
+
 zinit ice as"program" pick"bin/git-fuzzy"
 zinit light bigH/git-fuzzy

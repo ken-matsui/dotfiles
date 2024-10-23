@@ -242,10 +242,14 @@ return {
 					vim.keymap.set({ "n", "x" }, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
 					vim.keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
 
-					-- Enable inlay hints if available
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
 					if client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
+						-- Enable inlay hints by default
 						vim.lsp.inlay_hint.enable(true, { bufnr = event.buf })
+
+						vim.keymap.set("n", "<Leader>H", function()
+							vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+						end, { desc = "Toggle Inlay Hints" })
 					end
 				end,
 			})

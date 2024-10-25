@@ -16,9 +16,6 @@ vim.g.loaded_netrwPlugin = 1
 -- diagnostics appeared/became resolved
 vim.opt.signcolumn = "yes"
 
--- Persistent bufferline positions
-vim.o.sessionoptions = vim.o.sessionoptions .. ",globals"
-
 -- Highlight yanked region
 vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()

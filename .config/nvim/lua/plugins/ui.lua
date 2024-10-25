@@ -53,6 +53,10 @@ return {
 			{ "<Leader><Left>", "<Cmd>BufferLineMovePrev<Cr>", desc = "Move Buffer to Left" },
 			{ "<Leader><Right>", "<Cmd>BufferLineMoveNext<Cr>", desc = "Move Buffer to Right" },
 		},
+		init = function()
+			-- Persistent bufferline positions
+			vim.o.sessionoptions = vim.o.sessionoptions .. ",globals"
+		end,
 		opts = {
 			options = {
 				offsets = {

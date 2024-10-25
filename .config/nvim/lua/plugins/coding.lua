@@ -107,8 +107,12 @@ return {
 		cond = function()
 			return vim.fn.has("nvim-0.10") == 1
 		end,
-		event = { "BufWritePre" },
 		cmd = { "ConformInfo" },
+		init = function()
+			vim.api.nvim_create_user_command("FormatBuffer", function()
+				require("conform").format({ async = true })
+			end, { desc = "Format buffer" })
+		end,
 		---@module "conform"
 		---@type conform.setupOpts
 		opts = {

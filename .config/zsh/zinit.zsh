@@ -37,6 +37,4 @@ if is-at-least 5.1; then
     # FIXME: zsh-vi-mode messes up ^R history search
     # zinit ice depth=1
     # zinit light jeffreytse/zsh-vi-mode
-else
-    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 fi

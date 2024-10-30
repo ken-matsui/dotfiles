@@ -52,16 +52,6 @@ vim.api.nvim_set_keymap(
 	{ silent = true, noremap = true, desc = "Close All Sub-windows" }
 )
 
--- Tmux integration (tmux-window-name)
-local uv = vim.loop
-vim.api.nvim_create_autocmd({ "VimEnter", "VimLeave" }, {
-	callback = function()
-		if vim.env.TMUX_WINDOW_NAME_SCRIPT then
-			uv.spawn(vim.env.TMUX_WINDOW_NAME_SCRIPT, {})
-		end
-	end,
-})
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({

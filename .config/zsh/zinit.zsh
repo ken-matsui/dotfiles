@@ -23,6 +23,9 @@ zinit light momo-lab/zsh-replace-multiple-dots
 zinit snippet OMZP::gitignore/gitignore.plugin.zsh
 zinit snippet OMZP::git/git.plugin.zsh
 
+zinit ice as"program" pick"bin/git-fuzzy"
+zinit light bigH/git-fuzzy
+
 zinit ice wait lucid depth=1
 zinit light MichaelAquilina/zsh-you-should-use
 export YSU_MESSAGE_POSITION='after'
@@ -37,6 +40,3 @@ if is-at-least 5.1; then
 else
     [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 fi
-
-zinit ice as"program" pick"bin/git-fuzzy"
-zinit light bigH/git-fuzzy

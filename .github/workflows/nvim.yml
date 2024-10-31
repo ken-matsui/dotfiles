@@ -1,0 +1,81 @@
+name: Neovim
+
+on:
+  push:
+    branches: [main]
+
+  pull_request:
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  # deployments permission to deploy GitHub pages website
+  deployments: write
+  # contents permission to update benchmark contents in gh-pages branch
+  contents: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  bench:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: MunifTanjim/setup-neovim-action@v1
+        with:
+          tag: v0.10.2
+
+      - name: Run Neovim
+        run: nvim --headless "+Lazy! sync" +qa
+        env:
+          XDG_CONFIG_HOME: ${{ github.workspace }}/.config
+
+      - name: Setup Go
+        uses: actions/setup-go@v1
+        with:
+          go-version: 1.23.2
+
+      - name: Setup GOBIN
+        run: echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
+
+      - name: Install vim-startuptime
+        run: go install github.com/rhysd/vim-startuptime@latest
+
+      - name: Setup .config/nvim
+        run: |
+          mkdir -p ~/.config
+          cp -r .config/nvim ~/.config
+
+      - name: Run vim-startuptime
+        run: |
+          vim-startuptime -vimpath nvim "+Lazy! sync" | \
+          tee full.txt | \
+          awk '/Total Average/ {print $3}' | \
+          jq -R '{"name": "Neovim Total Average Startup Time", "unit": "msec", "value": (. | tonumber)}' | \
+          jq -s . > startuptime.json
+        env:
+          XDG_CONFIG_HOME: ${{ github.workspace }}/.config
+
+      - name: Show benchmark result
+        run: cat full.txt
+
+      - name: Download previous benchmark data
+        uses: actions/cache@v4
+        with:
+          path: ./cache
+          key: ${{ runner.os }}-benchmark
+
+      - name: Store benchmark result
+        uses: benchmark-action/github-action-benchmark@v1
+        with:
+          name: Neovim Benchmark
+          tool: 'customSmallerIsBetter'
+          output-file-path: startuptime.json
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          auto-push: ${{ github.ref == 'refs/heads/main' }}

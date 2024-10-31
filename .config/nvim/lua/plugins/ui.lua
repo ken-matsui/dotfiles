@@ -162,9 +162,14 @@ return {
 
 	{
 		"kevinhwang91/nvim-hlslens",
-		config = true,
+		dependencies = {
+			"petertriho/nvim-scrollbar",
+		},
 		event = "CmdlineEnter",
 		keys = { "n", "N", "/" },
+		config = function()
+			require("scrollbar.handlers.search").setup()
+		end,
 	},
 
 	{

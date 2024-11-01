@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730421584513,
+  "lastUpdate": 1730422050798,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -211,6 +211,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 4574.9369,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "7bb016e9699b23e4d68adeadc6b3d4302c832084",
+          "message": "Create dependabot.yml",
+          "timestamp": "2024-10-31T20:45:49-04:00",
+          "tree_id": "e1b73c1a1a5aaa3e7097bd6ef8e2913bed584c95",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/7bb016e9699b23e4d68adeadc6b3d4302c832084"
+        },
+        "date": 1730422049554,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 6009.1787,
             "unit": "msec"
           }
         ]

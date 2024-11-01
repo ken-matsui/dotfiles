@@ -40,7 +40,6 @@ jobs:
         uses: actions/setup-go@v1
         with:
           go-version: stable
-          cache: false
 
       - name: Setup GOBIN
         run: echo "$(go env GOPATH)/bin" >> $GITHUB_PATH

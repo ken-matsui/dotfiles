@@ -37,9 +37,10 @@ jobs:
           XDG_CONFIG_HOME: ${{ github.workspace }}/.config
 
       - name: Setup Go
-        uses: actions/setup-go@v1
+        uses: actions/setup-go@v5
         with:
           go-version: stable
+          cache: false
 
       - name: Setup GOBIN
         run: echo "$(go env GOPATH)/bin" >> $GITHUB_PATH

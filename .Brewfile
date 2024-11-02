@@ -58,7 +58,6 @@ cask "discord"
 # cask "figma"
 cask "font-jetbrains-mono-nerd-font"  # for alacritty
 cask "font-source-code-pro-for-powerline"
-cask "google-chrome"
 # cask "google-cloud-sdk"
 cask "jordanbaird-ice"
 cask "languagetool"

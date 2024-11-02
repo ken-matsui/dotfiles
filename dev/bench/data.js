@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730422372082,
+  "lastUpdate": 1730561667750,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -269,6 +269,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 4597.339,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "6bbcdf9d7d6d7ef0adf24a82b9b5d6fa1a3fec0f",
+          "message": "Brew: added brave-browser",
+          "timestamp": "2024-11-02T11:32:28-04:00",
+          "tree_id": "dd0d06d86639905424a8055fd0f39037f6fb0a3a",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/6bbcdf9d7d6d7ef0adf24a82b9b5d6fa1a3fec0f"
+        },
+        "date": 1730561665987,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 6243.949,
             "unit": "msec"
           }
         ]

@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730561667750,
+  "lastUpdate": 1730581429802,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -298,6 +298,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 6243.949,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "ab7998f97843816bc40661c5817e396e733b5c08",
+          "message": "Brew: removed google-chrome",
+          "timestamp": "2024-11-02T17:02:02-04:00",
+          "tree_id": "f1f225f8a042c087419756bd1f7b4f31875060c2",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/ab7998f97843816bc40661c5817e396e733b5c08"
+        },
+        "date": 1730581428600,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 5701.7923,
             "unit": "msec"
           }
         ]

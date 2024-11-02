@@ -52,6 +52,7 @@ brew "youtube-dl"
 cask "1password-cli"
 cask "alacritty"
 # cask "balenaetcher"  # Flash OS images to SD cards & USB drives, safely and easily.
+cask "brave-browser"
 cask "deepl"
 cask "discord"
 # cask "figma"

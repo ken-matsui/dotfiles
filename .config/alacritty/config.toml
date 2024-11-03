@@ -1,5 +1,6 @@
-# Live config reload (changes require restart)
-live_config_reload = true
+[general]
+  # Live config reload (changes require restart)
+  live_config_reload = true
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -236,6 +237,6 @@ live_config_reload = true
 # Default:
 #   - (Linux/BSD/macOS) `$SHELL` or the user's login shell, if `$SHELL` is unset
 #   - (Windows) powershell
-[shell]
+[terminal.shell]
   program = "/bin/zsh"
   args = ["-l", "-c", "tmux new-session -A -s alacritty"]

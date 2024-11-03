@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730581429802,
+  "lastUpdate": 1730594725377,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -327,6 +327,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 5701.7923,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "59b506447d06425098122454118085d3bca2c078",
+          "message": "Topgrade: disable pnpm & poetry",
+          "timestamp": "2024-11-02T20:43:44-04:00",
+          "tree_id": "4724702293a02c50b909339f5d803760f28ca948",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/59b506447d06425098122454118085d3bca2c078"
+        },
+        "date": 1730594724229,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 5129.5268,
             "unit": "msec"
           }
         ]

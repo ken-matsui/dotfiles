@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730933642729,
+  "lastUpdate": 1730950720272,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -501,6 +501,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 6932.8087,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "2eb07a28f8f8a1b2cfe95f2df12442dc7b2d11df",
+          "message": "Manjaro: removed Chrome, added Brave",
+          "timestamp": "2024-11-06T22:36:36-05:00",
+          "tree_id": "9bce7dcd8fdb0d29e4121cb4258a10f659bd6078",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/2eb07a28f8f8a1b2cfe95f2df12442dc7b2d11df"
+        },
+        "date": 1730950718453,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 6400.3663,
             "unit": "msec"
           }
         ]

@@ -9,6 +9,7 @@ sudo pacman -S \
   perl-io-socket-ssl perl-authen-sasl perl-mime-tools \  # for git send-email
   atuin \
   bat \
+  brave-browser \
   python-black \
   boost \
   clang \
@@ -47,7 +48,6 @@ sudo pacman -S \
 
 pamac build \
   1password 1password-cli \
-  google-chrome \
   signal-desktop \
   standardnotes-desktop \
   topgrade \

@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1731373874680,
+  "lastUpdate": 1731720115646,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -646,6 +646,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 6293.6307,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "e1744a44cfff41e5ab6fcd0be42c59dc3f6f88ca",
+          "message": "Nvim: fix gr conflict with ReplaceWithRegister",
+          "timestamp": "2024-11-15T20:19:47-05:00",
+          "tree_id": "60f414279175c75106224159a1879570115fe025",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/e1744a44cfff41e5ab6fcd0be42c59dc3f6f88ca"
+        },
+        "date": 1731720114428,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 6448.0715,
             "unit": "msec"
           }
         ]

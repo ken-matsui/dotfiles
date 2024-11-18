@@ -74,9 +74,8 @@ let mapleader = " "
 set tags=./tags;
 
 " Automatic word wrapping
-set textwidth=79
-autocmd FileType gitcommit setlocal textwidth=72
-autocmd FileType mail setlocal textwidth=72
+autocmd FileType c,cpp setlocal textwidth=79
+autocmd FileType gitcommit,mail setlocal textwidth=72
 set formatoptions-=ro formatoptions+=cqlt
 
 " Enable spell check

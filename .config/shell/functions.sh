@@ -7,13 +7,13 @@ command_exists() {
 }
 
 info() {
-  printf '\033[0;34m[INFO]: %s\033[0m\n' "$*"
+  printf '\033[0;1;34minfo\033[0m: %s\n' "$*" >&2
 }
 warn() {
-  printf '\033[0;33m[WARNING]: %s\033[0m\n' "$*"
+  printf '\033[0;1;33mwarning\033[0m: %s\n' "$*" >&2
 }
 err() {
-  printf '\033[0;31m[ERROR]: %s\033[0m\n' "$*"
+  printf '\033[0;1;31merror\033[0m: %s\n' "$*" >&2
 }
 
 calc() {

@@ -1,1 +1,0 @@
-AUTO_NOTIFY_IGNORE+=("hx")

@@ -1,7 +1,3 @@
-##################################
-# Zsh Options
-##################################
-
 # Set operations.
 setopt extended_glob
 # Ignore patterns such as URL

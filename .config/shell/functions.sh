@@ -1,9 +1,5 @@
 #!/usr/bin/env sh
 
-##################################
-# Functions
-##################################
-
 alias sizeof='du -sh'
 
 command_exists() {

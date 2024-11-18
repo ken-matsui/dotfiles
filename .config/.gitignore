@@ -5,6 +5,7 @@
 !neomutt
 !nvim
 !psync
+!shell
 !starship.toml
 !sway
 !tmux
@@ -13,7 +14,6 @@
 !w3m
 !waybar
 !zellij
-!zsh
 
 !1Password
 1Password/*

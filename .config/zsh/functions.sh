@@ -19,3 +19,7 @@ warn() {
 err() {
   printf '\033[0;31m[ERROR]: %s\033[0m\n' "$*"
 }
+
+calc() {
+  echo "$*" | bc
+}

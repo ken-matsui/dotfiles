@@ -1,15 +1,21 @@
+#!/usr/bin/env sh
+
 ##################################
 # Functions
 ##################################
 
 alias sizeof='du -sh'
 
-function info() {
+command_exists() {
+  command -v "$1" >/dev/null 2>&1
+}
+
+info() {
   printf '\033[0;34m[INFO]: %s\033[0m\n' "$*"
 }
-function warn() {
+warn() {
   printf '\033[0;33m[WARNING]: %s\033[0m\n' "$*"
 }
-function err() {
+err() {
   printf '\033[0;31m[ERROR]: %s\033[0m\n' "$*"
 }

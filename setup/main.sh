@@ -6,11 +6,11 @@ run() {
   bash $1
 }
 
-if [[ "$OSTYPE" == darwin* ]]; then
+if [ "$(uname)" == Darwin ]; then
   for file in ${DOTSPATH}/setup/macos/*.sh; do
     run $file
   done
-elif [[ "$OSTYPE" == linux* ]]; then
+elif [ "$(uname)" == Linux ]; then
   run ${DOTSPATH}/setup/manjaro.sh
 fi
 

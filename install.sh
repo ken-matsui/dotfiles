@@ -4,7 +4,7 @@ set -eu
 cd $HOME
 echo 'Installing dotfiles ...'
 
-if [[ "$OSTYPE" == darwin* ]]; then
+if [ "$(uname)" == Darwin ]; then
   # Ask for the administrator password upfront
   printf 'Password for your PC [\e[32m?\e[m] ' && sudo -v
   # Keep-alive: update existing `sudo` time stamp until this script has finished
@@ -14,11 +14,11 @@ if [[ "$OSTYPE" == darwin* ]]; then
   echo 'Installing Xcode command line tools ...'
   check="$(xcode-select --install 2>&1)"
   str='xcode-select: note: install requested for command line developer tools'
-  while [[ $check == $str ]]; do
+  while [ "$check" == "$str" ]; do
     check="$(xcode-select --install 2>&1)"
     sleep 1
   done
-elif [[ "$OSTYPE" == linux* ]]; then
+elif [ "$(uname)" == Linux ]; then
   # https://askubuntu.com/a/459425
   local _distrotype="$(awk -F= '/^NAME/{print $2}' /etc/os-release)"
   if [ "$_distrotype" != '"Manjaro Linux"' ]; then
@@ -26,7 +26,7 @@ elif [[ "$OSTYPE" == linux* ]]; then
     exit 1
   fi
 else
-  echo "'$OSTYPE' is not supported."
+  echo "'$(uname)' is not supported."
   exit 1
 fi
 

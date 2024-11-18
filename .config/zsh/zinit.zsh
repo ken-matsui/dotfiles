@@ -33,7 +33,7 @@ export YSU_MESSAGE_POSITION='after'
 autoload -Uz is-at-least
 if is-at-least 5.1; then
     zinit light MichaelAquilina/zsh-auto-notify
-    export AUTO_NOTIFY_IGNORE+=("hx")
+    AUTO_NOTIFY_IGNORE+=("hx")
 
     # FIXME: zsh-vi-mode messes up ^R history search
     # zinit ice depth=1

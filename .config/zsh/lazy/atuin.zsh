@@ -8,8 +8,7 @@ if (( $+commands[atuin] )); then
 
   # incognito mode
   incognito () {
-    if [[ $1 = disable ]] || [[ $1 == d ]]
-    then
+    if [[ $1 = disable ]] || [[ $1 == d ]]; then
         add-zsh-hook precmd _atuin_precmd
         add-zsh-hook preexec _atuin_preexec
         unset ATUIN_INCOGNITO

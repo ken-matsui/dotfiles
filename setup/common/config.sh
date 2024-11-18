@@ -13,6 +13,6 @@ backup_and_link .config
 backup_and_link .ssh
 backup_and_link .vim
 backup_and_link .w3m
-backup_and_link .bashrc
+backup_and_link .bash_profile
 backup_and_link .zshenv
 backup_and_link .zshrc

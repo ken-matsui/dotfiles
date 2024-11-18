@@ -1,6 +1,3 @@
-#
-# Completions
-#
 if (( $+commands[brew] )); then
   # Add completion path
   FPATH=$HOMEBREW_PREFIX/share/zsh/site-functions:$FPATH

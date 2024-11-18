@@ -8,6 +8,7 @@ case "$(uname)" in
         _ssh_agent_socket="$HOME/.1password/agent.sock"
         ;;
     *)
+        echo "Error: $0: unknown platform: $(uname)" >&2
         return 1
         ;;
 esac

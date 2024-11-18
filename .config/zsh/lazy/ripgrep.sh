@@ -1,3 +1,5 @@
 #!/usr/bin/env sh
 
-alias rg='rg --hidden'
+if command_exists rg; then
+  alias rg='rg --hidden'
+fi

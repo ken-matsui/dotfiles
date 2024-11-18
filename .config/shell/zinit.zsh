@@ -36,6 +36,8 @@ if is-at-least 5.1; then
     AUTO_NOTIFY_IGNORE+=("hx")
 
     # FIXME: zsh-vi-mode messes up ^R history search
+    # https://github.com/ohmyzsh/ohmyzsh/issues/5213
+    # One possible solution is to source this much earlier.
     # zinit ice depth=1
     # zinit light jeffreytse/zsh-vi-mode
 fi

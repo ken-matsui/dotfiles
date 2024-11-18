@@ -1,3 +1,3 @@
 if command_exists starship; then
-  eval "$(starship init zsh)"
+  eval "$(starship init bash)"
 fi

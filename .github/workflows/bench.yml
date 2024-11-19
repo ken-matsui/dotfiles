@@ -91,9 +91,6 @@ jobs:
           mkdir -p ~/.config
           cp -r .config/shell ~/.config
 
-      - name: Set TERM environment variable
-        run: echo "export TERM=xterm-256color" >> $GITHUB_ENV
-
       - name: Isolate plugin installation from benchmark
         run: zsh -c "source ~/.zshrc"
 
@@ -102,7 +99,7 @@ jobs:
 
       - name: Run zsh-bench
         run: |
-          ./zsh-bench/zsh-bench --iters 3 | \
+          ./zsh-bench/zsh-bench --iters 1 | \
           tee full.txt | \
           tail -n 5 | \
           sed 's/_ms//' | \

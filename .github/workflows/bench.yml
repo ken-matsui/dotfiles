@@ -91,14 +91,14 @@ jobs:
           mkdir -p ~/.config
           cp -r .config/shell ~/.config
 
+      - name: Set TERM environment variable
+        run: echo "export TERM=xterm-256color" >> $GITHUB_ENV
+
       - name: Isolate plugin installation from benchmark
         run: zsh -c "source ~/.zshrc"
 
       - name: Setup zsh-bench
         run: git clone https://github.com/romkatv/zsh-bench
-
-      - name: Set TERM environment variable
-        run: echo "export TERM=xterm-256color" >> $GITHUB_ENV
 
       - name: Run zsh-bench
         run: |

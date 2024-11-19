@@ -117,7 +117,8 @@ jobs:
 
   upload:
     runs-on: ubuntu-24.04
-    needs: [nvim, zsh]
+    # needs: [nvim, zsh]
+    needs: nvim
     steps:
       - uses: actions/checkout@v4
 

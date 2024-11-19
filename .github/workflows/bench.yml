@@ -72,53 +72,52 @@ jobs:
           path: nvim-bench.json
           compression-level: 0
 
-  # zsh:
-  #   runs-on: ubuntu-24.04
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #
-  #     - name: Setup Zsh
-  #       run: sudo apt-get update && sudo apt-get install -y zsh
-  #
-  #     - name: Show Zsh version
-  #       run: zsh --version
-  #
-  #     - name: Setup config files
-  #       run: |
-  #         cp .bash_profile ~/
-  #         cp .zshenv ~/
-  #         cp .zshrc ~/
-  #         mkdir -p ~/.config
-  #         cp -r .config/shell ~/.config
-  #
-  #     - name: Isolate plugin installation from benchmark
-  #       run: zsh -c "exit"
-  #
-  #     - name: Setup zsh-bench
-  #       run: git clone https://github.com/romkatv/zsh-bench
-  #
-  #     - name: Run zsh-bench
-  #       run: |
-  #         ./zsh-bench/zsh-bench | \
-  #         tee full.txt | \
-  #         tail -n 5 | \
-  #         sed 's/_ms//' | \
-  #         awk -F '=' '{print "{\"name\": \"Zsh: " $1 "\", \"unit\": \"ms\", \"value\": " $2 "}"}' | \
-  #         jq -s . > zsh-bench.json
-  #
-  #     - name: Show benchmark result
-  #       run: cat full.txt
-  #
-  #     - uses: actions/upload-artifact@v4
-  #       with:
-  #         name: zsh-bench
-  #         path: zsh-bench.json
-  #         compression-level: 0
+  zsh:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Zsh
+        run: sudo apt-get update && sudo apt-get install -y zsh
+
+      - name: Show Zsh version
+        run: zsh --version
+
+      - name: Setup config files
+        run: |
+          cp .bash_profile ~/
+          cp .zshenv ~/
+          cp .zshrc ~/
+          mkdir -p ~/.config
+          cp -r .config/shell ~/.config
+
+      - name: Isolate plugin installation from benchmark
+        run: zsh -c "exit"
+
+      - name: Setup zsh-bench
+        run: git clone https://github.com/romkatv/zsh-bench
+
+      - name: Run zsh-bench
+        run: |
+          ./zsh-bench/zsh-bench | \
+          tee full.txt | \
+          tail -n 5 | \
+          sed 's/_ms//' | \
+          awk -F '=' '{print "{\"name\": \"Zsh: " $1 "\", \"unit\": \"ms\", \"value\": " $2 "}"}' | \
+          jq -s . > zsh-bench.json
+
+      - name: Show benchmark result
+        run: cat full.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zsh-bench
+          path: zsh-bench.json
+          compression-level: 0
 
   upload:
     runs-on: ubuntu-24.04
-    # needs: [nvim, zsh]
-    needs: nvim
+    needs: [nvim, zsh]
     steps:
       - uses: actions/checkout@v4
 

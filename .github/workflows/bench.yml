@@ -1,4 +1,4 @@
-name: Neovim
+name: Benchmark
 
 on:
   push:
@@ -22,7 +22,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  bench:
+  nvim:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4

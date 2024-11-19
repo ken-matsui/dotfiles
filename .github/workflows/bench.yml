@@ -92,7 +92,7 @@ jobs:
           cp -r .config/shell ~/.config
 
       - name: Isolate plugin installation from benchmark
-        run: zsh -c "exit"
+        run: zsh -c "source ~/.zshrc"
 
       - name: Setup zsh-bench
         run: git clone https://github.com/romkatv/zsh-bench

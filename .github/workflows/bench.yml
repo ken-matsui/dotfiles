@@ -59,7 +59,7 @@ jobs:
           tee full.txt | \
           awk '/Total Average/ {print $3}' | \
           jq -R '{"name": "Neovim Total Average Startup Time", "unit": "msec", "value": (. | tonumber)}' | \
-          jq -s . > nvim.json
+          jq -s . > nvim-bench.json
         env:
           XDG_CONFIG_HOME: ${{ github.workspace }}/.config
 
@@ -68,19 +68,65 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: nvim
-          path: nvim.json
+          name: nvim-bench
+          path: nvim-bench.json
+          compression-level: 0
+
+  zsh:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Zsh
+        run: sudo apt-get update && sudo apt-get install -y zsh
+
+      - name: Show Zsh version
+        run: zsh --version
+
+      - name: Setup config files
+        run: |
+          cp .bash_profile ~/
+          cp .zshenv ~/
+          cp .zshrc ~/
+          mkdir -p ~/.config
+          cp -r .config/shell ~/.config
+
+      - name: Isolate plugin installation from benchmark
+        run: zsh -c "exit"
+
+      - name: Setup zsh-bench
+        run: git clone https://github.com/romkatv/zsh-bench
+
+      - name: Run zsh-bench
+        run: |
+          ./zsh-bench/zsh-bench | \
+          tee full.txt | \
+          tail -n 5 | \
+          sed 's/_ms//' | \
+          awk -F '=' '{print "{\"name\": \"Zsh: " $1 "\", \"unit\": \"ms\", \"value\": " $2 "}"}' | \
+          jq -s . > zsh-bench.json
+
+      - name: Show benchmark result
+        run: cat full.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zsh-bench
+          path: zsh-bench.json
           compression-level: 0
 
   upload:
     runs-on: ubuntu-24.04
-    needs: nvim
+    needs: [nvim, zsh]
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/download-artifact@v4
         with:
-          name: nvim
+          pattern: *-bench
+
+      - name: Merge benchmark results
+        run: jq -s '.[0] + .[1]' *-bench.json > bench.json
 
       - name: Download previous benchmark data
         uses: actions/cache@v4
@@ -93,6 +139,6 @@ jobs:
         with:
           name: Neovim Benchmark
           tool: 'customSmallerIsBetter'
-          output-file-path: nvim.json
+          output-file-path: bench.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
           auto-push: ${{ github.ref == 'refs/heads/main' }}

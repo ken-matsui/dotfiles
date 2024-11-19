@@ -16,7 +16,7 @@ command_exists() {
   command -v "$1" >/dev/null 2>&1
 }
 
-has_bash_or_zsh() {
+is_bash_or_zsh() {
   FILE="$1"
 
   case "$SHELL_NAME" in

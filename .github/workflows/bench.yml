@@ -99,7 +99,7 @@ jobs:
 
       - name: Run zsh-bench
         run: |
-          ./zsh-bench/zsh-bench | \
+          ./zsh-bench/zsh-bench --iters 3 | \
           tee full.txt | \
           tail -n 5 | \
           sed 's/_ms//' | \

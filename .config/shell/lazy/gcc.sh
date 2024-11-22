@@ -1,5 +1,9 @@
 #!/usr/bin/env sh
 
+if [ ! -d "$HOME/gcc" ]; then
+  return
+fi
+
 alias gcc_conf_debug='../configure --enable-languages=c++ --disable-error --disable-bootstrap --enable-checking'
 alias gcc_make_debug='make CXXFLAGS="-g3 -O0" -j8'
 

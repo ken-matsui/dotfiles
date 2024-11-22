@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1732286516642,
+  "lastUpdate": 1732286820980,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -1661,6 +1661,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 5757.2282,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "f58e247f80b4f6137bdceadb8760fa869e33dbec",
+          "message": "Shell: require_bash_or_zsh",
+          "timestamp": "2024-11-22T09:43:15-05:00",
+          "tree_id": "ca05dc0c0cd7a3a99f371abffd0648635c43b3ac",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/f58e247f80b4f6137bdceadb8760fa869e33dbec"
+        },
+        "date": 1732286820721,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 6367.0003,
             "unit": "msec"
           }
         ]

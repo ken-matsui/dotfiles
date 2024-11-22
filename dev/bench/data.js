@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1732286820980,
+  "lastUpdate": 1732286939814,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -1690,6 +1690,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 6367.0003,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "6a9526e5ac814f02aa4eea0cab96f8dff99bb6fe",
+          "message": "Shell: fix load condition for fzf",
+          "timestamp": "2024-11-22T09:44:16-05:00",
+          "tree_id": "a1b7231f3915bbfd36d512e1c46cb445df8c42ca",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/6a9526e5ac814f02aa4eea0cab96f8dff99bb6fe"
+        },
+        "date": 1732286938982,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 4680.1497,
             "unit": "msec"
           }
         ]

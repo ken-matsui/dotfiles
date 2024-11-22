@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 if command_exists atuin; then
-  if is_bash_or_zsh "$0"; then
+  if require_bash_or_zsh "$0"; then
     eval "$(atuin init "$SHELL_NAME" --disable-up-arrow)"
   else
     return 1

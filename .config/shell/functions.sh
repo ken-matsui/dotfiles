@@ -16,18 +16,22 @@ command_exists() {
   command -v "$1" >/dev/null 2>&1
 }
 
-is_bash_or_zsh() {
+is_bash() {
+  [ "$SHELL_NAME" = 'bash' ]
+}
+is_zsh() {
+  [ "$SHELL_NAME" = 'zsh' ]
+}
+
+require_bash_or_zsh() {
   FILE="$1"
 
-  case "$SHELL_NAME" in
-    bash|zsh)
-      return 0
-      ;;
-    *)
-      err "$FILE: Unsupported shell '$SHELL_NAME'. Please use bash or zsh."
-      return 1
-      ;;
-  esac
+  if is_bash || is_zsh; then
+    return 0
+  else
+    err "$FILE: Unsupported shell '$SHELL_NAME'. Please use bash or zsh."
+    return 1
+  fi
 }
 
 calc() {

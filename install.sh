@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 set -eu
 
-cd $HOME
+cd "$HOME"
 echo 'Installing dotfiles ...'
 
 case "$(uname)" in
@@ -15,7 +15,7 @@ case "$(uname)" in
     echo 'Installing Xcode command line tools ...'
     check="$(xcode-select --install 2>&1)"
     str='xcode-select: note: install requested for command line developer tools'
-    while [ "$check" == "$str" ]; do
+    while [ "$check" = "$str" ]; do
       check="$(xcode-select --install 2>&1)"
       sleep 1
     done
@@ -23,11 +23,13 @@ case "$(uname)" in
 
   Linux)
     # https://askubuntu.com/a/459425
-    local _distrotype="$(awk -F= '/^NAME/{print $2}' /etc/os-release)"
+    _distrotype="$(awk -F= '/^NAME/{print $2}' /etc/os-release)"
     if [ "$_distrotype" != '"Manjaro Linux"' ]; then
       echo "$_distrotype is not supported."
+      unset _distrotype
       exit 1
     fi
+    unset _distrotype
     ;;
 
   *)
@@ -38,8 +40,8 @@ esac
 
 echo 'Downloading ken-matsui/dotfiles ...'
 git clone https://github.com/ken-matsui/dotfiles.git
-export DOTSPATH="$(cd $(dirname $0); pwd)/dotfiles"
-bash ${DOTSPATH}/setup/main.sh
+export DOTSPATH="$(cd "$(dirname "$0")"; pwd)/dotfiles"
+bash "$DOTSPATH/setup/main.sh"
 brew bundle --global
 
 printf '\u2728\e[1;33m Dotfiles Installation Done \u2728 \e[m\n'

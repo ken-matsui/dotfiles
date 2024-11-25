@@ -7,8 +7,6 @@ DOTSPATH="${DOTSPATH:-$HOME/dotfiles}"
 backup_and_link() {
   TARGET="${2:+$2/$(basename "$1")}"
   TARGET="${TARGET:-$HOME/$1}"
-  # TARGET=$HOME/Library/Application Support/Code on Darwin
-  # TARGET=$HOME/.config/Code on Linux
 
   if [ -e "$TARGET" ]; then
     echo "Backing up $TARGET to $TARGET.bak ..."
@@ -19,8 +17,10 @@ backup_and_link() {
 }
 
 if [ "$(uname)" = Darwin ]; then
+  # TARGET=$HOME/Library/Application Support/Code
   backup_and_link .config/Code "$HOME/Library/Application Support"
 elif [ "$(uname)" = Linux ]; then
+  # TARGET=$HOME/.config/Code
   backup_and_link .config/Code
 fi
 

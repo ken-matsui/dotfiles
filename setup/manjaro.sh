@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 set -eu
 
 sudo pacman -Syu
@@ -52,5 +52,5 @@ pamac build \
   standardnotes-desktop \
   topgrade \
 
-chsh -s $(which zsh)
+chsh -s "$(which zsh)"
 fprintd-enroll

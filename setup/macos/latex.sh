@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 set -eu
 
 # https://github.com/James-Yu/LaTeX-Workshop/issues/376#issuecomment-398591211

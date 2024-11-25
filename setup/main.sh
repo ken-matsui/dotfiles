@@ -1,19 +1,19 @@
-#!/bin/bash
+#!/bin/sh
 set -eu
 
 run() {
   echo "Running $1 ..."
-  bash $1
+  bash "$1"
 }
 
-if [ "$(uname)" == Darwin ]; then
-  for file in ${DOTSPATH}/setup/macos/*.sh; do
+if [ "$(uname)" = Darwin ]; then
+  for file in "$DOTSPATH"/setup/macos/*.sh; do
     run $file
   done
-elif [ "$(uname)" == Linux ]; then
-  run ${DOTSPATH}/setup/manjaro.sh
+elif [ "$(uname)" = Linux ]; then
+  run "$DOTSPATH"/setup/manjaro.sh
 fi
 
-for file in ${DOTSPATH}/setup/common/*.sh; do
+for file in "$DOTSPATH"/setup/common/*.sh; do
   run $file
 done

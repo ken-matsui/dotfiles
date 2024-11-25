@@ -19,24 +19,19 @@
 
 https://ken-matsui.github.io/dotfiles/dev/bench/
 
-## Installation
+## Full Installation
 
 ```sh
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main/install.sh)"
 ```
 
-### Individual (non-intrusive) Installation
+## Individual (non-intrusive) Installation
 
 ```sh
 cd ~
 git clone https://github.com/ken-matsui/dotfiles.git
-ln -s ~/dotfiles/.config/nvim ~/.config/nvim  # directory
-ln -s ~/dotfiles/.config/starship.toml ~/.config/starship.toml  # file
-ln -s ~/dotfiles/.ssh/config ~/.ssh/config  # ssh
-ln -s ~/dotfiles/.config/Code/User/settings.json ~/Library/Application\ Support/Code/User/settings.json  # VSCode on macOS
-ln -s ~/dotfiles/.config/Code/User/keybindings.json ~/.config/Code/User/keybindings.json  # VSCode on Linux
-ln -s ~/dotfiles/.Brewfile ~/.Brewfile  # Homebrew on macOS
-ln -s ~/dotfiles/.bash_profile ~/.bash_profile
+cd dotfiles
+bash setup/common/config.sh
 brew bundle --global
 ```
 

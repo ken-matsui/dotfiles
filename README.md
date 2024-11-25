@@ -25,14 +25,13 @@ https://ken-matsui.github.io/dotfiles/dev/bench/
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main/install.sh)"
 ```
 
-## Individual (non-intrusive) Installation
+## Config-only Installation
 
 ```sh
 cd ~
 git clone https://github.com/ken-matsui/dotfiles.git
 cd dotfiles
 bash setup/common/config.sh
-brew bundle --global
 ```
 
 ## Additional Settings

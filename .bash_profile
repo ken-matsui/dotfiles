@@ -8,11 +8,12 @@ export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
 
 export SHELL_CONFIG_HOME="$XDG_CONFIG_HOME/shell"
 export SHELL_NAME="${SHELL##*/}"
+export OS_NAME="$(uname -s)"
 
 #
 # Browser
 #
-if [[ "$OSTYPE" == darwin* ]]; then
+if [ "$OS_NAME" = Darwin ]; then
   export BROWSER='open'
 fi
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-case "$(uname)" in
+case "$OS_NAME" in
     Darwin)
         _ssh_agent_socket="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
         ;;
@@ -8,7 +8,7 @@ case "$(uname)" in
         _ssh_agent_socket="$HOME/.1password/agent.sock"
         ;;
     *)
-        echo "Error: $0: unknown platform: $(uname)" >&2
+        echo "Error: $0: unknown platform: $OS_NAME" >&2
         return 1
         ;;
 esac

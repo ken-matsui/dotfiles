@@ -18,10 +18,11 @@ backup_and_link() {
   ln -s "$DOTSPATH/$1" "$TARGET"
 }
 
-if [ "$(uname)" = Darwin ]; then
+OS_NAME="$(uname -s)"
+if [ "$OS_NAME" = Darwin ]; then
   # TARGET=$HOME/Library/Application Support/Code
   backup_and_link .config/Code "$HOME/Library/Application Support"
-elif [ "$(uname)" = Linux ]; then
+elif [ "$OS_NAME" = Linux ]; then
   # TARGET=$HOME/.config/Code
   backup_and_link .config/Code
 fi

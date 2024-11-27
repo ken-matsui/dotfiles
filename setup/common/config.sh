@@ -45,7 +45,5 @@ backup_and_link .config/waybar
 backup_and_link .config/starship.toml
 backup_and_link .ssh
 backup_and_link .Brewfile
-backup_and_link .bash_profile
-backup_and_link .bashrc
 backup_and_link .zshenv
 backup_and_link .zshrc

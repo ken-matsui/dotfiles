@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1732687476862,
+  "lastUpdate": 1732687798805,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -2270,6 +2270,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 6280.8964,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "ae4d9e6c18ffc41f7e27cc46327b5b536d2c2356",
+          "message": "Zinit, Neovim: option to not load plugins",
+          "timestamp": "2024-11-27T01:07:59-05:00",
+          "tree_id": "ee08217ded24794c4f83678cc9c66426b74b7d89",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/ae4d9e6c18ffc41f7e27cc46327b5b536d2c2356"
+        },
+        "date": 1732687798332,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 6359.631,
             "unit": "msec"
           }
         ]

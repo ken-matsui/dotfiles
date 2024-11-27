@@ -9,8 +9,10 @@ backup_and_link() {
   TARGET="${TARGET:-$HOME/$1}"
 
   if [ -e "$TARGET" ]; then
-    echo "Backing up $TARGET to $TARGET.bak ..."
-    mv "$TARGET" "$TARGET.bak"
+    TIMESTAMP="$(date +%Y-%m-%d_%H-%M-%S)"
+    BACKUP="$TARGET.bak.$TIMESTAMP"
+    echo "Backing up $TARGET to $BACKUP ..."
+    mv "$TARGET" "$BACKUP"
   fi
   echo "Linking $DOTSPATH/$1 to $TARGET ..."
   ln -s "$DOTSPATH/$1" "$TARGET"

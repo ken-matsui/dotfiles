@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1732691553921,
+  "lastUpdate": 1732751492485,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -2328,6 +2328,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 6364.2568,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "e0d49d0826be85ef490dca20bf74f69dd3fc7752",
+          "message": "Shell: removed bash support",
+          "timestamp": "2024-11-27T18:49:12-05:00",
+          "tree_id": "6fd745ba871603bf6cd884eedb51dd5def0f6487",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/e0d49d0826be85ef490dca20bf74f69dd3fc7752"
+        },
+        "date": 1732751492180,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 7553.0496,
             "unit": "msec"
           }
         ]

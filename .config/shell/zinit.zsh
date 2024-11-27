@@ -3,6 +3,7 @@
 ##################################
 
 declare -A ZINIT
+ZINIT[PLUGINS_DIR]="$SHELL_CONFIG_HOME/plugins"
 ZINIT[NO_ALIASES]=1
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"

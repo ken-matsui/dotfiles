@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1732687353117,
+  "lastUpdate": 1732687476862,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -2241,6 +2241,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 6247.6685,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "3b5f1a149d99eab5489ce7101c760b170c325857",
+          "message": "Revert \"Zinit: XDG_DATA_HOME should always be available\"\n\nThis reverts commit 9d3cd7727d06e8e679382e339f5acf522f57f679.",
+          "timestamp": "2024-11-27T01:01:37-05:00",
+          "tree_id": "f348157687b6c497209237862eb8b0d6b8258a17",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/3b5f1a149d99eab5489ce7101c760b170c325857"
+        },
+        "date": 1732687476593,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 6280.8964,
             "unit": "msec"
           }
         ]

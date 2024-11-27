@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1732686031019,
+  "lastUpdate": 1732686140951,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -2009,6 +2009,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 6198.2026,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "27560dbab00f3513d1ea064416de8343c9f758d9",
+          "message": "Zinit: remove unnecessary compinit config",
+          "timestamp": "2024-11-27T00:40:23-05:00",
+          "tree_id": "345d9e1bac94ee91ef2884a3d2f460f83f0f58e1",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/27560dbab00f3513d1ea064416de8343c9f758d9"
+        },
+        "date": 1732686140492,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 5242.506,
             "unit": "msec"
           }
         ]

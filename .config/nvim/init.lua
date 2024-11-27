@@ -53,7 +53,10 @@ vim.api.nvim_set_keymap(
 	{ silent = true, noremap = true, desc = "Close All Sub-windows" }
 )
 
-require("config.lazy")
+local no_lazy = os.getenv("NO_LAZY")
+if no_lazy ~= "1" then
+	require("config.lazy")
+end
 
 -- Must be written at the last.  see :help 'secure'.
 vim.opt.secure = true

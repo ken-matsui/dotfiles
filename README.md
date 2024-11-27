@@ -15,11 +15,9 @@
 
 </div>
 
-## Benchmarks
+## Installation
 
-https://ken-matsui.github.io/dotfiles/dev/bench/
-
-## Config-only Installation (recommended)
+### Config-only (recommended)
 
 ```sh
 cd ~
@@ -28,7 +26,7 @@ cd dotfiles
 bash setup/common/config.sh
 ```
 
-## Full Installation
+### Full
 
 Use this way only when you have a fresh environment.
 

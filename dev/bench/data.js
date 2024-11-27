@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1732686877935,
+  "lastUpdate": 1732687240951,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -2183,6 +2183,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 6157.161,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "145b084e4999519c04ba4710bedd867d2309daae",
+          "message": "Zinit: save plugins in .config/shell",
+          "timestamp": "2024-11-27T00:58:37-05:00",
+          "tree_id": "f348157687b6c497209237862eb8b0d6b8258a17",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/145b084e4999519c04ba4710bedd867d2309daae"
+        },
+        "date": 1732687240712,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 6289.8148,
             "unit": "msec"
           }
         ]

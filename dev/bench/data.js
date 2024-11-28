@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1732753289519,
+  "lastUpdate": 1732764189682,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -2473,6 +2473,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 6248.6008,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "f140dd4e0812b508cc7bbdb9ba47692097bac072",
+          "message": "Shell: move TODOs from README",
+          "timestamp": "2024-11-27T22:20:33-05:00",
+          "tree_id": "94256eaeb77a0905ee89a9a34ac9ee3a20973cd2",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/f140dd4e0812b508cc7bbdb9ba47692097bac072"
+        },
+        "date": 1732764189375,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 7902.9196,
             "unit": "msec"
           }
         ]

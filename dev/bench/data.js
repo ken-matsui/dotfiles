@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1732751492485,
+  "lastUpdate": 1732752309859,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -2357,6 +2357,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 7553.0496,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "118e1e991c4a5fe1f486f36c33b6db4e14da3fb4",
+          "message": "Nvim: change lazypath",
+          "timestamp": "2024-11-27T19:02:54-05:00",
+          "tree_id": "b3776531b0735a57abc272ceb574e89c45474916",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/118e1e991c4a5fe1f486f36c33b6db4e14da3fb4"
+        },
+        "date": 1732752309257,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 6213.8727,
             "unit": "msec"
           }
         ]

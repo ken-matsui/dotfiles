@@ -6,11 +6,12 @@ run() {
   "$1"
 }
 
-if [ "$(uname)" = Darwin ]; then
+OS_NAME="$(uname -s)"
+if [ "$OS_NAME" = Darwin ]; then
   for file in "$DOTSPATH"/setup/macos/*.sh; do
     run $file
   done
-elif [ "$(uname)" = Linux ]; then
+elif [ "$OS_NAME" = Linux ]; then
   run "$DOTSPATH"/setup/manjaro.sh
 fi
 

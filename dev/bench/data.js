@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1732752309859,
+  "lastUpdate": 1732752508817,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -2386,6 +2386,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 6213.8727,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "0ba3e463e98cf2ff780b12b630aa54a9fee75278",
+          "message": "Zinit: change BIN_DIR",
+          "timestamp": "2024-11-27T19:06:30-05:00",
+          "tree_id": "1caafea9a5427d6b55b98a8c2686cadd8981fcd9",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/0ba3e463e98cf2ff780b12b630aa54a9fee75278"
+        },
+        "date": 1732752507926,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 4600.9874,
             "unit": "msec"
           }
         ]

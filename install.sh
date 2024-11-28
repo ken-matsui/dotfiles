@@ -4,7 +4,8 @@ set -eu
 cd "$HOME"
 echo 'Installing dotfiles ...'
 
-case "$(uname)" in
+OS_NAME="$(uname -s)"
+case "$OS_NAME" in
   Darwin)
     # Ask for the administrator password upfront
     printf 'Password for your PC [\e[32m?\e[m] ' && sudo -v
@@ -33,7 +34,7 @@ case "$(uname)" in
     ;;
 
   *)
-    echo "'$(uname)' is not supported."
+    echo "'$OS_NAME' is not supported."
     exit 1
     ;;
 esac

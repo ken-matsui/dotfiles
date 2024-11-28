@@ -3,7 +3,7 @@ set -eu
 
 run() {
   echo "Running $1 ..."
-  bash "$1"
+  "$1"
 }
 
 if [ "$(uname)" = Darwin ]; then

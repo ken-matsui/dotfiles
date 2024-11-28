@@ -41,7 +41,7 @@ esac
 echo 'Downloading ken-matsui/dotfiles ...'
 git clone https://github.com/ken-matsui/dotfiles.git
 export DOTSPATH="$(cd "$(dirname "$0")"; pwd)/dotfiles"
-bash "$DOTSPATH/setup/main.sh"
+"$DOTSPATH"/setup/main.sh
 brew bundle --global
 
 printf '\u2728\e[1;33m Dotfiles Installation Done \u2728 \e[m\n'

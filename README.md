@@ -22,8 +22,7 @@
 ```sh
 cd ~
 git clone https://github.com/ken-matsui/dotfiles.git
-cd dotfiles
-bash setup/common/config.sh
+./dotfiles/setup/common/config.sh
 ```
 
 ### Full
@@ -33,61 +32,6 @@ Use this way only when you have a fresh environment.
 ```sh
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main/install.sh)"
 ```
-
-## Additional Settings
-
-### Both OS
-
-#### 1Password
-
-* Settings -> Developer -> Enable `Use the SSH agent`
-* Settings -> Developer -> Enable `Integrate with 1Password CLI`
-
-### macOS
-
-#### System Settings
-
-* System Settings -> trackpad -> Trackpad speed: Fast
-* System Settings -> Keyboard -> Keyboard -> Modifier Keys -> Caps Lock Key -> Control
-* System Settings -> Dock & Menu Bar -> Spotlight -> Show in Menu Bar -> disable
-* System Settings -> Dock & Menu Bar -> Wi-Fi -> Show in Menu Bar -> disable
-* System Settings -> Dock & Menu Bar -> Bluetooth -> Show in Menu Bar -> disable
-* System Settings -> Dock & Menu Bar -> Battery -> Show Percentage
-* System Settings -> Dock & Menu Bar -> Clock -> Show date -> `always`
-
-#### Things 3
-
-* Settings -> Quick Entry -> Enable shortcut for Quick Entry -> <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>T</kbd>
-
-### Manjaro (TODOs)
-
-* SSH
-  * Copy `public key` in 1Password to `~/.ssh/authorized_keys`
-  * Link `sshd_config.d/*` to `/etc/ssh/sshd_config.d/`
-  * sudo systemctl start sshd.service
-
-* Find trash command
-  * https://unix.stackexchange.com/q/42757
-  * https://github.com/andreafrancia/trash-cli/
-  * https://github.com/nateshmbhat/rm-trash
-
-### Ubuntu (TODO: migrate to Manjaro)
-
-#### Settings
-
-* Keyboard -> Keyboard Shortcuts -> View and Customize Shortcuts -> Typing -> Switch to next input source -> <kbd>Ctrl</kbd> + <kbd>Space</kbd> (automatically applies to `Switch to previous input source`: <kbd>Alt</kbd> + <kbd>Ctrl</kbd> + <kbd>Space</kbd>)
-* Keyboard -> Keyboard Shortcuts -> View and Customize Shortcuts -> Navigation -> Move to workspace on the left -> <kbd>Super</kbd> + <kbd>Left</kbd>.
-* Keyboard -> Keyboard Shortcuts -> View and Customize Shortcuts -> Navigation -> Move to workspace on the right -> <kbd>Super</kbd> + <kbd>Right</kbd>.
-
-#### Gnome Tweaks
-
-* Keyboard & Mouse -> Mouse Click Emulation -> Enable `Fingers`
-
-#### Remap Keys
-
-* Open `input-remapper`
-* `Prior` (`PageUp`) -> `KEY_LEFT`
-* `Next` (`PageDown`) -> `KEY_RIGHT`
 
 #### Manual Font Installation
 

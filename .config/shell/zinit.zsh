@@ -6,13 +6,13 @@ if [ "$NO_ZINIT" = '1' ]; then
 fi
 
 declare -A ZINIT
-ZINIT[PLUGINS_DIR]="$SHELL_CONFIG_HOME/plugins"
+ZINIT[HOME_DIR]="$SHELL_CONFIG_HOME/zinit"
+ZINIT[BIN_DIR]="${ZINIT[HOME_DIR]}/zinit.git"
 ZINIT[NO_ALIASES]=1
 
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-[ ! -d "$ZINIT_HOME" ] && mkdir -p "$(dirname "$ZINIT_HOME")"
-[ ! -d "$ZINIT_HOME/.git" ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-source "${ZINIT_HOME}/zinit.zsh"
+[ ! -d "${ZINIT[BIN_DIR]}" ] && mkdir -p "$(dirname "${ZINIT[BIN_DIR]}")"
+[ ! -d "${ZINIT[BIN_DIR]}/.git" ] && git clone https://github.com/zdharma-continuum/zinit.git "${ZINIT[BIN_DIR]}"
+source "${ZINIT[BIN_DIR]}/zinit.zsh"
 
 zinit snippet PZTM::directory
 

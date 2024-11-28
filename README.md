@@ -16,7 +16,7 @@
 
 ## Installation
 
-### Config-only (recommended)
+### Config-only Installation (recommended)
 
 ```sh
 cd ~
@@ -24,7 +24,7 @@ git clone https://github.com/ken-matsui/dotfiles.git
 ./dotfiles/setup/common/config.sh
 ```
 
-### Full (only on macOS or Manjaro Sway)
+### Full Installation (only on macOS or Manjaro Sway)
 
 Use this way only when you have a fresh environment.
 

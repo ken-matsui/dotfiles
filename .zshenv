@@ -1,3 +1,7 @@
+if [ -f "$HOME/.zshenv-pre" ]; then
+  source "$HOME/.zshenv-pre"
+fi
+
 #
 # Environment Variables
 #

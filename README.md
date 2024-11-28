@@ -4,7 +4,6 @@
 
 |             |                                                                                       |
 | ----------- | :-----------------------------------------------------------------------------------: |
-| OS          | macOS / Manjaro Sway                                                                  |
 | Terminal    | Alacritty                                                                             |
 | Multiplexer | Tmux                                                                                  |
 | Shell       | Zsh                                                                                   |
@@ -25,7 +24,7 @@ git clone https://github.com/ken-matsui/dotfiles.git
 ./dotfiles/setup/common/config.sh
 ```
 
-### Full
+### Full (only on macOS or Manjaro Sway)
 
 Use this way only when you have a fresh environment.
 
@@ -33,9 +32,9 @@ Use this way only when you have a fresh environment.
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main/install.sh)"
 ```
 
-#### Manual Font Installation
+### Manual Font Installation (if necessary)
 
-##### JetBrains Mono Nerd
+#### JetBrains Mono Nerd
 
 ```sh
 cd /tmp
@@ -49,7 +48,7 @@ fc-cache -f -v
 fc-list | grep JetBrains
 ```
 
-##### Source Code Pro for Powerline
+#### Source Code Pro for Powerline
 
 ```sh
 cd /tmp

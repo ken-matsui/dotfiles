@@ -84,7 +84,8 @@
 	# Get all user.* config
 	me = config --get-regexp user
 	# Get my commits
-	mine = !git shortlog -sne --author=\"$(git config user.name)\"
+	mine = !git log --author=\"$(git config user.name)\"
+	stat-mine = !git shortlog -sne --author=\"$(git config user.name)\"
 	# Get a parent commit from the argument
 	parent = log --pretty=%P -n 1
 	# Remove newly gitignored files

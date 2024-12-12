@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1733969216747,
+  "lastUpdate": 1733969846321,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -2734,6 +2734,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 6262.6449,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "78456cea9c6ddfc1bb71bffd3b5c49cf752cd091",
+          "message": "Nvim: TSBufDisable requires filetype",
+          "timestamp": "2024-12-11T21:15:02-05:00",
+          "tree_id": "845047170840b0185c725348d75fc21140d8b215",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/78456cea9c6ddfc1bb71bffd3b5c49cf752cd091"
+        },
+        "date": 1733969845456,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 7164.2576,
             "unit": "msec"
           }
         ]

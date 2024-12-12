@@ -28,6 +28,16 @@ local function disable_plugins_for_large_files()
 		if filetype ~= "" then
 			vim.cmd("TSBufDisable " .. filetype)
 		end
+
+		-- Disable nvim-cmp
+		local cmp = require("cmp")
+		if cmp then
+			cmp.setup.buffer({ enabled = false })
+		end
+
+		vim.api.nvim_echo({
+			{ "Plugins disabled for large file: " .. filepath, "WarningMsg" },
+		}, false, {})
 	end
 end
 

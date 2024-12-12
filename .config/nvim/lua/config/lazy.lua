@@ -22,23 +22,26 @@ local function disable_plugins_for_large_files()
 	local max_filesize = 1024 * 1024 -- 1 MB
 	local filepath = vim.fn.expand("%:p")
 	local filesize = vim.fn.getfsize(filepath)
-	if filesize > max_filesize then
-		-- Disable treesitter
-		local filetype = vim.bo.filetype
-		if filetype ~= "" then
-			vim.cmd("TSBufDisable " .. filetype)
-		end
 
-		-- Disable nvim-cmp
-		local cmp = require("cmp")
-		if cmp then
-			cmp.setup.buffer({ enabled = false })
-		end
-
-		vim.api.nvim_echo({
-			{ "Plugins disabled for large file: " .. filepath, "WarningMsg" },
-		}, false, {})
+	if filesize <= max_filesize then
+		return
 	end
+
+	-- Disable treesitter
+	local filetype = vim.bo.filetype
+	if filetype ~= "" then
+		vim.cmd("TSBufDisable " .. filetype)
+	end
+
+	-- Disable nvim-cmp
+	local cmp = require("cmp")
+	if cmp then
+		cmp.setup.buffer({ enabled = false })
+	end
+
+	vim.api.nvim_echo({
+		{ "Plugins disabled for large file: " .. filepath, "WarningMsg" },
+	}, false, {})
 end
 
 -- Autocmd to check file size on BufRead

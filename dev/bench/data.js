@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1733969846321,
+  "lastUpdate": 1733970281295,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -2763,6 +2763,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 7164.2576,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "2dbd14d8ac3418a07ee7e49f2d376c8d8280b4a5",
+          "message": "Nvim: disable nvim-cmp on large files",
+          "timestamp": "2024-12-11T21:22:20-05:00",
+          "tree_id": "1ed0064a4506f2cf6b1998400d9415af86aa1655",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/2dbd14d8ac3418a07ee7e49f2d376c8d8280b4a5"
+        },
+        "date": 1733970280983,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 7821.0636,
             "unit": "msec"
           }
         ]

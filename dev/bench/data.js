@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1733451529433,
+  "lastUpdate": 1733969216747,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -2705,6 +2705,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 6788.8154,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "c5384e25f749129104e6f21af273d9ab7211b92c",
+          "message": "Nvim: disable treesitter on large files",
+          "timestamp": "2024-12-11T21:04:49-05:00",
+          "tree_id": "1a9ac88af0f05083c46dc96b319b78e4b109f410",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/c5384e25f749129104e6f21af273d9ab7211b92c"
+        },
+        "date": 1733969216309,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 6262.6449,
             "unit": "msec"
           }
         ]

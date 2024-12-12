@@ -24,7 +24,10 @@ local function disable_plugins_for_large_files()
 	local filesize = vim.fn.getfsize(filepath)
 	if filesize > max_filesize then
 		-- Disable treesitter
-		vim.cmd("TSBufDisable")
+		local filetype = vim.bo.filetype
+		if filetype ~= "" then
+			vim.cmd("TSBufDisable " .. filetype)
+		end
 	end
 end
 

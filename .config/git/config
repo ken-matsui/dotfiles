@@ -4,9 +4,7 @@
 [user]
 	name = Ken Matsui
 	email = 26405363+ken-matsui@users.noreply.github.com
-[includeIf "gitdir:/Users/"]
-	path = ~/.config/git/profiles/personal
-[includeIf "gitdir:/home/"]
+[include]
 	path = ~/.config/git/profiles/personal
 [includeIf "hasconfig:remote.*.url:git+ssh://*@gcc.gnu.org/git/**"]
 	path = ~/.config/git/emails/gcc

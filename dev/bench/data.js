@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1734485189319,
+  "lastUpdate": 1734485318305,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -2879,6 +2879,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 6501.6146,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "289896307b4f234896cf0cc1ff35c3520ef54082",
+          "message": "Nvim: disable treesitter illuminate",
+          "timestamp": "2024-12-17T20:25:10-05:00",
+          "tree_id": "ebc29193bb87e9f7dc68c7a41f02ce862ce5b845",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/289896307b4f234896cf0cc1ff35c3520ef54082"
+        },
+        "date": 1734485316732,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 6342.9069,
             "unit": "msec"
           }
         ]

@@ -337,7 +337,6 @@ return {
 		end,
 		config = function()
 			local prof = require("profile")
-
 			prof.instrument_autocmds()
 			prof.instrument("*")
 

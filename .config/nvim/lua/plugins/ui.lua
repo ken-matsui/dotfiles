@@ -329,4 +329,36 @@ return {
 			{ "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
 		},
 	},
+
+	{
+		"stevearc/profile.nvim",
+		cond = function()
+			return os.getenv("NVIM_PROFILE")
+		end,
+		config = function()
+			local prof = require("profile")
+
+			prof.instrument_autocmds()
+			prof.instrument("*")
+
+			local function toggle_profile()
+				if prof.is_recording() then
+					prof.stop()
+					vim.ui.input(
+						{ prompt = "Save profile to: ", completion = "file", default = "profile.json" },
+						function(filename)
+							if filename then
+								prof.export(filename)
+								vim.notify(string.format("Wrote %s", filename))
+							end
+						end
+					)
+				else
+					vim.notify("Profiling started")
+					prof.start("*")
+				end
+			end
+			vim.keymap.set("", "<Leader>P", toggle_profile)
+		end,
+	},
 }

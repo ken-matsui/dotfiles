@@ -109,6 +109,11 @@ return {
 		lazy = true,
 		event = "BufReadPost",
 		opts = {
+			providers = {
+				"lsp",
+				-- "treesitter", too slow
+				"regex",
+			},
 			filetypes_denylist = {
 				"NvimTree",
 			},

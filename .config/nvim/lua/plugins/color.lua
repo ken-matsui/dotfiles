@@ -44,6 +44,21 @@ return {
 			},
 			highlight = {
 				enable = true,
+				disable = function(lang, bufnr)
+					if lang == "c" or lang == "cpp" then
+						if vim.api.nvim_buf_line_count(bufnr) > 50000 then
+							local filepath = vim.fn.expand("%:p")
+							vim.api.nvim_echo({
+								{ "Treesitter disabled for large files: " .. filepath, "WarningMsg" },
+							}, false, {})
+
+							return true
+						end
+					end
+
+					return false
+				end,
+
 				-- Setting this to true will run `:h syntax` and tree-sitter at the same time.
 				-- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
 				-- Using this option may slow down your editor, and you may see some duplicate highlights.

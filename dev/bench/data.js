@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1733970397533,
+  "lastUpdate": 1734485071535,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -2821,6 +2821,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 6551.5707,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "0a59d8506b91ad5be25c391eb31ce532c54aea11",
+          "message": "Nvim: removed filesize handling",
+          "timestamp": "2024-12-17T20:22:27-05:00",
+          "tree_id": "2f0ae2b72d0cbfd3c15bf0060dfdc2ae2e8a8b5d",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/0a59d8506b91ad5be25c391eb31ce532c54aea11"
+        },
+        "date": 1734485071250,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 5432.4009,
             "unit": "msec"
           }
         ]

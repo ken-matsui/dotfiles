@@ -51,11 +51,9 @@ return {
 							vim.api.nvim_echo({
 								{ "Treesitter disabled for large files: " .. filepath, "WarningMsg" },
 							}, false, {})
-
 							return true
 						end
 					end
-
 					return false
 				end,
 

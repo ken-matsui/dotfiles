@@ -215,6 +215,7 @@ return {
 	--
 	{
 		"neovim/nvim-lspconfig",
+		version = "v1.*",
 		cmd = "LspInfo",
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {

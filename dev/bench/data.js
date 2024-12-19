@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1734573485795,
+  "lastUpdate": 1734573749524,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -3285,6 +3285,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 5804.3949,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "80c4fbfb47da512c885aa86a53aa5d20be53a85f",
+          "message": "Helix: removed as unnecessary",
+          "timestamp": "2024-12-18T21:00:33-05:00",
+          "tree_id": "d36ba04e0590d320560274d538cc1ffc1b8d16f7",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/80c4fbfb47da512c885aa86a53aa5d20be53a85f"
+        },
+        "date": 1734573749219,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 5865.4746,
             "unit": "msec"
           }
         ]

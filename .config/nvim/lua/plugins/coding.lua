@@ -108,6 +108,7 @@ return {
 
 	{
 		"stevearc/conform.nvim",
+		version = "v8.*",
 		cond = function()
 			return vim.fn.has("nvim-0.10") == 1
 		end,
@@ -139,6 +140,7 @@ return {
 
 	{
 		"lewis6991/gitsigns.nvim",
+		version = "v0.9.*",
 		lazy = true,
 		event = "BufReadPre",
 		opts = {
@@ -280,6 +282,7 @@ return {
 
 	{
 		"ray-x/lsp_signature.nvim",
+		version = "v0.3.*",
 		event = "VeryLazy",
 		opts = {},
 		config = function(_, opts)

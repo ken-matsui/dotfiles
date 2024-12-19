@@ -10,7 +10,7 @@
 | Prompt      | Starship                                                                              |
 | Editor      | Vim / Neovim                                                                          |
 | Theme       | Material Deep Ocean                                                                   |
-| Fonts       | Source Code Pro for Powerline (for tmux)<br>JetBrains Mono Nerd (for everything else)  |
+| Fonts       | Source Code Pro for Powerline (for tmux)<br>JetBrains Mono Nerd (for everything else) |
 
 </div>
 

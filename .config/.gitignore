@@ -15,12 +15,6 @@
 !waybar
 !zellij
 
-!1Password
-1Password/*
-!1Password/ssh
-1Password/ssh/*
-!1Password/ssh/agent.toml
-
 !Code
 Code/*
 !Code/User

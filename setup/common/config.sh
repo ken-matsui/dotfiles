@@ -30,7 +30,6 @@ fi
 backup_and_link .config/alacritty
 backup_and_link .config/atuin
 backup_and_link .config/git
-backup_and_link .config/helix
 backup_and_link .config/neomutt
 backup_and_link .config/nvim
 backup_and_link .config/shell

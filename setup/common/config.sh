@@ -27,14 +27,12 @@ elif [ "$OS_NAME" = Linux ]; then
   backup_and_link .config/Code
 fi
 
-backup_and_link .config/1Password
 backup_and_link .config/alacritty
 backup_and_link .config/atuin
 backup_and_link .config/git
 backup_and_link .config/helix
 backup_and_link .config/neomutt
 backup_and_link .config/nvim
-backup_and_link .config/psync
 backup_and_link .config/shell
 backup_and_link .config/sway
 backup_and_link .config/tmux

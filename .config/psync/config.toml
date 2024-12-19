@@ -1,7 +1,0 @@
-[cargo]
-crates = [
-    "cargo-update",
-    "cargo-cache",
-    "suggest-command-not-found",
-    "git-interactive-rebase-tool",
-]

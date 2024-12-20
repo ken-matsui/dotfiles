@@ -18,31 +18,58 @@ backup_and_link() {
   ln -s "$DOTSPATH/$1" "$TARGET"
 }
 
-mkdir -p "$HOME/.config"
+ALL='
+.config/alacritty
+.config/atuin
+.config/git
+.config/neomutt
+.config/nvim
+.config/shell
+.config/sway
+.config/tmux
+.config/topgrade
+.config/vim
+.config/w3m
+.config/waybar
+.config/starship.toml
+.ssh
+.Brewfile
+.zshenv
+.zshrc
+'
 
-OS_NAME="$(uname -s)"
-if [ "$OS_NAME" = Darwin ]; then
-  # TARGET=$HOME/Library/Application Support/Code
-  backup_and_link .config/Code "$HOME/Library/Application Support"
-elif [ "$OS_NAME" = Linux ]; then
-  # TARGET=$HOME/.config/Code
-  backup_and_link .config/Code
+MINIMAL='
+.config/git
+.config/nvim
+.config/shell
+.config/tmux
+.config/vim
+.config/starship.toml
+.zshenv
+.zshrc
+'
+
+if [ "$#" -eq 0 ]; then
+  ITEMS="$ALL"
+elif [ "$1" = 'minimal' ]; then
+  ITEMS="$MINIMAL"
+else
+  ITEMS="$1"
 fi
 
-backup_and_link .config/alacritty
-backup_and_link .config/atuin
-backup_and_link .config/git
-backup_and_link .config/neomutt
-backup_and_link .config/nvim
-backup_and_link .config/shell
-backup_and_link .config/sway
-backup_and_link .config/tmux
-backup_and_link .config/topgrade
-backup_and_link .config/vim
-backup_and_link .config/w3m
-backup_and_link .config/waybar
-backup_and_link .config/starship.toml
-backup_and_link .ssh
-backup_and_link .Brewfile
-backup_and_link .zshenv
-backup_and_link .zshrc
+mkdir -p "$HOME/.config"
+
+if [ "$1" = 'all' ] || [ "$1" = '.config/Code' ]; then
+  OS_NAME="$(uname -s)"
+  if [ "$OS_NAME" = Darwin ]; then
+    # TARGET=$HOME/Library/Application Support/Code
+    backup_and_link .config/Code "$HOME/Library/Application Support"
+  elif [ "$OS_NAME" = Linux ]; then
+    # TARGET=$HOME/.config/Code
+    backup_and_link .config/Code
+  fi
+fi
+
+for item in $ITEMS; do
+  backup_and_link "$item"
+done

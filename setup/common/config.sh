@@ -18,6 +18,8 @@ backup_and_link() {
   ln -s "$DOTSPATH/$1" "$TARGET"
 }
 
+mkdir -p "$HOME/.config"
+
 OS_NAME="$(uname -s)"
 if [ "$OS_NAME" = Darwin ]; then
   # TARGET=$HOME/Library/Application Support/Code

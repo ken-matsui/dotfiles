@@ -59,7 +59,7 @@ fi
 
 mkdir -p "$HOME/.config"
 
-if [ "$1" = 'all' ] || [ "$1" = '.config/Code' ]; then
+if [ "$#" -eq 0 ] || [ "$1" = '.config/Code' ]; then
   OS_NAME="$(uname -s)"
   if [ "$OS_NAME" = Darwin ]; then
     # TARGET=$HOME/Library/Application Support/Code

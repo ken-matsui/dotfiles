@@ -1,0 +1,5 @@
+!.Brewfile
+!/.config/
+!/.github/
+!/.ssh/
+!.zsh*

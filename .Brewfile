@@ -31,7 +31,7 @@ brew "lua-language-server"
 brew "ninja"
 brew "neomutt"
 brew "neovim"
-brew "node"
+brew "node"  # for copilot.vim
 brew "poetry"
 brew "python"
 brew "python-lsp-server"

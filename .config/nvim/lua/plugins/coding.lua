@@ -266,6 +266,10 @@ return {
 					vim.keymap.set({ "n", "x" }, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
 					vim.keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
 
+					-- Go to next/prev diagnostic warning/error
+					vim.keymap.set("n", "gn", "<cmd>lua vim.diagnostic.goto_next()<cr>", opts)
+					vim.keymap.set("n", "gp", "<cmd>lua vim.diagnostic.goto_prev()<cr>", opts)
+
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
 					if client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
 						-- Enable inlay hints by default

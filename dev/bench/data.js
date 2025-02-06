@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1738880618356,
+  "lastUpdate": 1738880708150,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -3517,6 +3517,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 5516.9945,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "0c61424196b959b697ad9b9a491b531fd1ee1494",
+          "message": "Nvim: add tpope/vim-fugitive",
+          "timestamp": "2025-02-06T17:22:37-05:00",
+          "tree_id": "7956d4078196cc8d3cb57b4dab0e925fb7bb339e",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/0c61424196b959b697ad9b9a491b531fd1ee1494"
+        },
+        "date": 1738880702197,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 2746.5955,
             "unit": "msec"
           }
         ]

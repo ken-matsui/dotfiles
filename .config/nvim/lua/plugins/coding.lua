@@ -50,6 +50,7 @@ return {
 
 	{
 		"windwp/nvim-ts-autotag",
+		event = { "BufReadPre", "BufNewFile" },
 		cond = function()
 			return vim.fn.has("nvim-0.9.5") == 1
 		end,

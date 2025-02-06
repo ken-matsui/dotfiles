@@ -138,11 +138,13 @@ return {
 	-- Git
 	--
 
+	"tpope/vim-fugitive",
+
 	{
 		"lewis6991/gitsigns.nvim",
-		version = "v0.9.*",
+		version = "v0.8.*",
 		lazy = true,
-		event = "BufReadPre",
+		-- event = "BufReadPre",
 		opts = {
 			-- GitLens-like blame line
 			current_line_blame = true,

@@ -1,31 +1,23 @@
 return {
-	-- if some code requires a module from an unloaded plugin, it will be automatically loaded.
-	-- So for api plugins like devicons, we can always set lazy=true
 	{
-		"nvim-tree/nvim-web-devicons",
-		lazy = true,
-	},
-
-	{
-		"nvim-tree/nvim-tree.lua",
-		lazy = false,
+		"preservim/nerdtree",
+		version = "7.*",
 		dependencies = {
-			"nvim-tree/nvim-web-devicons",
+			"ryanoasis/vim-devicons",
 		},
 		keys = {
-			{ "<Leader>e", "<Cmd>NvimTreeFindFileToggle<Cr>", desc = "Toggle NvimTree" },
+			{ "<Leader>e", "<Cmd>NERDTreeFind<Cr>", desc = "Toggle NERDTree" },
 		},
-		opts = {
-			sort_by = "case_sensitive",
-			diagnostics = {
-				enable = true,
-			},
-			actions = {
-				open_file = {
-					quit_on_open = true,
-				},
-			},
-		},
+		config = function()
+			vim.g.NERDTreeShowHidden = 1
+
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = "nerdtree",
+				callback = function()
+					vim.keymap.set("n", "<leader>e", "<Cmd>NERDTreeToggle<Cr>")
+				end,
+			})
+		end,
 	},
 
 	{
@@ -109,7 +101,7 @@ return {
 			},
 			extensions = {
 				"lazy",
-				"nvim-tree",
+				"nerdtree",
 				"quickfix",
 				"toggleterm",
 				"trouble",
@@ -188,18 +180,6 @@ return {
 	{
 		"j-hui/fidget.nvim",
 		version = "v1.*",
-		opts = {
-			integration = {
-				-- Dynamically offset Fidget's notifications window when the nvim-tree
-				-- window is open on the right side + the Fidget window is
-				-- "editor"-relative.
-				["nvim-tree"] = {
-					-- nvim-tree window is open on the left side; this
-					-- integration is not needed.
-					enable = false,
-				},
-			},
-		},
 	},
 
 	-- Completion

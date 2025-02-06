@@ -96,7 +96,6 @@ return {
 			require("ibl").setup({
 				exclude = {
 					filetypes = {
-						"nvim-tree",
 						"lazy",
 					},
 				},
@@ -128,7 +127,7 @@ return {
 				"regex",
 			},
 			filetypes_denylist = {
-				"NvimTree",
+				"nerdtree",
 			},
 		},
 		config = function(_, opts)

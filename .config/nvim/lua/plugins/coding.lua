@@ -212,6 +212,17 @@ return {
 		"akinsho/git-conflict.nvim",
 		version = "v2.*",
 		config = true,
+		cmd = {
+			"GitConflictChooseOurs",
+			"GitConflictChooseTheirs",
+			"GitConflictChooseBoth",
+			"GitConflictChooseNone",
+			"GitConflictListQf",
+		},
+		keys = {
+			{ "<Leader>gcn", "<Cmd>GitConflictNextConflict<Cr>", desc = "Next Git conflict" },
+			{ "<Leader>gcp", "<Cmd>GitConflictPrevConflict<Cr>", desc = "Previous Git conflict" },
+		},
 	},
 
 	--

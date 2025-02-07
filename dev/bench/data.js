@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1738956281712,
+  "lastUpdate": 1738956387942,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -3778,6 +3778,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 4902.0521,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "aef65d19aa46341bb4888d54b8b9f4e73c292d58",
+          "message": "Nvim: remove bufdelete.nvim & use custom bdelete behavor",
+          "timestamp": "2025-02-07T14:24:31-05:00",
+          "tree_id": "0bfca4a6fbf25a717952362a658439e6ce79a4d1",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/aef65d19aa46341bb4888d54b8b9f4e73c292d58"
+        },
+        "date": 1738956387496,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 4854.9373,
             "unit": "msec"
           }
         ]

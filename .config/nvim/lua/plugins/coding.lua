@@ -289,7 +289,15 @@ return {
 			})
 
 			if vim.fn.executable("clangd") == 1 then
-				lspconfig.clangd.setup({})
+				lspconfig.clangd.setup({
+					cmd = {
+						"clangd",
+						"--suggest-missing-includes",
+						"--header-insertion=never",
+						"--completion-style=detailed",
+						"--clang-tidy",
+					},
+				})
 			end
 			if vim.fn.executable("lua-language-server") == 1 then
 				lspconfig.lua_ls.setup({

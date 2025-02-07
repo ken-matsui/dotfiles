@@ -244,7 +244,6 @@ return {
 		lazy = true,
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			"BurntSushi/ripgrep",
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 			"tom-anders/telescope-vim-bookmarks.nvim",
 		},

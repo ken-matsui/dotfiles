@@ -272,7 +272,7 @@ return {
 					vim.keymap.set("n", "gp", "<cmd>lua vim.diagnostic.goto_prev()<cr>", opts)
 
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
-					if client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
+					if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
 						-- Enable inlay hints by default
 						vim.lsp.inlay_hint.enable(true, { bufnr = event.buf })
 

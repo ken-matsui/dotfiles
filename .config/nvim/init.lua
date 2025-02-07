@@ -46,6 +46,7 @@ vim.api.nvim_create_user_command("CloseAll", function()
 		end
 	end
 end, { desc = "Close All Sub-windows" })
+
 vim.api.nvim_set_keymap(
 	"n",
 	"<Leader>c",

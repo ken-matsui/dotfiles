@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1738956689508,
+  "lastUpdate": 1738957435620,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -3894,6 +3894,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 2521.7999,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "06e044721eb1fd4f77985ca60d40a8d6cae6d79d",
+          "message": "Nvim: fix some lua_ls warnings",
+          "timestamp": "2025-02-07T14:41:53-05:00",
+          "tree_id": "03301ba6714902d642875ccf999a8f92f33045b7",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/06e044721eb1fd4f77985ca60d40a8d6cae6d79d"
+        },
+        "date": 1738957434481,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 5803.4783,
             "unit": "msec"
           }
         ]

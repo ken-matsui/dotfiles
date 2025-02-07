@@ -43,7 +43,7 @@ brew "trash" if OS.mac?
 brew "universal-ctags"
 # brew "valgrind"
 brew "vhs"
-brew "w3m"
+brew "w3m"  # for neomutt
 brew "wget"
 brew "wrk"
 brew "youtube-dl"

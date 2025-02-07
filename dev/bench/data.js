@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1738957435620,
+  "lastUpdate": 1738957709024,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -3923,6 +3923,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 5803.4783,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "b60a83963e396237ba7dede2f98ea9833ce55850",
+          "message": "Nvim: remove incorrect ripgrep dependency",
+          "timestamp": "2025-02-07T14:46:47-05:00",
+          "tree_id": "06294f2e96753a659bd317af0f17ba35e50c638e",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/b60a83963e396237ba7dede2f98ea9833ce55850"
+        },
+        "date": 1738957708084,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 3275.7084,
             "unit": "msec"
           }
         ]

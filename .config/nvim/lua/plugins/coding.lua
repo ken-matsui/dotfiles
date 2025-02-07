@@ -14,6 +14,11 @@ return {
 	"farmergreg/vim-lastplace",
 
 	{
+		"bronson/vim-visual-star-search",
+		event = "VeryLazy",
+	},
+
+	{
 		"tpope/vim-repeat",
 		lazy = true,
 		event = "VeryLazy",

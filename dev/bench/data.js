@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1738958392007,
+  "lastUpdate": 1738958703085,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -3981,6 +3981,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 4973.6357,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "cb1fd9beb88c99b9d4256ba62f7a6c0d466ab232",
+          "message": "Nvim: set arguments for clangd",
+          "timestamp": "2025-02-07T15:03:03-05:00",
+          "tree_id": "d284aff0c2a4381c6f87242e0a28a3d8c16a71b3",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/cb1fd9beb88c99b9d4256ba62f7a6c0d466ab232"
+        },
+        "date": 1738958702623,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 5373.7443,
             "unit": "msec"
           }
         ]

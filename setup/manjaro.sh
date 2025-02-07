@@ -42,7 +42,6 @@ sudo pacman -S \
   starship \
   tmux \
   valgrind \
-  w3m \
   yt-dlp
 
 pamac build \

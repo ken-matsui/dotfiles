@@ -28,7 +28,6 @@ ALL='
 .config/tmux
 .config/topgrade
 .config/vim
-.config/w3m
 .config/waybar
 .config/starship.toml
 .ssh

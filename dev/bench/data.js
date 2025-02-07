@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1738956177636,
+  "lastUpdate": 1738956281712,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -3749,6 +3749,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 5412.0216,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "b2ed38164b40bfb307c0341872bf16fcf3984017",
+          "message": "Nvim: remove cmp-treesitter",
+          "timestamp": "2025-02-07T14:21:46-05:00",
+          "tree_id": "a5515ef7469ece059044f2b0f6293ba32f74575f",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/b2ed38164b40bfb307c0341872bf16fcf3984017"
+        },
+        "date": 1738956281271,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 4902.0521,
             "unit": "msec"
           }
         ]

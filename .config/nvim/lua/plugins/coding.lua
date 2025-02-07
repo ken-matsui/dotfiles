@@ -320,6 +320,8 @@ return {
 			end
 			if vim.fn.executable("pyright") == 1 then
 				lspconfig.pyright.setup({})
+			elseif vim.fn.executable("pylsp") == 1 then
+				lspconfig.pylsp.setup({})
 			end
 		end,
 	},

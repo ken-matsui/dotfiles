@@ -210,7 +210,6 @@ return {
 		dependencies = {
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
-			"ray-x/cmp-treesitter",
 			"onsails/lspkind-nvim",
 		},
 		opts = function()
@@ -228,7 +227,6 @@ return {
 					{ name = "nvim_lsp" },
 					{ name = "buffer" },
 					{ name = "path" },
-					{ name = "treesitter" },
 				}),
 				formatting = {
 					format = require("lspkind").cmp_format({

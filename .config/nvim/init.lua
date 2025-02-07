@@ -9,7 +9,7 @@ if vim.loader then
 	vim.loader.enable()
 end
 
--- Disable netrw at the very start of init.lua (NERDTree)
+-- Disable netrw at the very start of init.lua (nvim-tree)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
@@ -28,9 +28,9 @@ vim.api.nvim_create_user_command("CloseAll", function()
 	vim.cmd("cclose") -- Close quickfix window
 	vim.cmd("lclose") -- Close location list window
 
-	-- Close NERDTree
-	if vim.fn.exists("t:NERDTreeBufName") == 1 then
-		vim.cmd("NERDTreeClose")
+	-- Close NvimTree
+	if package.loaded["nvim-tree"] then
+		require("nvim-tree.api").tree.close()
 	end
 
 	-- Close Outline
@@ -46,7 +46,6 @@ vim.api.nvim_create_user_command("CloseAll", function()
 		end
 	end
 end, { desc = "Close All Sub-windows" })
-
 vim.api.nvim_set_keymap(
 	"n",
 	"<Leader>c",

@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1738941075997,
+  "lastUpdate": 1738956177636,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -3720,6 +3720,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 2784.9693,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "ee2abe296d28e53ee29da5a20592841ba59fc8ac",
+          "message": "Nvim: try to use pylsp when pyright is not available",
+          "timestamp": "2025-02-07T14:20:47-05:00",
+          "tree_id": "4d34374092ca85c30ceede5b5f58c87a5590f579",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/ee2abe296d28e53ee29da5a20592841ba59fc8ac"
+        },
+        "date": 1738956176647,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 5412.0216,
             "unit": "msec"
           }
         ]

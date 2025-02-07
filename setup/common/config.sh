@@ -22,7 +22,6 @@ ALL='
 .config/alacritty
 .config/atuin
 .config/git
-.config/neomutt
 .config/nvim
 .config/shell
 .config/sway

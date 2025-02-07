@@ -33,7 +33,6 @@ sudo pacman -S \
   llvm \  # clangd, clang-format, clang-tidy
   lsd \
   ninja \
-  neomutt \
   neovim \
   nodejs yarn \
   perf \

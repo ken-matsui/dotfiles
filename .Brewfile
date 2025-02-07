@@ -29,7 +29,6 @@ brew "lsd"
 brew "lua-language-server"
 # brew "mysql"  # for mysqlclient of Python
 brew "ninja"
-brew "neomutt"
 brew "neovim"
 brew "node"  # for copilot.vim
 brew "poetry"

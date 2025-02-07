@@ -52,6 +52,18 @@ return {
 			{ "<Leader>p", "<Cmd>BufferLinePick<Cr>", desc = "Pick Buffer" },
 			{ "<Leader><Left>", "<Cmd>BufferLineMovePrev<Cr>", desc = "Move Buffer to Left" },
 			{ "<Leader><Right>", "<Cmd>BufferLineMoveNext<Cr>", desc = "Move Buffer to Right" },
+			{
+				"<Leader>w",
+				function()
+					-- Close and visually move left.  This is more intuitive because this
+					-- avoids jumping around buffers when closing current buffers depending
+					-- on the buffer numbers.
+					local cur_buf_num = vim.api.nvim_get_current_buf()
+					vim.cmd("BufferLineCyclePrev")
+					vim.cmd("bdelete " .. cur_buf_num)
+				end,
+				desc = "Close Buffer",
+			},
 		},
 		init = function()
 			-- Persistent bufferline positions
@@ -67,19 +79,6 @@ return {
 						separator = true,
 					},
 				},
-			},
-		},
-	},
-
-	{
-		"famiu/bufdelete.nvim",
-		keys = {
-			{
-				"<Leader>w",
-				function()
-					require("bufdelete").bufdelete(0, true)
-				end,
-				desc = "Close Buffer",
 			},
 		},
 	},

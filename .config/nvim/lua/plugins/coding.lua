@@ -148,7 +148,7 @@ return {
 
 	{
 		"lewis6991/gitsigns.nvim",
-		version = "v0.8.*",
+		version = "v1.*",
 		lazy = true,
 		-- event = "BufReadPre",
 		opts = {
@@ -163,7 +163,7 @@ return {
 				changedelete = { text = "~" },
 			},
 			on_attach = function(bufnr)
-				local gs = package.loaded.gitsigns
+				local gitsigns = require("gitsigns")
 
 				local function map(mode, l, r, opts)
 					opts = opts or {}
@@ -174,42 +174,49 @@ return {
 				-- Navigation
 				map("n", "<Leader>gn", function()
 					if vim.wo.diff then
-						return "<Leader>gn"
+						vim.cmd.normal({ "]c", bang = true })
+					else
+						gitsigns.nav_hunk("next")
 					end
-					vim.schedule(function()
-						gs.next_hunk()
-					end)
-					return "<Ignore>"
-				end, { expr = true, desc = "Go to next Git hunk" })
+				end, { desc = "Go to next Git hunk" })
 
 				map("n", "<Leader>gp", function()
 					if vim.wo.diff then
-						return "<Leader>gp"
+						vim.cmd.normal({ "[c", bang = true })
+					else
+						gitsigns.nav_hunk("prev")
 					end
-					vim.schedule(function()
-						gs.prev_hunk()
-					end)
-					return "<Ignore>"
-				end, { expr = true, desc = "Go to previous Git hunk" })
+				end, { desc = "Go to previous Git hunk" })
 
 				-- Actions
-				-- stylua: ignore start
-				map("n", "<Leader>gs", gs.stage_hunk, { desc = "Stage Git hunk" })
-				map("n", "<Leader>gr", gs.reset_hunk, { desc = "Reset Git hunk" })
-				map("v", "<Leader>gs", function() gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") }) end, { desc = "Stage Git hunk" })
-				map("v", "<Leader>gr", function() gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") }) end, { desc = "Reset Git hunk" })
-				map("n", "<Leader>gS", gs.stage_buffer, { desc = "Stage Git buffer" })
-				map("n", "<Leader>gu", gs.undo_stage_hunk, { desc = "Undo stage Git hunk" })
-				map("n", "<Leader>gR", gs.reset_buffer, { desc = "Reset Git buffer" })
-				map("n", "<Leader>gP", gs.preview_hunk, { desc = "Preview Git hunk" })
-				map("n", "<Leader>gb", function() gs.blame_line({ full = true }) end, { desc = "Blame Git line" })
-				map("n", "<Leader>gd", gs.diffthis, { desc = "Diff Git" })
-				map("n", "<Leader>gD", function() gs.diffthis("~") end, { desc = "Diff Git" })
-				map("n", "<Leader>gt", gs.toggle_deleted, { desc = "Toggle Git deleted" })
-				-- stylua: ignore end
+				map("n", "<Leader>gs", gitsigns.stage_hunk, { desc = "Stage Git hunk" })
+				map("n", "<Leader>gr", gitsigns.reset_hunk, { desc = "Reset Git hunk" })
+
+				map("v", "<Leader>gs", function()
+					gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
+				end, { desc = "Stage Git hunk" })
+
+				map("v", "<Leader>gr", function()
+					gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
+				end, { desc = "Reset Git hunk" })
+
+				map("n", "<Leader>gS", gitsigns.stage_buffer, { desc = "Stage Git buffer" })
+				map("n", "<Leader>gR", gitsigns.reset_buffer, { desc = "Reset Git buffer" })
+				map("n", "<Leader>gP", gitsigns.preview_hunk, { desc = "Preview Git hunk" })
+				map("n", "<Leader>gi", gitsigns.preview_hunk_inline, { desc = "Preview Git hunk inline" })
+
+				map("n", "<Leader>gb", function()
+					gitsigns.blame_line({ full = true })
+				end, { desc = "Blame Git line" })
+
+				map("n", "<Leader>gd", gitsigns.diffthis, { desc = "Diff Git" })
+
+				map("n", "<Leader>gD", function()
+					gitsigns.diffthis("~")
+				end, { desc = "Diff Git" })
 
 				-- Text object
-				map({ "o", "x" }, "<Leader>gh", ":<C-U>Gitsigns select_hunk<CR>", { desc = "Select Git hunk" })
+				map({ "o", "x" }, "<Leader>gh", gitsigns.select_hunk, { desc = "Select Git hunk" })
 			end,
 		},
 	},

@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1738973232214,
+  "lastUpdate": 1738973311885,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -4155,6 +4155,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 5385.3468,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "8fbb05729f3926fa2fc45ea383fe6b3802f09ef2",
+          "message": "Nvim: fix vim.cmd for gitsigns",
+          "timestamp": "2025-02-07T19:06:31-05:00",
+          "tree_id": "654d42371cd96ad3581cd3266bb24cafe88eae99",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/8fbb05729f3926fa2fc45ea383fe6b3802f09ef2"
+        },
+        "date": 1738973311015,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 1972.0295,
             "unit": "msec"
           }
         ]

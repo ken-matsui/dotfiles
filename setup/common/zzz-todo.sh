@@ -60,8 +60,6 @@ $(to_h1 'Manjaro (TODOs)')
 
 * SSH
   * Copy $(to_code public key) in 1Password to $(to_code ~/.ssh/authorized_keys)
-  * Link $(to_code sshd_config.d/*) to $(to_code /etc/ssh/sshd_config.d/)
-  * sudo systemctl start sshd.service
 
 * Find trash command
   * https://unix.stackexchange.com/q/42757

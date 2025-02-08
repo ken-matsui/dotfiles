@@ -174,7 +174,7 @@ return {
 				-- Navigation
 				map("n", "<Leader>gn", function()
 					if vim.wo.diff then
-						vim.cmd.normal({ "]c", bang = true })
+						vim.cmd.normal({ "<Leader>gn", bang = true })
 					else
 						gitsigns.nav_hunk("next")
 					end
@@ -182,7 +182,7 @@ return {
 
 				map("n", "<Leader>gp", function()
 					if vim.wo.diff then
-						vim.cmd.normal({ "[c", bang = true })
+						vim.cmd.normal({ "<Leader>gp", bang = true })
 					else
 						gitsigns.nav_hunk("prev")
 					end

@@ -144,9 +144,6 @@ nnoremap <S-h> ^
 " Move to the end of line
 nnoremap <S-l> $
 
-" Buffer navigation
-nnoremap <silent> <Leader>w :bdelete<Cr>
-
 " Yank file path
 nnoremap yp :let @+=expand("%") \| :echo "Copied file path to clipboard"<Cr>
 " Yank absolute file path

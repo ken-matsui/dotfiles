@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1738974186263,
+  "lastUpdate": 1739402528113,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -4242,6 +4242,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 5422.7252,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "27b1e3b68933e816642f111ede9f2811e75da583",
+          "message": "vim: remove unused buffer keybind",
+          "timestamp": "2025-02-12T18:19:54-05:00",
+          "tree_id": "1fccf7ffff9b21acec4ac490c86811d28b3767fa",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/27b1e3b68933e816642f111ede9f2811e75da583"
+        },
+        "date": 1739402527555,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 5624.4347,
             "unit": "msec"
           }
         ]

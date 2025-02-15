@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1739577261812,
+  "lastUpdate": 1739591159627,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -4329,6 +4329,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 5732.8246,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "df77857d3f40df4b6956f35541cce42627f8a2b0",
+          "message": "tmux: remove config for SSH machine",
+          "timestamp": "2025-02-14T22:43:56-05:00",
+          "tree_id": "6b94f3df0d15e9a017c9c6101f49e6041f098c35",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/df77857d3f40df4b6956f35541cce42627f8a2b0"
+        },
+        "date": 1739591159359,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 5163.8782,
             "unit": "msec"
           }
         ]

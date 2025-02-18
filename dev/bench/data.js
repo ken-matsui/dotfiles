@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1739594764024,
+  "lastUpdate": 1739922483203,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -4590,6 +4590,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 5856.2999,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "74b1e6b5932b9d9607b98cce44c54f452c4b9968",
+          "message": "tmux: remove Source Code Pro for Powerline completely",
+          "timestamp": "2025-02-18T18:46:04-05:00",
+          "tree_id": "812c4bbbc9a23b1c9634a0c00b8cb41819d98679",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/74b1e6b5932b9d9607b98cce44c54f452c4b9968"
+        },
+        "date": 1739922482304,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 4868.6196,
             "unit": "msec"
           }
         ]

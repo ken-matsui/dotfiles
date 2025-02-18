@@ -2,15 +2,15 @@
 
 # Dotfiles
 
-|             |                                                                                       |
-| ----------- | :-----------------------------------------------------------------------------------: |
-| Terminal    | Alacritty                                                                             |
-| Multiplexer | Tmux                                                                                  |
-| Shell       | Zsh                                                                                   |
-| Prompt      | Starship                                                                              |
-| Editor      | Vim / Neovim                                                                          |
-| Theme       | Material Deep Ocean                                                                   |
-| Fonts       | Source Code Pro for Powerline (for tmux)<br>JetBrains Mono Nerd (for everything else) |
+|             |                                           |
+| ----------- | :---------------------------------------: |
+| Terminal    | Alacritty                                 |
+| Multiplexer | Tmux                                      |
+| Shell       | Zsh                                       |
+| Prompt      | Starship                                  |
+| Editor      | Vim / Neovim                              |
+| Theme       | Material Deep Ocean                       |
+| Fonts       | JetBrains Mono Nerd (for everything else) |
 
 </div>
 
@@ -46,18 +46,4 @@ mv *.ttf ~/.local/share/fonts
 
 fc-cache -f -v
 fc-list | grep JetBrains
-```
-
-#### Source Code Pro for Powerline
-
-```sh
-cd /tmp
-git clone https://github.com/powerline/fonts.git
-cd fonts/SourceCodePro
-
-mkdir -p ~/.local/share/fonts
-mv *.otf ~/.local/share/fonts
-
-fc-cache -f -v
-fc-list | grep 'Source Code Pro'
 ```

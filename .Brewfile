@@ -35,7 +35,6 @@ brew "poetry"
 brew "python"
 brew "python-lsp-server"
 brew "starship"
-brew "subversion"  # for font-source-code-pro-for-powerline
 brew "tmux"
 brew "topgrade"
 brew "trash" if OS.mac?
@@ -55,7 +54,6 @@ cask "deepl"
 cask "discord"
 # cask "figma"
 cask "font-jetbrains-mono-nerd-font"  # for alacritty
-cask "font-source-code-pro-for-powerline"
 # cask "google-cloud-sdk"
 cask "jordanbaird-ice"
 cask "languagetool"

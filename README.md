@@ -2,15 +2,15 @@
 
 # Dotfiles
 
-|             |                                           |
-| ----------- | :---------------------------------------: |
-| Terminal    | Alacritty                                 |
-| Multiplexer | Tmux                                      |
-| Shell       | Zsh                                       |
-| Prompt      | Starship                                  |
-| Editor      | Vim / Neovim                              |
-| Theme       | Material Deep Ocean                       |
-| Fonts       | JetBrains Mono Nerd (for everything else) |
+|             |                     |
+| ----------- | :-----------------: |
+| Terminal    | Alacritty           |
+| Multiplexer | Tmux                |
+| Shell       | Zsh                 |
+| Prompt      | Starship            |
+| Editor      | Vim / Neovim        |
+| Theme       | Material Deep Ocean |
+| Fonts       | JetBrains Mono Nerd |
 
 </div>
 

@@ -57,17 +57,6 @@ fi
 
 mkdir -p "$HOME/.config"
 
-if [ "$#" -eq 0 ] || [ "$1" = '.config/Code' ]; then
-  OS_NAME="$(uname -s)"
-  if [ "$OS_NAME" = Darwin ]; then
-    # TARGET=$HOME/Library/Application Support/Code
-    backup_and_link .config/Code "$HOME/Library/Application Support"
-  elif [ "$OS_NAME" = Linux ]; then
-    # TARGET=$HOME/.config/Code
-    backup_and_link .config/Code
-  fi
-fi
-
 for item in $ITEMS; do
   backup_and_link "$item"
 done

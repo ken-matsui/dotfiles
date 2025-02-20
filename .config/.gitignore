@@ -10,10 +10,3 @@
 !vim
 !waybar
 !zellij
-
-!Code
-Code/*
-!Code/User
-Code/User/*
-!Code/User/settings.json
-!Code/User/keybindings.json

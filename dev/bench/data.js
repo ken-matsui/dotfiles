@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1740017315503,
+  "lastUpdate": 1740017431154,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -4764,6 +4764,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 4980.1694,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "fbaf2173b026ee23b3ac88e18d28224c393ed8d3",
+          "message": "sway: add monitors.conf",
+          "timestamp": "2025-02-19T21:07:14-05:00",
+          "tree_id": "63997241c6a5b8cf24ea420a56cd8b1e807ce996",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/fbaf2173b026ee23b3ac88e18d28224c393ed8d3"
+        },
+        "date": 1740017430214,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 5507.7346,
             "unit": "msec"
           }
         ]

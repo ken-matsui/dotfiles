@@ -31,8 +31,8 @@
         "backlight",
 
         // informational
-        "cpu",
         "memory",
+        "cpu",
         "battery",
         "custom/power-profiles-daemon",
 

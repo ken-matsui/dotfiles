@@ -1,5 +1,3 @@
-<div align="center">
-
 # Dotfiles
 
 |             |                     |
@@ -11,8 +9,6 @@
 | Editor      | Vim / Neovim        |
 | Theme       | Material Deep Ocean |
 | Fonts       | JetBrains Mono Nerd |
-
-</div>
 
 ## Installation
 

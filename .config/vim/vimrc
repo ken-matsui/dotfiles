@@ -18,6 +18,9 @@ endif
 " Enable syntax highlighting (automatically disabled when tree-sitter is enabled)
 syntax enable
 
+" Enable mouse
+set mouse=a
+
 " Confirm on quit
 set confirm
 

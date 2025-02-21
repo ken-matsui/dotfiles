@@ -294,20 +294,6 @@
         }
     },
 
-    "custom/zeit": {
-        "return-type": "json",
-        "interval": "once",
-        "format": "{icon}",
-        "format-icons": {
-            "tracking": "󰖷",
-            "stopped": "󰋣"
-        },
-        "exec": "/usr/share/sway/scripts/zeit.sh status",
-        "on-click": "/usr/share/sway/scripts/zeit.sh click; waybar-signal zeit",
-        "exec-if": "[ -x \"$(command -v zeit)\" ]",
-        "signal": 10
-    },
-
     "custom/dnd": {
         "interval": "once",
         "return-type": "json",

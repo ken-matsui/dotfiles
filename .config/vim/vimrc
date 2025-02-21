@@ -84,6 +84,12 @@ set formatoptions-=ro formatoptions+=cqlt
 " Enable spell check
 set spelllang=en_us
 autocmd FileType text,gitcommit,mail,markdown setlocal spell complete+=kspell
+if !has('nvim')
+  highlight SpellBad cterm=italic,underline ctermfg=Red ctermbg=NONE gui=italic,underline guifg=Red guibg=NONE
+  highlight SpellCap cterm=italic,underline ctermfg=Blue ctermbg=NONE gui=italic,underline guifg=Blue guibg=NONE
+  highlight SpellRare cterm=italic,underline ctermfg=Red ctermbg=NONE gui=italic,underline guifg=Red guibg=NONE
+  highlight SpellLocal cterm=italic,underline ctermfg=Cyan ctermbg=NONE gui=italic,underline guifg=Cyan guibg=NONE
+endif
 
 " Set color column
 autocmd FileType c,cpp setlocal colorcolumn=80

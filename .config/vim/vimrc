@@ -45,6 +45,9 @@ set nowrapscan
 set ignorecase
 set smartcase
 
+" Avoid jumping while typing a search term
+set noincsearch
+
 " Highlight column number on insert
 autocmd InsertEnter * set cursorline
 autocmd InsertLeave * set nocursorline

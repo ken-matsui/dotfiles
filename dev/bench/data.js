@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1740347158393,
+  "lastUpdate": 1740347443842,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -5315,6 +5315,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 5392.8509,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "51ec42beaa2b37997ff5bfea5e2fcfc5cdf474ff",
+          "message": "nvim: remove flash.nvim",
+          "timestamp": "2025-02-23T16:48:45-05:00",
+          "tree_id": "d9717f3e09a0ed672f44b85643664c29b65f4f86",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/51ec42beaa2b37997ff5bfea5e2fcfc5cdf474ff"
+        },
+        "date": 1740347443566,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 5822.521,
             "unit": "msec"
           }
         ]

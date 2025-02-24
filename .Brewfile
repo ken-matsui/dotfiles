@@ -1,5 +1,4 @@
 tap "Homebrew/bundle"
-tap "homebrew/cask-fonts" if OS.mac?  # for font-jetbrains-mono-nerd-font
 
 cask_args appdir: "~/Applications", require_sha: true
 

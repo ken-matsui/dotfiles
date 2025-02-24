@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1740363082773,
+  "lastUpdate": 1740363187614,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -5373,6 +5373,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 4925.9396,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "a22be1698c874d759ccb43c071871fc4649c58fc",
+          "message": "brew: remove deprecated homebrew/cask-fonts",
+          "timestamp": "2025-02-23T21:10:02-05:00",
+          "tree_id": "e24b5b99709d2ff66fc4339d699940aece4f7859",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/a22be1698c874d759ccb43c071871fc4649c58fc"
+        },
+        "date": 1740363187136,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 4941.3737,
             "unit": "msec"
           }
         ]

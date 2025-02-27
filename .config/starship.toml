@@ -5,19 +5,19 @@ format = """
 $time\
 $line_break\
 $status\
-$all\
-$line_break\
 ${custom.incognito}\
+$shlvl\
 $jobs\
-$shell\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$line_break\
 $character"""
 
 #
 # Custom Settings
 #
-[gcloud]
-disabled = true
-
 [directory]
 truncation_length = 6
 truncate_to_repo = false

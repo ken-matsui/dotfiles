@@ -34,4 +34,3 @@ vicmd_symbol = "NORMAL [❮](bold green)"
 [custom.incognito]
 when = "[[ -v ATUIN_INCOGNITO ]]"
 symbol = "🙈"
-style = "bold purple"

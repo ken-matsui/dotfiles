@@ -35,12 +35,12 @@ zinit light MichaelAquilina/zsh-you-should-use
 
 autoload -Uz is-at-least
 if is-at-least 5.1; then
-    zinit light MichaelAquilina/zsh-auto-notify
-    AUTO_NOTIFY_IGNORE+=("hx")
+  zinit light MichaelAquilina/zsh-auto-notify
+  AUTO_NOTIFY_IGNORE+=("hx")
 
-    # FIXME: zsh-vi-mode messes up ^R history search
-    # https://github.com/ohmyzsh/ohmyzsh/issues/5213
-    # One possible solution is to source this much earlier.
-    # zinit ice depth=1
-    # zinit light jeffreytse/zsh-vi-mode
+  # FIXME: zsh-vi-mode messes up ^R history search
+  # https://github.com/ohmyzsh/ohmyzsh/issues/5213
+  # One possible solution is to source this much earlier.
+  # zinit ice depth=1
+  # zinit light jeffreytse/zsh-vi-mode
 fi

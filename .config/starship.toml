@@ -1,6 +1,3 @@
-#
-# Base Format
-#
 format = """
 $time\
 $line_break\
@@ -15,9 +12,6 @@ $git_status\
 $line_break\
 $character"""
 
-#
-# Custom Settings
-#
 [directory]
 truncation_length = 6
 truncate_to_repo = false

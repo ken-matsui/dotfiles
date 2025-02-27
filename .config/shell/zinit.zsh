@@ -32,7 +32,6 @@ zinit light bigH/git-fuzzy
 
 zinit ice wait lucid depth=1
 zinit light MichaelAquilina/zsh-you-should-use
-export YSU_MESSAGE_POSITION='after'
 
 autoload -Uz is-at-least
 if is-at-least 5.1; then

@@ -2,7 +2,7 @@
 # Zinit Options & Plugins
 ##################################
 if [ "$NO_ZINIT" = '1' ]; then
-    return 0
+  return 0
 fi
 
 declare -A ZINIT

@@ -29,16 +29,6 @@ return {
 	},
 
 	{
-		"hedyhli/outline.nvim",
-		lazy = true,
-		cmd = { "Outline", "OutlineOpen" },
-		keys = {
-			{ "<Leader>o", "<Cmd>Outline<Cr>", desc = "Toggle Outline" },
-		},
-		opts = {},
-	},
-
-	{
 		"akinsho/bufferline.nvim",
 		version = "v4.*",
 		lazy = true,

@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1741367741394,
+  "lastUpdate": 1741367865007,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -5721,6 +5721,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 6343.3183,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "2180ccb616645e35a14028b972921b134b2d001c",
+          "message": "nvim: add inkarkat/vim-ConflictMotions",
+          "timestamp": "2025-03-07T12:14:01-05:00",
+          "tree_id": "4f9f07eec1fe1f35774806fc51b5dd41d0b02d15",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/2180ccb616645e35a14028b972921b134b2d001c"
+        },
+        "date": 1741367863845,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 5441.1884,
             "unit": "msec"
           }
         ]

@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1741367620524,
+  "lastUpdate": 1741367741394,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -5692,6 +5692,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 5784.7078,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "58872ad43c0e24c470c17b8d571ffdbaa4090eaf",
+          "message": "nvim: remove not working (diff3) git-conflict.nvim",
+          "timestamp": "2025-03-07T12:12:47-05:00",
+          "tree_id": "4ad9dc34b27df770b3e5b3fb141348c34e5b247e",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/58872ad43c0e24c470c17b8d571ffdbaa4090eaf"
+        },
+        "date": 1741367740899,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 6343.3183,
             "unit": "msec"
           }
         ]

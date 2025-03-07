@@ -122,44 +122,6 @@ return {
 	},
 
 	{
-		"folke/trouble.nvim",
-		opts = {},
-		cmd = "Trouble",
-		keys = {
-			{
-				"<Leader>d",
-				"<Cmd>Trouble diagnostics toggle<Cr>",
-				desc = "Trouble Diagnostics",
-			},
-			{
-				"<Leader>D",
-				"<Cmd>Trouble diagnostics toggle filter.buf=0<Cr>",
-				desc = "Trouble Buffer Diagnostics",
-			},
-			{
-				"<Leader>s",
-				"<Cmd>Trouble symbols toggle focus=false<Cr>",
-				desc = "Trouble Symbols",
-			},
-			{
-				"<Leader>r",
-				"<Cmd>Trouble lsp toggle focus=false<Cr>",
-				desc = "Trouble LSP References",
-			},
-			{
-				"<Leader>L",
-				"<Cmd>Trouble loclist toggle<Cr>",
-				desc = "Trouble Location List",
-			},
-			{
-				"<Leader>q",
-				"<Cmd>Trouble qflist toggle<Cr>",
-				desc = "Trouble Quickfix List",
-			},
-		},
-	},
-
-	{
 		"kevinhwang91/nvim-hlslens",
 		dependencies = {
 			"petertriho/nvim-scrollbar",

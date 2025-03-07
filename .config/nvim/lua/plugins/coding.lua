@@ -145,6 +145,7 @@ return {
 	--
 
 	"tpope/vim-fugitive",
+	"inkarkat/vim-ConflictMotions",
 
 	{
 		"lewis6991/gitsigns.nvim",

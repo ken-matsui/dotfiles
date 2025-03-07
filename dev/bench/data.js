@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1741367865007,
+  "lastUpdate": 1741368095341,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -5750,6 +5750,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 5441.1884,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "5e995e38c87096afbba2040b5d69f4c96bb79392",
+          "message": "nvim: add dependencies for vim-ConflictMotions",
+          "timestamp": "2025-03-07T12:19:42-05:00",
+          "tree_id": "3668b7a62fbc77f871e3bc960a16500de75858d8",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/5e995e38c87096afbba2040b5d69f4c96bb79392"
+        },
+        "date": 1741368094795,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 5504.3828,
             "unit": "msec"
           }
         ]

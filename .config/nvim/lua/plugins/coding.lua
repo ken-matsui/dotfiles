@@ -145,7 +145,15 @@ return {
 	--
 
 	"tpope/vim-fugitive",
-	"inkarkat/vim-ConflictMotions",
+
+	{
+		"inkarkat/vim-ConflictMotions",
+		version = "2.*",
+		dependencies = {
+			"inkarkat/vim-CountJump",
+			"inkarkat/vim-ingo-library",
+		},
+	},
 
 	{
 		"lewis6991/gitsigns.nvim",

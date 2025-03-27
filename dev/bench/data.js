@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1743118263596,
+  "lastUpdate": 1743118373749,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -6069,6 +6069,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 5559.9602,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "62ff99c3a394caeee309052c965bb0a8b9ffac06",
+          "message": "tmux: remove swap pane keymaps",
+          "timestamp": "2025-03-27T19:29:38-04:00",
+          "tree_id": "2fbb890a7f8022e32bcede63e1b08aa7043b22f5",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/62ff99c3a394caeee309052c965bb0a8b9ffac06"
+        },
+        "date": 1743118373383,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 5439.6689,
             "unit": "msec"
           }
         ]

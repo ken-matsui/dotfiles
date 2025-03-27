@@ -34,12 +34,6 @@ zinit ice wait lucid depth=1
 zinit light MichaelAquilina/zsh-you-should-use
 
 autoload -Uz is-at-least
-
-if is-at-least 5.2; then
-  zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
-  zinit light sindresorhus/pure
-fi
-
 if is-at-least 5.1; then
   zinit light MichaelAquilina/zsh-auto-notify
 

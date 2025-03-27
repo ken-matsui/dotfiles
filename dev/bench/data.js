@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1743117776719,
+  "lastUpdate": 1743118154829,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -6011,6 +6011,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 5788.2136,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "5fc87d0c6d11c89c40ea5c7f7e7c520d46f040c1",
+          "message": "zsh: add pure, remove starship",
+          "timestamp": "2025-03-27T19:27:08-04:00",
+          "tree_id": "d37cb34fbd578d5901a5db9da4e7443840c9d093",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/5fc87d0c6d11c89c40ea5c7f7e7c520d46f040c1"
+        },
+        "date": 1743118153892,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 5961.8829,
             "unit": "msec"
           }
         ]

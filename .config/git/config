@@ -52,8 +52,6 @@
 #
 # Rebase
 #
-[sequence]
-	editor = interactive-rebase-tool
 [rebase]
 	autostash = true
 [rerere]

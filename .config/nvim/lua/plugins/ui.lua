@@ -207,6 +207,10 @@ return {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+			{
+				"nvim-telescope/telescope-live-grep-args.nvim",
+				version = "1.*",
+			},
 			"tom-anders/telescope-vim-bookmarks.nvim",
 		},
 		keys = {
@@ -240,12 +244,17 @@ return {
 					case_mode = "smart_case", -- or "ignore_case" or "respect_case"
 					-- the default case_mode is "smart_case"
 				},
+				live_grep_args = {
+					auto_quoting = true,
+				},
 			},
 		},
 		config = function(_, opts)
-			require("telescope").setup(opts)
-			require("telescope").load_extension("fzf")
-			require("telescope").load_extension("vim_bookmarks")
+			local telescope = require("telescope")
+			telescope.setup(opts)
+			telescope.load_extension("fzf")
+			telescope.load_extension("live_grep_args")
+			telescope.load_extension("vim_bookmarks")
 		end,
 	},
 	{

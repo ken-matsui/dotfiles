@@ -214,7 +214,7 @@ return {
 			"tom-anders/telescope-vim-bookmarks.nvim",
 		},
 		keys = {
-			{ "<Leader>fg", "<Cmd>Telescope live_grep<Cr>", desc = "Telescope Grep" },
+			{ "<Leader>fg", "<Cmd>Telescope live_grep_args<Cr>", desc = "Telescope Grep" },
 			{ "<Leader>fr", "<Cmd>Telescope resume<Cr>", desc = "Telescope Resume" },
 			{ "<Leader>fb", "<Cmd>Telescope buffers<Cr>", desc = "Telescope Buffers" },
 			{ "<Leader>fB", "<Cmd>Telescope vim_bookmarks all<Cr>", desc = "Telescope Bookmarks" },

@@ -14,7 +14,6 @@ brew "fd"  # for telescope.nvim
 brew "ffmpeg"  # for youtube-dl
 brew "fzf"
 brew "gh"
-brew "git-delta"
 brew "graphviz"
 brew "gzip"
 brew "htop"

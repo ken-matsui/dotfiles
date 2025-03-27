@@ -33,15 +33,13 @@
 # UI
 #
 [core]
-	pager = delta
 	autocrlf = input
 [interactive]
-	diffFilter = delta --color-only
 [log]
 	date = local
 
 #
-# Diff (delta by default, difftastic for difftool)
+# Diff (difftastic for difftool)
 #
 [diff]
 	tool = difftastic

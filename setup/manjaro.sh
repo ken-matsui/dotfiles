@@ -21,7 +21,6 @@ sudo pacman -S \
   fprintd \
   gcc \
   github-cli \
-  git-delta \
   graphviz \
   gzip \
   hyperfine \

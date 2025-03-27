@@ -34,7 +34,6 @@
 #
 [core]
 	autocrlf = input
-[interactive]
 [log]
 	date = local
 

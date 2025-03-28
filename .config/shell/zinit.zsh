@@ -19,10 +19,6 @@ zinit snippet PZTM::directory
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light momo-lab/zsh-replace-multiple-dots
-zinit light Tarrasch/zsh-bd  # back cd
-zinit light agkozak/zsh-z    # visited cd
-zinit light mfaerevaag/wd    # warp cd
-zinit light supercrabtree/k  # git ls
 
 zinit snippet OMZP::gitignore/gitignore.plugin.zsh
 zinit snippet OMZP::git/git.plugin.zsh

@@ -9,3 +9,7 @@ bindkey '^P' up-line-or-search
 bindkey '^N' down-line-or-search
 bindkey '^F' forward-word
 bindkey '^B' backward-word
+
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey '^X^E' edit-command-line

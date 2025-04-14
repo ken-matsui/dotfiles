@@ -54,6 +54,7 @@ cask "discord"
 # cask "figma"
 cask "font-jetbrains-mono-nerd-font"  # for alacritty
 # cask "google-cloud-sdk"
+cask "homerow"
 cask "jordanbaird-ice"
 cask "languagetool"
 # cask "mactex-no-gui"

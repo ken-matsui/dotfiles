@@ -30,9 +30,8 @@ set nowritebackup
 " Disable swap file
 set noswapfile
 
-" Show relative column number
+" Show column number
 set number
-set relativenumber
 
 " Avoid wrap when searching
 set nowrapscan

@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1744591537948,
+  "lastUpdate": 1744779387065,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -6330,6 +6330,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 5757.861,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "1a483798b56343a07d4d6ec0f81ac4a8904d030e",
+          "message": "nvim: stop using relativenumber",
+          "timestamp": "2025-04-16T00:54:26-04:00",
+          "tree_id": "f0428e6231c3ea2763775202f9820726a6f6269c",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/1a483798b56343a07d4d6ec0f81ac4a8904d030e"
+        },
+        "date": 1744779386570,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 5699.0436,
             "unit": "msec"
           }
         ]

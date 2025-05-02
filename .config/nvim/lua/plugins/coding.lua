@@ -88,7 +88,7 @@ return {
 			session_lens = {
 				load_on_setup = false,
 			},
-			pre_save_cmds = { "CloseAll" },
+			pre_save_cmds = { "only" },
 			post_restore_cmds = {
 				function()
 					-- Restore bufferline positions

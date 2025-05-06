@@ -43,7 +43,7 @@ sudo pacman -S \
   yt-dlp
 
 pamac build \
-  1password 1password-cli \
+  1password \
   signal-desktop \
   standardnotes-desktop \
   topgrade \

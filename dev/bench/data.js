@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1746571418861,
+  "lastUpdate": 1747183688869,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -6417,6 +6417,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 5689.0055,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "e42c97289dd67eef56243aa74c0a65c53a2743df",
+          "message": "nvim: remove deprecated barbecue.nvim",
+          "timestamp": "2025-05-13T20:46:13-04:00",
+          "tree_id": "5efd554910b6564a9839c9f1b4d80a9d1301cee3",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/e42c97289dd67eef56243aa74c0a65c53a2743df"
+        },
+        "date": 1747183688480,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 5236.2909,
             "unit": "msec"
           }
         ]

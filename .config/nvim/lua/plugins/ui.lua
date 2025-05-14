@@ -74,18 +74,6 @@ return {
 	},
 
 	{
-		"utilyre/barbecue.nvim",
-		version = "v1.*",
-		lazy = true,
-		event = "BufReadPre",
-		dependencies = {
-			"SmiteshP/nvim-navic",
-			"nvim-tree/nvim-web-devicons",
-		},
-		config = true,
-	},
-
-	{
 		"nvim-lualine/lualine.nvim",
 		lazy = true,
 		event = "VeryLazy",

@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1747354074105,
+  "lastUpdate": 1747354185928,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -6475,6 +6475,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 4463.9552,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "6785903457b4de2e1d0081e94f92d9fb13930c28",
+          "message": "brew: remove google-cloud-sdk",
+          "timestamp": "2025-05-15T20:06:44-04:00",
+          "tree_id": "0d2e51a961e2545a7832dded3496892d26acaf04",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/6785903457b4de2e1d0081e94f92d9fb13930c28"
+        },
+        "date": 1747354185524,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 5703.5963,
             "unit": "msec"
           }
         ]

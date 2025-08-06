@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1751597353042,
+  "lastUpdate": 1754515162340,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -6591,6 +6591,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 6667.0726,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "d2fd6d0bd5349c0671fe1e95bd5128fe97229bd0",
+          "message": "alacritty: handle font rename",
+          "timestamp": "2025-08-06T17:17:30-04:00",
+          "tree_id": "8dd551a3d08fb60b31516b2de4dc6af749d08af5",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/d2fd6d0bd5349c0671fe1e95bd5128fe97229bd0"
+        },
+        "date": 1754515161327,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 5237.2944,
             "unit": "msec"
           }
         ]

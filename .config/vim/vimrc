@@ -141,9 +141,6 @@ xnoremap i<space> iW
 " Normal Mode
 "
 
-" Treat ; as :
-nnoremap ; :
-
 " Visually move cursor
 nnoremap j gj
 nnoremap k gk

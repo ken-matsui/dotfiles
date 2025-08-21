@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1755816497752,
+  "lastUpdate": 1755816605577,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -6707,6 +6707,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 5285.6917,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "936ef0a9520aace51b4ffb37a5217198c66960f2",
+          "message": "vim: remove AutoSaveOnFocusLost",
+          "timestamp": "2025-08-21T18:47:01-04:00",
+          "tree_id": "71e2ec9677ad2be23fe96728e6d551b1d8d0e999",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/936ef0a9520aace51b4ffb37a5217198c66960f2"
+        },
+        "date": 1755816604934,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 5214.6242,
             "unit": "msec"
           }
         ]

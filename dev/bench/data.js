@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1755816271897,
+  "lastUpdate": 1755816497752,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -6678,6 +6678,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 5522.1713,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "ae9ad86f39c6918b1495c70612fdc14db20b3ac0",
+          "message": "vim: remove FocusBackground",
+          "timestamp": "2025-08-21T18:46:24-04:00",
+          "tree_id": "314aa5a2ff8359c0d66a4a929c37ee797c7a2b24",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/ae9ad86f39c6918b1495c70612fdc14db20b3ac0"
+        },
+        "date": 1755816496618,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 5285.6917,
             "unit": "msec"
           }
         ]

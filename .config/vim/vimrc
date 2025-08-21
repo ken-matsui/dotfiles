@@ -96,12 +96,6 @@ endif
 " Set color column
 autocmd FileType c,cpp setlocal colorcolumn=80
 
-" Save files when focus lost
-augroup AutoSaveOnFocusLost
-  autocmd!
-  autocmd FocusLost * silent! wa
-augroup END
-
 " =====================
 " Syntax
 " =====================

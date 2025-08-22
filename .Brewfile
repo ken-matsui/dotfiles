@@ -50,7 +50,6 @@ cask "alacritty"
 cask "brave-browser"
 cask "deepl"
 cask "discord"
-# cask "figma"
 cask "font-jetbrains-mono-nerd-font"  # for alacritty
 cask "grammarly-desktop"
 cask "homerow"

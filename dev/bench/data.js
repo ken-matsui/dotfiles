@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1755825784672,
+  "lastUpdate": 1755827702660,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -6765,6 +6765,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 4260.9174,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "d59ae4e326897a93f16ec75effdb0be6e0731e5f",
+          "message": "brew: remove figma",
+          "timestamp": "2025-08-21T21:53:08-04:00",
+          "tree_id": "e7f62e8bb0559a42bf002259be7f0f0a69dd0918",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/d59ae4e326897a93f16ec75effdb0be6e0731e5f"
+        },
+        "date": 1755827702211,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 5257.085,
             "unit": "msec"
           }
         ]

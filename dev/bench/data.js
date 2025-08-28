@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1755827702660,
+  "lastUpdate": 1756345927875,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -6794,6 +6794,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 5257.085,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "3758ecf7d9f1e451dcb3a9b5b9b8783d00d66da8",
+          "message": "zsh: add more key-bindings from ohmyzsh",
+          "timestamp": "2025-08-27T21:50:18-04:00",
+          "tree_id": "260d7e39538852a7b30697bf6175259d589a8de0",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/3758ecf7d9f1e451dcb3a9b5b9b8783d00d66da8"
+        },
+        "date": 1756345927138,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 5191.1664,
             "unit": "msec"
           }
         ]

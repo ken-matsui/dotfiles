@@ -2,6 +2,8 @@
 setopt extended_glob
 # Ignore patterns such as URL
 setopt nonomatch
+# Don't exit on Ctrl-D
+setopt ignore_eof
 # Don't highlight when selecting words
 unset zle_bracketed_paste
 

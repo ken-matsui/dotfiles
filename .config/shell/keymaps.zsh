@@ -2,6 +2,17 @@
 bindkey -e
 # NOTE: '^X^V' vi-cmd-mode
 
+custom_eof() {
+  if [[ -z $BUFFER ]]; then
+    zle -M "zsh: use 'exit' to exit."
+    return 0
+  else
+    zle delete-char
+  fi
+}
+zle -N custom_eof
+bindkey '^D' custom_eof
+
 # [Ctrl-RightArrow] - move forward one word
 bindkey '^[[1;5C' forward-word
 # [Ctrl-LeftArrow] - move backward one word

@@ -25,6 +25,12 @@ return {
 	},
 
 	{
+		"tpope/vim-abolish",
+		lazy = true,
+		event = "VeryLazy",
+	},
+
+	{
 		"machakann/vim-sandwich",
 		lazy = true,
 		event = "VeryLazy",

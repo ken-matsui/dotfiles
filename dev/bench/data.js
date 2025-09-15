@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1757383764326,
+  "lastUpdate": 1757971864736,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -6939,6 +6939,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 4808.5098,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "1567c35e339b3ecdd5efd0de68751b9efd419a40",
+          "message": "topgrade: disable macOS upgrade",
+          "timestamp": "2025-09-15T17:29:00-04:00",
+          "tree_id": "619ef5eb4b6d4d5f2e29a6ba8707e6b23a154cfb",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/1567c35e339b3ecdd5efd0de68751b9efd419a40"
+        },
+        "date": 1757971863726,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 5255.5156,
             "unit": "msec"
           }
         ]

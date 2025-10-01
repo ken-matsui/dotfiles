@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1757971864736,
+  "lastUpdate": 1759361708928,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -6968,6 +6968,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 5255.5156,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "028464dc0082b346b30c17ac2bc98b872403a971",
+          "message": "build(deps): bump actions/setup-go from 5 to 6 (#68)\n\nBumps [actions/setup-go](https://github.com/actions/setup-go) from 5 to 6.\n- [Release notes](https://github.com/actions/setup-go/releases)\n- [Commits](https://github.com/actions/setup-go/compare/v5...v6)\n\n---\nupdated-dependencies:\n- dependency-name: actions/setup-go\n  dependency-version: '6'\n  dependency-type: direct:production\n  update-type: version-update:semver-major\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2025-10-01T19:33:20-04:00",
+          "tree_id": "8ba85ed95e90f73a9cb7d0aa816df9b7c2d9a943",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/028464dc0082b346b30c17ac2bc98b872403a971"
+        },
+        "date": 1759361708427,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 5801.209,
             "unit": "msec"
           }
         ]

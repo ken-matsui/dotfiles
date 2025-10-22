@@ -16,6 +16,7 @@ disable = [
   "gnome_shell_extensions",
   "containers",
   "helix",
+  "npm",
   "pnpm",
   "poetry",
   "system",

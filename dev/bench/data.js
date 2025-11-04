@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1761889401579,
+  "lastUpdate": 1762218275732,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -7055,6 +7055,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 4362.7708,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "8b4d811c4800fcd789164adf9655db64ded27da7",
+          "message": "build(deps): bump actions/upload-artifact from 4 to 5 (#70)\n\nBumps [actions/upload-artifact](https://github.com/actions/upload-artifact) from 4 to 5.\n- [Release notes](https://github.com/actions/upload-artifact/releases)\n- [Commits](https://github.com/actions/upload-artifact/compare/v4...v5)\n\n---\nupdated-dependencies:\n- dependency-name: actions/upload-artifact\n  dependency-version: '5'\n  dependency-type: direct:production\n  update-type: version-update:semver-major\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2025-11-03T20:02:40-05:00",
+          "tree_id": "13ae67b48976b277e2e2324bc6081ad69d1e857d",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/8b4d811c4800fcd789164adf9655db64ded27da7"
+        },
+        "date": 1762218274625,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 5869.8045,
             "unit": "msec"
           }
         ]

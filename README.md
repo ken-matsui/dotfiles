@@ -2,11 +2,11 @@
 
 |             |                     |
 | ----------- | :-----------------: |
-| Terminal    | Alacritty           |
-| Multiplexer | Tmux                |
-| Shell       | Zsh                 |
-| Prompt      | Starship            |
-| Editor      | Vim / Neovim        |
+| Terminal    |      Alacritty      |
+| Multiplexer |        Tmux         |
+| Shell       |         Zsh         |
+| Prompt      |      Starship       |
+| Editor      |    Vim / Neovim     |
 | Theme       | Material Deep Ocean |
 | Fonts       | JetBrains Mono Nerd |
 
@@ -25,7 +25,7 @@ git clone https://github.com/ken-matsui/dotfiles.git
 Use this way only when you have a fresh environment.
 
 ```sh
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ken-matsui/dotfiles/main/full-install.sh)"
 ```
 
 ### Manual Font Installation (if necessary)

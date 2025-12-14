@@ -44,6 +44,9 @@ brew "wget"
 brew "wrk"
 brew "youtube-dl"
 
+tap "protonpass/tap"
+brew "pass-cli"
+
 cask "alacritty"
 # cask "balenaetcher"  # Flash OS images to SD cards & USB drives, safely and easily.
 cask "brave-browser"

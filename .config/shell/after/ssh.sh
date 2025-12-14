@@ -1,20 +1,11 @@
 #!/usr/bin/env sh
 
-case "$OS_NAME" in
-    Darwin)
-        _ssh_agent_socket="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
-        ;;
-    Linux)
-        _ssh_agent_socket="$HOME/.1password/agent.sock"
-        ;;
-    *)
-        echo "Error: $0: unknown platform: $OS_NAME" >&2
-        return 1
-        ;;
-esac
-
-if [ -S "$_ssh_agent_socket" ]; then
-    export SSH_AUTH_SOCK="$_ssh_agent_socket"
+if ! command_exists pass-cli; then
+  return
 fi
 
-unset _ssh_agent_socket
+_pp_sock="$HOME/.ssh/proton-pass-agent.sock"
+export SSH_AUTH_SOCK="$_pp_sock"
+# if [ -S "$_pp_sock" ]; then
+#     export SSH_AUTH_SOCK="$_pp_sock"
+# fi

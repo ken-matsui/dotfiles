@@ -10,14 +10,6 @@
 	path = ~/.config/git/emails/gcc
 
 #
-# 1Password (GPG)
-#
-[includeIf "gitdir:/Users/"]
-	path = ~/.config/git/1password/macos
-[includeIf "gitdir:/home/"]
-	path = ~/.config/git/1password/linux
-
-#
 # Branch
 #
 [init]

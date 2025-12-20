@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1765747119896,
+  "lastUpdate": 1766190989071,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -7287,6 +7287,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 1812.527,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "fe26350d1b9aca4b8e1fceb7bea3d2e37937750a",
+          "message": "nvim: disable inlay hints by default",
+          "timestamp": "2025-12-19T19:35:18-05:00",
+          "tree_id": "acbb11d3d8493ccecf9066ff192b9bec2243209f",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/fe26350d1b9aca4b8e1fceb7bea3d2e37937750a"
+        },
+        "date": 1766190988683,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 2575.4584,
             "unit": "msec"
           }
         ]

@@ -120,7 +120,7 @@ return {
 
 	{
 		"stevearc/conform.nvim",
-		version = "v8.*",
+		version = "v9.*",
 		cond = function()
 			return vim.fn.has("nvim-0.10") == 1
 		end,

@@ -1,6 +1,7 @@
 format = """
 $time\
 $line_break\
+$hostname\
 $status\
 ${custom.incognito}\
 $shlvl\

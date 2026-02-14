@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1771055961889,
+  "lastUpdate": 1771056094342,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -7490,6 +7490,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 1965.646,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "c3255cc6800608e6d4ac87ddf63da8dce017f90b",
+          "message": "brew: add raspberry-pi-imager",
+          "timestamp": "2026-02-14T03:00:26-05:00",
+          "tree_id": "49289ff77257813e64c798b9ff2025450ca74fca",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/c3255cc6800608e6d4ac87ddf63da8dce017f90b"
+        },
+        "date": 1771056093390,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 1899.9282,
             "unit": "msec"
           }
         ]

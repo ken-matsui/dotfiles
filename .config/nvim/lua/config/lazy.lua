@@ -20,6 +20,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	root = lazy_home,
+	rocks = { enabled = false },
 	spec = {
 		{ import = "plugins" },
 	},

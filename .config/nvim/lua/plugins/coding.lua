@@ -88,13 +88,13 @@ return {
 		---@module "auto-session"
 		---@type AutoSession.Config
 		opts = {
+			auto_save = true,
 			log_level = "error",
-			auto_session_suppress_dirs = { "~/", "~/Downloads", "/" },
-			auto_save_enabled = true,
-			session_lens = {
-				load_on_setup = false,
-			},
 			pre_save_cmds = { "only" },
+			session_lens = {
+			  load_on_setup = false
+			},
+			suppressed_dirs = { "~/", "~/Downloads", "/" },
 			post_restore_cmds = {
 				function()
 					-- Restore bufferline positions

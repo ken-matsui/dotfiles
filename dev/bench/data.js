@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1768622622810,
+  "lastUpdate": 1771055961889,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -7461,6 +7461,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 1870.4535,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "87c3abfa5f815363469af5e4cef2adebea77a56e",
+          "message": "nvim: add localoptions to sessionoptions",
+          "timestamp": "2026-02-14T02:58:08-05:00",
+          "tree_id": "756e03a1d9d4a8b89e74c8e8791ab81dc01f7227",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/87c3abfa5f815363469af5e4cef2adebea77a56e"
+        },
+        "date": 1771055961341,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 1965.646,
             "unit": "msec"
           }
         ]

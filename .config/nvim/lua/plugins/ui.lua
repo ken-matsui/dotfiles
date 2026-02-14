@@ -57,7 +57,7 @@ return {
 		},
 		init = function()
 			-- Persistent bufferline positions
-			vim.o.sessionoptions = vim.o.sessionoptions .. ",globals"
+			vim.o.sessionoptions = vim.o.sessionoptions .. ",globals,localoptions"
 		end,
 		opts = {
 			options = {

@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1771058874257,
+  "lastUpdate": 1771059095929,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -7577,6 +7577,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 1897.8328,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "98cf291b86ea12b5e9ee5ae29e03fdab56c7c0d3",
+          "message": "nvim: lazy: disable luarocks",
+          "timestamp": "2026-02-14T03:50:28-05:00",
+          "tree_id": "b63afb1a1a75d739110a7937f7e6b5710c31fb2b",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/98cf291b86ea12b5e9ee5ae29e03fdab56c7c0d3"
+        },
+        "date": 1771059095585,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 1951.2997,
             "unit": "msec"
           }
         ]

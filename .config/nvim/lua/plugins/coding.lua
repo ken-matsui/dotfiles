@@ -232,26 +232,28 @@ return {
 	--
 	{
 		"neovim/nvim-lspconfig",
-		version = "v1.*",
+		version = "v2.*",
+		cond = function()
+			return vim.fn.has("nvim-0.11.3") == 1
+		end,
 		cmd = "LspInfo",
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
 			"hrsh7th/cmp-nvim-lsp",
 		},
 		config = function()
-			local lspconfig = require("lspconfig")
-
 			-- Add cmp_nvim_lsp capabilities settings to lspconfig
-			lspconfig.util.default_config.capabilities = vim.tbl_deep_extend(
-				"force",
-				lspconfig.util.default_config.capabilities,
-				require("cmp_nvim_lsp").default_capabilities()
-			)
-			-- Disable snippets
-			lspconfig.util.default_config.capabilities.textDocument.completion.completionItem.snippetSupport = false
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
-			-- Executes the callback function every time a
-			-- language server is attached to a buffer.
+			-- Disable snippets
+			capabilities.textDocument.completion.completionItem.snippetSupport = false
+
+			vim.lsp.config("*", {
+				capabilities = capabilities,
+			})
+
+			-- Executes the callback function every time a language server is attached to a buffer.
 			vim.api.nvim_create_autocmd("LspAttach", {
 				desc = "LSP actions",
 				callback = function(event)
@@ -275,14 +277,14 @@ return {
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
 					if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
 						vim.keymap.set("n", "<Leader>H", function()
-							vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-						end, { desc = "Toggle Inlay Hints" })
+							vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ buffnr = event.buf }))
+						end, { desc = "Toggle Inlay Hints", buffer = event.buf })
 					end
 				end,
 			})
 
 			if vim.fn.executable("clangd") == 1 then
-				lspconfig.clangd.setup({
+				vim.lsp.config("clangd", {
 					cmd = {
 						"clangd",
 						"--suggest-missing-includes",
@@ -291,10 +293,11 @@ return {
 						"--clang-tidy",
 					},
 				})
+				vim.lsp.enable("clangd")
 			end
 
 			if vim.fn.executable("lua-language-server") == 1 then
-				lspconfig.lua_ls.setup({
+				vim.lsp.config("lua_ls", {
 					-- https://github.com/neovim/neovim/issues/21686#issuecomment-1522446128
 					settings = {
 						Lua = {
@@ -321,16 +324,17 @@ return {
 						},
 					},
 				})
+				vim.lsp.enable("lua_ls")
 			end
 
 			if vim.fn.executable("rust-analyzer") == 1 then
-				lspconfig.rust_analyzer.setup({})
+				vim.lsp.enable("rust_analyzer")
 			end
 
 			if vim.fn.executable("pyright") == 1 then
-				lspconfig.pyright.setup({})
+				vim.lsp.enable("pyright")
 			elseif vim.fn.executable("pylsp") == 1 then
-				lspconfig.pylsp.setup({})
+				vim.lsp.enable("pylsp")
 			end
 		end,
 	},

@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1771056166753,
+  "lastUpdate": 1771058874257,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -7548,6 +7548,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 1925.2403,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "8e4d0ab9a8008dfc077a982f47cef794194892e0",
+          "message": "nvim: use opts instead of config for whichkey",
+          "timestamp": "2026-02-14T03:46:45-05:00",
+          "tree_id": "954d5508583043e2117c979d57e91a60c9371bef",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/8e4d0ab9a8008dfc077a982f47cef794194892e0"
+        },
+        "date": 1771058873909,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 1897.8328,
             "unit": "msec"
           }
         ]

@@ -92,7 +92,7 @@ return {
 			log_level = "error",
 			pre_save_cmds = { "only" },
 			session_lens = {
-			  load_on_setup = false
+				load_on_setup = false,
 			},
 			suppressed_dirs = { "~/", "~/Downloads", "/" },
 			post_restore_cmds = {

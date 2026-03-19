@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1773939604825,
+  "lastUpdate": 1773939792667,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -7780,6 +7780,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 2133.2659,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "021ed015f1bf1857e58bb79e3142e5ed55367f2b",
+          "message": "Remove 1password from manjaro.sh\n\nRemoved 1password from the list of packages to build.",
+          "timestamp": "2026-03-19T13:01:57-04:00",
+          "tree_id": "a32f437e66464cb7c721bf4ad58b7b3651345284",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/021ed015f1bf1857e58bb79e3142e5ed55367f2b"
+        },
+        "date": 1773939791928,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 1967.6864,
             "unit": "msec"
           }
         ]

@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1772562173755,
+  "lastUpdate": 1773939531973,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -7722,6 +7722,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 1789.6619,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2655413c3902ae194bf8b1051d58b023480efbc9",
+          "message": "Delete script/macos/1password.sh",
+          "timestamp": "2026-03-19T12:57:18-04:00",
+          "tree_id": "ec89605dd76b541eec1079975ba06f2a9afbcd10",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/2655413c3902ae194bf8b1051d58b023480efbc9"
+        },
+        "date": 1773939531311,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 3345.0267,
             "unit": "msec"
           }
         ]

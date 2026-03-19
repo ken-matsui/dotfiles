@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1773939531973,
+  "lastUpdate": 1773939604825,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -7751,6 +7751,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 3345.0267,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "f248cab29e6da50104e9db929a6ec46ad0b1c169",
+          "message": "Delete script/macos/latex.sh",
+          "timestamp": "2026-03-19T12:57:32-04:00",
+          "tree_id": "b1b450ad57fe41f4d8f056a1839b03812284ddc9",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/f248cab29e6da50104e9db929a6ec46ad0b1c169"
+        },
+        "date": 1773939603687,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 2133.2659,
             "unit": "msec"
           }
         ]

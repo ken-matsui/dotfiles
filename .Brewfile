@@ -37,6 +37,7 @@ brew "starship"
 brew "tmux"
 brew "topgrade"
 brew "trash" if OS.mac?
+brew "tree-sitter"
 brew "universal-ctags"
 # brew "valgrind"
 brew "vhs"

@@ -1,6 +1,8 @@
 return {
-	-- Detect shiftwidth and expandtab automatically
-	"tpope/vim-sleuth",
+	{
+		"NMAC427/guess-indent.nvim",
+		opts = {},
+	},
 
 	{
 		"dkarter/bullets.vim",

@@ -268,11 +268,11 @@ return {
 		cmd = "LspInfo",
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
-			"hrsh7th/cmp-nvim-lsp",
+			"saghen/blink.cmp",
 		},
 		config = function()
-			-- Merge cmp_nvim_lsp completion capabilities with the defaults
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			-- Use blink.cmp's LSP capabilities, with snippets disabled
+			local capabilities = require("blink.cmp").get_lsp_capabilities()
 			capabilities.textDocument.completion.completionItem.snippetSupport = false
 			vim.lsp.config("*", { capabilities = capabilities })
 

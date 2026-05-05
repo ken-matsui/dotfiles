@@ -158,38 +158,26 @@ return {
 
 	-- Completion
 	{
-		"hrsh7th/nvim-cmp",
+		"saghen/blink.cmp",
+		version = "1.*",
 		event = "InsertEnter",
-		dependencies = {
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
-			"onsails/lspkind-nvim",
-		},
-		opts = function()
-			local cmp = require("cmp")
-			return {
-				preselect = cmp.PreselectMode.None,
-				mapping = cmp.mapping.preset.insert({
-					["<Esc>"] = cmp.mapping.abort(),
-					["<CR>"] = cmp.mapping.confirm({
-						behavior = cmp.ConfirmBehavior.Insert,
-						select = false,
-					}),
-				}),
-				sources = cmp.config.sources({
-					{ name = "nvim_lsp" },
-					{ name = "buffer" },
-					{ name = "path" },
-				}),
-				formatting = {
-					format = require("lspkind").cmp_format({
-						mode = "symbol_text",
-						maxwidth = 50,
-						ellipsis_char = "...",
-					}),
+		---@module "blink.cmp"
+		---@type blink.cmp.Config
+		opts = {
+			keymap = {
+				preset = "enter",
+				["<Esc>"] = { "hide", "fallback" },
+			},
+			completion = {
+				list = {
+					selection = { preselect = false, auto_insert = false },
 				},
-			}
-		end,
+			},
+			sources = {
+				default = { "lsp", "path", "buffer" },
+			},
+		},
+		opts_extend = { "sources.default" },
 	},
 
 	{

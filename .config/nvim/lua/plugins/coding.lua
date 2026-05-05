@@ -79,9 +79,6 @@ return {
 	{
 		"windwp/nvim-ts-autotag",
 		event = { "BufReadPre", "BufNewFile" },
-		cond = function()
-			return vim.fn.has("nvim-0.9.5") == 1
-		end,
 		config = true,
 	},
 
@@ -136,9 +133,6 @@ return {
 	{
 		"stevearc/conform.nvim",
 		version = "v9.*",
-		cond = function()
-			return vim.fn.has("nvim-0.10") == 1
-		end,
 		cmd = { "ConformInfo" },
 		init = function()
 			vim.api.nvim_create_user_command("FormatBuffer", function()

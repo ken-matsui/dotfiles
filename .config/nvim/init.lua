@@ -37,7 +37,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
-if vim.env.NVIM_NO_PLUGINS ~= "1" then
+-- Usually support the latest 2 versions
+local plugins_enabled = vim.env.NVIM_NO_PLUGINS ~= "1" and vim.fn.has("nvim-0.11") == 1
+if plugins_enabled then
 	require("config.lazy")
 end
 

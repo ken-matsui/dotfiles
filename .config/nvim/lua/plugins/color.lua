@@ -10,17 +10,20 @@ return {
 		end,
 	},
 
-	-- Syntax Highlight
+	-- Tree-sitter parsers and Neovim-native highlighting
 	{
 		"nvim-treesitter/nvim-treesitter",
 		branch = "main",
 		lazy = false,
+		cond = function()
+			return vim.fn.has("nvim-0.12") == 1
+		end,
 		dependencies = {
 			"RRethy/nvim-treesitter-endwise",
 		},
 		build = ":TSUpdate",
 		opts = {
-			parsers = {
+			install = {
 				"bash",
 				"comment",
 				"c",
@@ -43,24 +46,37 @@ return {
 				"vim",
 				"yaml",
 			},
+			filetypes = {
+				javascript = { "javascriptreact" },
+				tsx = { "typescriptreact" },
+			},
+			disable_large_file = {
+				c = true,
+				cpp = true,
+			},
 		},
 		config = function(_, opts)
 			local treesitter = require("nvim-treesitter")
-			local notify = vim.notify_once or vim.notify
 			if not treesitter.install then
-				notify("Run :Lazy sync nvim-treesitter to switch nvim-treesitter to main", vim.log.levels.WARN)
+				vim.notify_once("Run :Lazy sync nvim-treesitter to switch nvim-treesitter to main", vim.log.levels.WARN)
 				return
 			end
 
-			treesitter.setup()
+			for lang, filetypes in pairs(opts.filetypes) do
+				vim.treesitter.language.register(lang, filetypes)
+			end
+
 			if vim.fn.executable("tree-sitter") == 1 then
-				treesitter.install(opts.parsers)
+				treesitter.install(opts.install)
 			else
-				notify("nvim-treesitter main requires the tree-sitter CLI to install parsers", vim.log.levels.WARN)
+				vim.notify_once(
+					"nvim-treesitter main requires tree-sitter CLI 0.26.1+ to install parsers",
+					vim.log.levels.WARN
+				)
 			end
 
 			local parser_by_lang = {}
-			for _, parser in ipairs(opts.parsers) do
+			for _, parser in ipairs(opts.install) do
 				parser_by_lang[parser] = true
 			end
 
@@ -72,7 +88,7 @@ return {
 						return
 					end
 
-					if (lang == "c" or lang == "cpp") and vim.api.nvim_buf_line_count(args.buf) > 50000 then
+					if opts.disable_large_file[lang] and vim.api.nvim_buf_line_count(args.buf) > 50000 then
 						vim.notify(
 							"Treesitter disabled for large file: " .. vim.api.nvim_buf_get_name(args.buf),
 							vim.log.levels.WARN
@@ -80,9 +96,14 @@ return {
 						return
 					end
 
-					local ok = pcall(vim.treesitter.start, args.buf, lang)
-					if ok then
-						vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+					if vim.treesitter.language.add(lang) then
+						local ok, err = pcall(vim.treesitter.start, args.buf, lang)
+						if not ok then
+							vim.notify_once(
+								"Failed to start Treesitter for " .. lang .. ": " .. err,
+								vim.log.levels.WARN
+							)
+						end
 					end
 				end,
 			})

@@ -20,11 +20,6 @@ return {
 	},
 
 	{
-		"bronson/vim-visual-star-search",
-		event = "VeryLazy",
-	},
-
-	{
 		"tpope/vim-repeat",
 		event = "VeryLazy",
 	},

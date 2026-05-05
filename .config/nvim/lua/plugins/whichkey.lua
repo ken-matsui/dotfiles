@@ -7,7 +7,6 @@ return {
 		cond = function()
 			return vim.fn.has("nvim-0.9.4") == 1
 		end,
-		lazy = true,
 		event = "VeryLazy",
 		init = function()
 			vim.o.timeout = true

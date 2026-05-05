@@ -45,14 +45,9 @@ return {
 			highlight = {
 				enable = true,
 				disable = function(lang, bufnr)
-					if lang == "c" or lang == "cpp" then
-						if vim.api.nvim_buf_line_count(bufnr) > 50000 then
-							local filepath = vim.fn.expand("%:p")
-							vim.api.nvim_echo({
-								{ "Treesitter disabled for large files: " .. filepath, "WarningMsg" },
-							}, false, {})
-							return true
-						end
+					if (lang == "c" or lang == "cpp") and vim.api.nvim_buf_line_count(bufnr) > 50000 then
+						vim.notify("Treesitter disabled for large file: " .. vim.fn.expand("%:p"), vim.log.levels.WARN)
+						return true
 					end
 					return false
 				end,
@@ -79,7 +74,6 @@ return {
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		version = "v3.*",
-		lazy = true,
 		event = "BufReadPost",
 		config = function()
 			local hooks = require("ibl.hooks")
@@ -113,7 +107,6 @@ return {
 	-- Highlight the same word
 	{
 		"RRethy/vim-illuminate",
-		lazy = true,
 		event = "BufReadPost",
 		opts = {
 			providers = {

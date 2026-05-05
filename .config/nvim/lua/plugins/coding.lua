@@ -26,25 +26,21 @@ return {
 
 	{
 		"tpope/vim-repeat",
-		lazy = true,
 		event = "VeryLazy",
 	},
 
 	{
 		"tpope/vim-abolish",
-		lazy = true,
 		event = "VeryLazy",
 	},
 
 	{
 		"machakann/vim-sandwich",
-		lazy = true,
 		event = "VeryLazy",
 	},
 
 	{
 		"github/copilot.vim", -- :Copilot setup
-		lazy = true,
 		event = "VeryLazy",
 		config = function()
 			vim.g.copilot_filetypes = {
@@ -91,7 +87,6 @@ return {
 
 	{
 		"MattesGroeger/vim-bookmarks",
-		lazy = true,
 		event = "BufRead",
 		init = function()
 			vim.g.bookmark_save_per_working_dir = 1
@@ -100,7 +95,6 @@ return {
 
 	{
 		"vim-scripts/ReplaceWithRegister",
-		lazy = true,
 		event = "VeryLazy",
 	},
 
@@ -215,7 +209,7 @@ return {
 				-- Navigation
 				map("n", "<Leader>gn", function()
 					if vim.wo.diff then
-						vim.cmd.normal({ "<Leader>gn", bang = true })
+						vim.cmd.normal({ "]c", bang = true })
 					else
 						gitsigns.nav_hunk("next")
 					end
@@ -223,7 +217,7 @@ return {
 
 				map("n", "<Leader>gp", function()
 					if vim.wo.diff then
-						vim.cmd.normal({ "<Leader>gp", bang = true })
+						vim.cmd.normal({ "[c", bang = true })
 					else
 						gitsigns.nav_hunk("prev")
 					end
@@ -277,43 +271,44 @@ return {
 			"hrsh7th/cmp-nvim-lsp",
 		},
 		config = function()
-			-- Add cmp_nvim_lsp capabilities settings to lspconfig
-			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
-
-			-- Disable snippets
+			-- Merge cmp_nvim_lsp completion capabilities with the defaults
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			capabilities.textDocument.completion.completionItem.snippetSupport = false
+			vim.lsp.config("*", { capabilities = capabilities })
 
-			vim.lsp.config("*", {
-				capabilities = capabilities,
-			})
-
-			-- Executes the callback function every time a language server is attached to a buffer.
 			vim.api.nvim_create_autocmd("LspAttach", {
-				desc = "LSP actions",
+				desc = "LSP buffer-local mappings",
 				callback = function(event)
-					local opts = { buffer = event.buf }
+					local bufnr = event.buf
+					local function map(mode, lhs, rhs, desc)
+						vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc })
+					end
 
-					vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
-					vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
-					vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
-					vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
-					vim.keymap.set("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>", opts)
-					vim.keymap.set("n", "gR", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
-					vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
-					vim.keymap.set("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-					vim.keymap.set({ "n", "x" }, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
-					vim.keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
+					map("n", "K", vim.lsp.buf.hover, "Hover")
+					map("n", "gd", vim.lsp.buf.definition, "Go to definition")
+					map("n", "gD", vim.lsp.buf.declaration, "Go to declaration")
+					map("n", "gi", vim.lsp.buf.implementation, "Go to implementation")
+					map("n", "go", vim.lsp.buf.type_definition, "Go to type definition")
+					map("n", "gR", vim.lsp.buf.references, "References")
+					map("n", "gs", vim.lsp.buf.signature_help, "Signature help")
+					map("n", "<F2>", vim.lsp.buf.rename, "Rename")
+					map({ "n", "x" }, "<F3>", function()
+						vim.lsp.buf.format({ async = true })
+					end, "Format")
+					map("n", "<F4>", vim.lsp.buf.code_action, "Code action")
 
-					-- Go to next/prev diagnostic warning/error
-					vim.keymap.set("n", "gn", "<cmd>lua vim.diagnostic.goto_next()<cr>", opts)
-					vim.keymap.set("n", "gp", "<cmd>lua vim.diagnostic.goto_prev()<cr>", opts)
+					map("n", "gn", function()
+						vim.diagnostic.jump({ count = 1 })
+					end, "Next diagnostic")
+					map("n", "gp", function()
+						vim.diagnostic.jump({ count = -1 })
+					end, "Previous diagnostic")
 
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
-					if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
-						vim.keymap.set("n", "<Leader>H", function()
-							vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ buffnr = event.buf }))
-						end, { desc = "Toggle Inlay Hints", buffer = event.buf })
+					if client and client.server_capabilities.inlayHintProvider then
+						map("n", "<Leader>H", function()
+							vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr }))
+						end, "Toggle inlay hints")
 					end
 				end,
 			})

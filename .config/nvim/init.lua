@@ -4,35 +4,40 @@ if vim.loader then
 end
 
 -- Disable unused built-in plugins to shave startup time
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-vim.g.loaded_gzip = 1
-vim.g.loaded_tar = 1
-vim.g.loaded_tarPlugin = 1
-vim.g.loaded_zip = 1
-vim.g.loaded_zipPlugin = 1
-vim.g.loaded_tutor_mode_plugin = 1
-vim.g.loaded_2html_plugin = 1
-vim.g.loaded_man = 1
+for _, plugin in ipairs({
+	"netrw",
+	"netrwPlugin",
+	"gzip",
+	"tar",
+	"tarPlugin",
+	"zip",
+	"zipPlugin",
+	"tutor_mode_plugin",
+	"2html_plugin",
+	"man",
+}) do
+	vim.g["loaded_" .. plugin] = 1
+end
 
--- Load Vim configuration
-local config_home = os.getenv("XDG_CONFIG_HOME") or "~/.config"
-vim.cmd("set runtimepath^=" .. config_home .. "/vim runtimepath+=" .. config_home .. "/vim/after")
+-- Load shared Vim configuration from ~/.config/vim
+local config_home = vim.env.XDG_CONFIG_HOME or vim.fn.expand("~/.config")
+vim.opt.runtimepath:prepend(config_home .. "/vim")
+vim.opt.runtimepath:append(config_home .. "/vim/after")
 vim.o.packpath = vim.o.runtimepath
-vim.cmd("source " .. config_home .. "/vim/vimrc")
+vim.cmd.source(config_home .. "/vim/vimrc")
 
--- Always show the signcolumn, otherwise it would shift the text each time
--- diagnostics appeared/became resolved
+-- Always show the signcolumn so diagnostics don't shift the text
 vim.opt.signcolumn = "yes"
 
 -- Highlight yanked region
 vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()
-		vim.highlight.on_yank({ timeout = 500 })
+		local hl = vim.hl or vim.highlight
+		hl.on_yank({ timeout = 500 })
 	end,
 })
 
-if os.getenv("NVIM_NO_PLUGINS") ~= "1" then
+if vim.env.NVIM_NO_PLUGINS ~= "1" then
 	require("config.lazy")
 end
 

@@ -1,9 +1,9 @@
 -- Bootstrap lazy.nvim
-local config_home = os.getenv("XDG_CONFIG_HOME") or "~/.config"
+local config_home = vim.env.XDG_CONFIG_HOME or vim.fn.expand("~/.config")
 local lazy_home = config_home .. "/nvim/lazy"
 
 local lazypath = lazy_home .. "/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
 	local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
 	if vim.v.shell_error ~= 0 then

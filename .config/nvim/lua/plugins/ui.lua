@@ -38,7 +38,6 @@ return {
 	{
 		"akinsho/bufferline.nvim",
 		version = "v4.*",
-		lazy = true,
 		event = "VeryLazy",
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
@@ -82,7 +81,6 @@ return {
 
 	{
 		"nvim-lualine/lualine.nvim",
-		lazy = true,
 		event = "VeryLazy",
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
@@ -130,7 +128,6 @@ return {
 
 	{
 		"petertriho/nvim-scrollbar",
-		lazy = true,
 		event = "BufReadPre",
 		dependencies = {
 			"lewis6991/gitsigns.nvim",
@@ -162,7 +159,6 @@ return {
 	-- Completion
 	{
 		"hrsh7th/nvim-cmp",
-		lazy = true,
 		event = "InsertEnter",
 		dependencies = {
 			"hrsh7th/cmp-buffer",
@@ -199,7 +195,6 @@ return {
 	{
 		"nvim-telescope/telescope.nvim",
 		version = "0.2.*",
-		lazy = true,
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
@@ -255,7 +250,6 @@ return {
 	},
 	{
 		"prochri/telescope-all-recent.nvim",
-		lazy = true,
 		dependencies = {
 			"nvim-telescope/telescope.nvim",
 			"kkharji/sqlite.lua",

@@ -13,8 +13,8 @@ return {
 	-- Syntax Highlight
 	{
 		"nvim-treesitter/nvim-treesitter",
+		branch = "master",
 		dependencies = {
-			"JoosepAlviste/nvim-ts-context-commentstring",
 			"RRethy/nvim-treesitter-endwise",
 		},
 		build = ":TSUpdate",
@@ -72,12 +72,6 @@ return {
 		},
 		config = function(_, opts)
 			require("nvim-treesitter.configs").setup(opts)
-			require("ts_context_commentstring").setup({
-				enable_autocmd = false,
-			})
-			require("Comment").setup({
-				pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
-			})
 		end,
 	},
 

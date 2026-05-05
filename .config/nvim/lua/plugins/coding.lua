@@ -1,6 +1,7 @@
 return {
 	{
 		"NMAC427/guess-indent.nvim",
+		event = { "BufReadPost", "BufNewFile" },
 		opts = {},
 	},
 
@@ -13,7 +14,10 @@ return {
 		},
 	},
 
-	"farmergreg/vim-lastplace",
+	{
+		"farmergreg/vim-lastplace",
+		event = "BufReadPre",
+	},
 
 	{
 		"bronson/vim-visual-star-search",
@@ -51,8 +55,23 @@ return {
 
 	{
 		"numToStr/Comment.nvim",
-		lazy = true,
-		config = true,
+		dependencies = {
+			{
+				"JoosepAlviste/nvim-ts-context-commentstring",
+				opts = { enable_autocmd = false },
+			},
+		},
+		keys = {
+			{ "gcc", mode = "n", desc = "Comment toggle current line" },
+			{ "gc", mode = { "n", "x", "o" }, desc = "Comment toggle linewise" },
+			{ "gbc", mode = "n", desc = "Comment toggle current block" },
+			{ "gb", mode = { "n", "x", "o" }, desc = "Comment toggle blockwise" },
+		},
+		opts = function()
+			return {
+				pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+			}
+		end,
 	},
 
 	{
@@ -152,13 +171,27 @@ return {
 	-- Git
 	--
 
-	"tpope/vim-fugitive",
+	{
+		"tpope/vim-fugitive",
+		cmd = {
+			"G",
+			"Git",
+			"Gdiffsplit",
+			"Gvdiffsplit",
+			"Gread",
+			"Gwrite",
+			"Ggrep",
+			"GMove",
+			"GRename",
+			"GDelete",
+			"GRemove",
+		},
+	},
 
 	{
 		"lewis6991/gitsigns.nvim",
 		version = "v1.*",
-		lazy = true,
-		-- event = "BufReadPre",
+		event = { "BufReadPre", "BufNewFile" },
 		opts = {
 			-- GitLens-like blame line
 			current_line_blame = true,
@@ -316,8 +349,13 @@ return {
 								},
 							},
 							workspace = {
-								-- Make the server aware of Neovim runtime files
-								library = vim.api.nvim_get_runtime_file("", true),
+								-- Make the server aware of Neovim runtime files without
+								-- indexing every installed plugin (which is very slow).
+								checkThirdParty = false,
+								library = {
+									vim.env.VIMRUNTIME .. "/lua",
+									"${3rd}/luv/library",
+								},
 							},
 							-- Do not send telemetry data containing a randomized but unique identifier
 							telemetry = {

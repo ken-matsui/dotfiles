@@ -8,7 +8,14 @@ return {
 
 	{
 		"nvim-tree/nvim-tree.lua",
-		lazy = false,
+		cmd = {
+			"NvimTreeOpen",
+			"NvimTreeToggle",
+			"NvimTreeFocus",
+			"NvimTreeFindFile",
+			"NvimTreeFindFileToggle",
+			"NvimTreeCollapse",
+		},
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
@@ -137,6 +144,7 @@ return {
 	{
 		"j-hui/fidget.nvim",
 		version = "v1.*",
+		event = "LspAttach",
 		opts = {
 			integration = {
 				-- Dynamically offset Fidget's notifications window when the nvim-tree

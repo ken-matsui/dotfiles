@@ -55,7 +55,7 @@ jobs:
 
       - name: Run vim-startuptime
         run: |
-          vim-startuptime -vimpath nvim "+Lazy! sync" | \
+          vim-startuptime -vimpath nvim -- .config/nvim/init.lua | \
           tee full.txt | \
           awk '/Total Average/ {print $3}' | \
           jq -R '{"name": "Neovim Total Average Startup Time", "unit": "msec", "value": (. | tonumber)}' | \

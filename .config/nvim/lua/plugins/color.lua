@@ -13,13 +13,14 @@ return {
 	-- Syntax Highlight
 	{
 		"nvim-treesitter/nvim-treesitter",
-		branch = "master",
+		branch = "main",
+		lazy = false,
 		dependencies = {
 			"RRethy/nvim-treesitter-endwise",
 		},
 		build = ":TSUpdate",
 		opts = {
-			ensure_installed = {
+			parsers = {
 				"bash",
 				"comment",
 				"c",
@@ -42,31 +43,49 @@ return {
 				"vim",
 				"yaml",
 			},
-			highlight = {
-				enable = true,
-				disable = function(lang, bufnr)
-					if (lang == "c" or lang == "cpp") and vim.api.nvim_buf_line_count(bufnr) > 50000 then
-						vim.notify("Treesitter disabled for large file: " .. vim.fn.expand("%:p"), vim.log.levels.WARN)
-						return true
-					end
-					return false
-				end,
-
-				-- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-				-- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-				-- Using this option may slow down your editor, and you may see some duplicate highlights.
-				-- Instead of true it can also be a list of languages
-				additional_vim_regex_highlighting = false,
-			},
-			indent = {
-				enable = true,
-			},
-			endwise = {
-				enable = true,
-			},
 		},
 		config = function(_, opts)
-			require("nvim-treesitter.configs").setup(opts)
+			local treesitter = require("nvim-treesitter")
+			local notify = vim.notify_once or vim.notify
+			if not treesitter.install then
+				notify("Run :Lazy sync nvim-treesitter to switch nvim-treesitter to main", vim.log.levels.WARN)
+				return
+			end
+
+			treesitter.setup()
+			if vim.fn.executable("tree-sitter") == 1 then
+				treesitter.install(opts.parsers)
+			else
+				notify("nvim-treesitter main requires the tree-sitter CLI to install parsers", vim.log.levels.WARN)
+			end
+
+			local parser_by_lang = {}
+			for _, parser in ipairs(opts.parsers) do
+				parser_by_lang[parser] = true
+			end
+
+			vim.api.nvim_create_autocmd("FileType", {
+				group = vim.api.nvim_create_augroup("treesitter-start", { clear = true }),
+				callback = function(args)
+					local lang = vim.treesitter.language.get_lang(args.match)
+					if not lang or not parser_by_lang[lang] then
+						return
+					end
+
+					if (lang == "c" or lang == "cpp") and vim.api.nvim_buf_line_count(args.buf) > 50000 then
+						vim.notify(
+							"Treesitter disabled for large file: " .. vim.api.nvim_buf_get_name(args.buf),
+							vim.log.levels.WARN
+						)
+						return
+					end
+
+					local ok = pcall(vim.treesitter.start, args.buf, lang)
+					if ok then
+						vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+					end
+				end,
+			})
 		end,
 	},
 

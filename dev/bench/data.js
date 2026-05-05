@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1777958307831,
+  "lastUpdate": 1777958917982,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -7983,6 +7983,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 134.2993,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "aadde4bf8b64fd03d8ead5a3e5a1d8c1bfdeb8e9",
+          "message": "nvim: refactor",
+          "timestamp": "2026-05-05T01:27:24-04:00",
+          "tree_id": "df6583318a009a5503349026039a088e67c9c1ef",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/aadde4bf8b64fd03d8ead5a3e5a1d8c1bfdeb8e9"
+        },
+        "date": 1777958917020,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 231.8704,
             "unit": "msec"
           }
         ]

@@ -17,6 +17,7 @@ disable = [
   "containers",
   "helix",
   "node",
+  "pipx",
   "pnpm",
   "poetry",
   "system",

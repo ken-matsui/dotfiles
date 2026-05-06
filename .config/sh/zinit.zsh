@@ -6,7 +6,7 @@ if [ "$NO_ZINIT" = '1' ]; then
 fi
 
 declare -A ZINIT
-ZINIT[HOME_DIR]="$SHELL_CONFIG_HOME/zinit"
+ZINIT[HOME_DIR]="$SH_CONFIG_HOME/zinit"
 ZINIT[BIN_DIR]="${ZINIT[HOME_DIR]}/zinit.git"
 ZINIT[NO_ALIASES]=1
 

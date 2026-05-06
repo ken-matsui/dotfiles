@@ -10,7 +10,7 @@ export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
 export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
 
-export SHELL_CONFIG_HOME="$XDG_CONFIG_HOME/shell"
+export SH_CONFIG_HOME="$XDG_CONFIG_HOME/sh"
 export SHELL_NAME="${SHELL##*/}"
 export OS_NAME="$(uname -s)"
 

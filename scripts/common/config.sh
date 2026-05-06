@@ -23,7 +23,7 @@ ALL='
 .config/atuin
 .config/git
 .config/nvim
-.config/shell
+.config/sh
 .config/sway
 .config/tmux
 .config/topgrade
@@ -39,7 +39,7 @@ ALL='
 MINIMAL='
 .config/git
 .config/nvim
-.config/shell
+.config/sh
 .config/tmux
 .config/vim
 .config/starship.toml

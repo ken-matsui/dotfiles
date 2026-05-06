@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1778027328045,
+  "lastUpdate": 1778027413806,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -8360,6 +8360,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 11.241,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "33afc75f1da6cb8a6e0a04d74b67b1071b2210f4",
+          "message": "scripts: remove support for manjaro",
+          "timestamp": "2026-05-05T20:29:17-04:00",
+          "tree_id": "9b3c3aa8af11bc3a36263427231aeaea3ee22223",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/33afc75f1da6cb8a6e0a04d74b67b1071b2210f4"
+        },
+        "date": 1778027412803,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 10.6132,
             "unit": "msec"
           }
         ]

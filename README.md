@@ -17,7 +17,7 @@
 ```sh
 cd ~
 git clone https://github.com/ken-matsui/dotfiles.git
-./dotfiles/script/common/config.sh minimal
+./dotfiles/scripts/common/config.sh minimal
 ```
 
 ### Full Installation (only on macOS or Manjaro Sway)

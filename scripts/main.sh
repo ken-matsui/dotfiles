@@ -8,13 +8,13 @@ run() {
 
 OS_NAME="$(uname -s)"
 if [ "$OS_NAME" = Darwin ]; then
-  for file in "$DOTSPATH"/script/macos/*.sh; do
+  for file in "$DOTSPATH"/scripts/macos/*.sh; do
     run $file
   done
 elif [ "$OS_NAME" = Linux ]; then
-  run "$DOTSPATH"/script/manjaro.sh
+  run "$DOTSPATH"/scripts/manjaro.sh
 fi
 
-for file in "$DOTSPATH"/script/common/*.sh; do
+for file in "$DOTSPATH"/scripts/common/*.sh; do
   run $file
 done

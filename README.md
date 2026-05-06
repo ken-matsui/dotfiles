@@ -20,7 +20,7 @@ git clone https://github.com/ken-matsui/dotfiles.git
 ./dotfiles/scripts/common/config.sh minimal
 ```
 
-### Full Installation (only on macOS or Manjaro Sway)
+### Full Installation (only for macOS)
 
 Use this way only when you have a fresh environment.
 

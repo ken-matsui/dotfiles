@@ -11,8 +11,6 @@ if [ "$OS_NAME" = Darwin ]; then
   for file in "$DOTSPATH"/scripts/macos/*.sh; do
     run $file
   done
-elif [ "$OS_NAME" = Linux ]; then
-  run "$DOTSPATH"/scripts/manjaro.sh
 fi
 
 for file in "$DOTSPATH"/scripts/common/*.sh; do

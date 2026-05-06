@@ -22,17 +22,6 @@ case "$OS_NAME" in
     done
     ;;
 
-  Linux)
-    # https://askubuntu.com/a/459425
-    _distrotype="$(awk -F= '/^NAME/{print $2}' /etc/os-release)"
-    if [ "$_distrotype" != '"Manjaro Linux"' ]; then
-      echo "$_distrotype is not supported."
-      unset _distrotype
-      exit 1
-    fi
-    unset _distrotype
-    ;;
-
   *)
     echo "'$OS_NAME' is not supported."
     exit 1

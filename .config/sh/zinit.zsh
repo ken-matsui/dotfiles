@@ -26,9 +26,6 @@ zinit snippet OMZP::git/git.plugin.zsh  # gst (git status), etc.
 zinit ice as"program" pick"bin/git-fuzzy"
 zinit light bigH/git-fuzzy
 
-zinit ice wait lucid ver"1.9.0"
-zinit light MichaelAquilina/zsh-you-should-use
-
 autoload -Uz is-at-least
 if is-at-least 5.1; then
   zinit light MichaelAquilina/zsh-auto-notify

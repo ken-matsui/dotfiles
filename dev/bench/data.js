@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1778027483868,
+  "lastUpdate": 1778027638594,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -8447,6 +8447,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 11.1622,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "25108499a9744e112b5a68c36aff9dff082650cd",
+          "message": "nvim: option to toggle auto-session use",
+          "timestamp": "2026-05-05T20:33:06-04:00",
+          "tree_id": "78d2023b5132396c6da57748dd63bb084614647f",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/25108499a9744e112b5a68c36aff9dff082650cd"
+        },
+        "date": 1778027637480,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 10.7232,
             "unit": "msec"
           }
         ]

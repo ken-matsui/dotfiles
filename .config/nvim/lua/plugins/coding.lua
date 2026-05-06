@@ -94,6 +94,11 @@ return {
 		"rmagatti/auto-session",
 		---@module "auto-session"
 		---@type AutoSession.Config
+		cond = function()
+			-- Enable plugin if NVIM_NO_AUTO_SESSION is strictly undefined or empty
+			local no_auto_session = vim.env.NVIM_NO_AUTO_SESSION
+			return no_auto_session == nil or no_auto_session == ""
+		end,
 		opts = {
 			auto_save = true,
 			log_level = "error",

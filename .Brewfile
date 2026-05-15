@@ -44,6 +44,7 @@ brew "vhs"
 brew "wget"
 brew "wrk"
 brew "youtube-dl"
+brew "zoxide"
 
 tap "protonpass/tap"
 brew "pass-cli"

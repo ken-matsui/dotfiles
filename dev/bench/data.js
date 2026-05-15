@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1778829648743,
+  "lastUpdate": 1778830510635,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -8592,6 +8592,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 11.2712,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "81d819830f63b6edb27e2e652d43a73361e6e68b",
+          "message": "brew: add zoxide",
+          "timestamp": "2026-05-15T03:34:32-04:00",
+          "tree_id": "8d47d69815f6f34dde122a7d0cf2442645a1578d",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/81d819830f63b6edb27e2e652d43a73361e6e68b"
+        },
+        "date": 1778830510035,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 11.3205,
             "unit": "msec"
           }
         ]

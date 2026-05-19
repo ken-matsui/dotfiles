@@ -55,7 +55,6 @@ cask "brave-browser"
 cask "deepl"
 cask "discord"
 cask "font-jetbrains-mono-nerd-font"  # for alacritty
-cask "grammarly-desktop"
 cask "homerow"
 cask "jordanbaird-ice"
 # cask "mactex-no-gui"

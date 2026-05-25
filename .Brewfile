@@ -34,6 +34,7 @@ brew "poetry"
 brew "python"
 brew "python-lsp-server"
 brew "starship"
+brew "taplo"
 brew "tmux"
 brew "topgrade"
 brew "trash" if OS.mac?

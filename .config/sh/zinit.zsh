@@ -20,7 +20,6 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light momo-lab/zsh-replace-multiple-dots
 
-zinit snippet OMZP::gitignore/gitignore.plugin.zsh  # gi cpp,python > .gitignore
 zinit snippet OMZP::git/git.plugin.zsh  # gst (git status), etc.
 
 zinit ice as"program" pick"bin/git-fuzzy"

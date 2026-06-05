@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1780661002976,
+  "lastUpdate": 1780661183833,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -8911,6 +8911,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 8.7918,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "6059b7e2a05a5f123377e9ee326796d1c94e02a7",
+          "message": "claude: unify statusline meter glyphs via BAR_FILL/BAR_EMPTY constants",
+          "timestamp": "2026-06-05T08:05:41-04:00",
+          "tree_id": "41f7792caf4d937e7c82c1e96c64cd53f8c2d595",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/6059b7e2a05a5f123377e9ee326796d1c94e02a7"
+        },
+        "date": 1780661183347,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 11.0579,
             "unit": "msec"
           }
         ]

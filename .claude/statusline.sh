@@ -1,6 +1,6 @@
 #!/bin/sh
 # Claude Code status line.
-#   Line 1: model (effort), version, directory, branch, cost, duration
+#   Line 1: model (effort), version, directory, branch, +added/-removed, cost, duration
 #   Line 2: context + rate-limit meters (Ctx, 5h, 7d)
 #
 # The field variables (model, ctx, five, week, …) are assigned by the `eval` of
@@ -13,6 +13,8 @@ RESET=$(printf '\033[0m')
 C_VER=$(printf '\033[90m')     # gray           — version
 C_DIR=$(printf '\033[94m')     # bright blue    — directory
 C_BRANCH=$(printf '\033[93m')  # bright yellow  — branch
+C_ADD=$(printf '\033[92m')     # bright green   — lines added
+C_DEL=$(printf '\033[91m')     # bright red     — lines removed
 C_COST=$(printf '\033[96m')    # bright cyan    — cost
 C_DUR=$(printf '\033[95m')     # bright magenta — duration
 C_CTX=$(printf '\033[96m')     # bright cyan    — Ctx label
@@ -33,6 +35,8 @@ eval "$(printf '%s' "$input" | jq -r '
     week:    (.rate_limits.seven_day.used_percentage // ""),
     week_at: (.rate_limits.seven_day.resets_at       // ""),
     dir:     (.workspace.current_dir                 // ""),
+    added:   (.cost.total_lines_added                // ""),
+    removed: (.cost.total_lines_removed              // ""),
     cost:    (.cost.total_cost_usd                   // ""),
     dur:     (.cost.total_duration_ms                // "")
   } | to_entries[] | "\(.key)=\(.value | tostring | @sh)"
@@ -122,6 +126,9 @@ row=$model
 add "$(seg "$C_VER"    "${version:+v$version}")"
 add "$(seg "$C_DIR"    "$dir")"
 add "$(seg "$C_BRANCH" "$branch")"
+# diffstat: +added/-removed session lines changed — shown only when nonzero
+[ "$(( ${added:-0} + ${removed:-0} ))" -gt 0 ] && \
+  add "${C_ADD}+${added:-0}${RESET}/${C_DEL}-${removed:-0}${RESET}"
 add "$(seg "$C_COST"   "${cost:+$(printf '$%.4f' "$cost")}")"
 add "$(seg "$C_DUR"    "${dur:+$(format_duration "$dur")}")"
 line1=$row

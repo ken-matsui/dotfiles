@@ -101,11 +101,13 @@ format_duration() {
 meter() {
   _label=$1; _color=$2; _raw=$3; _resets=$4
   [ -n "$_raw" ] || return 0
-  _int=$(printf '%.0f' "$_raw")
+  _int=$(printf '%.0f' "$_raw")    # rounded int drives the bar fill + color
+  _pct=$(printf '%.1f' "$_raw")    # shown value: one decimal,
+  _pct=${_pct%.0}                  # trimmed to a whole number when exact
   _bar=$(build_bar "$_int" "$(bar_color "$_int")")
   _reset=""
   [ -n "$_resets" ] && _reset=" $(duration_str "$_resets")"
-  printf '%s%s%s:[%s] %s%%%s' "$_color" "$_label" "$RESET" "$_bar" "$_int" "$_reset"
+  printf '%s%s%s:[%s] %s%%%s' "$_color" "$_label" "$RESET" "$_bar" "$_pct" "$_reset"
 }
 
 # seg <color> <value> — returns "<color><value><reset>"; empty when <value> is empty

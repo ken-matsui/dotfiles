@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1780555070416,
+  "lastUpdate": 1780659666206,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -8766,6 +8766,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 11.2254,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "1efd8b0c3939faa9110369f820a2cd776dcaf967",
+          "message": "claude: track statusline.sh and link it on install\n\nMove ~/.claude/statusline.sh into the repo (symlinked back) and add it to config.sh's link list, with mkdir -p ~/.claude so a fresh install recreates the symlink.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>",
+          "timestamp": "2026-06-05T07:40:03-04:00",
+          "tree_id": "ae3422c6f035237377dc10839f4e1d22a8b9dd8c",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/1efd8b0c3939faa9110369f820a2cd776dcaf967"
+        },
+        "date": 1780659665149,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 12.2829,
             "unit": "msec"
           }
         ]

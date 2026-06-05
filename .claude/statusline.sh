@@ -35,8 +35,8 @@ eval "$(printf '%s' "$input" | jq -r '
     week:    (.rate_limits.seven_day.used_percentage // ""),
     week_at: (.rate_limits.seven_day.resets_at       // ""),
     dir:     (.workspace.current_dir                 // ""),
-    added:   (.cost.total_lines_added                // ""),
-    removed: (.cost.total_lines_removed              // ""),
+    added:   (.cost.total_lines_added                // 0),
+    removed: (.cost.total_lines_removed              // 0),
     cost:    (.cost.total_cost_usd                   // ""),
     dur:     (.cost.total_duration_ms                // "")
   } | to_entries[] | "\(.key)=\(.value | tostring | @sh)"
@@ -126,7 +126,7 @@ row=$model
 add "$(seg "$C_VER"    "${version:+v$version}")"
 add "$(seg "$C_DIR"    "$dir")"
 add "$(seg "$C_BRANCH" "$branch")"
-add "${C_ADD}+${added:-0}${RESET}/${C_DEL}-${removed:-0}${RESET}"
+add "${C_ADD}+${added}${RESET}/${C_DEL}-${removed}${RESET}"
 add "$(seg "$C_COST"   "${cost:+$(printf '$%.4f' "$cost")}")"
 add "$(seg "$C_DUR"    "${dur:+$(format_duration "$dur")}")"
 line1=$row

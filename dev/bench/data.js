@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1780660625535,
+  "lastUpdate": 1780661002976,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -8882,6 +8882,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 11.3959,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "76b3738e2f03dacd8e62b86a422af7f073f3615d",
+          "message": "claude: unify statusline meter width via BAR_WIDTH constant",
+          "timestamp": "2026-06-05T08:02:24-04:00",
+          "tree_id": "29ba5cc6182d89543bb9c359366e1de63d1dd6dd",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/76b3738e2f03dacd8e62b86a422af7f073f3615d"
+        },
+        "date": 1780661001878,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 8.7918,
             "unit": "msec"
           }
         ]

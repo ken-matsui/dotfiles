@@ -19,6 +19,7 @@ backup_and_link() {
 }
 
 ALL='
+.claude/statusline.sh
 .config/alacritty
 .config/atuin
 .config/git
@@ -56,6 +57,7 @@ else
 fi
 
 mkdir -p "$HOME/.config"
+mkdir -p "$HOME/.claude"
 
 for item in $ITEMS; do
   backup_and_link "$item"

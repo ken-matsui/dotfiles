@@ -23,7 +23,9 @@ C_7D=$(printf '\033[92m')      # bright green   — 7d label
 C_WARN=$(printf '\033[93m')    # bright yellow  — meter fill >= 60%
 C_CRIT=$(printf '\033[91m')    # bright red     — meter fill >= 85%
 
-BAR_WIDTH=8                     # cells in every meter bar (Ctx, 5h, 7d)
+BAR_WIDTH=8                     # cells per meter bar (Ctx, 5h, 7d)
+BAR_FILL='█'                    # filled-cell glyph
+BAR_EMPTY='░'                   # empty-cell glyph
 
 # --- Parse every field in one jq pass; @sh keeps values shell-safe ---
 eval "$(printf '%s' "$input" | jq -r '
@@ -60,13 +62,13 @@ bar_color() {
   fi
 }
 
-# build_bar <pct> <fill> <empty> <color> — only filled glyphs get <color>
+# build_bar <pct> <color> — only filled glyphs get <color>
 build_bar() {
-  _pct=$1; _fill=$2; _empty=$3; _color=$4
+  _pct=$1; _color=$2
   _filled=$(( _pct * BAR_WIDTH / 100 ))
   [ "$_filled" -gt "$BAR_WIDTH" ] && _filled=$BAR_WIDTH    # clamp when pct > 100
-  _fill_str=$(repeat "$_fill" "$_filled")
-  _empty_str=$(repeat "$_empty" $(( BAR_WIDTH - _filled )))
+  _fill_str=$(repeat "$BAR_FILL" "$_filled")
+  _empty_str=$(repeat "$BAR_EMPTY" $(( BAR_WIDTH - _filled )))
   if [ -n "$_color" ] && [ "$_filled" -gt 0 ]; then
     printf '%s' "${_color}${_fill_str}${RESET}${_empty_str}"
   else
@@ -94,13 +96,13 @@ format_duration() {
   else printf '%ds' "$_s"; fi
 }
 
-# meter <label> <color> <fill> <empty> <pct> <resets_at>
+# meter <label> <color> <pct> <resets_at>
 #   Returns "Label:[bar] NN% (in ...)" — empty when <pct> is empty.
 meter() {
-  _label=$1; _color=$2; _fill=$3; _empty=$4; _raw=$5; _resets=$6
+  _label=$1; _color=$2; _raw=$3; _resets=$4
   [ -n "$_raw" ] || return 0
   _int=$(printf '%.0f' "$_raw")
-  _bar=$(build_bar "$_int" "$_fill" "$_empty" "$(bar_color "$_int")")
+  _bar=$(build_bar "$_int" "$(bar_color "$_int")")
   _reset=""
   [ -n "$_resets" ] && _reset=" $(duration_str "$_resets")"
   printf '%s%s%s:[%s] %s%%%s' "$_color" "$_label" "$RESET" "$_bar" "$_int" "$_reset"
@@ -135,9 +137,9 @@ line1=$row
 
 # === Line 2: context + rate-limit meters ===
 row=""
-add "$(meter Ctx "$C_CTX" "█" "░" "$ctx"  "")"
-add "$(meter 5h  "$C_5H"  "▓" "▒" "$five" "$five_at")"
-add "$(meter 7d  "$C_7D"  "▓" "▒" "$week" "$week_at")"
+add "$(meter Ctx "$C_CTX" "$ctx"  "")"
+add "$(meter 5h  "$C_5H"  "$five" "$five_at")"
+add "$(meter 7d  "$C_7D"  "$week" "$week_at")"
 line2=$row
 
 # --- Emit (second line only when there are meters to show) ---

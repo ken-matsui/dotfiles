@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1780666411844,
+  "lastUpdate": 1780668207115,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -8969,6 +8969,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 11.6608,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "7fabec75ea966cd92b76e85146a9e8561c43e825",
+          "message": "claude: show statusline meter percent with one decimal, trimming trailing .0",
+          "timestamp": "2026-06-05T10:02:39-04:00",
+          "tree_id": "03199257def472cbfbf438c099ebb94e1c65dd8f",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/7fabec75ea966cd92b76e85146a9e8561c43e825"
+        },
+        "date": 1780668206614,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 8.6349,
             "unit": "msec"
           }
         ]

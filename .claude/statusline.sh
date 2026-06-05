@@ -126,9 +126,7 @@ row=$model
 add "$(seg "$C_VER"    "${version:+v$version}")"
 add "$(seg "$C_DIR"    "$dir")"
 add "$(seg "$C_BRANCH" "$branch")"
-# diffstat: +added/-removed session lines changed — shown only when nonzero
-[ "$(( ${added:-0} + ${removed:-0} ))" -gt 0 ] && \
-  add "${C_ADD}+${added:-0}${RESET}/${C_DEL}-${removed:-0}${RESET}"
+add "${C_ADD}+${added:-0}${RESET}/${C_DEL}-${removed:-0}${RESET}"
 add "$(seg "$C_COST"   "${cost:+$(printf '$%.4f' "$cost")}")"
 add "$(seg "$C_DUR"    "${dur:+$(format_duration "$dur")}")"
 line1=$row

@@ -23,7 +23,7 @@ C_7D=$(printf '\033[92m')      # bright green   — 7d label
 C_WARN=$(printf '\033[93m')    # bright yellow  — meter fill >= 60%
 C_CRIT=$(printf '\033[91m')    # bright red     — meter fill >= 85%
 
-BAR_WIDTH=8                     # cells per meter bar (Ctx, 5h, 7d)
+BAR_WIDTH=5                     # cells per meter bar (Ctx, 5h, 7d)
 BAR_FILL='█'                    # filled-cell glyph
 BAR_EMPTY='░'                   # empty-cell glyph
 

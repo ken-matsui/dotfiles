@@ -116,7 +116,7 @@ case "$dir" in                                   # abbreviate home to ~ (after g
 esac
 
 row=$model
-[ -n "$effort" ] && row="$row ($effort)"
+[ -n "$effort" ] && row="$row [$effort]"
 add "$(seg "$C_VER"    "${version:+v$version}")"
 add "$(seg "$C_DIR"    "$dir")"
 add "$(seg "$C_BRANCH" "$branch")"

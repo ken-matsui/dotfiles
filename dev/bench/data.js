@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1780724742656,
+  "lastUpdate": 1780725099766,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -9056,6 +9056,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 11.5327,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "86e3650b4339003b50b1401b15464123e0a357f9",
+          "message": "claude: compact statusline reset countdown to (3h5m) form",
+          "timestamp": "2026-06-06T01:48:54-04:00",
+          "tree_id": "3bd2f9fdbfc6efe5398611dd312f24342129da32",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/86e3650b4339003b50b1401b15464123e0a357f9"
+        },
+        "date": 1780725099243,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 11.5785,
             "unit": "msec"
           }
         ]

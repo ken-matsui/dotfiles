@@ -51,18 +51,23 @@ pct_color() {
   fi
 }
 
+# dec <tenths> <unit> — "(<X.Yunit>)" with ".0" trimmed when exact: 43 h -> "(<4.3h)", 40 h -> "(<4h)"
+dec() {
+  _f=$(( $1 % 10 ))
+  if [ "$_f" -eq 0 ]; then printf '(<%d%s)' "$(( $1 / 10 ))" "$2"
+  else printf '(<%d.%d%s)' "$(( $1 / 10 ))" "$_f" "$2"; fi
+}
+
 # duration_str <epoch> — reset countdown until <epoch>: "(<X.Yd)" (>= 1d) /
 #   "(<X.Yh)" (>= 1h) / "(<Nm)". The value rounds UP so "<" is a true upper
-#   bound on the time remaining. "(0m)" if past.
+#   bound on the time remaining; ".0" is trimmed ("<4h" not "<4.0h"). "(0m)" if past.
 duration_str() {
   _secs=$(( $1 - _now ))
   [ "$_secs" -le 0 ] && { printf '(0m)'; return; }
   if [ "$_secs" -ge 86400 ]; then
-    _t=$(( (_secs + 8639) / 8640 ))   # tenths of a day, rounded up
-    printf '(<%d.%dd)' "$(( _t / 10 ))" "$(( _t % 10 ))"
+    dec "$(( (_secs + 8639) / 8640 ))" d   # tenths of a day, rounded up
   elif [ "$_secs" -ge 3600 ]; then
-    _t=$(( (_secs + 359) / 360 ))     # tenths of an hour, rounded up
-    printf '(<%d.%dh)' "$(( _t / 10 ))" "$(( _t % 10 ))"
+    dec "$(( (_secs + 359) / 360 ))" h     # tenths of an hour, rounded up
   else
     printf '(<%dm)' "$(( (_secs + 59) / 60 ))" # whole minutes, rounded up
   fi

@@ -51,25 +51,25 @@ pct_color() {
   fi
 }
 
-# dec <tenths> <unit> — "(<X.Yunit>)" with ".0" trimmed when exact: 43 h -> "(<4.3h)", 40 h -> "(<4h)"
+# dec <tenths> <unit> — "X.Yunit" with ".0" trimmed when exact: 43 h -> "4.3h", 40 h -> "4h"
 dec() {
   _f=$(( $1 % 10 ))
-  if [ "$_f" -eq 0 ]; then printf '(<%d%s)' "$(( $1 / 10 ))" "$2"
-  else printf '(<%d.%d%s)' "$(( $1 / 10 ))" "$_f" "$2"; fi
+  if [ "$_f" -eq 0 ]; then printf '%d%s' "$(( $1 / 10 ))" "$2"
+  else printf '%d.%d%s' "$(( $1 / 10 ))" "$_f" "$2"; fi
 }
 
-# duration_str <epoch> — reset countdown until <epoch>: "(<X.Yd)" (>= 1d) /
-#   "(<X.Yh)" (>= 1h) / "(<Nm)". The value rounds UP so "<" is a true upper
-#   bound on the time remaining; ".0" is trimmed ("<4h" not "<4.0h"). "(0m)" if past.
+# duration_str <epoch> — time until <epoch> for the "in ..." reset countdown:
+#   "X.Yd" (>= 1d) / "X.Yh" (>= 1h) / "Nm", rounded to nearest; ".0" is
+#   trimmed ("4h" not "4.0h"). "0m" if past.
 duration_str() {
   _secs=$(( $1 - _now ))
-  [ "$_secs" -le 0 ] && { printf '(0m)'; return; }
+  [ "$_secs" -le 0 ] && { printf '0m'; return; }
   if [ "$_secs" -ge 86400 ]; then
-    dec "$(( (_secs + 8639) / 8640 ))" d   # tenths of a day, rounded up
+    dec "$(( (_secs + 4320) / 8640 ))" d   # tenths of a day, rounded
   elif [ "$_secs" -ge 3600 ]; then
-    dec "$(( (_secs + 359) / 360 ))" h     # tenths of an hour, rounded up
+    dec "$(( (_secs + 180) / 360 ))" h     # tenths of an hour, rounded
   else
-    printf '(<%dm)' "$(( (_secs + 59) / 60 ))" # whole minutes, rounded up
+    printf '%dm' "$(( (_secs + 30) / 60 ))" # whole minutes, rounded
   fi
 }
 
@@ -85,7 +85,7 @@ format_duration() {
 }
 
 # meter <label> <color> <pct> <resets_at>
-#   Returns "Label:NN% (in ...)" — empty when <pct> is empty.
+#   Returns "Label:NN% in ..." — empty when <pct> is empty.
 #   The percentage turns yellow >= 60% and red >= 85%.
 meter() {
   _label=$1; _color=$2; _raw=$3; _resets=$4
@@ -95,7 +95,7 @@ meter() {
   _pct=${_pct%.0}                  # trimmed to a whole number when exact
   _pcolor=$(pct_color "$_int")
   _reset=""
-  [ -n "$_resets" ] && _reset=" $(duration_str "$_resets")"
+  [ -n "$_resets" ] && _reset=" in $(duration_str "$_resets")"
   printf '%s%s%s:%s%s%%%s%s' "$_color" "$_label" "$RESET" "$_pcolor" "$_pct" "$RESET" "$_reset"
 }
 

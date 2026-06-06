@@ -1,7 +1,7 @@
 #!/bin/sh
 # Claude Code status line.
-#   Line 1: model (effort), version, directory, branch, +added/-removed, cost, duration
-#   Line 2: context + rate-limit meters (Ctx, 5h, 7d)
+#   Line 1: model (effort), version, directory, branch
+#   Line 2: context + rate-limit meters (Ctx, 5h, 7d), +added/-removed, cost, duration
 #
 # The field variables (model, ctx, five, week, …) are assigned by the `eval` of
 # jq output below; shellcheck can't trace that, so silence its false positive:
@@ -96,7 +96,7 @@ add() {
   [ -n "$1" ] && row="${row:+$row  }$1"
 }
 
-# === Line 1: model, version, directory, branch, cost, duration ===
+# === Line 1: model, version, directory, branch ===
 branch=$(git -C "$dir" --no-optional-locks branch --show-current 2>/dev/null)
 case "$dir" in                                   # abbreviate home to ~ (after git lookup)
   "$HOME")   dir="~" ;;
@@ -108,19 +108,19 @@ row=$model
 add "$(seg "$C_VER"    "${version:+v$version}")"
 add "$(seg "$C_DIR"    "$dir")"
 add "$(seg "$C_BRANCH" "$branch")"
-add "${C_ADD}+${added}${RESET}/${C_DEL}-${removed}${RESET}"
-add "$(seg "$C_COST"   "${cost:+$(printf '$%.4f' "$cost")}")"
-add "$(seg "$C_DUR"    "${dur:+$(format_duration "$dur")}")"
 line1=$row
 
-# === Line 2: context + rate-limit meters ===
+# === Line 2: context + rate-limit meters (Ctx, 5h, 7d), +added/-removed, cost, duration ===
 row=""
 add "$(meter Ctx "$C_CTX" "$ctx"  "")"
 add "$(meter 5h  "$C_5H"  "$five" "$five_at")"
 add "$(meter 7d  "$C_7D"  "$week" "$week_at")"
+add "${C_ADD}+${added}${RESET}/${C_DEL}-${removed}${RESET}"
+add "$(seg "$C_COST"   "${cost:+$(printf '$%.4f' "$cost")}")"
+add "$(seg "$C_DUR"    "${dur:+$(format_duration "$dur")}")"
 line2=$row
 
-# --- Emit (second line only when there are meters to show) ---
+# --- Emit (second line only when non-empty) ---
 output=$line1
 [ -n "$line2" ] && output="$output
 $line2"

@@ -17,9 +17,7 @@ C_ADD=$(printf '\033[92m')     # bright green   — lines added
 C_DEL=$(printf '\033[91m')     # bright red     — lines removed
 C_COST=$(printf '\033[96m')    # bright cyan    — cost
 C_DUR=$(printf '\033[95m')     # bright magenta — duration
-C_CTX=$(printf '\033[96m')     # bright cyan    — Ctx label
-C_5H=$(printf '\033[95m')      # bright magenta — 5h label
-C_7D=$(printf '\033[92m')      # bright green   — 7d label
+C_SAFE=$(printf '\033[92m')    # bright green   — percentage < 60%
 C_WARN=$(printf '\033[93m')    # bright yellow  — percentage >= 60%
 C_CRIT=$(printf '\033[91m')    # bright red     — percentage >= 85%
 
@@ -44,10 +42,11 @@ eval "$(printf '%s' "$input" | jq -r '
 
 _now=$(date +%s)
 
-# pct_color <pct> — threshold color for a usage percentage (empty = default)
+# pct_color <pct> — traffic-light color for a usage percentage: green / yellow / red
 pct_color() {
   if   [ "$1" -ge 85 ]; then printf '%s' "$C_CRIT"
   elif [ "$1" -ge 60 ]; then printf '%s' "$C_WARN"
+  else printf '%s' "$C_SAFE"
   fi
 }
 
@@ -84,11 +83,11 @@ format_duration() {
   else printf '%ds' "$_s"; fi
 }
 
-# meter <label> <color> <pct> <resets_at>
+# meter <label> <pct> <resets_at>
 #   Returns "Label:NN% in ..." — empty when <pct> is empty.
-#   The percentage turns yellow >= 60% and red >= 85%.
+#   The label is uncolored; the percentage is green < 60%, yellow >= 60%, red >= 85%.
 meter() {
-  _label=$1; _color=$2; _raw=$3; _resets=$4
+  _label=$1; _raw=$2; _resets=$3
   [ -n "$_raw" ] || return 0
   _int=$(printf '%.0f' "$_raw")    # rounded int drives the percentage color
   _pct=$(printf '%.1f' "$_raw")    # shown value: one decimal,
@@ -96,7 +95,7 @@ meter() {
   _pcolor=$(pct_color "$_int")
   _reset=""
   [ -n "$_resets" ] && _reset=" in $(duration_str "$_resets")"
-  printf '%s%s%s:%s%s%%%s%s' "$_color" "$_label" "$RESET" "$_pcolor" "$_pct" "$RESET" "$_reset"
+  printf '%s:%s%s%%%s%s' "$_label" "$_pcolor" "$_pct" "$RESET" "$_reset"
 }
 
 # seg <color> <value> — returns "<color><value><reset>"; empty when <value> is empty
@@ -125,9 +124,9 @@ line1=$row
 
 # === Line 2: context + rate-limit meters (Ctx, 5h, 7d), +added/-removed, cost, duration ===
 row=""
-add "$(meter Ctx "$C_CTX" "$ctx"  "")"
-add "$(meter 5h  "$C_5H"  "$five" "$five_at")"
-add "$(meter 7d  "$C_7D"  "$week" "$week_at")"
+add "$(meter Ctx "$ctx"  "")"
+add "$(meter 5h  "$five" "$five_at")"
+add "$(meter 7d  "$week" "$week_at")"
 add "${C_ADD}+${added}${RESET}/${C_DEL}-${removed}${RESET}"
 add "$(seg "$C_COST"   "${cost:+$(printf '$%.4f' "$cost")}")"
 add "$(seg "$C_DUR"    "${dur:+$(format_duration "$dur")}")"

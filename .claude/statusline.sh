@@ -51,13 +51,13 @@ pct_color() {
   fi
 }
 
-# duration_str <epoch> — "(in Xd Yh)"/"(in Xh Ym)" until <epoch>; "(in 0m)" if past
+# duration_str <epoch> — "(XdYh)"/"(XhYm)" until <epoch>; "(0m)" if past
 duration_str() {
   _secs=$(( $1 - _now ))
-  [ "$_secs" -le 0 ] && { printf '(in 0m)'; return; }
+  [ "$_secs" -le 0 ] && { printf '(0m)'; return; }
   _d=$(( _secs / 86400 )); _h=$(( (_secs % 86400) / 3600 )); _m=$(( (_secs % 3600) / 60 ))
-  if [ "$_d" -ge 1 ]; then printf '(in %dd %dh)' "$_d" "$_h"
-  else printf '(in %dh %dm)' "$_h" "$_m"; fi
+  if [ "$_d" -ge 1 ]; then printf '(%dd%dh)' "$_d" "$_h"
+  else printf '(%dh%dm)' "$_h" "$_m"; fi
 }
 
 # format_duration <ms> — two most significant units: "Xd Yh" / "Xh Ym" / "Xm Ys" / "Xs"

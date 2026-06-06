@@ -20,12 +20,8 @@ C_DUR=$(printf '\033[95m')     # bright magenta — duration
 C_CTX=$(printf '\033[96m')     # bright cyan    — Ctx label
 C_5H=$(printf '\033[95m')      # bright magenta — 5h label
 C_7D=$(printf '\033[92m')      # bright green   — 7d label
-C_WARN=$(printf '\033[93m')    # bright yellow  — meter fill >= 60%
-C_CRIT=$(printf '\033[91m')    # bright red     — meter fill >= 85%
-
-BAR_WIDTH=5                     # cells per meter bar (Ctx, 5h, 7d)
-BAR_FILL='█'                    # filled-cell glyph
-BAR_EMPTY='░'                   # empty-cell glyph
+C_WARN=$(printf '\033[93m')    # bright yellow  — percentage >= 60%
+C_CRIT=$(printf '\033[91m')    # bright red     — percentage >= 85%
 
 # --- Parse every field in one jq pass; @sh keeps values shell-safe ---
 eval "$(printf '%s' "$input" | jq -r '
@@ -48,31 +44,10 @@ eval "$(printf '%s' "$input" | jq -r '
 
 _now=$(date +%s)
 
-# repeat <str> <count> — <str> repeated <count> times
-repeat() {
-  _out=""; _n=$2
-  while [ "$_n" -gt 0 ]; do _out="${_out}$1"; _n=$(( _n - 1 )); done
-  printf '%s' "$_out"
-}
-
-# bar_color <pct> — fill color for a usage percentage (empty = default)
-bar_color() {
+# pct_color <pct> — threshold color for a usage percentage (empty = default)
+pct_color() {
   if   [ "$1" -ge 85 ]; then printf '%s' "$C_CRIT"
   elif [ "$1" -ge 60 ]; then printf '%s' "$C_WARN"
-  fi
-}
-
-# build_bar <pct> <color> — only filled glyphs get <color>
-build_bar() {
-  _pct=$1; _color=$2
-  _filled=$(( _pct * BAR_WIDTH / 100 ))
-  [ "$_filled" -gt "$BAR_WIDTH" ] && _filled=$BAR_WIDTH    # clamp when pct > 100
-  _fill_str=$(repeat "$BAR_FILL" "$_filled")
-  _empty_str=$(repeat "$BAR_EMPTY" $(( BAR_WIDTH - _filled )))
-  if [ -n "$_color" ] && [ "$_filled" -gt 0 ]; then
-    printf '%s' "${_color}${_fill_str}${RESET}${_empty_str}"
-  else
-    printf '%s' "${_fill_str}${_empty_str}"
   fi
 }
 
@@ -97,17 +72,18 @@ format_duration() {
 }
 
 # meter <label> <color> <pct> <resets_at>
-#   Returns "Label:[bar] NN% (in ...)" — empty when <pct> is empty.
+#   Returns "Label:NN% (in ...)" — empty when <pct> is empty.
+#   The percentage turns yellow >= 60% and red >= 85%.
 meter() {
   _label=$1; _color=$2; _raw=$3; _resets=$4
   [ -n "$_raw" ] || return 0
-  _int=$(printf '%.0f' "$_raw")    # rounded int drives the bar fill + color
+  _int=$(printf '%.0f' "$_raw")    # rounded int drives the percentage color
   _pct=$(printf '%.1f' "$_raw")    # shown value: one decimal,
   _pct=${_pct%.0}                  # trimmed to a whole number when exact
-  _bar=$(build_bar "$_int" "$(bar_color "$_int")")
+  _pcolor=$(pct_color "$_int")
   _reset=""
   [ -n "$_resets" ] && _reset=" $(duration_str "$_resets")"
-  printf '%s%s%s:[%s] %s%%%s' "$_color" "$_label" "$RESET" "$_bar" "$_pct" "$_reset"
+  printf '%s%s%s:%s%s%%%s%s' "$_color" "$_label" "$RESET" "$_pcolor" "$_pct" "$RESET" "$_reset"
 }
 
 # seg <color> <value> — returns "<color><value><reset>"; empty when <value> is empty

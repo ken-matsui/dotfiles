@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1780724560478,
+  "lastUpdate": 1780724742656,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -9027,6 +9027,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 11.0382,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "9ca143ca8e4759a9e6408791cbc3bdabf73fcc1c",
+          "message": "claude: replace statusline meter bars with threshold-colored percentages",
+          "timestamp": "2026-06-06T01:44:55-04:00",
+          "tree_id": "e5f3bf71557f446963b3851a4278684e491417c4",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/9ca143ca8e4759a9e6408791cbc3bdabf73fcc1c"
+        },
+        "date": 1780724742245,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 11.5327,
             "unit": "msec"
           }
         ]

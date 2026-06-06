@@ -51,13 +51,19 @@ pct_color() {
   fi
 }
 
-# duration_str <epoch> — "(XdYh)"/"(XhYm)" until <epoch>; "(0m)" if past
+# duration_str <epoch> — "(X.Yd)" (>= 1d) / "(X.Yh)" (>= 1h) / "(Nm)" until <epoch>; "(0m)" if past
 duration_str() {
   _secs=$(( $1 - _now ))
   [ "$_secs" -le 0 ] && { printf '(0m)'; return; }
-  _d=$(( _secs / 86400 )); _h=$(( (_secs % 86400) / 3600 )); _m=$(( (_secs % 3600) / 60 ))
-  if [ "$_d" -ge 1 ]; then printf '(%dd%dh)' "$_d" "$_h"
-  else printf '(%dh%dm)' "$_h" "$_m"; fi
+  if [ "$_secs" -ge 86400 ]; then
+    _t=$(( (_secs + 4320) / 8640 ))   # tenths of a day, rounded
+    printf '(%d.%dd)' "$(( _t / 10 ))" "$(( _t % 10 ))"
+  elif [ "$_secs" -ge 3600 ]; then
+    _t=$(( (_secs + 180) / 360 ))     # tenths of an hour, rounded
+    printf '(%d.%dh)' "$(( _t / 10 ))" "$(( _t % 10 ))"
+  else
+    printf '(%dm)' "$(( _secs / 60 ))" # whole minutes, truncated
+  fi
 }
 
 # format_duration <ms> — two most significant units: "Xd Yh" / "Xh Ym" / "Xm Ys" / "Xs"

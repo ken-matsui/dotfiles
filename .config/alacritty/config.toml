@@ -239,4 +239,4 @@
 #   - (Windows) powershell
 [terminal.shell]
   program = "/bin/zsh"
-  args = ["-l", "-c", "tmux new-session -A -s default"]
+  args = ["-l", "-c", "exec tmux new-session -A -s default"]

@@ -239,4 +239,4 @@
 #   - (Windows) powershell
 [terminal.shell]
   program = "/usr/bin/env"
-  args = ["zsh", "-l", "-c", "exec tmux new-session -A -s default"]
+  args = ["zsh", "-l", "-c", "exec tmux new-session -A -s ${HOST%%.*}"]

@@ -238,5 +238,5 @@
 #   - (Linux/BSD/macOS) `$SHELL` or the user's login shell, if `$SHELL` is unset
 #   - (Windows) powershell
 [terminal.shell]
-  program = "/bin/zsh"
-  args = ["-l", "-c", "exec tmux new-session -A -s default"]
+  program = "/usr/bin/env"
+  args = ["zsh", "-l", "-c", "exec tmux new-session -A -s default"]

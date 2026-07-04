@@ -10,6 +10,7 @@ brew "clang-format"
 brew "cmake"
 brew "curl"
 brew "difftastic"
+brew "elan-init"
 brew "fd"  # for telescope.nvim
 brew "ffmpeg"  # for youtube-dl
 brew "fzf"

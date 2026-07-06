@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1783131022355,
+  "lastUpdate": 1783315368110,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -9607,6 +9607,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 10.7254,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "1346146b24d7cf600c4e4a8bece4698ca31339e9",
+          "message": "brew: add thaw & remove jordanbaird-ice",
+          "timestamp": "2026-07-06T01:22:10-04:00",
+          "tree_id": "77b9f363b696b8dbd9a8baf3a1a4c7adcd07e785",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/1346146b24d7cf600c4e4a8bece4698ca31339e9"
+        },
+        "date": 1783315367046,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 9.3404,
             "unit": "msec"
           }
         ]

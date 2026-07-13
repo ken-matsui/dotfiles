@@ -67,6 +67,7 @@ return {
 		end,
 		opts = {
 			options = {
+				sort_by = "insert_after_current",
 				offsets = {
 					{
 						filetype = "NvimTree",

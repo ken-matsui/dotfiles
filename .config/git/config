@@ -18,6 +18,7 @@
 	prune = true
 [pull]
 	rebase = false
+	ff = true
 [push]
 	default = current
 

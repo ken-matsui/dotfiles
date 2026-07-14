@@ -21,6 +21,8 @@
 	ff = true
 [push]
 	default = current
+[merge]
+	ff = false
 
 #
 # UI

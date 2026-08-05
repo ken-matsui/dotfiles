@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1785820446622,
+  "lastUpdate": 1785901557802,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -1855,6 +1855,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 11.2776,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "7f836468b0b61528c447965137a9f132f41f97c1",
+          "message": "brew: add official proton-pass-cli",
+          "timestamp": "2026-08-04T23:45:22-04:00",
+          "tree_id": "57d204e051c7f9b1d84992b366e95fba10309a89",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/7f836468b0b61528c447965137a9f132f41f97c1"
+        },
+        "date": 1785901557122,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 11.4864,
             "unit": "msec"
           }
         ]

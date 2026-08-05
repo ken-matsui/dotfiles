@@ -32,6 +32,7 @@ brew "ninja"
 brew "neovim"
 brew "node"  # for copilot.vim
 brew "poetry"
+brew "proton-pass-cli"
 brew "python"
 brew "python-lsp-server"
 brew "starship"
@@ -48,9 +49,6 @@ brew "wget"
 brew "wrk"
 brew "youtube-dl"
 brew "zoxide"
-
-tap "protonpass/tap"
-brew "pass-cli"
 
 cask "alacritty"
 # cask "balenaetcher"  # Flash OS images to SD cards & USB drives, safely and easily.

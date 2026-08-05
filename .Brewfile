@@ -57,7 +57,6 @@ cask "deepl"
 cask "discord"
 cask "font-jetbrains-mono-nerd-font"  # for alacritty
 cask "homerow"
-# cask "mactex-no-gui"
 cask "postman"
 cask "proton-pass"
 cask "raycast"

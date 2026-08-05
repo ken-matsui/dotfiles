@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1785901557802,
+  "lastUpdate": 1785901648116,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -1884,6 +1884,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 11.4864,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "2dedfb0d0876ae62decbbef758b4bd3ce8a32827",
+          "message": "brew: remove unused mactex-no-gui",
+          "timestamp": "2026-08-04T23:46:45-04:00",
+          "tree_id": "e906e93f74dd1956720347f153273baa98cfe4c0",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/2dedfb0d0876ae62decbbef758b4bd3ce8a32827"
+        },
+        "date": 1785901647629,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 11.4068,
             "unit": "msec"
           }
         ]

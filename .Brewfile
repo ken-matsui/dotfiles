@@ -2,6 +2,7 @@ tap "Homebrew/bundle"
 
 cask_args appdir: "~/Applications", require_sha: true
 
+cask "1password-cli"
 brew "atuin"
 brew "bat"
 brew "black"
@@ -50,6 +51,7 @@ brew "wrk"
 brew "youtube-dl"
 brew "zoxide"
 
+cask "1password"
 cask "alacritty"
 # cask "balenaetcher"  # Flash OS images to SD cards & USB drives, safely and easily.
 cask "brave-browser"

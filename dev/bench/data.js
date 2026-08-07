@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1786140506745,
+  "lastUpdate": 1786141242028,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -1942,6 +1942,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 11.3185,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "f8f653394f7cfed02689369e7ea9fd23bcbba45e",
+          "message": "brew: add 1password & 1password-cli",
+          "timestamp": "2026-08-07T18:19:54-04:00",
+          "tree_id": "e38496791230ac7349f9500dcc9dc4d0f577b673",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/f8f653394f7cfed02689369e7ea9fd23bcbba45e"
+        },
+        "date": 1786141240839,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 11.2148,
             "unit": "msec"
           }
         ]

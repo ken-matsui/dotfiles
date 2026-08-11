@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1786141242028,
+  "lastUpdate": 1786418439692,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -1971,6 +1971,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 11.2148,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "699be9241ca5222ccc71f4a92f6e9ac7cc50a673",
+          "message": "brew: remove proton-pass & proton-pass-cli",
+          "timestamp": "2026-08-10T23:20:05-04:00",
+          "tree_id": "6725a83a9569d278e0d2f0c5dbcb5ea54c3d198e",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/699be9241ca5222ccc71f4a92f6e9ac7cc50a673"
+        },
+        "date": 1786418438950,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 11.2255,
             "unit": "msec"
           }
         ]

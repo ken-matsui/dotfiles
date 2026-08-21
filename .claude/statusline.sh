@@ -27,7 +27,7 @@ eval "$(printf '%s' "$input" | jq -r '
     model:   (.model.display_name                    // "Unknown"),
     effort:  (.effort.level                          // ""),
     version: (.version                               // ""),
-    ctx:     (.context_window.used_percentage        // ""),
+    ctx:     (.context_window.used_percentage        // 0),
     five:    (.rate_limits.five_hour.used_percentage // ""),
     five_at: (.rate_limits.five_hour.resets_at       // ""),
     week:    (.rate_limits.seven_day.used_percentage // ""),

@@ -28,6 +28,8 @@ eval "$(printf '%s' "$input" | jq -r '
     effort:  (.effort.level                          // ""),
     version: (.version                               // ""),
     ctx:     (.context_window.used_percentage        // 0),
+    ctx_tok: ((.context_window.total_input_tokens    // 0)
+            + (.context_window.total_output_tokens   // 0)),
     five:    (.rate_limits.five_hour.used_percentage // ""),
     five_at: (.rate_limits.five_hour.resets_at       // ""),
     week:    (.rate_limits.seven_day.used_percentage // ""),
@@ -98,6 +100,11 @@ meter() {
   printf '%s:%s%s%%%s%s' "$_label" "$_pcolor" "$_pct" "$RESET" "$_reset"
 }
 
+# tokens_str <count> — token count in thousands, rounded: 73612 -> "74k"
+tokens_str() {
+  printf '%dk' "$(( ($1 + 500) / 1000 ))"
+}
+
 # seg <color> <value> — returns "<color><value><reset>"; empty when <value> is empty
 seg() {
   [ -n "$2" ] && printf '%s' "$1$2$RESET"
@@ -124,7 +131,7 @@ line1=$row
 
 # === Line 2: context + rate-limit meters (Ctx, 5h, 7d), +added/-removed, cost, duration ===
 row=""
-add "$(meter Ctx "$ctx"  "")"
+add "Ctx:$(pct_color "$(printf '%.0f' "$ctx")")$(tokens_str "$ctx_tok")$RESET"
 add "$(meter 5h  "$five" "$five_at")"
 add "$(meter 7d  "$week" "$week_at")"
 add "${C_ADD}+${added}${RESET}/${C_DEL}-${removed}${RESET}"

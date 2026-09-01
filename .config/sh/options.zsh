@@ -16,7 +16,6 @@ setopt PUSHD_TO_HOME
 setopt CDABLE_VARS
 setopt MULTIOS
 setopt EXTENDED_GLOB
-unsetopt CLOBBER
 
 #
 # History

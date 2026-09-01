@@ -15,7 +15,6 @@ setopt PUSHD_SILENT
 setopt PUSHD_TO_HOME
 setopt CDABLE_VARS
 setopt MULTIOS
-setopt EXTENDED_GLOB
 
 #
 # History

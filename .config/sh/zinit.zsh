@@ -14,8 +14,6 @@ ZINIT[NO_ALIASES]=1
 [ ! -d "${ZINIT[BIN_DIR]}/.git" ] && git clone https://github.com/zdharma-continuum/zinit.git "${ZINIT[BIN_DIR]}"
 source "${ZINIT[BIN_DIR]}/zinit.zsh"
 
-zinit snippet PZTM::directory
-
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light momo-lab/zsh-replace-multiple-dots

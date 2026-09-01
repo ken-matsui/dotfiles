@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1788238180710,
+  "lastUpdate": 1788238227238,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -2174,6 +2174,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 11.1269,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "635b1c7d3fded89b13488d40d9cc179f405664dd",
+          "message": "zsh: remove setopt MULTIOS, on by default",
+          "timestamp": "2026-09-01T00:49:46-04:00",
+          "tree_id": "2321ed158244a7c950fbfefe30d0bb855d9a7862",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/635b1c7d3fded89b13488d40d9cc179f405664dd"
+        },
+        "date": 1788238226579,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 11.1432,
             "unit": "msec"
           }
         ]

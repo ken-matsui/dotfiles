@@ -14,7 +14,6 @@ setopt PUSHD_IGNORE_DUPS
 setopt PUSHD_SILENT
 setopt PUSHD_TO_HOME
 setopt CDABLE_VARS
-setopt MULTIOS
 
 #
 # History

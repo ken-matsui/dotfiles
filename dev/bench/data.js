@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1787305607134,
+  "lastUpdate": 1788237988092,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -2087,6 +2087,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 11.2759,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "e50c4042c7b00db13ad1bb3981a1c216c012d369",
+          "message": "zsh: move setopt from PZTM::directory",
+          "timestamp": "2026-09-01T00:45:39-04:00",
+          "tree_id": "d4976ea13d86dc464db5bc65665f1cbd09b293f7",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/e50c4042c7b00db13ad1bb3981a1c216c012d369"
+        },
+        "date": 1788237986753,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 11.5683,
             "unit": "msec"
           }
         ]

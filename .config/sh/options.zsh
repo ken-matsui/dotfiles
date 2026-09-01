@@ -7,13 +7,6 @@ setopt ignore_eof
 # Don't highlight when selecting words
 unset zle_bracketed_paste
 
-# From PZTM::directory
-setopt AUTO_CD
-setopt AUTO_PUSHD
-setopt PUSHD_IGNORE_DUPS
-setopt PUSHD_SILENT
-setopt PUSHD_TO_HOME
-
 #
 # History
 #

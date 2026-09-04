@@ -21,6 +21,9 @@ syntax enable
 " Enable mouse
 set mouse=a
 
+" Wait only 50ms after <Esc> for a key code (Vim default falls back to 1000ms)
+set ttimeoutlen=50
+
 " Confirm on quit
 set confirm
 

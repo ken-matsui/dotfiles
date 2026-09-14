@@ -23,7 +23,7 @@ return {
 			{ "<Leader>e", "<Cmd>NvimTreeFindFileToggle<Cr>", desc = "Toggle NvimTree" },
 		},
 		opts = {
-			sort_by = "case_sensitive",
+			sort = { sorter = "case_sensitive" },
 			diagnostics = {
 				enable = true,
 			},

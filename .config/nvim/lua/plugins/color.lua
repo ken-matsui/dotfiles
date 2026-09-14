@@ -46,10 +46,6 @@ return {
 				"vim",
 				"yaml",
 			},
-			filetypes = {
-				javascript = { "javascriptreact" },
-				tsx = { "typescriptreact" },
-			},
 			disable_large_file = {
 				c = true,
 				cpp = true,
@@ -60,10 +56,6 @@ return {
 			if not treesitter.install then
 				vim.notify_once("Run :Lazy sync nvim-treesitter to switch nvim-treesitter to main", vim.log.levels.WARN)
 				return
-			end
-
-			for lang, filetypes in pairs(opts.filetypes) do
-				vim.treesitter.language.register(lang, filetypes)
 			end
 
 			if vim.fn.executable("tree-sitter") == 1 then

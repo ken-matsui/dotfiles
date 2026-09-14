@@ -83,8 +83,6 @@ return {
 				"lazy",
 				"nvim-tree",
 				"quickfix",
-				"toggleterm",
-				"trouble",
 			},
 		},
 	},

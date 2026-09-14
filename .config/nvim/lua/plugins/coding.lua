@@ -35,27 +35,6 @@ return {
 	},
 
 	{
-		"numToStr/Comment.nvim",
-		dependencies = {
-			{
-				"JoosepAlviste/nvim-ts-context-commentstring",
-				opts = { enable_autocmd = false },
-			},
-		},
-		keys = {
-			{ "gcc", mode = "n", desc = "Comment toggle current line" },
-			{ "gc", mode = { "n", "x", "o" }, desc = "Comment toggle linewise" },
-			{ "gbc", mode = "n", desc = "Comment toggle current block" },
-			{ "gb", mode = { "n", "x", "o" }, desc = "Comment toggle blockwise" },
-		},
-		opts = function()
-			return {
-				pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
-			}
-		end,
-	},
-
-	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 		config = true,

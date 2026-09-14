@@ -168,7 +168,7 @@ return {
 
 	{
 		"lewis6991/gitsigns.nvim",
-		version = "v1.*",
+		version = "v2.*",
 		event = { "BufReadPre", "BufNewFile" },
 		opts = {
 			-- GitLens-like blame line

@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1789357489587,
+  "lastUpdate": 1789357672360,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -3160,6 +3160,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 7.4351,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "dff02ce274c46d4e1aa716bc3e00246f5650f314",
+          "message": "vim: fix termguicolors check",
+          "timestamp": "2026-09-13T23:47:08-04:00",
+          "tree_id": "73ba0aea8b1659a7e5a4f0f67e8265d615df1d18",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/dff02ce274c46d4e1aa716bc3e00246f5650f314"
+        },
+        "date": 1789357671507,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 11.3001,
             "unit": "msec"
           }
         ]

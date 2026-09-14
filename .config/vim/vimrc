@@ -12,7 +12,7 @@ endif
 " Set file encoding as UTF-8
 set encoding=utf-8
 " Enable true color
-if has('+termguicolors')
+if exists('+termguicolors')
   set termguicolors
 endif
 " Enable syntax highlighting (automatically disabled when tree-sitter is enabled)

@@ -142,7 +142,7 @@ return {
 		dependencies = {
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
-			"onsails/lspkind-nvim",
+			"onsails/lspkind.nvim",
 		},
 		opts = function()
 			local cmp = require("cmp")

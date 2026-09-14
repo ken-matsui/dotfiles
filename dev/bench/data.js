@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1789353568219,
+  "lastUpdate": 1789354412482,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -2841,6 +2841,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 9.7653,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "1f2928a7faa4bea569a0146d51764912cc2efbf2",
+          "message": "nvim: remove copilot.vim",
+          "timestamp": "2026-09-13T22:52:49-04:00",
+          "tree_id": "d4c67a83fb1baa8388100c56030146b83e4d9456",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/1f2928a7faa4bea569a0146d51764912cc2efbf2"
+        },
+        "date": 1789354411838,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 8.9433,
             "unit": "msec"
           }
         ]

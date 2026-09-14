@@ -186,7 +186,7 @@ return {
 
 				local function map(mode, l, r, opts)
 					opts = opts or {}
-					opts.buffer = bufnr
+					opts.buf = bufnr
 					vim.keymap.set(mode, l, r, opts)
 				end
 
@@ -265,7 +265,7 @@ return {
 				callback = function(event)
 					local bufnr = event.buf
 					local function map(mode, lhs, rhs, desc)
-						vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc })
+						vim.keymap.set(mode, lhs, rhs, { buf = bufnr, desc = desc })
 					end
 
 					map("n", "K", vim.lsp.buf.hover, "Hover")

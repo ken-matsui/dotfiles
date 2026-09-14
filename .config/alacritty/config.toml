@@ -239,4 +239,4 @@
 #   - (Windows) powershell
 [terminal.shell]
   program = "zsh"
-  args = ["-lc", "exec tmux new-session -AD -s \"${HOST%%.*}\""]
+  args = ["-lc", "exec tmux new -AD -s \"${HOST%%.*}\""]

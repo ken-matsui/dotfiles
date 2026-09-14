@@ -268,7 +268,6 @@ return {
 						vim.keymap.set(mode, lhs, rhs, { buf = bufnr, desc = desc })
 					end
 
-					map("n", "K", vim.lsp.buf.hover, "Hover")
 					map("n", "gd", vim.lsp.buf.definition, "Go to definition")
 					map("n", "gD", vim.lsp.buf.declaration, "Go to declaration")
 					map("n", "gi", vim.lsp.buf.implementation, "Go to implementation")

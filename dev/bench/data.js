@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1789535397192,
+  "lastUpdate": 1789535457809,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -3798,6 +3798,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 11.6871,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "f1de33e087611c69eb0546cf57942762462a0196",
+          "message": "nvim: remove default --clang-tidy option for clangd",
+          "timestamp": "2026-09-16T01:10:15-04:00",
+          "tree_id": "d83575752b607e3311280893894265ea43203f42",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/f1de33e087611c69eb0546cf57942762462a0196"
+        },
+        "date": 1789535457156,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 7.2006,
             "unit": "msec"
           }
         ]

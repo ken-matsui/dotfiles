@@ -5,8 +5,6 @@ end
 
 -- Disable unused built-in plugins to shave startup time
 for _, plugin in ipairs({
-	"netrw",
-	"netrwPlugin",
 	"gzip",
 	"tar",
 	"tarPlugin",

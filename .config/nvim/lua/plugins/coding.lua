@@ -95,17 +95,6 @@ return {
 	},
 
 	{
-		"ludovicchabant/vim-gutentags",
-		ft = {
-			"c",
-			"cpp",
-		},
-		config = function()
-			vim.g.gutentags_cache_dir = vim.fn.stdpath("data")
-		end,
-	},
-
-	{
 		"stevearc/conform.nvim",
 		version = "v9.*",
 		cmd = { "ConformInfo" },

@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1789528123500,
+  "lastUpdate": 1789528449555,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -3421,6 +3421,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 11.4934,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "9f87e5eb584d2a74bbe982653fac0fb37c295499",
+          "message": "nvim: migrate to 0.12 default key mappings",
+          "timestamp": "2026-09-15T23:13:29-04:00",
+          "tree_id": "548b5b993cfe812425b6181a5e9da5427ba71814",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/9f87e5eb584d2a74bbe982653fac0fb37c295499"
+        },
+        "date": 1789528448302,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 11.0617,
             "unit": "msec"
           }
         ]

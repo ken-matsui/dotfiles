@@ -48,7 +48,6 @@ brew "vhs"
 brew "wget"
 brew "wrk"
 brew "youtube-dl"
-brew "zoxide"
 
 cask "1password"
 cask "alacritty"

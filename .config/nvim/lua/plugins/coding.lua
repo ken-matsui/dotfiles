@@ -243,28 +243,9 @@ return {
 				desc = "LSP buffer-local mappings",
 				callback = function(event)
 					local bufnr = event.buf
-					local function map(mode, lhs, rhs, desc)
-						vim.keymap.set(mode, lhs, rhs, { buf = bufnr, desc = desc })
-					end
 
-					map("n", "gd", vim.lsp.buf.definition, "Go to definition")
-					map("n", "gD", vim.lsp.buf.declaration, "Go to declaration")
-					map("n", "gi", vim.lsp.buf.implementation, "Go to implementation")
-					map("n", "go", vim.lsp.buf.type_definition, "Go to type definition")
-					map("n", "gR", vim.lsp.buf.references, "References")
-					map("n", "gs", vim.lsp.buf.signature_help, "Signature help")
-					map("n", "<F2>", vim.lsp.buf.rename, "Rename")
-					map({ "n", "x" }, "<F3>", function()
-						vim.lsp.buf.format({ async = true })
-					end, "Format")
-					map("n", "<F4>", vim.lsp.buf.code_action, "Code action")
-
-					map("n", "gn", function()
-						vim.diagnostic.jump({ count = 1 })
-					end, "Next diagnostic")
-					map("n", "gp", function()
-						vim.diagnostic.jump({ count = -1 })
-					end, "Previous diagnostic")
+					vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = bufnr, desc = "Go to definition" })
+					vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = bufnr, desc = "Go to declaration" })
 
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
 					if client and client.server_capabilities.inlayHintProvider then

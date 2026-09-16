@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1789534719584,
+  "lastUpdate": 1789534798318,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -3653,6 +3653,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 10.8921,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "5b2975866790910c31e3c0bbfc6428adc3868853",
+          "message": "nvim: remove treesitter migration notice",
+          "timestamp": "2026-09-16T00:59:16-04:00",
+          "tree_id": "37c237710dd76954c247addaec5ac67aeea55536",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/5b2975866790910c31e3c0bbfc6428adc3868853"
+        },
+        "date": 1789534797615,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 11.1516,
             "unit": "msec"
           }
         ]

@@ -257,7 +257,6 @@ return {
 				vim.lsp.config("clangd", {
 					cmd = {
 						"clangd",
-						"--suggest-missing-includes",
 						"--header-insertion=never",
 						"--completion-style=detailed",
 					},

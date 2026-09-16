@@ -260,7 +260,6 @@ return {
 						"--suggest-missing-includes",
 						"--header-insertion=never",
 						"--completion-style=detailed",
-						"--clang-tidy",
 					},
 				})
 				vim.lsp.enable("clangd")

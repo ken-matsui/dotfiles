@@ -18,9 +18,6 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		branch = "main",
 		lazy = false,
-		cond = function()
-			return vim.fn.has("nvim-0.12") == 1
-		end,
 		dependencies = {
 			"RRethy/nvim-treesitter-endwise",
 		},

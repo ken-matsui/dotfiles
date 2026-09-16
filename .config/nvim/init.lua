@@ -29,6 +29,18 @@ vim.cmd.source(config_home .. "/vim/vimrc")
 -- Always show the signcolumn so diagnostics don't shift the text
 vim.opt.signcolumn = "yes"
 
+-- Built-in autocompletion
+if vim.fn.exists("+autocomplete") == 1 then
+	vim.opt.autocomplete = true
+	vim.opt.complete = {
+		"o", -- LSP
+		".^10", -- current buffer
+		"w^5", -- other windows
+		"b^5", -- loaded buffers
+	}
+	vim.opt.completeopt = { "menu", "menuone", "noselect", "popup" }
+end
+
 -- Highlight yanked region
 vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()

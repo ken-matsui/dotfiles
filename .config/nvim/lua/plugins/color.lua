@@ -7,6 +7,9 @@ return {
 		config = function()
 			vim.g.material_style = "deep ocean"
 			vim.cmd.colorscheme("material")
+
+			local colors = require("material.colors")
+			vim.api.nvim_set_hl(0, "PmenuKind", { fg = colors.main.cyan })
 		end,
 	},
 

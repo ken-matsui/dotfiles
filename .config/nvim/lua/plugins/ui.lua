@@ -133,40 +133,6 @@ return {
 		opts = {},
 	},
 
-	-- Completion
-	{
-		"hrsh7th/nvim-cmp",
-		event = "InsertEnter",
-		dependencies = {
-			"hrsh7th/cmp-buffer",
-			"onsails/lspkind.nvim",
-		},
-		opts = function()
-			local cmp = require("cmp")
-			return {
-				preselect = cmp.PreselectMode.None,
-				mapping = cmp.mapping.preset.insert({
-					["<Esc>"] = cmp.mapping.abort(),
-					["<CR>"] = cmp.mapping.confirm({
-						behavior = cmp.ConfirmBehavior.Insert,
-						select = false,
-					}),
-				}),
-				sources = cmp.config.sources({
-					{ name = "nvim_lsp" },
-					{ name = "buffer" },
-				}),
-				formatting = {
-					format = require("lspkind").cmp_format({
-						mode = "symbol_text",
-						maxwidth = 50,
-						ellipsis_char = "...",
-					}),
-				},
-			}
-		end,
-	},
-
 	{
 		"nvim-telescope/telescope.nvim",
 		version = "0.2.*",

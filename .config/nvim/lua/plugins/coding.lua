@@ -37,7 +37,18 @@ return {
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
-		config = true,
+		opts = { map_cr = false },
+		config = function(_, opts)
+			local autopairs = require("nvim-autopairs")
+			autopairs.setup(opts)
+			-- <CR> accepts a selected completion item; otherwise autopairs handles the newline
+			vim.keymap.set("i", "<CR>", function()
+				if vim.fn.complete_info({ "selected" }).selected >= 0 then
+					return vim.keycode("<C-y>")
+				end
+				return autopairs.autopairs_cr()
+			end, { expr = true, replace_keycodes = false })
+		end,
 	},
 
 	{
@@ -225,19 +236,15 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		version = "v2.*",
-		cond = function()
-			return vim.fn.has("nvim-0.11.3") == 1
-		end,
 		cmd = "LspInfo",
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
-			"hrsh7th/cmp-nvim-lsp",
+			"onsails/lspkind.nvim",
 		},
 		config = function()
-			-- Merge cmp_nvim_lsp completion capabilities with the defaults
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-			capabilities.textDocument.completion.completionItem.snippetSupport = false
-			vim.lsp.config("*", { capabilities = capabilities })
+			require("lspkind").init({
+				mode = "symbol_text",
+			})
 
 			vim.api.nvim_create_autocmd("LspAttach", {
 				desc = "LSP buffer-local mappings",
@@ -248,10 +255,16 @@ return {
 					vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = bufnr, desc = "Go to declaration" })
 
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
-					if client and client.server_capabilities.inlayHintProvider then
-						vim.keymap.set("n", "<Leader>H", function()
-							vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr }))
-						end, { buffer = bufnr, desc = "Toggle inlay hints" })
+					if client then
+						if client:supports_method("textDocument/completion") then
+							vim.lsp.completion.enable(true, client.id, bufnr)
+						end
+
+						if client:supports_method("textDocument/inlayHint") then
+							vim.keymap.set("n", "<Leader>H", function()
+								vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr }))
+							end, { buffer = bufnr, desc = "Toggle inlay hints" })
+						end
 					end
 				end,
 			})

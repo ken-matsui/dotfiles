@@ -249,9 +249,9 @@ return {
 
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
 					if client and client.server_capabilities.inlayHintProvider then
-						map("n", "<Leader>H", function()
+						vim.keymap.set("n", "<Leader>H", function()
 							vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr }))
-						end, "Toggle inlay hints")
+						end, { buffer = bufnr, desc = "Toggle inlay hints" })
 					end
 				end,
 			})

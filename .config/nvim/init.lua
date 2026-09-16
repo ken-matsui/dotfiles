@@ -20,7 +20,6 @@ end
 local config_home = vim.env.XDG_CONFIG_HOME or vim.fn.expand("~/.config")
 vim.opt.runtimepath:prepend(config_home .. "/vim")
 vim.opt.runtimepath:append(config_home .. "/vim/after")
-vim.o.packpath = vim.o.runtimepath
 vim.cmd.source(config_home .. "/vim/vimrc")
 
 -- Always show the signcolumn so diagnostics don't shift the text

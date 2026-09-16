@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1789535364885,
+  "lastUpdate": 1789535397192,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -3769,6 +3769,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 10.8056,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "755488ed86917509c1c7ac17858ad56977527b10",
+          "message": "nvim: remove require from luals globals",
+          "timestamp": "2026-09-16T01:09:19-04:00",
+          "tree_id": "8f9a1284cf76bf4e660acfebc4c8900ba04e28f8",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/755488ed86917509c1c7ac17858ad56977527b10"
+        },
+        "date": 1789535396458,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 11.6871,
             "unit": "msec"
           }
         ]

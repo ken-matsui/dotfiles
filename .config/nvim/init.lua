@@ -13,7 +13,6 @@ for _, plugin in ipairs({
 	"zip",
 	"zipPlugin",
 	"tutor_mode_plugin",
-	"2html_plugin",
 	"man",
 }) do
 	vim.g["loaded_" .. plugin] = 1

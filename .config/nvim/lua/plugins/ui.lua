@@ -139,7 +139,6 @@ return {
 		event = "InsertEnter",
 		dependencies = {
 			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
 			"onsails/lspkind.nvim",
 		},
 		opts = function()
@@ -156,7 +155,6 @@ return {
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
 					{ name = "buffer" },
-					{ name = "path" },
 				}),
 				formatting = {
 					format = require("lspkind").cmp_format({

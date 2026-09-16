@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1789534490049,
+  "lastUpdate": 1789534538556,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -3566,6 +3566,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 9.2665,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "a47f222bac4c1df6467543e504c2b6f02a32e3d1",
+          "message": "nvim: remove unused vim-sandwich",
+          "timestamp": "2026-09-16T00:54:54-04:00",
+          "tree_id": "582817445722b0e55a59a82349156b3b2350ba50",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/a47f222bac4c1df6467543e504c2b6f02a32e3d1"
+        },
+        "date": 1789534537292,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 8.857,
             "unit": "msec"
           }
         ]

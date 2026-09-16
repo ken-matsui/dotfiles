@@ -30,11 +30,6 @@ return {
 	},
 
 	{
-		"machakann/vim-sandwich",
-		event = "VeryLazy",
-	},
-
-	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 		opts = { map_cr = false },

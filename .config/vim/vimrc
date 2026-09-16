@@ -78,9 +78,6 @@ endif
 " Set <Leader> as the space key
 let mapleader = " "
 
-" Load ctags if exists
-set tags=./tags;
-
 " Automatic word wrapping
 autocmd FileType c,cpp setlocal textwidth=79
 autocmd FileType gitcommit,mail setlocal textwidth=72

@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1789529516175,
+  "lastUpdate": 1789530736508,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -3479,6 +3479,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 9.5415,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "e7d90a293e9435cbc618b6cbf399e407160fb951",
+          "message": "nvim: fix keymap setting for inlay hints",
+          "timestamp": "2026-09-15T23:51:28-04:00",
+          "tree_id": "8d3651c10eb1ceaa64085cfd0567cf74eb89a4f2",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/e7d90a293e9435cbc618b6cbf399e407160fb951"
+        },
+        "date": 1789530735361,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 11.5075,
             "unit": "msec"
           }
         ]

@@ -53,10 +53,6 @@ return {
 		},
 		config = function(_, opts)
 			local treesitter = require("nvim-treesitter")
-			if not treesitter.install then
-				vim.notify_once("Run :Lazy sync nvim-treesitter to switch nvim-treesitter to main", vim.log.levels.WARN)
-				return
-			end
 
 			if vim.fn.executable("tree-sitter") == 1 then
 				treesitter.install(opts.install)

@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1789534909362,
+  "lastUpdate": 1789535364885,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -3740,6 +3740,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 11.2267,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "031d5679ab5567827f0d02ca0a77dca442a430e1",
+          "message": "nvim: luals removed telemetry",
+          "timestamp": "2026-09-16T01:08:41-04:00",
+          "tree_id": "2dbdb0fa550e6737c6053ef1f13c0d66cd0a65ff",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/031d5679ab5567827f0d02ca0a77dca442a430e1"
+        },
+        "date": 1789535363930,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 10.8056,
             "unit": "msec"
           }
         ]

@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1789711176107,
+  "lastUpdate": 1789711789226,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -3943,6 +3943,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 10.101,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "74357dd8a30b3800446f1def8b7f65b40cc3190f",
+          "message": "nvim: use material's ibl plugin",
+          "timestamp": "2026-09-18T02:08:50-04:00",
+          "tree_id": "1ce47b0ff37a10008b9dcb2d7f92377b3a0aaa16",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/74357dd8a30b3800446f1def8b7f65b40cc3190f"
+        },
+        "date": 1789711787987,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 11.6474,
             "unit": "msec"
           }
         ]

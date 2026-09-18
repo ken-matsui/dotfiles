@@ -115,12 +115,6 @@ return {
 		event = "BufReadPost",
 		main = "ibl",
 		opts = {
-			exclude = {
-				filetypes = {
-					"nvim-tree",
-					"lazy",
-				},
-			},
 			indent = {
 				char = "▏",
 				smart_indent_cap = false,

@@ -6,10 +6,19 @@ return {
 		priority = 1000, -- make sure to load this before all the other start plugins
 		config = function()
 			vim.g.material_style = "deep ocean"
-			vim.cmd.colorscheme("material")
 
-			local colors = require("material.colors")
-			vim.api.nvim_set_hl(0, "PmenuKind", { fg = colors.main.cyan })
+			require("material").setup({
+				plugins = {
+					"indent-blankline",
+				},
+				custom_highlights = {
+					PmenuKind = function(colors)
+						return { fg = colors.main.cyan }
+					end,
+				},
+			})
+
+			vim.cmd.colorscheme("material")
 		end,
 	},
 
@@ -103,33 +112,24 @@ return {
 		"lukas-reineke/indent-blankline.nvim",
 		version = "v3.*",
 		event = "BufReadPost",
-		config = function()
-			local hooks = require("ibl.hooks")
-			hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
-				vim.api.nvim_set_hl(0, "IBLYellow", { fg = "#E5C07B" })
-			end)
-
-			require("ibl").setup({
-				exclude = {
-					filetypes = {
-						"nvim-tree",
-						"lazy",
-					},
+		main = "ibl",
+		opts = {
+			exclude = {
+				filetypes = {
+					"nvim-tree",
+					"lazy",
 				},
-				indent = {
-					char = "▏",
-					smart_indent_cap = false,
-				},
-				scope = {
-					enabled = true,
-					show_start = false,
-					show_end = false,
-					highlight = {
-						"IBLYellow",
-					},
-				},
-			})
-		end,
+			},
+			indent = {
+				char = "▏",
+				smart_indent_cap = false,
+			},
+			scope = {
+				enabled = true,
+				show_start = false,
+				show_end = false,
+			},
+		},
 	},
 
 	-- Highlight the same word

@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1789714321919,
+  "lastUpdate": 1789714852558,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -4088,6 +4088,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 9.7278,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "c29c2e31d7a7a3b9b1f42befd1d0eb5370e6e968",
+          "message": "nvim: remove java from conform",
+          "timestamp": "2026-09-18T03:00:10-04:00",
+          "tree_id": "be855f0f2054a81ed40342b27f562244c1afe785",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/c29c2e31d7a7a3b9b1f42befd1d0eb5370e6e968"
+        },
+        "date": 1789714851338,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 11.3277,
             "unit": "msec"
           }
         ]

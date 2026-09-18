@@ -111,7 +111,6 @@ return {
 				python = { "isort", "black" },
 				cpp = { "clang-format" },
 				rust = { "rustfmt" },
-				java = { "google-java-format" },
 			},
 			default_format_opts = {
 				lsp_format = "fallback",

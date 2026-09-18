@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1789711992662,
+  "lastUpdate": 1789712308702,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -4001,6 +4001,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 7.0736,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "70c46540b4c39a53b22475c53d46cf8c33d98fb4",
+          "message": "nvim: remove unnecessary exclude for ibl",
+          "timestamp": "2026-09-18T02:17:45-04:00",
+          "tree_id": "9f0f400573c4af9f38de0791e702ee4f89f1ffa4",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/70c46540b4c39a53b22475c53d46cf8c33d98fb4"
+        },
+        "date": 1789712307496,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 9.1858,
             "unit": "msec"
           }
         ]

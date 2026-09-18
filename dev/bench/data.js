@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1789535740070,
+  "lastUpdate": 1789711176107,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -3914,6 +3914,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 7.3278,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "471d54dfcdcbbbb06ac727194e988c2533d64aeb",
+          "message": "nvim: simplify yanked region highlight",
+          "timestamp": "2026-09-18T01:58:11-04:00",
+          "tree_id": "3b0e26b2f096c240904cfc790bcf0ac4c4662341",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/471d54dfcdcbbbb06ac727194e988c2533d64aeb"
+        },
+        "date": 1789711175380,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 10.101,
             "unit": "msec"
           }
         ]

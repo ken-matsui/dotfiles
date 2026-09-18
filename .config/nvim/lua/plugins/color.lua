@@ -9,6 +9,7 @@ return {
 
 			require("material").setup({
 				plugins = {
+					"illuminate",
 					"indent-blankline",
 				},
 				custom_highlights = {
@@ -148,17 +149,6 @@ return {
 		},
 		config = function(_, opts)
 			require("illuminate").configure(opts)
-
-			local highlight = "#354A51" -- material oceanic highlight
-			vim.api.nvim_set_hl(0, "IlluminatedWordText", {
-				bg = highlight,
-			})
-			vim.api.nvim_set_hl(0, "IlluminatedWordRead", {
-				bg = highlight,
-			})
-			vim.api.nvim_set_hl(0, "IlluminatedWordWrite", {
-				bg = highlight,
-			})
 		end,
 	},
 }

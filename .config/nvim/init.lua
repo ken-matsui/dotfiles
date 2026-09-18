@@ -40,8 +40,7 @@ end
 -- Highlight yanked region
 vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()
-		local hl = vim.hl or vim.highlight
-		hl.on_yank({ timeout = 500 })
+		vim.hl.on_yank({ timeout = 500 })
 	end,
 })
 

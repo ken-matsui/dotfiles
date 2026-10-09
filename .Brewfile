@@ -42,6 +42,7 @@ brew "topgrade"
 brew "trash" if OS.mac?
 brew "tree-sitter-cli"
 brew "typescript-language-server"
+brew "typst"
 brew "universal-ctags"
 # brew "valgrind"
 brew "vhs"

@@ -116,6 +116,7 @@ return {
 
 	{
 		"petertriho/nvim-scrollbar",
+		branch = "v1",
 		event = "BufReadPre",
 		dependencies = {
 			"lewis6991/gitsigns.nvim",

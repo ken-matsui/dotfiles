@@ -58,7 +58,6 @@ cask "deepl"
 cask "discord"
 cask "font-jetbrains-mono-nerd-font"  # for alacritty
 cask "homerow"
-cask "postman"
 cask "raycast"
 cask "raspberry-pi-imager"
 cask "rectangle"

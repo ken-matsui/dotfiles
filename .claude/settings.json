@@ -71,7 +71,6 @@
     }
   },
   "feedbackDrafts": "off",
-  "effortLevel": "xhigh",
   "modelSettings": {
     "claude-mythos-5-1": {
       "effortLevel": "xhigh"

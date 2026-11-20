@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1795170470552,
+  "lastUpdate": 1795170510151,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -4291,6 +4291,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 6.9455,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "5f71113fae9a1f7e969bad099f02d7b44b1c0174",
+          "message": "claude: remove mythos 5.1 setting",
+          "timestamp": "2026-11-20T05:27:35-05:00",
+          "tree_id": "0882dfbc2332dd260a79d5e29dfa8f46db203a31",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/5f71113fae9a1f7e969bad099f02d7b44b1c0174"
+        },
+        "date": 1795170509319,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 6.8184,
             "unit": "msec"
           }
         ]

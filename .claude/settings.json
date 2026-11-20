@@ -6,10 +6,7 @@
     "DISABLE_FEEDBACK_COMMAND": "1",
     "CLAUDE_CODE_SUBAGENT_MODEL": "sonnet"
   },
-  "attribution": {
-    "commit": "",
-    "pr": ""
-  },
+  "attribution": false,
   "permissions": {
     "deny": [
       "Edit(~/.ssh/**)"

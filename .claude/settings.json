@@ -1,0 +1,95 @@
+{
+  "syncClaudeAiSkills": false,
+  "env": {
+    "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1",
+    "CLAUDE_CODE_DISABLE_MOUSE_CLICKS": "1",
+    "DISABLE_FEEDBACK_COMMAND": "1",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "sonnet"
+  },
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "permissions": {
+    "deny": [
+      "Edit(~/.ssh/**)"
+    ]
+  },
+  "model": "claude-mythos-5-2",
+  "disableClaudeAiConnectors": true,
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "IN=$(cat); c=$(printf '%s' \"$IN\" | jq -r '.tool_input.command // \"\"'); a=$(printf '%s' \"$c\" | grep -oE '(^|[;&|(])[[:space:]]*gh pr (create|merge|close)' | grep -oE 'gh pr (create|merge|close)' | head -n1); [ -n \"$a\" ] || exit 0; v=succeeded; [ \"$a\" = 'gh pr merge' ] && v='enqueued into the merge queue (not merged yet - watch until the PR reads MERGED)'; u=$(printf '%s' \"$IN\" | jq -r '.tool_response.stdout // \"\"' | grep -oE 'https://github\\.com/[A-Za-z0-9._/-]+/pull/[0-9]+' | head -n1); printf '{\"hookSpecificOutput\":{\"hookEventName\":\"PostToolUse\",\"additionalContext\":\"PR-notify hook: %s %s%s. Call the PushNotification tool NOW (status: proactive) with a one-line message naming the PR action and URL.\"}}' \"$a\" \"$v\" \"${u:+ ($u)}\"",
+            "timeout": 10,
+            "statusMessage": "PR notification"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /Users/kmatsui/.claude/hooks/git-guards.py",
+            "timeout": 45,
+            "statusMessage": "git/gh guards"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "/usr/bin/osascript -l JavaScript \"/Users/kmatsui/.claude/statusline-usage.js\""
+  },
+  "enabledPlugins": {
+    "cc-plugin-you-should-know@builtin": false,
+    "clangd-lsp@claude-plugins-official": true,
+    "claude-security@claude-plugins-official": true,
+    "lua-lsp@claude-plugins-official": true,
+    "ponytail@ponytail": true,
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "security-guidance@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "legal@synced": false,
+    "cc-plugin-telemetry@builtin": false
+  },
+  "extraKnownMarketplaces": {
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      }
+    }
+  },
+  "feedbackDrafts": "off",
+  "effortLevel": "xhigh",
+  "modelSettings": {
+    "claude-mythos-5-1": {
+      "effortLevel": "xhigh"
+    },
+    "claude-opus-5-5": {
+      "effortLevel": "xhigh"
+    },
+    "claude-mythos-5-2": {
+      "effortLevel": "xhigh"
+    }
+  },
+  "autoCompactWindow": 400000,
+  "awaySummaryEnabled": false,
+  "tui": "fullscreen",
+  "skipWorkflowUsageWarning": true,
+  "switchModelsOnFlag": true,
+  "remoteControlAtStartup": true,
+  "inputNeededNotifEnabled": true,
+  "agentPushNotifEnabled": true,
+  "mouse": false
+}

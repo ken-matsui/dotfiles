@@ -1,6 +1,7 @@
 {
   "syncClaudeAiSkills": false,
   "syncClaudeAiPlugins": false,
+  "idleCompaction": false,
   "env": {
     "CLAUDE_CODE_DISABLE_MOUSE_CLICKS": "1",
     "CLAUDE_CODE_SUBAGENT_MODEL": "sonnet"

@@ -56,14 +56,18 @@
   },
   "feedbackDrafts": "off",
   "modelSettings": {
+    "claude-sonnet-5-5": {
+      "autoCompactWindow": 150000
+    },
     "claude-opus-5-5": {
-      "effortLevel": "xhigh"
+      "effortLevel": "xhigh",
+      "autoCompactWindow": 300000
     },
     "claude-mythos-5-2": {
-      "effortLevel": "xhigh"
+      "effortLevel": "xhigh",
+      "autoCompactWindow": 400000
     }
   },
-  "autoCompactWindow": 400000,
   "awaySummaryEnabled": false,
   "tui": "fullscreen",
   "skipWorkflowUsageWarning": true,

@@ -34,7 +34,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 /Users/kmatsui/.claude/hooks/git-guards.py",
+            "command": "python3 $HOME/.claude/hooks/git-guards.py",
             "timeout": 45,
             "statusMessage": "git/gh guards"
           }
@@ -44,7 +44,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "/usr/bin/osascript -l JavaScript \"/Users/kmatsui/.claude/statusline-usage.js\""
+    "command": "/usr/bin/osascript -l JavaScript \"$HOME/.claude/statusline-usage.js\""
   },
   "enabledPlugins": {
     "cc-plugin-you-should-know@builtin": false,

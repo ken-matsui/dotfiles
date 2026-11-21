@@ -74,6 +74,5 @@
   "switchModelsOnFlag": true,
   "remoteControlAtStartup": true,
   "inputNeededNotifEnabled": true,
-  "agentPushNotifEnabled": true,
-  "mouse": false
+  "agentPushNotifEnabled": true
 }

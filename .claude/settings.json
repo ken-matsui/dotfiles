@@ -15,19 +15,6 @@
   "model": "claude-mythos-5-2",
   "disableClaudeAiConnectors": true,
   "hooks": {
-    "PostToolUse": [
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "IN=$(cat); c=$(printf '%s' \"$IN\" | jq -r '.tool_input.command // \"\"'); a=$(printf '%s' \"$c\" | grep -oE '(^|[;&|(])[[:space:]]*gh pr (create|merge|close)' | grep -oE 'gh pr (create|merge|close)' | head -n1); [ -n \"$a\" ] || exit 0; v=succeeded; [ \"$a\" = 'gh pr merge' ] && v='enqueued into the merge queue (not merged yet - watch until the PR reads MERGED)'; u=$(printf '%s' \"$IN\" | jq -r '.tool_response.stdout // \"\"' | grep -oE 'https://github\\.com/[A-Za-z0-9._/-]+/pull/[0-9]+' | head -n1); printf '{\"hookSpecificOutput\":{\"hookEventName\":\"PostToolUse\",\"additionalContext\":\"PR-notify hook: %s %s%s. Call the PushNotification tool NOW (status: proactive) with a one-line message naming the PR action and URL.\"}}' \"$a\" \"$v\" \"${u:+ ($u)}\"",
-            "timeout": 10,
-            "statusMessage": "PR notification"
-          }
-        ]
-      }
-    ],
     "PreToolUse": [
       {
         "matcher": "Bash",

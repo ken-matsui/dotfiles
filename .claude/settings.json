@@ -1,9 +1,7 @@
 {
   "syncClaudeAiSkills": false,
   "env": {
-    "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1",
     "CLAUDE_CODE_DISABLE_MOUSE_CLICKS": "1",
-    "DISABLE_FEEDBACK_COMMAND": "1",
     "CLAUDE_CODE_SUBAGENT_MODEL": "sonnet"
   },
   "attribution": false,
@@ -55,6 +53,7 @@
     }
   },
   "feedbackDrafts": "off",
+  "feedbackSurveyRate": 0,
   "modelSettings": {
     "claude-sonnet-5-5": {
       "autoCompactWindow": 150000

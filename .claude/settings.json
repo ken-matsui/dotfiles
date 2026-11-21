@@ -31,7 +31,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "/usr/bin/osascript -l JavaScript \"$HOME/.claude/statusline-usage.js\""
+    "command": "sh \"$HOME/.claude/statusline.sh\""
   },
   "enabledPlugins": {
     "cc-plugin-you-should-know@builtin": false,

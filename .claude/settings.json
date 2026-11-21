@@ -70,7 +70,6 @@
   },
   "awaySummaryEnabled": false,
   "tui": "fullscreen",
-  "skipWorkflowUsageWarning": true,
   "switchModelsOnFlag": true,
   "remoteControlAtStartup": true,
   "inputNeededNotifEnabled": true,

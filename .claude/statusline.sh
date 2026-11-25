@@ -1,6 +1,6 @@
 #!/bin/sh
 # Claude Code status line.
-#   Line 1: model (effort), version, directory, branch
+#   Line 1: model (effort), version, directory:branch, worktree
 #   Line 2: context + rate-limit meters (Ctx, 5h, 7d), +added/-removed, cost, duration
 #
 # The field variables (model, ctx, five, week, …) are assigned by the `eval` of
@@ -13,6 +13,7 @@ RESET=$(printf '\033[0m')
 C_VER=$(printf '\033[90m')     # gray           — version
 C_DIR=$(printf '\033[94m')     # bright blue    — directory
 C_BRANCH=$(printf '\033[93m')  # bright yellow  — branch
+C_WT=$(printf '\033[95m')      # bright magenta — worktree
 C_ADD=$(printf '\033[92m')     # bright green   — lines added
 C_DEL=$(printf '\033[91m')     # bright red     — lines removed
 C_COST=$(printf '\033[96m')    # bright cyan    — cost
@@ -24,21 +25,22 @@ C_CRIT=$(printf '\033[91m')    # bright red     — percentage >= 85%
 # --- Parse every field in one jq pass; @sh keeps values shell-safe ---
 eval "$(printf '%s' "$input" | jq -r '
   {
-    model:   (.model.display_name                    // "Unknown"),
-    effort:  (.effort.level                          // ""),
-    version: (.version                               // ""),
-    ctx:     (.context_window.used_percentage        // 0),
-    ctx_tok: ((.context_window.total_input_tokens    // 0)
-            + (.context_window.total_output_tokens   // 0)),
-    five:    (.rate_limits.five_hour.used_percentage // ""),
-    five_at: (.rate_limits.five_hour.resets_at       // ""),
-    week:    (.rate_limits.seven_day.used_percentage // ""),
-    week_at: (.rate_limits.seven_day.resets_at       // ""),
-    dir:     (.workspace.current_dir                 // ""),
-    added:   (.cost.total_lines_added                // 0),
-    removed: (.cost.total_lines_removed              // 0),
-    cost:    (.cost.total_cost_usd                   // ""),
-    dur:     (.cost.total_duration_ms                // "")
+    model:   (.model.display_name                       // "Unknown"),
+    effort:  (.effort.level                             // ""),
+    version: (.version                                  // ""),
+    ctx:     (.context_window.used_percentage           // 0),
+    ctx_tok: ((.context_window.total_input_tokens       // 0)
+            + (.context_window.total_output_tokens      // 0)),
+    five:    (.rate_limits.five_hour.used_percentage    // ""),
+    five_at: (.rate_limits.five_hour.resets_at          // ""),
+    week:    (.rate_limits.seven_day.used_percentage    // ""),
+    week_at: (.rate_limits.seven_day.resets_at          // ""),
+    dir:     (.workspace.current_dir                    // ""),
+    wt:      (.workspace.git_worktree // .worktree.name // ""),
+    added:   (.cost.total_lines_added                   // 0),
+    removed: (.cost.total_lines_removed                 // 0),
+    cost:    (.cost.total_cost_usd                      // ""),
+    dur:     (.cost.total_duration_ms                   // "")
   } | to_entries[] | "\(.key)=\(.value | tostring | @sh)"
 ')"
 
@@ -115,7 +117,7 @@ add() {
   [ -n "$1" ] && row="${row:+$row  }$1"
 }
 
-# === Line 1: model, version, directory, branch ===
+# === Line 1: model, version, directory:branch, worktree ===
 branch=$(git -C "$dir" --no-optional-locks branch --show-current 2>/dev/null)
 case "$dir" in                                   # abbreviate home to ~ (after git lookup)
   "$HOME")   dir="~" ;;
@@ -126,6 +128,7 @@ row=$model
 [ -n "$effort" ] && row="$row ($effort)"
 add "$(seg "$C_VER"    "${version:+v$version}")"
 add "$(seg "$C_DIR" "$dir")${branch:+:$(seg "$C_BRANCH" "$branch")}"
+add "$(seg "$C_WT"     "${wt:+wt:$wt}")"
 line1=$row
 
 # === Line 2: context + rate-limit meters (Ctx, 5h, 7d), +added/-removed, cost, duration ===

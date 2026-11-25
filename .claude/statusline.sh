@@ -10,17 +10,13 @@ input=$(cat)
 
 # --- ANSI colors (bright variants survive terminal dimming) ---
 RESET=$(printf '\033[0m')
-C_VER=$(printf '\033[90m')     # gray           — version
-C_DIR=$(printf '\033[94m')     # bright blue    — directory
-C_BRANCH=$(printf '\033[93m')  # bright yellow  — branch
-C_WT=$(printf '\033[95m')      # bright magenta — worktree
-C_ADD=$(printf '\033[92m')     # bright green   — lines added
-C_DEL=$(printf '\033[91m')     # bright red     — lines removed
-C_COST=$(printf '\033[96m')    # bright cyan    — cost
-C_DUR=$(printf '\033[95m')     # bright magenta — duration
-C_SAFE=$(printf '\033[92m')    # bright green   — percentage < 60%
-C_WARN=$(printf '\033[93m')    # bright yellow  — percentage >= 60%
-C_CRIT=$(printf '\033[91m')    # bright red     — percentage >= 85%
+GRAY=$(printf '\033[90m')
+RED=$(printf '\033[91m')
+GREEN=$(printf '\033[92m')
+YELLOW=$(printf '\033[93m')
+BLUE=$(printf '\033[94m')
+MAGENTA=$(printf '\033[95m')
+CYAN=$(printf '\033[96m')
 
 # --- Parse every field in one jq pass; @sh keeps values shell-safe ---
 eval "$(printf '%s' "$input" | jq -r '
@@ -48,9 +44,9 @@ _now=$(date +%s)
 
 # pct_color <pct> — traffic-light color for a usage percentage: green / yellow / red
 pct_color() {
-  if   [ "$1" -ge 85 ]; then printf '%s' "$C_CRIT"
-  elif [ "$1" -ge 60 ]; then printf '%s' "$C_WARN"
-  else printf '%s' "$C_SAFE"
+  if   [ "$1" -ge 85 ]; then printf '%s' "$RED"
+  elif [ "$1" -ge 60 ]; then printf '%s' "$YELLOW"
+  else printf '%s' "$GREEN"
   fi
 }
 
@@ -126,9 +122,9 @@ esac
 
 row=$model
 [ -n "$effort" ] && row="$row ($effort)"
-add "$(seg "$C_VER"    "${version:+v$version}")"
-add "$(seg "$C_DIR" "$dir")${branch:+:$(seg "$C_BRANCH" "$branch")}"
-add "$(seg "$C_WT"     "${wt:+wt:$wt}")"
+add "$(seg "$GRAY" "${version:+v$version}")"
+add "$(seg "$BLUE" "$dir")${branch:+:$(seg "$YELLOW" "$branch")}"
+add "$(seg "$MAGENTA" "${wt:+wt:$wt}")"
 line1=$row
 
 # === Line 2: context + rate-limit meters (Ctx, 5h, 7d), +added/-removed, cost, duration ===
@@ -136,9 +132,9 @@ row=""
 add "Ctx:$(pct_color "$(printf '%.0f' "$ctx")")$(tokens_str "$ctx_tok")$RESET"
 add "$(meter 5h  "$five" "$five_at")"
 add "$(meter 7d  "$week" "$week_at")"
-add "${C_ADD}+${added}${RESET}/${C_DEL}-${removed}${RESET}"
-add "$(seg "$C_COST"   "${cost:+$(printf '$%.4f' "$cost")}")"
-add "$(seg "$C_DUR"    "${dur:+$(format_duration "$dur")}")"
+add "${GREEN}+${added}${RESET}/${RED}-${removed}${RESET}"
+add "$(seg "$CYAN" "${cost:+$(printf '$%.4f' "$cost")}")"
+add "$(seg "$MAGENTA" "${dur:+$(format_duration "$dur")}")"
 line2=$row
 
 # --- Emit (second line only when non-empty) ---

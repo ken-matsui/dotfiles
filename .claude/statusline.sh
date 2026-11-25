@@ -14,7 +14,6 @@ GRAY=$(printf '\033[90m')
 RED=$(printf '\033[91m')
 GREEN=$(printf '\033[92m')
 YELLOW=$(printf '\033[93m')
-BLUE=$(printf '\033[94m')
 MAGENTA=$(printf '\033[95m')
 CYAN=$(printf '\033[96m')
 
@@ -123,7 +122,7 @@ esac
 row=$model
 [ -n "$effort" ] && row="$row ($effort)"
 add "$(seg "$GRAY" "${version:+v$version}")"
-add "$(seg "$BLUE" "$dir")${branch:+:$(seg "$YELLOW" "$branch")}"
+add "$dir${branch:+:$branch}"
 add "$(seg "$MAGENTA" "${wt:+wt:$wt}")"
 line1=$row
 

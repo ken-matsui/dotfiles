@@ -15,7 +15,6 @@ RED=$(printf '\033[91m')
 GREEN=$(printf '\033[92m')
 YELLOW=$(printf '\033[93m')
 MAGENTA=$(printf '\033[95m')
-CYAN=$(printf '\033[96m')
 
 # --- Parse every field in one jq pass; @sh keeps values shell-safe ---
 eval "$(printf '%s' "$input" | jq -r '
@@ -129,8 +128,8 @@ row=""
 add "Ctx:$(pct_color "$(printf '%.0f' "$ctx")")$(tokens_str "$ctx_tok")$RESET"
 add "$(meter 5h  "$five" "$five_at")"
 add "$(meter 7d  "$week" "$week_at")"
-add "$(seg "$CYAN" "${cost:+$(printf '$%.4f' "$cost")}")"
-add "$(seg "$MAGENTA" "${dur:+$(format_duration "$dur")}")"
+add "${cost:+$(printf '$%.4f' "$cost")}"
+add "${dur:+$(format_duration "$dur")}"
 line2=$row
 
 # --- Emit (second line only when non-empty) ---

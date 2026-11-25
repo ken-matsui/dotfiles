@@ -31,7 +31,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "sh \"$HOME/.claude/statusline.sh\""
+    "command": "$HOME/.claude/statusline.sh"
   },
   "enabledPlugins": {
     "cc-plugin-you-should-know@builtin": false,

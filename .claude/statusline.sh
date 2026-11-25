@@ -106,7 +106,8 @@ line1=$row
 
 # === Line 2: context + rate-limit meters (Ctx, 5h, 7d), cost ===
 row=""
-add "Ctx:$(pct_color "$(printf '%.0f' "$ctx")")$(tokens_str "$ctx_tok")$RESET"
+ctx=$(printf '%.0f' "$ctx")
+add "Ctx:$(tokens_str "$ctx_tok") ($(pct_color "$ctx")$ctx%$RESET)"
 add "$(meter 5h  "$five" "$five_at")"
 add "$(meter 7d  "$week" "$week_at")"
 add "${cost:+$(printf '$%.4f' "$cost")}"

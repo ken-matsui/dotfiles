@@ -1,7 +1,7 @@
 #!/bin/sh
 # Claude Code status line.
-#   Line 1: model (effort), version, directory:branch, worktree
-#   Line 2: context + rate-limit meters (Ctx, 5h, 7d), cost
+#   Line 1: model (effort), context, directory:branch, worktree
+#   Line 2: rate-limit meters (5h, 7d), cost, version
 #
 # The field variables (model, ctx, five, week, …) are assigned by the `eval` of
 # jq output below; shellcheck can't trace that, so silence its false positive:
@@ -99,7 +99,7 @@ add() {
   [ -n "$1" ] && row="${row:+$row | }$1"
 }
 
-# === Line 1: model, version, directory:branch, worktree ===
+# === Line 1: model, context, directory:branch, worktree ===
 branch=$(git -C "$dir" --no-optional-locks branch --show-current 2>/dev/null)
 case "$dir" in                                   # abbreviate home to ~ (after git lookup)
   "$HOME")   dir="~" ;;
@@ -108,18 +108,18 @@ esac
 
 row=$model
 [ -n "$effort" ] && row="$row ($effort)"
-add "${version:+v$version}"
+ctx=$(printf '%.0f' "$ctx")
+add "Ctx:$(tokens_str "$ctx_tok") $(pct_color "$ctx")$(bar "$ctx") $ctx%$RESET"
 add "$dir${branch:+:$branch}"
 add "${wt:+wt:$wt}"
 line1=$row
 
-# === Line 2: context + rate-limit meters (Ctx, 5h, 7d), cost ===
+# === Line 2: rate-limit meters (5h, 7d), cost, version ===
 row=""
-ctx=$(printf '%.0f' "$ctx")
-add "Ctx:$(tokens_str "$ctx_tok") $(pct_color "$ctx")$(bar "$ctx") $ctx%$RESET"
 add "$(meter 5h  "$five" "$five_at")"
 add "$(meter 7d  "$week" "$week_at")"
 add "${cost:+$(printf '$%.4f' "$cost")}"
+add "${version:+v$version}"
 line2=$row
 
 # --- Emit (second line only when non-empty) ---

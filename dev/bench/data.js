@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1795585837752,
+  "lastUpdate": 1795585917454,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -4697,6 +4697,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 6.6854,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "b14b033b8f9435796f63c4ebe3af82bcf62a5029",
+          "message": "claude: use terminal default color for the dir and branch",
+          "timestamp": "2026-11-25T00:51:06-05:00",
+          "tree_id": "83fc82fbc7355abb4145736427ebdd15f62c6a65",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/b14b033b8f9435796f63c4ebe3af82bcf62a5029"
+        },
+        "date": 1795585916542,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 11.709,
             "unit": "msec"
           }
         ]

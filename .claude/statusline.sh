@@ -1,6 +1,6 @@
 #!/bin/sh
 # Claude Code status line.
-#   Line 1: model (effort), context, directory:branch, worktree
+#   Line 1: model (effort), context, directory:branch, worktree, PR
 #   Line 2: rate-limit meters (5h, 7d), cost, version
 #
 # The field variables (model, ctx, five, week, …) are assigned by the `eval` of
@@ -29,6 +29,7 @@ eval "$(printf '%s' "$input" | jq -r '
     week_at: (.rate_limits.seven_day.resets_at          // ""),
     dir:     (.workspace.current_dir                    // ""),
     wt:      (.workspace.git_worktree // .worktree.name // ""),
+    pr:      (.pr.number                                // ""),
     cost:    (.cost.total_cost_usd                      // "")
   } | to_entries[] | "\(.key)=\(.value | tostring | @sh)"
 ')"
@@ -99,7 +100,7 @@ add() {
   [ -n "$1" ] && row="${row:+$row | }$1"
 }
 
-# === Line 1: model, context, directory:branch, worktree ===
+# === Line 1: model, context, directory:branch, worktree, PR ===
 branch=$(git -C "$dir" --no-optional-locks branch --show-current 2>/dev/null)
 case "$dir" in                                   # abbreviate home to ~ (after git lookup)
   "$HOME")   dir="~" ;;
@@ -112,6 +113,7 @@ ctx=$(printf '%.0f' "$ctx")
 add "Ctx:$(tokens_str "$ctx_tok") $(pct_color "$ctx")$(bar "$ctx") $ctx%$RESET"
 add "$dir${branch:+:$branch}"
 add "${wt:+wt:$wt}"
+add "${pr:+#$pr}"
 line1=$row
 
 # === Line 2: rate-limit meters (5h, 7d), cost, version ===

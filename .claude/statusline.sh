@@ -1,7 +1,7 @@
 #!/bin/sh
 # Claude Code status line.
 #   Line 1: model (effort), context, directory:branch, worktree, PR
-#   Line 2: rate-limit meters (5h, 7d), prompt cache, cost, version
+#   Line 2: rate-limit meters (5h, 7d), cost, prompt cache, version
 #
 # The field variables (model, ctx, five, week, …) are assigned by the `eval` of
 # jq output below; shellcheck can't trace that, so silence its false positive:
@@ -123,10 +123,11 @@ add "${wt:+wt:$wt}"
 add "${pr:+#$pr}"
 line1=$row
 
-# === Line 2: rate-limit meters (5h, 7d), prompt cache, cost, version ===
+# === Line 2: rate-limit meters (5h, 7d), cost, prompt cache, version ===
 row=""
 add "$(meter 5h  "$five" "$five_at")"
 add "$(meter 7d  "$week" "$week_at")"
+add "${cost:+$(printf '$%.2f' "$cost")}"
 
 # Cache: <Nm left | expired (~Nk to recache) | N/A>[, N/M misses][ (cause, Nm ago)]
 if [ -z "$c_exp" ]; then cache="N/A"
@@ -139,7 +140,6 @@ c_age=$(( _now - ${c_last:-0} ))   # the last miss's cause and age show only whi
   cache="$cache (${c_cause:+$c_cause, }$(duration_str "$c_age") ago)"
 add "Cache: $cache"
 
-add "${cost:+$(printf '$%.2f' "$cost")}"
 add "${version:+v$version}"
 line2=$row
 

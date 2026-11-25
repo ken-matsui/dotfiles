@@ -13,7 +13,6 @@ RESET=$(printf '\033[0m')
 RED=$(printf '\033[91m')
 GREEN=$(printf '\033[92m')
 YELLOW=$(printf '\033[93m')
-MAGENTA=$(printf '\033[95m')
 
 # --- Parse every field in one jq pass; @sh keeps values shell-safe ---
 eval "$(printf '%s' "$input" | jq -r '
@@ -86,11 +85,6 @@ tokens_str() {
   printf '%dk' "$(( ($1 + 500) / 1000 ))"
 }
 
-# seg <color> <value> — returns "<color><value><reset>"; empty when <value> is empty
-seg() {
-  [ -n "$2" ] && printf '%s' "$1$2$RESET"
-}
-
 # add <segment> — append <segment> to $row with a " | " separator (skip empty)
 add() {
   [ -n "$1" ] && row="${row:+$row | }$1"
@@ -107,7 +101,7 @@ row=$model
 [ -n "$effort" ] && row="$row ($effort)"
 add "${version:+v$version}"
 add "$dir${branch:+:$branch}"
-add "$(seg "$MAGENTA" "${wt:+wt:$wt}")"
+add "${wt:+wt:$wt}"
 line1=$row
 
 # === Line 2: context + rate-limit meters (Ctx, 5h, 7d), cost ===

@@ -85,6 +85,15 @@ tokens_str() {
   printf '%dk' "$(( ($1 + 500) / 1000 ))"
 }
 
+# bar <pct> — 10-cell progress bar, one cell per 10% (rounded): 24 -> "██░░░░░░░░"
+bar() {
+  _i=0
+  while [ "$_i" -lt 10 ]; do
+    if [ "$_i" -lt $(( ($1 + 5) / 10 )) ]; then printf '█'; else printf '░'; fi
+    _i=$(( _i + 1 ))
+  done
+}
+
 # add <segment> — append <segment> to $row with a " | " separator (skip empty)
 add() {
   [ -n "$1" ] && row="${row:+$row | }$1"
@@ -107,7 +116,7 @@ line1=$row
 # === Line 2: context + rate-limit meters (Ctx, 5h, 7d), cost ===
 row=""
 ctx=$(printf '%.0f' "$ctx")
-add "Ctx:$(tokens_str "$ctx_tok") ($(pct_color "$ctx")$ctx%$RESET)"
+add "Ctx:$(tokens_str "$ctx_tok") $(pct_color "$ctx")$(bar "$ctx") $ctx%$RESET"
 add "$(meter 5h  "$five" "$five_at")"
 add "$(meter 7d  "$week" "$week_at")"
 add "${cost:+$(printf '$%.4f' "$cost")}"

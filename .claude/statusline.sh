@@ -125,8 +125,7 @@ esac
 row=$model
 [ -n "$effort" ] && row="$row [$effort]"
 add "$(seg "$C_VER"    "${version:+v$version}")"
-add "$(seg "$C_DIR"    "$dir")"
-add "$(seg "$C_BRANCH" "$branch")"
+add "$(seg "$C_DIR" "$dir")${branch:+:$(seg "$C_BRANCH" "$branch")}"
 line1=$row
 
 # === Line 2: context + rate-limit meters (Ctx, 5h, 7d), +added/-removed, cost, duration ===

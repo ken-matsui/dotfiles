@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1795600942265,
+  "lastUpdate": 1795601222930,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -5161,6 +5161,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 9.4938,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "c3e8ff4702461c294d81aa85480a2e915b429e3d",
+          "message": "claude: move cost to left of cache",
+          "timestamp": "2026-11-25T05:06:23-05:00",
+          "tree_id": "a58504c1db3de5b46a54f0420132f9de83eb7ed9",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/c3e8ff4702461c294d81aa85480a2e915b429e3d"
+        },
+        "date": 1795601222387,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 6.6578,
             "unit": "msec"
           }
         ]

@@ -1,7 +1,7 @@
 #!/bin/sh
 # Claude Code status line.
 #   Line 1: model (effort), context, directory:branch, worktree, PR
-#   Line 2: rate-limit meters (5h, 7d), cost, version
+#   Line 2: rate-limit meters (5h, 7d), prompt cache, cost, version
 #
 # The field variables (model, ctx, five, week, …) are assigned by the `eval` of
 # jq output below; shellcheck can't trace that, so silence its false positive:
@@ -16,6 +16,7 @@ YELLOW=$(printf '\033[93m')
 
 # --- Parse every field in one jq pass; @sh keeps values shell-safe ---
 eval "$(printf '%s' "$input" | jq -r '
+  def num: if type == "number" then floor else "" end;   # epoch seconds / counts; else unavailable
   {
     model:   (.model.display_name                       // "Unknown"),
     effort:  (.effort.level                             // ""),
@@ -30,7 +31,15 @@ eval "$(printf '%s' "$input" | jq -r '
     dir:     (.workspace.current_dir                    // ""),
     wt:      (.workspace.git_worktree // .worktree.name // ""),
     pr:      (.pr.number                                // ""),
-    cost:    (.cost.total_cost_usd                      // "")
+    cost:    (.cost.total_cost_usd                      // ""),
+    c_exp:   (.prompt_cache.expires_at                  | num),
+    c_cold:  (.prompt_cache.recache_tokens_if_cold      | num),
+    c_miss:  (.prompt_cache.misses                      | num),
+    c_req:   (.prompt_cache.requests                    | num),
+    c_last:  (.prompt_cache.last_miss_at                | num),
+    c_cause: ((.prompt_cache.last_miss_cause.causes     # tools_changed -> tools
+               | map(strings | sub("_changed$"; "") | sub("^likely_"; "") | gsub("_"; " "))
+               | join("+"))? // "")
   } | to_entries[] | "\(.key)=\(.value | tostring | @sh)"
 ')"
 
@@ -51,11 +60,11 @@ dec() {
   else printf '%d.%d%s' "$(( $1 / 10 ))" "$_f" "$2"; fi
 }
 
-# duration_str <epoch> — time until <epoch> for the "in ..." reset countdown:
+# duration_str <seconds> — compact duration for countdowns and ages:
 #   "X.Yd" (>= 1d) / "X.Yh" (>= 1h) / "Nm", rounded to nearest; ".0" is
-#   trimmed ("4h" not "4.0h"). "0m" if past.
+#   trimmed ("4h" not "4.0h"). "0m" if <= 0.
 duration_str() {
-  _secs=$(( $1 - _now ))
+  _secs=$1
   [ "$_secs" -le 0 ] && { printf '0m'; return; }
   if [ "$_secs" -ge 86400 ]; then
     dec "$(( (_secs + 4320) / 8640 ))" d   # tenths of a day, rounded
@@ -77,7 +86,7 @@ meter() {
   _pct=${_pct%.0}                  # trimmed to a whole number when exact
   _pcolor=$(pct_color "$_int")
   _reset=""
-  [ -n "$_resets" ] && _reset=" in $(duration_str "$_resets")"
+  [ -n "$_resets" ] && _reset=" in $(duration_str $(( _resets - _now )))"
   printf '%s:%s%s %s%%%s%s' "$_label" "$_pcolor" "$(bar "$_int")" "$_pct" "$RESET" "$_reset"
 }
 
@@ -116,10 +125,22 @@ add "${wt:+wt:$wt}"
 add "${pr:+#$pr}"
 line1=$row
 
-# === Line 2: rate-limit meters (5h, 7d), cost, version ===
+# === Line 2: rate-limit meters (5h, 7d), prompt cache, cost, version ===
 row=""
 add "$(meter 5h  "$five" "$five_at")"
 add "$(meter 7d  "$week" "$week_at")"
+
+# Cache: <Nm left | expired (~Nk to recache) | N/A>[, N/M misses][ (cause, Nm ago)]
+if [ -z "$c_exp" ]; then cache="N/A"
+elif [ "$c_exp" -gt "$_now" ]; then cache="$GREEN$(duration_str $(( c_exp - _now ))) left$RESET"
+else cache="${YELLOW}expired$RESET${c_cold:+ (~$(tokens_str "$c_cold") to recache)}"
+fi
+[ -n "$c_miss" ] && [ -n "$c_req" ] && cache="$cache, $c_miss/$c_req misses"
+c_age=$(( _now - ${c_last:-0} ))   # the last miss's cause and age show only while <= 10 minutes old
+[ -n "$c_last" ] && [ "$c_age" -ge 0 ] && [ "$c_age" -le 600 ] &&
+  cache="$cache (${c_cause:+$c_cause, }$(duration_str "$c_age") ago)"
+add "Cache: $cache"
+
 add "${cost:+$(printf '$%.4f' "$cost")}"
 add "${version:+v$version}"
 line2=$row

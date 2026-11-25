@@ -107,9 +107,9 @@ seg() {
   [ -n "$2" ] && printf '%s' "$1$2$RESET"
 }
 
-# add <segment> — append <segment> to $row with a two-space separator (skip empty)
+# add <segment> — append <segment> to $row with a " | " separator (skip empty)
 add() {
-  [ -n "$1" ] && row="${row:+$row  }$1"
+  [ -n "$1" ] && row="${row:+$row | }$1"
 }
 
 # === Line 1: model, version, directory:branch, worktree ===

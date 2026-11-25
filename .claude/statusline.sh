@@ -66,18 +66,18 @@ duration_str() {
 }
 
 # meter <label> <pct> <resets_at>
-#   Returns "Label:NN% in ..." — empty when <pct> is empty.
-#   The label is uncolored; the percentage is green < 60%, yellow >= 60%, red >= 85%.
+#   Returns "Label:<bar> NN% in ..." — empty when <pct> is empty.
+#   The label is uncolored; the bar and percentage are green < 60%, yellow >= 60%, red >= 85%.
 meter() {
   _label=$1; _raw=$2; _resets=$3
   [ -n "$_raw" ] || return 0
-  _int=$(printf '%.0f' "$_raw")    # rounded int drives the percentage color
+  _int=$(printf '%.0f' "$_raw")    # rounded int drives the color and bar
   _pct=$(printf '%.1f' "$_raw")    # shown value: one decimal,
   _pct=${_pct%.0}                  # trimmed to a whole number when exact
   _pcolor=$(pct_color "$_int")
   _reset=""
   [ -n "$_resets" ] && _reset=" in $(duration_str "$_resets")"
-  printf '%s:%s%s%%%s%s' "$_label" "$_pcolor" "$_pct" "$RESET" "$_reset"
+  printf '%s:%s%s %s%%%s%s' "$_label" "$_pcolor" "$(bar "$_int")" "$_pct" "$RESET" "$_reset"
 }
 
 # tokens_str <count> — token count in thousands, rounded: 73612 -> "74k"

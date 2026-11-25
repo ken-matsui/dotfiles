@@ -139,7 +139,7 @@ c_age=$(( _now - ${c_last:-0} ))   # the last miss's cause and age show only whi
   cache="$cache (${c_cause:+$c_cause, }$(duration_str "$c_age") ago)"
 add "Cache: $cache"
 
-add "${cost:+$(printf '$%.4f' "$cost")}"
+add "${cost:+$(printf '$%.2f' "$cost")}"
 add "${version:+v$version}"
 line2=$row
 

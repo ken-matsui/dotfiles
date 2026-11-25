@@ -1,7 +1,7 @@
 #!/bin/sh
 # Claude Code status line.
 #   Line 1: model (effort), version, directory:branch, worktree
-#   Line 2: context + rate-limit meters (Ctx, 5h, 7d), cost, duration
+#   Line 2: context + rate-limit meters (Ctx, 5h, 7d), cost
 #
 # The field variables (model, ctx, five, week, …) are assigned by the `eval` of
 # jq output below; shellcheck can't trace that, so silence its false positive:
@@ -31,8 +31,7 @@ eval "$(printf '%s' "$input" | jq -r '
     week_at: (.rate_limits.seven_day.resets_at          // ""),
     dir:     (.workspace.current_dir                    // ""),
     wt:      (.workspace.git_worktree // .worktree.name // ""),
-    cost:    (.cost.total_cost_usd                      // ""),
-    dur:     (.cost.total_duration_ms                   // "")
+    cost:    (.cost.total_cost_usd                      // "")
   } | to_entries[] | "\(.key)=\(.value | tostring | @sh)"
 ')"
 
@@ -66,17 +65,6 @@ duration_str() {
   else
     printf '%dm' "$(( (_secs + 30) / 60 ))" # whole minutes, rounded
   fi
-}
-
-# format_duration <ms> — two most significant units: "Xd Yh" / "Xh Ym" / "Xm Ys" / "Xs"
-format_duration() {
-  _s=$(( $1 / 1000 ))
-  _d=$(( _s / 86400 )); _h=$(( (_s % 86400) / 3600 ))
-  _m=$(( (_s % 3600) / 60 )); _s=$(( _s % 60 ))
-  if   [ "$_d" -gt 0 ]; then printf '%dd %dh' "$_d" "$_h"
-  elif [ "$_h" -gt 0 ]; then printf '%dh %dm' "$_h" "$_m"
-  elif [ "$_m" -gt 0 ]; then printf '%dm %ds' "$_m" "$_s"
-  else printf '%ds' "$_s"; fi
 }
 
 # meter <label> <pct> <resets_at>
@@ -123,13 +111,12 @@ add "$dir${branch:+:$branch}"
 add "$(seg "$MAGENTA" "${wt:+wt:$wt}")"
 line1=$row
 
-# === Line 2: context + rate-limit meters (Ctx, 5h, 7d), cost, duration ===
+# === Line 2: context + rate-limit meters (Ctx, 5h, 7d), cost ===
 row=""
 add "Ctx:$(pct_color "$(printf '%.0f' "$ctx")")$(tokens_str "$ctx_tok")$RESET"
 add "$(meter 5h  "$five" "$five_at")"
 add "$(meter 7d  "$week" "$week_at")"
 add "${cost:+$(printf '$%.4f' "$cost")}"
-add "${dur:+$(format_duration "$dur")}"
 line2=$row
 
 # --- Emit (second line only when non-empty) ---

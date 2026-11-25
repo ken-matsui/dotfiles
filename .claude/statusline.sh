@@ -22,8 +22,6 @@ eval "$(printf '%s' "$input" | jq -r '
     effort:  (.effort.level                             // ""),
     version: (.version                                  // ""),
     ctx:     (.context_window.used_percentage           // 0),
-    ctx_tok: ((.context_window.total_input_tokens       // 0)
-            + (.context_window.total_output_tokens      // 0)),
     five:    (.rate_limits.five_hour.used_percentage    // ""),
     five_at: (.rate_limits.five_hour.resets_at          // ""),
     week:    (.rate_limits.seven_day.used_percentage    // ""),
@@ -119,7 +117,7 @@ esac
 row=$model
 [ -n "$effort" ] && row="$row ($effort)"
 ctx=$(printf '%.0f' "$ctx")
-add "Ctx:$(tokens_str "$ctx_tok") $(pct_color "$ctx")$(bar "$ctx") $ctx%$RESET"
+add "Ctx:$(pct_color "$ctx")$(bar "$ctx") $ctx%$RESET"
 add "$dir${branch:+:$branch}"
 add "${wt:+wt:$wt}"
 add "${pr:+#$pr}"

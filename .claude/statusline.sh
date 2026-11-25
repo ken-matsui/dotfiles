@@ -1,7 +1,7 @@
 #!/bin/sh
 # Claude Code status line.
 #   Line 1: model (effort), version, directory:branch, worktree
-#   Line 2: context + rate-limit meters (Ctx, 5h, 7d), +added/-removed, cost, duration
+#   Line 2: context + rate-limit meters (Ctx, 5h, 7d), cost, duration
 #
 # The field variables (model, ctx, five, week, …) are assigned by the `eval` of
 # jq output below; shellcheck can't trace that, so silence its false positive:
@@ -32,8 +32,6 @@ eval "$(printf '%s' "$input" | jq -r '
     week_at: (.rate_limits.seven_day.resets_at          // ""),
     dir:     (.workspace.current_dir                    // ""),
     wt:      (.workspace.git_worktree // .worktree.name // ""),
-    added:   (.cost.total_lines_added                   // 0),
-    removed: (.cost.total_lines_removed                 // 0),
     cost:    (.cost.total_cost_usd                      // ""),
     dur:     (.cost.total_duration_ms                   // "")
   } | to_entries[] | "\(.key)=\(.value | tostring | @sh)"
@@ -126,12 +124,11 @@ add "$dir${branch:+:$branch}"
 add "$(seg "$MAGENTA" "${wt:+wt:$wt}")"
 line1=$row
 
-# === Line 2: context + rate-limit meters (Ctx, 5h, 7d), +added/-removed, cost, duration ===
+# === Line 2: context + rate-limit meters (Ctx, 5h, 7d), cost, duration ===
 row=""
 add "Ctx:$(pct_color "$(printf '%.0f' "$ctx")")$(tokens_str "$ctx_tok")$RESET"
 add "$(meter 5h  "$five" "$five_at")"
 add "$(meter 7d  "$week" "$week_at")"
-add "${GREEN}+${added}${RESET}/${RED}-${removed}${RESET}"
 add "$(seg "$CYAN" "${cost:+$(printf '$%.4f' "$cost")}")"
 add "$(seg "$MAGENTA" "${dur:+$(format_duration "$dur")}")"
 line2=$row

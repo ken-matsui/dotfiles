@@ -10,7 +10,6 @@ input=$(cat)
 
 # --- ANSI colors (bright variants survive terminal dimming) ---
 RESET=$(printf '\033[0m')
-GRAY=$(printf '\033[90m')
 RED=$(printf '\033[91m')
 GREEN=$(printf '\033[92m')
 YELLOW=$(printf '\033[93m')
@@ -106,7 +105,7 @@ esac
 
 row=$model
 [ -n "$effort" ] && row="$row ($effort)"
-add "$(seg "$GRAY" "${version:+v$version}")"
+add "${version:+v$version}"
 add "$dir${branch:+:$branch}"
 add "$(seg "$MAGENTA" "${wt:+wt:$wt}")"
 line1=$row

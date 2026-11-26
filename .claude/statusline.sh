@@ -135,8 +135,8 @@ elif [ "$c_exp" -gt "$_now" ]; then cache="$GREEN$(duration_str $(( c_exp - _now
 else cache="${YELLOW}expired$RESET${c_cold:+ (~$(tokens_str "$c_cold") to recache)}"
 fi
 [ -n "$c_miss" ] && [ -n "$c_req" ] && cache="$cache, $c_miss/$c_req misses"
-c_age=$(( _now - ${c_last:-0} ))   # the last miss's cause and age show only while <= 10 minutes old
-[ -n "$c_last" ] && [ "$c_age" -ge 0 ] && [ "$c_age" -le 600 ] &&
+c_age=$(( _now - ${c_last:-0} ))
+[ -n "$c_last" ] && [ "$c_age" -ge 0 ] &&
   cache="$cache (${c_cause:+$c_cause, }$(duration_str "$c_age") ago)"
 add "Cache: $cache"
 

@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1795691555655,
+  "lastUpdate": 1795693157991,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -5248,6 +5248,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 11.2735,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "0be9ed0f516e9816818e37fd8d2ef55741ae92ec",
+          "message": "claude: remove cache miss cause transformation",
+          "timestamp": "2026-11-26T06:38:34-05:00",
+          "tree_id": "3317f746cdca6fb937facb8f3d9307e682c7dfa9",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/0be9ed0f516e9816818e37fd8d2ef55741ae92ec"
+        },
+        "date": 1795693157071,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 7.065,
             "unit": "msec"
           }
         ]

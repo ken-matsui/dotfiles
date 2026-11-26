@@ -1,12 +1,15 @@
 {
   "syncClaudeAiSkills": false,
   "syncClaudeAiPlugins": false,
-  "idleCompaction": false,
   "env": {
     "CLAUDE_CODE_DISABLE_MOUSE_CLICKS": "1",
     "CLAUDE_CODE_SUBAGENT_MODEL": "sonnet"
   },
-  "attribution": false,
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "sessionUrl": false
+  },
   "permissions": {
     "deny": [
       "Edit(~/.ssh/**)"
@@ -55,8 +58,8 @@
       }
     }
   },
-  "feedbackDrafts": "off",
   "feedbackSurveyRate": 0,
+  "feedbackDrafts": "off",
   "modelSettings": {
     "claude-sonnet-5-5": {
       "autoCompactWindow": 150000
@@ -72,6 +75,7 @@
   },
   "awaySummaryEnabled": false,
   "tui": "fullscreen",
+  "idleCompaction": false,
   "switchModelsOnFlag": true,
   "remoteControlAtStartup": true,
   "inputNeededNotifEnabled": true,

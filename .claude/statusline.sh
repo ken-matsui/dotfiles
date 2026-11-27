@@ -4,6 +4,7 @@
 # The in_* variables are assigned by the `eval` of jq output below;
 # shellcheck can't trace that, so silence its false positive:
 # shellcheck disable=SC2154
+set -eu
 
 # Parse every field in one jq pass; @sh keeps values shell-safe
 _assignments=$(jq -er '
@@ -28,7 +29,7 @@ _assignments=$(jq -er '
     c_last:     (.prompt_cache.last_miss_at             | int),
     c_cause:    (.prompt_cache.last_miss_cause.causes   // [] | join(" + ") | gsub("_"; " "))
   } | to_entries[] | "in_\(.key)=\(.value | tostring | @sh)"
-') || exit 1
+')
 eval "$_assignments"
 
 # Constants
@@ -114,7 +115,7 @@ context_str() {
 # directory_str — working directory and git branch, with home abbreviated
 directory_str() {
   [ -n "$in_dir" ] || return 0
-  _branch=$(git -C "$in_dir" --no-optional-locks branch --show-current 2>/dev/null)
+  _branch=$(git -C "$in_dir" --no-optional-locks branch --show-current 2>/dev/null) || _branch=""
   case "$in_dir" in
     "$HOME"|"$HOME"/*) _dir="~${in_dir#"$HOME"}" ;;
     *)                 _dir="$in_dir" ;;
@@ -141,7 +142,7 @@ cache_str() {
 
 # add <segment> — append <segment> to $row with a " | " separator (skip empty)
 add() {
-  [ -n "$1" ] && row="${row:+$row | }$1"
+  [ -z "$1" ] || row="${row:+$row | }$1"
 }
 
 row=""

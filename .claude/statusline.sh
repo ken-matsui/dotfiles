@@ -1,6 +1,6 @@
 #!/bin/sh
 # Claude Code status line.
-#   Line 1: model (effort), context, directory:branch, worktree, PR
+#   Line 1: model (effort), context, directory:branch
 #   Line 2: rate-limit meters (5h, 7d), cost, prompt cache, version
 #
 # The field variables (model, ctx, five, week, …) are assigned by the `eval` of
@@ -103,7 +103,7 @@ add() {
   [ -n "$1" ] && row="${row:+$row | }$1"
 }
 
-# === Line 1: model, context, directory:branch, worktree, PR ===
+# === Line 1: model, context, directory:branch ===
 branch=$(git -C "$dir" --no-optional-locks branch --show-current 2>/dev/null)
 case "$dir" in                                   # abbreviate home to ~ (after git lookup)
   "$HOME")   dir="~" ;;

@@ -102,9 +102,14 @@ tokens_str() {
 
 # bar <pct> — 10-cell progress bar, one cell per 10% (rounded): 24 -> "██░░░░░░░░"
 bar() {
+  _filled=$(( ($1 + 5) / 10 ))
   _i=0
   while [ "$_i" -lt 10 ]; do
-    if [ "$_i" -lt $(( ($1 + 5) / 10 )) ]; then printf '█'; else printf '░'; fi
+    if [ "$_i" -lt "$_filled" ]; then
+      printf '█'
+    else
+      printf '░'
+    fi
     _i=$(( _i + 1 ))
   done
 }

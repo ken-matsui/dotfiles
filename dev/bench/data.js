@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1795770447114,
+  "lastUpdate": 1795770495355,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -5422,6 +5422,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 6.7723,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "6a176cfc686e2cbca9229755da5fd6028513520f",
+          "message": "claude: fix usage jq parse",
+          "timestamp": "2026-11-27T04:07:39-05:00",
+          "tree_id": "9e6f63b064444ae7908bb85ffa8d3d5de2e4606e",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/6a176cfc686e2cbca9229755da5fd6028513520f"
+        },
+        "date": 1795770494811,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 6.6215,
             "unit": "msec"
           }
         ]

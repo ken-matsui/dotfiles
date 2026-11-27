@@ -6,7 +6,6 @@
 # The field variables (model, ctx, five, week, …) are assigned by the `eval` of
 # jq output below; shellcheck can't trace that, so silence its false positive:
 # shellcheck disable=SC2154
-input=$(cat)
 
 # --- ANSI colors (bright variants survive terminal dimming) ---
 RESET=$(printf '\033[0m')
@@ -15,29 +14,30 @@ GREEN=$(printf '\033[92m')
 YELLOW=$(printf '\033[93m')
 
 # --- Parse every field in one jq pass; @sh keeps values shell-safe ---
-eval "$(printf '%s' "$input" | jq -r '
-  def num: if type == "number" then floor else "" end;   # epoch seconds / counts; else unavailable
+assignments=$(jq -er '
+  def int: floor? // "";
   {
     model:   (.model.display_name                       // "Unknown"),
     effort:  (.effort.level                             // ""),
     version: (.version                                  // ""),
     ctx:     (.context_window.used_percentage           // 0),
     five:    (.rate_limits.five_hour.used_percentage    // ""),
-    five_at: (.rate_limits.five_hour.resets_at          // ""),
+    five_at: (.rate_limits.five_hour.resets_at          // int),
     week:    (.rate_limits.seven_day.used_percentage    // ""),
-    week_at: (.rate_limits.seven_day.resets_at          // ""),
+    week_at: (.rate_limits.seven_day.resets_at          // int),
     dir:     (.workspace.current_dir                    // ""),
     wt:      (.workspace.git_worktree // .worktree.name // ""),
     pr:      (.pr.number                                // ""),
     cost:    (.cost.total_cost_usd                      // ""),
-    c_exp:   (.prompt_cache.expires_at                  | num),
-    c_cold:  (.prompt_cache.recache_tokens_if_cold      | num),
-    c_miss:  (.prompt_cache.misses                      | num),
-    c_req:   (.prompt_cache.requests                    | num),
-    c_last:  (.prompt_cache.last_miss_at                | num),
+    c_exp:   (.prompt_cache.expires_at                  | int),
+    c_cold:  (.prompt_cache.recache_tokens_if_cold      | int),
+    c_miss:  (.prompt_cache.misses                      | int),
+    c_req:   (.prompt_cache.requests                    | int),
+    c_last:  (.prompt_cache.last_miss_at                | int),
     c_cause: (.prompt_cache.last_miss_cause.causes      // [] | join(" + ") | gsub("_"; " "))
   } | to_entries[] | "\(.key)=\(.value | tostring | @sh)"
-')"
+') || exit 1
+eval "$assignments"
 
 _now=$(date +%s)
 

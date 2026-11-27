@@ -35,7 +35,7 @@ eval "$(printf '%s' "$input" | jq -r '
     c_miss:  (.prompt_cache.misses                      | num),
     c_req:   (.prompt_cache.requests                    | num),
     c_last:  (.prompt_cache.last_miss_at                | num),
-    c_cause: (.prompt_cache.last_miss_cause.causes // [] | join("+"))
+    c_cause: (.prompt_cache.last_miss_cause.causes      // [] | join(" + ") | gsub("_"; " "))
   } | to_entries[] | "\(.key)=\(.value | tostring | @sh)"
 ')"
 

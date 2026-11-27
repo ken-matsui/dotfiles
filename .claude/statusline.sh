@@ -22,6 +22,7 @@ _assignments=$(jq -er '
     week_at:    (.rate_limits.seven_day.resets_at       | int),
     dir:        (.workspace.current_dir                 // ""),
     cost:       (.cost.total_cost_usd                   // ""),
+    c_observed: (.prompt_cache.caching_observed         == true),
     c_exp:      (.prompt_cache.expires_at               | int),
     c_cold:     (.prompt_cache.recache_tokens_if_cold   | int),
     c_miss:     (.prompt_cache.misses                   | int),
@@ -41,17 +42,22 @@ NOW=$(   date +%s)
 
 # pct_color <pct> — traffic-light color for a usage percentage: green / yellow / red
 pct_color() {
-  if   [ "$1" -ge 85 ]; then printf '%s' "$RED"
-  elif [ "$1" -ge 60 ]; then printf '%s' "$YELLOW"
-  else                       printf '%s' "$GREEN"
+  if   [ "$1" -ge 85 ]; then
+    printf '%s' "$RED"
+  elif [ "$1" -ge 60 ]; then
+    printf '%s' "$YELLOW"
+  else
+    printf '%s' "$GREEN"
   fi
 }
 
 # dec <tenths> <unit> — decimal with trailing .0 trimmed: (43, h) -> "4.3h"
 dec() {
   _f=$(( $1 % 10 ))
-  if [ "$_f" -eq 0 ]; then printf '%d%s' "$(( $1 / 10 ))" "$2"
-  else                     printf '%d.%d%s' "$(( $1 / 10 ))" "$_f" "$2"
+  if [ "$_f" -eq 0 ]; then
+    printf '%d%s' "$(( $1 / 10 ))" "$2"
+  else
+    printf '%d.%d%s' "$(( $1 / 10 ))" "$_f" "$2"
   fi
 }
 
@@ -125,9 +131,14 @@ directory_str() {
 
 # cache_str — cache expiry, recache tokens, misses, and last miss cause
 cache_str() {
-  if [ -z "$in_c_exp" ]; then _cache="N/A"
-  elif [ "$in_c_exp" -gt "$NOW" ]; then _cache="$GREEN$(duration_str $(( in_c_exp - NOW ))) left$RESET"
-  else _cache="${YELLOW}expired$RESET${in_c_cold:+ (~$(tokens_str "$in_c_cold") to recache)}"
+  if [ "$in_c_observed" != true ]; then
+    _cache="N/A"
+  elif [ "${in_c_exp:-0}" -gt "$NOW" ]; then
+    _cache="$GREEN$(duration_str $(( in_c_exp - NOW ))) left$RESET"
+  else
+    _state=cold
+    [ -z "$in_c_exp" ] || _state=expired
+    _cache="$YELLOW$_state$RESET${in_c_cold:+ (~$(tokens_str "$in_c_cold") to recache)}"
   fi
 
   [ -n "$in_c_miss" ] && [ -n "$in_c_req" ] &&

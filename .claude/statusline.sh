@@ -51,7 +51,7 @@ pct_color() {
 dec() {
   _f=$(( $1 % 10 ))
   if [ "$_f" -eq 0 ]; then printf '%d%s' "$(( $1 / 10 ))" "$2"
-  else                     printf '%d.%d%s' "$(( $1 / 10 ))" "$_f" "$2";
+  else                     printf '%d.%d%s' "$(( $1 / 10 ))" "$_f" "$2"
   fi
 }
 

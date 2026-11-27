@@ -1,20 +1,12 @@
 #!/bin/sh
 # Claude Code status line.
-#   Line 1: model (effort), context, directory:branch
-#   Line 2: rate-limit meters (5h, 7d), cost, prompt cache, version
 #
-# The field variables (model, ctx, five, week, …) are assigned by the `eval` of
-# jq output below; shellcheck can't trace that, so silence its false positive:
+# The in_* variables are assigned by the `eval` of jq output below;
+# shellcheck can't trace that, so silence its false positive:
 # shellcheck disable=SC2154
 
-# --- ANSI colors (bright variants survive terminal dimming) ---
-RESET=$(printf '\033[0m')
-RED=$(printf '\033[91m')
-GREEN=$(printf '\033[92m')
-YELLOW=$(printf '\033[93m')
-
-# --- Parse every field in one jq pass; @sh keeps values shell-safe ---
-assignments=$(jq -er '
+# Parse every field in one jq pass; @sh keeps values shell-safe
+_assignments=$(jq -er '
   def int: floor? // "";
   {
     model:      (.model.display_name                    // "Unknown"),
@@ -35,25 +27,31 @@ assignments=$(jq -er '
     c_req:      (.prompt_cache.requests                 | int),
     c_last:     (.prompt_cache.last_miss_at             | int),
     c_cause:    (.prompt_cache.last_miss_cause.causes   // [] | join(" + ") | gsub("_"; " "))
-  } | to_entries[] | "\(.key)=\(.value | tostring | @sh)"
+  } | to_entries[] | "in_\(.key)=\(.value | tostring | @sh)"
 ') || exit 1
-eval "$assignments"
+eval "$_assignments"
 
-_now=$(date +%s)
+# Constants
+RESET=$( printf '\033[0m')
+RED=$(   printf '\033[91m')
+GREEN=$( printf '\033[92m')
+YELLOW=$(printf '\033[93m')
+NOW=$(   date +%s)
 
 # pct_color <pct> — traffic-light color for a usage percentage: green / yellow / red
 pct_color() {
   if   [ "$1" -ge 85 ]; then printf '%s' "$RED"
   elif [ "$1" -ge 60 ]; then printf '%s' "$YELLOW"
-  else printf '%s' "$GREEN"
+  else                       printf '%s' "$GREEN"
   fi
 }
 
-# dec <tenths> <unit> — "X.Yunit" with ".0" trimmed when exact: 43 h -> "4.3h", 40 h -> "4h"
+# dec <tenths> <unit> — decimal with trailing .0 trimmed: (43, h) -> "4.3h"
 dec() {
   _f=$(( $1 % 10 ))
   if [ "$_f" -eq 0 ]; then printf '%d%s' "$(( $1 / 10 ))" "$2"
-  else printf '%d.%d%s' "$(( $1 / 10 ))" "$_f" "$2"; fi
+  else                     printf '%d.%d%s' "$(( $1 / 10 ))" "$_f" "$2";
+  fi
 }
 
 # duration_str <seconds> — compact duration for countdowns and ages:
@@ -63,9 +61,9 @@ duration_str() {
   _secs=$1
   [ "$_secs" -le 0 ] && { printf '0m'; return; }
   if [ "$_secs" -ge 86400 ]; then
-    dec "$(( (_secs + 4320) / 8640 ))" d   # tenths of a day, rounded
+    dec "$(( (_secs + 4320) / 8640 ))" d    # tenths of a day, rounded
   elif [ "$_secs" -ge 3600 ]; then
-    dec "$(( (_secs + 180) / 360 ))" h     # tenths of an hour, rounded
+    dec "$(( (_secs + 180) / 360 ))" h      # tenths of an hour, rounded
   else
     printf '%dm' "$(( (_secs + 30) / 60 ))" # whole minutes, rounded
   fi
@@ -82,11 +80,11 @@ meter() {
   _pct=${_pct%.0}                  # trimmed to a whole number when exact
   _pcolor=$(pct_color "$_int")
   _reset=""
-  [ -n "$_resets" ] && _reset=" in $(duration_str $(( _resets - _now )))"
+  [ -n "$_resets" ] && _reset=" in $(duration_str $(( _resets - NOW )))"
   printf '%s:%s%s %s%%%s%s' "$_label" "$_pcolor" "$(bar "$_int")" "$_pct" "$RESET" "$_reset"
 }
 
-# tokens_str <count> — token count in thousands, rounded: 73612 -> "74k"
+# tokens_str <count> — compact token count: 73612 -> "74k", 1000000 -> "1M"
 tokens_str() {
   if [ "$1" -ge 999500 ]; then
     dec "$(( ($1 + 50000) / 100000 ))" M
@@ -104,52 +102,60 @@ bar() {
   done
 }
 
+# context_str — context usage bar, percentage, and token counts
+context_str() {
+  _ctx=$(printf '%.0f' "$in_ctx")
+  _ctx_detail=""
+  [ -n "$in_ctx_tokens" ] && [ -n "$in_ctx_size" ] &&
+    _ctx_detail=" ($(tokens_str "$in_ctx_tokens")/$(tokens_str "$in_ctx_size"))"
+  printf '%s' "Ctx:$(pct_color "$_ctx")$(bar "$_ctx") $_ctx%$RESET$_ctx_detail"
+}
+
+# directory_str — working directory and git branch, with home abbreviated
+directory_str() {
+  [ -n "$in_dir" ] || return 0
+  _branch=$(git -C "$in_dir" --no-optional-locks branch --show-current 2>/dev/null)
+  case "$in_dir" in
+    "$HOME"|"$HOME"/*) _dir="~${in_dir#"$HOME"}" ;;
+    *)                 _dir="$in_dir" ;;
+  esac
+  printf '%s' "$_dir${_branch:+:$_branch}"
+}
+
+# cache_str — cache expiry, recache tokens, misses, and last miss cause
+cache_str() {
+  if [ -z "$in_c_exp" ]; then _cache="N/A"
+  elif [ "$in_c_exp" -gt "$NOW" ]; then _cache="$GREEN$(duration_str $(( in_c_exp - NOW ))) left$RESET"
+  else _cache="${YELLOW}expired$RESET${in_c_cold:+ (~$(tokens_str "$in_c_cold") to recache)}"
+  fi
+
+  [ -n "$in_c_miss" ] && [ -n "$in_c_req" ] &&
+    _cache="$_cache, $in_c_miss/$in_c_req misses"
+
+  _age=$(( NOW - ${in_c_last:-0} ))
+  [ -n "$in_c_last" ] && [ "$_age" -ge 0 ] &&
+    _cache="$_cache (${in_c_cause:+$in_c_cause, }$(duration_str "$_age") ago)"
+
+  printf 'Cache: %s' "$_cache"
+}
+
 # add <segment> — append <segment> to $row with a " | " separator (skip empty)
 add() {
   [ -n "$1" ] && row="${row:+$row | }$1"
 }
 
-# === Line 1: model, context, directory:branch ===
-branch=$(git -C "$dir" --no-optional-locks branch --show-current 2>/dev/null)
-case "$dir" in                                   # abbreviate home to ~ (after git lookup)
-  "$HOME")   dir="~" ;;
-  "$HOME"/*) dir="~${dir#"$HOME"}" ;;
-esac
-
-row=$model
-[ -n "$effort" ] && row="$row ($effort)"
-
-ctx=$(printf '%.0f' "$ctx")
-ctx_detail=""
-[ -n "$ctx_tokens" ] && [ -n "$ctx_size" ] &&
-  ctx_detail=" ($(tokens_str "$ctx_tokens")/$(tokens_str "$ctx_size"))"
-
-add "Ctx:$(pct_color "$ctx")$(bar "$ctx") $ctx%$RESET$ctx_detail"
-add "$dir${branch:+:$branch}"
+row=""
+add "$in_model${in_effort:+ ($in_effort)}"
+add "${in_version:+v$in_version}"
+add "$(context_str)"
+add "$(directory_str)"
 line1=$row
 
-# === Line 2: rate-limit meters (5h, 7d), cost, prompt cache, version ===
 row=""
-add "$(meter 5h  "$five" "$five_at")"
-add "$(meter 7d  "$week" "$week_at")"
-add "${cost:+$(printf '$%.2f' "$cost")}"
-
-# Cache: <Nm left | expired (~Nk to recache) | N/A>[, N/M misses][ (cause, Nm ago)]
-if [ -z "$c_exp" ]; then cache="N/A"
-elif [ "$c_exp" -gt "$_now" ]; then cache="$GREEN$(duration_str $(( c_exp - _now ))) left$RESET"
-else cache="${YELLOW}expired$RESET${c_cold:+ (~$(tokens_str "$c_cold") to recache)}"
-fi
-[ -n "$c_miss" ] && [ -n "$c_req" ] && cache="$cache, $c_miss/$c_req misses"
-c_age=$(( _now - ${c_last:-0} ))
-[ -n "$c_last" ] && [ "$c_age" -ge 0 ] &&
-  cache="$cache (${c_cause:+$c_cause, }$(duration_str "$c_age") ago)"
-add "Cache: $cache"
-
-add "${version:+v$version}"
+add "$(meter 5h "$in_five" "$in_five_at")"
+add "$(meter 7d "$in_week" "$in_week_at")"
+add "${in_cost:+$(printf '$%.2f' "$in_cost")}"
+add "$(cache_str)"
 line2=$row
 
-# --- Emit (second line only when non-empty) ---
-output=$line1
-[ -n "$line2" ] && output="$output
-$line2"
-printf '%s' "$output"
+printf '%s\n%s' "$line1" "$line2"

@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1795774831390,
+  "lastUpdate": 1795775128551,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -5625,6 +5625,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 6.6515,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "513fd4822ff8b1330e44d433cbfa21b1f08fe5ce",
+          "message": "claude: improve early returns",
+          "timestamp": "2026-11-27T05:24:40-05:00",
+          "tree_id": "ed1c8c1fe5db746e8804c2ff7e5ed4041273519f",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/513fd4822ff8b1330e44d433cbfa21b1f08fe5ce"
+        },
+        "date": 1795775127623,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 6.9295,
             "unit": "msec"
           }
         ]

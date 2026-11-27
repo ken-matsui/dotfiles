@@ -17,22 +17,24 @@ YELLOW=$(printf '\033[93m')
 assignments=$(jq -er '
   def int: floor? // "";
   {
-    model:   (.model.display_name                       // "Unknown"),
-    effort:  (.effort.level                             // ""),
-    version: (.version                                  // ""),
-    ctx:     (.context_window.used_percentage           // 0),
-    five:    (.rate_limits.five_hour.used_percentage    // ""),
-    five_at: (.rate_limits.five_hour.resets_at          | int),
-    week:    (.rate_limits.seven_day.used_percentage    // ""),
-    week_at: (.rate_limits.seven_day.resets_at          | int),
-    dir:     (.workspace.current_dir                    // ""),
-    cost:    (.cost.total_cost_usd                      // ""),
-    c_exp:   (.prompt_cache.expires_at                  | int),
-    c_cold:  (.prompt_cache.recache_tokens_if_cold      | int),
-    c_miss:  (.prompt_cache.misses                      | int),
-    c_req:   (.prompt_cache.requests                    | int),
-    c_last:  (.prompt_cache.last_miss_at                | int),
-    c_cause: (.prompt_cache.last_miss_cause.causes      // [] | join(" + ") | gsub("_"; " "))
+    model:      (.model.display_name                    // "Unknown"),
+    effort:     (.effort.level                          // ""),
+    version:    (.version                               // ""),
+    ctx:        (.context_window.used_percentage        // 0),
+    ctx_tokens: (.context_window.total_input_tokens     | int),
+    ctx_size:   (.context_window.context_window_size    | int),
+    five:       (.rate_limits.five_hour.used_percentage // ""),
+    five_at:    (.rate_limits.five_hour.resets_at       | int),
+    week:       (.rate_limits.seven_day.used_percentage // ""),
+    week_at:    (.rate_limits.seven_day.resets_at       | int),
+    dir:        (.workspace.current_dir                 // ""),
+    cost:       (.cost.total_cost_usd                   // ""),
+    c_exp:      (.prompt_cache.expires_at               | int),
+    c_cold:     (.prompt_cache.recache_tokens_if_cold   | int),
+    c_miss:     (.prompt_cache.misses                   | int),
+    c_req:      (.prompt_cache.requests                 | int),
+    c_last:     (.prompt_cache.last_miss_at             | int),
+    c_cause:    (.prompt_cache.last_miss_cause.causes   // [] | join(" + ") | gsub("_"; " "))
   } | to_entries[] | "\(.key)=\(.value | tostring | @sh)"
 ') || exit 1
 eval "$assignments"
@@ -86,7 +88,11 @@ meter() {
 
 # tokens_str <count> — token count in thousands, rounded: 73612 -> "74k"
 tokens_str() {
-  printf '%dk' "$(( ($1 + 500) / 1000 ))"
+  if [ "$1" -ge 999500 ]; then
+    dec "$(( ($1 + 50000) / 100000 ))" M
+  else
+    printf '%dk' "$(( ($1 + 500) / 1000 ))"
+  fi
 }
 
 # bar <pct> — 10-cell progress bar, one cell per 10% (rounded): 24 -> "██░░░░░░░░"
@@ -112,8 +118,13 @@ esac
 
 row=$model
 [ -n "$effort" ] && row="$row ($effort)"
+
 ctx=$(printf '%.0f' "$ctx")
-add "Ctx:$(pct_color "$ctx")$(bar "$ctx") $ctx%$RESET"
+ctx_detail=""
+[ -n "$ctx_tokens" ] && [ -n "$ctx_size" ] &&
+  ctx_detail=" ($(tokens_str "$ctx_tokens")/$(tokens_str "$ctx_size"))"
+
+add "Ctx:$(pct_color "$ctx")$(bar "$ctx") $ctx%$RESET$ctx_detail"
 add "$dir${branch:+:$branch}"
 line1=$row
 

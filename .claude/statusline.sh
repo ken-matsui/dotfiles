@@ -26,7 +26,6 @@ assignments=$(jq -er '
     week:    (.rate_limits.seven_day.used_percentage    // ""),
     week_at: (.rate_limits.seven_day.resets_at          // int),
     dir:     (.workspace.current_dir                    // ""),
-    wt:      (.workspace.git_worktree // .worktree.name // ""),
     pr:      (.pr.number                                // ""),
     cost:    (.cost.total_cost_usd                      // ""),
     c_exp:   (.prompt_cache.expires_at                  | int),
@@ -117,7 +116,6 @@ row=$model
 ctx=$(printf '%.0f' "$ctx")
 add "Ctx:$(pct_color "$ctx")$(bar "$ctx") $ctx%$RESET"
 add "$dir${branch:+:$branch}"
-add "${wt:+wt:$wt}"
 add "${pr:+#$pr}"
 line1=$row
 

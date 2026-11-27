@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1795774739008,
+  "lastUpdate": 1795774831390,
   "repoUrl": "https://github.com/ken-matsui/dotfiles",
   "entries": {
     "Neovim Benchmark": [
@@ -5596,6 +5596,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Neovim Total Average Startup Time",
             "value": 6.7492,
+            "unit": "msec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "committer": {
+            "email": "26405363+ken-matsui@users.noreply.github.com",
+            "name": "Ken Matsui",
+            "username": "ken-matsui"
+          },
+          "distinct": true,
+          "id": "b1773826202a93f6e16aad5816875b76f16c0315",
+          "message": "claude: improve bar impl",
+          "timestamp": "2026-11-27T05:19:49-05:00",
+          "tree_id": "b3af5eaf895ed7109ef3d839395a1c7061b6eed6",
+          "url": "https://github.com/ken-matsui/dotfiles/commit/b1773826202a93f6e16aad5816875b76f16c0315"
+        },
+        "date": 1795774830694,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Neovim Total Average Startup Time",
+            "value": 6.6515,
             "unit": "msec"
           }
         ]

@@ -66,7 +66,8 @@ dec() {
 #   trimmed ("4h" not "4.0h"). "0m" if <= 0.
 duration_str() {
   _secs=$1
-  [ "$_secs" -le 0 ] && { printf '0m'; return; }
+  [ "$_secs" -gt 0 ] || { printf '0m'; return; }
+
   if [ "$_secs" -ge 86400 ]; then
     dec "$(( (_secs + 4320) / 8640 ))" d    # tenths of a day, rounded
   elif [ "$_secs" -ge 3600 ]; then
@@ -82,6 +83,7 @@ duration_str() {
 meter() {
   _label=$1; _raw=$2; _resets=$3
   [ -n "$_raw" ] || return 0
+
   _int=$(printf '%.0f' "$_raw")    # rounded int drives the color and bar
   _pct=$(printf '%.1f' "$_raw")    # shown value: one decimal,
   _pct=${_pct%.0}                  # trimmed to a whole number when exact
@@ -126,6 +128,7 @@ context_str() {
 # directory_str — working directory and git branch, with home abbreviated
 directory_str() {
   [ -n "$in_dir" ] || return 0
+
   _branch=$(git -C "$in_dir" --no-optional-locks branch --show-current 2>/dev/null) || _branch=""
   case "$in_dir" in
     "$HOME"|"$HOME"/*) _dir="~${in_dir#"$HOME"}" ;;
@@ -136,9 +139,9 @@ directory_str() {
 
 # cache_str — cache expiry, recache tokens, misses, and last miss cause
 cache_str() {
-  if [ "$in_c_observed" != true ]; then
-    _cache="N/A"
-  elif [ "${in_c_exp:-0}" -gt "$NOW" ]; then
+  [ "$in_c_observed" = true ] || { printf 'Cache: N/A'; return; }
+
+  if [ "${in_c_exp:-0}" -gt "$NOW" ]; then
     _cache="$GREEN$(duration_str $(( in_c_exp - NOW ))) left$RESET"
   else
     _state=cold

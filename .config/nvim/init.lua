@@ -34,7 +34,7 @@ if vim.fn.exists("+autocomplete") == 1 then
 		"w^5", -- other windows
 		"b^5", -- loaded buffers
 	}
-	vim.opt.completeopt = { "menu", "menuone", "noselect", "popup" }
+	vim.opt.completeopt = { "menu", "menuone", "noselect", "popup", "fuzzy" }
 end
 
 -- Highlight yanked region
